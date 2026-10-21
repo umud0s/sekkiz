@@ -208,6 +208,11 @@ Data: src/data/*.json; scripts/prepare-data.mjs build-dən əvvəl slug yaradır
 Şrift saytın içindədir (League Spartan woff2), gerb webp, himn mp3, og.png, _headers (keş və təhlükəsizlik).
 Sosial: href boşdursa ikon görünür, amma keçid deyil (site.js -> SOCIAL).
 
+## CANLI SAYT
+Test ünvanı: https://sekkizguse.osmanliumud.workers.dev (Cloudflare Workers, GitHub umud0s/sekkiz main budağından avtomatik yayım).
+21.10.2026 yoxlanış: bütün səhifələr və fayllar 200, brauzer xətası yoxdur, JSON br ilə sıxılır, _headers işləyir.
+Açıq: olmayan ünvanda 404 səhifəsi boş gəlir -> wrangler.jsonc (not_found_handling: 404-page) ilə yayımın tətbiqi yoxlanmalıdır.
+
 ## ÜNSİYYƏT DİLİ
 İstifadəçi ilə HƏMİŞƏ Azərbaycan dilində danışılır (istifadəçinin açıq tələbi).
 
