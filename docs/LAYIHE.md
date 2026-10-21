@@ -211,6 +211,7 @@ Sosial: href boşdursa ikon görünür, amma keçid deyil (site.js -> SOCIAL).
 ## CANLI SAYT
 Test ünvanı: https://sekkizguse.osmanliumud.workers.dev (Cloudflare Workers, GitHub umud0s/sekkiz main budağından avtomatik yayım).
 21.10.2026 yoxlanış: bütün səhifələr və fayllar 200, brauzer xətası yoxdur, JSON br ilə sıxılır, _headers işləyir.
+Mobil operator workers.dev ünvanını bloklayır (istifadəçinin Android telefonunda mobil internetdə açılmır, Wi-Fi-da açılır). Həll: öz domen.
 Açıq: olmayan ünvanda 404 səhifəsi boş gəlir -> wrangler.jsonc (not_found_handling: 404-page) ilə yayımın tətbiqi yoxlanmalıdır.
 
 ## ÜNSİYYƏT DİLİ
