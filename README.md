@@ -2,7 +2,7 @@
 
 Azərbaycan dili, tarixi və milli irsi bir yerdə: dövlət rəmzləri, xəritə, atalar sözləri, nağıllar və milli qəhrəmanlar.
 
-Sayt [Astro](https://astro.build) ilə qurulmuş statik saytdır: server, verilənlər bazası yoxdur. Cloudflare Pages-də yayımlanır.
+Sayt [Astro](https://astro.build) ilə qurulmuş statik saytdır: server, verilənlər bazası yoxdur. Cloudflare Workers-də (statik fayllar) yayımlanır.
 
 ## Bölmələr və ünvanlar
 
@@ -37,8 +37,9 @@ npm run build     # saytı dist/ qovluğuna qurur
 npm run check     # bütün daxili keçidləri yoxlayır
 ```
 
-## Cloudflare Pages ayarları
+## Cloudflare ayarları
 
 - Build command: `npm run build`
 - Build output directory: `dist`
 - Node versiyası: `.nvmrc` faylından (22)
+- Workers üçün ayarlar `wrangler.jsonc` faylındadır (deploy: `npx wrangler deploy`)
