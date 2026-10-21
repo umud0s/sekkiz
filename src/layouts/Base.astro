@@ -1,0 +1,55 @@
+---
+import '../styles/global.css';
+import Icon from '../components/Icon.astro';
+import { SITE, SOCIAL, STAR_POINTS } from '../lib/site.js';
+
+const { title, description = SITE.description, current = '', ogType = 'website' } = Astro.props;
+const fullTitle = title ? `${title} — ${SITE.name}` : `${SITE.name} — Azərbaycan dili, tarixi və milli irsi`;
+const canonical = new URL(Astro.url.pathname, Astro.site).href;
+const ogImage = new URL('/img/og.png', Astro.site).href;
+---
+<!doctype html>
+<html lang="az">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{fullTitle}</title>
+  <meta name="description" content={description} />
+  <link rel="canonical" href={canonical} />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="preload" href="/fonts/league-spartan-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/fonts/league-spartan-latin-ext.woff2" as="font" type="font/woff2" crossorigin />
+  <meta name="theme-color" content="#0A6E99" />
+  <meta property="og:site_name" content={SITE.name} />
+  <meta property="og:locale" content="az_AZ" />
+  <meta property="og:type" content={ogType} />
+  <meta property="og:title" content={fullTitle} />
+  <meta property="og:description" content={description} />
+  <meta property="og:url" content={canonical} />
+  <meta property="og:image" content={ogImage} />
+  <meta name="twitter:card" content="summary_large_image" />
+  <slot name="head" />
+</head>
+<body>
+  <header class="wrap site-head">
+    <a class="logo" href="/" aria-label="Səkkizguşə, ana səhifə">
+      <svg width="32" height="32" viewBox="-104 -104 208 208" aria-hidden="true"><polygon points={STAR_POINTS} fill="#0A6E99" stroke="#064A69" stroke-width="6" stroke-linejoin="round" /></svg>
+      <span>Səkkizguşə</span>
+    </a>
+    <nav aria-label="Əsas menyu">
+      <a class="nav-link" href="/haqqinda/" aria-current={current === 'haqqinda' ? 'page' : undefined}>Haqqında</a>
+    </nav>
+  </header>
+  <main id="main">
+    <slot />
+  </main>
+  <footer class="wrap site-foot">
+    <span>© {new Date().getFullYear()} Səkkizguşə</span>
+    <nav class="social" aria-label="Sosial şəbəkələr">
+      {SOCIAL.map((s) => s.href
+        ? <a href={s.href} target="_blank" rel="noopener" aria-label={s.name}><Icon name={s.icon} /></a>
+        : <span role="img" aria-label={`${s.name} (tezliklə)`} title={`${s.name}: tezliklə`}><Icon name={s.icon} /></span>)}
+    </nav>
+  </footer>
+</body>
+</html>

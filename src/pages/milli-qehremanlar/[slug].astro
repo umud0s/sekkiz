@@ -1,0 +1,56 @@
+---
+import Base from '../../layouts/Base.astro';
+import H from '../../data/gen/qehremanlar.json';
+import { CATS, TITLES, COLORS, DK, awardText } from '../../lib/heroes.js';
+
+export function getStaticPaths() {
+  return H.map((h) => ({ params: { slug: h.s }, props: { h } }));
+}
+const { h } = Astro.props;
+const dk = DK[h.dk] || DK['şəhid'];
+const cat = CATS.find((c) => c[0] === h.cat)?.[1];
+const name = `${h.fn} ${h.sn}`;
+const desc = `${name}${h.pat ? ' ' + h.pat : ''} — ${TITLES[h.tt]}. Doğum: ${h.born}${h.died ? `, ${dk[1].toLowerCase()}: ${h.died}` : ''}${h.place ? `. Doğulduğu yer: ${h.place}` : ''}.`;
+---
+<Base title={name} description={desc} ogType="profile">
+  <script type="application/ld+json" slot="head" set:html={JSON.stringify({ '@context': 'https://schema.org', '@type': 'Person', name, award: TITLES[h.tt], ...(h.place ? { birthPlace: h.place } : {}), nationality: 'Azərbaycan' })} />
+  <div class="wrap section">
+    <nav class="crumbs" aria-label="Yol"><a href="/">Ana səhifə</a> <span aria-hidden="true">/</span> <a href="/milli-qehremanlar/">Milli qəhrəmanlar</a></nav>
+    <article class="card hero1">
+      <div class="av" style={`background:${COLORS[h.cat]}`} aria-hidden="true">{(h.fn[0] || '') + (h.sn[0] || '')}</div>
+      <div class="hb">
+        <div>
+          <h1>{name}</h1>
+          {h.pat && <p class="muted" style="margin:6px 0 0;font-size:17px">Ata adı: {h.pat}</p>}
+        </div>
+        <div class="chips">
+          <span class="badge b-t">{TITLES[h.tt]}</span>
+          {h.died && <span class={`badge ${h.dk === 'şəhid' ? 'b-s' : 'b-v'}`}>{dk[0]}</span>}
+          {cat && <a class="badge b-c" href="/milli-qehremanlar/">{cat}</a>}
+        </div>
+        <dl>
+          <dt>Doğum tarixi</dt><dd>{h.born}</dd>
+          {h.died && <><dt>{dk[1]}</dt><dd>{h.died}</dd></>}
+          {h.place && <><dt>Doğulduğu yer</dt><dd>{h.place}</dd></>}
+          <dt>Fəxri ad</dt><dd>{awardText(h)}</dd>
+        </dl>
+        {h.bio && <p class="bio">{h.bio}</p>}
+      </div>
+    </article>
+    <a class="btn btn-s" href="/milli-qehremanlar/" style="align-self:flex-start">← Bütün qəhrəmanlar</a>
+  </div>
+</Base>
+
+<style>
+  .hero1{display:flex;gap:28px;padding:40px 44px}
+  .av{flex:none;width:96px;height:96px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:34px;font-weight:600;color:#FFFFFF}
+  .hb{display:flex;flex-direction:column;gap:16px;min-width:0}
+  h1{margin:0;font-size:40px;font-weight:500;line-height:1.15}
+  .chips{display:flex;flex-wrap:wrap;gap:8px}
+  .badge{display:inline-flex;align-items:center;min-height:28px;padding:0 12px;border-radius:999px;font-size:14px;font-weight:500;text-decoration:none}
+  .b-t{background:#E6F0F6;color:#0A5A80}.b-s{background:#FBE3E5;color:#A11D2A}.b-v{background:#ECEEF1;color:#4D5A68}.b-c{background:#FFFFFF;border:1px solid var(--line);color:var(--ink)}
+  dl{margin:0;display:grid;grid-template-columns:auto minmax(0,1fr);gap:8px 18px;font-size:18px}
+  dt{color:#5A6775}dd{margin:0;font-weight:500}
+  .bio{margin:0;font-size:18px;line-height:1.6;color:var(--ink-2)}
+  @media (max-width:860px){.hero1{flex-direction:column;padding:24px 20px}h1{font-size:30px}}
+</style>

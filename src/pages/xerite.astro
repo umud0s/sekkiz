@@ -1,0 +1,140 @@
+---
+import Base from '../layouts/Base.astro';
+import svg from '../data/xerite-map.svg.html?raw';
+---
+<Base title="Azərbaycan xəritəsi" description="Azərbaycanın interaktiv xəritəsi: 67 rayon və 8 şəhərin sərhədləri, ərazisi və əhalisi, dağlar, çaylar, göllər və qonşu dövlətlərlə sərhədlər.">
+  <div class="wrap section">
+    <section class="stack">
+      <nav class="crumbs" aria-label="Yol"><a href="/">Ana səhifə</a> <span aria-hidden="true">/</span> Xəritə</nav>
+      <h1 class="page-title">Azərbaycan xəritəsi</h1>
+      <p class="lead">Rayonun, dağın, çayın və ya gölün üzərinə gəlin, ya da toxunun: haqqında məlumat yanda açılacaq.</p>
+      <div class="chips" role="group" aria-label="Xəritə qatları">
+        <button type="button" class="chip" data-mode="ray" aria-pressed="true">Rayon və şəhərlər</button>
+        <button type="button" class="chip" data-mode="dag" aria-pressed="false">Dağlar</button>
+        <button type="button" class="chip" data-mode="su" aria-pressed="false">Çaylar və göllər</button>
+      </div>
+    </section>
+    <div class="xr-row">
+      <div class="card xr-map"><Fragment set:html={svg} /></div>
+      <aside class="card xr-panel" id="panel" aria-live="polite"></aside>
+    </div>
+    <p class="muted" style="margin:0;font-size:14px;line-height:1.5">Mənbələr: Azərbaycan Respublikası Nazirlər Kabineti (ərazi və sərhədlər); Dövlət Statistika Komitəsi, cədvəl 1.15 (ərazi; əhali 01.01.2026 vəziyyətinə). Xəritədəki sərhədlər tanışlıq məqsədi daşıyır.</p>
+  </div>
+</Base>
+
+<style is:global>
+  .chips{display:flex;flex-wrap:wrap;gap:8px}
+  .xr-row{display:grid;grid-template-columns:minmax(0,1.75fr) minmax(0,1fr);gap:24px;align-items:start}
+  .xr-map{padding:14px}
+  .xr-map svg{display:block;width:100%;height:auto;border-radius:16px}
+  .xr-map svg text{font-family:'League Spartan','Noto Sans',sans-serif}
+  .xr-panel{padding:28px;display:flex;flex-direction:column;gap:16px;animation:pn .35s cubic-bezier(.2,.8,.2,1)}
+  @keyframes pn{from{opacity:0;transform:translateX(12px)}to{opacity:1;transform:none}}
+  .xr-panel .kicker{font-size:14px;font-weight:500;letter-spacing:1px;text-transform:uppercase;color:var(--accent)}
+  .xr-panel h2{margin:4px 0 0;font-size:30px;font-weight:500;line-height:1.15}
+  .xr-panel p{margin:0;font-size:17px;line-height:1.5;color:var(--ink-2)}
+  .xr-panel dl{margin:0;display:grid;grid-template-columns:auto minmax(0,1fr);gap:10px 18px;font-size:17px}
+  .xr-panel dt{color:var(--muted)}
+  .xr-panel dd{margin:0;font-weight:500}
+  .xr-panel .note{font-size:14px;color:#5A6775}
+  .bars{display:flex;flex-direction:column;gap:10px;padding-top:16px;border-top:1px solid #E1E8EE}
+  .bar-h{font-size:15px;font-weight:500;color:var(--muted)}
+  .bar-l{display:flex;justify-content:space-between;font-size:15px}
+  .bar{height:8px;border-radius:4px;background:#E6EEF4;overflow:hidden;margin-top:4px}
+  .bar i{display:block;height:100%;border-radius:4px}
+  .u{fill:#FBF9F3;stroke:#9BB0BF;stroke-width:.8;stroke-linejoin:round;cursor:pointer;transition:fill .3s ease,filter .3s ease;animation:u-in .6s ease both}
+  .u.reg{fill:#CFE6F2}
+  .u.on{fill:#0A6E99;filter:drop-shadow(0 6px 8px rgba(5,45,70,.45))}
+  @keyframes u-in{from{opacity:0}to{opacity:1}}
+  .lay{transition:opacity .4s ease}
+  .lay.off{opacity:.35;pointer-events:none}
+  .lay.off .u{fill:#F4F1E8;cursor:default}
+  .mt{opacity:.75;cursor:pointer;transition:opacity .3s,filter .3s}
+  .mt.on{opacity:1;filter:drop-shadow(0 4px 6px rgba(80,40,10,.45)) saturate(1.6)}
+  .pk{cursor:pointer;transform-box:fill-box;transform-origin:center;transition:transform .3s}
+  .pk.on{transform:scale(1.5)}
+  .rv{cursor:pointer}
+  .rv.on .xr-river{stroke:#0B5C96;stroke-width:4.5}
+  .xr-river{stroke-dasharray:2400;stroke-dashoffset:2400;animation:rv-draw 3s ease forwards;transition:stroke-width .25s,stroke .25s}
+  @keyframes rv-draw{to{stroke-dashoffset:0}}
+  .lk{cursor:pointer;transform-box:fill-box;transform-origin:center;transition:transform .3s,filter .3s}
+  .lk.on{transform:scale(1.35);filter:drop-shadow(0 3px 5px rgba(10,60,100,.5))}
+  .nb{cursor:pointer;transition:fill .3s}
+  .nb.on{fill:#CBD6DF}
+  .xr-waves{animation:xr-wave 9s linear infinite}
+  @keyframes xr-wave{from{transform:translateX(0)}to{transform:translateX(-60px)}}
+  .lab{opacity:0;transition:opacity .2s}
+  .lab.on{opacity:1}
+  @media (max-width:960px){.xr-row{grid-template-columns:minmax(0,1fr)}}
+  @media (prefers-reduced-motion:reduce){.xr-river{stroke-dashoffset:0}}
+</style>
+
+<script>
+  import D from '../data/xerite-data.json';
+  import STATS from '../data/xerite-stats.json';
+
+  const NOTES = {
+    'Tərtər': 'Xəritədə bu sahəyə yenidən yaradılmış Ağdərə rayonunun bir hissəsi də daxildir. Ağdərə rayonu: 1 660 km², 12,2 min nəfər. Ağdərənin sərhədləri ayrıca əlavə olunacaq.',
+    'Kəlbəcər': 'Xəritədə bu sahəyə yenidən yaradılmış Ağdərə rayonunun bir hissəsi də daxildir. Ağdərənin sərhədləri ayrıca əlavə olunacaq.',
+    'Bakı': 'Bakı şəhəri 12 inzibati rayondan ibarətdir.',
+  };
+  const BORDERS = [...D.NB.map((n) => ({ n: n[0], km: n[1], c: '#0A6E99' })).sort((a, b) => b.km - a.km), { n: 'Xəzər dənizi sahili', km: 825, c: '#3D9AD1' }];
+  const panel = document.getElementById('panel');
+  const lab = document.getElementById('maplab');
+  let mode = 'ray', act = null, timer = 0;
+
+  const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]);
+  const fmt = (n) => n.toLocaleString('az').replace(/,/g, ' ');
+  function card({ kicker, title, text = '', rows = [], bars = false, note = '' }) {
+    return `<span class="kicker">${esc(kicker)}</span><h2>${esc(title)}</h2>`
+      + (text ? `<p>${esc(text)}</p>` : '')
+      + (rows.length ? `<dl>${rows.map((r) => `<dt>${esc(r[0])}</dt><dd>${esc(r[1])}</dd>`).join('')}</dl>` : '')
+      + (bars ? `<div class="bars"><span class="bar-h">Sərhədlərin uzunluğu</span>${BORDERS.map((b) => `<div><div class="bar-l"><span>${esc(b.n)}</span><b>${b.km} km</b></div><div class="bar"><i style="width:${Math.max(2, b.km / 10.07)}%;background:${b.c}"></i></div></div>`).join('')}</div>` : '')
+      + (note ? `<p class="note">${esc(note)}</p>` : '');
+  }
+  function info() {
+    const t = act ? act[0] : null, i = act ? +act.replace(/\D/g, '') : -1;
+    if (t === 'u') {
+      const u = D.U[i], s = STATS[u[0]] || {};
+      return card({ kicker: u[1] === 'şəhər' ? 'Şəhər' : 'Rayon', title: u[0], rows: [['İqtisadi rayon', u[2]], ['Ərazisi', s.area || '—'], ['Əhalisi', s.pop || '—'], ['Sıxlığı', s.dens || '—']], note: NOTES[u[0]] || '' });
+    }
+    if (t === 'm') {
+      const m = D.MT.find((x) => 'm_' + x[0] === act);
+      return card({ kicker: 'Dağ silsiləsi', title: m[1], text: m[4], rows: m[2] ? [['Ən hündür zirvəsi', m[2]], ['Hündürlüyü', fmt(m[3]) + ' m']] : [] });
+    }
+    if (t === 'p') { const k = D.PK[i]; return card({ kicker: 'Zirvə', title: k[0], text: k[3], rows: [['Hündürlüyü', fmt(k[1]) + ' m'], ['Silsilə', k[2]]] }); }
+    if (t === 'r') { const r = D.RV[i]; return card({ kicker: 'Çay', title: r[0], text: r[1] }); }
+    if (t === 'l') { const l = D.LK[i]; return card({ kicker: l[1], title: l[0], text: l[2] }); }
+    if (t === 'n') { const n = D.NB[i]; return card({ kicker: 'Qonşu dövlət', title: n[0], rows: [['Sərhədin uzunluğu', n[1] + ' km']] }); }
+    if (mode === 'dag') return card({ kicker: 'Dağlar', title: 'Azərbaycanın dağları', text: 'Ölkənin şimalında Böyük Qafqaz, qərbində Kiçik Qafqaz, Naxçıvanda Zəngəzur və Dərələyəz, cənubda Talış dağları uzanır. Silsilənin və ya zirvə işarəsinin üzərinə gəlin.', rows: [['Ən hündür nöqtə', 'Bazardüzü, 4 466 m']] });
+    if (mode === 'su') return card({ kicker: 'Çaylar və göllər', title: 'Su ehtiyatları', text: 'Çayın xəttinin, gölün və ya su anbarının üzərinə gəlin.', rows: [['Ən uzun çay', 'Kür'], ['Xəritədə', '11 çay, 6 göl və su anbarı'], ['Ən böyük göl', 'Sarısu'], ['Ən böyük su anbarı', 'Mingəçevir']] });
+    return card({ kicker: 'Ümumi məlumat', title: 'Azərbaycan Respublikası', rows: [['Ərazisi', '86,6 min km²'], ['Əhalisi', '10 262,4 min nəfər'], ['Paytaxtı', 'Bakı'], ['İnzibati bölgü', '67 rayon, 8 şəhər'], ['İqtisadi rayon', '14']], bars: true, note: 'Əhalinin sayı 1 yanvar 2026-cı il vəziyyətinə görədir. Rayonun üzərinə gələndə onun iqtisadi rayonu da işıqlanır.' });
+  }
+  function label() {
+    let x = 0, y = 0, txt = '';
+    if (act && act[0] === 'u') { const u = D.U[+act.slice(1)]; [x, y, txt] = [u[3], u[4] - 12, u[0]]; }
+    else if (act && act[0] === 'p') { const k = D.PK[+act.slice(1)]; [x, y, txt] = [k[4], k[5] - 16, `${k[0]} · ${k[1]} m`]; }
+    else if (act && act[0] === 'l') { const l = D.LK[+act.slice(1)]; if (l[3] !== null) [x, y, txt] = [l[3], l[4] - 14, l[0]]; }
+    lab.setAttribute('x', x); lab.setAttribute('y', y); lab.textContent = txt; lab.classList.toggle('on', !!txt);
+  }
+  function render() {
+    const reg = act && act[0] === 'u' ? D.U[+act.slice(1)][2] : null;
+    document.querySelectorAll('#map [data-k]').forEach((el) => {
+      const k = el.dataset.k;
+      el.classList.toggle('on', k === act);
+      if (k[0] === 'u') el.classList.toggle('reg', !!reg && k !== act && D.U[+k.slice(1)][2] === reg);
+    });
+    document.querySelectorAll('#map [data-lay]').forEach((g) => g.classList.toggle('off', g.dataset.lay !== mode));
+    document.querySelectorAll('[data-mode]').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.mode === mode)));
+    panel.innerHTML = info();
+    label();
+  }
+  document.querySelectorAll('#map [data-hit]').forEach((el) => {
+    const k = el.dataset.hit;
+    el.addEventListener('mouseenter', () => { clearTimeout(timer); if (act !== k) { act = k; render(); } });
+    el.addEventListener('mouseleave', () => { clearTimeout(timer); timer = setTimeout(() => { act = null; render(); }, 140); });
+    el.addEventListener('click', () => { clearTimeout(timer); act = k; render(); });
+  });
+  document.querySelectorAll('[data-mode]').forEach((b) => b.addEventListener('click', () => { mode = b.dataset.mode; act = null; render(); }));
+  render();
+</script>

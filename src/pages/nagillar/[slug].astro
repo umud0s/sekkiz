@@ -1,0 +1,79 @@
+---
+import Base from '../../layouts/Base.astro';
+import TaleStyles from '../../components/TaleStyles.astro';
+import N from '../../data/nagillar.json';
+
+export function getStaticPaths() {
+  return N.tales.map((t) => ({ params: { slug: t.slug }, props: { t } }));
+}
+const { t } = Astro.props;
+const first = t.pages[0].paras.find((p) => !p.song)?.t ?? '';
+---
+<Base title={`${t.title} — nağıl`} description={`${t.title}: Azərbaycan xalq nağılı şəkillərlə. ${first.slice(0, 120)}…`} ogType="article">
+  <TaleStyles />
+  <div class="wrap section">
+    <section class="stack">
+      <nav class="crumbs" aria-label="Yol"><a href="/">Ana səhifə</a> <span aria-hidden="true">/</span> <a href="/nagillar/">Nağıllar</a> <span aria-hidden="true">/</span> {t.title}</nav>
+      <h1 class="page-title" style="font-size:40px">{t.title}</h1>
+    </section>
+    <article class="card book" data-n={t.pages.length}>
+      {t.pages.map((pg, i) => (
+        <section class="pg" data-i={i} hidden={i !== 0} aria-label={`${i + 1}-ci səhifə`}>
+          <Fragment set:html={pg.scene} />
+          <div class="txt">
+            {pg.paras.map((p) => p.song ? <p class="song">{p.t}</p> : <p>{p.t}</p>)}
+          </div>
+        </section>
+      ))}
+      <div class="nav">
+        <button type="button" class="btn btn-s" id="prev" disabled>← Əvvəlki</button>
+        <div class="dots" role="group" aria-label="Səhifələr">
+          {t.pages.map((_, i) => <button type="button" class="dot" data-go={i} aria-label={`${i + 1}-ci səhifə`} aria-current={i === 0 ? 'page' : undefined}></button>)}
+          <span class="muted" id="pnum">1 / {t.pages.length}</span>
+        </div>
+        <button type="button" class="btn btn-p" id="next">Növbəti →</button>
+      </div>
+    </article>
+    <p class="muted" style="margin:0;font-size:14px">Azərbaycan xalq nağılı əsasında uşaqlar üçün nəql edilib.</p>
+  </div>
+</Base>
+
+<style>
+  .book{padding:24px;display:flex;flex-direction:column;gap:22px}
+  .pg{display:flex;flex-direction:column;gap:22px;animation:pg-in .55s cubic-bezier(.2,.8,.2,1)}
+  .pg[hidden]{display:none}
+  @keyframes pg-in{from{opacity:0;transform:translateX(24px)}to{opacity:1;transform:none}}
+  .pg :global(svg){display:block;width:100%;height:auto;border-radius:16px}
+  .txt{display:flex;flex-direction:column;gap:16px;max-width:820px}
+  .txt p:not(.song){margin:0;font-size:20px;line-height:1.65;color:var(--ink-2)}
+  .nav{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:14px;padding-top:10px;border-top:1px solid #E6EDF2}
+  .dots{display:flex;align-items:center;gap:10px}
+  .dot{width:12px;height:12px;border-radius:50%;border:0;padding:0;background:#B9CCD9;cursor:pointer;transition:background .2s,transform .2s}
+  .dot[aria-current="page"]{background:var(--accent);transform:scale(1.35)}
+  @media (max-width:860px){.book{padding:16px}.txt p:not(.song){font-size:18px}}
+</style>
+
+<script>
+  const book = document.querySelector('.book');
+  const n = +book.dataset.n;
+  const pages = [...book.querySelectorAll('.pg')];
+  const prev = document.getElementById('prev'), next = document.getElementById('next'), pnum = document.getElementById('pnum');
+  let i = 0;
+  function go(k, scroll = true) {
+    i = Math.max(0, Math.min(n - 1, k));
+    pages.forEach((p, j) => { p.hidden = j !== i; });
+    book.querySelectorAll('.dot').forEach((d, j) => (j === i ? d.setAttribute('aria-current', 'page') : d.removeAttribute('aria-current')));
+    prev.disabled = i === 0;
+    next.textContent = i === n - 1 ? 'Nağıllara qayıt →' : 'Növbəti →';
+    pnum.textContent = `${i + 1} / ${n}`;
+    if (scroll) book.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+  prev.addEventListener('click', () => go(i - 1));
+  next.addEventListener('click', () => (i === n - 1 ? (location.href = '/nagillar/') : go(i + 1)));
+  book.querySelectorAll('.dot').forEach((d) => d.addEventListener('click', () => go(+d.dataset.go)));
+  document.addEventListener('keydown', (e) => {
+    if (e.target.closest('input,textarea')) return;
+    if (e.key === 'ArrowRight') go(i + 1);
+    if (e.key === 'ArrowLeft') go(i - 1);
+  });
+</script>

@@ -1,0 +1,13 @@
+---
+import N from '../data/nagillar.json';
+---
+<Fragment set:html={N.defs} />
+<style is:global set:html={N.css}></style>
+<style is:global>
+  .cv{display:flex;flex-direction:column;border-radius:20px;overflow:hidden;background:#FFFFFF;border:1px solid var(--line);box-shadow:var(--shadow);text-decoration:none;color:var(--ink);transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s}
+  .cv:hover{transform:translateY(-6px);box-shadow:var(--shadow-hi);color:var(--ink)}
+  .cv svg{display:block;width:100%;height:auto}
+  .cv-b{padding:18px 20px 22px;display:flex;flex-direction:column;gap:6px}
+  .cv-t{font-size:22px;font-weight:500}
+  .song{white-space:pre-line;font-size:19px;line-height:1.55;font-style:italic;color:#5B3A12;background:#FFF6E3;border-radius:14px;padding:16px 20px;margin:0}
+</style>

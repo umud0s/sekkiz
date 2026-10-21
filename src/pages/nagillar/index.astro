@@ -1,0 +1,29 @@
+---
+import Base from '../../layouts/Base.astro';
+import TaleStyles from '../../components/TaleStyles.astro';
+import N from '../../data/nagillar.json';
+---
+<Base title="Nağıllar" description="Azərbaycan xalq nağılları şəkillərlə: Şəngülüm, Şüngülüm, Məngülüm, Məlikməmməd və digərləri.">
+  <TaleStyles />
+  <div class="wrap section">
+    <section class="stack">
+      <nav class="crumbs" aria-label="Yol"><a href="/">Ana səhifə</a> <span aria-hidden="true">/</span> Nağıllar</nav>
+      <h1 class="page-title">Nağıllar</h1>
+      <p class="lead">Nənələrimizin danışdığı nağıllar, şəkillərlə. Nağılı seçin, səhifə-səhifə oxuyun.</p>
+    </section>
+    <div class="tales">
+      {N.tales.map((t) => (
+        <a class="cv" href={`/nagillar/${t.slug}/`}>
+          <Fragment set:html={t.cover} />
+          <div class="cv-b"><span class="cv-t">{t.title}</span><span class="muted" style="font-size:15px">{t.desc} · {t.pages.length} səhifə</span></div>
+        </a>
+      ))}
+      <div class="tales-soon">Yeni nağıllar tezliklə əlavə olunacaq</div>
+    </div>
+  </div>
+</Base>
+<style>
+  .tales{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
+  .tales-soon{display:flex;align-items:center;justify-content:center;min-height:260px;border-radius:20px;border:2px dashed rgba(10,70,105,.25);color:var(--muted);text-align:center;padding:20px}
+  @media (max-width:860px){.tales{grid-template-columns:minmax(0,1fr)}}
+</style>

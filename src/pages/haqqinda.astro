@@ -1,0 +1,55 @@
+---
+import Base from '../layouts/Base.astro';
+import { STAR_POINTS } from '../lib/site.js';
+---
+<Base title="Haqqında" current="haqqinda" description="Səkkizguşə Azərbaycan dilini, tarixini və milli irsini bir yerə toplayan açıq bilik məkanıdır.">
+  <div class="wrap section">
+    <nav class="crumbs" aria-label="Yol"><a href="/">Ana səhifə</a> <span aria-hidden="true">/</span> Haqqında</nav>
+    <div class="about">
+      <article class="card about-card">
+        <h1 class="page-title">Haqqında</h1>
+        <p class="about-lead">Səkkizguşə Azərbaycan dilini, tarixini və milli irsini bir yerə toplayan açıq bilik məkanıdır.</p>
+        <p>Bu sayt Azərbaycan vətəndaşlarınındır. Burada toplanan hər söz, hər atalar sözü, hər nağıl və hər tarixi ad bu xalqın özünün yaratdığı və nəsildən-nəslə ötürdüyü sərvətdir. Onların əsl müəllifi Azərbaycan xalqıdır: atalar sözlərini el yaradıb, nağılları nənələrimiz danışıb, tariximizi qəhrəmanlarımız yazıb. Bizim işimiz bu sərvəti bir yerə yığmaq, səliqəyə salmaq və hər kəsin əlinin altında olmasını təmin etməkdir.</p>
+        <section>
+          <h2>Adımız haqqında</h2>
+          <p>Səkkizguşəli ulduz dövlət bayrağımızda və gerbimizdə yer alır. Geniş yayılmış yozuma görə, onun səkkiz guşəsi ərəb əlifbası ilə yazılmış "Azərbaycan" sözünün səkkiz hərfini bildirir. Saytın səkkiz bölməsi də bu ulduzun səkkiz guşəsidir.</p>
+        </section>
+        <section>
+          <h2>Məqsədimiz</h2>
+          <ul>
+            <li>Prezident İlham Əliyevin Azərbaycan dilinin saflığının qorunması, milli-mənəvi dəyərlərin yaşadılması və tarixi yaddaşın gələcək nəsillərə ötürülməsi istiqamətində apardığı siyasəti dəstəkləmək və bu yolu davam etdirmək;</li>
+            <li>ədəbi dilimizin zənginliyini tanıtmaq və onun gündəlik həyatda düzgün işlənməsinə kömək etmək;</li>
+            <li>atalar sözlərini, nağılları, adət-ənənələri unudulmağa qoymamaq;</li>
+            <li>tariximizi və qəhrəmanlarımızı gənc nəslə tanıtmaq;</li>
+            <li>bütün bunları məktəblilər, tələbələr və hər yaşdan oxucu üçün pulsuz, sadə və əlçatan etmək.</li>
+          </ul>
+        </section>
+        <p class="about-note">Səkkizguşə böyüməyə davam edir. Lüğət, tarix, bayram və ənənələr bölmələri tezliklə əlavə olunacaq.</p>
+      </article>
+      <aside class="about-side" aria-hidden="true">
+        <svg width="260" height="260" viewBox="-108 -108 216 216"><polygon class="spin" points={STAR_POINTS} fill="#0A6E99" stroke="#064A69" stroke-width="3" stroke-linejoin="round" /></svg>
+        <span>Səkkiz guşə, səkkiz bölmə</span>
+      </aside>
+    </div>
+  </div>
+</Base>
+
+<style>
+  .about{display:grid;grid-template-columns:minmax(0,1.7fr) minmax(0,1fr);gap:32px;align-items:start}
+  .about-card{padding:40px 44px;display:flex;flex-direction:column;gap:22px;font-size:19px;line-height:1.65;color:var(--ink-2)}
+  .about-card p{margin:0}
+  .about-card h2{margin:0 0 10px;font-size:26px;font-weight:500;color:var(--ink)}
+  .about-card ul{margin:0;padding-left:24px;display:flex;flex-direction:column;gap:10px}
+  .about-lead{font-size:25px;font-weight:500;line-height:1.35;color:#0A5A80}
+  .about-note{padding:18px 22px;border-radius:16px;background:#EEF4F8;font-size:18px}
+  .about-side{display:flex;flex-direction:column;align-items:center;gap:18px;padding-top:40px;font-size:17px;font-weight:500;color:#1F3344}
+  .about-side svg{filter:drop-shadow(0 18px 22px rgba(6,60,95,.35))}
+  .spin{animation:spin 60s linear infinite;transform-box:fill-box;transform-origin:center}
+  @keyframes spin{to{transform:rotate(360deg)}}
+  @media (max-width:860px){
+    .about{grid-template-columns:minmax(0,1fr)}
+    .about-side{display:none}
+    .about-card{padding:24px 20px}
+    .about-lead{font-size:21px}
+  }
+</style>

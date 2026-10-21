@@ -1,0 +1,77 @@
+---
+import Base from '../../layouts/Base.astro';
+import AT from '../../data/gen/atalar.json';
+
+export function getStaticPaths() {
+  return AT.map((p, i) => ({ params: { slug: p.s }, props: { p, i } }));
+}
+const { p, i } = Astro.props;
+const prev = AT[i - 1], next = AT[i + 1];
+// Eyni mövzudan 6 atalar sözü (həmişə eyni seçim, səhifə hər build-də dəyişmir)
+const related = AT.filter((x) => x.id !== p.id && x.tp.some((t) => p.tp.includes(t)))
+  .sort((a, b) => ((a.id * 7919 + p.id * 104729) % 9973) - ((b.id * 7919 + p.id * 104729) % 9973)).slice(0, 6);
+const share = `${p.t}\n\n${p.m}\n\nSəkkizguşə · Atalar sözləri`;
+const pageUrl = new URL(`/atalar-sozleri/${p.s}/`, Astro.site).href;
+const desc = `${p.t.replace(/\.$/, '')} — atalar sözünün mənası: ${p.m}`;
+---
+<Base title={`${p.t.replace(/\.$/, '')} — mənası`} description={desc} ogType="article">
+  <script type="application/ld+json" slot="head" set:html={JSON.stringify({ '@context': 'https://schema.org', '@type': 'Quotation', text: p.t, description: p.m, inLanguage: 'az', isPartOf: { '@type': 'WebSite', name: 'Səkkizguşə', url: 'https://sekkizguse.az/' } })} />
+  <div class="wrap section">
+    <nav class="crumbs" aria-label="Yol"><a href="/">Ana səhifə</a> <span aria-hidden="true">/</span> <a href="/atalar-sozleri/">Atalar sözləri</a></nav>
+    <article class="card one">
+      <span class="pv-l">Atalar sözü</span>
+      <h1>{p.t}</h1>
+      <div><span class="pv-l">Mənası</span><p class="one-m">{p.m}</p></div>
+      <div class="one-f">
+        <div class="chips">{p.tp.map((t) => <a class="tag-b" href={`/atalar-sozleri/?movzu=${encodeURIComponent(t)}`}>{t}</a>)}</div>
+        <div class="chips">
+          <button type="button" class="act" id="cp" data-text={share}>Kopyala</button>
+          <a class="act" href={'https://wa.me/?text=' + encodeURIComponent(share + '\n' + pageUrl)} target="_blank" rel="noopener">WhatsApp</a>
+          <a class="act" href={'https://t.me/share/url?url=' + encodeURIComponent(pageUrl) + '&text=' + encodeURIComponent(share)} target="_blank" rel="noopener">Telegram</a>
+        </div>
+      </div>
+    </article>
+    <nav class="pn" aria-label="Qonşu atalar sözləri">
+      {prev ? <a class="card pn-a" href={`/atalar-sozleri/${prev.s}/`}><span class="muted">← Əvvəlki</span>{prev.t}</a> : <span></span>}
+      {next ? <a class="card pn-a" href={`/atalar-sozleri/${next.s}/`} style="text-align:right"><span class="muted">Növbəti →</span>{next.t}</a> : <span></span>}
+    </nav>
+    {related.length > 0 && (
+      <section class="stack">
+        <h2 style="margin:0;font-size:26px;font-weight:500">Bu mövzuda başqa atalar sözləri</h2>
+        <div class="grid-2">
+          {related.map((r) => (
+            <article class="card pv"><a class="pv-t" href={`/atalar-sozleri/${r.s}/`}>{r.t}</a><p>{r.m}</p></article>
+          ))}
+        </div>
+      </section>
+    )}
+  </div>
+</Base>
+
+<style>
+  .one{padding:40px 44px;display:flex;flex-direction:column;gap:18px}
+  .one h1{margin:0;font-size:40px;font-weight:500;line-height:1.2}
+  .one-m{margin:6px 0 0;font-size:21px;line-height:1.55;color:var(--ink-2)}
+  .one-f{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;padding-top:14px;border-top:1px solid #E6EDF2}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+  .pv-l{font-size:13px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--accent)}
+  .tag-b{display:inline-flex;align-items:center;min-height:32px;padding:0 12px;border-radius:999px;background:#E6F0F6;color:#0A5A80;font-size:14px;text-decoration:none}
+  .act{display:inline-flex;align-items:center;min-height:38px;padding:0 12px;border-radius:10px;border:0;background:#EEF4F8;color:var(--accent);font:inherit;font-size:15px;font-weight:500;cursor:pointer;text-decoration:none}
+  .act:hover{background:var(--accent);color:#FFFFFF}
+  .pn{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  .pn-a{display:flex;flex-direction:column;gap:6px;padding:18px 22px;color:var(--ink);text-decoration:none;font-size:17px}
+  .pn-a:hover{color:var(--accent)}
+  .pv{display:flex;flex-direction:column;gap:10px;padding:22px}
+  .pv-t{font-size:20px;font-weight:500;color:var(--ink);text-decoration:none}
+  .pv-t:hover{color:var(--accent)}
+  .pv p{margin:0;font-size:16px;line-height:1.5;color:var(--ink-2)}
+  @media (max-width:860px){.one{padding:24px 20px}.one h1{font-size:30px}.pn{grid-template-columns:1fr}}
+</style>
+
+<script>
+  const b = document.getElementById('cp');
+  b?.addEventListener('click', async () => {
+    try { await navigator.clipboard.writeText(b.dataset.text); } catch (e) { /* köhnə brauzer */ }
+    b.textContent = 'Kopyalandı'; setTimeout(() => { b.textContent = 'Kopyala'; }, 1800);
+  });
+</script>

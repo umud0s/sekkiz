@@ -1,0 +1,196 @@
+---
+import Base from '../layouts/Base.astro';
+import { sections } from '../data/remzler.js';
+import M from '../data/remzler-markup.json';
+import GZ from '../data/gerb-zones.json';
+
+const HEADS = { flag: ['bayraq', 'Dövlət bayrağı'], gerb: ['gerb', 'Dövlət gerbi'], himn: ['himn', 'Dövlət himni'] };
+const LISTS = { flag: M.ul_flag, gerb: M.ul_gerb, himn: M.ul_himn };
+const GORDER = ['goak', 'gwheat', 'gcolors', 'gshield', 'gstar', 'gflame'];
+---
+<Base title="Dövlət rəmzləri" description="Azərbaycan Respublikasının Dövlət bayrağı, Dövlət gerbi və Dövlət himni: Konstitusiyaya görə təsviri, hər hissənin mənası və himnin sözləri.">
+  <div class="wrap section">
+    <section class="stack">
+      <nav class="crumbs" aria-label="Yol"><a href="/">Ana səhifə</a> <span aria-hidden="true">/</span> Dövlət rəmzləri</nav>
+      <h1 class="page-title">Dövlət rəmzləri</h1>
+      <p class="lead">Konstitusiyanın 23-cü maddəsinə görə, Azərbaycan dövlətinin üç rəmzi var: Dövlət bayrağı, Dövlət gerbi və Dövlət himni. Rəmzin istənilən hissəsinin üzərinə gəlin və ya toxunun, mənası yanda açılacaq.</p>
+      <div class="chips"><a class="chip" href="#bayraq">Bayraq</a><a class="chip" href="#gerb">Gerb</a><a class="chip" href="#himn">Himn</a></div>
+      <div class="legend">
+        <span><span class="tag tag-f">Rəsmi mətn</span> Konstitusiya və qanunlardan</span>
+        <span><span class="tag tag-m">Mənası</span> qəbul olunmuş izah</span>
+      </div>
+    </section>
+
+    {Object.entries(sections).map(([sec, s]) => (
+      <section id={HEADS[sec][0]} class="stack sym" data-sec={sec}>
+        <h2 class="sym-h">{HEADS[sec][1]}</h2>
+        <div class="sym-row">
+          <div class="card sym-fig">
+            {sec === 'flag' && <Fragment set:html={M.flag} />}
+            {sec === 'gerb' && (
+              <>
+                <div class="gerb">
+                  <img src="/img/gerb.webp" alt="Azərbaycan Respublikasının Dövlət gerbi" width="1815" height="2000" />
+                  <svg viewBox="0 0 1815 2000" aria-hidden="true">
+                    <defs>
+                      <mask id="gmask" maskUnits="userSpaceOnUse" x="-40" y="-40" width="1895" height="2080"><rect x="-40" y="-40" width="1895" height="2080" fill="#FFFFFF" /><path id="ghole" d="M0,0 Z" fill="#000000" fill-rule="evenodd" /></mask>
+                    </defs>
+                    <rect class="veil" x="-20" y="-20" width="1855" height="2040" fill="#FFFFFF" mask="url(#gmask)" />
+                    <path class="ring" d="M0,0 Z" fill="none" fill-rule="evenodd" stroke="#0A6E99" stroke-width="9" stroke-linejoin="round" />
+                    <g fill="#000000" fill-opacity="0" style="cursor:pointer">
+                      {GORDER.map((k) => <path d={GZ[k]} fill-rule="evenodd" data-hit={k} />)}
+                    </g>
+                  </svg>
+                </div>
+                <p class="muted" style="margin:0;text-align:center;font-size:14px">Rəsmi təsvir, dəyişdirilmədən</p>
+              </>
+            )}
+            {sec === 'himn' && (
+              <>
+                <Fragment set:html={M.himn} />
+                <div class="player">
+                  <audio id="anthem" src="/audio/himn.mp3" preload="none"></audio>
+                  <button type="button" class="play" aria-label="Himni dinlə"><svg class="i-play" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z" /></svg><svg class="i-pause" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6" y="5" width="4" height="14" rx="1" /><rect x="14" y="5" width="4" height="14" rx="1" /></svg></button>
+                  <span class="player-t">Kursoru notların üzərində saxlayın: himn səslənəcək</span>
+                </div>
+              </>
+            )}
+            <div class="chips">
+              {s.parts.map((p) => (
+                <button type="button" class="chip" data-hit={p.id} aria-pressed="false"><span class="sw" style={`background:${p.color}`}></span>{p.short}</button>
+              ))}
+            </div>
+          </div>
+          <div class="stack">
+            <div class="card panel" aria-live="polite">
+              {[{ id: '', ...s.intro }, ...s.parts].map((p, i) => (
+                <div class={`co${i === 0 ? ' on' : ''}`} data-co={p.id}>
+                  <div class="co-bar" style={`background:${p.color}`}></div>
+                  <h3>{p.title}</h3>
+                  <div><span class="tag tag-f">{p.factTag}</span><p>{p.fact}</p></div>
+                  <div><span class="tag tag-m">{p.meanTag}</span><p>{p.mean}</p></div>
+                </div>
+              ))}
+            </div>
+            <Fragment set:html={LISTS[sec]} />
+          </div>
+        </div>
+        {sec === 'himn' && <Fragment set:html={M.lyrics} />}
+      </section>
+    ))}
+
+    <section class="stack">
+      <Fragment set:html={M.quote} />
+      <Fragment set:html={M.sources} />
+    </section>
+  </div>
+</Base>
+
+<style is:global>
+  .chips{display:flex;flex-wrap:wrap;gap:8px}
+  .legend{display:flex;flex-wrap:wrap;gap:18px;font-size:14px;color:var(--muted-2)}
+  .legend>span{display:flex;align-items:center;gap:8px}
+  .tag{display:inline-block;padding:3px 10px;border-radius:999px;font-size:13px;font-weight:500}
+  .tag-f{background:var(--accent);color:#FFFFFF}
+  .tag-m{border:1px solid var(--accent);color:var(--accent);padding:2px 9px}
+  .sym{gap:22px;scroll-margin-top:20px}
+  .sym-h{margin:0;font-size:32px;font-weight:500}
+  .sym-row{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:24px;align-items:start}
+  .sym-fig{padding:28px;display:flex;flex-direction:column;gap:18px}
+  .sym-fig > svg{display:block;width:100%;height:auto;overflow:visible}
+  .sw{width:12px;height:12px;border-radius:4px;border:1px solid rgba(0,0,0,.15)}
+  .chip[aria-pressed="true"] .sw{border-color:#FFFFFF}
+  .rp{cursor:pointer;transform-box:fill-box;transform-origin:center;transition:opacity .35s ease,transform .5s cubic-bezier(.2,.8,.2,1),filter .35s ease}
+  .rp.dim{opacity:.22;filter:saturate(.3)}
+  .rp.on{transform:scale(1.08);filter:drop-shadow(0 10px 14px rgba(5,40,60,.35)) saturate(1.15)}
+  .rp-band.on{transform:scale(1.03,1.35)}
+  .rz-shine{animation:rz-shine 7s ease-in-out infinite}
+  @keyframes rz-shine{0%{transform:translateX(-260px)}60%,100%{transform:translateX(700px)}}
+  .rz-note{animation:rz-bob 2.4s ease-in-out infinite alternate}
+  @keyframes rz-bob{from{transform:translateY(0)}to{transform:translateY(-6px)}}
+  .notes-g.playing .rz-note{animation-duration:.6s}
+  .panel{position:relative;height:340px;overflow:hidden}
+  .co{position:absolute;inset:0;padding:28px;display:flex;flex-direction:column;gap:14px;opacity:0;transform:translateX(16px) scale(.98);transition:opacity .35s ease,transform .45s cubic-bezier(.2,.8,.2,1);pointer-events:none}
+  .co.on{opacity:1;transform:none;pointer-events:auto}
+  .co-bar{height:6px;width:64px;border-radius:3px}
+  .co h3{margin:0;font-size:26px;font-weight:500}
+  .co>div{display:flex;flex-direction:column;gap:6px;align-items:flex-start}
+  .co p{margin:0;font-size:17px;line-height:1.45;color:var(--ink-2)}
+  .gerb{position:relative;width:100%;max-width:440px;margin:0 auto;aspect-ratio:1815/2000}
+  .gerb img,.gerb svg{position:absolute;inset:0;width:100%;height:100%;display:block}
+  .gerb svg{overflow:visible}
+  .veil{opacity:0;transition:opacity .35s ease;pointer-events:none}
+  .veil.on{opacity:.8}
+  .ring{opacity:0;transition:opacity .3s ease;filter:drop-shadow(0 0 10px rgba(10,110,153,.55));pointer-events:none}
+  .ring.on{opacity:1;animation:pulse 1.6s ease-in-out infinite}
+  @keyframes pulse{0%,100%{stroke-opacity:1}50%{stroke-opacity:.45}}
+  .player{display:flex;align-items:center;gap:14px;flex-wrap:wrap;padding:12px 16px;border-radius:14px;background:#EEF4F8}
+  .play{display:flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:50%;border:0;background:var(--accent);color:#FFFFFF;cursor:pointer}
+  .play .i-pause{display:none}
+  .play.playing .i-pause{display:block}.play.playing .i-play{display:none}
+  .player-t{font-size:16px;color:var(--ink-2)}
+  @media (max-width:900px){
+    .sym-row{grid-template-columns:minmax(0,1fr)}
+    .panel{height:380px}
+    .rz-lyr{grid-template-columns:minmax(0,1fr) !important}
+  }
+</style>
+
+<script>
+  const GZ_EL = document.querySelector('.gerb svg');
+  const zones = {};
+  GZ_EL?.querySelectorAll('[data-hit]').forEach((p) => { zones[p.dataset.hit] = p.getAttribute('d'); });
+  const audio = document.getElementById('anthem');
+  const playBtn = document.querySelector('.play');
+  const playerT = document.querySelector('.player-t');
+  const T_IDLE = 'Kursoru notların üzərində saxlayın: himn səslənəcək';
+  let act = null, timer = 0;
+
+  const secOf = (id) => document.querySelector(`[data-sec] [data-hit="${id}"]`)?.closest('[data-sec]');
+
+  function render() {
+    document.querySelectorAll('[data-sec]').forEach((sec) => {
+      const active = act && sec.contains(sec.querySelector(`[data-hit="${act}"]`)) ? act : null;
+      sec.querySelectorAll('.rp[data-part]').forEach((el) => {
+        el.classList.toggle('on', el.dataset.part === active);
+        el.classList.toggle('dim', !!active && el.dataset.part !== active);
+      });
+      sec.querySelectorAll('.chip[data-hit]').forEach((c) => c.setAttribute('aria-pressed', String(c.dataset.hit === active)));
+      sec.querySelectorAll('.co').forEach((co) => co.classList.toggle('on', (co.dataset.co || null) === active));
+    });
+    const hole = zones[act] || 'M0,0 Z';
+    document.getElementById('ghole')?.setAttribute('d', hole);
+    document.querySelector('.ring')?.setAttribute('d', hole);
+    document.querySelector('.veil')?.classList.toggle('on', !!zones[act]);
+    document.querySelector('.ring')?.classList.toggle('on', !!zones[act]);
+  }
+  function play() {
+    if (!audio || !audio.paused) return;
+    audio.play().catch(() => { if (playerT) playerT.textContent = 'Brauzer səsi bloklayıb: dinləmək üçün düyməyə basın'; });
+  }
+  function enter(id) {
+    clearTimeout(timer);
+    if (id === 'hmusic') play();
+    if (act !== id) { act = id; render(); }
+  }
+  function leave() {
+    if (act === 'hmusic' && audio && !audio.paused && !audio.dataset.manual) { audio.pause(); audio.currentTime = 0; }
+    clearTimeout(timer);
+    timer = setTimeout(() => { act = null; render(); }, 140);
+  }
+  document.querySelectorAll('[data-hit]').forEach((el) => {
+    const id = el.dataset.hit;
+    el.addEventListener('mouseenter', () => enter(id));
+    el.addEventListener('mouseleave', leave);
+    el.addEventListener('click', () => enter(id));
+    if (el.tagName === 'BUTTON') { el.addEventListener('focus', () => enter(id)); el.addEventListener('blur', leave); }
+  });
+  playBtn?.addEventListener('click', () => {
+    if (!audio) return;
+    if (audio.paused) { audio.dataset.manual = '1'; play(); } else { audio.pause(); }
+  });
+  audio?.addEventListener('play', () => { playBtn?.classList.add('playing'); playBtn?.setAttribute('aria-label', 'Himni dayandır'); document.querySelector('.notes-g')?.classList.add('playing'); if (playerT) playerT.textContent = 'Azərbaycan Respublikasının Dövlət himni səslənir'; });
+  const stop = () => { delete audio.dataset.manual; playBtn?.classList.remove('playing'); playBtn?.setAttribute('aria-label', 'Himni dinlə'); document.querySelector('.notes-g')?.classList.remove('playing'); if (playerT) playerT.textContent = T_IDLE; };
+  audio?.addEventListener('pause', stop);
+  audio?.addEventListener('ended', stop);
+</script>

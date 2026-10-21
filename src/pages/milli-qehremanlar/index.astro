@@ -1,0 +1,117 @@
+---
+import Base from '../../layouts/Base.astro';
+import Icon from '../../components/Icon.astro';
+import H from '../../data/gen/qehremanlar.json';
+---
+<Base title="Milli qəhrəmanlar" description={`Azərbaycanın Milli Qəhrəmanları və Vətən Müharibəsi Qəhrəmanları: ${H.length} qəhrəmanın doğum və şəhadət tarixi, doğulduğu yer və qısa məlumat.`}>
+  <div class="wrap section">
+    <section class="stack">
+      <nav class="crumbs" aria-label="Yol"><a href="/">Ana səhifə</a> <span aria-hidden="true">/</span> Milli qəhrəmanlar</nav>
+      <h1 class="page-title">Milli qəhrəmanlar</h1>
+      <p class="lead">Vətən uğrunda canından keçən və şücaət göstərən oğul və qızlarımız. Onların adı bu xalqın yaddaşındadır.</p>
+    </section>
+    <section class="grid-2" aria-label="Fəxri adlar">
+      <div class="card ti"><b>Azərbaycanın Milli Qəhrəmanı</b><span>Azərbaycan Respublikasının ali fəxri adı. Əsasən Birinci Qarabağ müharibəsində və sonrakı döyüşlərdə şücaət göstərənlərə verilib.</span></div>
+      <div class="card ti"><b>Vətən Müharibəsi Qəhrəmanı</b><span>2020-ci il noyabrın 26-da təsis edilib. 44 günlük Vətən müharibəsində şücaət göstərənlərə verilir.</span></div>
+    </section>
+    <section class="stack" aria-label="Axtarış">
+      <div class="search">
+        <label for="q" class="sr-only">Qəhrəmanı axtar</label>
+        <Icon name="search" />
+        <input id="q" type="search" autocomplete="off" placeholder="Ad, soyad və ya doğulduğu yer" />
+      </div>
+      <div class="chips" id="cats" role="group" aria-label="Dövr"></div>
+      <div class="opts">
+        <div class="chips" role="group" aria-label="Vəziyyət">
+          <button type="button" class="chip" data-st="" aria-pressed="true">Hamısı</button>
+          <button type="button" class="chip" data-st="fallen" aria-pressed="false">Şəhid və vəfat edənlər</button>
+          <button type="button" class="chip" data-st="alive" aria-pressed="false">Sağ olanlar</button>
+        </div>
+        <div class="chips" role="group" aria-label="Sıralama"><span class="muted">Sırala:</span> <button type="button" class="chip" data-sort="az" aria-pressed="true">Əlifba üzrə</button><button type="button" class="chip" data-sort="date" aria-pressed="false">Tarix üzrə</button></div>
+      </div>
+      <div class="letters" id="letters" role="group" aria-label="Soyadın ilk hərfi"></div>
+    </section>
+    <section class="stack" aria-label="Qəhrəmanlar">
+      <p id="count" class="lead" style="font-size:17px" aria-live="polite">{H.length} qəhrəman</p>
+      <div class="grid-2" id="list">
+        {H.slice(0, 20).map((h) => <article class="card hc"><a class="hc-n" href={`/milli-qehremanlar/${h.s}/`}>{h.fn} {h.sn}</a></article>)}
+      </div>
+      <div class="empty" id="empty" hidden><p style="margin:0 0 8px;font-size:20px;font-weight:500">Axtarışa uyğun qəhrəman tapılmadı</p><p class="muted" style="margin:0">Adı və ya soyadı başqa cür yazmağa çalışın, ya da filtrləri sıfırlayın.</p></div>
+      <button type="button" class="btn btn-s" id="more" style="align-self:center" hidden>Daha çox göstər</button>
+    </section>
+  </div>
+</Base>
+
+<style is:global>
+  .chips{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+  .opts{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px}
+  .ti{padding:18px 20px;display:flex;flex-direction:column;gap:6px;font-size:15px;line-height:1.45;color:var(--muted-2)}
+  .ti b{font-size:17px;font-weight:600;color:var(--ink)}
+  .hc{display:flex;gap:18px;padding:22px;transition:transform .3s cubic-bezier(.2,.8,.2,1),box-shadow .3s}
+  .hc:hover{transform:translateY(-4px);box-shadow:var(--shadow-hi)}
+  .av{flex:none;width:64px;height:64px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:600;color:#FFFFFF}
+  .hc-b{display:flex;flex-direction:column;gap:10px;min-width:0}
+  .hc-n{font-size:22px;font-weight:500;line-height:1.25;color:var(--ink);text-decoration:none}
+  .hc-n:hover{color:var(--accent)}
+  .hc-p{font-size:15px;color:var(--muted-2)}
+  .badge{display:inline-flex;align-items:center;min-height:26px;padding:0 10px;border-radius:999px;font-size:13px;font-weight:500}
+  .b-t{background:#E6F0F6;color:#0A5A80}.b-s{background:#FBE3E5;color:#A11D2A}.b-v{background:#ECEEF1;color:#4D5A68}
+  .hc dl{margin:0;display:grid;grid-template-columns:auto minmax(0,1fr);gap:4px 14px;font-size:15px}
+  .hc dt{color:#5A6775}.hc dd{margin:0}
+  .hc p{margin:0;font-size:16px;line-height:1.5;color:var(--ink-2)}
+  @media (max-width:860px){.hc{flex-direction:column}}
+</style>
+
+<script>
+  import { norm, highlight, ALPHA, firstLetter, esc } from '../../lib/search.js';
+  import { CATS, TITLES, COLORS, DK, awardText } from '../../lib/heroes.js';
+  const $ = (id) => document.getElementById(id);
+  const S = { q: '', cat: null, st: '', letter: null, sort: 'az', limit: 20 };
+  let ALL = [];
+  const ymd = (d) => { if (!d) return '00000000'; const p = d.split('.'); return p.length === 3 ? p[2] + p[1] + p[0] : d + '0000'; };
+  const COLL = ALPHA.join('');
+  const key = (s) => Array.from(s).map((ch) => { const i = COLL.indexOf(ch === 'i' ? 'İ' : ch === 'ı' ? 'I' : ch.toUpperCase()); return String.fromCharCode(65 + (i < 0 ? 40 : i)); }).join('');
+
+  function render() {
+    const nq = norm(S.q.trim());
+    const base = ALL.filter((h) => (!S.letter || h.first === S.letter) && (S.st !== 'fallen' || h.died) && (S.st !== 'alive' || !h.died) && (!nq || h.hay.includes(nq)));
+    let list = base.filter((h) => !S.cat || h.cat === S.cat);
+    if (S.sort === 'az') list.sort((a, b) => (a.key < b.key ? -1 : 1));
+    else list.sort((a, b) => (ymd(b.died || b.born) < ymd(a.died || a.born) ? -1 : 1));
+    $('cats').innerHTML = `<button type="button" class="chip" data-cat="" aria-pressed="${!S.cat}">Hamısı <span class="n">${base.length}</span></button>` +
+      CATS.map(([k, n]) => `<button type="button" class="chip" data-cat="${k}" aria-pressed="${S.cat === k}">${n} <span class="n">${base.filter((h) => h.cat === k).length}</span></button>`).join('');
+    $('list').innerHTML = list.slice(0, S.limit).map((h) => {
+      const dk = DK[h.dk] || DK['şəhid'];
+      return `<article class="card hc">
+        <div class="av" style="background:${COLORS[h.cat]}" aria-hidden="true">${esc((h.fn[0] || '') + (h.sn[0] || ''))}</div>
+        <div class="hc-b">
+          <div><a class="hc-n" href="/milli-qehremanlar/${h.s}/">${highlight(h.fn + ' ' + h.sn, nq)}</a>${h.pat ? `<div class="hc-p">Ata adı: ${esc(h.pat)}</div>` : ''}</div>
+          <div class="chips"><span class="badge b-t">${TITLES[h.tt]}</span>${h.died ? `<span class="badge ${h.dk === 'şəhid' ? 'b-s' : 'b-v'}">${dk[0]}</span>` : ''}</div>
+          <dl><dt>Doğum</dt><dd>${esc(h.born)}</dd>${h.died ? `<dt>${dk[1]}</dt><dd>${esc(h.died)}</dd>` : ''}${h.place ? `<dt>Doğulduğu yer</dt><dd>${highlight(h.place, nq)}</dd>` : ''}<dt>Fəxri ad</dt><dd>${esc(awardText(h))}</dd></dl>
+          ${h.bio ? `<p>${esc(h.bio)}</p>` : ''}
+        </div></article>`;
+    }).join('');
+    const cn = S.cat ? CATS.find((c) => c[0] === S.cat)[1] : '';
+    $('count').textContent = `${list.length} qəhrəman` + (cn ? ' · ' + cn : '') + (S.letter ? ` · "${S.letter}" hərfi` : '');
+    $('empty').hidden = list.length !== 0;
+    $('more').hidden = list.length <= S.limit;
+    $('more').textContent = `Daha çox göstər (${list.length - S.limit} qalıb)`;
+    document.querySelectorAll('[data-st]').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.st === S.st)));
+    document.querySelectorAll('[data-sort]').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.sort === S.sort)));
+    document.querySelectorAll('#letters button').forEach((b) => b.setAttribute('aria-pressed', String(b.textContent === S.letter)));
+  }
+  $('q').addEventListener('input', (e) => { S.q = e.target.value; S.limit = 20; render(); });
+  $('more').addEventListener('click', () => { S.limit += 20; render(); });
+  document.addEventListener('click', (e) => {
+    const c = e.target.closest('[data-cat]'); if (c) { S.cat = c.dataset.cat || null; S.limit = 20; render(); return; }
+    const s = e.target.closest('[data-st]'); if (s) { S.st = s.dataset.st; S.limit = 20; render(); return; }
+    const o = e.target.closest('[data-sort]'); if (o) { S.sort = o.dataset.sort; render(); return; }
+    const l = e.target.closest('#letters button'); if (l) { S.letter = S.letter === l.textContent ? null : l.textContent; S.limit = 20; render(); }
+  });
+  fetch('/data/qehremanlar.json').then((r) => r.json()).then((rows) => {
+    ALL = rows.map((h) => ({ ...h, first: firstLetter(h.sn), key: key(h.sn + ' ' + h.fn), hay: norm(`${h.fn} ${h.sn} ${h.pat} ${h.sn} ${h.fn} ${h.place}`) }));
+    const have = {}; ALL.forEach((h) => { have[h.first] = (have[h.first] || 0) + 1; });
+    $('letters').innerHTML = ALPHA.map((ch) => `<button type="button" ${have[ch] ? '' : 'disabled'} aria-label="Soyadı ${ch} hərfi ilə başlayanlar${have[ch] ? ': ' + have[ch] : ''}">${ch}</button>`).join('');
+    render();
+  });
+</script>
