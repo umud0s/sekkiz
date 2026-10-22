@@ -1,0 +1,79 @@
+---
+import Base from '../../layouts/Base.astro';
+import Icon from '../../components/Icon.astro';
+import LugetStyles from '../../components/LugetStyles.astro';
+import { SPELL, CORP_LIST } from '../../lib/luget.js';
+---
+<Base title="Lüğət" description="Azərbaycan dilinin lüğəti: sözün düzgün yazılışı, tez-tez edilən səhvlər və iş yazışmalarında işlənən əcnəbi sözlərin Azərbaycan dilində qarşılığı.">
+  <LugetStyles />
+  <div class="wrap section">
+    <section class="stack">
+      <nav class="crumbs" aria-label="Yol"><a href="/">Ana səhifə</a> <span aria-hidden="true">/</span> Lüğət</nav>
+      <h1 class="page-title">Azərbaycan dilinin lüğəti</h1>
+      <p class="lead">Sözü yazın: düzgün yazılıb-yazılmadığını, iş dilində işlənən əcnəbi sözün isə Azərbaycan dilində necə deyildiyini göstərək.</p>
+    </section>
+    <section class="lg-search" aria-label="Axtarış">
+      <div class="search">
+        <label for="q" class="sr-only">Söz və ya ifadə</label>
+        <Icon name="search" />
+        <input id="q" type="search" autocomplete="off" spellcheck="false" placeholder="Məsələn: müəyən, sağol, deadline, Meeting set edildi" />
+      </div>
+      <div id="out" aria-live="polite"></div>
+    </section>
+    <div class="lg-cards">
+      <div class="card lg-card soon" aria-disabled="true">
+        <span class="lg-ic" aria-hidden="true">Aa</span>
+        <h2>Sözün mənası</h2>
+        <span class="soon-badge">Tezliklə</span>
+        <p>Sözün leksik mənası, işlənmə nümunələri ilə. Lüğət botunun bazası qoşulandan sonra açılacaq.</p>
+      </div>
+      <a class="card lg-card" href="/luget/duzgun-yazilis/">
+        <span class="lg-ic" aria-hidden="true">✓</span>
+        <h2>Düzgün yazılış</h2>
+        <p>Tez-tez səhv yazılan sözlər və qaydaları. Yazdığınız sözü yoxlayın.</p>
+        <span class="lg-n">{SPELL.length} söz</span>
+      </a>
+      <a class="card lg-card" href="/luget/korporativ-dil/">
+        <span class="lg-ic" aria-hidden="true">@</span>
+        <h2>Korporativ dil</h2>
+        <p>"Meeting set edildi" yox, "görüş təyin olundu". İş yazışmalarında əcnəbi sözlərin qarşılığı.</p>
+        <span class="lg-n">{CORP_LIST.length} söz</span>
+      </a>
+    </div>
+  </div>
+</Base>
+
+<style>
+  .lg-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+  .lg-card{display:flex;flex-direction:column;gap:12px;padding:28px;text-decoration:none;color:var(--ink);transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s}
+  a.lg-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-hi);color:var(--ink)}
+  .lg-card h2{margin:4px 0 0;font-size:24px;font-weight:500}
+  .lg-card p{margin:0;font-size:17px;line-height:1.5;color:var(--muted)}
+  .lg-ic{display:flex;align-items:center;justify-content:center;width:52px;height:52px;border-radius:15px;background:#E6F0F6;color:var(--accent);font-size:22px;font-weight:600}
+  .lg-n{margin-top:auto;font-size:15px;font-weight:600;color:var(--accent)}
+  .soon{box-shadow:0 1px 2px rgba(10,50,80,.06),0 8px 20px -12px rgba(10,50,80,.18)}
+  .soon h2,.soon p,.soon .lg-ic{opacity:.6}
+  .soon-badge{align-self:flex-start;padding:4px 12px;border-radius:999px;background:#FFF1CC;color:#7A5300;font-size:14px;font-weight:600}
+  #out{display:flex;flex-direction:column;gap:12px}
+  @media (max-width:900px){.lg-cards{grid-template-columns:minmax(0,1fr)}}
+</style>
+
+<script>
+  import { checkSpelling, findCorp, spellResult, corpCard } from '../../lib/luget.js';
+  const q = document.getElementById('q'), out = document.getElementById('out');
+  function run() {
+    const v = q.value.trim();
+    if (!v) { out.innerHTML = ''; return; }
+    const corp = findCorp(v);
+    // Bir neçə sözdən ibarət iş ifadəsində yalnız korporativ nəticə göstərilir
+    const sp = corp.length && v.split(/\s+/).length > 2 ? null : checkSpelling(v);
+    let h = '';
+    if (corp.length) h += `<p class="res-h">Korporativ dil</p><ul class="kp-list">${corp.slice(0, 6).map(corpCard).join('')}</ul>`;
+    if (sp && !(corp.length && sp.kind === 'none')) h = `<p class="res-h">Yazılış</p>` + spellResult(sp, v) + h;
+    out.innerHTML = h;
+  }
+  let t = 0;
+  q.addEventListener('input', () => { clearTimeout(t); t = setTimeout(run, 180); });
+  const p = new URLSearchParams(location.search).get('q');
+  if (p) { q.value = p; run(); }
+</script>

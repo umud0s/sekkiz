@@ -1,0 +1,53 @@
+---
+import Base from '../../../layouts/Base.astro';
+import Icon from '../../../components/Icon.astro';
+import LugetStyles from '../../../components/LugetStyles.astro';
+import { CATS, CORP_LIST, corpCard } from '../../../lib/luget.js';
+---
+<Base title="Korporativ dil" description={`İş yazışmalarında işlənən ${CORP_LIST.length} əcnəbi söz və onların Azərbaycan dilində qarşılığı: deadline, meeting, feedback və başqaları, düzgün nümunələrlə.`}>
+  <LugetStyles />
+  <div class="wrap section">
+    <section class="stack">
+      <nav class="crumbs" aria-label="Yol"><a href="/">Ana səhifə</a> <span aria-hidden="true">/</span> <a href="/luget/">Lüğət</a> <span aria-hidden="true">/</span> Korporativ dil</nav>
+      <h1 class="page-title">Korporativ dil</h1>
+      <p class="lead">İş yazışmalarında "deadline", "meeting", "feedback" kimi sözlər çox işlənir, halbuki bunların hamısının Azərbaycan dilində gözəl qarşılığı var. "Meeting set edildi" əvəzinə "görüş təyin olundu" yazmaq həm düzgün, həm də daha hörmətlidir.</p>
+    </section>
+    <div class="search">
+      <label for="q" class="sr-only">Söz axtar</label>
+      <Icon name="search" />
+      <input id="q" type="search" autocomplete="off" spellcheck="false" placeholder="Söz və ya ifadə: deadline, feedback, son müddət…" />
+    </div>
+    <div class="chips" role="group" aria-label="Mövzular">
+      <button type="button" class="chip" data-c="" aria-pressed="true">Hamısı <span class="n">{CORP_LIST.length}</span></button>
+      {CATS.map(([id, title]) => <button type="button" class="chip" data-c={id} aria-pressed="false">{title} <span class="n">{CORP_LIST.filter((c) => c.c === id).length}</span></button>)}
+    </div>
+    <p class="muted kp-count" id="cnt" aria-live="polite"></p>
+    <ul class="kp-list" id="list" set:html={CORP_LIST.map(corpCard).join('')} />
+  </div>
+</Base>
+
+<style>
+  .kp-count{margin:0}
+  .kp-count:empty{display:none}
+</style>
+
+<script>
+  import { CORP_LIST, corpCard } from '../../../lib/luget.js';
+  import { norm } from '../../../lib/search.js';
+  const q = document.getElementById('q'), list = document.getElementById('list'), cnt = document.getElementById('cnt');
+  const hay = CORP_LIST.map((c) => norm([c.t, c.eq, c.bad, c.good].join(' ')));
+  let cat = '';
+  function render() {
+    const v = norm(q.value.trim());
+    const res = CORP_LIST.filter((c, i) => (!cat || c.c === cat) && (!v || hay[i].includes(v)));
+    list.innerHTML = res.map(corpCard).join('');
+    cnt.textContent = v || cat ? (res.length ? `${res.length} söz tapıldı` : 'Heç nə tapılmadı. Başqa söz yoxlayın.') : '';
+  }
+  let t = 0;
+  q.addEventListener('input', () => { clearTimeout(t); t = setTimeout(render, 150); });
+  document.querySelectorAll('[data-c]').forEach((b) => b.addEventListener('click', () => {
+    cat = b.dataset.c;
+    document.querySelectorAll('[data-c]').forEach((x) => x.setAttribute('aria-pressed', String(x === b)));
+    render();
+  }));
+</script>

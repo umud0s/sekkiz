@@ -1,0 +1,57 @@
+---
+import Base from '../../../layouts/Base.astro';
+import Icon from '../../../components/Icon.astro';
+import LugetStyles from '../../../components/LugetStyles.astro';
+import { GROUPS, SPELL, spellRow } from '../../../lib/luget.js';
+---
+<Base title="Düzgün yazılış" description={`Azərbaycan dilində tez-tez səhv yazılan ${SPELL.length} söz və onların düzgün forması: qoşa hərflər, ayrı və bitişik yazılış, -iyyət şəkilçisi və başqa qaydalar.`}>
+  <LugetStyles />
+  <div class="wrap section">
+    <section class="stack">
+      <nav class="crumbs" aria-label="Yol"><a href="/">Ana səhifə</a> <span aria-hidden="true">/</span> <a href="/luget/">Lüğət</a> <span aria-hidden="true">/</span> Düzgün yazılış</nav>
+      <h1 class="page-title">Düzgün yazılış</h1>
+      <p class="lead">Sözü yazın, düzgün yazılıb-yazılmadığını yoxlayaq. Aşağıda isə ən çox səhv yazılan sözləri qaydaları ilə birlikdə tapa bilərsiniz.</p>
+    </section>
+    <section class="lg-search" aria-label="Yoxlama">
+      <div class="search">
+        <label for="q" class="sr-only">Yoxlanacaq söz</label>
+        <Icon name="search" />
+        <input id="q" type="search" autocomplete="off" spellcheck="false" placeholder="Məsələn: müəyən, keyfiyət, sağol" />
+      </div>
+      <div id="out" aria-live="polite"></div>
+    </section>
+    <div class="chips" role="group" aria-label="Qaydalar">
+      <button type="button" class="chip" data-g="" aria-pressed="true">Hamısı <span class="n">{SPELL.length}</span></button>
+      {GROUPS.map((g) => <button type="button" class="chip" data-g={g.id} aria-pressed="false">{g.title} <span class="n">{g.items.length}</span></button>)}
+    </div>
+    <div class="sp-groups">
+      {GROUPS.map((g) => (
+        <section class="card sp-g" data-gid={g.id} id={g.id}>
+          <h2>{g.title}</h2>
+          <p class="sp-rule">{g.rule}</p>
+          <ul class="sp-list" set:html={SPELL.filter((x) => x.g === g).map(spellRow).join('')} />
+        </section>
+      ))}
+    </div>
+  </div>
+</Base>
+
+<style>
+  .sp-groups{display:flex;flex-direction:column;gap:20px}
+  .sp-g{padding:26px;display:flex;flex-direction:column;gap:12px}
+  .sp-g h2{margin:0;font-size:24px;font-weight:500}
+  .sp-rule{margin:0;font-size:17px;line-height:1.5;color:var(--ink-2);max-width:760px}
+  .sp-g[hidden]{display:none}
+  #out:empty{display:none}
+</style>
+
+<script>
+  import { checkSpelling, spellResult } from '../../../lib/luget.js';
+  const q = document.getElementById('q'), out = document.getElementById('out');
+  let t = 0;
+  q.addEventListener('input', () => { clearTimeout(t); t = setTimeout(() => { out.innerHTML = q.value.trim() ? spellResult(checkSpelling(q.value), q.value) : ''; }, 180); });
+  document.querySelectorAll('[data-g]').forEach((b) => b.addEventListener('click', () => {
+    document.querySelectorAll('[data-g]').forEach((x) => x.setAttribute('aria-pressed', String(x === b)));
+    document.querySelectorAll('.sp-g').forEach((s) => { s.hidden = !!b.dataset.g && s.dataset.gid !== b.dataset.g; });
+  }));
+</script>

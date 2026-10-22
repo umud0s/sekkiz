@@ -1,0 +1,34 @@
+<style is:global>
+  .lg-search{display:flex;flex-direction:column;gap:14px}
+  .res{display:flex;flex-direction:column;gap:6px;padding:20px 22px;border-radius:18px;border:1px solid var(--line);background:#FFFFFF;box-shadow:var(--shadow);animation:res-in .3s cubic-bezier(.2,.8,.2,1)}
+  @keyframes res-in{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+  .res-k{font-size:13px;font-weight:600;letter-spacing:.8px;text-transform:uppercase}
+  .res-m{margin:0;font-size:26px;line-height:1.3}
+  .res-m b{font-weight:600}
+  .res-m s{color:#B11D30;text-decoration-thickness:2px}
+  .res-n{margin:0;font-size:16px;line-height:1.5;color:var(--ink-2)}
+  .res-n s{color:#B11D30}
+  .res.bad{border-left:5px solid #EF3340}.res.bad .res-k{color:#B11D30}.res.bad .res-m b{color:#2F7A1E}
+  .res.ok{border-left:5px solid #509E2F}.res.ok .res-k{color:#2F7A1E}
+  .res.warn{border-left:5px solid #00B5E2}.res.warn .res-k{color:#0A6E99}
+  .res.none{border-left:5px solid #A9B5C0}.res.none .res-k{color:var(--muted)}
+  .res-h{margin:4px 0 0;font-size:15px;font-weight:600;color:var(--muted)}
+
+  .sp-list{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:8px}
+  .sp{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 10px;padding:12px 14px;border-radius:12px;background:#F5F8FA}
+  .sp-w s{color:#B11D30;text-decoration-thickness:1.5px}
+  .sp-a{color:var(--muted)}
+  .sp-r{font-weight:600;color:#2F6B1C}
+  .sp-n{flex-basis:100%;font-size:14px;line-height:1.45;color:var(--muted)}
+
+  .kp-list{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:12px}
+  .kp{display:flex;flex-direction:column;gap:8px;padding:18px 20px;border-radius:16px;background:#FFFFFF;border:1px solid var(--line);box-shadow:0 1px 2px rgba(10,50,80,.06),0 10px 24px -16px rgba(10,50,80,.3)}
+  .kp-h{display:flex;flex-direction:column;gap:2px}
+  .kp-t{font-size:15px;font-weight:500;color:var(--muted);letter-spacing:.2px}
+  .kp-eq{font-size:21px;font-weight:600;line-height:1.25;color:var(--ink)}
+  .kp p{margin:0;font-size:15px;line-height:1.45}
+  .kp p span{display:inline-block;min-width:64px;font-size:13px;font-weight:600;letter-spacing:.3px}
+  .kp-bad{color:#7A2530}.kp-bad span{color:#B11D30}
+  .kp-good{color:#1E4F12}.kp-good span{color:#2F7A1E}
+  @media (max-width:520px){.kp-list,.sp-list{grid-template-columns:minmax(0,1fr)}.res-m{font-size:22px}}
+</style>

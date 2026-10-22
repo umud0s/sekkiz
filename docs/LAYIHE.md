@@ -172,6 +172,17 @@ Ana səhifədəki "Tarix" kartı artıq aktivdir və /tarix/ səhifəsinə apar�
   Kəlbəcərin işğalı (02.04.1993), Zəngilanın işğalı (29.10.1993), Suqovuşan (03.10.2020),
   Ana dili dövlət dili (27.06.1918), üçrəngli bayraq (05.02.1991), Vaşinqton görüşü (08.08.2025).
 
+## Lüğət bölməsi (/luget/)
+İstifadəçinin tapşırığı (22.10.2026): üç funksiya — 1) sözün leksik mənası, 2) düzgün yazılış (səhvdirsə düzgün forması),
+3) korporativ dil (deadline, meeting kimi sözlərin Azərbaycan dilində qarşılığı, "belə yox / belə" nümunələri ilə).
+Ana səhifədəki "Lüğət" kartı aktivdir. /luget/ səhifəsində ümumi axtarış var: yazılan söz həm yazılış, həm korporativ siyahıda yoxlanır.
+- Düzgün yazılış (/luget/duzgun-yazilis/): 95 söz, 7 qayda qrupu (qoşa hərflər, -iyyət, ayrı yazılış, bitişik/defis,
+  söz sonunda q/k, rəqəmlə yazılış, qarışdırılan hərflər). Yoxlayıcı: səhv forma, düzgün forma, ə/ş və s. hərfsiz yazılış,
+  oxşar sözlər (Levenshtein). Məlumat: src/data/luget-yazilis.js; məntiq: src/lib/luget.js.
+- Korporativ dil (/luget/korporativ-dil/): 118 söz, 6 mövzu. Məlumat: src/data/luget-korporativ.js.
+- Sözün mənası: "Tezliklə". Lüğət botunun bazası gözlənilir (istifadəçidən fayl istənilib).
+  Baza gələndə yazılış yoxlayıcısı da bütün sözlərə şamil ediləcək.
+
 ## Bölmə 3: Atalar sözləri (mexanizm hazırdır, baza gözlənilir)
 Səhifə: AtalarSozleri.dc.html. Ana səhifədəki "Atalar sözləri" kartı bura aparır.
 Hər atalar sözü: mətn, mənası, "nə vaxt deyilir", mövzu teqləri, Kopyala / WhatsApp / Telegram.
