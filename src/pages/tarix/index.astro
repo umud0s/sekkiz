@@ -1,0 +1,61 @@
+---
+import Base from '../../layouts/Base.astro';
+import { COUNT, EVENT_DAYS } from '../../lib/tarix.js';
+---
+<Base title="Tarix" description="Azərbaycan tarixinin ən vacib məqamları: hər gün üçün ölkə tarixində baş vermiş əlamətdar hadisələr.">
+  <div class="wrap section">
+    <section class="stack">
+      <nav class="crumbs" aria-label="Yol"><a href="/">Ana səhifə</a> <span aria-hidden="true">/</span> Tarix</nav>
+      <h1 class="page-title">Tarix</h1>
+      <p class="lead">Azərbaycan tarixinin ən vacib məqamları, kart-kart. Hər kart tariximizə ayrı bir pəncərə açır.</p>
+    </section>
+    <div class="tx-grid">
+      <a class="card tx-card" href="/tarix/bu-gun/">
+        <span class="tx-cal" aria-hidden="true">
+          <span class="tx-cal-top"></span>
+          <b id="tx-d">&nbsp;</b>
+          <span id="tx-m">&nbsp;</span>
+        </span>
+        <span class="tx-body">
+          <h2>Azərbaycan tarixində bu gün</h2>
+          <p>Hər günün öz tarixi var. Bu gün ölkəmizdə nə baş verib: döyüşlər və zəfərlər, dövlət qərarları, böyük şəxsiyyətlərin doğum günləri.</p>
+          <span class="tx-meta">{COUNT} hadisə, {EVENT_DAYS.length} gün</span>
+        </span>
+      </a>
+      <div class="card tx-card tx-soon" aria-disabled="true">
+        <span class="tx-body">
+          <span class="soon-badge">Tezliklə</span>
+          <h2>Növbəti kart hazırlanır</h2>
+          <p>Tarix bölməsinə yeni kartlar mərhələlərlə əlavə olunacaq.</p>
+        </span>
+      </div>
+    </div>
+  </div>
+</Base>
+
+<style>
+  .tx-grid{display:grid;grid-template-columns:minmax(0,2fr) minmax(0,1fr);gap:24px}
+  .tx-card{display:flex;gap:26px;align-items:flex-start;padding:30px;text-decoration:none;color:var(--ink);transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s}
+  a.tx-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-hi);color:var(--ink)}
+  .tx-body{display:flex;flex-direction:column;gap:10px}
+  .tx-body h2{margin:0;font-size:28px;font-weight:500;line-height:1.2}
+  .tx-body p{margin:0;font-size:17px;line-height:1.5;color:var(--muted)}
+  .tx-meta{font-size:15px;font-weight:600;color:var(--accent)}
+  .tx-cal{flex:none;width:104px;border-radius:18px;background:#FFFFFF;border:1px solid var(--line);box-shadow:0 10px 22px -12px rgba(10,50,80,.45);display:flex;flex-direction:column;align-items:center;overflow:hidden;padding-bottom:12px;animation:tx-bob 3s ease-in-out infinite alternate}
+  .tx-cal-top{align-self:stretch;height:22px;background:linear-gradient(#00B5E2 0 33.3%,#EF3340 33.3% 66.6%,#509E2F 66.6%)}
+  .tx-cal b{font-size:46px;font-weight:600;line-height:1.1;margin-top:8px}
+  .tx-cal span:last-child{font-size:16px;font-weight:500;color:var(--muted)}
+  @keyframes tx-bob{from{transform:rotate(-3deg)}to{transform:rotate(3deg) translateY(-3px)}}
+  .tx-soon{opacity:.75;box-shadow:0 1px 2px rgba(10,50,80,.06),0 8px 20px -12px rgba(10,50,80,.18)}
+  .soon-badge{align-self:flex-start;padding:4px 12px;border-radius:999px;background:#FFF1CC;color:#7A5300;font-size:14px;font-weight:600}
+  @media (max-width:860px){.tx-grid{grid-template-columns:minmax(0,1fr)}}
+  @media (max-width:520px){.tx-card{flex-direction:column;padding:22px}}
+  @media (prefers-reduced-motion:reduce){.tx-cal{animation:none}}
+</style>
+
+<script>
+  import { MONTHS } from '../../lib/tarix.js';
+  const p = new Intl.DateTimeFormat('en-US', { timeZone: 'Asia/Baku', month: 'numeric', day: 'numeric' }).formatToParts(new Date());
+  document.getElementById('tx-d').textContent = p.find((x) => x.type === 'day').value;
+  document.getElementById('tx-m').textContent = MONTHS[+p.find((x) => x.type === 'month').value - 1];
+</script>

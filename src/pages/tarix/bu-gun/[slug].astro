@@ -1,0 +1,22 @@
+---
+import Base from '../../../layouts/Base.astro';
+import TarixGun from '../../../components/TarixGun.astro';
+import { EVENT_DAYS, BY_DAY, slug, key, dateTitle } from '../../../lib/tarix.js';
+
+export function getStaticPaths() {
+  return EVENT_DAYS.map(([m, d]) => ({ params: { slug: slug(m, d) }, props: { m, d } }));
+}
+const { m, d } = Astro.props;
+const ev = BY_DAY[key(m, d)];
+const title = `${dateTitle(m, d)}: Azərbaycan tarixində bu gün`;
+const description = `${dateTitle(m, d)} Azərbaycan tarixində: ` + ev.map((e) => `${e.title} (${e.y})`).join('; ') + '.';
+---
+<Base title={title} description={description}>
+  <div class="wrap section">
+    <section class="stack">
+      <nav class="crumbs" aria-label="Yol"><a href="/">Ana səhifə</a> <span aria-hidden="true">/</span> <a href="/tarix/">Tarix</a> <span aria-hidden="true">/</span> <a href="/tarix/bu-gun/">Bu gün</a> <span aria-hidden="true">/</span> <span id="tg-crumb">{dateTitle(m, d)}</span></nav>
+      <h1 class="page-title" id="tg-h1">Azərbaycan tarixində {dateTitle(m, d)}</h1>
+    </section>
+    <TarixGun day={[m, d]} />
+  </div>
+</Base>

@@ -153,6 +153,25 @@ Möminə xatın türbəsi, Göygöl, Şahdağ, Yanardağ, Qobustan, Xudafərin k
 Məlumat: src/data/xerite-oyun.json (map.json-dan yaradılır, skript: scratchpad/gen/build_game.py).
 Xəritə səhifəsi src/pages/xerite/index.astro-ya köçürüldü (ünvan dəyişməyib: /xerite/).
 
+## Tarix bölməsi (/tarix/) — kart-kart açılır
+İstifadəçinin tapşırığı (22.10.2026): Tarix bölməsi kartlardan ibarət olacaq, hər kart ayrıca açılır.
+Ana səhifədəki "Tarix" kartı artıq aktivdir və /tarix/ səhifəsinə aparır.
+
+### Kart 1: "Azərbaycan tarixində bu gün" (/tarix/bu-gun/)
+- Açılanda Bakı vaxtı ilə bu günün tarixi göstərilir. Günlər oxlarla (klaviaturada ← →) və ya təqvimdən seçilir.
+- Hadisələr il sırası ilə, xronoloji xətt üzərində. Hər hadisənin solunda növünü göstərən hərəkətli ikon var:
+  Dövlətçilik (döyünən ulduz), Zəfər (dalğalanan bayraq), Döyüş (toqquşan qılınclar), Anım (yanan şam),
+  Ədəbiyyat və mədəniyyət (vərəqlənən kitab), Musiqi (notlar), Elm (atom), Neft (nəfəs alan neft nasosu),
+  Diplomatiya (fırlanan qlobus), İdman (yellənən medal), Nəqliyyat (qatar).
+- Altda seçilmiş ayın bütün hadisələri. Hadisəsi olmayan gündə "Yaxın tarixlər" təklif olunur.
+- Hadisəsi olan hər gün üçün ayrıca səhifə var (SEO): /tarix/bu-gun/8-noyabr/ və s.
+- Məlumat: src/data/tarix-gun.js ([ay, gün, il, növ, başlıq, mətn]); ikonlar və məntiq: src/lib/tarix.js.
+- İlk buraxılış: 95 hadisə, 82 gün. Yalnız tarixinə əmin olunan hadisələr daxil edilib, təqvim tədricən doldurulacaq.
+- Rəsmi mənbə ilə yoxlanmalı tarixlər: Həzi Aslanov (22.01.1910), Cəfər Cabbarlı (20.03.1899),
+  Rəşid Behbudov (14.12.1915), Mehdi Hüseynzadə (22.12.1918), "Arşın mal alan" (25.10.1913),
+  Kəlbəcərin işğalı (02.04.1993), Zəngilanın işğalı (29.10.1993), Suqovuşan (03.10.2020),
+  Ana dili dövlət dili (27.06.1918), üçrəngli bayraq (05.02.1991), Vaşinqton görüşü (08.08.2025).
+
 ## Bölmə 3: Atalar sözləri (mexanizm hazırdır, baza gözlənilir)
 Səhifə: AtalarSozleri.dc.html. Ana səhifədəki "Atalar sözləri" kartı bura aparır.
 Hər atalar sözü: mətn, mənası, "nə vaxt deyilir", mövzu teqləri, Kopyala / WhatsApp / Telegram.

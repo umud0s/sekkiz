@@ -1,0 +1,205 @@
+---
+import { dayHTML, monthHTML, calHTML, dateTitle, key, MONTH_TITLES, BY_DAY } from '../lib/tarix.js';
+
+// day: [ay, gün] — ayrıca gün səhifəsində verilir; əsas səhifədə boşdur və bu günü brauzer seçir
+const { day = null } = Astro.props;
+const k = day ? key(day[0], day[1]) : '';
+const n = day && BY_DAY[k] ? BY_DAY[k].length : 0;
+---
+<div class="tg" id="tg" data-day={k}>
+  <div class="tg-main">
+    <div class="card tg-head">
+      <button type="button" class="tg-arr" data-step="-1" aria-label="Əvvəlki gün">‹</button>
+      <div class="tg-title">
+        <span class="tg-kick" id="tg-kick">{day ? (n ? `${n} hadisə` : 'Seçilmiş gün') : 'Bu gün'}</span>
+        <h2 id="tg-date">{day ? dateTitle(day[0], day[1]) : ''}</h2>
+      </div>
+      <button type="button" class="tg-arr" data-step="1" aria-label="Növbəti gün">›</button>
+    </div>
+    <div class="card tg-day" id="tg-day" aria-live="polite">
+      {day ? <Fragment set:html={dayHTML(day[0], day[1])} /> : <noscript><p>Təqvimi görmək üçün brauzerdə JavaScript aktiv olmalıdır.</p></noscript>}
+    </div>
+  </div>
+  <aside class="card tg-cal">
+    <div class="tg-cal-h">
+      <button type="button" class="tg-arr sm" data-mstep="-1" aria-label="Əvvəlki ay">‹</button>
+      <b id="cal-m">{day ? MONTH_TITLES[day[0] - 1] : ''}</b>
+      <button type="button" class="tg-arr sm" data-mstep="1" aria-label="Növbəti ay">›</button>
+    </div>
+    <div class="tg-grid" id="cal" role="group" aria-label="Ayın günləri">{day && <Fragment set:html={calHTML(day[0], k, '')} />}</div>
+    <p class="tg-leg"><i></i> hadisə qeyd olunan günlər</p>
+    <button type="button" class="chip" id="tg-today">Bu günə qayıt</button>
+  </aside>
+</div>
+<section class="tg-month">
+  <h2 id="mo-h">{day ? `${MONTH_TITLES[day[0] - 1]} ayında` : ''}</h2>
+  <div class="card" id="mo">{day && <Fragment set:html={monthHTML(day[0])} />}</div>
+</section>
+
+<style is:global>
+  .tg{display:grid;grid-template-columns:minmax(0,1.75fr) minmax(0,1fr);gap:24px;align-items:start}
+  .tg-main{display:flex;flex-direction:column;gap:16px;min-width:0}
+  .tg-head{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:18px 22px}
+  .tg-title{text-align:center;display:flex;flex-direction:column;gap:2px}
+  .tg-kick{font-size:14px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--accent)}
+  .tg-title h2{margin:0;font-size:40px;font-weight:500;line-height:1.1}
+  .tg-arr{flex:none;width:48px;height:48px;border-radius:14px;border:1px solid var(--line);background:#FFFFFF;font:inherit;font-size:28px;line-height:1;color:var(--accent);cursor:pointer;transition:background .2s,color .2s}
+  .tg-arr:hover{background:var(--accent);color:#FFFFFF}
+  .tg-arr.sm{width:38px;height:38px;font-size:22px;border-radius:11px}
+  .tg-day{padding:28px}
+
+  .tl{list-style:none;margin:0;padding:0;display:flex;flex-direction:column}
+  .tl-i{display:flex;gap:18px;position:relative;padding-bottom:28px;animation:tl-in .5s cubic-bezier(.2,.8,.2,1) both}
+  .tl-i:last-child{padding-bottom:0}
+  .tl-i:nth-child(2){animation-delay:.08s}.tl-i:nth-child(3){animation-delay:.16s}.tl-i:nth-child(4){animation-delay:.24s}
+  .tl-i:not(:last-child)::before{content:'';position:absolute;left:27px;top:64px;bottom:8px;width:2px;border-radius:2px;background:#DCE5EC}
+  @keyframes tl-in{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+  .tl-b{display:flex;flex-direction:column;gap:6px;padding-top:2px;min-width:0}
+  .tl-h{display:flex;align-items:baseline;flex-wrap:wrap;gap:4px 12px}
+  .tl-y{font-size:30px;font-weight:600;line-height:1;font-variant-numeric:tabular-nums}
+  .tl-t{font-size:13px;font-weight:600;letter-spacing:.6px;text-transform:uppercase}
+  .tl-b h3{margin:0;font-size:22px;font-weight:500;line-height:1.25}
+  .tl-b p{margin:0;font-size:17px;line-height:1.55;color:var(--ink-2)}
+  .tg-empty{display:flex;flex-direction:column;gap:12px}
+  .tg-empty p{margin:0;font-size:18px;line-height:1.5}
+  .tg-near-h{font-size:14px;font-weight:600;color:var(--muted)}
+  .tg-near{display:flex;flex-wrap:wrap;gap:8px}
+
+  .tg-cal{padding:20px;display:flex;flex-direction:column;gap:14px;position:sticky;top:16px}
+  .tg-cal-h{display:flex;align-items:center;justify-content:space-between}
+  .tg-cal-h b{font-size:20px;font-weight:600}
+  .tg-grid{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:4px}
+  .tg-grid button{position:relative;aspect-ratio:1;border:0;border-radius:10px;background:#F2F6F9;font:inherit;font-size:15px;color:var(--muted);cursor:pointer;transition:background .2s,color .2s}
+  .tg-grid button.has{background:#E2F0F7;color:var(--ink);font-weight:600}
+  .tg-grid button.has::after{content:'';position:absolute;left:50%;bottom:5px;width:5px;height:5px;margin-left:-2.5px;border-radius:50%;background:#EF3340}
+  .tg-grid button:hover{background:#CFE5F1}
+  .tg-grid button.today{box-shadow:inset 0 0 0 2px var(--accent)}
+  .tg-grid button.sel{background:var(--accent);color:#FFFFFF}
+  .tg-grid button.sel::after{background:#FFFFFF}
+  .tg-leg{margin:0;font-size:14px;color:var(--muted);display:flex;align-items:center;gap:8px}
+  .tg-leg i{width:7px;height:7px;border-radius:50%;background:#EF3340}
+  #tg-today{align-self:flex-start}
+
+  .tg-month{display:flex;flex-direction:column;gap:14px}
+  .tg-month h2{margin:0;font-size:28px;font-weight:500}
+  #mo{padding:8px}
+  .mo{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:2px 12px}
+  .mo-i{width:100%;display:grid;grid-template-columns:auto minmax(0,1fr);grid-template-rows:auto auto;column-gap:14px;align-items:center;padding:10px 12px;border:0;border-radius:12px;background:transparent;font:inherit;text-align:left;color:var(--ink);cursor:pointer;transition:background .2s}
+  .mo-i:hover{background:#F0F6FA}
+  .mo-i .ti{grid-row:span 2}
+  .mo-d{font-size:14px;color:var(--muted)}
+  .mo-t{font-size:16px;font-weight:500;line-height:1.3}
+
+  .ti{flex:none;display:flex;align-items:center;justify-content:center;width:56px;height:56px;border-radius:16px;background:var(--bg);color:var(--c)}
+  .ti svg{width:40px;height:40px;overflow:visible}
+  .ti.sm{width:38px;height:38px;border-radius:11px}
+  .ti.sm svg{width:27px;height:27px}
+  .ti.sm *{animation:none !important}
+  .a-pulse{transform-origin:24px 24px;animation:a-pulse 1.6s ease-in-out infinite alternate}
+  @keyframes a-pulse{from{transform:scale(.9) rotate(-8deg)}to{transform:scale(1.04) rotate(8deg)}}
+  .a-spin2{transform-origin:24px 24px;animation:a-spin 7s linear infinite}
+  @keyframes a-spin{to{transform:rotate(360deg)}}
+  .a-wave{transform-origin:13px 18px;animation:a-wave 1.3s ease-in-out infinite alternate}
+  @keyframes a-wave{from{transform:skewY(-6deg) scaleX(.93)}to{transform:skewY(5deg) scaleX(1)}}
+  .a-sw1{transform-origin:24px 32px;animation:a-sw1 1.8s ease-in-out infinite}
+  .a-sw2{transform-origin:24px 32px;animation:a-sw2 1.8s ease-in-out infinite}
+  @keyframes a-sw1{0%,100%{transform:rotate(-16deg)}45%,60%{transform:rotate(0)}}
+  @keyframes a-sw2{0%,100%{transform:rotate(16deg)}45%,60%{transform:rotate(0)}}
+  .a-spark{transform-origin:24px 20px;animation:a-spark 1.8s ease-out infinite}
+  @keyframes a-spark{0%,40%{opacity:0;transform:scale(.3)}50%{opacity:1;transform:scale(1.25)}75%,100%{opacity:0;transform:scale(.7)}}
+  .a-flame{transform-origin:24px 20px;animation:a-flame .9s ease-in-out infinite alternate}
+  @keyframes a-flame{from{transform:scale(1,1) skewX(-4deg)}to{transform:scale(.9,1.1) skewX(4deg)}}
+  .a-glow{transform-origin:24px 15px;animation:a-glow .9s ease-in-out infinite alternate}
+  @keyframes a-glow{from{opacity:.15;transform:scale(.85)}to{opacity:.4;transform:scale(1.1)}}
+  .a-flip{transform-origin:24px 24px;animation:a-flip 3.4s ease-in-out infinite}
+  @keyframes a-flip{0%{transform:scaleX(1);opacity:0}12%{opacity:1;transform:scaleX(1)}55%{transform:scaleX(-1);opacity:1}75%,100%{transform:scaleX(-1);opacity:0}}
+  .a-bob{transform-origin:24px 30px;animation:a-bob 1.1s ease-in-out infinite alternate}
+  @keyframes a-bob{from{transform:rotate(-6deg) translateY(1px)}to{transform:rotate(5deg) translateY(-2px)}}
+  .a-float{animation:a-float 2.2s ease-in infinite}
+  @keyframes a-float{0%{opacity:0;transform:translate(0,5px)}30%{opacity:1}100%{opacity:0;transform:translate(3px,-9px)}}
+  .a-nod{transform-origin:24px 21px;animation:a-nod 1.8s ease-in-out infinite alternate}
+  @keyframes a-nod{from{transform:rotate(-13deg)}to{transform:rotate(13deg)}}
+  .a-drip{animation:a-drip 1.8s ease-in infinite}
+  @keyframes a-drip{0%{opacity:0;transform:translateY(-4px)}25%{opacity:1}90%,100%{opacity:0;transform:translateY(5px)}}
+  .a-turn,.a-turn2{transform-origin:24px 24px;animation:a-turn 4s linear infinite}
+  .a-turn2{animation-delay:-1s}
+  @keyframes a-turn{0%{transform:scaleX(1)}50%{transform:scaleX(-1)}100%{transform:scaleX(1)}}
+  .a-swing{transform-origin:24px 5px;animation:a-swing 2s ease-in-out infinite alternate}
+  @keyframes a-swing{from{transform:rotate(-10deg)}to{transform:rotate(10deg)}}
+  .a-bump{animation:a-bump .45s ease-in-out infinite alternate}
+  @keyframes a-bump{from{transform:translateY(0)}to{transform:translateY(-1.5px)}}
+  .a-rail{animation:a-rail .5s linear infinite}
+  @keyframes a-rail{to{stroke-dashoffset:-6}}
+  .a-blink{animation:a-blink 1.2s ease-in-out infinite alternate}
+  @keyframes a-blink{from{opacity:1}to{opacity:.35}}
+
+  @media (max-width:960px){
+    .tg{grid-template-columns:minmax(0,1fr)}
+    .tg-cal{position:static}
+    .mo{grid-template-columns:minmax(0,1fr)}
+  }
+  @media (max-width:640px){
+    .tg-head{padding:14px}
+    .tg-title h2{font-size:30px}
+    .tg-day{padding:20px}
+    .tl-i{gap:14px}
+    .tl-y{font-size:24px}
+    .tl-b h3{font-size:19px}
+    .tl-b p{font-size:16px}
+  }
+  @media (prefers-reduced-motion:reduce){.ti *,.tl-i{animation:none !important}}
+</style>
+
+<script>
+  import { dayHTML, monthHTML, calHTML, dateTitle, key, slug, fromSlug, MONTH_TITLES, DAYS_IN, BY_DAY } from '../lib/tarix.js';
+
+  const root = document.getElementById('tg');
+  const $ = (id) => document.getElementById(id);
+  const parts = new Intl.DateTimeFormat('en-US', { timeZone: 'Asia/Baku', month: 'numeric', day: 'numeric' }).formatToParts(new Date());
+  const TODAY = [+parts.find((p) => p.type === 'month').value, +parts.find((p) => p.type === 'day').value];
+  const todayK = key(...TODAY);
+
+  let [m, d] = root.dataset.day ? root.dataset.day.split('-').map(Number) : (fromSlug(decodeURIComponent(location.hash.slice(1))) || TODAY);
+  let calM = m;
+
+  function show(push) {
+    const k = key(m, d), ev = BY_DAY[k];
+    $('tg-date').textContent = dateTitle(m, d);
+    $('tg-kick').textContent = k === todayK ? 'Bu gün' : ev ? `${ev.length} hadisə` : 'Seçilmiş gün';
+    $('tg-day').innerHTML = dayHTML(m, d);
+    calM = m;
+    cal();
+    $('mo-h').textContent = `${MONTH_TITLES[m - 1]} ayında`;
+    $('mo').innerHTML = monthHTML(m);
+    document.title = `${dateTitle(m, d)}: Azərbaycan tarixində bu gün — Səkkizguşə`;
+    if ($('tg-h1')) { $('tg-h1').textContent = `Azərbaycan tarixində ${dateTitle(m, d)}`; $('tg-crumb').textContent = dateTitle(m, d); }
+    if (push) history.replaceState(null, '', ev ? `/tarix/bu-gun/${slug(m, d)}/` : `/tarix/bu-gun/#${slug(m, d)}`);
+  }
+  function cal() {
+    $('cal-m').textContent = MONTH_TITLES[calM - 1];
+    $('cal').innerHTML = calHTML(calM, key(m, d), todayK);
+  }
+  function go(k) { [m, d] = k.split('-').map(Number); show(true); }
+  function step(n) {
+    d += n;
+    if (d < 1) { m = m === 1 ? 12 : m - 1; d = DAYS_IN[m - 1]; }
+    if (d > DAYS_IN[m - 1]) { m = m === 12 ? 1 : m + 1; d = 1; }
+    show(true);
+  }
+
+  document.addEventListener('click', (e) => {
+    const g = e.target.closest('[data-go]');
+    if (g) { go(g.dataset.go); if (g.closest('#mo, .tg-near')) $('tg').scrollIntoView({ behavior: 'smooth', block: 'start' }); return; }
+    const s = e.target.closest('[data-step]');
+    if (s) { step(+s.dataset.step); return; }
+    const ms = e.target.closest('[data-mstep]');
+    if (ms) { calM = ((calM - 1 + +ms.dataset.mstep + 12) % 12) + 1; cal(); }
+  });
+  $('tg-today').addEventListener('click', () => { [m, d] = TODAY; show(true); });
+  document.addEventListener('keydown', (e) => {
+    if (e.target.closest('input, textarea')) return;
+    if (e.key === 'ArrowLeft') step(-1);
+    if (e.key === 'ArrowRight') step(1);
+  });
+  show(false);
+</script>
