@@ -1,12 +1,17 @@
 ---
 import '../styles/global.css';
 import Icon from '../components/Icon.astro';
-import { SITE, SOCIAL, STAR_POINTS } from '../lib/site.js';
+import { SITE, SOCIAL, STAR_POINTS, NAV } from '../lib/site.js';
 
 const { title, description = SITE.description, current = '', ogType = 'website' } = Astro.props;
 const fullTitle = title ? `${title} — ${SITE.name}` : `${SITE.name} — Azərbaycan dili, tarixi və milli irsi`;
 const canonical = new URL(Astro.url.pathname, Astro.site).href;
 const ogImage = new URL('/img/og.png', Astro.site).href;
+const path = Astro.url.pathname;
+// Menyuda aktiv bənd: ünvanı ən uzun uyğun gələn keçid
+const hit = (n) => Math.max(0, ...[n.href, ...(n.also || [])].filter((h) => h && (h === '/' ? path === '/' : path.startsWith(h))).map((h) => h.length));
+const best = NAV.flatMap((n) => n.items ? n.items : [n]).filter(hit).sort((a, b) => hit(b) - hit(a))[0];
+const on = (n) => n.items ? n.items.includes(best) : n === best;
 ---
 <!doctype html>
 <html lang="az">
@@ -31,25 +36,50 @@ const ogImage = new URL('/img/og.png', Astro.site).href;
   <slot name="head" />
 </head>
 <body>
-  <header class="wrap site-head">
-    <a class="logo" href="/" aria-label="Səkkizguşə, ana səhifə">
-      <svg width="32" height="32" viewBox="-104 -104 208 208" aria-hidden="true"><polygon points={STAR_POINTS} fill="#0A6E99" stroke="#064A69" stroke-width="6" stroke-linejoin="round" /></svg>
-      <span>Səkkizguşə</span>
-    </a>
-    <nav aria-label="Əsas menyu">
-      <a class="nav-link" href="/haqqinda/" aria-current={current === 'haqqinda' ? 'page' : undefined}>Haqqında</a>
-    </nav>
+  <header class="wrap head-wrap">
+    <div class="site-head">
+      <a class="logo" href="/" aria-label="Səkkizguşə, ana səhifə">
+        <svg width="34" height="34" viewBox="-104 -104 208 208" aria-hidden="true"><polygon points={STAR_POINTS} fill="#0A6E99" stroke="#064A69" stroke-width="6" stroke-linejoin="round" /></svg>
+        <span>Səkkizguşə</span>
+      </a>
+      <button type="button" class="menu-btn" id="menu-btn" aria-expanded="false" aria-controls="menu" aria-label="Menyu">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path class="mb-1" d="M4 7h16" /><path class="mb-2" d="M4 12h16" /><path class="mb-3" d="M4 17h16" /></svg>
+      </button>
+      <nav class="menu" id="menu" aria-label="Əsas menyu">
+        {NAV.map((n) => n.items ? (
+          <details class="dd">
+            <summary class={`nav-link${on(n) ? ' on' : ''}`}>{n.title}<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6" /></svg></summary>
+            <div class="dd-panel">
+              {n.items.map((it) => it.href
+                ? <a href={it.href} class={it === best ? 'on' : undefined} aria-current={it === best ? 'page' : undefined}>{it.title}</a>
+                : <span class="dd-soon">{it.title}<small>Tezliklə</small></span>)}
+            </div>
+          </details>
+        ) : (
+          <a class={`nav-link${on(n) ? ' on' : ''}`} href={n.href} aria-current={on(n) ? 'page' : undefined}>{n.title}</a>
+        ))}
+      </nav>
+    </div>
   </header>
   <main id="main">
     <slot />
   </main>
-  <footer class="wrap site-foot">
-    <span>© {new Date().getFullYear()} Səkkizguşə</span>
+  <footer class="wrap foot-wrap">
+   <div class="site-foot">
+    <span class="foot-c">© {new Date().getFullYear()} Səkkizguşə</span>
     <nav class="social" aria-label="Sosial şəbəkələr">
       {SOCIAL.map((s) => s.href
         ? <a href={s.href} target="_blank" rel="noopener" aria-label={s.name}><Icon name={s.icon} /></a>
         : <span role="img" aria-label={`${s.name} (tezliklə)`} title={`${s.name}: tezliklə`}><Icon name={s.icon} /></span>)}
     </nav>
+   </div>
   </footer>
+  <script>
+    const btn = document.getElementById('menu-btn'), menu = document.getElementById('menu');
+    btn.addEventListener('click', () => { const o = menu.classList.toggle('open'); btn.setAttribute('aria-expanded', String(o)); });
+    // Açıq açılan menyu kənara toxunanda bağlanır
+    document.addEventListener('click', (e) => { document.querySelectorAll('.dd[open]').forEach((d) => { if (!d.contains(e.target)) d.open = false; }); });
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') document.querySelectorAll('.dd[open]').forEach((d) => { d.open = false; }); });
+  </script>
 </body>
 </html>

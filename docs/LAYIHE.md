@@ -172,6 +172,18 @@ Ana səhifədəki "Tarix" kartı artıq aktivdir və /tarix/ səhifəsinə apar�
   Kəlbəcərin işğalı (02.04.1993), Zəngilanın işğalı (29.10.1993), Suqovuşan (03.10.2020),
   Ana dili dövlət dili (27.06.1918), üçrəngli bayraq (05.02.1991), Vaşinqton görüşü (08.08.2025).
 
+## Görünüş: header menyu və kartlaşdırılmış yazılar (22.10.2026)
+İstifadəçi istəyi: fonun üzərində "çılpaq" qalan yazılar quru görünür; onlar düymə və ya küncləri oval düzbucaqlı içinə alınmalıdır.
+Ana səhifədə yuxarıda menyu tərzində header olmalıdır (sonradan yeni bəndlər əlavə olunacaq).
+- Header: bütün səhifələrdə ağ, küncləri oval panel. Menyu: Ana səhifə | Bölmələr (açılan siyahı, 8 bölmə,
+  hazır olmayanlar "Tezliklə") | Tarixdə bu gün | Xəritə oyunu | Haqqında. Aktiv bənd mavi düymə kimi seçilir.
+  1060px-dən dar ekranda menyu düyməsi (☰) ilə açılır. Menyu siyahısı: src/lib/site.js -> NAV və SECTIONS.
+- Hər səhifənin başlıq bloku (yol + başlıq + giriş mətni) oval küncli kartın içindədir, sağda solğun ulduz.
+- Yol göstəricisi (breadcrumbs) oval düymə şəklində, "/" əvəzinə "›".
+- Ana səhifə: sitat yuxarısında bayraq rəngli zolaq olan kartın içində, "İlham Əliyev" mavi düymə şəklində;
+  "Səkkiz guşə, səkkiz bölmə" yazısı ağ düymə şəklində. Haqqında səhifəsində də eyni.
+- Footer da oval küncli panel. Mənbə qeydləri ağ çərçivəli bloklarda. 404 səhifəsi kartın içində.
+
 ## Struktur dəyişikliyi (22.10.2026)
 - "Milli qəhrəmanlar" ana səhifənin kartlarından çıxarıldı və Tarix bölməsinin içinə ikinci kart kimi köçürüldü.
   Ünvan dəyişmədi (/milli-qehremanlar/, 307 səhifə), yalnız yol göstəricisi: Ana səhifə / Tarix / Milli qəhrəmanlar.
