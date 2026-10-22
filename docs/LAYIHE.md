@@ -230,7 +230,9 @@ Sosial: href boşdursa ikon görünür, amma keçid deyil (site.js -> SOCIAL).
 Test ünvanı: https://sekkizguse.osmanliumud.workers.dev (Cloudflare Workers, GitHub umud0s/sekkiz main budağından avtomatik yayım).
 21.10.2026 yoxlanış: bütün səhifələr və fayllar 200, brauzer xətası yoxdur, JSON br ilə sıxılır, _headers işləyir.
 Mobil operator workers.dev ünvanını bloklayır (istifadəçinin Android telefonunda mobil internetdə açılmır, Wi-Fi-da açılır). Həll: öz domen.
-Açıq: olmayan ünvanda 404 səhifəsi boş gəlir -> wrangler.jsonc (not_found_handling: 404-page) ilə yayımın tətbiqi yoxlanmalıdır.
+Həll edildi (22.10.2026): Cloudflare əvvəlcə səhvən umud0s/sekkizguse reposuna bağlı idi, ona görə yeniləmələr sayta çıxmırdı.
+İstifadəçi Settings -> Build bölməsində bağlantını umud0s/sekkiz reposuna dəyişdi. İndi hər push avtomatik yayımlanır, 404 səhifəsi işləyir.
+umud0s/sekkizguse reposu artıq lazım deyil, silinə bilər.
 
 ## ÜNSİYYƏT DİLİ
 İstifadəçi ilə HƏMİŞƏ Azərbaycan dilində danışılır (istifadəçinin açıq tələbi).
