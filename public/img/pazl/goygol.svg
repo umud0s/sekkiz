@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 400">
+<defs>
+<linearGradient id="s" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8FCAEA"/><stop offset="1" stop-color="#E2F2F9"/></linearGradient>
+<linearGradient id="l" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3DB3C2"/><stop offset="1" stop-color="#17718F"/></linearGradient>
+<symbol id="f" viewBox="0 0 20 40"><path d="M10 0l8 16h-4l6 12h-5l5 10H0l5-10H0l6-12H2z"/></symbol>
+</defs>
+<rect width="500" height="400" fill="url(#s)"/>
+<g fill="#FFFFFF" opacity=".9"><ellipse cx="400" cy="60" rx="46" ry="14"/><ellipse cx="430" cy="50" rx="26" ry="12"/></g>
+<path d="M60 220l70-100 30 18 50-78 40 30 30-20 60 90 50 30 70 50H60z" fill="#9C9189"/>
+<path d="M210 60l40 30 30-20 60 90-50-20-30-40-30 10z" fill="#867B73"/>
+<path d="M200 76l10-16 14 10-6 14zM270 76l10-6 12 18-12-2z" fill="#FFFFFF"/>
+<path d="M0 230q60-60 130-40t110 30 120-30 140 20v90H0z" fill="#3F8456"/>
+<g fill="#2F6B45"><use href="#f" x="10" y="176" width="22" height="44"/><use href="#f" x="36" y="186" width="20" height="40"/><use href="#f" x="62" y="180" width="22" height="44"/><use href="#f" x="88" y="190" width="20" height="40"/><use href="#f" x="370" y="186" width="22" height="44"/><use href="#f" x="396" y="178" width="20" height="40"/><use href="#f" x="420" y="190" width="22" height="44"/><use href="#f" x="446" y="182" width="20" height="40"/><use href="#f" x="472" y="190" width="22" height="44"/><use href="#f" x="300" y="196" width="18" height="36"/><use href="#f" x="150" y="196" width="18" height="36"/></g>
+<path d="M60 258q60-24 190-22t190 22q-40 50-190 52T60 258z" fill="url(#l)"/>
+<g opacity=".22" fill="#0F4B60"><path d="M130 262l40 30 30-14 40 26 40-20 30 14 40-26z"/></g>
+<g stroke="#FFFFFF" stroke-opacity=".5" stroke-width="2" stroke-linecap="round"><path d="M150 270h40M280 284h50M210 296h30"/></g>
+<path d="M0 270q40-12 70 4 30 30 180 38t180-38q40-16 70-4v130H0z" fill="#5FA052"/>
+<path d="M0 330q120-20 250 0t250-6v76H0z" fill="#4E8F45"/>
+<g fill="#2C6340"><use href="#f" x="20" y="280" width="34" height="68"/><use href="#f" x="56" y="298" width="26" height="52"/><use href="#f" x="430" y="284" width="32" height="64"/><use href="#f" x="460" y="300" width="26" height="52"/></g>
+<g fill="#F7D35A"><circle cx="200" cy="350" r="3.5"/><circle cx="230" cy="362" r="3.5"/><circle cx="300" cy="352" r="3.5"/></g>
+</svg>

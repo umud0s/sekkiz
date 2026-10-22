@@ -1,6 +1,6 @@
 ---
-import Base from '../layouts/Base.astro';
-import svg from '../data/xerite-map.svg.html?raw';
+import Base from '../../layouts/Base.astro';
+import svg from '../../data/xerite-map.svg.html?raw';
 ---
 <Base title="Azərbaycan xəritəsi" description="Azərbaycanın interaktiv xəritəsi: 67 rayon və 8 şəhərin sərhədləri, ərazisi və əhalisi, dağlar, çaylar, göllər və qonşu dövlətlərlə sərhədlər.">
   <div class="wrap section">
@@ -12,6 +12,7 @@ import svg from '../data/xerite-map.svg.html?raw';
         <button type="button" class="chip" data-mode="ray" aria-pressed="true">Rayon və şəhərlər</button>
         <button type="button" class="chip" data-mode="dag" aria-pressed="false">Dağlar</button>
         <button type="button" class="chip" data-mode="su" aria-pressed="false">Çaylar və göllər</button>
+        <a class="chip xr-play" href="/xerite/oyun/">Xəritə oyununa keç <span aria-hidden="true">→</span></a>
       </div>
     </section>
     <div class="xr-row">
@@ -24,6 +25,9 @@ import svg from '../data/xerite-map.svg.html?raw';
 
 <style is:global>
   .chips{display:flex;flex-wrap:wrap;gap:8px}
+  .xr-play{margin-left:auto;background:#D42A36;border-color:#D42A36;color:#FFFFFF;font-weight:600}
+  .xr-play:hover{background:#B5212C;border-color:#B5212C;color:#FFFFFF}
+  @media (max-width:640px){.xr-play{margin-left:0}}
   .xr-row{display:grid;grid-template-columns:minmax(0,1.75fr) minmax(0,1fr);gap:24px;align-items:start}
   .xr-map{padding:14px}
   .xr-map svg{display:block;width:100%;height:auto;border-radius:16px}
@@ -70,8 +74,8 @@ import svg from '../data/xerite-map.svg.html?raw';
 </style>
 
 <script>
-  import D from '../data/xerite-data.json';
-  import STATS from '../data/xerite-stats.json';
+  import D from '../../data/xerite-data.json';
+  import STATS from '../../data/xerite-stats.json';
 
   const NOTES = {
     'Tərtər': 'Xəritədə bu sahəyə yenidən yaradılmış Ağdərə rayonunun bir hissəsi də daxildir. Ağdərə rayonu: 1 660 km², 12,2 min nəfər. Ağdərənin sərhədləri ayrıca əlavə olunacaq.',

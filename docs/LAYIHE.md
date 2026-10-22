@@ -135,6 +135,24 @@ Onun ərazisi xəritədə Tərtər və Kəlbəcərin içindədir (sahə müqayis
 Yoxlanmalı: çayların uzunluqları, göllərin sahələri, Kömürgöy (2492 m) və Qapıcıq (3906 m) hündürlükləri,
 silsilələrin sərhədləri sxematikdir.
 
+## Xəritə oyunu: "Xəritəni tamamla" (/xerite/oyun/)
+İstifadəçinin tapşırığı (22.10.2026): viktorinanın ilk hissəsi. Xəritə səhifəsində "Xəritə oyununa keç" düyməsi var.
+Qaydalar:
+- Boz əraziyə toxunulur, 4 ad çıxır (doğru + yaxın 9 qonşudan təsadüfi 3). Hover-də ərazi öz sərhədi ilə kart kimi qalxır.
+- Doğru cavab: yaşıl parıltı + təsdiq səsi, sonra ərazi bayraq rənginə boyanır. Zolaqlar mərkəz nöqtəsinin
+  hündürlüyünə görə üç bərabər hissədir: şimal #00B5E2 (21), mərkəz #EF3340 (35), cənub #509E2F (18).
+- Səhv cavab bir nar aparır. 5 nar bitəndə oyun bitir.
+- Saat oyuna başlayanda işə düşür. Ən yaxşı vaxt brauzerdə saxlanır (localStorage: sk-xo-best), "Rekord" kimi görünür.
+- 74 ərazi = 74 pazl parçası (10x8 tor, 6 cüt birləşdirilib, kəsiklər hər oyunda yenidən yaradılır).
+  Şəkil hər oyunda dəyişir (8 şəkil növbə ilə, eyni şəkil ardıcıl gəlmir). Tamamlananda adı, yeri, qısa izahı çıxır.
+- Kiçik şəhərlər (sahəsi çox kiçik olan 8 vahid: Naftalan, Xankəndi, Mingəçevir, Şirvan, Gəncə, Naxçıvan şəhəri,
+  Sumqayıt, Sədərək) xəritədə dairəvi nişanla seçilir.
+- Səslər fayl deyil, brauzerdə yaradılır (WebAudio); səsi söndürmək düyməsi var.
+Pazl şəkilləri (public/img/pazl/*.svg, öz çəkdiyimiz illüstrasiyalar): Qız qalası, Şəki Xan sarayı,
+Möminə xatın türbəsi, Göygöl, Şahdağ, Yanardağ, Qobustan, Xudafərin körpüləri. Sonradan real fotolar da qoyula bilər.
+Məlumat: src/data/xerite-oyun.json (map.json-dan yaradılır, skript: scratchpad/gen/build_game.py).
+Xəritə səhifəsi src/pages/xerite/index.astro-ya köçürüldü (ünvan dəyişməyib: /xerite/).
+
 ## Bölmə 3: Atalar sözləri (mexanizm hazırdır, baza gözlənilir)
 Səhifə: AtalarSozleri.dc.html. Ana səhifədəki "Atalar sözləri" kartı bura aparır.
 Hər atalar sözü: mətn, mənası, "nə vaxt deyilir", mövzu teqləri, Kopyala / WhatsApp / Telegram.

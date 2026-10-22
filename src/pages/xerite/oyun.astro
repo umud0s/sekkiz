@@ -1,0 +1,478 @@
+---
+import Base from '../../layouts/Base.astro';
+import G from '../../data/xerite-oyun.json';
+
+const NB_LABELS = [['RUSİYA', 470, 40], ['GÜRCÜSTAN', 150, 70], ['ERMƏNİSTAN', 95, 420], ['İRAN', 470, 760], ['TÜRKİYƏ', 14, 470]];
+const total = G.u.length;
+---
+<Base title="Xəritəni tamamla" description="Azərbaycan xəritəsi oyunu: rayon və şəhərləri adları ilə tapın, xəritəni bayrağın rənglərinə boyayın, hər doğru cavabla tarixi məkanın şəklini açın.">
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <symbol id="nar" viewBox="0 0 32 32">
+        <path d="M10.5 9.5 12 3l2.6 4L16 2l1.4 5L20 3l1.5 6.5z" fill="#A3162A" />
+        <circle cx="16" cy="19" r="11.5" fill="#D7263D" />
+        <path d="M27.5 19A11.5 11.5 0 0 1 6 24.6 13 13 0 0 0 26 15.4a11 11 0 0 1 1.5 3.6z" fill="#B11D30" />
+        <path d="M9.6 15.6a7.5 7.5 0 0 1 5.2-4.4" stroke="#FFFFFF" stroke-opacity=".6" stroke-width="2.4" fill="none" stroke-linecap="round" />
+      </symbol>
+    </defs>
+  </svg>
+
+  <div class="wrap section">
+    <section class="stack">
+      <nav class="crumbs" aria-label="Yol"><a href="/">Ana səhifə</a> <span aria-hidden="true">/</span> <a href="/xerite/">Xəritə</a> <span aria-hidden="true">/</span> Xəritəni tamamla</nav>
+      <h1 class="page-title">Xəritəni tamamla</h1>
+      <p class="lead">Boz ərazilərdən birini seçin və adını tapın. Hər doğru cavab xəritəni bayrağımızın rənglərinə boyayır, pazldan da bir parça açır. Beş narınız var, hər səhv cavab birini aparır.</p>
+    </section>
+
+    <div class="card xo-bar">
+      <div class="xo-lives" id="lives" aria-label="Qalan narlar: 5">
+        {[0, 1, 2, 3, 4].map(() => <svg class="nar" width="30" height="30" aria-hidden="true"><use href="#nar" /></svg>)}
+      </div>
+      <div class="xo-stat"><span class="xo-k">Tapılıb</span><b><span id="cnt">0</span> / {total}</b></div>
+      <div class="xo-stat"><span class="xo-k">Vaxt</span><b id="clock">00:00</b></div>
+      <div class="xo-stat"><span class="xo-k">Rekord</span><b id="best">—</b></div>
+      <button type="button" class="xo-snd" id="snd" aria-pressed="true" aria-label="Səs">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9h4l5-4v14l-5-4H4z" fill="currentColor" /><path class="w" d="M16.5 8.5a5 5 0 0 1 0 7M19 6a8.5 8.5 0 0 1 0 12" /><path class="x" d="M16 9l6 6M22 9l-6 6" /></svg>
+      </button>
+    </div>
+
+    <div class="xo-row">
+      <div class="card xo-map" id="board">
+        <svg viewBox="0 0 1074 814" id="xo" role="group" aria-label="Azərbaycan xəritəsi, oyun">
+          <defs>
+            <linearGradient id="xo-sea" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#D3EBF6" /><stop offset="1" stop-color="#BFE0EF" /></linearGradient>
+          </defs>
+          <rect width="1074" height="814" fill="#F4F2EC" />
+          {G.nb.map((n) => <path d={n[1]} fill="#EFECE4" stroke="#D9D3C6" stroke-width="1.2" />)}
+          <path d={G.sea} fill="url(#xo-sea)" />
+          {NB_LABELS.map((l) => <text x={l[1]} y={l[2]} class="xo-nb">{l[0]}</text>)}
+          <text x="935" y="560" text-anchor="middle" class="xo-sea" transform="rotate(-70 935 560)">XƏZƏR DƏNİZİ</text>
+          <path d={G.outline} fill="none" stroke="#B8C3CC" stroke-width="3" stroke-linejoin="round" />
+          <g id="units">
+            {G.u.map((u, i) => <path d={u[2]} class="xu" data-i={i} data-b={u[5]} tabindex="0" role="button" aria-label="Naməlum ərazi" />)}
+          </g>
+          <g id="dots">
+            {G.u.map((u, i) => u[6] ? <circle cx={u[3]} cy={u[4]} r="8" class="xd" data-i={i} data-b={u[5]} /> : null)}
+          </g>
+          <g id="lift" aria-hidden="true"></g>
+          <text id="tip" class="xo-tip" aria-hidden="true"></text>
+        </svg>
+
+        <div class="xo-pop" id="pop" role="dialog" aria-labelledby="pop-q" hidden>
+          <div class="xo-pop-h"><p id="pop-q">Bu ərazinin adı nədir?</p><button type="button" class="xo-x" id="pop-x" aria-label="Bağla">×</button></div>
+          <div class="xo-opts" id="opts"></div>
+        </div>
+
+        <div class="xo-over" id="over">
+          <div class="xo-msg" id="msg"></div>
+        </div>
+      </div>
+
+      <aside class="card xo-side">
+        <div class="xo-ph"><span class="xo-kick">Pazl</span><span class="xo-k"><span id="pz-n">0</span> / {total} parça</span></div>
+        <svg id="pz" viewBox="0 0 500 400" role="img" aria-label="Pazl"></svg>
+        <div class="xo-cap" id="cap" aria-live="polite"><p class="muted">Hər doğru cavab şəkildən bir parça açır. Nə olduğunu xəritəni tamamlayanda biləcəksiniz.</p></div>
+      </aside>
+    </div>
+  </div>
+</Base>
+
+<style is:global>
+  .xo-bar{display:flex;align-items:center;flex-wrap:wrap;gap:12px 28px;padding:14px 22px;position:sticky;top:8px;z-index:6}
+  .xo-lives{display:flex;gap:4px;margin-right:auto}
+  .nar{display:block;transition:transform .4s cubic-bezier(.2,.8,.2,1),opacity .4s,filter .4s}
+  .nar.lost{opacity:.3;filter:grayscale(1);transform:scale(.78);animation:nar-lose .5s ease}
+  @keyframes nar-lose{0%{transform:scale(1)}30%{transform:scale(1.25) rotate(-12deg)}60%{transform:scale(.9) rotate(10deg)}100%{transform:scale(.78)}}
+  .xo-stat{display:flex;flex-direction:column;gap:2px;min-width:72px}
+  .xo-k{font-size:13px;color:var(--muted);letter-spacing:.3px}
+  .xo-stat b{font-size:22px;font-weight:600;font-variant-numeric:tabular-nums}
+  .xo-snd{width:44px;height:44px;border-radius:12px;border:1px solid var(--line);background:#FFFFFF;color:var(--accent);cursor:pointer;display:flex;align-items:center;justify-content:center}
+  .xo-snd .x{display:none}
+  .xo-snd[aria-pressed="false"] .x{display:inline}
+  .xo-snd[aria-pressed="false"] .w{display:none}
+
+  .xo-row{display:grid;grid-template-columns:minmax(0,1.75fr) minmax(0,1fr);gap:24px;align-items:start}
+  .xo-map{padding:14px;position:relative}
+  .xo-map svg{display:block;width:100%;height:auto;border-radius:16px}
+  #xo text{font-family:'League Spartan','Noto Sans',sans-serif;pointer-events:none}
+  .xo-nb{font-size:17px;font-weight:500;fill:#8D97A1;letter-spacing:2px}
+  .xo-sea{font-size:22px;font-weight:500;fill:#5E95B3;letter-spacing:3px}
+
+  .xu,.xd{fill:#D3D9DF;stroke:#FFFFFF;stroke-width:1.2;stroke-linejoin:round;cursor:pointer;transition:fill .5s ease}
+  .xd{fill:#AEB8C2;stroke-width:2}
+  .xu:focus{outline:none}
+  .xu:focus-visible{stroke:var(--accent);stroke-width:3}
+  .xu.ok,.xd.ok{cursor:default}
+  .xu.ok[data-b="0"],.xd.ok[data-b="0"],.xl.ok[data-b="0"]{fill:#00B5E2}
+  .xu.ok[data-b="1"],.xd.ok[data-b="1"],.xl.ok[data-b="1"]{fill:#EF3340}
+  .xu.ok[data-b="2"],.xd.ok[data-b="2"],.xl.ok[data-b="2"]{fill:#509E2F}
+  .xu.flash,.xd.flash{fill:#6FD65A !important;transition:none}
+  .xl{pointer-events:none;fill:#C7CFD7;stroke:#FFFFFF;stroke-width:2;transform:none;transition:transform .25s cubic-bezier(.2,.8,.2,1),filter .25s}
+  .xl.up{transform:translateY(-7px) scale(var(--s,1.1));filter:drop-shadow(0 10px 8px rgba(10,40,60,.35))}
+  .xl.sel{stroke:var(--accent);stroke-width:3}
+  .xl.flash{fill:#6FD65A;filter:drop-shadow(0 0 10px rgba(80,200,70,.9))}
+  .xo-tip{font-size:16px;font-weight:600;fill:#0B2536;stroke:#FFFFFF;stroke-width:4;paint-order:stroke;text-anchor:middle;opacity:0;transition:opacity .2s}
+  .xo-tip.on{opacity:1}
+
+  .xo-pop{position:absolute;z-index:4;width:300px;padding:16px;border-radius:18px;background:#FFFFFF;border:1px solid var(--line);box-shadow:var(--shadow-hi);animation:pop-in .22s cubic-bezier(.2,.8,.2,1)}
+  @keyframes pop-in{from{opacity:0;transform:translateY(8px) scale(.97)}to{opacity:1;transform:none}}
+  .xo-pop-h{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:12px}
+  .xo-pop-h p{margin:0;font-size:17px;font-weight:600}
+  .xo-x{width:34px;height:34px;border-radius:10px;border:0;background:#EEF3F7;font:inherit;font-size:22px;line-height:1;color:var(--muted);cursor:pointer}
+  .xo-opts{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+  .xo-opts button{min-height:48px;padding:8px 10px;border-radius:12px;border:1px solid #C9D6E0;background:#F7FAFC;font:inherit;font-size:16px;font-weight:500;color:var(--ink);cursor:pointer;transition:background .2s,border-color .2s,transform .2s}
+  .xo-opts button:hover{border-color:var(--accent);background:#FFFFFF;transform:translateY(-1px)}
+  .xo-opts button.good{background:#509E2F;border-color:#509E2F;color:#FFFFFF}
+  .xo-opts button.bad{background:#FDECEE;border-color:#EF3340;color:#A3162A;animation:shake .4s ease}
+  .xo-opts button:disabled{cursor:default}
+  @keyframes shake{20%{transform:translateX(-6px)}40%{transform:translateX(6px)}60%{transform:translateX(-4px)}80%{transform:translateX(3px)}}
+
+  .xo-over{position:absolute;inset:14px;border-radius:16px;display:flex;align-items:center;justify-content:center;padding:20px;background:rgba(244,242,236,.62);backdrop-filter:blur(2px);z-index:5;transition:opacity .35s}
+  .xo-over[hidden]{display:none}
+  .xo-over.win{background:transparent;backdrop-filter:none;align-items:flex-end;justify-content:flex-end;padding:12px;pointer-events:none}
+  .xo-msg{max-width:440px;width:100%;padding:28px;border-radius:20px;background:#FFFFFF;border:1px solid var(--line);box-shadow:var(--shadow-hi);text-align:center;display:flex;flex-direction:column;align-items:center;gap:12px;pointer-events:auto;animation:pop-in .35s cubic-bezier(.2,.8,.2,1)}
+  .xo-msg h2{margin:0;font-size:30px;font-weight:500;line-height:1.15}
+  .win .xo-msg{max-width:300px;padding:16px 18px;gap:6px}
+  .win .xo-msg h2{font-size:22px}
+  .win .xo-msg .big{font-size:32px}
+  .win .xo-msg p{font-size:15px}
+  .xo-msg p{margin:0;font-size:17px;line-height:1.5;color:var(--ink-2)}
+  .xo-msg .big{font-size:40px;font-weight:600;color:var(--accent);font-variant-numeric:tabular-nums}
+  .xo-msg .rec{display:inline-block;padding:4px 12px;border-radius:999px;background:#E6F6EA;color:#2F6B1C;font-weight:600;font-size:15px}
+  .xo-rules{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px;text-align:left;font-size:16px;color:var(--ink-2)}
+  .xo-rules li{display:flex;gap:10px;align-items:center}
+  .xo-rules i{flex:none;width:16px;height:16px;border-radius:4px}
+  .xo-rules svg{flex:none;width:16px !important;height:16px !important}
+  .xo-rules .tri{background:linear-gradient(#00B5E2 0 33.3%,#EF3340 33.3% 66.6%,#509E2F 66.6%)}
+
+  .xo-side{padding:22px;display:flex;flex-direction:column;gap:14px;position:sticky;top:96px}
+  .xo-ph{display:flex;align-items:baseline;justify-content:space-between}
+  .xo-kick{font-size:14px;font-weight:500;letter-spacing:1px;text-transform:uppercase;color:var(--accent)}
+  #pz{display:block;width:100%;height:auto;border-radius:12px;background:#EEF3F7}
+  .pz-slot{fill:none;stroke:#C7D3DD;stroke-width:1;stroke-dasharray:3 3}
+  .pc{opacity:0;transform:translate(var(--dx),var(--dy)) rotate(var(--r)) scale(.8);transition:opacity .45s ease,transform .7s cubic-bezier(.2,.9,.25,1.1)}
+  .pc.on{opacity:1;transform:none}
+  .pe{fill:none;stroke:#FFFFFF;stroke-opacity:.75;stroke-width:1.2;transition:stroke-opacity 1s}
+  #pz.done .pe{stroke-opacity:0}
+  #pz.done .pz-slot{opacity:0}
+  .pz-full{animation:pz-in 1s ease .3s both}
+  @keyframes pz-in{from{opacity:0}to{opacity:1}}
+  .xo-cap{display:flex;flex-direction:column;gap:6px}
+  .xo-cap p{margin:0;font-size:16px;line-height:1.5}
+  .xo-cap h2{margin:0;font-size:26px;font-weight:500;line-height:1.15;animation:pop-in .5s ease}
+  .xo-cap .pl{font-size:14px;font-weight:500;letter-spacing:.5px;color:var(--accent)}
+
+  @media (max-width:960px){
+    .xo-row{grid-template-columns:minmax(0,1fr)}
+    .xo-side{position:static}
+  }
+  @media (max-width:640px){
+    .xo-bar{gap:10px 18px;padding:12px 14px}
+    .xo-lives{width:100%;margin:0}
+    .xo-stat b{font-size:19px}
+    .xo-map{padding:6px}
+    .xo-over{inset:6px}
+    .xo-over:not(.win){position:fixed;inset:0;z-index:20;border-radius:0;background:rgba(214,230,241,.86);overflow-y:auto}
+    .xo-over.win{position:fixed;inset:auto 0 0 0;z-index:20}
+    .win .xo-msg{max-width:none}
+    .xo-pop{position:fixed;left:12px !important;right:12px;top:auto !important;bottom:12px;width:auto}
+    .xo-msg{padding:20px}
+    .xo-msg h2{font-size:24px}
+  }
+  @media (prefers-reduced-motion:reduce){.pc,.xl,.nar{transition:none;animation:none}}
+</style>
+
+<script>
+  import G from '../../data/xerite-oyun.json';
+
+  const SCENES = [
+    { id: 'qiz-qalasi', t: 'Qız qalası', p: 'Bakı, İçərişəhər', d: 'Xəzərin sahilində ucalan bu qala Bakının rəmzidir. 2000-ci ildə İçərişəhər və Şirvanşahlar sarayı ilə birlikdə UNESCO-nun Ümumdünya irsi siyahısına daxil edilib.' },
+    { id: 'seki-xan-sarayi', t: 'Şəki Xan sarayı', p: 'Şəki', d: 'XVIII əsrdə Şəki xanlarının iqamətgahı kimi tikilib. Rəngli şüşə parçalarından yığılan şəbəkə pəncərələri ilə tanınır. 2019-cu ildə Şəkinin tarixi mərkəzi Xan sarayı ilə birlikdə UNESCO siyahısına salınıb.' },
+    { id: 'momine-xatun', t: 'Möminə xatın türbəsi', p: 'Naxçıvan', d: '1186-cı ildə memar Əcəmi Naxçıvani tərəfindən tikilib. On üzlü türbənin divarları başdan-başa həndəsi naxışlarla bəzədilib.' },
+    { id: 'goygol', t: 'Göygöl', p: 'Göygöl rayonu, Kəpəz dağının ətəyi', d: '1139-cu ildəki güclü zəlzələ zamanı Kəpəz dağının bir hissəsi uçub Ağsu çayının yolunu kəsib, göl belə yaranıb. Ətrafı Göygöl Milli Parkıdır.' },
+    { id: 'sahdag', t: 'Şahdağ', p: 'Quba və Qusar rayonları', d: 'Böyük Qafqazın ən uca zirvələrindən biridir, hündürlüyü 4243 metrdir. Ətrafındakı meşələr və yaylalar Şahdağ Milli Parkına daxildir.' },
+    { id: 'yanardag', t: 'Yanardağ', p: 'Abşeron rayonu, Məmmədli kəndi', d: 'Təpənin ətəyində yerin altından çıxan təbii qaz fasiləsiz yanır. Azərbaycana niyə “Odlar yurdu” deyildiyini burada aydın görmək olur.' },
+    { id: 'qobustan', t: 'Qobustan', p: 'Bakının cənub-qərbi', d: 'Qayalar üzərində 6 mindən çox qədim təsvir var: rəqs edən insanlar, qayıqlar, ov səhnələri, heyvanlar. 2007-ci ildə UNESCO-nun Ümumdünya irsi siyahısına daxil edilib.' },
+    { id: 'xudaferin', t: 'Xudafərin körpüləri', p: 'Cəbrayıl rayonu, Araz çayı', d: 'Araz çayı üzərindəki iki qədim daş körpüdən biri on beş, digəri on bir aşırımlıdır. Vətən müharibəsində, 2020-ci ilin oktyabrında, körpünün üzərində yenidən Azərbaycan bayrağı qaldırıldı.' },
+  ];
+
+  const U = G.u, N = U.length;
+  const $ = (id) => document.getElementById(id);
+  const svg = $('xo'), lift = $('lift'), tip = $('tip'), pop = $('pop'), opts = $('opts'), over = $('over'), msg = $('msg'), board = $('board');
+  const paths = [...document.querySelectorAll('.xu')];
+  const dots = {};
+  document.querySelectorAll('.xd').forEach((d) => { dots[d.dataset.i] = d; });
+
+  const store = {
+    get(k) { try { return localStorage.getItem(k); } catch { return null; } },
+    set(k, v) { try { localStorage.setItem(k, v); } catch { /* yaddaş bağlıdır */ } },
+  };
+  const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]);
+  const shuffle = (a) => { for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; };
+  const clock = (ms) => { const s = Math.floor(ms / 1000); return String(Math.floor(s / 60)).padStart(2, '0') + ':' + String(s % 60).padStart(2, '0'); };
+  const spoken = (ms) => { const s = Math.floor(ms / 1000), m = Math.floor(s / 60); return (m ? m + ' dəqiqə ' : '') + (s % 60) + ' saniyə'; };
+
+  // Səs: fayl yükləmədən, brauzerin özündə yaradılır
+  let ac = null, muted = store.get('sk-xo-mute') === '1';
+  const sndBtn = $('snd');
+  sndBtn.setAttribute('aria-pressed', String(!muted));
+  sndBtn.addEventListener('click', () => { muted = !muted; store.set('sk-xo-mute', muted ? '1' : '0'); sndBtn.setAttribute('aria-pressed', String(!muted)); });
+  function tone(f, at, dur, type = 'sine', vol = 0.18, f2 = null) {
+    if (muted) return;
+    try {
+      ac = ac || new (window.AudioContext || window.webkitAudioContext)();
+      const t = ac.currentTime + at, o = ac.createOscillator(), g = ac.createGain();
+      o.type = type; o.frequency.setValueAtTime(f, t);
+      if (f2) o.frequency.exponentialRampToValueAtTime(f2, t + dur);
+      g.gain.setValueAtTime(0.0001, t); g.gain.exponentialRampToValueAtTime(vol, t + 0.015); g.gain.exponentialRampToValueAtTime(0.0001, t + dur);
+      o.connect(g).connect(ac.destination); o.start(t); o.stop(t + dur + 0.05);
+    } catch { /* səs dəstəklənmir */ }
+  }
+  const sfx = {
+    ok() { tone(784, 0, 0.18, 'triangle'); tone(1175, 0.09, 0.32, 'triangle'); },
+    bad() { tone(220, 0, 0.3, 'sawtooth', 0.07, 130); },
+    win() { [523, 659, 784, 1047].forEach((f, i) => tone(f, i * 0.12, 0.4, 'triangle', 0.16)); tone(1568, 0.5, 0.6, 'sine', 0.08); },
+    lose() { [392, 330, 262].forEach((f, i) => tone(f, i * 0.16, 0.35, 'triangle', 0.12)); },
+  };
+
+  // Hər ərazi üçün yaxın qonşular: səhv variantlar onların arasından seçilir
+  const NEAR = U.map((u, i) => U.map((v, j) => [j, (u[3] - v[3]) ** 2 + (u[4] - v[4]) ** 2]).filter((x) => x[0] !== i).sort((a, b) => a[1] - b[1]).slice(0, 9).map((x) => x[0]));
+
+  let done, lives, t0, tick, playing, sel, hoverI = null, leaveT = 0, order, pieces, scene, revealed, fresh = false;
+
+  // Hover: ərazi öz sərhədləri ilə kart kimi qalxır
+  function liftOn(i) {
+    if (hoverI === i) return;
+    liftOff(true);
+    hoverI = i;
+    const u = U[i], el = document.createElementNS('http://www.w3.org/2000/svg', u[6] ? 'circle' : 'path');
+    if (u[6]) { el.setAttribute('cx', u[3]); el.setAttribute('cy', u[4]); el.setAttribute('r', 8); } else el.setAttribute('d', u[2]);
+    el.setAttribute('class', 'xl' + (done.has(i) ? ' ok' : '') + (sel === i ? ' sel' : ''));
+    el.dataset.b = u[5];
+    el.style.transformOrigin = `${u[3]}px ${u[4]}px`;
+    el.style.setProperty('--s', u[6] ? 1.6 : 1.1);
+    lift.appendChild(el);
+    requestAnimationFrame(() => requestAnimationFrame(() => el.classList.add('up')));
+    if (done.has(i)) { tip.textContent = u[0]; tip.setAttribute('x', u[3]); tip.setAttribute('y', u[4] - (u[6] ? 18 : 16)); tip.classList.add('on'); }
+  }
+  function liftOff(now) {
+    if (hoverI === null) return;
+    if (sel === hoverI && !now) return;
+    hoverI = null;
+    tip.classList.remove('on');
+    [...lift.children].forEach((el) => { el.classList.remove('up'); setTimeout(() => el.remove(), now ? 0 : 260); });
+  }
+  function enter(i) { clearTimeout(leaveT); if (sel !== null && sel !== i) return; liftOn(i); }
+  function leave() { clearTimeout(leaveT); leaveT = setTimeout(() => liftOff(false), 140); }
+
+  // Variant pəncərəsi
+  function ask(i) {
+    if (!playing || done.has(i)) return;
+    sel = null; liftOn(i); sel = i;
+    lift.lastChild && lift.lastChild.classList.add('sel');
+    const wrong = shuffle(NEAR[i].slice()).slice(0, 3);
+    opts.innerHTML = shuffle([i, ...wrong]).map((j) => `<button type="button" data-j="${j}">${esc(U[j][0])}</button>`).join('');
+    pop.hidden = false;
+    place(i);
+    opts.querySelector('button').focus({ preventScroll: true });
+  }
+  function place(i) {
+    if (matchMedia('(max-width:640px)').matches) return;
+    const r = svg.getBoundingClientRect(), b = board.getBoundingClientRect(), k = r.width / 1074;
+    const x = r.left - b.left + U[i][3] * k, y = r.top - b.top + U[i][4] * k;
+    const w = pop.offsetWidth, h = pop.offsetHeight;
+    let left = x + 28; if (left + w > b.width - 10) left = x - w - 28;
+    pop.style.left = Math.max(10, left) + 'px';
+    pop.style.top = Math.min(Math.max(10, y - h / 2), b.height - h - 10) + 'px';
+  }
+  function close() { pop.hidden = true; sel = null; liftOff(false); }
+  opts.addEventListener('click', (e) => {
+    const btn = e.target.closest('button'); if (!btn || !playing || sel === null || btn.disabled) return;
+    const j = +btn.dataset.j, i = sel;
+    if (j === i) {
+      btn.classList.add('good');
+      opts.querySelectorAll('button').forEach((b) => { b.disabled = true; });
+      sfx.ok();
+      const l = lift.lastChild; l && l.classList.add('flash');
+      setTimeout(() => { close(); right(i); }, 380);
+    } else {
+      btn.classList.add('bad'); btn.disabled = true;
+      sfx.bad();
+      wrongAns();
+    }
+  });
+  $('pop-x').addEventListener('click', close);
+  svg.addEventListener('click', (e) => { if (!pop.hidden && !e.target.closest('.xu,.xd')) close(); });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && !pop.hidden) close(); });
+
+  function right(i) {
+    done.add(i);
+    [paths[i], dots[i]].forEach((el) => {
+      if (!el) return;
+      el.classList.add('ok', 'flash');
+      setTimeout(() => el.classList.remove('flash'), 650);
+    });
+    paths[i].setAttribute('aria-label', U[i][0]);
+    $('cnt').textContent = done.size;
+    reveal();
+    if (done.size === N) finish(true);
+  }
+  function wrongAns() {
+    lives--;
+    const nars = document.querySelectorAll('.nar');
+    nars[lives] && nars[lives].classList.add('lost');
+    $('lives').setAttribute('aria-label', 'Qalan narlar: ' + lives);
+    if (lives <= 0) { playing = false; opts.querySelectorAll('button').forEach((b) => { b.disabled = true; }); setTimeout(() => { close(); finish(false); }, 450); }
+  }
+
+  // Xəritədə hadisələr
+  paths.forEach((p, i) => {
+    p.addEventListener('pointerenter', () => enter(i));
+    p.addEventListener('pointerleave', leave);
+    p.addEventListener('click', () => ask(i));
+    p.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); ask(i); } });
+    p.addEventListener('focus', () => enter(i));
+    p.addEventListener('blur', leave);
+  });
+  Object.entries(dots).forEach(([i, d]) => {
+    i = +i;
+    d.addEventListener('pointerenter', () => enter(i));
+    d.addEventListener('pointerleave', leave);
+    d.addEventListener('click', () => ask(i));
+  });
+
+  // Pazl: parçaların sayı ərazilərin sayına bərabərdir
+  function jigsaw(n) {
+    const rows = Math.ceil(Math.sqrt(n * 4 / 5)), cols = Math.ceil(n / rows), W = 500, H = 400, w = W / cols, h = H / rows, L = Math.min(w, h);
+    const edge = (ax, ay, bx, by, nx, ny, s) => {
+      if (!s) return [[ax, ay], [bx, by]];
+      const c = 0.5 + (Math.random() - 0.5) * 0.1;
+      const segs = [[[0, 0], [0.33, 0], [c - 0.04, 0], [c - 0.06, 0.06]], [[c - 0.06, 0.06], [c - 0.09, 0.14], [c - 0.12, 0.24], [c, 0.24]], [[c, 0.24], [c + 0.12, 0.24], [c + 0.09, 0.14], [c + 0.06, 0.06]], [[c + 0.06, 0.06], [c + 0.04, 0], [0.67, 0], [1, 0]]];
+      const pts = [[ax, ay]];
+      for (const [p0, p1, p2, p3] of segs) for (let k = 1; k <= 7; k++) {
+        const t = k / 7, m = 1 - t, B = (a) => m * m * m * p0[a] + 3 * m * m * t * p1[a] + 3 * m * t * t * p2[a] + t * t * t * p3[a];
+        const u = B(0), v = B(1) * s * L;
+        pts.push([ax + (bx - ax) * u + nx * v, ay + (by - ay) * u + ny * v]);
+      }
+      return pts;
+    };
+    const sign = () => (Math.random() < 0.5 ? 1 : -1);
+    const Hz = [], Vt = [];
+    for (let r = 0; r <= rows; r++) { Hz[r] = []; for (let c = 0; c < cols; c++) Hz[r][c] = edge(c * w, r * h, (c + 1) * w, r * h, 0, 1, r > 0 && r < rows ? sign() : 0); }
+    for (let r = 0; r < rows; r++) { Vt[r] = []; for (let c = 0; c <= cols; c++) Vt[r][c] = edge(c * w, r * h, c * w, (r + 1) * h, 1, 0, c > 0 && c < cols ? sign() : 0); }
+    const rev = (a) => a.slice().reverse();
+    const T = (r, c) => Hz[r][c], R = (r, c) => Vt[r][c + 1], B = (r, c) => rev(Hz[r + 1][c]), Lf = (r, c) => rev(Vt[r][c]);
+    const used = new Set(), out = [];
+    let extra = rows * cols - n, guard = 0;
+    const pairs = [];
+    while (extra > 0 && guard++ < 5000) {
+      const r = Math.floor(Math.random() * rows), c = Math.floor(Math.random() * cols), dir = Math.random() < 0.5 ? 'h' : 'v';
+      const r2 = dir === 'v' ? r + 1 : r, c2 = dir === 'h' ? c + 1 : c;
+      if (r2 >= rows || c2 >= cols || used.has(r * cols + c) || used.has(r2 * cols + c2)) continue;
+      used.add(r * cols + c); used.add(r2 * cols + c2); pairs.push([r, c, dir]); extra--;
+    }
+    for (const [r, c, dir] of pairs) out.push(dir === 'h' ? [T(r, c), T(r, c + 1), R(r, c + 1), B(r, c + 1), B(r, c), Lf(r, c)] : [T(r, c), R(r, c), R(r + 1, c), B(r + 1, c), Lf(r + 1, c), Lf(r, c)]);
+    for (let r = 0; r < rows; r++) for (let c = 0; c < cols; c++) if (!used.has(r * cols + c)) out.push([T(r, c), R(r, c), B(r, c), Lf(r, c)]);
+    return out.map((parts) => {
+      const pts = parts.flat(), xs = pts.map((p) => p[0]), ys = pts.map((p) => p[1]);
+      return { d: 'M' + pts.map((p) => p[0].toFixed(1) + ' ' + p[1].toFixed(1)).join('L') + 'Z', cx: (Math.min(...xs) + Math.max(...xs)) / 2, cy: (Math.min(...ys) + Math.max(...ys)) / 2 };
+    });
+  }
+  function nextScene() {
+    let bag = [];
+    try { bag = JSON.parse(store.get('sk-xo-bag') || '[]').filter((id) => SCENES.some((s) => s.id === id)); } catch { bag = []; }
+    const last = store.get('sk-xo-last');
+    if (!bag.length) bag = shuffle(SCENES.map((s) => s.id).filter((id) => id !== last));
+    const id = bag.shift();
+    store.set('sk-xo-bag', JSON.stringify(bag)); store.set('sk-xo-last', id);
+    return SCENES.find((s) => s.id === id);
+  }
+  function buildPuzzle() {
+    scene = nextScene();
+    pieces = jigsaw(N);
+    order = shuffle(pieces.map((_, k) => k));
+    revealed = 0;
+    const href = `/img/pazl/${scene.id}.svg`;
+    const pz = $('pz');
+    pz.classList.remove('done');
+    pz.innerHTML = '<defs>' + pieces.map((p, k) => `<clipPath id="pc${k}"><path d="${p.d}"/></clipPath>`).join('') + '</defs>'
+      + pieces.map((p) => `<path class="pz-slot" d="${p.d}"/>`).join('')
+      + pieces.map((p, k) => {
+        const a = Math.random() * Math.PI * 2;
+        return `<g class="pc" data-k="${k}" style="transform-origin:${p.cx.toFixed(1)}px ${p.cy.toFixed(1)}px;--dx:${(Math.cos(a) * 60).toFixed(0)}px;--dy:${(Math.sin(a) * 60).toFixed(0)}px;--r:${(Math.random() * 40 - 20).toFixed(0)}deg"><g clip-path="url(#pc${k})"><image href="${href}" width="500" height="400"/></g><path class="pe" d="${p.d}"/></g>`;
+      }).join('');
+    $('pz-n').textContent = '0';
+    $('cap').innerHTML = '<p class="muted">Hər doğru cavab şəkildən bir parça açır. Nə olduğunu xəritəni tamamlayanda biləcəksiniz.</p>';
+  }
+  function reveal() {
+    if (revealed >= order.length) return;
+    const g = $('pz').querySelector(`.pc[data-k="${order[revealed++]}"]`);
+    g && g.classList.add('on');
+    $('pz-n').textContent = revealed;
+  }
+
+  // Oyunun gedişi
+  function showBest() { const b = +store.get('sk-xo-best'); $('best').textContent = b ? clock(b) : '—'; return b; }
+  function overlay(html, win) { msg.innerHTML = html; over.hidden = false; over.classList.toggle('win', !!win); const b = msg.querySelector('button'); b && b.addEventListener('click', start); }
+  function intro() {
+    const best = showBest();
+    overlay(`<h2>Xəritəni tamamlayaq</h2>
+      <ul class="xo-rules">
+        <li><i style="background:#D3D9DF"></i>Boz ərazini seçin, dörd addan doğrusunu tapın.</li>
+        <li><i class="tri"></i>Doğru cavab ərazini bayrağın rənginə boyayır: şimal mavi, mərkəz qırmızı, cənub yaşıl.</li>
+        <li><svg width="16" height="16" aria-hidden="true"><use href="#nar"/></svg>Beş narınız var. Hər səhv bir nar aparır.</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="#0A6E99" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9.5"/><path d="M12 7v5l3 2"/></svg>Saat işləyir: xəritəni nə qədər tez tamamlasanız, bir o qədər yaxşıdır.</li>
+      </ul>
+      ${best ? `<p>Sizin rekordunuz: <b>${clock(best)}</b></p>` : ''}
+      <button type="button" class="btn btn-p">Oyuna başla</button>`);
+  }
+  function start() {
+    over.hidden = true;
+    close();
+    done = new Set(); lives = 5; playing = true;
+    paths.forEach((p) => { p.classList.remove('ok', 'flash'); p.setAttribute('aria-label', 'Naməlum ərazi'); });
+    Object.values(dots).forEach((d) => d.classList.remove('ok', 'flash'));
+    document.querySelectorAll('.nar').forEach((n) => n.classList.remove('lost'));
+    $('lives').setAttribute('aria-label', 'Qalan narlar: 5');
+    $('cnt').textContent = '0';
+    if (!fresh) buildPuzzle();
+    fresh = false;
+    t0 = performance.now();
+    clearInterval(tick);
+    tick = setInterval(() => { $('clock').textContent = clock(performance.now() - t0); }, 250);
+    $('clock').textContent = '00:00';
+    if (ac && ac.state === 'suspended') ac.resume();
+  }
+  function finish(won) {
+    playing = false;
+    clearInterval(tick);
+    const ms = performance.now() - t0;
+    $('clock').textContent = clock(ms);
+    if (won) {
+      sfx.win();
+      const prev = +store.get('sk-xo-best'), rec = !prev || ms < prev;
+      if (rec) store.set('sk-xo-best', String(Math.round(ms)));
+      showBest();
+      while (revealed < order.length) reveal();
+      $('pz').classList.add('done');
+      $('pz').insertAdjacentHTML('beforeend', `<image class="pz-full" href="/img/pazl/${scene.id}.svg" width="500" height="400"/>`);
+      $('cap').innerHTML = `<span class="pl">${esc(scene.p)}</span><h2>${esc(scene.t)}</h2><p>${esc(scene.d)}</p>`;
+      setTimeout(() => overlay(`<h2>Xəritə tamamlandı!</h2>
+        <span class="big">${clock(ms)}</span>
+        <p>Bütün ${N} ərazini ${spoken(ms)} ərzində tapdınız.</p>
+        ${rec ? (prev ? '<span class="rec">Yeni rekord!</span>' : '<span class="rec">İlk rekordunuz qeydə alındı</span>') : `<p>Rekordunuz: <b>${clock(prev)}</b>. Bir az da cəld olsanız, onu yeniləyə bilərsiniz.</p>`}
+        <button type="button" class="btn btn-p">Yenə oyna</button>`, true), 900);
+    } else {
+      sfx.lose();
+      overlay(`<h2>Narlar tükəndi</h2>
+        <p>Bu dəfə ${done.size} ərazini düzgün tapdınız. Xəritəni yenidən başlayın, hər oyunda pazl da yenisi olacaq.</p>
+        <button type="button" class="btn btn-p">Yenidən başla</button>`);
+    }
+  }
+
+  done = new Set(); lives = 5; playing = false; sel = null;
+  buildPuzzle();
+  fresh = true;
+  intro();
+  addEventListener('resize', () => { if (!pop.hidden && sel !== null) place(sel); });
+</script>
