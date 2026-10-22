@@ -180,7 +180,8 @@ Ana səhifədə yuxarıda menyu tərzində header olmalıdır (sonradan yeni bə
   1060px-dən dar ekranda menyu düyməsi (☰) ilə açılır. Menyu siyahısı: src/lib/site.js -> NAV və SECTIONS.
 - Hər səhifənin başlıq bloku (yol + başlıq + giriş mətni) oval küncli kartın içindədir, sağda solğun ulduz.
 - Yol göstəricisi (breadcrumbs) oval düymə şəklində, "/" əvəzinə "›".
-- Ana səhifə: sitat yuxarısında bayraq rəngli zolaq olan kartın içində, "İlham Əliyev" mavi düymə şəklində;
+- Ana səhifə: sitat kartın içində, yuxarısında soldan sağa yaşıl-qırmızı-mavi zolaq (istifadəçi istəyi). İmza mavi düymədə:
+  gerb + "İlham Əliyev" + "Azərbaycan Respublikasının Prezidenti";
   "Səkkiz guşə, səkkiz bölmə" yazısı ağ düymə şəklində. Haqqında səhifəsində də eyni.
 - Footer da oval küncli panel. Mənbə qeydləri ağ çərçivəli bloklarda. 404 səhifəsi kartın içində.
 
