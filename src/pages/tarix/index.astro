@@ -1,6 +1,7 @@
 ---
 import Base from '../../layouts/Base.astro';
 import { COUNT, EVENT_DAYS } from '../../lib/tarix.js';
+import H from '../../data/gen/qehremanlar.json';
 ---
 <Base title="Tarix" description="Azərbaycan tarixinin ən vacib məqamları: hər gün üçün ölkə tarixində baş vermiş əlamətdar hadisələr.">
   <div class="wrap section">
@@ -22,6 +23,16 @@ import { COUNT, EVENT_DAYS } from '../../lib/tarix.js';
           <span class="tx-meta">{COUNT} hadisə, {EVENT_DAYS.length} gün</span>
         </span>
       </a>
+      <a class="card tx-card" href="/milli-qehremanlar/">
+        <span class="tx-hero" aria-hidden="true">
+          <svg width="56" height="56" viewBox="0 0 48 48"><path d="M16 4l8 14 8-14" fill="none" stroke="#EF3340" stroke-width="5" stroke-linejoin="round"/><path d="M19.5 4L24 12l4.5-8" fill="none" stroke="#00B5E2" stroke-width="2"/><circle cx="24" cy="30" r="13" fill="#E7B416" stroke="#B88A00" stroke-width="2.5"/><path d="M24 21.5l2.6 5.4 5.9.8-4.3 4.1 1 5.8-5.2-2.8-5.2 2.8 1-5.8-4.3-4.1 5.9-.8z" fill="#FFFFFF"/></svg>
+        </span>
+        <span class="tx-body">
+          <h2>Milli qəhrəmanlar</h2>
+          <p>Azərbaycanın Milli Qəhrəmanı adına layiq görülənlər: adları, həyatları və qəhrəmanlıqları.</p>
+          <span class="tx-meta">{H.length} qəhrəman</span>
+        </span>
+      </a>
       <div class="card tx-card tx-soon" aria-disabled="true">
         <span class="tx-body">
           <span class="soon-badge">Tezliklə</span>
@@ -34,7 +45,10 @@ import { COUNT, EVENT_DAYS } from '../../lib/tarix.js';
 </Base>
 
 <style>
-  .tx-grid{display:grid;grid-template-columns:minmax(0,2fr) minmax(0,1fr);gap:24px}
+  .tx-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+  .tx-hero{flex:none;display:flex;align-items:center;justify-content:center;width:104px;height:104px;border-radius:18px;background:#FFF5D4;animation:tx-sw 2.4s ease-in-out infinite alternate}
+  .tx-hero svg{transform-origin:24px 4px}
+  @keyframes tx-sw{from{transform:rotate(-4deg)}to{transform:rotate(4deg)}}
   .tx-card{display:flex;gap:26px;align-items:flex-start;padding:30px;text-decoration:none;color:var(--ink);transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s}
   a.tx-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-hi);color:var(--ink)}
   .tx-body{display:flex;flex-direction:column;gap:10px}
@@ -50,7 +64,7 @@ import { COUNT, EVENT_DAYS } from '../../lib/tarix.js';
   .soon-badge{align-self:flex-start;padding:4px 12px;border-radius:999px;background:#FFF1CC;color:#7A5300;font-size:14px;font-weight:600}
   @media (max-width:860px){.tx-grid{grid-template-columns:minmax(0,1fr)}}
   @media (max-width:520px){.tx-card{flex-direction:column;padding:22px}}
-  @media (prefers-reduced-motion:reduce){.tx-cal{animation:none}}
+  @media (prefers-reduced-motion:reduce){.tx-cal,.tx-hero{animation:none}}
 </style>
 
 <script>

@@ -53,7 +53,7 @@ Maket: https://claude.ai/artifact/Fx2EpRCmochVzv9RJtceup
 
 Sıra (protokol + məntiq, təsdiqlənib):
   Dövlət rəmzləri   | Xəritə   | Tarix
-  Milli qəhrəmanlar | ULDUZ    | Lüğət
+  Fəxri xiyaban     | ULDUZ    | Lüğət
   Atalar sözləri    | Nağıllar | Bayramlar və ənənələr
 Məntiq: ilk 4 kart "Dövlət" (rəmz, ərazi, tarix, qəhrəmanlar), son 4 kart "Xalq" (dil, söz, nağıl, adət).
 Telefonda: 2 sütun, eyni sıra ilə 1-dən 8-ə.
@@ -171,6 +171,11 @@ Ana səhifədəki "Tarix" kartı artıq aktivdir və /tarix/ səhifəsinə apar�
   Rəşid Behbudov (14.12.1915), Mehdi Hüseynzadə (22.12.1918), "Arşın mal alan" (25.10.1913),
   Kəlbəcərin işğalı (02.04.1993), Zəngilanın işğalı (29.10.1993), Suqovuşan (03.10.2020),
   Ana dili dövlət dili (27.06.1918), üçrəngli bayraq (05.02.1991), Vaşinqton görüşü (08.08.2025).
+
+## Struktur dəyişikliyi (22.10.2026)
+- "Milli qəhrəmanlar" ana səhifənin kartlarından çıxarıldı və Tarix bölməsinin içinə ikinci kart kimi köçürüldü.
+  Ünvan dəyişmədi (/milli-qehremanlar/, 307 səhifə), yalnız yol göstəricisi: Ana səhifə / Tarix / Milli qəhrəmanlar.
+- Ana səhifədə onun yerinə "İnteraktiv Fəxri xiyaban" kartı gəldi ("Tezliklə"). Bu bölmə üzərində ayrıca işləniləcək.
 
 ## Lüğət bölməsi (/luget/)
 İstifadəçinin tapşırığı (22.10.2026): üç funksiya — 1) sözün leksik mənası, 2) düzgün yazılış (səhvdirsə düzgün forması),

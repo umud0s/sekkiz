@@ -15,7 +15,7 @@ const desc = `${name}${h.pat ? ' ' + h.pat : ''} — ${TITLES[h.tt]}. Doğum: ${
 <Base title={name} description={desc} ogType="profile">
   <script type="application/ld+json" slot="head" set:html={JSON.stringify({ '@context': 'https://schema.org', '@type': 'Person', name, award: TITLES[h.tt], ...(h.place ? { birthPlace: h.place } : {}), nationality: 'Azərbaycan' })} />
   <div class="wrap section">
-    <nav class="crumbs" aria-label="Yol"><a href="/">Ana səhifə</a> <span aria-hidden="true">/</span> <a href="/milli-qehremanlar/">Milli qəhrəmanlar</a></nav>
+    <nav class="crumbs" aria-label="Yol"><a href="/">Ana səhifə</a> <span aria-hidden="true">/</span> <a href="/tarix/">Tarix</a> <span aria-hidden="true">/</span> <a href="/milli-qehremanlar/">Milli qəhrəmanlar</a></nav>
     <article class="card hero1">
       <div class="av" style={`background:${COLORS[h.cat]}`} aria-hidden="true">{(h.fn[0] || '') + (h.sn[0] || '')}</div>
       <div class="hb">
