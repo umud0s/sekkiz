@@ -181,7 +181,7 @@ Ana səhifədə yuxarıda menyu tərzində header olmalıdır (sonradan yeni bə
 - Hər səhifənin başlıq bloku (yol + başlıq + giriş mətni) oval küncli kartın içindədir, sağda solğun ulduz.
 - Yol göstəricisi (breadcrumbs) oval düymə şəklində, "/" əvəzinə "›".
 - Ana səhifə: sitat kartın içində, yuxarısında soldan sağa yaşıl-qırmızı-mavi zolaq (istifadəçi istəyi). İmza mavi düymədə:
-  gerb + "İlham Əliyev" + "Azərbaycan Respublikasının Prezidenti";
+  gerb + "İlham Əliyev" + "Azərbaycan Respublikasının Prezidenti". Blok https://president.az/ keçididir, yeni tabda açılır;
   "Səkkiz guşə, səkkiz bölmə" yazısı ağ düymə şəklində. Haqqında səhifəsində də eyni.
 - Footer da oval küncli panel. Mənbə qeydləri ağ çərçivəli bloklarda. 404 səhifəsi kartın içində.
 
