@@ -250,6 +250,9 @@ Ana səhifədə yuxarıda menyu tərzində header olmalıdır (sonradan yeni bə
 
 - Menyu (23.10.2026): "Xəritə oyunu" əvəzinə "Oyunlar" açılan siyahısı: Xəritəni tamamla, Xalça yarat, Sözü tap (src/lib/site.js -> GAMES).
 
+- Saytın eni (23.10.2026): .wrap max-width 1180 → 1440px (kənarlarda boşluq azaldı, hər iki tərəfdən bərabər).
+  Xəritə oyununda 1200px-dən geniş ekranda pazl yenidən xəritənin sağındadır (2.3fr / 1fr), darda altda.
+
 ## Struktur dəyişikliyi (22.10.2026)
 - "Milli qəhrəmanlar" ana səhifənin kartlarından çıxarıldı və Tarix bölməsinin içinə ikinci kart kimi köçürüldü.
   Ünvan dəyişmədi (/milli-qehremanlar/, 307 səhifə), yalnız yol göstəricisi: Ana səhifə / Tarix / Milli qəhrəmanlar.

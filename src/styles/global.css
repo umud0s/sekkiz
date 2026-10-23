@@ -15,7 +15,7 @@ img{max-width:100%;height:auto}
 a{color:var(--accent)}a:hover{color:var(--accent-dark)}
 :focus-visible{outline:2px solid var(--accent);outline-offset:3px}
 .sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
-.wrap{max-width:1180px;width:100%;margin:0 auto;padding:0 48px}
+.wrap{max-width:1440px;width:100%;margin:0 auto;padding:0 48px}
 main{flex:1 0 auto}
 
 .head-wrap{padding-top:16px;padding-bottom:20px;position:relative;z-index:30}

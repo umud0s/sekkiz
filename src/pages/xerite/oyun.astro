@@ -170,6 +170,12 @@ const total = G.u.length;
   .xo-cap h2{margin:0;font-size:26px;font-weight:500;line-height:1.15;animation:pop-in .5s ease}
   .xo-cap .pl{font-size:14px;font-weight:500;letter-spacing:.5px;color:var(--accent)}
 
+  /* Geniş ekranda pazl yenidən xəritənin sağında, sütun şəklində */
+  @media (min-width:1200px){
+    .xo-row{grid-template-columns:minmax(0,2.3fr) minmax(0,1fr)}
+    .xo-side{grid-template-columns:minmax(0,1fr);position:sticky;top:96px}
+    .xo-side .xo-cap{align-self:start}
+  }
   @media (max-width:960px){
     .xo-row{grid-template-columns:minmax(0,1fr)}
     .xo-side{grid-template-columns:minmax(0,1fr)}
