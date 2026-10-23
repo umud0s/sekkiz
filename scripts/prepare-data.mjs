@@ -16,18 +16,31 @@ function unique(items, make) {
   });
 }
 
-// Atalar sözləri: [ID, mətn, izah, mövzu1, mövzu2?]
-const at = read('src/data/atalar.json');
-const atSlugs = unique(at, (r) => slugify(r[1], 70));
-const atOut = at.map((r, i) => ({ id: r[0], s: atSlugs[i], t: r[1], m: r[2], tp: r.slice(3) }));
+// Admin panelin faylları: src/data/cms/<qovluq>/*.json
+const dir = (p) => fs.readdirSync(root + p).filter((f) => f.endsWith('.json')).sort().map((f) => read(`${p}/${f}`));
+
+// Atalar sözləri: hər hərf ayrıca faylda, ID sırası ilə birləşdirilir
+const at = dir('src/data/cms/atalar').flatMap((h) => h.sozler);
+// Admin paneldən nömrəsiz əlavə olunan atalar sözünə növbəti boş nömrə verilir
+let maxId = Math.max(...at.map((r) => +r.id || 0));
+for (const r of at) if (!+r.id) r.id = ++maxId;
+at.sort((a, b) => a.id - b.id);
+const atSlugs = unique(at, (r) => slugify(r.metn, 70));
+const atOut = at.map((r, i) => ({ id: r.id, s: atSlugs[i], t: r.metn, m: r.izah, tp: r.movzular || [] }));
 write('src/data/gen/atalar.json', atOut);
 write('public/data/atalar.json', atOut);
 
-// Qəhrəmanlar: [soyad, ad, ata adı, dövr, fəxri ad, doğum, ölüm, ölüm növü, yer, fərman, qısa məlumat, mənbə]
-const qh = read('src/data/qehremanlar.json');
-const qhSlugs = unique(qh, (r) => slugify(`${r[1]} ${r[0]} ${r[2]}`));
-const qhOut = qh.map((r, i) => ({ s: qhSlugs[i], sn: r[0], fn: r[1], pat: r[2], cat: r[3], tt: r[4], born: r[5], died: r[6], dk: r[7], place: r[8], award: r[9], bio: r[10] }));
+// Qəhrəmanlar: hər qəhrəman ayrıca faylda, soyad və ada görə sıralanır
+const qh = dir('src/data/cms/qehremanlar').sort((a, b) => a.soyad.localeCompare(b.soyad, 'az') || a.ad.localeCompare(b.ad, 'az'));
+const qhSlugs = unique(qh, (r) => slugify(`${r.ad} ${r.soyad} ${r.ata_adi || ''}`));
+const qhOut = qh.map((r, i) => ({ s: qhSlugs[i], sn: r.soyad, fn: r.ad, pat: r.ata_adi || '', cat: r.dovr, tt: +r.fexri_ad, born: r.dogum || '', died: r.olum || '', dk: r.olum_novu || '', place: r.yer || '', award: r.ferman || '', bio: r.melumat || '' }));
 write('src/data/gen/qehremanlar.json', qhOut);
 write('public/data/qehremanlar.json', qhOut);
+
+// Admin panelin proqramı npm paketindən sayta köçürülür (kənar CDN-dən asılı olmasın deyə)
+const cms = root + 'node_modules/@sveltia/cms/dist/';
+fs.mkdirSync(root + 'public/admin/chunks', { recursive: true });
+fs.copyFileSync(cms + 'sveltia-cms.js', root + 'public/admin/sveltia-cms.js');
+for (const f of fs.readdirSync(cms + 'chunks').filter((f) => f.endsWith('.js'))) fs.copyFileSync(cms + 'chunks/' + f, root + 'public/admin/chunks/' + f);
 
 console.log(`hazırlandı: ${atOut.length} atalar sözü, ${qhOut.length} qəhrəman`);

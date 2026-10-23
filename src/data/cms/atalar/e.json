@@ -1,0 +1,1026 @@
+{
+  "herf": "E",
+  "sozler": [
+    {
+      "id": 1372,
+      "metn": "Ehtiyac adamı oğru eləyər.",
+      "izah": "Ehtiyac insanı pis yola sala bilər.",
+      "movzular": [
+        "Əxlaq",
+        "Haqq və ədalət"
+      ]
+    },
+    {
+      "id": 1373,
+      "metn": "Ehtiyat igidin yaraşığıdır.",
+      "izah": "Ehtiyatlılıq igidliyin bir hissəsidir.",
+      "movzular": [
+        "Ağıl",
+        "İgidlik"
+      ]
+    },
+    {
+      "id": 1374,
+      "metn": "Ehtiyatlı oğulun anası ağlamaz.",
+      "izah": "Ehtiyatlı adam özünü də, ailəsini də dərddən qoruyur.",
+      "movzular": [
+        "Ailə",
+        "Dərd və səbr"
+      ]
+    },
+    {
+      "id": 1375,
+      "metn": "El ağzı — çuval ağzı.",
+      "izah": "Camaatın dilini bağlamaq olmaz.",
+      "movzular": [
+        "El"
+      ]
+    },
+    {
+      "id": 1376,
+      "metn": "El ağzı faldır.",
+      "izah": "Xalqın dediyi çox vaxt düz çıxır.",
+      "movzular": [
+        "El"
+      ]
+    },
+    {
+      "id": 1377,
+      "metn": "El ağzı ilə quş tutulmaz.",
+      "izah": "Camaatın dedi-qodusu ilə iş görülmür.",
+      "movzular": [
+        "El"
+      ]
+    },
+    {
+      "id": 1378,
+      "metn": "El ağzında bir sözün yüz rəngi var.",
+      "izah": "Xalq bir sözü müxtəlif cür yozur.",
+      "movzular": [
+        "El",
+        "Dil və söz"
+      ]
+    },
+    {
+      "id": 1379,
+      "metn": "El atan daş uzağa gedər.",
+      "izah": "Xalqın birgə gördüyü işin təsiri böyük olur.",
+      "movzular": [
+        "El",
+        "Ailə"
+      ]
+    },
+    {
+      "id": 1380,
+      "metn": "El atan daşa güc düşməz.",
+      "izah": "Xalqın birgə gücünə heç kim qarşı dura bilməz.",
+      "movzular": [
+        "El",
+        "Ailə"
+      ]
+    },
+    {
+      "id": 1381,
+      "metn": "El atan daşı qalxızmaq olmaz.",
+      "izah": "Xalqın qərarını heç kim dəyişə bilməz.",
+      "movzular": [
+        "El",
+        "Ailə"
+      ]
+    },
+    {
+      "id": 1382,
+      "metn": "El bir olsa, dağ oynadar yerindən.",
+      "izah": "Xalq birləşəndə ən çətin işi də görər.",
+      "movzular": [
+        "El"
+      ]
+    },
+    {
+      "id": 1383,
+      "metn": "El çalan zurnanın səsi uzaqdan gələr.",
+      "izah": "Birgə görülən işin sədası uzaqlara yayılır.",
+      "movzular": [
+        "El"
+      ]
+    },
+    {
+      "id": 1384,
+      "metn": "El dediyi mübarək olar.",
+      "izah": "Xalqın qərarı müqəddəsdir.",
+      "movzular": [
+        "El"
+      ]
+    },
+    {
+      "id": 1385,
+      "metn": "El dəlisin çölə atmaz.",
+      "izah": "Xalq öz içindəki zəif adamı da qoruyur.",
+      "movzular": [
+        "El"
+      ]
+    },
+    {
+      "id": 1386,
+      "metn": "El el üstə sığışar, ev ev üstə sığışmaz.",
+      "izah": "İnsanlar bir yerdə yaşaya bilər, amma ailələr qarışmamalıdır.",
+      "movzular": [
+        "El",
+        "Ailə"
+      ]
+    },
+    {
+      "id": 1387,
+      "metn": "El eybin sənə söyləyən sənin də eybini elə söylər.",
+      "izah": "Başqasının eybini sənə danışan adam sənin eybini də başqasına danışar.",
+      "movzular": [
+        "El"
+      ]
+    },
+    {
+      "id": 1388,
+      "metn": "El gözü aydın görər.",
+      "izah": "Xalq hər şeyi görür.",
+      "movzular": [
+        "El"
+      ]
+    },
+    {
+      "id": 1389,
+      "metn": "El gözü tərəzidir.",
+      "izah": "Xalq ədalətli qiymət verir.",
+      "movzular": [
+        "El"
+      ]
+    },
+    {
+      "id": 1390,
+      "metn": "El gözündən düşən boy atmaz.",
+      "izah": "Hörmətdən düşən adam yüksələ bilmir.",
+      "movzular": [
+        "El"
+      ]
+    },
+    {
+      "id": 1391,
+      "metn": "El gücü - sel gücü.",
+      "izah": "Xalqın gücü sel kimi qarşısıalınmazdır.",
+      "movzular": [
+        "El"
+      ]
+    },
+    {
+      "id": 1392,
+      "metn": "El hümmətlə, quş qanadla!",
+      "izah": "Xalq birlikdə hərəkət edəndə güclü olur.",
+      "movzular": [
+        "El"
+      ]
+    },
+    {
+      "id": 1393,
+      "metn": "El igidiylə tanınar.",
+      "izah": "Xalq igidləri ilə tanınır.",
+      "movzular": [
+        "El",
+        "İgidlik"
+      ]
+    },
+    {
+      "id": 1394,
+      "metn": "El içində — öl içində.",
+      "izah": "Camaatla birlikdə olmaq ən böyük dəstəkdir.",
+      "movzular": [
+        "El"
+      ]
+    },
+    {
+      "id": 1395,
+      "metn": "El ilə gələn qara gün toy-bayramdır.",
+      "izah": "Camaatla birgə çəkilən dərd yüngül olur.",
+      "movzular": [
+        "Adət-ənənə",
+        "El"
+      ]
+    },
+    {
+      "id": 1396,
+      "metn": "El keçdiyi körpüdən sən də keç.",
+      "izah": "Hamının getdiyi yolla get.",
+      "movzular": [
+        "El"
+      ]
+    },
+    {
+      "id": 1397,
+      "metn": "El köçər, adət köçməz.",
+      "izah": "Xalq yerini dəyişsə də adətini saxlayır.",
+      "movzular": [
+        "Adət-ənənə",
+        "El"
+      ]
+    },
+    {
+      "id": 1398,
+      "metn": "El qalxdı, sən də qalx.",
+      "izah": "Camaat bir işə qalxanda sən də kənarda qalma.",
+      "movzular": [
+        "El"
+      ]
+    },
+    {
+      "id": 1399,
+      "metn": "El qarğıyan ağac bar verməz.",
+      "izah": "Xalqın qarğışını qazanan adam uğur görmür.",
+      "movzular": [
+        "El"
+      ]
+    },
+    {
+      "id": 1400,
+      "metn": "El malına göz dikən gözdən olar.",
+      "izah": "Başqasının malına göz dikən adam cəzalanır.",
+      "movzular": [
+        "El",
+        "Var-dövlət"
+      ]
+    },
+    {
+      "id": 1401,
+      "metn": "El oğlu yumurtaya qulp qoyar.",
+      "izah": "Xalq hər işdə bir nöqsan tapır.",
+      "movzular": [
+        "El",
+        "Ailə"
+      ]
+    },
+    {
+      "id": 1402,
+      "metn": "El öz dəlisini yaxşı tanıyar.",
+      "izah": "Xalq öz arasındakı hər kəsi yaxşı tanıyır.",
+      "movzular": [
+        "El",
+        "Ağıl"
+      ]
+    },
+    {
+      "id": 1403,
+      "metn": "El sevməyənin ağacı quruyar.",
+      "izah": "Xalqını sevməyən adam uğur görmür.",
+      "movzular": [
+        "El",
+        "Sevgi"
+      ]
+    },
+    {
+      "id": 1404,
+      "metn": "El sözünə uyan qarısını tez boşar.",
+      "izah": "Başqalarının sözünə uyan adam ailəsini tez dağıdır.",
+      "movzular": [
+        "El",
+        "Dil və söz"
+      ]
+    },
+    {
+      "id": 1405,
+      "metn": "El tikəni aləm yıxa bilməz.",
+      "izah": "Xalqın birlikdə qurduğunu heç kim dağıda bilməz.",
+      "movzular": [
+        "El"
+      ]
+    },
+    {
+      "id": 1406,
+      "metn": "El üçün ağlayan iki gözündən olar.",
+      "izah": "Elin bütün dərdini çəkən adam özünü tükəndirir.",
+      "movzular": [
+        "El",
+        "Dərd və səbr"
+      ]
+    },
+    {
+      "id": 1407,
+      "metn": "El üfürdü, sel köpürdü.",
+      "izah": "Xalq birləşəndə böyük güc yaranır.",
+      "movzular": [
+        "El"
+      ]
+    },
+    {
+      "id": 1408,
+      "metn": "El üzünə namaz qılanın arxası Allahadı.",
+      "izah": "Xalq üçün çalışan adamın arxası möhkəmdir.",
+      "movzular": [
+        "El"
+      ]
+    },
+    {
+      "id": 1409,
+      "metn": "El yandıran şamı söndürmək olmaz.",
+      "izah": "Xalqın başladığı işi heç kim dayandıra bilməz.",
+      "movzular": [
+        "El"
+      ]
+    },
+    {
+      "id": 1410,
+      "metn": "El yığılsa, zərbi kərən sındırar.",
+      "izah": "Xalq birləşəndə ən güclü maneəni də dəf edir.",
+      "movzular": [
+        "El"
+      ]
+    },
+    {
+      "id": 1411,
+      "metn": "El yıxanı heç kəs tikə bilməz.",
+      "izah": "Xalqın gözündən düşən adamı heç kim qaldıra bilməz.",
+      "movzular": [
+        "El"
+      ]
+    },
+    {
+      "id": 1412,
+      "metn": "El yumruğun görməyən öz yumruğun batman sanar.",
+      "izah": "Xalqın gücünü görməyən adam özünü güclü sanır.",
+      "movzular": [
+        "El"
+      ]
+    },
+    {
+      "id": 1413,
+      "metn": "Elin ağzına baxan ac qalar.",
+      "izah": "Başqasının köməyinə bel bağlayan adam əliboş qalır.",
+      "movzular": [
+        "Bərəkət",
+        "El"
+      ]
+    },
+    {
+      "id": 1414,
+      "metn": "Elin dilindən qurtarmaq olmaz.",
+      "izah": "Camaatın dilindən heç kəs qurtula bilmir.",
+      "movzular": [
+        "El",
+        "Dil və söz"
+      ]
+    },
+    {
+      "id": 1415,
+      "metn": "Elin səsi — haqq səsidi.",
+      "izah": "Xalqın fikri həqiqətin ifadəsidir.",
+      "movzular": [
+        "El",
+        "Haqq və ədalət"
+      ]
+    },
+    {
+      "id": 1416,
+      "metn": "Elin sözü əvvəl-axır düz olur.",
+      "izah": "Xalqın dediyi gec-tez düz çıxır.",
+      "movzular": [
+        "El",
+        "Haqq və ədalət"
+      ]
+    },
+    {
+      "id": 1417,
+      "metn": "Elinən gələn qara gün toy-bayramdı.",
+      "izah": "Camaatla birgə çəkilən dərd yüngül olur.",
+      "movzular": [
+        "Adət-ənənə"
+      ]
+    },
+    {
+      "id": 1418,
+      "metn": "Elini hürküt, axsağınnan yapış.",
+      "izah": "Camaatı qorxudub sonra zəifi tuturlar.",
+      "movzular": [
+        "El"
+      ]
+    },
+    {
+      "id": 1419,
+      "metn": "Ellər bizə, biz ellərə.",
+      "izah": "Biz elə kömək edirik, el də bizə.",
+      "movzular": [
+        "El"
+      ]
+    },
+    {
+      "id": 1420,
+      "metn": "Ellər köçər, dağlar qalar.",
+      "izah": "İnsanlar gəlib-gedir, torpaq yerində qalır.",
+      "movzular": [
+        "El"
+      ]
+    },
+    {
+      "id": 1421,
+      "metn": "Ellərə gülən canım, indi olub el gülüncü.",
+      "izah": "Başqalarına gülən adam özü gülüş obyektinə çevrildi.",
+      "movzular": [
+        "El"
+      ]
+    },
+    {
+      "id": 1422,
+      "metn": "Elə kor deyən özü badam gözlüdür?!",
+      "izah": "Başqasının nöqsanını deyən adam özü nöqsansız deyil.",
+      "movzular": [
+        "El",
+        "Dil və söz"
+      ]
+    },
+    {
+      "id": 1423,
+      "metn": "Elçi çox olar, qismət bir.",
+      "izah": "İstəyən çox olsa da, nəsib olan bir nəfərdir.",
+      "movzular": [
+        "Bərəkət",
+        "Adət-ənənə"
+      ]
+    },
+    {
+      "id": 1424,
+      "metn": "Elçisi Gülüm olanın başına külüm olar.",
+      "izah": "Pis vasitəçi işi korlayır.",
+      "movzular": [
+        "Adət-ənənə"
+      ]
+    },
+    {
+      "id": 1425,
+      "metn": "Elçiyə zaval yoxdur.",
+      "izah": "Elçiyə toxunmurlar, o, yalnız sözü çatdırır.",
+      "movzular": [
+        "Adət-ənənə"
+      ]
+    },
+    {
+      "id": 1426,
+      "metn": "Elə çalmağın belə də oynamağı olar.",
+      "izah": "Necə rəftar etsən, cavabı da elə olar.",
+      "movzular": [
+        "El"
+      ]
+    },
+    {
+      "id": 1427,
+      "metn": "Elə don geymək gərək ki, yamağı evdə tapıla.",
+      "izah": "İmkanına uyğun yaşa ki, başqasına möhtac olmayasan.",
+      "movzular": [
+        "Ailə",
+        "El"
+      ]
+    },
+    {
+      "id": 1428,
+      "metn": "Elə elə ki, şorçu bir də bazara gəlsin.",
+      "izah": "Ticarəti elə apar ki, alıcı yenə qayıtsın.",
+      "movzular": [
+        "El",
+        "Var-dövlət"
+      ]
+    },
+    {
+      "id": 1429,
+      "metn": "Elə eləmə ki, körpü qala çayın o tayında.",
+      "izah": "Elə etmə ki, sonra geri dönmək mümkün olmasın.",
+      "movzular": [
+        "El"
+      ]
+    },
+    {
+      "id": 1430,
+      "metn": "Elə gül ki, biz də gülək.",
+      "izah": "Sənin sevincin ətrafındakılara da sevinc gətirsin.",
+      "movzular": [
+        "El"
+      ]
+    },
+    {
+      "id": 1431,
+      "metn": "Elə yeməyin belə də qusmağı var.",
+      "izah": "Bəzi xeyrin sonra əziyyəti də olur.",
+      "movzular": [
+        "El"
+      ]
+    },
+    {
+      "id": 1432,
+      "metn": "Elə keçəl deyil ki, qartmağı yerə düşə.",
+      "izah": "Onun vəziyyəti elə də pis deyil.",
+      "movzular": [
+        "El"
+      ]
+    },
+    {
+      "id": 1433,
+      "metn": "Elə köç, köçünə dana-buzov qatışmasın.",
+      "izah": "Elə iş gör ki, sonra qarışıqlıq yaranmasın.",
+      "movzular": [
+        "El"
+      ]
+    },
+    {
+      "id": 1434,
+      "metn": "Elə musurman oldun ki, atovun xaçın da unutdun.",
+      "izah": "Yeni həyatına elə qapıldın ki, keçmişini tamam unutdun.",
+      "movzular": [
+        "El"
+      ]
+    },
+    {
+      "id": 1435,
+      "metn": "Elə zılxın belə qazanı olar.",
+      "izah": "Hər kəsin imkanı özünə uyğundur.",
+      "movzular": [
+        "El"
+      ]
+    },
+    {
+      "id": 1436,
+      "metn": "Elmli qazıya şahid lazım deyil.",
+      "izah": "Bilikli adamın sözü sübuta ehtiyac duymur.",
+      "movzular": [
+        "Təhsil",
+        "Haqq və ədalət"
+      ]
+    },
+    {
+      "id": 1437,
+      "metn": "Enişdən yenə də yoxuş yaxşıdır.",
+      "izah": "Çətin, amma yüksəldən yol asan, amma aşağı aparan yoldan yaxşıdır.",
+      "movzular": [
+        "İş"
+      ]
+    },
+    {
+      "id": 1438,
+      "metn": "Erkək atın yəhəri yırtıq olar.",
+      "izah": "Çox işləyən adamın alətləri tez köhnəlir.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 1439,
+      "metn": "Erkək eşşək, yanı qoduqlu?!",
+      "izah": "Bu necə ola bilər? Ağlasığmaz işdir.",
+      "movzular": [
+        "Dərd və səbr"
+      ]
+    },
+    {
+      "id": 1440,
+      "metn": "Erkək quşun yuvası olmaz.",
+      "izah": "Qadın olmayan yerdə ev-eşik qurulmur.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 1443,
+      "metn": "Ertəyə qalan bəladan qorxma.",
+      "izah": "Hələ gəlməmiş bəladan qorxma.",
+      "movzular": [
+        "Dərd və səbr",
+        "İgidlik"
+      ]
+    },
+    {
+      "id": 1444,
+      "metn": "Eşidibdi parağı qırxarlar, bilmir harasın qırxarlar.",
+      "izah": "Bir şey eşidib, mahiyyətini bilmədən danışır.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 1445,
+      "metn": "Eşqin tərs-avandı olmaz.",
+      "izah": "Sevginin hesab-kitabı, qaydası olmur.",
+      "movzular": [
+        "Sevgi"
+      ]
+    },
+    {
+      "id": 1446,
+      "metn": "Eşşək aldım, qatır çıxdı.",
+      "izah": "Gözlədiyimdən pis nəticə aldım.",
+      "movzular": [
+        "Dərd və səbr"
+      ]
+    },
+    {
+      "id": 1447,
+      "metn": "Eşşək anqıranda itin başı ağrıyar.",
+      "izah": "Bacarıqsızın boş səs-küyü başqalarını bezdirir.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 1448,
+      "metn": "Eşşək batdağa bir dəfə batar.",
+      "izah": "Ağılsız adam da eyni səhvi iki dəfə etmir.",
+      "movzular": [
+        "Ağıl"
+      ]
+    },
+    {
+      "id": 1449,
+      "metn": "Eşşək eşşəyə uzunqulaq deyər.",
+      "izah": "Nöqsanlı adam öz eybini başqasında axtarır.",
+      "movzular": [
+        "Əxlaq"
+      ]
+    },
+    {
+      "id": 1450,
+      "metn": "Eşşək eşşəyi borc qaşır.",
+      "izah": "Eyni dərəcədə olanlar bir-birinə yaxşılığı əvəzinə qaytarır.",
+      "movzular": [
+        "Bərəkət",
+        "Var-dövlət"
+      ]
+    },
+    {
+      "id": 1451,
+      "metn": "Eşşək hələ o eşşəkdi, palanı dəyişsə də.",
+      "izah": "Görünüş dəyişsə də, insanın mahiyyəti dəyişmir.",
+      "movzular": [
+        "Əxlaq"
+      ]
+    },
+    {
+      "id": 1452,
+      "metn": "Eşşək qazanar, at yeyər.",
+      "izah": "Zəhməti biri çəkir, bəhrəsini başqası görür.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 1453,
+      "metn": "Eşşək qocalmaqla töyləbaşı olmaz.",
+      "izah": "Yaş adama ağıl və hörmət gətirmir.",
+      "movzular": [
+        "Ağıl"
+      ]
+    },
+    {
+      "id": 1454,
+      "metn": "Eşşək nə bilir ki, zəfəran nədir?",
+      "izah": "Cahil adam dəyərli şeyin qədrini bilmir.",
+      "movzular": [
+        "Ağıl"
+      ]
+    },
+    {
+      "id": 1455,
+      "metn": "Eşşək olasan, çulun məxmər?!",
+      "izah": "Layiq olmadığı halda bəzəyə can atır.",
+      "movzular": [
+        "Əxlaq"
+      ]
+    },
+    {
+      "id": 1456,
+      "metn": "Eşşək olasan, tükün bu narınlığında!",
+      "izah": "Heç bir dəyəri olmadığı halda nazlanır.",
+      "movzular": [
+        "Əxlaq"
+      ]
+    },
+    {
+      "id": 1457,
+      "metn": "Eşşək tozda ağnayanda həvəsi gələr.",
+      "izah": "Hər kəsin öz zövqü var.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 1458,
+      "metn": "Eşşək üstə qəmə bağlayana gülərlər.",
+      "izah": "Yersiz bəzək adamı gülünc edir.",
+      "movzular": [
+        "Dərd və səbr"
+      ]
+    },
+    {
+      "id": 1459,
+      "metn": "Eşşəkdən adınalıq umur.",
+      "izah": "Layiq olmayan adamdan yaxşılıq gözləyir.",
+      "movzular": [
+        "Əxlaq"
+      ]
+    },
+    {
+      "id": 1460,
+      "metn": "Eşşəkdən soruşublar: niyə bərk qaçırsan? Deyib: bizdəyəndən soruş.",
+      "izah": "Hərəkətinin səbəbini ona əziyyət verəndən soruş.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 1461,
+      "metn": "Eşşəklə getdilər, qatırla döndülər.",
+      "izah": "Gedəndə bir cür idilər, qayıdanda vəziyyətləri dəyişdi.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 1462,
+      "metn": "Eşşəyə anqırdığı xoş gələr.",
+      "izah": "Hər kəs öz səsini, öz sözünü bəyənir.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 1463,
+      "metn": "Eşşəyə dedilər: mərifətini göstər, yıxıldı ağnadı.",
+      "izah": "Bacarıqsıza iş tapşırsan, rüsvay olar.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 1464,
+      "metn": "Eşşəyə gücü çatmaz, palanı çırpar.",
+      "izah": "Güclüyə gücü çatmayan zəifdən acığını çıxır.",
+      "movzular": [
+        "Haqq və ədalət"
+      ]
+    },
+    {
+      "id": 1465,
+      "metn": "Eşşəyə qantarğa keçirməknən at olmaz.",
+      "izah": "Zahiri dəyişikliklə insanın mahiyyəti dəyişmir.",
+      "movzular": [
+        "Əxlaq"
+      ]
+    },
+    {
+      "id": 1466,
+      "metn": "Eşşəyə qızıl çatmaqla qiyməti artmaz.",
+      "izah": "Bəzək dəyərsiz adamı dəyərli etmir.",
+      "movzular": [
+        "Var-dövlət"
+      ]
+    },
+    {
+      "id": 1467,
+      "metn": "Eşşəyə minmək bir ayıb, eşşəkdən düşmək iki ayıb.",
+      "izah": "Layiq olmadığın işə girişmək də ayıbdır, ondan rüsvayçılıqla çıxmaq da.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 1468,
+      "metn": "Eşşəyi minərlər ata çatınca.",
+      "izah": "Yaxşısı tapılana qədər əldə olandan istifadə edilir.",
+      "movzular": [
+        "Ailə"
+      ]
+    },
+    {
+      "id": 1469,
+      "metn": "Eşşəyi yüklədikcə tünd gedər.",
+      "izah": "Adama artıq yük vurduqca işi ağırlaşır.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 1470,
+      "metn": "Eşşəyim bozdur, dəyirmana getməyir.",
+      "izah": "İşə yaramayan adam üçün bəhanə tapılır.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 1471,
+      "metn": "Eşşəyim, ölmə, yaz gələr yonca bitər.",
+      "izah": "Uzaq gələcəyə verilən vəd ehtiyacı olana kömək etmir.",
+      "movzular": [
+        "Dil və söz"
+      ]
+    },
+    {
+      "id": 1472,
+      "metn": "Eşşəyin anqırtısı özünə xoş gələr.",
+      "izah": "İnsan öz səsini, öz sözünü hər şeydən üstün tutur.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 1473,
+      "metn": "Eşşəyin arpası artıq düşəndə yiyəsinə şıllaq atar.",
+      "izah": "Bolluq görən nankor adam yaxşılıq edənə qarşı çıxır.",
+      "movzular": [
+        "Əxlaq"
+      ]
+    },
+    {
+      "id": 1474,
+      "metn": "Eşşəyin canı yananda atdan yeyin qaçar.",
+      "izah": "Ehtiyac zəifi də güclüdən sürətli edir.",
+      "movzular": [
+        "Dərd və səbr"
+      ]
+    },
+    {
+      "id": 1475,
+      "metn": "Eşşəyin yükü yüngül olanda oynamağı gələr.",
+      "izah": "İşi yüngül olan adam şıltaqlıq edir.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 1476,
+      "metn": "Ev alma, qonşu al.",
+      "izah": "Evdən əvvəl qonşunu seç.",
+      "movzular": [
+        "El",
+        "Ailə"
+      ]
+    },
+    {
+      "id": 1477,
+      "metn": "Ev ayranı acı olur.",
+      "izah": "İnsan öz evindəkinin qədrini bilmir.",
+      "movzular": [
+        "Ailə"
+      ]
+    },
+    {
+      "id": 1478,
+      "metn": "Ev bizim, sirr bizim.",
+      "izah": "Ailənin sirri ailədə qalmalıdır.",
+      "movzular": [
+        "Ağıl",
+        "Ailə"
+      ]
+    },
+    {
+      "id": 1479,
+      "metn": "Ev böyüksüz olmaz.",
+      "izah": "Ağsaqqalı olmayan evdə nizam olmur.",
+      "movzular": [
+        "Ailə"
+      ]
+    },
+    {
+      "id": 1480,
+      "metn": "Ev danasından öküz olmaz.",
+      "izah": "Ərköyün böyüyən adam güclü olmur.",
+      "movzular": [
+        "Ailə"
+      ]
+    },
+    {
+      "id": 1481,
+      "metn": "Ev kimindir? Oturanın! Söz kimindir? — Götürənin.",
+      "izah": "Mal ondan istifadə edənin, söz isə onu qəbul edənindir.",
+      "movzular": [
+        "Ağıl",
+        "Ailə"
+      ]
+    },
+    {
+      "id": 1482,
+      "metn": "Ev oğrusunu tutmaq olmaz.",
+      "izah": "Yaxındakı xaini tutmaq çətindir.",
+      "movzular": [
+        "Əxlaq",
+        "Ailə"
+      ]
+    },
+    {
+      "id": 1483,
+      "metn": "Ev sözsüz olmaz, dəyirman tozsuz.",
+      "izah": "Ailədə kiçik söz-söhbət təbiidir.",
+      "movzular": [
+        "Ağıl",
+        "Ailə"
+      ]
+    },
+    {
+      "id": 1484,
+      "metn": "Ev təzə, divar təzə, ələyim, səni hara asım?",
+      "izah": "Şərait dəyişəndə köhnə şeyə yer qalmır.",
+      "movzular": [
+        "Ailə"
+      ]
+    },
+    {
+      "id": 1485,
+      "metn": "Ev yıxanın evi yıxılar.",
+      "izah": "Başqasının ailəsini dağıdanın öz ailəsi dağılır.",
+      "movzular": [
+        "Ailə"
+      ]
+    },
+    {
+      "id": 1486,
+      "metn": "Evdəki hesab bazarda çıxmaz.",
+      "izah": "Planlaşdırılan iş həyatda başqa cür olur.",
+      "movzular": [
+        "Ailə",
+        "Var-dövlət"
+      ]
+    },
+    {
+      "id": 1487,
+      "metn": "Ev-eşiyin istəməyən el-obasını sevməz.",
+      "izah": "Ailəsini sevməyən xalqını da sevməz.",
+      "movzular": [
+        "El",
+        "Sevgi"
+      ]
+    },
+    {
+      "id": 1488,
+      "metn": "Evin küçüyü ol, kiçiyi olma.",
+      "izah": "Evdə qulluqçu ol, amma hamıdan kiçik olma.",
+      "movzular": [
+        "Ailə"
+      ]
+    },
+    {
+      "id": 1489,
+      "metn": "Evin yaraşığı uşaqdır, süfrənin yaraşığı — qonaq.",
+      "izah": "Evə sevinci uşaq, süfrəyə hörməti qonaq gətirir.",
+      "movzular": [
+        "Ailə",
+        "Qonaqpərvərlik"
+      ]
+    },
+    {
+      "id": 1490,
+      "metn": "Evində yatıb, yuxuda həzrət Süleymanı görür.",
+      "izah": "Heç bir iş görmədən böyük arzular qurur.",
+      "movzular": [
+        "Ailə"
+      ]
+    },
+    {
+      "id": 1491,
+      "metn": "Evində yox darı, keçər oturar hamıdan yuxarı.",
+      "izah": "Heç nəyi olmayan adam hamıdan çox iddia edir.",
+      "movzular": [
+        "Ailə",
+        "Bərəkət"
+      ]
+    },
+    {
+      "id": 1492,
+      "metn": "Evlinin bir evi var, evsizin min.",
+      "izah": "Evi olan bir yerdə rahatdır, evsiz isə hər yerdə qəribdir.",
+      "movzular": [
+        "Ailə"
+      ]
+    },
+    {
+      "id": 1493,
+      "metn": "Eybi kim deyər — eybəcər.",
+      "izah": "Başqasının eybini deyən özü eybəcər görünür.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 1494,
+      "metn": "Eyibli eybin bilsə, başına palaz örtər.",
+      "izah": "Öz eybini bilən adam onu gizlətməyə çalışır.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 1495,
+      "metn": "Eyibsiz dost axtaran dostsuz qalar.",
+      "izah": "Nöqsansız dost axtaran adam dostsuz qalır.",
+      "movzular": [
+        "Dostluq"
+      ]
+    },
+    {
+      "id": 1496,
+      "metn": "Eyməçiyə doşab göstərməzlər.",
+      "izah": "Tamahkara nemət göstərmə.",
+      "movzular": [
+        "Tamah"
+      ]
+    }
+  ]
+}

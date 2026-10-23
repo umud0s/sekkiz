@@ -3,15 +3,6 @@ export const SITE = {
   description: 'Azərbaycan dili, tarixi və milli irsi bir yerdə: dövlət rəmzləri, xəritə, atalar sözləri, nağıllar və milli qəhrəmanlar.',
 };
 
-// href boşdursa, ikon görünür, amma keçid deyil (ünvan hələ hazır deyil)
-export const SOCIAL = [
-  { name: 'Instagram', href: '', icon: 'instagram' },
-  { name: 'TikTok', href: '', icon: 'tiktok' },
-  { name: 'YouTube', href: '', icon: 'youtube' },
-  { name: 'Telegram', href: 'https://t.me/atalarimizinsozu', icon: 'telegram' },
-  { name: 'WhatsApp', href: 'https://wa.me/994559272779', icon: 'whatsapp' },
-  { name: 'E-poçt', href: '', icon: 'mail' },
-];
 
 // Yuxarı menyu. Yeni bənd əlavə etmək üçün bu siyahıya bir sətir yazmaq kifayətdir.
 // href boşdursa, bölmə "tezliklə" kimi göstərilir.

@@ -1,0 +1,381 @@
+{
+  "herf": "X",
+  "sozler": [
+    {
+      "id": 1918,
+      "metn": "Xain adam qorxaq olar.",
+      "izah": "Xain adam həmişə qorxu içində yaşayır.",
+      "movzular": [
+        "Əxlaq",
+        "İgidlik"
+      ]
+    },
+    {
+      "id": 1919,
+      "metn": "Xain xoflu olar, kor ürkəyən.",
+      "izah": "Günahkar adam həmişə qorxu içindədir.",
+      "movzular": [
+        "Əxlaq"
+      ]
+    },
+    {
+      "id": 1920,
+      "metn": "Xala evinə dadanan ər evinə xeyir verməz.",
+      "izah": "Ailəsini qoyub başqa yerdə vaxt keçirən adam evinə fayda vermir.",
+      "movzular": [
+        "Əxlaq",
+        "Ailə"
+      ]
+    },
+    {
+      "id": 1921,
+      "metn": "Xalam bildi - aləm bildi.",
+      "izah": "Dedi-qoduçu bilən şeyi hamı bilir.",
+      "movzular": [
+        "Dil və söz"
+      ]
+    },
+    {
+      "id": 1922,
+      "metn": "Xalını xovuna sığallarlar.",
+      "izah": "Hər şeyə öz qaydası ilə yanaşmaq lazımdır.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 1923,
+      "metn": "Xalx qız verib quda qazandı, biz qız verib qada qazandıq.",
+      "izah": "Başqaları qohumluqdan xeyir gördü, biz isə bəla.",
+      "movzular": [
+        "Ailə"
+      ]
+    },
+    {
+      "id": 1924,
+      "metn": "Xalqa it hürəndə bizə çaqqal ulayar.",
+      "izah": "Başqasının dərdi bir cürdür, bizimki isə daha pisdir.",
+      "movzular": [
+        "El"
+      ]
+    },
+    {
+      "id": 1925,
+      "metn": "Xalqın ağzını bağlamaq olmaz.",
+      "izah": "Camaatın dilini bağlamaq olmaz.",
+      "movzular": [
+        "El"
+      ]
+    },
+    {
+      "id": 1926,
+      "metn": "Xamın gözü böyük olar.",
+      "izah": "Təcrübəsiz adamın iddiası böyük olur.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 1927,
+      "metn": "Xamır yeyənə etibar yoxdu.",
+      "izah": "Başqasının haqqını yeyən adama etibar olmaz.",
+      "movzular": [
+        "Haqq və ədalət"
+      ]
+    },
+    {
+      "id": 1928,
+      "metn": "Xan qulluğuna gedən atlı gedər, piyada qayıdar.",
+      "izah": "Hakimiyyətə xidmət edən adam varını itirir.",
+      "movzular": [
+        "Var-dövlət"
+      ]
+    },
+    {
+      "id": 1929,
+      "metn": "Xan mənə köpək oğlu dedi.",
+      "izah": "Böyük adamın təhqiri də şərəf sayılır.",
+      "movzular": [
+        "Ailə"
+      ]
+    },
+    {
+      "id": 1930,
+      "metn": "Xana yaradı, bəgə yaradı, keçəl Xondi, sənə yaramadı?",
+      "izah": "Hamıya faydası var, amma sənə yox.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 1931,
+      "metn": "Xanım sındıran qabın səsi çıxmaz.",
+      "izah": "Güclü adamın səhvini heç kim deyə bilməz.",
+      "movzular": [
+        "Haqq və ədalət"
+      ]
+    },
+    {
+      "id": 1932,
+      "metn": "Xanım-xanım dedilər, axçacığım yedilər, Elə axçam qurtardı, cırtot xanım dedilər.",
+      "izah": "Pulun olanda hörmət edirlər, pulun bitəndə isə rişxənd edirlər.",
+      "movzular": [
+        "Var-dövlət",
+        "El"
+      ]
+    },
+    {
+      "id": 1933,
+      "metn": "Xarman yellə sovuşar, düyün ellə.",
+      "izah": "Toyu-düyünü el birlikdə edir.",
+      "movzular": [
+        "El"
+      ]
+    },
+    {
+      "id": 1934,
+      "metn": "Xarmanın tozu bərəkətli olar.",
+      "izah": "Əməyin bəhrəsi bərəkətlidir.",
+      "movzular": [
+        "Bərəkət"
+      ]
+    },
+    {
+      "id": 1935,
+      "metn": "Xasiyyətin bilmədiyin atın quyruğun əlləmə.",
+      "izah": "Tanımadığın adama yaxınlaşma.",
+      "movzular": [
+        "Ağıl"
+      ]
+    },
+    {
+      "id": 1936,
+      "metn": "Xata xata üstündən gəlməsə, bir xataya nə var?",
+      "izah": "Bir xəta olsa, onu düzəltmək olar, ardıcıl xətalar isə təhlükəlidir.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 1937,
+      "metn": "Xəta insandan baş verər.",
+      "izah": "İnsan səhvsiz olmur.",
+      "movzular": [
+        "Əxlaq"
+      ]
+    },
+    {
+      "id": 1938,
+      "metn": "Xəta məndən, əta səndən.",
+      "izah": "Səhv məndən, bağışlamaq səndən.",
+      "movzular": [
+        "Əxlaq"
+      ]
+    },
+    {
+      "id": 1939,
+      "metn": "Xeyir içində şərim olunca, şər içində xeyrim olsun.",
+      "izah": "Xeyirdə şər olmasından, şərdə xeyir olması yaxşıdır.",
+      "movzular": [
+        "Əxlaq"
+      ]
+    },
+    {
+      "id": 1940,
+      "metn": "Xeyir istə qonşuna, xeyir çıxsın qarşına.",
+      "izah": "Qonşuna yaxşılıq arzula ki, sənə də yaxşılıq gəlsin.",
+      "movzular": [
+        "El",
+        "Əxlaq"
+      ]
+    },
+    {
+      "id": 1941,
+      "metn": "Xeyirsöyləməzə dedilər: xeyir söylə, gəlləm sənə don gətirrəm. Dedi: getdin bəlkə gəlmədin.",
+      "izah": "Bədbin adam yaxşı xəbər verməyi də bacarmır.",
+      "movzular": [
+        "Əxlaq"
+      ]
+    },
+    {
+      "id": 1942,
+      "metn": "Xeyrat halvasından qarın doymaz.",
+      "izah": "Paylanan nemətlə ehtiyac ödənmir.",
+      "movzular": [
+        "Tamah"
+      ]
+    },
+    {
+      "id": 1943,
+      "metn": "Xeyri olsaydı, adın qoyardılar xeyrəli.",
+      "izah": "Faydası olsaydı, hamı onu tanıyardı.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 1944,
+      "metn": "Xeyrini görmədiyim oğulun vayını eyləyim.",
+      "izah": "Xeyrini görmədiyim adamın dərdini çəkməyə dəyməz.",
+      "movzular": [
+        "Ailə"
+      ]
+    },
+    {
+      "id": 1945,
+      "metn": "Xeyməgaha girən gərək ağlasın.",
+      "izah": "Yas yerinə gedən ağlamalıdır.",
+      "movzular": [
+        "Dərd və səbr"
+      ]
+    },
+    {
+      "id": 1946,
+      "metn": "Xəbərçi köpək oğludu, ona qulaq asan əbləh köpək oğludu.",
+      "izah": "Dedi-qoduçu da pisdir, ona inanan da.",
+      "movzular": [
+        "Ailə",
+        "Ağıl"
+      ]
+    },
+    {
+      "id": 1947,
+      "metn": "Xəmir suyu çox götürər.",
+      "izah": "Möhkəm iş çox zəhmət tələb edir.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 1948,
+      "metn": "Xənçəl yarası sağalar, dil yarası sağalmaz.",
+      "izah": "Fiziki yara sağalır, sözün vurduğu yara isə sağalmır.",
+      "movzular": [
+        "Ağıl",
+        "Dərd və səbr"
+      ]
+    },
+    {
+      "id": 1949,
+      "metn": "Xəsisdən alınan yumurtanın sarısı olmaz.",
+      "izah": "Xəsisin verdiyi şeyin xeyri olmaz.",
+      "movzular": [
+        "Tamah"
+      ]
+    },
+    {
+      "id": 1950,
+      "metn": "Xəstə tələsər, armud vaxtında yetişər.",
+      "izah": "Hər işin vaxtı var, tələsməklə tez olmur.",
+      "movzular": [
+        "Dərd və səbr"
+      ]
+    },
+    {
+      "id": 1951,
+      "metn": "Xəstə yatan ölməz, əcəli yetən ölər.",
+      "izah": "Xəstəlikdən yox, əcəl çatanda insan ölür.",
+      "movzular": [
+        "Dərd və səbr"
+      ]
+    },
+    {
+      "id": 1952,
+      "metn": "Xəstənin işi qalar, astanın işi qalmaz.",
+      "izah": "Xəstənin işi qalır, ləng adamın isə gec də olsa görülür.",
+      "movzular": [
+        "İş",
+        "Dərd və səbr"
+      ]
+    },
+    {
+      "id": 1953,
+      "metn": "Xətir üçün xəstə yatmaq olmaz.",
+      "izah": "Başqasının xətrinə özünü zərərə vurmaq olmaz.",
+      "movzular": [
+        "Dərd və səbr"
+      ]
+    },
+    {
+      "id": 1954,
+      "metn": "Xırçıya qarpız bağışlamazlar.",
+      "izah": "İşin içində olan adama onun məhsulunu hədiyyə etməzlər.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 1955,
+      "metn": "Xışı kötügə dayanıb.",
+      "izah": "İş çətinliyə dirənib.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 1956,
+      "metn": "Xoruz banlamasa, sabah açılmaz?!",
+      "izah": "Bir adam olmasa da, iş dayanmaz.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 1957,
+      "metn": "Xoruz bir kərə bəzənər.",
+      "izah": "Gözəllik bir dəfə verilir.",
+      "movzular": [
+        "Sevgi"
+      ]
+    },
+    {
+      "id": 1958,
+      "metn": "Xoruz ölmüş, gözü çöplükdə qalmış.",
+      "izah": "İnsan ömrünün sonunda da öyrəşdiyi şeyi düşünür.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 1959,
+      "metn": "Xoruz öz küllüyündə banlar.",
+      "izah": "Hər kəs öz yerində cəsarətli olur.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 1960,
+      "metn": "Xoruza quyruğu da yükdü.",
+      "izah": "Zəif adama ən kiçik yük də ağır gəlir.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 1961,
+      "metn": "Xoruzun quyruğu görükür.",
+      "izah": "Gizlətmək istədiyi şeyin əlaməti üzə çıxıb.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 1962,
+      "metn": "Xoruzun quyruğuna inanım, tülkünün andına?",
+      "izah": "Gözümlə gördüyümə inanım, yoxsa hiyləgərin andına?",
+      "movzular": [
+        "Haqq və ədalət"
+      ]
+    },
+    {
+      "id": 1963,
+      "metn": "Xoş sözlə ilan yuvasından çıxar.",
+      "izah": "Xoş söz ən sərt adamı da yola gətirir.",
+      "movzular": [
+        "Ağıl",
+        "Dil və söz"
+      ]
+    }
+  ]
+}

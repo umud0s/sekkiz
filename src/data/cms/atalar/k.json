@@ -1,0 +1,1584 @@
+{
+  "herf": "K",
+  "sozler": [
+    {
+      "id": 2158,
+      "metn": "Kabab qanlı, igid canlı.",
+      "izah": "Döyüşdə zərər görsə də, igid sağ qalır.",
+      "movzular": [
+        "İgidlik"
+      ]
+    },
+    {
+      "id": 2159,
+      "metn": "Kababı köz öldürər, igidi söz.",
+      "izah": "Acı söz igidi hər şeydən çox yaralayır.",
+      "movzular": [
+        "Ağıl",
+        "Dil və söz"
+      ]
+    },
+    {
+      "id": 2160,
+      "metn": "Kamil insan kəlamından bəllidir.",
+      "izah": "Kamil insan danışığından tanınır.",
+      "movzular": [
+        "Dil və söz"
+      ]
+    },
+    {
+      "id": 2161,
+      "metn": "Kamil kamili tanır.",
+      "izah": "Bilikli adam özü kimisini tez tanıyır.",
+      "movzular": [
+        "Ağıl"
+      ]
+    },
+    {
+      "id": 2162,
+      "metn": "Kar eşitdiyin, kor tutduğun buraxmaz.",
+      "izah": "Hər kəs əlinə keçəni möhkəm tutur.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 2163,
+      "metn": "Kar eşitməz - yaraşdırar, kor görməz - quraşdırar.",
+      "izah": "Bilməyən adam boşluğu öz təxəyyülü ilə doldurur.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 2164,
+      "metn": "Kar iki dəfə gülər.",
+      "izah": "Gec anlayan adam hadisəyə hamıdan sonra reaksiya verir.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 2165,
+      "metn": "Kar iti qurd aparar.",
+      "izah": "Diqqətsiz adam asanlıqla bəlaya düşür.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 2166,
+      "metn": "Kar könlündəkini anlar.",
+      "izah": "Söz deyilməsə də, ürək halı anlayır.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 2167,
+      "metn": "Kar üçün iki dəfə azan verilməz.",
+      "izah": "Eşitmək istəməyənə sözü iki dəfə deməzlər.",
+      "movzular": [
+        "Dil və söz"
+      ]
+    },
+    {
+      "id": 2168,
+      "metn": "Karın başına balta vurdular, dedi: bu nə taqqatuqdu.",
+      "izah": "Böyük bəlanın fərqinə varmayan adam onu xırda bir şey sayır.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 2169,
+      "metn": "Karvanın pusquda qalınca vurulmağı yaxşıdı.",
+      "izah": "Qorxu içində gözləməkdənsə, bəlanın gəlib keçməsi yaxşıdır.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 2170,
+      "metn": "Kasıb at tapanda ot tapmaz, ot tapanda - at.",
+      "izah": "Kasıbın bir ehtiyacı ödənəndə o biri yarımçıq qalır.",
+      "movzular": [
+        "Bərəkət",
+        "Var-dövlət"
+      ]
+    },
+    {
+      "id": 2171,
+      "metn": "Kasıb çıxarın bilsə, gündəliyə mahud geyər.",
+      "izah": "Kasıb imkanını bilmədən xərcləsə, tez müflisləşər.",
+      "movzular": [
+        "Bərəkət",
+        "Var-dövlət"
+      ]
+    },
+    {
+      "id": 2172,
+      "metn": "Kasıb çıraq yandırar, dövlətlinin pulun sayar.",
+      "izah": "Kasıb zəhmət çəkir, varlı qazancını sayır.",
+      "movzular": [
+        "Bərəkət",
+        "Var-dövlət"
+      ]
+    },
+    {
+      "id": 2173,
+      "metn": "Kasıb geyəndə, - hardandı, - deyərlər, varlı geyəndə — mübarək.",
+      "izah": "Kasıbın yaxşı geyiminə şübhə ilə, varlınınkına isə alqışla baxırlar.",
+      "movzular": [
+        "Bərəkət",
+        "Var-dövlət"
+      ]
+    },
+    {
+      "id": 2174,
+      "metn": "Kasıb itinin adın gümüş qoyar.",
+      "izah": "Kasıb adam heç olmasa adla təsəlli tapır.",
+      "movzular": [
+        "Bərəkət",
+        "Var-dövlət"
+      ]
+    },
+    {
+      "id": 2175,
+      "metn": "Kasıb oğurluğa çıxdı, Ay da bir yandan çıxdı.",
+      "izah": "Bəxti gətirməyən adamın hər işi ters gedir.",
+      "movzular": [
+        "Bərəkət",
+        "Var-dövlət"
+      ]
+    },
+    {
+      "id": 2176,
+      "metn": "Kasıb öləndə molla xəstə olar.",
+      "izah": "Kasıba heç kim kömək etmək istəmir.",
+      "movzular": [
+        "Bərəkət",
+        "Var-dövlət"
+      ]
+    },
+    {
+      "id": 2177,
+      "metn": "Kasıba bazarın tulası da hürər.",
+      "izah": "Kasıbı hamı incidir.",
+      "movzular": [
+        "Bərəkət",
+        "Var-dövlət"
+      ]
+    },
+    {
+      "id": 2178,
+      "metn": "Kasıbı dəvə üstə böv sancar.",
+      "izah": "Bəxtsiz adamın başına ən gözlənilməz bəla gəlir.",
+      "movzular": [
+        "Bərəkət",
+        "Var-dövlət"
+      ]
+    },
+    {
+      "id": 2179,
+      "metn": "Kasıbın bir oğlu oldu, o da boynu əyri.",
+      "izah": "Kasıbın bəxti heç nədə gətirmir.",
+      "movzular": [
+        "Ailə",
+        "Var-dövlət"
+      ]
+    },
+    {
+      "id": 2180,
+      "metn": "Kasıbın danası dövlətlinin tayasına baxar.",
+      "izah": "Kasıb varlının malına həsədlə baxır.",
+      "movzular": [
+        "Bərəkət",
+        "Var-dövlət"
+      ]
+    },
+    {
+      "id": 2181,
+      "metn": "Kasıbın əlində qoğal gülməli görsənir.",
+      "izah": "Kasıbın kiçik nemətinə də rişxəndlə baxırlar.",
+      "movzular": [
+        "Bərəkət",
+        "Var-dövlət"
+      ]
+    },
+    {
+      "id": 2182,
+      "metn": "Kasıbın günü — itin günü.",
+      "izah": "Kasıbın həyatı ağır keçir.",
+      "movzular": [
+        "Bərəkət",
+        "Var-dövlət"
+      ]
+    },
+    {
+      "id": 2183,
+      "metn": "Kasıbın malı başının altında gərək.",
+      "izah": "Kasıb az malını göz bəbəyi kimi qorumalıdır.",
+      "movzular": [
+        "Bərəkət",
+        "Var-dövlət"
+      ]
+    },
+    {
+      "id": 2184,
+      "metn": "Kasıbın oğlu olunca dövlətlinin qulu ol.",
+      "izah": "Kasıbın övladı olmaqdansa, varlının xidmətçisi olmaq rahatdır.",
+      "movzular": [
+        "Ailə",
+        "Var-dövlət"
+      ]
+    },
+    {
+      "id": 2185,
+      "metn": "Kasıbın sacı çörəyi qurtaranda qızar.",
+      "izah": "Kasıbın imkanı həmişə ən lazım anda tükənir.",
+      "movzular": [
+        "Bərəkət",
+        "Var-dövlət"
+      ]
+    },
+    {
+      "id": 2186,
+      "metn": "Kasıbın səxası şeytandandı.",
+      "izah": "İmkanından artıq səxavət göstərmək ağılsızlıqdır.",
+      "movzular": [
+        "Bərəkət",
+        "Var-dövlət"
+      ]
+    },
+    {
+      "id": 2187,
+      "metn": "Kasıbın sözü — yurğunun közü.",
+      "izah": "Kasıbın sözünü heç kim dinləmir.",
+      "movzular": [
+        "Bərəkət",
+        "Dil və söz"
+      ]
+    },
+    {
+      "id": 2188,
+      "metn": "Kasıbın toyunda gecə qısa olar.",
+      "izah": "Kasıbın sevinci qısa olur.",
+      "movzular": [
+        "Bərəkət",
+        "Var-dövlət"
+      ]
+    },
+    {
+      "id": 2189,
+      "metn": "Keçəl baxar güzgüyə, adın qoyar özgəyə.",
+      "izah": "Öz nöqsanını başqasının üstünə atır.",
+      "movzular": [
+        "Əxlaq"
+      ]
+    },
+    {
+      "id": 2190,
+      "metn": "Keçəl başından qorxar, kor gözündən.",
+      "izah": "Hər kəs zəif yerindən qorxur.",
+      "movzular": [
+        "İgidlik"
+      ]
+    },
+    {
+      "id": 2191,
+      "metn": "Keçəl, başını yudunmu? — Yudum da, daradım da.",
+      "izah": "Görmədiyi işi görmüş kimi göstərir.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 2192,
+      "metn": "Keçəl dərman bilsə, öz başına elər.",
+      "izah": "Çarə bilən adam əvvəlcə öz dərdinə əlac edər.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 2193,
+      "metn": "Keçəl düzün desə də, başına qapaz dəyər.",
+      "izah": "Kasıb düz söz desə də, onu cəzalandırırlar.",
+      "movzular": [
+        "Haqq və ədalət"
+      ]
+    },
+    {
+      "id": 2194,
+      "metn": "Keçəl gileyləndi ki, daraq bahalanıb.",
+      "izah": "Ehtiyacı olmadığı şeydən şikayət edir.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 2195,
+      "metn": "Keçəl halva yeyər, puluna minnət.",
+      "izah": "Xəsis xərclədiyi azacıq pula da minnət qoyur.",
+      "movzular": [
+        "Var-dövlət"
+      ]
+    },
+    {
+      "id": 2196,
+      "metn": "Keçəl qız bəzənincə toy əldən getdi.",
+      "izah": "Çox hazırlaşan adam fürsəti qaçırır.",
+      "movzular": [
+        "Ailə",
+        "Adət-ənənə"
+      ]
+    },
+    {
+      "id": 2197,
+      "metn": "Keçəl qızım saçlı deyib ağlar.",
+      "izah": "Valideyn övladının nöqsanını görmür.",
+      "movzular": [
+        "Ailə",
+        "Dərd və səbr"
+      ]
+    },
+    {
+      "id": 2198,
+      "metn": "Keçəl qızın nəyi var? Dəmirdən bir darağı.",
+      "izah": "Heç nəyi olmayan adam xırda şeyi ilə öyünür.",
+      "movzular": [
+        "Ailə"
+      ]
+    },
+    {
+      "id": 2199,
+      "metn": "Keçəli börkünün yanından tanıyarlar.",
+      "izah": "Gizlədilən nöqsan kiçik əlamətdən bilinir.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 2200,
+      "metn": "Keçəlimə baxma, baxtıma bax.",
+      "izah": "İnsanın dəyəri görünüşündə yox, taleyindədir.",
+      "movzular": [
+        "Dərd və səbr"
+      ]
+    },
+    {
+      "id": 2201,
+      "metn": "Keçəlin adın qoyarlar Zülfəli.",
+      "izah": "Nöqsanı olana əksinə ad qoyurlar.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 2202,
+      "metn": "Keçəlin börkü düşənə qədərdir.",
+      "izah": "Gizlədilən sirr tez-gec açılır.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 2203,
+      "metn": "Keçəlin keçəlliyilə nə işin var, işinin keçərliyilə ol.",
+      "izah": "İnsanın nöqsanına yox, işinə bax.",
+      "movzular": [
+        "İş"
+      ]
+    },
+    {
+      "id": 2204,
+      "metn": "Keçəlin qazandığı başının qartmağına gedər.",
+      "izah": "Kasıbın qazancı dərdinə xərclənir.",
+      "movzular": [
+        "Var-dövlət"
+      ]
+    },
+    {
+      "id": 2205,
+      "metn": "Keçəlin tükdən acığı gələr.",
+      "izah": "Əlində olmayan şeyə həsəd aparan onu sevən adamlara qəzəblənir.",
+      "movzular": [
+        "Tamah"
+      ]
+    },
+    {
+      "id": 2206,
+      "metn": "Keçi can hayında, qəssab da piy axtarır.",
+      "izah": "Biri canını qurtarmaq istəyir, o biri isə ondan qazanc güdür.",
+      "movzular": [
+        "Tamah"
+      ]
+    },
+    {
+      "id": 2207,
+      "metn": "Keçi ha yanda? Qaya ha yanda?",
+      "izah": "Bu iş onun bacarığından çox uzaqdır.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 2208,
+      "metn": "Keçi öldü, qoturu da kəsildi.",
+      "izah": "Pis adam gedəndə onun yaratdığı bəla da gedir.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 2209,
+      "metn": "Keçi suyu bağıra-bağıra keçər.",
+      "izah": "Qorxaq adam xırda çətinlikdə çox səs-küy salır.",
+      "movzular": [
+        "İgidlik"
+      ]
+    },
+    {
+      "id": 2210,
+      "metn": "Keçi sürünün qabağında gəlsə də, «qoyun gəldi» deyirlər.",
+      "izah": "İnsanın əsl mahiyyəti dəyişmir, mövqeyi nə olursa olsun.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 2211,
+      "metn": "Keçini keçi ayağından asarlar, qoyunu qoyun.",
+      "izah": "Hər kəs öz əməlinə görə cavab verir.",
+      "movzular": [
+        "Ailə"
+      ]
+    },
+    {
+      "id": 2212,
+      "metn": "Keçinin əcəli çatanda çobanın dəyənəyinə sürtüşər.",
+      "izah": "Bəlaya düşəcək adam özü ona doğru gedir.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 2213,
+      "metn": "Keçinin qoturu gedər bulağın gözündən su içər.",
+      "izah": "Nöqsanlı adam ən təmiz yerə əl uzadır.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 2214,
+      "metn": "Keçən günə gün çatmaz, calasan günü günə.",
+      "izah": "Keçmiş günləri geri qaytarmaq olmaz.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 2215,
+      "metn": "Keçən xırmanları sovurma.",
+      "izah": "Keçmişi təkrar-təkrar qurdalama.",
+      "movzular": [
+        "Bərəkət"
+      ]
+    },
+    {
+      "id": 2216,
+      "metn": "Keçən keçdi, gələn günün xeyir olsun.",
+      "izah": "Keçmişi unut, gələcəyin xeyirli olsun.",
+      "movzular": [
+        "Əxlaq"
+      ]
+    },
+    {
+      "id": 2217,
+      "metn": "Keçən keçdi, vay gələcək dərdinə.",
+      "izah": "Keçən keçdi, əsas qorxu gələcəkdir.",
+      "movzular": [
+        "Dərd və səbr"
+      ]
+    },
+    {
+      "id": 2218,
+      "metn": "Keçənə güzəşt deyərlər.",
+      "izah": "Keçmişdəki səhvləri bağışlamaq lazımdır.",
+      "movzular": [
+        "Əxlaq"
+      ]
+    },
+    {
+      "id": 2219,
+      "metn": "Keçər bu dövran, sənə də qalmaz.",
+      "izah": "Heç kimin gücü əbədi deyil.",
+      "movzular": [
+        "Dərd və səbr"
+      ]
+    },
+    {
+      "id": 2220,
+      "metn": "Keçmə namərd körpüsündən, qoy aparsın su səni. Yatma tülkü kölgəsində, qoy yesin aslan səni.",
+      "izah": "Namərdə möhtac olmaqdansa, ölmək yaxşıdır.",
+      "movzular": [
+        "Əxlaq",
+        "İgidlik"
+      ]
+    },
+    {
+      "id": 2221,
+      "metn": "Keşiş, belə iş?!",
+      "izah": "Bu iş heç cür yaraşmır.",
+      "movzular": [
+        "İş"
+      ]
+    },
+    {
+      "id": 2222,
+      "metn": "Kəklik başın quylar, qara quyruğundan xəbəri olmaz.",
+      "izah": "Özünü gizlətdiyini sanan adam əslində açıqdadır.",
+      "movzular": [
+        "Ağıl"
+      ]
+    },
+    {
+      "id": 2223,
+      "metn": "Kələk ilə gələn küləklə gedər.",
+      "izah": "Hiylə ilə gələn var-dövlət tez gedir.",
+      "movzular": [
+        "Var-dövlət"
+      ]
+    },
+    {
+      "id": 2224,
+      "metn": "Kəndə molla gəlib, hər kim ölür ölsün.",
+      "izah": "Yeni gələn adam işlərə laqeyd yanaşır.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 2225,
+      "metn": "Kəndi şortusuyla tanı, qamçını şoldusuyla.",
+      "izah": "Hər şeyi xarakterik əlamətindən tanımaq olar.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 2226,
+      "metn": "Kəndxudalığa hesaba gedən evinə borclu gələr.",
+      "izah": "Varlı ilə hesablaşan kasıb həmişə zərər görür.",
+      "movzular": [
+        "Bərəkət",
+        "Ailə"
+      ]
+    },
+    {
+      "id": 2227,
+      "metn": "Kərki olub öz tərəfüvə yonma, mişar ol iki tərəfə yon.",
+      "izah": "Yalnız öz xeyrini düşünmə, ədalətli ol.",
+      "movzular": [
+        "Haqq və ədalət"
+      ]
+    },
+    {
+      "id": 2228,
+      "metn": "Kərməni dadır alır.",
+      "izah": "Hər kəs keyfiyyəti sınayıb seçir.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 2229,
+      "metn": "Kəsək atana daş atarlar.",
+      "izah": "Pislik edənə pisliklə cavab verirlər.",
+      "movzular": [
+        "Haqq və ədalət"
+      ]
+    },
+    {
+      "id": 2230,
+      "metn": "Kəsək oturub daş üçün gün ağlayır.",
+      "izah": "Zəif adam güclünün dərdini çəkir.",
+      "movzular": [
+        "Dərd və səbr"
+      ]
+    },
+    {
+      "id": 2231,
+      "metn": "Kəsənin üzün tikən ağardar.",
+      "izah": "Zərər vurana yaxşılıq edən onu utandırır.",
+      "movzular": [
+        "Əxlaq"
+      ]
+    },
+    {
+      "id": 2232,
+      "metn": "Kəsilən başın teli üçün ağlamazlar.",
+      "izah": "Böyük itkinin yanında kiçik itki yada düşmür.",
+      "movzular": [
+        "Dərd və səbr"
+      ]
+    },
+    {
+      "id": 2233,
+      "metn": "Kəsilsin iki əl ki, bir başı saxlamaya.",
+      "izah": "Bir adamı qoruya bilməyən əllərin faydası yoxdur.",
+      "movzular": [
+        "Ailə"
+      ]
+    },
+    {
+      "id": 2234,
+      "metn": "Kiçik daş da baş yarar.",
+      "izah": "Kiçik görünən şey də böyük zərər verə bilər.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 2235,
+      "metn": "Kiçik olmayan yerdə böyük də olmaz.",
+      "izah": "Kiçiyə hörmət olmayan yerdə böyüyə də hörmət olmur.",
+      "movzular": [
+        "Tərbiyə"
+      ]
+    },
+    {
+      "id": 2236,
+      "metn": "Kiçikdən xəta, böyükdən əta.",
+      "izah": "Kiçikdən səhv, böyükdən bağışlamaq gözlənilir.",
+      "movzular": [
+        "Tərbiyə"
+      ]
+    },
+    {
+      "id": 2237,
+      "metn": "Kim eşşək olar, biz ona palan olarıq.",
+      "izah": "Kim nə edərsə, biz də ona uyğunlaşırıq.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 2238,
+      "metn": "Kim əkdi, kim becərdi, kim dedi bağ mənimdi.",
+      "izah": "Zəhməti başqası çəkir, sahib çıxan isə başqasıdır.",
+      "movzular": [
+        "İş"
+      ]
+    },
+    {
+      "id": 2239,
+      "metn": "Kiminin başında tac, kiminin boynunda xərac.",
+      "izah": "Biri hakimiyyətdə, o biri xərac altındadır.",
+      "movzular": [
+        "Var-dövlət"
+      ]
+    },
+    {
+      "id": 2240,
+      "metn": "Kiminin ələyi olar, kiminin sacı.",
+      "izah": "Hər kəsin öz imkanı var.",
+      "movzular": [
+        "Var-dövlət"
+      ]
+    },
+    {
+      "id": 2241,
+      "metn": "Kiminin əvvəli, kiminin axırı.",
+      "izah": "Kiminin həyatının əvvəli, kiminin sonu xoşbəxt keçir.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 2242,
+      "metn": "Kimiyə bir eşşək, kimiyə min köşək.",
+      "izah": "Kiminə az, kiminə çox verilir.",
+      "movzular": [
+        "Var-dövlət"
+      ]
+    },
+    {
+      "id": 2243,
+      "metn": "Kimiyə lov, kimiyə pilov.",
+      "izah": "Kimi əzab, kimi nemət içindədir.",
+      "movzular": [
+        "Var-dövlət"
+      ]
+    },
+    {
+      "id": 2244,
+      "metn": "Kimsə kimsənin nəsibin yeməz.",
+      "izah": "Hər kəsin ruzisi ona çatır.",
+      "movzular": [
+        "Bərəkət"
+      ]
+    },
+    {
+      "id": 2245,
+      "metn": "Kiş-kiş ilə donuz darıdan çıxmaz.",
+      "izah": "Pis adamı söz ilə yerindən oynatmaq olmaz.",
+      "movzular": [
+        "Bərəkət"
+      ]
+    },
+    {
+      "id": 2246,
+      "metn": "Kişi kişidən qorxmaz, amma utanar.",
+      "izah": "Ləyaqətli adam qorxmaz, amma utanmağı bacarar.",
+      "movzular": [
+        "Əxlaq",
+        "İgidlik"
+      ]
+    },
+    {
+      "id": 2247,
+      "metn": "Kişi öz sözünün ağası olar.",
+      "izah": "Kişi sözünə sahib çıxar.",
+      "movzular": [
+        "Ağıl",
+        "Dil və söz"
+      ]
+    },
+    {
+      "id": 2248,
+      "metn": "Kişi seldir, arvad göl.",
+      "izah": "Kişi qazanır, qadın isə qoruyur.",
+      "movzular": [
+        "Ailə"
+      ]
+    },
+    {
+      "id": 2249,
+      "metn": "Kişini tez qocaldar axşamdan yatan arvad.",
+      "izah": "Tənbəl qadın kişinin həyatını çətinləşdirir.",
+      "movzular": [
+        "Ailə"
+      ]
+    },
+    {
+      "id": 2250,
+      "metn": "Kişinin hörməti öz əlindədir.",
+      "izah": "Hörməti insan özü qazanır.",
+      "movzular": [
+        "Tərbiyə"
+      ]
+    },
+    {
+      "id": 2251,
+      "metn": "Kişinin malı göz qabağında gərək.",
+      "izah": "Kişinin var-dövləti açıq və hesablı olmalıdır.",
+      "movzular": [
+        "Var-dövlət"
+      ]
+    },
+    {
+      "id": 2252,
+      "metn": "Kişinin sözü bir olar.",
+      "izah": "Kişi verdiyi sözdən dönməz.",
+      "movzular": [
+        "Ağıl",
+        "Dil və söz"
+      ]
+    },
+    {
+      "id": 2253,
+      "metn": "Kişinin üzünə baxma, sözünə bax.",
+      "izah": "İnsanın görünüşünə yox, sözünə dəyər ver.",
+      "movzular": [
+        "Ağıl",
+        "Dil və söz"
+      ]
+    },
+    {
+      "id": 2254,
+      "metn": "Kor atı minən şahlıq iddiası elər.",
+      "izah": "Gücsüz vasitə ilə böyük iddiaya düşən gülünc olur.",
+      "movzular": [
+        "Əxlaq"
+      ]
+    },
+    {
+      "id": 2255,
+      "metn": "Kor atı minib köndələn çapır.",
+      "izah": "Bilməyən adam ehtiyatsız hərəkət edir.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 2256,
+      "metn": "Kor atın kor da nalbəndi olar.",
+      "izah": "Yaramaz adam özü kimisinə rast gəlir.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 2257,
+      "metn": "Kor atlanar öz ölkəsini çapar.",
+      "izah": "Ağılsız adam özünə zərər vurur.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 2258,
+      "metn": "Kor da bilir balıq şordu.",
+      "izah": "Bu, hamının bildiyi həqiqətdir.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 2259,
+      "metn": "Kor dəyənəyini bir dəfə itirər.",
+      "izah": "Ağıllı adam eyni səhvi iki dəfə etmir.",
+      "movzular": [
+        "Ağıl"
+      ]
+    },
+    {
+      "id": 2260,
+      "metn": "Kor əlifə vav deməyib.",
+      "izah": "Savadsız adam əlifbanı da bilmir.",
+      "movzular": [
+        "Təhsil"
+      ]
+    },
+    {
+      "id": 2261,
+      "metn": "Kor gözdən yaş ummazlar.",
+      "izah": "Faydasız adamdan kömək gözləməzlər.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 2262,
+      "metn": "Kor gözün sahibinə nə faydası?!",
+      "izah": "İşə yaramayan şeyin sahibinə faydası yoxdur.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 2263,
+      "metn": "Kor ilə çörək yeyəndə Allahı arada gör.",
+      "izah": "Zəif adamla iş görəndə vicdanlı ol.",
+      "movzular": [
+        "Bərəkət"
+      ]
+    },
+    {
+      "id": 2264,
+      "metn": "Kor keçəli bitləyər ay qaranlıq gecədə.",
+      "izah": "Bacarıqsız adam ən çətin şəraitdə iş görməyə çalışır.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 2265,
+      "metn": "Kor kimdir? — Nabələd.",
+      "izah": "Əsl kor yol bilməyən, nadan adamdır.",
+      "movzular": [
+        "Təhsil"
+      ]
+    },
+    {
+      "id": 2266,
+      "metn": "Kor kora dedi: cırt bu yandakı gözünə.",
+      "izah": "Hər kəs öz nöqsanını başqasına arzulayır.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 2267,
+      "metn": "Kor kora kor deməsə bağrı çatlar.",
+      "izah": "Nöqsanlı adam başqasının nöqsanını deməsə, rahat ola bilmir.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 2268,
+      "metn": "Kor kora necə baxar, Allah ikisinə də elə baxar.",
+      "izah": "İnsan başqasına necə yanaşırsa, ona da elə yanaşırlar.",
+      "movzular": [
+        "El"
+      ]
+    },
+    {
+      "id": 2269,
+      "metn": "Kor qız toyda donunu tanıdı.",
+      "izah": "İnsan öz malını hər yerdə tanıyır.",
+      "movzular": [
+        "Ailə",
+        "Adət-ənənə"
+      ]
+    },
+    {
+      "id": 2270,
+      "metn": "Kor leyləyin yuvasın Allah öz əliylə yapar.",
+      "izah": "Kimsəsizin qayğısına Tanrı özü qalır.",
+      "movzular": [
+        "Dərd və səbr"
+      ]
+    },
+    {
+      "id": 2271,
+      "metn": "Kor nə istər? — İki göz! biri əyri, biri düz!",
+      "izah": "İnsan ehtiyacının ödənməsinə hər cür razıdır.",
+      "movzular": [
+        "Haqq və ədalət"
+      ]
+    },
+    {
+      "id": 2272,
+      "metn": "Kor odu ki, düşdüyü quyuya bir də düşə.",
+      "izah": "Ağılsız adam eyni səhvi təkrarlayır.",
+      "movzular": [
+        "Ağıl"
+      ]
+    },
+    {
+      "id": 2273,
+      "metn": "Kor ölər, adı qalar badamgöz.",
+      "izah": "Ölənin nöqsanı unudulur, adı isə yaxşılıqla xatırlanır.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 2274,
+      "metn": "Kor tutduğun əldən qoymaz.",
+      "izah": "Tamahkar əlinə keçəni buraxmır.",
+      "movzular": [
+        "Tamah"
+      ]
+    },
+    {
+      "id": 2275,
+      "metn": "Kor tutduğundan kəsər.",
+      "izah": "Bilməyən adam ehtiyatsız hərəkət edir.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 2276,
+      "metn": "Kor ya burda, ya Bağdadda.",
+      "izah": "Bu işin ortası yoxdur, ya bu, ya o.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 2277,
+      "metn": "Kora gecə də, gündüz də birdir.",
+      "izah": "Anlamayan adam üçün hər şey eynidir.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 2278,
+      "metn": "Kora verirsən — mənə ver, şilə verirsən — mənə ver.",
+      "izah": "Ehtiyacı olana kömək edirsənsə, mənə də et.",
+      "movzular": [
+        "Tamah"
+      ]
+    },
+    {
+      "id": 2279,
+      "metn": "Korlar ölkəsində çaşlar padşah olar.",
+      "izah": "Bilikli adam olmayan yerdə az bilən başçı olur.",
+      "movzular": [
+        "Ağıl"
+      ]
+    },
+    {
+      "id": 2280,
+      "metn": "Koru kor yanında həyan üçün qoyarlar.",
+      "izah": "Zəif adamlar bir-birinə dayaq olur.",
+      "movzular": [
+        "Tərbiyə",
+        "Əxlaq"
+      ]
+    },
+    {
+      "id": 2281,
+      "metn": "Korun qabağını əliağaclı kəsməzlər.",
+      "izah": "Zəif adama zərər vurmazlar.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 2282,
+      "metn": "Korun nə borcu ki, şam bahalanıb!?",
+      "izah": "Ona aid olmayan işdən narahatdır.",
+      "movzular": [
+        "Bərəkət",
+        "Var-dövlət"
+      ]
+    },
+    {
+      "id": 2283,
+      "metn": "Koroğlu deyibdi: «basılanı kəsmə».",
+      "izah": "Məğlub olana zərər vurma.",
+      "movzular": [
+        "İgidlik"
+      ]
+    },
+    {
+      "id": 2284,
+      "metn": "Koroğlu bir gəlib, bir gedib.",
+      "izah": "Belə qəhrəman nadir hallarda yetişir.",
+      "movzular": [
+        "İgidlik"
+      ]
+    },
+    {
+      "id": 2285,
+      "metn": "Koroğlunu tutmağa bir keçəl Həmzə gərək.",
+      "izah": "Hər güclünün öhdəsindən gələn biri tapılır.",
+      "movzular": [
+        "İgidlik"
+      ]
+    },
+    {
+      "id": 2286,
+      "metn": "Kosa getmişdi saqqal gətirməyə, bığını da üstəlik qoydu.",
+      "izah": "Artıq şey istəyən adam əlindəkini də itirdi.",
+      "movzular": [
+        "Tamah"
+      ]
+    },
+    {
+      "id": 2287,
+      "metn": "Kosa kəndə girməmiş illisini başladı.",
+      "izah": "Hələ yerə çatmamış iddialar irəli sürür.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 2288,
+      "metn": "Kosaya lağ eləyənin top qara saqqalı gərək.",
+      "izah": "Başqasını qınamaq üçün özün nöqsansız olmalısan.",
+      "movzular": [
+        "Əxlaq"
+      ]
+    },
+    {
+      "id": 2289,
+      "metn": "Kotan nə bilir ki, qayış nə çəkir?!",
+      "izah": "Başqasının əziyyətini çəkməyən onu anlamaz.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 2290,
+      "metn": "Kovxa atlanar, öz kəndini çapar.",
+      "izah": "Hakimiyyətdə olan zalım öz xalqına zülm edir.",
+      "movzular": [
+        "Haqq və ədalət"
+      ]
+    },
+    {
+      "id": 2291,
+      "metn": "Kovxa ilə hesaba oturan borclu qalar.",
+      "izah": "Varlı ilə hesablaşan kasıb həmişə zərər görür.",
+      "movzular": [
+        "Bərəkət",
+        "Var-dövlət"
+      ]
+    },
+    {
+      "id": 2292,
+      "metn": "Kovxa mənəm, - növbət sənindir.",
+      "izah": "Başçı mənəm, iş görmək növbəsi isə sənindir.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 2293,
+      "metn": "Kovxası gülüm olanın başına külüm olar.",
+      "izah": "Pis rəhbərin xalqı bəlaya düşür.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 2294,
+      "metn": "Köç dala qayıdanda axsaq keçi qabağa düşər.",
+      "izah": "Vəziyyət dəyişəndə zəiflər qabağa çıxır.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 2295,
+      "metn": "Köç köçər, it yüyürər, ikisi bir mənzilə çatar.",
+      "izah": "Gec-tez hamı eyni məqsədə çatır.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 2296,
+      "metn": "Köçdən azan qarıya bundan da bədtər gərək!",
+      "izah": "Özü bəlaya düşən adam daha pis vəziyyətə layiqdir.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 2297,
+      "metn": "Köçəköçdə malını saxla, qaçaqaçda başını.",
+      "izah": "Çətin vaxtda əvvəlcə ən dəyərlini qoru.",
+      "movzular": [
+        "Ağıl"
+      ]
+    },
+    {
+      "id": 2298,
+      "metn": "Köçən yurdun qədrini qonan yurdda bilərlər.",
+      "izah": "İnsan itirdiyinin qədrini sonra bilir.",
+      "movzular": [
+        "El"
+      ]
+    },
+    {
+      "id": 2299,
+      "metn": "Köçün yaraşığı dananın soncuqlamağıdır.",
+      "izah": "Hər işin öz bəzəyi var.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 2300,
+      "metn": "Köhlən atın çulu cırıq olar.",
+      "izah": "Çox işləyən adamın alətləri tez köhnəlir.",
+      "movzular": [
+        "İş"
+      ]
+    },
+    {
+      "id": 2301,
+      "metn": "Köhnə bazara təzə nırx qoyma.",
+      "izah": "Köhnə qaydaları birdən dəyişməyə çalışma.",
+      "movzular": [
+        "Var-dövlət"
+      ]
+    },
+    {
+      "id": 2302,
+      "metn": "Köhnə dost düşmən olmaz.",
+      "izah": "Köhnə dost heç vaxt düşmən olmaz.",
+      "movzular": [
+        "Dostluq"
+      ]
+    },
+    {
+      "id": 2303,
+      "metn": "Köhnə hamam, köhnə tas.",
+      "izah": "Heç nə dəyişməyib, vəziyyət əvvəlki kimidir.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 2304,
+      "metn": "Köhnə qar sovruq verməz.",
+      "izah": "Köhnəlmiş şeydən fayda gəlmir.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 2305,
+      "metn": "Köhnə pambıq bez olmaz.",
+      "izah": "Köhnə dostluq yenidən bərpa olunmur.",
+      "movzular": [
+        "Dostluq"
+      ]
+    },
+    {
+      "id": 2306,
+      "metn": "Köhnə sevgi köhnəlməz.",
+      "izah": "Əsl sevgi illər keçdikcə də solmur.",
+      "movzular": [
+        "Sevgi"
+      ]
+    },
+    {
+      "id": 2307,
+      "metn": "Köhnə tülkü hiyləbaz olar.",
+      "izah": "Təcrübəli hiyləgər daha təhlükəli olur.",
+      "movzular": [
+        "Əxlaq"
+      ]
+    },
+    {
+      "id": 2308,
+      "metn": "Köhnə un çuvalıdı, vurduqca toz qopar.",
+      "izah": "Köhnə dərdi qurdaladıqca yenidən üzə çıxır.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 2309,
+      "metn": "Köksüz ağac tez yıxılar.",
+      "izah": "Kökü olmayan insan tez məhv olur.",
+      "movzular": [
+        "Ailə"
+      ]
+    },
+    {
+      "id": 2310,
+      "metn": "Kölgədə bitən ağacın meyvəsi olmaz.",
+      "izah": "Başqasının himayəsində böyüyən adam müstəqil olmur.",
+      "movzular": [
+        "Tərbiyə"
+      ]
+    },
+    {
+      "id": 2311,
+      "metn": "Kölgədə olanın kölgəsi olmaz.",
+      "izah": "Başqasının himayəsində olanın özü kimsəyə himayə edə bilmir.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 2312,
+      "metn": "Kölgəsində yatdığın ağacı budama.",
+      "izah": "Sənə yaxşılıq edənə zərər vurma.",
+      "movzular": [
+        "Əxlaq"
+      ]
+    },
+    {
+      "id": 2313,
+      "metn": "Kömürçünün evinə girən üzü qara çıxar.",
+      "izah": "Pis mühitdə olan adam ləkəsiz qalmır.",
+      "movzular": [
+        "Ailə"
+      ]
+    },
+    {
+      "id": 2314,
+      "metn": "Kömürçünün qaralmaqdan nə arı?!",
+      "izah": "Onsuz da nüfuzu olmayan adam rüsvayçılıqdan qorxmur.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 2315,
+      "metn": "Könlü balıq sevən künəsin soyuq suya qoyar.",
+      "izah": "Bir şeyi istəyən onun çətinliyinə də razılaşır.",
+      "movzular": [
+        "Sevgi"
+      ]
+    },
+    {
+      "id": 2316,
+      "metn": "Könlü yemiş istəyən dolanar tağ başına.",
+      "izah": "İstədiyinə çatmaq istəyən zəhmət çəkməlidir.",
+      "movzular": [
+        "Sevgi"
+      ]
+    },
+    {
+      "id": 2317,
+      "metn": "Könül bir saraya bənzər, tikməsi zor, sökməsi asan!",
+      "izah": "Könül qazanmaq çətindir, onu qırmaq isə asandır.",
+      "movzular": [
+        "Sevgi"
+      ]
+    },
+    {
+      "id": 2318,
+      "metn": "Könül bir şüşədi, sındırmaq olmaz.",
+      "izah": "İnsanın könlünü qırmaq olmaz.",
+      "movzular": [
+        "Sevgi"
+      ]
+    },
+    {
+      "id": 2319,
+      "metn": "Könül dostun tanır.",
+      "izah": "Ürək əsl dostu tanıyır.",
+      "movzular": [
+        "Dostluq",
+        "Sevgi"
+      ]
+    },
+    {
+      "id": 2320,
+      "metn": "Könül gözdən su içər.",
+      "izah": "Sevgi baxışdan başlayır.",
+      "movzular": [
+        "Sevgi"
+      ]
+    },
+    {
+      "id": 2321,
+      "metn": "Könül sevən göyçək olar dünyada.",
+      "izah": "Sevilən adam həmişə gözəl görünür.",
+      "movzular": [
+        "Sevgi"
+      ]
+    },
+    {
+      "id": 2322,
+      "metn": "Könül sevən gözəlin nə ağı, nə qarası?",
+      "izah": "Sevilən adamın nöqsanı görünmür.",
+      "movzular": [
+        "Sevgi"
+      ]
+    },
+    {
+      "id": 2323,
+      "metn": "Könül tutan keçəldə ayıb olmaz.",
+      "izah": "Sevən adam sevdiyinin nöqsanını görmür.",
+      "movzular": [
+        "Sevgi"
+      ]
+    },
+    {
+      "id": 2324,
+      "metn": "Könüldən könülə yol var.",
+      "izah": "Ürəklər arasında görünməz bağ var.",
+      "movzular": [
+        "Sevgi"
+      ]
+    },
+    {
+      "id": 2325,
+      "metn": "Könülə güc yoxdur.",
+      "izah": "Sevgiyə zor işlətmək olmaz.",
+      "movzular": [
+        "Sevgi"
+      ]
+    },
+    {
+      "id": 2326,
+      "metn": "Könülsüz hürən köpək sürüyə qurd gətirər.",
+      "izah": "Könülsüz görülən iş fayda əvəzinə zərər verir.",
+      "movzular": [
+        "Sevgi"
+      ]
+    },
+    {
+      "id": 2327,
+      "metn": "Könülsüz işin axırı olmaz.",
+      "izah": "Könülsüz görülən iş sona çatmır.",
+      "movzular": [
+        "İş",
+        "Sevgi"
+      ]
+    },
+    {
+      "id": 2328,
+      "metn": "Köpək elə köpəkdi, xaltası qızıl olsa da.",
+      "izah": "Bəzək pis adamı yaxşı etmir.",
+      "movzular": [
+        "El",
+        "Var-dövlət"
+      ]
+    },
+    {
+      "id": 2329,
+      "metn": "Köpək itin qarnı tox gərək.",
+      "izah": "Xidmət edənin ehtiyacı ödənməlidir.",
+      "movzular": [
+        "Bərəkət"
+      ]
+    },
+    {
+      "id": 2330,
+      "metn": "Köpək köpəyin dayağıdı.",
+      "izah": "Pis adamlar bir-birinə dayaq olur.",
+      "movzular": [
+        "Dostluq"
+      ]
+    },
+    {
+      "id": 2331,
+      "metn": "Köpək qaya kölgəsində yatar, elə bilər öz kölgəsidir.",
+      "izah": "Başqasının himayəsində olan adam özünü güclü sanır.",
+      "movzular": [
+        "El"
+      ]
+    },
+    {
+      "id": 2332,
+      "metn": "Köpək olmuşdun, belə hürməmişdin.",
+      "izah": "Əvvəl də pis idin, amma belə həyasız deyildin.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 2333,
+      "metn": "Köpəyin ağzını kiçiklikdə yandır.",
+      "izah": "Pis vərdişin qarşısını uşaqlıqdan al.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 2334,
+      "metn": "Köpəyin axmağı qaysavadan pay umar.",
+      "izah": "Axmaq adam əlçatmaz şeydən pay umur.",
+      "movzular": [
+        "Tamah"
+      ]
+    },
+    {
+      "id": 2335,
+      "metn": "Köpəyin ayılanı ələ düşməz.",
+      "izah": "Ayıq adamı tələyə salmaq olmaz.",
+      "movzular": [
+        "Ağıl"
+      ]
+    },
+    {
+      "id": 2336,
+      "metn": "Köpəyin duası yerinə yetsə, göydən gündə sümük yağar.",
+      "izah": "Pis adamın arzusu çin olsaydı, dünya bəla ilə dolardı.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 2337,
+      "metn": "Köpəyin könlü kəpəknən xoş olur.",
+      "izah": "Kiçik adam kiçik nemətlə razı qalır.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 2338,
+      "metn": "Köpəyin qarnı tox olsa, gecə ulduza hürməz.",
+      "izah": "Ehtiyacı ödənən adam boş yerə narahatlıq salmır.",
+      "movzular": [
+        "Bərəkət"
+      ]
+    },
+    {
+      "id": 2339,
+      "metn": "Körpünü keçincə ayıya dayı de.",
+      "izah": "Ehtiyacın bitənə qədər güclüyə dayı de.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 2340,
+      "metn": "Köşənidə danışaq, xərməndə toz qopmasın.",
+      "izah": "İşi bitəndən sonra danışaq ki, işə mane olmasın.",
+      "movzular": [
+        "Dil və söz"
+      ]
+    },
+    {
+      "id": 2341,
+      "metn": "Küçə iti ev qorumaz.",
+      "izah": "Başıboş adamdan ailəyə fayda olmaz.",
+      "movzular": [
+        "Ailə"
+      ]
+    },
+    {
+      "id": 2342,
+      "metn": "Kül başına küllüklər, qarğalar səni dimdiklər.",
+      "izah": "Bəxtsiz adamın başına bəla yağır.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 2343,
+      "metn": "Küldən təpə olmaz.",
+      "izah": "Dəyərsiz şeydən böyük iş qurmaq olmaz.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 2344,
+      "metn": "Külü ocaqdan götür.",
+      "izah": "Hər işi öz mənbəyindən başla.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 2345,
+      "metn": "Küpə girməmiş üzüm sirkə olmaz.",
+      "izah": "Vaxtı çatmayan işdən nəticə gözləmə.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 2346,
+      "metn": "Kürdün qocalanı qoyuna gedər.",
+      "izah": "Hər kəs qocalanda əvvəlki həyatına qayıdır.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 2347,
+      "metn": "Kürəyə düşməyən dəmir yumşalmaz.",
+      "izah": "Çətinlikdən keçməyən adam yetişmir.",
+      "movzular": [
+        "Tərbiyə"
+      ]
+    },
+    {
+      "id": 2348,
+      "metn": "Kürkçünün kürkü olmaz, börkçünün börkü.",
+      "izah": "Usta başqalarına işləyir, öz ehtiyacına vaxt tapmır.",
+      "movzular": [
+        "İş"
+      ]
+    },
+    {
+      "id": 2349,
+      "metn": "Küsülü qardaş, gəl yükü çataq, yenə küsümüz küsü.",
+      "izah": "Küsülü olsaq da, çətin işdə bir-birimizə kömək edək.",
+      "movzular": [
+        "Ailə"
+      ]
+    },
+    {
+      "id": 2350,
+      "metn": "Küthakütnən it saxlayanın bir təhnə əppəyi gərək.",
+      "izah": "Gəlirdən çox xərc olan iş zərər gətirir.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    }
+  ]
+}

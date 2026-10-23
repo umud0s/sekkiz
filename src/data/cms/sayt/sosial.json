@@ -1,0 +1,34 @@
+{
+  "sebekeler": [
+    {
+      "ad": "Instagram",
+      "ikon": "instagram",
+      "unvan": ""
+    },
+    {
+      "ad": "TikTok",
+      "ikon": "tiktok",
+      "unvan": ""
+    },
+    {
+      "ad": "YouTube",
+      "ikon": "youtube",
+      "unvan": ""
+    },
+    {
+      "ad": "Telegram",
+      "ikon": "telegram",
+      "unvan": "https://t.me/atalarimizinsozu"
+    },
+    {
+      "ad": "WhatsApp",
+      "ikon": "whatsapp",
+      "unvan": "https://wa.me/994559272779"
+    },
+    {
+      "ad": "E-poçt",
+      "ikon": "mail",
+      "unvan": ""
+    }
+  ]
+}

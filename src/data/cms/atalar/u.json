@@ -1,0 +1,375 @@
+{
+  "herf": "U",
+  "sozler": [
+    {
+      "id": 3535,
+      "metn": "Uca dağın başı qarlı olar.",
+      "izah": "Böyük adamın qayğısı da çox olur.",
+      "movzular": [
+        "Dərd və səbr"
+      ]
+    },
+    {
+      "id": 3536,
+      "metn": "Uca-uca dağlar başı qarlı da olur, qarsız da, igidlərin canı sağ olsun, varlı da olur, varsız da.",
+      "izah": "Hər kəsin varlı da, kasıb da vaxtı olur, əsas olan sağlamlıqdır.",
+      "movzular": [
+        "Bərəkət",
+        "Var-dövlət"
+      ]
+    },
+    {
+      "id": 3537,
+      "metn": "Ucuz aldın; quyruğunu düyünlə.",
+      "izah": "Ucuz alınan şeyin qayğısını çəkmək lazımdır.",
+      "movzular": [
+        "Var-dövlət"
+      ]
+    },
+    {
+      "id": 3538,
+      "metn": "Ucuz ətin şorbası olmaz.",
+      "izah": "Ucuz şeyin keyfiyyəti az olur.",
+      "movzular": [
+        "Var-dövlət"
+      ]
+    },
+    {
+      "id": 3539,
+      "metn": "Ucuz illətsiz, baha hikmətsiz deyil.",
+      "izah": "Ucuz şeyin nöqsanı, baha şeyin isə səbəbi var.",
+      "movzular": [
+        "Var-dövlət"
+      ]
+    },
+    {
+      "id": 3540,
+      "metn": "Ucuz verən tez satar.",
+      "izah": "Ucuz satan tez satar.",
+      "movzular": [
+        "Var-dövlət"
+      ]
+    },
+    {
+      "id": 3541,
+      "metn": "Ucuzdan bahası olmaz.",
+      "izah": "Ucuz alınan sonradan baha başa gəlir.",
+      "movzular": [
+        "Var-dövlət"
+      ]
+    },
+    {
+      "id": 3542,
+      "metn": "Ucuzdur var illəti, bahadır var hikməti.",
+      "izah": "Ucuz şeyin nöqsanı, baha şeyin isə səbəbi var.",
+      "movzular": [
+        "Var-dövlət"
+      ]
+    },
+    {
+      "id": 3543,
+      "metn": "Ucuzluqda alanın üzün görmə, bahalıqda satanın.",
+      "izah": "Ucuzluqda alıcıdan, bahalıqda isə satıcıdan uzaq dur.",
+      "movzular": [
+        "Var-dövlət"
+      ]
+    },
+    {
+      "id": 3544,
+      "metn": "Uçmaqda turac, qaçmaqda ceyran.",
+      "izah": "Bu adam hər işdə cəld və bacarıqlıdır.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 3545,
+      "metn": "Ulamağın bilməyən köpək sürüyə qurd gətirər.",
+      "izah": "Bacarıqsız adam öz hərəkəti ilə bəla gətirir.",
+      "movzular": [
+        "İş"
+      ]
+    },
+    {
+      "id": 3546,
+      "metn": "Ulduzu barışmayanın salamı da savaşdır.",
+      "izah": "Bir-birini istəməyən adamların salamı da dava kimidir.",
+      "movzular": [
+        "Dostluq"
+      ]
+    },
+    {
+      "id": 3547,
+      "metn": "Ulu sözünə baxmayan ulaya-ulaya qalar.",
+      "izah": "Ağsaqqalın sözünə baxmayan peşman olur.",
+      "movzular": [
+        "Ağıl",
+        "Dil və söz"
+      ]
+    },
+    {
+      "id": 3548,
+      "metn": "Umac özün aş bilər, qarğa özün quş bilər.",
+      "izah": "Hər kəs özünü dəyərli sayır.",
+      "movzular": [
+        "Əxlaq"
+      ]
+    },
+    {
+      "id": 3549,
+      "metn": "Uman yerdən küsərlər.",
+      "izah": "İnsan ümid etdiyi adamdan inciyir.",
+      "movzular": [
+        "Dostluq"
+      ]
+    },
+    {
+      "id": 3550,
+      "metn": "Umud qaldı kosaya, kosa saqqalın daraya.",
+      "izah": "Ümid etdiyimiz adamın özü də çarəsizdir.",
+      "movzular": [
+        "Dərd və səbr"
+      ]
+    },
+    {
+      "id": 3551,
+      "metn": "Umulmayan daş yarar baş.",
+      "izah": "Gözlənilməyən yerdən bəla gəlir.",
+      "movzular": [
+        "Dərd və səbr"
+      ]
+    },
+    {
+      "id": 3552,
+      "metn": "Usta əli dəyməyən iş haramdır.",
+      "izah": "Ustası olmayan iş yarıtmaz.",
+      "movzular": [
+        "İş",
+        "Haqq və ədalət"
+      ]
+    },
+    {
+      "id": 3553,
+      "metn": "Usta görməyən şəyird ondan-bundan qarmalar.",
+      "izah": "Yaxşı müəllimi olmayan şagird bilgini oradan-buradan toplayır.",
+      "movzular": [
+        "İş"
+      ]
+    },
+    {
+      "id": 3554,
+      "metn": "Usta görməyən şəyirdin gözü əllərdə qalar.",
+      "izah": "Yaxşı müəllimi olmayan şagird başqalarına baxıb öyrənir.",
+      "movzular": [
+        "İş"
+      ]
+    },
+    {
+      "id": 3555,
+      "metn": "Uşağa iş buyur, dalıyca yüyür.",
+      "izah": "Uşağa iş tapşırsan, arxasınca özün getməli olacaqsan.",
+      "movzular": [
+        "Ailə",
+        "İş"
+      ]
+    },
+    {
+      "id": 3556,
+      "metn": "Uşağa yoldaş olma, sən yıxılsan gülər, özü yıxılsa ağlar.",
+      "izah": "Uşaqla yoldaşlıq etmə, çünki sənin uğursuzluğuna sevinər, öz uğursuzluğuna ağlayar.",
+      "movzular": [
+        "Dostluq",
+        "Dərd və səbr"
+      ]
+    },
+    {
+      "id": 3557,
+      "metn": "Uşağı sevərlər beşikdə, əri sevərlər döşəkdə.",
+      "izah": "Uşaq kiçik ikən, ər-arvad isə bir-birinə yaxın ikən sevilir.",
+      "movzular": [
+        "Ailə",
+        "Sevgi"
+      ]
+    },
+    {
+      "id": 3558,
+      "metn": "Uşağı yeməh böyütməz, fərəh böyüdər.",
+      "izah": "Uşağı yemək yox, sevgi və sevinc böyüdür.",
+      "movzular": [
+        "Ailə"
+      ]
+    },
+    {
+      "id": 3559,
+      "metn": "Uşağın hökmü padşahın hökmündən artıq.",
+      "izah": "Uşağın istəyini yerinə yetirmək çətindir.",
+      "movzular": [
+        "Ailə",
+        "Haqq və ədalət"
+      ]
+    },
+    {
+      "id": 3560,
+      "metn": "Uşaq adamı qanlı qapısına aparar.",
+      "izah": "Uşaq səhvən adamı bəlaya salır.",
+      "movzular": [
+        "Ailə",
+        "Tərbiyə"
+      ]
+    },
+    {
+      "id": 3561,
+      "metn": "Uşaq atasından güclüsün bilməz.",
+      "izah": "Uşaq üçün ən güclü adam atasıdır.",
+      "movzular": [
+        "Ailə",
+        "Tərbiyə"
+      ]
+    },
+    {
+      "id": 3562,
+      "metn": "Uşaq gördüyün götürər.",
+      "izah": "Uşaq gördüyünü təkrar edir.",
+      "movzular": [
+        "Ailə",
+        "Tərbiyə"
+      ]
+    },
+    {
+      "id": 3563,
+      "metn": "Uşaq olan evdə qeybət olmaz.",
+      "izah": "Uşaq olan evdə sirr saxlanmır.",
+      "movzular": [
+        "Ailə",
+        "Tərbiyə"
+      ]
+    },
+    {
+      "id": 3564,
+      "metn": "Uşaq yıxıla-yıxıla böyüyər.",
+      "izah": "Uşaq səhvlər edə-edə böyüyür.",
+      "movzular": [
+        "Ailə",
+        "Tərbiyə"
+      ]
+    },
+    {
+      "id": 3565,
+      "metn": "Uşaq yıxıldığı yerə baxar.",
+      "izah": "Uşaq səhvini başqa şeydə axtarır.",
+      "movzular": [
+        "Ailə",
+        "Tərbiyə"
+      ]
+    },
+    {
+      "id": 3566,
+      "metn": "Uşaqdan al xəbəri.",
+      "izah": "Həqiqəti uşaqdan öyrənmək olar.",
+      "movzular": [
+        "Ailə",
+        "Tərbiyə"
+      ]
+    },
+    {
+      "id": 3567,
+      "metn": "Uşaqlıqda yalan deyənə böyüyəndə inanmazlar.",
+      "izah": "Uşaqlıqdan yalan danışana sonra heç vaxt inanmazlar.",
+      "movzular": [
+        "Ailə",
+        "Tərbiyə"
+      ]
+    },
+    {
+      "id": 3568,
+      "metn": "Utan utanmazdan, qorx qorxmazdan.",
+      "izah": "Heç nədən utanmayandan çəkin, heç nədən qorxmayandan qorx.",
+      "movzular": [
+        "Əxlaq",
+        "İgidlik"
+      ]
+    },
+    {
+      "id": 3569,
+      "metn": "Utananın oğlu olmaz.",
+      "izah": "Həddən artıq utancaq adam heç nəyə nail ola bilməz.",
+      "movzular": [
+        "Ailə",
+        "Əxlaq"
+      ]
+    },
+    {
+      "id": 3570,
+      "metn": "Utanmasan oynamağa nə var ki?!",
+      "izah": "Utanmasan, hər şeyi etmək asandır.",
+      "movzular": [
+        "Əxlaq"
+      ]
+    },
+    {
+      "id": 3571,
+      "metn": "Utanmaz üzdən qara nə var?!",
+      "izah": "Həyasızlıqdan pis şey yoxdur.",
+      "movzular": [
+        "Əxlaq"
+      ]
+    },
+    {
+      "id": 3572,
+      "metn": "Uyuşar - qatıq yeyərik, uyuşmaz - süd içərik.",
+      "izah": "Razılaşsaq yaxşı, razılaşmasaq da öz yolumuzla gedərik.",
+      "movzular": [
+        "Dostluq"
+      ]
+    },
+    {
+      "id": 3573,
+      "metn": "Uzaqdan baxana dava asan görünər.",
+      "izah": "Kənardan baxana hər iş asan görünür.",
+      "movzular": [
+        "Ağıl"
+      ]
+    },
+    {
+      "id": 3574,
+      "metn": "Uzaqdan baxırsan, sambalı xoşdu, Yaxından baxırsan, quşqunu boşdu.",
+      "izah": "Uzaqdan gözəl görünür, yaxından baxanda isə boşdur.",
+      "movzular": [
+        "Əxlaq"
+      ]
+    },
+    {
+      "id": 3575,
+      "metn": "Uzun adamın ağlı topuğunda olar.",
+      "izah": "Boy uzunluğu ağıl əlaməti deyil.",
+      "movzular": [
+        "Ağıl"
+      ]
+    },
+    {
+      "id": 3576,
+      "metn": "Uzun axmaq olar, güdə fitnəkar.",
+      "izah": "Uzunboy adam sadəlövh, qısaboy isə hiyləgər olur.",
+      "movzular": [
+        "Ağıl"
+      ]
+    },
+    {
+      "id": 3577,
+      "metn": "Uzun sözün qısası, gəlin, səni sevmişəm.",
+      "izah": "Sözün qısası, səni sevirəm.",
+      "movzular": [
+        "Ailə",
+        "Dil və söz"
+      ]
+    },
+    {
+      "id": 3578,
+      "metn": "Uzun yaşın axırı yenə ölümdü.",
+      "izah": "Ömür nə qədər uzun olsa da, sonu ölümdür.",
+      "movzular": [
+        "Dərd və səbr"
+      ]
+    }
+  ]
+}

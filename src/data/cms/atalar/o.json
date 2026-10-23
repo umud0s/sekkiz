@@ -1,0 +1,710 @@
+{
+  "herf": "O",
+  "sozler": [
+    {
+      "id": 2935,
+      "metn": "O baş qorxsun ki, dost yolunda dayanmaz.",
+      "izah": "Dost yolunda fədakarlıq etməyən utanmalıdır.",
+      "movzular": [
+        "Dostluq",
+        "İgidlik"
+      ]
+    },
+    {
+      "id": 2936,
+      "metn": "O dağa yağar, bu dağa yağar, axırda da bura yağar.",
+      "izah": "Bəla gec-tez hamının qapısını döyür.",
+      "movzular": [
+        "Dərd və səbr"
+      ]
+    },
+    {
+      "id": 2937,
+      "metn": "O gəlsə daşla, sən get aşla.",
+      "izah": "Sənə pislik etsə də, sən ona yaxşılıq et.",
+      "movzular": [
+        "Dostluq"
+      ]
+    },
+    {
+      "id": 2938,
+      "metn": "O hacı, bu hacı, kim olacaq boyaqçı?!.",
+      "izah": "Hamı ağa olsa, işi kim görəcək?",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 2939,
+      "metn": "O haqverməzdi, bu haqbatırmaz.",
+      "izah": "Biri haqqı vermir, o biri də haqqını tələb etmir.",
+      "movzular": [
+        "Haqq və ədalət"
+      ]
+    },
+    {
+      "id": 2940,
+      "metn": "O qardan bizim də qapıya yağar.",
+      "izah": "Başqasına gələn bəla bizə də gələ bilər.",
+      "movzular": [
+        "Dərd və səbr"
+      ]
+    },
+    {
+      "id": 2941,
+      "metn": "O qədər dövlətli deyiləm ki, ucuz şey alam.",
+      "izah": "Ucuz şey aldıqda sonra iki dəfə xərcləyirsən.",
+      "movzular": [
+        "Bərəkət",
+        "Var-dövlət"
+      ]
+    },
+    {
+      "id": 2942,
+      "metn": "O qədər küp yanında küpəçələr sınıb ki?!",
+      "izah": "Güclülərin yanında zəiflər həmişə zərər çəkib.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 2943,
+      "metn": "O şahlıq dəvəsidi ki, yüklənməz.",
+      "izah": "Bu, ağır işin altına girməyən imtiyazlı adamdır.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 2944,
+      "metn": "O — verdiyin and, bu da buyurduğun qulluq.",
+      "izah": "Sözün başqa, əməlin başqa.",
+      "movzular": [
+        "Haqq və ədalət"
+      ]
+    },
+    {
+      "id": 2945,
+      "metn": "Oba durdu köçməyə, qarı durdu gəzməyə.",
+      "izah": "Hamı işə tələsəndə, o, əyləncə dalınca düşdü.",
+      "movzular": [
+        "El"
+      ]
+    },
+    {
+      "id": 2946,
+      "metn": "Oba köçüb, yurd ağlayır.",
+      "izah": "İnsanlar gedir, yurd isə kimsəsiz qalır.",
+      "movzular": [
+        "El",
+        "Dərd və səbr"
+      ]
+    },
+    {
+      "id": 2947,
+      "metn": "Oba yiyəsiz qalanda donuz təpəyə çıxar.",
+      "izah": "Rəhbəri olmayan yerdə pis adamlar baş qaldırır.",
+      "movzular": [
+        "El"
+      ]
+    },
+    {
+      "id": 2948,
+      "metn": "Oba yox, qara yox, səndən başqa çara yox.",
+      "izah": "Səndən başqa ümid yerim yoxdur.",
+      "movzular": [
+        "El"
+      ]
+    },
+    {
+      "id": 2949,
+      "metn": "Obalar bizə, biz obalara.",
+      "izah": "Biz elə kömək edirik, el də bizə.",
+      "movzular": [
+        "El"
+      ]
+    },
+    {
+      "id": 2950,
+      "metn": "Ocağın altdan köz, adamın altdan söz.",
+      "izah": "Ocağın közü alt qatda, adamın sirri də içində saxlanır.",
+      "movzular": [
+        "Ağıl",
+        "Dil və söz"
+      ]
+    },
+    {
+      "id": 2951,
+      "metn": "Ocaq içindən tutuşar.",
+      "izah": "Problem çox vaxt içəridən başlayır.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 2952,
+      "metn": "Ocaq közsüz olmaz, gəlin sözsüz.",
+      "izah": "Evdə kiçik söz-söhbət təbiidir.",
+      "movzular": [
+        "Ailə",
+        "Dil və söz"
+      ]
+    },
+    {
+      "id": 2953,
+      "metn": "Ocaqdan kül əskik olmaz.",
+      "izah": "Hər işin öz qalığı, öz nöqsanı olur.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 2954,
+      "metn": "Od, düşdüyü yeri yandırar.",
+      "izah": "Bəla düşdüyü yeri yandırır.",
+      "movzular": [
+        "Dərd və səbr"
+      ]
+    },
+    {
+      "id": 2955,
+      "metn": "Od hər yana düşsə özünə yer açar.",
+      "izah": "Bəla gəldiyi yerdə özünə yol açır.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 2956,
+      "metn": "Od olmasa tüstü çıxmaz.",
+      "izah": "Səbəb olmayınca nəticə də olmaz.",
+      "movzular": [
+        "Haqq və ədalət"
+      ]
+    },
+    {
+      "id": 2957,
+      "metn": "Oddan kül törər, küldən nə törər?",
+      "izah": "Böyük işin qalığından fayda gəlmir.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 2958,
+      "metn": "Oddan, sudan yenə qar amannıdı.",
+      "izah": "Qar oddan da, sudan da daha qorxuludur.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 2959,
+      "metn": "Odla pambığın nə aşnalığı?!",
+      "izah": "Bir-birinə zidd olanlar dost ola bilməz.",
+      "movzular": [
+        "Dostluq"
+      ]
+    },
+    {
+      "id": 2960,
+      "metn": "Odu söndürüb külü ilə oynamazlar.",
+      "izah": "Sönmüş münaqişəni yenidən qızışdırma.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 2961,
+      "metn": "Oduna gedər Daşdəmir, suya gedər Daşdəmir, üzüvü yusun mürdəşir.",
+      "izah": "Hər işi görən adamın zəhmətinin qədrini bilmirlər.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 2962,
+      "metn": "Oğlan doğdum — oydu məni, qız doğdum — soydu məni.",
+      "izah": "Övlad həm sevinc, həm də böyük qayğı gətirir.",
+      "movzular": [
+        "Ailə"
+      ]
+    },
+    {
+      "id": 2963,
+      "metn": "Oğlan evlənər, bəy oldum sanar.",
+      "izah": "Evlənən oğlan özünü böyük sanır.",
+      "movzular": [
+        "Ailə"
+      ]
+    },
+    {
+      "id": 2964,
+      "metn": "Oğlanı kamal ilə, qızı camal ilə.",
+      "izah": "Oğlanı ağlına, qızı gözəlliyinə görə seçirlər.",
+      "movzular": [
+        "Ailə",
+        "Ağıl"
+      ]
+    },
+    {
+      "id": 2965,
+      "metn": "Oğru anası gah döş yeyər, gah döşünə vurar.",
+      "izah": "Pis övladın valideyni həm faydalanır, həm də əziyyət çəkir.",
+      "movzular": [
+        "Ailə",
+        "Haqq və ədalət"
+      ]
+    },
+    {
+      "id": 2966,
+      "metn": "Oğru elə bağırdı, doğrunun bağrı yarıldı.",
+      "izah": "Günahkar elə bağırdı ki, günahsız qorxuya düşdü.",
+      "movzular": [
+        "Əxlaq",
+        "Haqq və ədalət"
+      ]
+    },
+    {
+      "id": 2967,
+      "metn": "Oğru elə bilər, hamı oğrudur.",
+      "izah": "Günahkar adam hamını özü kimi görür.",
+      "movzular": [
+        "Əxlaq",
+        "Haqq və ədalət"
+      ]
+    },
+    {
+      "id": 2968,
+      "metn": "Oğru ev olmaz, ev yiyəsini evlilikdən salar.",
+      "izah": "Oğrudan ev sahibi olmaz, o evi də dağıdar.",
+      "movzular": [
+        "Əxlaq",
+        "Ailə"
+      ]
+    },
+    {
+      "id": 2969,
+      "metn": "Oğru əyri kolda gizlənər.",
+      "izah": "Günahkar adam gizli yer axtarır.",
+      "movzular": [
+        "Əxlaq",
+        "Haqq və ədalət"
+      ]
+    },
+    {
+      "id": 2970,
+      "metn": "Oğru it xoflu olar.",
+      "izah": "Günahkar adam həmişə qorxu içindədir.",
+      "movzular": [
+        "Əxlaq",
+        "Haqq və ədalət"
+      ]
+    },
+    {
+      "id": 2971,
+      "metn": "Oğru it özünü bildirər.",
+      "izah": "Günahkar adam öz hərəkəti ilə özünü ələ verir.",
+      "movzular": [
+        "Əxlaq",
+        "Haqq və ədalət"
+      ]
+    },
+    {
+      "id": 2972,
+      "metn": "Oğru qalana yanar, mal sahibi gedənə.",
+      "izah": "Oğru götürə bilmədiyinə, sahib isə itirdiyinə yanır.",
+      "movzular": [
+        "Əxlaq",
+        "Var-dövlət"
+      ]
+    },
+    {
+      "id": 2973,
+      "metn": "Oğru ol, xoşu ol, dilin olsun.",
+      "izah": "Nə qədər pis olsan da, xoş danışığın olsun.",
+      "movzular": [
+        "Ağıl",
+        "Dil və söz"
+      ]
+    },
+    {
+      "id": 2974,
+      "metn": "Oğrudan qalanı rəmmal aparar.",
+      "izah": "Bir bəladan qalanı başqa bəla aparır.",
+      "movzular": [
+        "Əxlaq",
+        "Haqq və ədalət"
+      ]
+    },
+    {
+      "id": 2975,
+      "metn": "Oğrudan oğruya halaldır.",
+      "izah": "Haram yolla gələn şey haram yolla da gedir.",
+      "movzular": [
+        "Əxlaq",
+        "Haqq və ədalət"
+      ]
+    },
+    {
+      "id": 2976,
+      "metn": "Oğrunu oğru əliylə tutarlar.",
+      "izah": "Pis adamı onun kimisi ilə ələ keçirirlər.",
+      "movzular": [
+        "Əxlaq",
+        "Haqq və ədalət"
+      ]
+    },
+    {
+      "id": 2977,
+      "metn": "Oğruya and verdilər, evinə muştuluqçu getdi.",
+      "izah": "Yalançının andına inanan aldanır.",
+      "movzular": [
+        "Əxlaq",
+        "Haqq və ədalət"
+      ]
+    },
+    {
+      "id": 2978,
+      "metn": "Oğul atadan görər, süfrə açar.",
+      "izah": "Oğul gördüyünü atadan öyrənir.",
+      "movzular": [
+        "Ailə",
+        "Qonaqpərvərlik"
+      ]
+    },
+    {
+      "id": 2979,
+      "metn": "Oğul atanın kövşənin əkər.",
+      "izah": "Övlad valideyninin yolunu davam etdirir.",
+      "movzular": [
+        "Ailə",
+        "İş"
+      ]
+    },
+    {
+      "id": 2980,
+      "metn": "Oğul düşmən qapısına aparar.",
+      "izah": "Pis övlad ailəsini düşmən qarşısında rüsvay edir.",
+      "movzular": [
+        "Ailə",
+        "Dostluq"
+      ]
+    },
+    {
+      "id": 2981,
+      "metn": "Oğul yönlü olsa neynir ata malını, Yönsüz olsa neynir ata malını?!",
+      "izah": "Bacarıqlı övladın mirasa ehtiyacı yoxdur, bacarıqsıza isə miras da kömək etmir.",
+      "movzular": [
+        "Ailə"
+      ]
+    },
+    {
+      "id": 2982,
+      "metn": "Oğulun əfəli qohum yerdən qız alar.",
+      "izah": "Ağıllı oğul yaxın, tanış ailədən qız alır.",
+      "movzular": [
+        "Ailə"
+      ]
+    },
+    {
+      "id": 2983,
+      "metn": "Oğurluğa dayın evinə get, tutulanda döyülmə.",
+      "izah": "Pis iş görəcəksənsə, heç olmasa yaxın adamdan zərər görməyəsən.",
+      "movzular": [
+        "Ailə"
+      ]
+    },
+    {
+      "id": 2984,
+      "metn": "Oğurluğa getsən, insafı əldən qoyma.",
+      "izah": "Pis iş görsən də, insafını itirmə.",
+      "movzular": [
+        "Əxlaq"
+      ]
+    },
+    {
+      "id": 2985,
+      "metn": "Oğurluğun əvvəli, o da ay işığında.",
+      "izah": "Pis əməl ilk gündən özünü göstərir.",
+      "movzular": [
+        "Haqq və ədalət"
+      ]
+    },
+    {
+      "id": 2986,
+      "metn": "Oğurluq ilə çəngilik qırx gün gedər.",
+      "izah": "Haram yolla qazanılan uzun sürmür.",
+      "movzular": [
+        "Haqq və ədalət"
+      ]
+    },
+    {
+      "id": 2987,
+      "metn": "Oxuduğunu demə, anladığını de.",
+      "izah": "Əzbərlədiyini yox, anladığını danış.",
+      "movzular": [
+        "Təhsil",
+        "Dil və söz"
+      ]
+    },
+    {
+      "id": 2988,
+      "metn": "Oxunu atıb yayını gizlətmə.",
+      "izah": "Etdiyin işi gizlətməyə çalışma.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 2989,
+      "metn": "Olacağa çarə yoxdur.",
+      "izah": "Olacaq işin qarşısını almaq olmaz.",
+      "movzular": [
+        "Dərd və səbr"
+      ]
+    },
+    {
+      "id": 2990,
+      "metn": "Olan yerdən olacaq.",
+      "izah": "Gözlənilən şey mənbəyi olan yerdən gəlir.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 2991,
+      "metn": "Olan yerdən umarlar.",
+      "izah": "İmkanı olandan kömək gözləyirlər.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 2992,
+      "metn": "Olanda göz qızarar, olmayanda — üz.",
+      "izah": "Var olanda adam hirslənir, olmayanda isə utanır.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 2993,
+      "metn": "Olar aşım suyu, olmaz başım suyu.",
+      "izah": "Mal itsin, amma baş salamat qalsın.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 2994,
+      "metn": "Oldu ilə öldüyə çarə yoxdur.",
+      "izah": "Olan işə və ölümə çarə yoxdur.",
+      "movzular": [
+        "Dərd və səbr"
+      ]
+    },
+    {
+      "id": 2995,
+      "metn": "Olma gözəl, inciməyəsən.",
+      "izah": "Gözəl olmaq çox əziyyət və narahatlıq gətirir.",
+      "movzular": [
+        "Sevgi"
+      ]
+    },
+    {
+      "id": 2996,
+      "metn": "Olmuş olacaqdan eyidir.",
+      "izah": "Olmuş iş gözlənilən işdən yaxşıdır.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 2997,
+      "metn": "On iki imamı qoyub, gözünü Axırazzamana tikib.",
+      "izah": "Gözündəki imkanları qoyub uzaq ümidlərə bel bağlayıb.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 2998,
+      "metn": "Ondan xeyir görən Allahdan bəla çəkər.",
+      "izah": "Pis adamdan xeyir görən sonra zərər çəkir.",
+      "movzular": [
+        "Əxlaq",
+        "Dərd və səbr"
+      ]
+    },
+    {
+      "id": 2999,
+      "metn": "Orağı kürk vaxtı, kürkü oraq vaxtı alarlar.",
+      "izah": "Hər şeyi lazım olmayan vaxt al ki, ucuz başa gəlsin.",
+      "movzular": [
+        "Ağıl"
+      ]
+    },
+    {
+      "id": 3000,
+      "metn": "Orta oyunu orta yerdə oynanar.",
+      "izah": "Hər işin öz yeri var.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 3001,
+      "metn": "Ortada gedən dananı qurd yeməz.",
+      "izah": "Camaatla birlikdə olan adam bəlaya düşmür.",
+      "movzular": [
+        "El"
+      ]
+    },
+    {
+      "id": 3002,
+      "metn": "Ortaqlı malı xalq yeyər.",
+      "izah": "Ortaq mala heç kim sahib çıxmır, onu başqaları yeyir.",
+      "movzular": [
+        "Ortaqlıq",
+        "El"
+      ]
+    },
+    {
+      "id": 3003,
+      "metn": "Ortaqlı toyuqdan yalnız yumurta yaxşıdır.",
+      "izah": "Ortaq maldan kiçik pay da yaxşıdır, böyük mübahisə yaratmaz.",
+      "movzular": [
+        "Ortaqlıq"
+      ]
+    },
+    {
+      "id": 3004,
+      "metn": "Ortalıq qazanı qaynamaz.",
+      "izah": "Ortaq işdə hamı başqasını gözləyir, iş görülmür.",
+      "movzular": [
+        "Ortaqlıq"
+      ]
+    },
+    {
+      "id": 3005,
+      "metn": "Oruc tutma, namaz qılma, işin belə rast gətirsin?!.",
+      "izah": "Zəhmət çəkmədən uğur gözləmək olmaz.",
+      "movzular": [
+        "İş"
+      ]
+    },
+    {
+      "id": 3006,
+      "metn": "Oruc tutmayanın oğluna Ramazan adı qoyarlar.",
+      "izah": "Nöqsanlı adama əksinə ad qoyurlar.",
+      "movzular": [
+        "Ailə"
+      ]
+    },
+    {
+      "id": 3007,
+      "metn": "Orucundan çox razıyam, şeşəsin də tutaram.",
+      "izah": "Zahiri dindarlığın altında pislik gizlənir.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 3008,
+      "metn": "Ot öz kökü üstə bitər.",
+      "izah": "Hər şey öz kökündən gəlir.",
+      "movzular": [
+        "Ailə"
+      ]
+    },
+    {
+      "id": 3009,
+      "metn": "Ot yolun gah altında bitər, gah üstündə.",
+      "izah": "Tale bəzən yuxarı, bəzən aşağı aparır.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 3010,
+      "metn": "Otumu otdarsan, kəvşəyimi gətirə bilməzsən.",
+      "izah": "Hazır işi başqası yerinə yetirə bilməz.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 3011,
+      "metn": "Otuz iki dişdən çıxan otuz iki məhləyə yayılar.",
+      "izah": "Bir dəfə deyilən söz hər yerə yayılır.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 3012,
+      "metn": "Ovçu neçə al bilsə, ayı da onca yol bilir.",
+      "izah": "Hiyləgərin bildiyi qədər, onun qurbanı da yol bilir.",
+      "movzular": [
+        "Ağıl"
+      ]
+    },
+    {
+      "id": 3013,
+      "metn": "Ovçu ovda, yolçu yolda gərək.",
+      "izah": "Hər kəs öz işinin başında olmalıdır.",
+      "movzular": [
+        "İş"
+      ]
+    },
+    {
+      "id": 3014,
+      "metn": "Ovçuya dağı nişan verdilər, ovu nişan verməzlər.",
+      "izah": "İmkanı göstərirlər, nəticəni isə hər kəs özü qazanmalıdır.",
+      "movzular": [
+        "Adət-ənənə"
+      ]
+    },
+    {
+      "id": 3015,
+      "metn": "Ovu bərəsində vurarlar.",
+      "izah": "Fürsət anında hərəkət etmək lazımdır.",
+      "movzular": [
+        "Ağıl"
+      ]
+    },
+    {
+      "id": 3016,
+      "metn": "Ovurdunda yaxşı yer eləyibsən, baqqal armud versə.",
+      "izah": "Hazır nemətə ümid bağlama.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 3017,
+      "metn": "Oyağı gözündən elər, yayağı dizindən.",
+      "izah": "Diqqətli adam gözü ilə, tənbəl isə yorğunluğu ilə tanınır.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 3018,
+      "metn": "Oynamaq bilməyən yerim dardır deyər.",
+      "izah": "Bacarıqsız adam günahı şəraitdə axtarır.",
+      "movzular": [
+        "İş"
+      ]
+    },
+    {
+      "id": 3019,
+      "metn": "Oynamayın, gülməyin, kəndə təzə darğa gəlib.",
+      "izah": "Yeni rəhbər gəlib, ehtiyatlı olun.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    }
+  ]
+}

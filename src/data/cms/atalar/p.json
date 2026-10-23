@@ -1,0 +1,415 @@
+{
+  "herf": "P",
+  "sozler": [
+    {
+      "id": 3105,
+      "metn": "Padarın ulağı zağada yatar, qonağı çöldə.",
+      "izah": "Xidmətçinin heyvanı rahatlıqdadır, qonağı isə kənarda qalıb.",
+      "movzular": [
+        "Qonaqpərvərlik"
+      ]
+    },
+    {
+      "id": 3106,
+      "metn": "Padşahı da arxasınca söyərlər.",
+      "izah": "Ən güclü adamı da arxasınca tənqid edirlər.",
+      "movzular": [
+        "Dil və söz"
+      ]
+    },
+    {
+      "id": 3107,
+      "metn": "Padşahın ayağı dəyən yerdə yeddi il ot bitməz.",
+      "izah": "Zalım hökmdarın getdiyi yer uzun müddət dirçəlmir.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 3108,
+      "metn": "Padşahsız nağıl olmaz.",
+      "izah": "Hər hekayədə bir böyük adam olur.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 3109,
+      "metn": "Paxıl artsa, qurd artar.",
+      "izah": "Paxıllıq artanda düşmənçilik də artır.",
+      "movzular": [
+        "Əxlaq",
+        "Tamah"
+      ]
+    },
+    {
+      "id": 3110,
+      "metn": "Paxıl olma, qüssən olmasın.",
+      "izah": "Paxıl olma ki, dərd çəkməyəsən.",
+      "movzular": [
+        "Əxlaq",
+        "Tamah"
+      ]
+    },
+    {
+      "id": 3111,
+      "metn": "Palaza bürün, elnən sürün.",
+      "izah": "Sadə yaşa, xalqla birlikdə ol.",
+      "movzular": [
+        "El"
+      ]
+    },
+    {
+      "id": 3112,
+      "metn": "Paltarın çirki yumaqla, ürəyin çirki deməklə.",
+      "izah": "Paltarın çirki yumaqla, ürəyin dərdi danışmaqla təmizlənir.",
+      "movzular": [
+        "Dil və söz"
+      ]
+    },
+    {
+      "id": 3113,
+      "metn": "Pambıq satan ağ itdən qorxar.",
+      "izah": "Hər kəs öz işinə zərər verən şeydən qorxur.",
+      "movzular": [
+        "Var-dövlət",
+        "İgidlik"
+      ]
+    },
+    {
+      "id": 3114,
+      "metn": "Pambıqçının ağ itdən zəhləsi gedər.",
+      "izah": "Hər kəs öz işinə zərər verən şeydən narahat olur.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 3115,
+      "metn": "Pampağa papağı ağırlıq eləyər.",
+      "izah": "Zəif adama ən kiçik məsuliyyət də ağır gəlir.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 3116,
+      "metn": "Papağı isti-soyuqdan ötrü qoymurlar.",
+      "izah": "Bəzi şeylərin mənəvi dəyəri var.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 3117,
+      "metn": "Papaq namus üçündür.",
+      "izah": "Kişinin papağı onun şərəfidir.",
+      "movzular": [
+        "Əxlaq"
+      ]
+    },
+    {
+      "id": 3118,
+      "metn": "Papaqçının könlü olsa, bir dəridən doqquz papaq tikər.",
+      "izah": "Usta istəsə, az materialdan çox iş görər.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 3119,
+      "metn": "Paslı dəmirdən qılınc olmaz.",
+      "izah": "Pis materialdan yaxşı iş çıxmaz.",
+      "movzular": [
+        "İgidlik"
+      ]
+    },
+    {
+      "id": 3120,
+      "metn": "Payını yalqız yeyən tayın yalqız qaldırar.",
+      "izah": "Var-dövlətini kimsə ilə bölməyən çətinliyi də tək çəkir.",
+      "movzular": [
+        "Ortaqlıq"
+      ]
+    },
+    {
+      "id": 3121,
+      "metn": "Peyğəmbər öz canına dua eləyib.",
+      "izah": "Hər kəs əvvəlcə öz rifahını düşünür.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 3122,
+      "metn": "Peyğəmbərlərdə bəs niyə Cərcisi tapdın?!",
+      "izah": "Bu qədər yaxşının içindən ən pisini seçdin.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 3123,
+      "metn": "Pıç-pıç ev yıxar.",
+      "izah": "Gizli söz-söhbət ailəni dağıdır.",
+      "movzular": [
+        "Ailə"
+      ]
+    },
+    {
+      "id": 3124,
+      "metn": "Pıç-pıç Mustafa xanı qaçırtdı.",
+      "izah": "Gizli dedi-qodu ən güclü adamı da yerindən edir.",
+      "movzular": [
+        "Dil və söz"
+      ]
+    },
+    {
+      "id": 3125,
+      "metn": "Pilovun yağlısın yeyən yaxşı fatihə oxuyar.",
+      "izah": "Mənfəət görən adam təriflədiyi adamı daha çox tərifləyir.",
+      "movzular": [
+        "Təhsil"
+      ]
+    },
+    {
+      "id": 3126,
+      "metn": "Pinəçinin mayası iynəynən bizdi.",
+      "izah": "Hər ustanın öz sadə alətləri var.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 3127,
+      "metn": "Pir mənimdir, kəramətin bilirəm.",
+      "izah": "Mən onu yaxşı tanıyıram, nə edə biləcəyini bilirəm.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 3128,
+      "metn": "Pis günün ömrü az olar.",
+      "izah": "Pis gün uzun sürmür.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 3129,
+      "metn": "Pis olmasa, yaxşının qədri bilinməz.",
+      "izah": "Pisliklə qarşılaşmayan adam yaxşılığın dəyərini anlamaz.",
+      "movzular": [
+        "Əxlaq"
+      ]
+    },
+    {
+      "id": 3130,
+      "metn": "Pis söz yiyəsinə qayıdar.",
+      "izah": "Pis söz deyənin özünə qayıdır.",
+      "movzular": [
+        "Ağıl",
+        "Dil və söz"
+      ]
+    },
+    {
+      "id": 3131,
+      "metn": "Pisi dalına mindir, ya dalına min, ikisi də birdir.",
+      "izah": "Pis adamla necə davransan da, nəticə eynidir.",
+      "movzular": [
+        "Əxlaq"
+      ]
+    },
+    {
+      "id": 3132,
+      "metn": "Pisliyi torpağa əkdilər, göyərmədi.",
+      "izah": "Pislik bəhrə vermir.",
+      "movzular": [
+        "Əxlaq"
+      ]
+    },
+    {
+      "id": 3133,
+      "metn": "Pişik atası xeyrinə siçan tutmaz.",
+      "izah": "Hər kəs öz xeyri üçün işləyir.",
+      "movzular": [
+        "Ailə"
+      ]
+    },
+    {
+      "id": 3134,
+      "metn": "Pişik balasını istədiyindən yeyər.",
+      "izah": "Həddindən artıq sevgi də zərər gətirir.",
+      "movzular": [
+        "Ailə"
+      ]
+    },
+    {
+      "id": 3135,
+      "metn": "Pişik balasını külə bulayıb yeyər.",
+      "izah": "Zərər vurmazdan əvvəl özünə bəraət axtarır.",
+      "movzular": [
+        "Ailə"
+      ]
+    },
+    {
+      "id": 3136,
+      "metn": "Pişik olmayan yerdə siçanlar baş qaldırar.",
+      "izah": "Rəhbər olmayan yerdə hamı başlı-başına qalır.",
+      "movzular": [
+        "Tərbiyə"
+      ]
+    },
+    {
+      "id": 3137,
+      "metn": "Pişiyi dara qısnayanda dönər üzünü cırmaqlar.",
+      "izah": "Çıxılmaz vəziyyətə düşən zəif adam da hücuma keçir.",
+      "movzular": [
+        "İgidlik"
+      ]
+    },
+    {
+      "id": 3138,
+      "metn": "Pişiyin ağzı ətə çatmayanda deyər qoxuyubdu.",
+      "izah": "Əlçatmaz şeyi pisləyirlər.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 3139,
+      "metn": "Pişiyin dərdi iti öldürər.",
+      "izah": "Birinin dərdi başqasına zərər gətirir.",
+      "movzular": [
+        "Dərd və səbr"
+      ]
+    },
+    {
+      "id": 3140,
+      "metn": "Pişiyin gözü siçan deşiyində olar.",
+      "izah": "Tamahkar adamın fikri həmişə qazancdadır.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 3141,
+      "metn": "Pişiyin könlü samanlıq idi, it də qovdu saldı samanlığa.",
+      "izah": "İstədiyi yerə məcbur edildiyini göstərir.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 3142,
+      "metn": "Pişiyin qonaq yeri samanlıqdır.",
+      "izah": "Hər kəsin öz yeri var.",
+      "movzular": [
+        "Adət-ənənə",
+        "Qonaqpərvərlik"
+      ]
+    },
+    {
+      "id": 3143,
+      "metn": "Pitiklə donuz darıdan çıxmaz.",
+      "izah": "Pis adamı yumşaq üsulla yerindən çıxarmaq olmaz.",
+      "movzular": [
+        "Bərəkət"
+      ]
+    },
+    {
+      "id": 3144,
+      "metn": "Piyada atlıya gülməsə, bağrı çatlar.",
+      "izah": "Kasıb varlıya gülməsə, ürəyi rahat olmaz.",
+      "movzular": [
+        "Əxlaq"
+      ]
+    },
+    {
+      "id": 3145,
+      "metn": "Piyadanın qaydasıdır atlıya gülər.",
+      "izah": "Kasıb varlıya gülməyi xoşlayır.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 3146,
+      "metn": "Polad sınar, əyilməz.",
+      "izah": "Mərd adam sınar, amma əyilməz.",
+      "movzular": [
+        "İgidlik"
+      ]
+    },
+    {
+      "id": 3147,
+      "metn": "Pul can yonqarıdır.",
+      "izah": "Pul insanın canından qopan zəhmətdir.",
+      "movzular": [
+        "Var-dövlət"
+      ]
+    },
+    {
+      "id": 3148,
+      "metn": "Pul kəsəni qılınc kəsməz.",
+      "izah": "Pulu olan adama heç kim zərər vura bilmir.",
+      "movzular": [
+        "Var-dövlət",
+        "İgidlik"
+      ]
+    },
+    {
+      "id": 3149,
+      "metn": "Pul verəndə mollanı meçiddə aldadallar.",
+      "izah": "Pulla ən dindar adamı da aldatmaq olar.",
+      "movzular": [
+        "Var-dövlət"
+      ]
+    },
+    {
+      "id": 3150,
+      "metn": "Pulda vəfa olsaydı, əldən-ələ keçməzdi.",
+      "izah": "Pul heç kimə sadiq qalmır.",
+      "movzular": [
+        "Əxlaq",
+        "Var-dövlət"
+      ]
+    },
+    {
+      "id": 3151,
+      "metn": "Pullu adamdan bəla da qorxar.",
+      "izah": "Pullu adamdan hamı çəkinir.",
+      "movzular": [
+        "Var-dövlət",
+        "Dərd və səbr"
+      ]
+    },
+    {
+      "id": 3152,
+      "metn": "Pulu pul qazanar, yaxşı igid palçıq basar.",
+      "izah": "Pul pul qazanır, igid isə zəhmətlə yaşayır.",
+      "movzular": [
+        "Var-dövlət",
+        "İgidlik"
+      ]
+    },
+    {
+      "id": 3153,
+      "metn": "Pulun getdiyinə baxma, işin bitdiyinə bax.",
+      "izah": "Xərclənən pula yox, işin həll olunmasına bax.",
+      "movzular": [
+        "İş",
+        "Var-dövlət"
+      ]
+    },
+    {
+      "id": 3154,
+      "metn": "Pulun verən mal alar, heç verməyən nə alar?",
+      "izah": "Pul verməyən mal ala bilməz.",
+      "movzular": [
+        "Var-dövlət"
+      ]
+    }
+  ]
+}

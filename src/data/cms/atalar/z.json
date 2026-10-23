@@ -1,0 +1,260 @@
+{
+  "herf": "Z",
+  "sozler": [
+    {
+      "id": 3883,
+      "metn": "Zalıma Allah bəla verər.",
+      "izah": "Zalımın cəzası mütləq gəlir.",
+      "movzular": [
+        "Əxlaq",
+        "Dərd və səbr"
+      ]
+    },
+    {
+      "id": 3884,
+      "metn": "Zalımın çörəyi dizi üstə olar.",
+      "izah": "Zalımın yaxşılığı minnətlə olur və tez geri alınır.",
+      "movzular": [
+        "Əxlaq",
+        "Haqq və ədalət"
+      ]
+    },
+    {
+      "id": 3885,
+      "metn": "Zalımın qılıncından kasıbın ahı pisdi.",
+      "izah": "Zalımın qılıncından kasıbın ahı daha təhlükəlidir.",
+      "movzular": [
+        "Bərəkət",
+        "Var-dövlət"
+      ]
+    },
+    {
+      "id": 3886,
+      "metn": "Zaman keçər, söz qalar.",
+      "izah": "Zaman keçir, söz isə qalır.",
+      "movzular": [
+        "Ağıl",
+        "Dil və söz"
+      ]
+    },
+    {
+      "id": 3887,
+      "metn": "Zaman sənə saz olmasa, sən zamana saz ol.",
+      "izah": "Zaman sənə uyğun gəlmirsə, sən zamana uyğunlaş.",
+      "movzular": [
+        "Ağıl"
+      ]
+    },
+    {
+      "id": 3888,
+      "metn": "Zamana ilə düzəlişən həmişə rahatdır.",
+      "izah": "Zamanla ayaqlaşan adam rahat yaşayır.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 3889,
+      "metn": "Zamanaya bax, ayıya qaval çaldırır.",
+      "izah": "Zəmanə elə dəyişib ki, yersiz adamlar ön plana çıxıb.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 3890,
+      "metn": "Zəhmət çəkməyən bal yeməz.",
+      "izah": "Zəhmətsiz qazanc olmur.",
+      "movzular": [
+        "İş"
+      ]
+    },
+    {
+      "id": 3891,
+      "metn": "Zəhmət çəkməyən rahatlığın qədrin bilməz.",
+      "izah": "Zəhmətsiz rahatlığın dəyəri bilinmir.",
+      "movzular": [
+        "İş"
+      ]
+    },
+    {
+      "id": 3892,
+      "metn": "Zəhməti bülbül çəkər, gülü qucar yenə xar.",
+      "izah": "Zəhməti biri çəkir, bəhrəsini başqası görür.",
+      "movzular": [
+        "İş"
+      ]
+    },
+    {
+      "id": 3893,
+      "metn": "Zəhmətlə yeyilən acı soğan minnətlə yeyilən baldan şirindir.",
+      "izah": "Öz zəhmətinlə qazandığın az şey minnətlə verilən böyük nemətdən dəyərlidir.",
+      "movzular": [
+        "İş"
+      ]
+    },
+    {
+      "id": 3894,
+      "metn": "Zəhmətsiz bal yeməzlər.",
+      "izah": "Zəhmətsiz nemət olmaz.",
+      "movzular": [
+        "İş"
+      ]
+    },
+    {
+      "id": 3895,
+      "metn": "Zəhmətsiz rəhmət olmaz.",
+      "izah": "Zəhmət çəkməyən adam rəhmətə layiq olmur.",
+      "movzular": [
+        "İş"
+      ]
+    },
+    {
+      "id": 3896,
+      "metn": "Zəncir aslan üçündür.",
+      "izah": "Məhdudiyyət güclü adamlar üçün qoyulur.",
+      "movzular": [
+        "İgidlik"
+      ]
+    },
+    {
+      "id": 3897,
+      "metn": "Zər ilə olan zor ilə olmaz.",
+      "izah": "Pul ilə həll olunan iş güclə həll olunmur.",
+      "movzular": [
+        "Var-dövlət"
+      ]
+    },
+    {
+      "id": 3898,
+      "metn": "Zər qədrini zərgər bilər.",
+      "izah": "Dəyərli şeyin qədrini mütəxəssis bilir.",
+      "movzular": [
+        "Əxlaq"
+      ]
+    },
+    {
+      "id": 3899,
+      "metn": "Zərbə həməşə ağrıyan yerə dəyər.",
+      "izah": "Bəla ən zəif yerə toxunur.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 3900,
+      "metn": "Zərərin yarısından qayıtmaq da qazancdır.",
+      "izah": "Zərərin yarısından geri dönmək də qazancdır.",
+      "movzular": [
+        "Ağıl"
+      ]
+    },
+    {
+      "id": 3901,
+      "metn": "Zindana səbr eləyən axırı taxta çıxar.",
+      "izah": "Çətinliyə səbir edən axırda yüksəlir.",
+      "movzular": [
+        "Dərd və səbr"
+      ]
+    },
+    {
+      "id": 3902,
+      "metn": "Zirək quş dimdiyindən tələyə düşər.",
+      "izah": "Həddən artıq hiyləgərlik insanı bəlaya salır.",
+      "movzular": [
+        "Ağıl"
+      ]
+    },
+    {
+      "id": 3903,
+      "metn": "Ziyan ağudan acıdır.",
+      "izah": "Ziyan zəhərdən də acıdır.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 3904,
+      "metn": "Ziyankardan qəza əskik olmaz.",
+      "izah": "Zərər verən adamın başı bəladan qurtulmur.",
+      "movzular": [
+        "Əxlaq"
+      ]
+    },
+    {
+      "id": 3905,
+      "metn": "Zoğal dərənimiz də var, səbət hörənimiz də.",
+      "izah": "Hər iş üçün adamımız var.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 3906,
+      "metn": "Zor ilə gözəllik olmaz.",
+      "izah": "Gözəllik zorla olmur.",
+      "movzular": [
+        "Sevgi"
+      ]
+    },
+    {
+      "id": 3907,
+      "metn": "Zor qapıdan gələndə haqq bacadan qaçar.",
+      "izah": "Güc hakim olanda ədalət yox olur.",
+      "movzular": [
+        "Əxlaq",
+        "Haqq və ədalət"
+      ]
+    },
+    {
+      "id": 3908,
+      "metn": "Zora dağlar dayanmaz.",
+      "izah": "Güc qarşısında heç nə dayana bilməz.",
+      "movzular": [
+        "İgidlik"
+      ]
+    },
+    {
+      "id": 3909,
+      "metn": "Zorla gedən köpək qoyuna fayda verməz.",
+      "izah": "Məcburiyyətlə görülən işin xeyri olmur.",
+      "movzular": [
+        "İş"
+      ]
+    },
+    {
+      "id": 3910,
+      "metn": "Zurnaçı zorun üzünə verər.",
+      "izah": "Pul verən öz istədiyini tələb edir.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 3911,
+      "metn": "Zülm ilə abad olan bir gün gəlir bərbad olur.",
+      "izah": "Zülmlə qurulan var-dövlət uzun sürmür.",
+      "movzular": [
+        "Əxlaq",
+        "Haqq və ədalət"
+      ]
+    },
+    {
+      "id": 3912,
+      "metn": "Zülmət daşıdı, götürən də peşmandı, qoyan da.",
+      "izah": "Zülm ağır yükdür, onu yaradan da, çəkən də peşman olur.",
+      "movzular": [
+        "Haqq və ədalət"
+      ]
+    },
+    {
+      "id": 3913,
+      "metn": "Zülmün axırı olmaz.",
+      "izah": "Zülmün sonu yoxdur.",
+      "movzular": [
+        "Əxlaq",
+        "Haqq və ədalət"
+      ]
+    }
+  ]
+}

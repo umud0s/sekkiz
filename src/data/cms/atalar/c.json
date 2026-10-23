@@ -1,0 +1,461 @@
+{
+  "herf": "C",
+  "sozler": [
+    {
+      "id": 895,
+      "metn": "Cahıllıqda bəzənmədim, hayıf mənə, qocalıqda bəzənmişəm, ayıb mənə.",
+      "izah": "Hər şeyin öz vaxtı var, vaxtı keçəndə gülünc görünür.",
+      "movzular": [
+        "Ağıl"
+      ]
+    },
+    {
+      "id": 896,
+      "metn": "Cahil axırda tula quyruğu xınalar.",
+      "izah": "Cahil sonda boş işə girişər.",
+      "movzular": [
+        "Ağıl"
+      ]
+    },
+    {
+      "id": 897,
+      "metn": "Cahil dirilərin ölüsüdür.",
+      "izah": "Cahil adam yaşasa da, faydası yoxdur.",
+      "movzular": [
+        "Ağıl"
+      ]
+    },
+    {
+      "id": 898,
+      "metn": "Cahil ilə bal yemə, ahıl ilə daş daşı.",
+      "izah": "Cahillə rahat iş görməkdənsə, ağıllı ilə çətin iş görmək yaxşıdır.",
+      "movzular": [
+        "Ağıl"
+      ]
+    },
+    {
+      "id": 899,
+      "metn": "Cahildə söz əylənməz.",
+      "izah": "Cahil adam deyilən sözü tez unudur.",
+      "movzular": [
+        "Ağıl",
+        "Dil və söz"
+      ]
+    },
+    {
+      "id": 900,
+      "metn": "Camadarın şahlığı hamamçılıqdır.",
+      "izah": "Hər kəsin hökmü öz işindədir.",
+      "movzular": [
+        "Haqq və ədalət"
+      ]
+    },
+    {
+      "id": 901,
+      "metn": "Came nə qədər böyük olsa, imam yenə bildiyin oxur.",
+      "izah": "Mühit dəyişsə də, insanın bacarığı dəyişmir.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 902,
+      "metn": "Can candan ayrıdır.",
+      "izah": "Hər kəsin öz canı, öz qayğısı var.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 903,
+      "metn": "Can de, can eşit.",
+      "izah": "Xoş söz deyən adam xoş söz eşidir.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 904,
+      "metn": "Can sağlığı dövlətdir, demə, babam, yoxsulam.",
+      "izah": "Sağlamlıq ən böyük sərvətdir.",
+      "movzular": [
+        "Ailə",
+        "Var-dövlət"
+      ]
+    },
+    {
+      "id": 905,
+      "metn": "Can sənin, cəhənnəm Tarının.",
+      "izah": "Ehtiyatlı ol, cəzası olacaq.",
+      "movzular": [
+        "Haqq və ədalət"
+      ]
+    },
+    {
+      "id": 906,
+      "metn": "Can şirin olur.",
+      "izah": "Hər kəs öz canını əziz tutur.",
+      "movzular": [
+        "Dərd və səbr"
+      ]
+    },
+    {
+      "id": 907,
+      "metn": "Can verəndə boz sərçəyə ver, qaranquş gəldi-gedərdi.",
+      "izah": "Can verirsən, qalan quşa ver, gedib-gələnə yox.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 908,
+      "metn": "Can verməyən canana yetməz.",
+      "izah": "Fədakarlıq etməyən adam sevdiyinə qovuşa bilməz.",
+      "movzular": [
+        "Sevgi"
+      ]
+    },
+    {
+      "id": 909,
+      "metn": "Can versən qardaşa ver, min il keçə yad olmaz.",
+      "izah": "Qardaşa edilən yaxşılıq heç vaxt itməz.",
+      "movzular": [
+        "Ailə"
+      ]
+    },
+    {
+      "id": 910,
+      "metn": "Cana gələn mala gəlsin.",
+      "izah": "Bəla gələcəksə, insana yox, mala gəlsin.",
+      "movzular": [
+        "Var-dövlət"
+      ]
+    },
+    {
+      "id": 911,
+      "metn": "Candı çəkər, qandı qaynıyar.",
+      "izah": "Doğma qan insanı özünə çəkir.",
+      "movzular": [
+        "Ailə"
+      ]
+    },
+    {
+      "id": 912,
+      "metn": "Canı acışan eşşək atdan yeyin gedər.",
+      "izah": "Ehtiyac zəifi də güclüdən sürətli edir.",
+      "movzular": [
+        "Dərd və səbr"
+      ]
+    },
+    {
+      "id": 913,
+      "metn": "Canı canan yolunda deyən çox olar, qıyan az.",
+      "izah": "Fədakarlıqdan danışan çox, edən azdır.",
+      "movzular": [
+        "Dil və söz",
+        "Sevgi"
+      ]
+    },
+    {
+      "id": 914,
+      "metn": "Canım qurban, yaxşı qonaq! Gəl uçaq bir də qonaq.",
+      "izah": "Yaxşı qonağa can qurban, gəl bir də qonaq ol.",
+      "movzular": [
+        "Adət-ənənə",
+        "Qonaqpərvərlik"
+      ]
+    },
+    {
+      "id": 915,
+      "metn": "Canımı da alsan, gülə-gülə al.",
+      "izah": "Sevdiyin adamın verdiyi əziyyət də şirin görünür.",
+      "movzular": [
+        "Sevgi"
+      ]
+    },
+    {
+      "id": 916,
+      "metn": "Canında olmayana candar ağacı neyləsin?!",
+      "izah": "Canında olmayan ağaca nə ehtiyac.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 917,
+      "metn": "Canını yaxşı saxla qəfil əcəldən.",
+      "izah": "Sağlamlığını qoru, gözlənilməz bəladan ehtiyatlı ol.",
+      "movzular": [
+        "Dərd və səbr"
+      ]
+    },
+    {
+      "id": 918,
+      "metn": "Cananı sevən canından keçər.",
+      "izah": "Əsl sevgi fədakarlıq tələb edir.",
+      "movzular": [
+        "Sevgi"
+      ]
+    },
+    {
+      "id": 919,
+      "metn": "Canavar tək qalanda başına çaqqallar yığışar.",
+      "izah": "Güclü adam tək qalanda zəiflər ona hücum edir.",
+      "movzular": [
+        "İgidlik"
+      ]
+    },
+    {
+      "id": 920,
+      "metn": "Canavarın üzü ağ olsa, kəndə gündüz gələr.",
+      "izah": "Üzü təmiz olsaydı, işini gizlətməzdi.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 921,
+      "metn": "Cavahir cında içində olar.",
+      "izah": "Dəyərli şey sadə görünüşün altında da ola bilər.",
+      "movzular": [
+        "Əxlaq"
+      ]
+    },
+    {
+      "id": 922,
+      "metn": "Cavahirin qiyməti var, amma atalar sözünün qiyməti yoxdur.",
+      "izah": "Atalar sözünün dəyəri ölçüyəgəlməzdir.",
+      "movzular": [
+        "Ağıl",
+        "Dil və söz"
+      ]
+    },
+    {
+      "id": 923,
+      "metn": "Cavan baş bir çanax qandı.",
+      "izah": "Gənc adam qızğın və tez hirslənən olur.",
+      "movzular": [
+        "Tərbiyə"
+      ]
+    },
+    {
+      "id": 924,
+      "metn": "Cavanlıqda daş daşı, qocalıqda ye aşı.",
+      "izah": "Cavanlıqda zəhmət çək, qocalıqda rahat ye.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 925,
+      "metn": "Cavanlıqda qocalığa güc saxla.",
+      "izah": "Gənclikdə sağlamlığını qoru, qocalıqda lazım olacaq.",
+      "movzular": [
+        "Ağıl"
+      ]
+    },
+    {
+      "id": 926,
+      "metn": "Ceyran qovan çiçəyə batar, donuz qovan palçığa.",
+      "izah": "Nəyin dalınca gedirsənsə, ora da batarsan.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 927,
+      "metn": "Ceyranın qaçmağın elə gördüm, ətindən zəhləm getdi.",
+      "izah": "Qaçışını görüb ətindən də soyudum.",
+      "movzular": [
+        "El"
+      ]
+    },
+    {
+      "id": 928,
+      "metn": "Cəfasın çəkən səfasın görər.",
+      "izah": "Zəhmət çəkən onun bəhrəsini də görür.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 929,
+      "metn": "Cəhd çarıq yırtar, iş odur haqqa vara.",
+      "izah": "Hədsiz cəhd çarığı yırtar, iş haqqa çatmaqdır.",
+      "movzular": [
+        "İş",
+        "Haqq və ədalət"
+      ]
+    },
+    {
+      "id": 930,
+      "metn": "Cəhd elə dost qazan, düşmən ocaq başında.",
+      "izah": "Dost qazanmağa çalış, düşmən onsuz da yaxındadır.",
+      "movzular": [
+        "Dostluq",
+        "El"
+      ]
+    },
+    {
+      "id": 931,
+      "metn": "Cəhənnəmə gedən gələr, müştərinin gedəni gəlməz.",
+      "izah": "Gedən müştəri asanlıqla qayıtmaz.",
+      "movzular": [
+        "Var-dövlət"
+      ]
+    },
+    {
+      "id": 932,
+      "metn": "Cəhənnəmə gedən yoldaşını çox istər.",
+      "izah": "Pis yola gedən özünə yoldaş da istər.",
+      "movzular": [
+        "Dostluq"
+      ]
+    },
+    {
+      "id": 933,
+      "metn": "Cəngəl də özünü bağ sanar.",
+      "izah": "Hər kəs özünü dəyərli sayır.",
+      "movzular": [
+        "Əxlaq"
+      ]
+    },
+    {
+      "id": 934,
+      "metn": "Cərgədən qalan keçəl olar.",
+      "izah": "Cərgədən qalan zərər çəkər.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 935,
+      "metn": "Cidanı çuvalda gizlətmək olmaz.",
+      "izah": "Böyük həqiqəti gizlətmək olmaz.",
+      "movzular": [
+        "Haqq və ədalət"
+      ]
+    },
+    {
+      "id": 936,
+      "metn": "Cinə börk tikər, şeytana papış.",
+      "izah": "Hər kəsə uyğun iş görür.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 937,
+      "metn": "Cinə dəmir göstərdilər.",
+      "izah": "Qorxuducu şey göstərdilər.",
+      "movzular": [
+        "İgidlik"
+      ]
+    },
+    {
+      "id": 938,
+      "metn": "Cins cinsə əsər eləməz.",
+      "izah": "Eyni xasiyyətli adamlar bir-birinə təsir etmir.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 939,
+      "metn": "Cins xoruz yumurtada banlayar.",
+      "izah": "İstedadlı adamın bacarığı uşaq yaşından bilinir.",
+      "movzular": [
+        "Tərbiyə"
+      ]
+    },
+    {
+      "id": 940,
+      "metn": "Cins madyan balanı döşündə saxlar.",
+      "izah": "Yaxşı madyan balasını yanında saxlar.",
+      "movzular": [
+        "Ailə"
+      ]
+    },
+    {
+      "id": 941,
+      "metn": "Comərd deyib maldan elərlər, igid deyib candan elərlər.",
+      "izah": "Səxavət mal ilə, igidlik isə canından keçməklə ölçülür.",
+      "movzular": [
+        "Var-dövlət",
+        "İgidlik"
+      ]
+    },
+    {
+      "id": 943,
+      "metn": "Culfa kəfənsiz ölər.",
+      "izah": "Səyyar adamın öz kefeni də olmaz.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 944,
+      "metn": "Cücə ağgünlü olsaydı, toyuq əmcəkli olardı.",
+      "izah": "Cücə bəxtli olsaydı, toyuq da süd verərdi.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 945,
+      "metn": "Cücə nənəsindən süd görməyib.",
+      "izah": "Belə adam ailədən heç bir tərbiyə görməyib.",
+      "movzular": [
+        "Ailə"
+      ]
+    },
+    {
+      "id": 946,
+      "metn": "Cücəni çalağandan sonra sanarlar.",
+      "izah": "Nəticəni iş bitəndən sonra hesablayırlar.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 947,
+      "metn": "Cücəni payızda sayarlar.",
+      "izah": "Nəticəni vaxtından əvvəl sayma.",
+      "movzular": [
+        "Ağıl"
+      ]
+    },
+    {
+      "id": 948,
+      "metn": "Cücəyə bəylik verdilər, anasın eşşəyə mindirdi.",
+      "izah": "Kiçik adama vəzifə verildi, ilk zərəri ailəsinə vurdu.",
+      "movzular": [
+        "Ailə"
+      ]
+    },
+    {
+      "id": 949,
+      "metn": "Cütcü yağış istər, yolçu quraqlıq.",
+      "izah": "Hər kəs öz mənfəətini düşünür.",
+      "movzular": [
+        "Tamah"
+      ]
+    },
+    {
+      "id": 950,
+      "metn": "Cütə gedən öküz gözündən tanınar.",
+      "izah": "Zəhmətkeş adam baxışından tanınır.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 951,
+      "metn": "Cüzvi külliyə tabedi.",
+      "izah": "Hissə bütünə tabedir.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    }
+  ]
+}

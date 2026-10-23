@@ -1,0 +1,614 @@
+{
+  "herf": "N",
+  "sozler": [
+    {
+      "id": 2858,
+      "metn": "Nacins ağac düyünlü olar.",
+      "izah": "Pis nəsildən olan adamın xasiyyəti də çətin olur.",
+      "movzular": [
+        "Ailə"
+      ]
+    },
+    {
+      "id": 2859,
+      "metn": "Nacins qarpızın toxumu çox olar.",
+      "izah": "Keyfiyyətsiz şeyin artığı çox olur.",
+      "movzular": [
+        "Bərəkət"
+      ]
+    },
+    {
+      "id": 2860,
+      "metn": "Nahaq qan yerdə qalmaz.",
+      "izah": "Haqsız yerə tökülən qanın cəzası mütləq gəlir.",
+      "movzular": [
+        "Əxlaq"
+      ]
+    },
+    {
+      "id": 2861,
+      "metn": "Naxır yerli-dibli yoxdur, bu, ala dana axtarır.",
+      "izah": "Özü heç nəyə sahib deyil, amma ən yaxşısını axtarır.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 2862,
+      "metn": "Naxırçı qızı naxırçı çörəyi arzular.",
+      "izah": "İnsan öyrəşdiyi həyatı arzulayır.",
+      "movzular": [
+        "Ailə"
+      ]
+    },
+    {
+      "id": 2863,
+      "metn": "Naxırçı qızından xanım olmaz.",
+      "izah": "Tərbiyə görməyən adamdan zadəgan olmaz.",
+      "movzular": [
+        "Ailə"
+      ]
+    },
+    {
+      "id": 2864,
+      "metn": "Naxırçı qızını verdi, torba dağarcığı da üstəlik.",
+      "izah": "Kasıb adam qızını verəndə üstəlik bütün varını da verdi.",
+      "movzular": [
+        "Ailə"
+      ]
+    },
+    {
+      "id": 2865,
+      "metn": "Naxırçının könlü naxır çörəyi istər.",
+      "izah": "İnsan öyrəşdiyi həyatı arzulayır.",
+      "movzular": [
+        "Tamah"
+      ]
+    },
+    {
+      "id": 2866,
+      "metn": "Nalını almamış mıxını çalma.",
+      "izah": "Əsas iş həll olunmadan xırda işlərlə məşğul olma.",
+      "movzular": [
+        "Ağıl"
+      ]
+    },
+    {
+      "id": 2867,
+      "metn": "Namaz qıla-qıla yıxdın öyümü, indi başlamısan Haca getməyə.",
+      "izah": "Zahirən dindar görünüb evimi dağıtdın, indi də savab işə başlayırsan.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 2868,
+      "metn": "Namərd yoldaşından görər, mərd Allahından.",
+      "izah": "Namərd köməyi insandan gözləyir, mərd isə Tanrıdan.",
+      "movzular": [
+        "Dostluq",
+        "Əxlaq"
+      ]
+    },
+    {
+      "id": 2869,
+      "metn": "Namərdə tuş olanın ciyəri qana dönər.",
+      "izah": "Namərdə rast gələn adam çox əziyyət çəkir.",
+      "movzular": [
+        "Əxlaq"
+      ]
+    },
+    {
+      "id": 2870,
+      "metn": "Namərdi bir gördün, bir də görsən, namərdsən.",
+      "izah": "Namərdi tanıyandan sonra ona yenə etibar edən özü günahkardır.",
+      "movzular": [
+        "Əxlaq"
+      ]
+    },
+    {
+      "id": 2871,
+      "metn": "Namərdin çörəyi dizinin üstə olar.",
+      "izah": "Namərdin yaxşılığı minnətlə olur və tez geri alınır.",
+      "movzular": [
+        "Əxlaq"
+      ]
+    },
+    {
+      "id": 2872,
+      "metn": "Namərdin gözü dar olar.",
+      "izah": "Namərd adam xəsis və paxıl olur.",
+      "movzular": [
+        "Əxlaq"
+      ]
+    },
+    {
+      "id": 2873,
+      "metn": "Namərdin sözünü söz eləmək olmaz.",
+      "izah": "Namərdin sözünə əhəmiyyət vermək olmaz.",
+      "movzular": [
+        "Ağıl",
+        "Dil və söz"
+      ]
+    },
+    {
+      "id": 2874,
+      "metn": "Namusu itə atdılar, it yemədi!",
+      "izah": "Namussuz adamın namusu heç kimə lazım deyil.",
+      "movzular": [
+        "Əxlaq"
+      ]
+    },
+    {
+      "id": 2875,
+      "metn": "Naşıya zurna verəndə yoğun başından yapışar.",
+      "izah": "Təcrübəsiz adam işin əsasını bilmir.",
+      "movzular": [
+        "Təhsil"
+      ]
+    },
+    {
+      "id": 2876,
+      "metn": "Necə baxım gözüm gəlin gözünə oxşasın?!.",
+      "izah": "Necə hərəkət edim ki, kimsə məndən şübhələnməsin?",
+      "movzular": [
+        "Ailə"
+      ]
+    },
+    {
+      "id": 2877,
+      "metn": "Necəsən qanmayım atan yansın!",
+      "izah": "Anlamazlıqdan gələn bəla böyük olur.",
+      "movzular": [
+        "Ailə"
+      ]
+    },
+    {
+      "id": 2878,
+      "metn": "Neylərəm qızıl teşti içinə qan qusam.",
+      "izah": "Əziyyət içində olandan sonra bolluğun faydası yoxdur.",
+      "movzular": [
+        "Var-dövlət"
+      ]
+    },
+    {
+      "id": 2879,
+      "metn": "Neylərəm o imanı ki, yarısı qardaşa yanmaya.",
+      "izah": "Yaxınına faydası olmayan imanın dəyəri yoxdur.",
+      "movzular": [
+        "Ailə"
+      ]
+    },
+    {
+      "id": 2880,
+      "metn": "Neyləyirəm qızıl taxtı, bir qızıl baxtım olsa.",
+      "izah": "Var-dövlətdən çox uğurlu taleyin olsun.",
+      "movzular": [
+        "Var-dövlət"
+      ]
+    },
+    {
+      "id": 2881,
+      "metn": "Neyniyəsən düz əyrini kəsəcək.",
+      "izah": "Düz adam əyrini gec-tez ifşa edir.",
+      "movzular": [
+        "Haqq və ədalət"
+      ]
+    },
+    {
+      "id": 2882,
+      "metn": "Nə ağacı tovla, nə iti hürdür.",
+      "izah": "Pis adamı qızışdırma, bəla gəlməsin.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 2883,
+      "metn": "Nə altda unsan, nə üstdə kəpək.",
+      "izah": "Nə yüksəkdə, nə də aşağıda yerin var.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 2884,
+      "metn": "Nə artsa çiydən artar, bişmişdən heç nə artmaz.",
+      "izah": "Hazır olmayan iş inkişaf edir, hazır olan isə dəyişməz.",
+      "movzular": [
+        "Var-dövlət"
+      ]
+    },
+    {
+      "id": 2885,
+      "metn": "Nə azğın ol asıl, nə məzlum ol basıl.",
+      "izah": "Nə zalım ol, nə də özünə zülm etdirən.",
+      "movzular": [
+        "Haqq və ədalət"
+      ]
+    },
+    {
+      "id": 2886,
+      "metn": "Nə bağım var, nə də çaqqalla davam.",
+      "izah": "Heç nəyim yoxdur ki, itirməkdən qorxum.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 2887,
+      "metn": "Nə balın yeyirəm, nə bəlasın çəkirəm.",
+      "izah": "Nə faydasını görürəm, nə də zərərini çəkirəm.",
+      "movzular": [
+        "Dərd və səbr"
+      ]
+    },
+    {
+      "id": 2888,
+      "metn": "Nə biçinin biçirəm, nə ayranın içirəm.",
+      "izah": "Bu işdən nə xeyrim var, nə də zərərim.",
+      "movzular": [
+        "İş"
+      ]
+    },
+    {
+      "id": 2889,
+      "metn": "Nə çapağım var çapam, nə bəxtim var tapam.",
+      "izah": "Nə imkanım var, nə də bəxtim.",
+      "movzular": [
+        "Dərd və səbr"
+      ]
+    },
+    {
+      "id": 2890,
+      "metn": "Nə çiy yeyim, nə də qarnım ağrısın.",
+      "izah": "Riskə getməyim ki, zərər də görməyim.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 2891,
+      "metn": "Nə daş atdın ki, qolun da ağrısın.",
+      "izah": "Heç bir iş görmədin ki, yorulmusan.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 2892,
+      "metn": "Nə dərin suya gir, nə Xıdır Nəbini çağır.",
+      "izah": "Təhlükəyə girmə ki, sonra kömək diləməyəsən.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 2894,
+      "metn": "Nə diriyə hay verər, nə ölüyə pay.",
+      "izah": "Xəsis adam nə dirinin, nə də ölünün qayğısına qalır.",
+      "movzular": [
+        "Tamah"
+      ]
+    },
+    {
+      "id": 2895,
+      "metn": "Nə əkərsən, onu biçərsən.",
+      "izah": "Əməlin bəhrəsi sənə qayıdır.",
+      "movzular": [
+        "İş"
+      ]
+    },
+    {
+      "id": 2896,
+      "metn": "Nə əmmirəm, nə əmişdirmirəm.",
+      "izah": "Bu işdə nə zərərim var, nə xeyrim.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 2897,
+      "metn": "Nə gələndən üz çevir, nə gedəni qovar ol.",
+      "izah": "Gələnə hörmət et, gedəni də zorla saxlama.",
+      "movzular": [
+        "Qonaqpərvərlik"
+      ]
+    },
+    {
+      "id": 2898,
+      "metn": "Nə işim naqabilə söz deyəm; damağına ya dəyə, ya dəyməyə.",
+      "izah": "Anlamaz adama söz deməyin faydası yoxdur.",
+      "movzular": [
+        "Ağıl",
+        "Dil və söz"
+      ]
+    },
+    {
+      "id": 2899,
+      "metn": "Nə itələ yıx, nə çək durğuz.",
+      "izah": "Kimsəni nə yıx, nə də ayağa qaldır, bitərəf qal.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 2900,
+      "metn": "Nə qanır, nə qandırır.",
+      "izah": "Nə özü anlayır, nə də başqasına anlada bilir.",
+      "movzular": [
+        "Ağıl"
+      ]
+    },
+    {
+      "id": 2902,
+      "metn": "Nə qorx, nə də qorxunu ürəyindən çıxart.",
+      "izah": "Qorxuya təslim olma, amma ehtiyatı da əldən vermə.",
+      "movzular": [
+        "İgidlik"
+      ]
+    },
+    {
+      "id": 2903,
+      "metn": "Nə sal ilədir, nə mal ilədir, gülüm, ululuq kamal ilədir.",
+      "izah": "Ucalıq yaşla və mal-dövlətlə yox, kamillə ölçülür.",
+      "movzular": [
+        "Ağıl",
+        "Var-dövlət"
+      ]
+    },
+    {
+      "id": 2904,
+      "metn": "Nə söyüd ağacından bar, nə arsızdan ar.",
+      "izah": "Faydasız şeydən bəhrə, həyasızdan həya gözləmə.",
+      "movzular": [
+        "Əxlaq"
+      ]
+    },
+    {
+      "id": 2905,
+      "metn": "Nə şaşqın ol basıl, nə daşqın ol asıl.",
+      "izah": "Nə qorxaq ol, nə də həddindən artıq dikbaş.",
+      "movzular": [
+        "Əxlaq"
+      ]
+    },
+    {
+      "id": 2906,
+      "metn": "Nə şeytan görüm, nə qulfallah oxuyum.",
+      "izah": "Pisliyi görməyim ki, ondan qorunmağa ehtiyac olmasın.",
+      "movzular": [
+        "Təhsil"
+      ]
+    },
+    {
+      "id": 2907,
+      "metn": "Nə şiş yansın, nə kabab.",
+      "izah": "Elə et ki, heç bir tərəf zərər çəkməsin.",
+      "movzular": [
+        "Ağıl"
+      ]
+    },
+    {
+      "id": 2908,
+      "metn": "Nə titrərsən, əllərim, verməyincə ala bilməzsən.",
+      "izah": "Pul vermədən bir şey əldə etmək olmaz.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 2909,
+      "metn": "Nə tökərsən aşına, o çıxar qaşığına.",
+      "izah": "Nə əkərsən, onu biçərsən.",
+      "movzular": [
+        "İş"
+      ]
+    },
+    {
+      "id": 2910,
+      "metn": "Nə ucudu, nə ortası, qırılıb qarın qartası.",
+      "izah": "Hər şey qarışıb, nə başı bəllidir, nə sonu.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 2911,
+      "metn": "Nə umursan bacından, bacın ölür acından.",
+      "izah": "Özü ehtiyacı olan adamdan kömək gözləmə.",
+      "movzular": [
+        "Bərəkət",
+        "Ailə"
+      ]
+    },
+    {
+      "id": 2912,
+      "metn": "Nə varlıya borclu ol, nə yoxsuldan alacaqlı.",
+      "izah": "Varlıya borclu, kasıbdan alacaqlı olma.",
+      "movzular": [
+        "Bərəkət",
+        "Var-dövlət"
+      ]
+    },
+    {
+      "id": 2913,
+      "metn": "Nə versən adındı, nə yesən dadındı, qalanı yadındı.",
+      "izah": "Verdiyin sənə ad gətirər, yediyin ləzzət verər, qalanı isə xatirədir.",
+      "movzular": [
+        "Var-dövlət"
+      ]
+    },
+    {
+      "id": 2914,
+      "metn": "Nə yada sirrini ver, nə namərdə bel bağla.",
+      "izah": "Yada sirrini açma, namərdə bel bağlama.",
+      "movzular": [
+        "Ağıl",
+        "Əxlaq"
+      ]
+    },
+    {
+      "id": 2915,
+      "metn": "Nə yaraşır arığa, gedə girə qoruğa?!",
+      "izah": "Gücsüz adam güclülərin yerinə soxulmamalıdır.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 2916,
+      "metn": "Nə yardan doyur, nə əldən qoyur.",
+      "izah": "Sevgilisindən nə doyur, nə də onu buraxır.",
+      "movzular": [
+        "Sevgi"
+      ]
+    },
+    {
+      "id": 2917,
+      "metn": "Nə yaş olub sıxılmalı, nə quru olub qırılmalı.",
+      "izah": "Nə həddən artıq yumşaq, nə də həddən artıq sərt ol.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 2918,
+      "metn": "Nə yatdı ki, nə yuxu görsün?!",
+      "izah": "Heç bir iş görmədi ki, nəticə gözləsin.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 2919,
+      "metn": "Nə yatdıq, nə uzandıq, hazır oğlan qazandıq.",
+      "izah": "Zəhmət çəkmədən hazır nemətə sahib olduq.",
+      "movzular": [
+        "Ailə"
+      ]
+    },
+    {
+      "id": 2920,
+      "metn": "Nə yoğurdum, nə yapdım, hazırca kökə tapdım.",
+      "izah": "Zəhmət çəkmədən hazır nemətə sahib oldum.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 2921,
+      "metn": "Nə zalım ol asıl, nə miskin ol basıl.",
+      "izah": "Nə zalım ol, nə də zülmə dözən.",
+      "movzular": [
+        "Əxlaq",
+        "Haqq və ədalət"
+      ]
+    },
+    {
+      "id": 2922,
+      "metn": "Nəcabət adamın zatında olar.",
+      "izah": "Nəciblik insanın təbiətində olur.",
+      "movzular": [
+        "Ailə"
+      ]
+    },
+    {
+      "id": 2923,
+      "metn": "Nəciblik canda deyil, qandadı.",
+      "izah": "Nəciblik ailədən, köklərdən gəlir.",
+      "movzular": [
+        "Ailə"
+      ]
+    },
+    {
+      "id": 2924,
+      "metn": "Nəfəsə Haqdan gəlir.",
+      "izah": "Həyat Tanrının verdiyi nemətdir.",
+      "movzular": [
+        "Əxlaq",
+        "Haqq və ədalət"
+      ]
+    },
+    {
+      "id": 2925,
+      "metn": "Nəfs nəfsdir, bədnəfsin adı bədnamdı.",
+      "izah": "İstək təbiidir, amma acgözlük insanı pis ada salır.",
+      "movzular": [
+        "Tamah"
+      ]
+    },
+    {
+      "id": 2926,
+      "metn": "Nərin dizi bağlı gərək.",
+      "izah": "Güclünü nəzarətdə saxlamaq lazımdır.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 2927,
+      "metn": "Nisyə çaxır içən iki yol keflənər.",
+      "izah": "Nisyə ilə yaşayan sonra ikiqat əziyyət çəkir.",
+      "movzular": [
+        "Var-dövlət"
+      ]
+    },
+    {
+      "id": 2928,
+      "metn": "Nisyə girməz kisəyə.",
+      "izah": "Nisyə satış qazanc gətirmir.",
+      "movzular": [
+        "Var-dövlət"
+      ]
+    },
+    {
+      "id": 2929,
+      "metn": "Niyə elə yerdə yatıram ki, altıma su çıxsın?!",
+      "izah": "Niyə özümü bəlaya salım?",
+      "movzular": [
+        "El"
+      ]
+    },
+    {
+      "id": 2930,
+      "metn": "Niyyətin hara — mənzilin ora.",
+      "izah": "Niyyətin necədirsə, nəticən də elə olar.",
+      "movzular": [
+        "Əxlaq"
+      ]
+    },
+    {
+      "id": 2931,
+      "metn": "Nökər nədi, bekar nədi.",
+      "izah": "İşsiz xidmətçinin faydası yoxdur.",
+      "movzular": [
+        "İş"
+      ]
+    },
+    {
+      "id": 2932,
+      "metn": "Nökərsən, niyə bekarsan? Aç qapını, ört qapını.",
+      "izah": "İşçi olmaq boş qalmaq demək deyil, ən kiçik işi də görməlisən.",
+      "movzular": [
+        "İş"
+      ]
+    },
+    {
+      "id": 2933,
+      "metn": "Növbə yetimə çatanda qaşığın dəstəsi sınar.",
+      "izah": "Növbə kasıba çatanda şərait dəyişir.",
+      "movzular": [
+        "Ailə"
+      ]
+    },
+    {
+      "id": 2934,
+      "metn": "Nuh deyər, peyğəmbər deməz.",
+      "izah": "Böyüklər səhv etmir, deyə düşünürlər.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    }
+  ]
+}

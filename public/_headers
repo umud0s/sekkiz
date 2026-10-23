@@ -18,3 +18,7 @@
 
 /data/*
   Cache-Control: public, max-age=3600
+
+/admin/*
+  Cache-Control: no-cache
+  X-Robots-Tag: noindex

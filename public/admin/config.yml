@@ -1,0 +1,198 @@
+# Səkkizguşə idarəetmə paneli (Sveltia CMS)
+# Panel məlumatı birbaşa GitHub-dakı umud0s/sekkiz reposunda dəyişir; hər yadda saxlama
+# yeni commit yaradır, Cloudflare saytı 2-3 dəqiqəyə yenidən yığır.
+
+backend:
+  name: github
+  repo: umud0s/sekkiz
+  branch: main
+  commit_messages:
+    create: 'Admin: {{collection}} əlavə edildi ({{slug}})'
+    update: 'Admin: {{collection}} yeniləndi ({{slug}})'
+    delete: 'Admin: {{collection}} silindi ({{slug}})'
+
+site_url: https://sekkizguse.osmanliumud.workers.dev
+display_url: https://sekkizguse.osmanliumud.workers.dev
+media_folder: public/img/yuklenen
+public_folder: /img/yuklenen
+
+collections:
+  - name: tarix
+    label: 'Tarixdə bu gün'
+    label_singular: 'Hadisə'
+    description: 'Hər hadisə öz günündə, il sırası ilə göstərilir. Yeni hadisə üçün "Yeni" düyməsini basın.'
+    folder: src/data/cms/tarix
+    extension: json
+    format: json
+    create: true
+    delete: true
+    identifier_field: basliq
+    slug: '{{il}}-{{ay}}-{{gun}}-{{slug}}'
+    summary: '{{gun}}.{{ay}}.{{il}} · {{basliq}}'
+    sortable_fields: [ay, gun, il, basliq]
+    view_groups:
+      - { label: 'Ay', field: ay }
+    fields:
+      - { name: ay, label: 'Ay (1-12)', widget: number, value_type: int, min: 1, max: 12 }
+      - { name: gun, label: 'Gün', widget: number, value_type: int, min: 1, max: 31 }
+      - { name: il, label: 'İl', widget: number, value_type: int }
+      - name: nov
+        label: 'Növü (soldakı ikon)'
+        widget: select
+        options:
+          - { label: 'Dövlətçilik', value: dovlet }
+          - { label: 'Zəfər', value: zefer }
+          - { label: 'Döyüş', value: doyus }
+          - { label: 'Anım (faciə, işğal)', value: anim }
+          - { label: 'Ədəbiyyat və mədəniyyət', value: medeniyyet }
+          - { label: 'Musiqi', value: musiqi }
+          - { label: 'Elm və təhsil', value: elm }
+          - { label: 'Neft və sənaye', value: neft }
+          - { label: 'Diplomatiya', value: diplomatiya }
+          - { label: 'İdman', value: idman }
+          - { label: 'Nəqliyyat', value: neqliyyat }
+      - { name: basliq, label: 'Başlıq', widget: string, hint: 'Qısa: "Şuşa azad edildi"' }
+      - { name: metn, label: 'Mətn', widget: text, hint: '1-3 cümlə. Yalnız dəqiq bilinən faktlar.' }
+
+  - name: qehremanlar
+    label: 'Milli qəhrəmanlar'
+    label_singular: 'Qəhrəman'
+    folder: src/data/cms/qehremanlar
+    extension: json
+    format: json
+    create: true
+    delete: true
+    identifier_field: soyad
+    slug: '{{ad}}-{{soyad}}-{{ata_adi}}'
+    summary: '{{soyad}} {{ad}} {{ata_adi}}'
+    sortable_fields: [soyad, ad, dogum]
+    view_filters:
+      - { label: 'Birinci Qarabağ müharibəsi', field: dovr, pattern: q1 }
+      - { label: 'İkinci Qarabağ müharibəsi', field: dovr, pattern: q2 }
+      - { label: 'Digər', field: dovr, pattern: diger }
+    fields:
+      - { name: soyad, label: 'Soyad', widget: string }
+      - { name: ad, label: 'Ad', widget: string }
+      - { name: ata_adi, label: 'Ata adı', widget: string, required: false }
+      - name: dovr
+        label: 'Dövr'
+        widget: select
+        options:
+          - { label: 'İkinci Qarabağ müharibəsi', value: q2 }
+          - { label: 'Birinci Qarabağ müharibəsi', value: q1 }
+          - { label: 'Digər döyüş və hadisələr', value: diger }
+      - name: fexri_ad
+        label: 'Fəxri ad'
+        widget: select
+        options:
+          - { label: 'Azərbaycanın Milli Qəhrəmanı', value: 0 }
+          - { label: 'Vətən Müharibəsi Qəhrəmanı', value: 1 }
+      - { name: dogum, label: 'Doğum tarixi', widget: string, required: false, hint: 'GG.AA.İİİİ, məsələn 09.01.1991' }
+      - { name: olum, label: 'Vəfat tarixi', widget: string, required: false, hint: 'GG.AA.İİİİ' }
+      - name: olum_novu
+        label: 'Vəfat'
+        widget: select
+        required: false
+        options:
+          - { label: 'Şəhid', value: 'şəhid' }
+          - { label: 'Vəfat edib', value: 'vəfat' }
+          - { label: 'Vəfat edib (döyüşdə həlak)', value: 'həlak' }
+      - { name: yer, label: 'Doğulduğu yer', widget: string, required: false }
+      - { name: ferman, label: 'Fərman', widget: string, required: false, hint: 'Məsələn: 06.06.1992, 831 saylı fərman' }
+      - { name: melumat, label: 'Qısa məlumat', widget: text, required: false }
+      - { name: menbe, label: 'Mənbə (keçid)', widget: string, required: false }
+
+  - name: atalar
+    label: 'Atalar sözləri'
+    label_singular: 'Hərf'
+    description: 'Atalar sözləri ilk hərfə görə qruplaşdırılıb. Yeni atalar sözünü uyğun hərfin siyahısına əlavə edin; nömrəni boş saxlasanız, avtomatik veriləcək.'
+    folder: src/data/cms/atalar
+    extension: json
+    format: json
+    create: false
+    delete: false
+    identifier_field: herf
+    summary: '{{herf}} hərfi'
+    fields:
+      - { name: herf, label: 'Hərf', widget: string }
+      - name: sozler
+        label: 'Atalar sözləri'
+        widget: list
+        summary: '{{fields.metn}}'
+        collapsed: true
+        fields:
+          - { name: id, label: 'Nömrə', widget: number, value_type: int, required: false }
+          - { name: metn, label: 'Atalar sözü', widget: string }
+          - { name: izah, label: 'İzahı', widget: text }
+          - { name: movzular, label: 'Mövzular', widget: list, required: false, hint: 'Məsələn: dostluq, əmək' }
+
+  - name: luget
+    label: 'Lüğət'
+    files:
+      - name: yazilis
+        label: 'Düzgün yazılış'
+        file: src/data/cms/luget/yazilis.json
+        format: json
+        fields:
+          - name: qruplar
+            label: 'Qaydalar'
+            widget: list
+            summary: '{{fields.basliq}}'
+            collapsed: true
+            fields:
+              - { name: id, label: 'Qısa ad (latın hərfləri ilə)', widget: string }
+              - { name: basliq, label: 'Başlıq', widget: string }
+              - { name: qayda, label: 'Qayda', widget: text }
+              - name: sozler
+                label: 'Sözlər'
+                widget: list
+                summary: '{{fields.sehv}} → {{fields.duzgun}}'
+                fields:
+                  - { name: sehv, label: 'Səhv forma', widget: string }
+                  - { name: duzgun, label: 'Düzgün forma', widget: string }
+                  - { name: qeyd, label: 'Əlavə izah', widget: string, required: false }
+      - name: korporativ
+        label: 'Korporativ dil'
+        file: src/data/cms/luget/korporativ.json
+        format: json
+        fields:
+          - name: sozler
+            label: 'Sözlər'
+            widget: list
+            summary: '{{fields.soz}} → {{fields.qarsiliq}}'
+            collapsed: true
+            fields:
+              - name: movzu
+                label: 'Mövzu'
+                widget: select
+                options:
+                  - { label: 'Görüş və yazışma', value: yazisma }
+                  - { label: 'Layihə və tapşırıqlar', value: layihe }
+                  - { label: 'Kadr işləri', value: kadr }
+                  - { label: 'Satış və marketinq', value: satis }
+                  - { label: 'Texnologiya', value: texno }
+                  - { label: 'Qısaltmalar', value: qisa }
+              - { name: soz, label: 'Əcnəbi söz', widget: string }
+              - { name: qarsiliq, label: 'Azərbaycanca qarşılığı', widget: string }
+              - { name: bele_yox, label: 'Belə yox (nümunə)', widget: string }
+              - { name: bele, label: 'Belə (nümunə)', widget: string }
+
+  - name: sayt
+    label: 'Sayt ayarları'
+    files:
+      - name: sosial
+        label: 'Sosial şəbəkələr'
+        file: src/data/cms/sayt/sosial.json
+        format: json
+        fields:
+          - name: sebekeler
+            label: 'Şəbəkələr'
+            widget: list
+            summary: '{{fields.ad}}: {{fields.unvan}}'
+            fields:
+              - { name: ad, label: 'Adı', widget: string }
+              - name: ikon
+                label: 'İkon'
+                widget: select
+                options: [instagram, tiktok, youtube, telegram, whatsapp, mail]
+              - { name: unvan, label: 'Ünvan (keçid)', widget: string, required: false, hint: 'Boş saxlasanız ikon solğun görünəcək. E-poçt üçün: mailto:ad@sayt.az' }

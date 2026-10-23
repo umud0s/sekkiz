@@ -1,0 +1,696 @@
+{
+  "herf": "Ö",
+  "sozler": [
+    {
+      "id": 3020,
+      "metn": "Öküz cırıldamaqdan boyunduruq cırıldayır.",
+      "izah": "Əsas işçi yorulanda bütün iş çətinləşir.",
+      "movzular": [
+        "İş"
+      ]
+    },
+    {
+      "id": 3021,
+      "metn": "Öküz dəvəcən olanda, dəvə dağcan olar.",
+      "izah": "Kiçik böyüyəndə, böyük daha da böyüyür.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 3022,
+      "metn": "Öküz öldü, ortaq ayrıldı.",
+      "izah": "Ortaq maraq bitəndə birlik də dağılır.",
+      "movzular": [
+        "Ortaqlıq"
+      ]
+    },
+    {
+      "id": 3023,
+      "metn": "Öküzlüyə gön borc verərlər.",
+      "izah": "Ehtiyacı olanın borcu ödənəcəyinə əmin olsalar, ona borc verirlər.",
+      "movzular": [
+        "Bərəkət",
+        "Var-dövlət"
+      ]
+    },
+    {
+      "id": 3024,
+      "metn": "Öküzü durğuzub altından buzov istəməzlər.",
+      "izah": "İşləyən adamdan mümkün olmayanı tələb etmə.",
+      "movzular": [
+        "İş"
+      ]
+    },
+    {
+      "id": 3025,
+      "metn": "Öküzü ölənə yol göstərən çox olar.",
+      "izah": "Bəlaya düşən adama məsləhət verən çox olur.",
+      "movzular": [
+        "Ağıl"
+      ]
+    },
+    {
+      "id": 3026,
+      "metn": "Öküzün böyüyü pəyədə qalıbdır.",
+      "izah": "Ən bacarıqlı adam bəzən kənarda qalır.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 3027,
+      "metn": "Öküzün cütə getməyəni ətlik adına satılar.",
+      "izah": "İşləməyən adam başqa yolla istifadə olunur.",
+      "movzular": [
+        "İş"
+      ]
+    },
+    {
+      "id": 3028,
+      "metn": "Öküzün qaşqasını döyərlər.",
+      "izah": "Görkəmli adam hər zaman hədəfdə olur.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 3029,
+      "metn": "Öküzün qocalanı dana-buzova qoşular.",
+      "izah": "Yaşlı adam gənclərə qoşulub özünü cavan göstərir.",
+      "movzular": [
+        "Əxlaq"
+      ]
+    },
+    {
+      "id": 3030,
+      "metn": "Öl mənim üçün, ölüm sənin üçün.",
+      "izah": "Bir-birinə canını qurban vermək əsl dostluqdur.",
+      "movzular": [
+        "Dostluq"
+      ]
+    },
+    {
+      "id": 3031,
+      "metn": "Öldürən ox, günahkar ox atan.",
+      "izah": "Günah vasitədə yox, onu işə salandadır.",
+      "movzular": [
+        "Əxlaq",
+        "Ailə"
+      ]
+    },
+    {
+      "id": 3032,
+      "metn": "Öldürrəm deyəndən qorxma, ölləm deyəndən qorx.",
+      "izah": "Hədə gələndən qorxma, ümidini itirən adamdan qorx.",
+      "movzular": [
+        "Dil və söz",
+        "İgidlik"
+      ]
+    },
+    {
+      "id": 3033,
+      "metn": "Ölən ilə ölmək olmaz.",
+      "izah": "Ölən adamla birlikdə ölmək olmaz, həyat davam edir.",
+      "movzular": [
+        "Dərd və səbr"
+      ]
+    },
+    {
+      "id": 3034,
+      "metn": "Ölən inək südlü olur.",
+      "izah": "İnsanın qədri öləndən sonra bilinir.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 3035,
+      "metn": "Ölən öldü, vay qalanın halına.",
+      "izah": "Ölənin əziyyəti bitir, dərdi isə qalanlara qalır.",
+      "movzular": [
+        "Dərd və səbr"
+      ]
+    },
+    {
+      "id": 3036,
+      "metn": "Ölənin borcunu baqqal dirilərə yüklər.",
+      "izah": "Ölənin borcunu sağ qalanlar ödəyir.",
+      "movzular": [
+        "Bərəkət",
+        "Var-dövlət"
+      ]
+    },
+    {
+      "id": 3037,
+      "metn": "Ölər Koroğlu, getməz bu yerdən.",
+      "izah": "Mərd adam yerindən geri çəkilmir.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 3038,
+      "metn": "Ölmə eşşəyim, ölmə, yaz gələr yonca bitər.",
+      "izah": "Uzaq gələcəyə verilən vəd ehtiyacı olana kömək etmir.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 3039,
+      "metn": "Ölmək ölməkdir, xırıldamaq nə deməkdir?!",
+      "izah": "Qaçılmaz olan işi uzatmağın mənası yoxdur.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 3040,
+      "metn": "Ölmüş eşşəyi axtarır nalını çıxartmağa.",
+      "izah": "Tamahkar adam itkidən də fayda güdür.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 3041,
+      "metn": "Ölmüş inək südlü olar.",
+      "izah": "İnsanın qədri öləndən sonra bilinir.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 3042,
+      "metn": "Ölü dağı çəkilər, diri dağı çəkilməz.",
+      "izah": "Ölü dərdi unudulur, diri dərdi isə qalır.",
+      "movzular": [
+        "Dərd və səbr"
+      ]
+    },
+    {
+      "id": 3043,
+      "metn": "Ölü dərdi dərd olmaz, haray dirinin dərdidi.",
+      "izah": "Ölənin dərdi bitir, əziyyəti sağ qalanlar çəkir.",
+      "movzular": [
+        "Dərd və səbr"
+      ]
+    },
+    {
+      "id": 3044,
+      "metn": "Ölü kimi ölginən, mürdəşir kimi yuyum.",
+      "izah": "Sən ölmüş kimi ol, mən də ona uyğun davranım.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 3045,
+      "metn": "Ölü mənimdi, ayağını yeyirəm.",
+      "izah": "Mənim olan şeydən istədiyim kimi istifadə edirəm.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 3046,
+      "metn": "Ölü öldü, diriyə dirilik gərək.",
+      "izah": "Ölən gedir, sağ qalanlar isə yaşamağa davam etməlidir.",
+      "movzular": [
+        "Dərd və səbr"
+      ]
+    },
+    {
+      "id": 3047,
+      "metn": "Ölüdən şeytan da əl çəkib.",
+      "izah": "Ölənə daha heç kim zərər verə bilməz.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 3048,
+      "metn": "Ölülər elə bilir, dirilər halva yeyirlər.",
+      "izah": "Hər kəs başqalarının xoşbəxt olduğunu sanır.",
+      "movzular": [
+        "El"
+      ]
+    },
+    {
+      "id": 3049,
+      "metn": "Ölüm haqq, miras halal.",
+      "izah": "Ölüm təbiidir, ondan qalan miras isə halaldır.",
+      "movzular": [
+        "Əxlaq",
+        "Haqq və ədalət"
+      ]
+    },
+    {
+      "id": 3050,
+      "metn": "Ölüm qaşla göz arasındadır.",
+      "izah": "Ölüm hər an yaxındır.",
+      "movzular": [
+        "Dərd və səbr"
+      ]
+    },
+    {
+      "id": 3051,
+      "metn": "Ölüm var ölüm kimi, ölüm var zülüm kimi.",
+      "izah": "Bəzi ölüm sakit olur, bəzisi isə əzablı.",
+      "movzular": [
+        "Dərd və səbr"
+      ]
+    },
+    {
+      "id": 3052,
+      "metn": "Ölüm-dirim bizim üçündür.",
+      "izah": "Həyat da, ölüm də hər kəs üçündür.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 3053,
+      "metn": "Ölümdən başqa hər şeyə çarə var.",
+      "izah": "Ölümdən başqa hər şeyin çarəsi var.",
+      "movzular": [
+        "Dərd və səbr"
+      ]
+    },
+    {
+      "id": 3054,
+      "metn": "Ölümü görəcəksən ki, bayılmağa da razı olasan.",
+      "izah": "Daha böyük bəlanı görəndə kiçik bəlaya da razı olarsan.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 3055,
+      "metn": "Ölümün atı çaparaq olar.",
+      "izah": "Ölüm gözlənilmədən və sürətlə gəlir.",
+      "movzular": [
+        "Dərd və səbr"
+      ]
+    },
+    {
+      "id": 3056,
+      "metn": "Ölünü öz xoşuna qoysan, vurar kəfəni batırar.",
+      "izah": "Kimsəni öz istəyinə buraxsan, axırda hər şeyi korlayar.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 3057,
+      "metn": "Ölünün böyüyü kiçiyi olmaz.",
+      "izah": "Ölüm qarşısında hamı bərabərdir.",
+      "movzular": [
+        "Dərd və səbr"
+      ]
+    },
+    {
+      "id": 3058,
+      "metn": "Ölüsü olan bir gün ağlar, dəlisi olan hər gün ağlar.",
+      "izah": "Ölüm bir dəfəlik dərddir, ağılsız doğma isə hər gün dərd verir.",
+      "movzular": [
+        "Dərd və səbr",
+        "Ağıl"
+      ]
+    },
+    {
+      "id": 3059,
+      "metn": "Ölüsü ölən kiridi, yasa gələn kirimədi.",
+      "izah": "Dərdi olan təsəlli tapdı, kənar adam isə hay-küyü davam etdirir.",
+      "movzular": [
+        "Adət-ənənə"
+      ]
+    },
+    {
+      "id": 3060,
+      "metn": "Ömür qarısa da, könül qarımaz.",
+      "izah": "İnsan qocalsa da, ürəyi cavan qalır.",
+      "movzular": [
+        "Sevgi"
+      ]
+    },
+    {
+      "id": 3061,
+      "metn": "Ördək qaz yerişi yeriyəndə paçası aralı qalar.",
+      "izah": "Başqasını yamsılayan gülünc vəziyyətə düşür.",
+      "movzular": [
+        "Əxlaq"
+      ]
+    },
+    {
+      "id": 3062,
+      "metn": "Örkən nə qədər uzun olsa, yenə dolanar doğanaqdan keçər.",
+      "izah": "Nə qədər uzansa da, iş axırda öz yerinə gəlir.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 3063,
+      "metn": "Örtülü bazar — dostluğu pozar.",
+      "izah": "Gizli alış-veriş dostluğu pozur.",
+      "movzular": [
+        "Dostluq",
+        "Var-dövlət"
+      ]
+    },
+    {
+      "id": 3064,
+      "metn": "Öyrənən ağız çərəzsiz qalmaz.",
+      "izah": "Öyrəşən adam mütləq bir şey tapır.",
+      "movzular": [
+        "Təhsil"
+      ]
+    },
+    {
+      "id": 3065,
+      "metn": "Öyrənməyə ar olmaz.",
+      "izah": "Öyrənmək ayıb deyil.",
+      "movzular": [
+        "Təhsil"
+      ]
+    },
+    {
+      "id": 3066,
+      "metn": "Öyündə yox urvalıx, könlündən keçir koyxalıx.",
+      "izah": "Heç bir imkanı yoxdur, amma böyük vəzifə arzulayır.",
+      "movzular": [
+        "Əxlaq"
+      ]
+    },
+    {
+      "id": 3067,
+      "metn": "Öz çörəyini özgə süfrəsində yemə.",
+      "izah": "Öz ruzini başqasının adı ilə yemə.",
+      "movzular": [
+        "Qonaqpərvərlik"
+      ]
+    },
+    {
+      "id": 3068,
+      "metn": "Öz daş-tərəzisiynən çək.",
+      "izah": "Hər şeyi öz meyarınla ölç.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 3069,
+      "metn": "Öz evində başın bağlaya bilməz, özgə evində gəlin başı bağlar.",
+      "izah": "Öz evində bacarmadığını başqasının evində edir.",
+      "movzular": [
+        "Ailə"
+      ]
+    },
+    {
+      "id": 3070,
+      "metn": "Öz əliylə öz ayağına balta çalır.",
+      "izah": "Öz əli ilə özünə zərər vurur.",
+      "movzular": [
+        "Ağıl"
+      ]
+    },
+    {
+      "id": 3071,
+      "metn": "Öz gözündə bayquşun balası tavusdan gözəldir.",
+      "izah": "Hər kəsə öz övladı ən gözəl görünür.",
+      "movzular": [
+        "Ailə",
+        "Sevgi"
+      ]
+    },
+    {
+      "id": 3072,
+      "metn": "Öz gözündə tiri görmür, özgə gözündə qıl axtarır.",
+      "izah": "Öz böyük eybini görmür, özgədə xırda eyib axtarır.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 3073,
+      "metn": "Öz köyşənində otlayan mal ac qalmaz.",
+      "izah": "Öz yerində olan adam ehtiyac çəkmir.",
+      "movzular": [
+        "Bərəkət",
+        "Var-dövlət"
+      ]
+    },
+    {
+      "id": 3074,
+      "metn": "Öz qədrin bilməyən özgə qədrin heç bilməz.",
+      "izah": "Özünə hörmət etməyən başqasına da hörmət etmir.",
+      "movzular": [
+        "Əxlaq"
+      ]
+    },
+    {
+      "id": 3075,
+      "metn": "Öz qurdu özünü yeyibdi.",
+      "izah": "Zərər adama öz yaxınından gəldi.",
+      "movzular": [
+        "Ailə"
+      ]
+    },
+    {
+      "id": 3076,
+      "metn": "Öz-özünü bəyənən ağam vay!",
+      "izah": "Özündən razı adam böyük bəladır.",
+      "movzular": [
+        "Əxlaq"
+      ]
+    },
+    {
+      "id": 3077,
+      "metn": "Özü it oğludur, amma indi qurd basır.",
+      "izah": "Aşağı mənşəlidir, amma indi özündən güclüyə qalib gəlir.",
+      "movzular": [
+        "Ailə"
+      ]
+    },
+    {
+      "id": 3078,
+      "metn": "Özü lölük olanın kisəsinin dibi dəlik olar.",
+      "izah": "İsrafçı adamın pulu dayanmır.",
+      "movzular": [
+        "Var-dövlət"
+      ]
+    },
+    {
+      "id": 3079,
+      "metn": "Özü özünə elədiyini el yığıla eləyə bilməz.",
+      "izah": "İnsanın özünə etdiyini başqaları birləşsə də edə bilməz.",
+      "movzular": [
+        "El"
+      ]
+    },
+    {
+      "id": 3080,
+      "metn": "Özü üçün yatır, özgələr üçün yuxu görür.",
+      "izah": "Özü üçün iş görmür, başqalarının xeyrini düşünür.",
+      "movzular": [
+        "Əxlaq"
+      ]
+    },
+    {
+      "id": 3081,
+      "metn": "Özü yıxılan ağlamaz.",
+      "izah": "Öz günahı ilə bəlaya düşən adam kimsəni qınaya bilməz.",
+      "movzular": [
+        "Dərd və səbr"
+      ]
+    },
+    {
+      "id": 3082,
+      "metn": "Özümə yer elərəm, gör bir sənə neylərəm.",
+      "izah": "Əvvəlcə öz yerimi möhkəmləndirərəm, sonra səninlə hesablaşaram.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 3083,
+      "metn": "Özün etdin özünə, külü səpdin gözünə.",
+      "izah": "Öz əlinlə öz başına bəla gətirdin.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 3084,
+      "metn": "Özündən yuxarı baxanda özündən aşağı da bax.",
+      "izah": "Özündən yuxarıya baxıb həsəd aparanda aşağıdakıları da düşün.",
+      "movzular": [
+        "Dərd və səbr"
+      ]
+    },
+    {
+      "id": 3085,
+      "metn": "Özünə baxma, sözünə bax.",
+      "izah": "İnsanın görünüşünə yox, sözünə dəyər ver.",
+      "movzular": [
+        "Ağıl",
+        "Dil və söz"
+      ]
+    },
+    {
+      "id": 3086,
+      "metn": "Özünə bir iynə, yoldaşına çuvalduz.",
+      "izah": "Özünün kiçik nöqsanını görmür, başqasınınkını böyüdür.",
+      "movzular": [
+        "Dostluq"
+      ]
+    },
+    {
+      "id": 3087,
+      "metn": "Özünə qıymadığını özgəyə qıyma.",
+      "izah": "Özün üçün istəmədiyini başqası üçün də istəmə.",
+      "movzular": [
+        "Əxlaq"
+      ]
+    },
+    {
+      "id": 3088,
+      "metn": "Özünə umac ova bilmir, başqasına əriştə kəsir.",
+      "izah": "Öz işini görə bilmir, amma başqasına məsləhət verir.",
+      "movzular": [
+        "Əxlaq"
+      ]
+    },
+    {
+      "id": 3089,
+      "metn": "Özünə yeyər, özgəyə minnət qoyar.",
+      "izah": "Xəsis adam özü yeyir, başqasına isə minnət qoyur.",
+      "movzular": [
+        "Əxlaq"
+      ]
+    },
+    {
+      "id": 3090,
+      "metn": "Özünü tanımayan Allahın da tanımaz.",
+      "izah": "Özünü tanımayan adam heç nəyi tanıya bilməz.",
+      "movzular": [
+        "Əxlaq"
+      ]
+    },
+    {
+      "id": 3091,
+      "metn": "Özünü yorulmuş bilsən, yoldaşını ölmüş bil.",
+      "izah": "Sən yorulmusansa, yoldaşın daha çox yorulub.",
+      "movzular": [
+        "Dostluq"
+      ]
+    },
+    {
+      "id": 3092,
+      "metn": "Özgə ağzına baxan ac qalar.",
+      "izah": "Başqasına ümid bağlayan əliboş qalır.",
+      "movzular": [
+        "Bərəkət"
+      ]
+    },
+    {
+      "id": 3093,
+      "metn": "Özgə atına minən tez düşər.",
+      "izah": "Başqasının imkanı ilə yüksələn tez düşür.",
+      "movzular": [
+        "Var-dövlət"
+      ]
+    },
+    {
+      "id": 3094,
+      "metn": "Özgə buzovu çatı qırar.",
+      "izah": "Başqasının işinə qarışan zərər görür.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 3095,
+      "metn": "Özgə danasını bağlıyanın çatısı əlində qalar.",
+      "izah": "Başqasının malına sahib çıxmaq istəyən əliboş qalır.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 3096,
+      "metn": "Özgə evində tülküdür, öz evində aslan.",
+      "izah": "Başqasının evində qorxaq, öz evində isə cəsurdur.",
+      "movzular": [
+        "Ailə",
+        "İgidlik"
+      ]
+    },
+    {
+      "id": 3097,
+      "metn": "Özgə əlində kömbə böyük görünər.",
+      "izah": "Başqasının malı insana daha böyük görünür.",
+      "movzular": [
+        "Tamah"
+      ]
+    },
+    {
+      "id": 3098,
+      "metn": "Özgə qapısın bağlı istəyənin öz qapısı bağlı qalar.",
+      "izah": "Başqasına pislik arzulayan özü də pisliyə düşür.",
+      "movzular": [
+        "Əxlaq"
+      ]
+    },
+    {
+      "id": 3099,
+      "metn": "Özgə özgənin namazın dəstəmazsız qılar.",
+      "izah": "Başqasının işinə məsuliyyətsiz yanaşırlar.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 3100,
+      "metn": "Özgə özgənin ölüsün holavarnan ağlar.",
+      "izah": "Yad adam başqasının dərdini səthi şəkildə yaşayır.",
+      "movzular": [
+        "Dərd və səbr"
+      ]
+    },
+    {
+      "id": 3101,
+      "metn": "Özgə pilovundan bizim şorba yaxşıdır.",
+      "izah": "Başqasının bolluğundan öz kasıblığım yaxşıdır.",
+      "movzular": [
+        "Var-dövlət"
+      ]
+    },
+    {
+      "id": 3102,
+      "metn": "Özgənin qarğası özgəyə qırğı gəlir.",
+      "izah": "Başqasının uşağı başqalarına zərərli görünür.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 3103,
+      "metn": "Özgənin yaman gününə gülən, öz gününə ağlar.",
+      "izah": "Başqasının bəlasına gülən öz bəlasına ağlayar.",
+      "movzular": [
+        "Dərd və səbr"
+      ]
+    },
+    {
+      "id": 3104,
+      "metn": "Özgəyə quyu qazan özü düşər.",
+      "izah": "Başqasına pislik edən özü o pisliyə düşür.",
+      "movzular": [
+        "Əxlaq"
+      ]
+    }
+  ]
+}

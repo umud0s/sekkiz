@@ -1,0 +1,375 @@
+{
+  "herf": "V",
+  "sozler": [
+    {
+      "id": 3597,
+      "metn": "Vaxt ikən ağla, aşiq, el gələr, tünlük olar.",
+      "izah": "Dərdini vaxtında de, sonra eşidən olmaz.",
+      "movzular": [
+        "El",
+        "Dərd və səbr"
+      ]
+    },
+    {
+      "id": 3599,
+      "metn": "Vaxtını itirən baxtını itirir.",
+      "izah": "Fürsəti itirən adam uğurunu da itirir.",
+      "movzular": [
+        "Ağıl"
+      ]
+    },
+    {
+      "id": 3600,
+      "metn": "Vaxtsız açılan gül tez solar.",
+      "izah": "Vaxtından əvvəl başlayan iş tez sönür.",
+      "movzular": [
+        "Tərbiyə"
+      ]
+    },
+    {
+      "id": 3601,
+      "metn": "Vaxtsız banlayan xoruzun başın kəsərlər.",
+      "izah": "Vaxtsız səs çıxaranın başı kəsilər.",
+      "movzular": [
+        "Dil və söz"
+      ]
+    },
+    {
+      "id": 3602,
+      "metn": "Vaxtsız qonaq öz kisəsindən yeyər.",
+      "izah": "Gecikən adam payından məhrum olur.",
+      "movzular": [
+        "Adət-ənənə",
+        "Var-dövlət"
+      ]
+    },
+    {
+      "id": 3603,
+      "metn": "Var evi kərəm evi, yox evi vərəm evi.",
+      "izah": "Varlı ev səxavətli olur, kasıb ev isə dərdli.",
+      "movzular": [
+        "Ailə"
+      ]
+    },
+    {
+      "id": 3604,
+      "metn": "Var var üstündən gələr.",
+      "izah": "Var-dövlət varlıya gedir.",
+      "movzular": [
+        "Var-dövlət"
+      ]
+    },
+    {
+      "id": 3605,
+      "metn": "Var yıxmayanı fələk də yıxmaz.",
+      "izah": "Var-dövlətin dağıtmadığı adamı tale də yıxa bilməz.",
+      "movzular": [
+        "Dərd və səbr"
+      ]
+    },
+    {
+      "id": 3606,
+      "metn": "Varını verən utanmaz, yoxdan verən axmaqdır.",
+      "izah": "İmkanı olan verməkdən utanmaz, imkanı olmayan vermək istəyirsə, ağılsızdır.",
+      "movzular": [
+        "Ağıl",
+        "Əxlaq"
+      ]
+    },
+    {
+      "id": 3607,
+      "metn": "Varkən yox demə, cavabı yoğnuq olar.",
+      "izah": "Varın olanda yox demə, sonra peşman olarsan.",
+      "movzular": [
+        "Dil və söz"
+      ]
+    },
+    {
+      "id": 3608,
+      "metn": "Varlığa nə darlıq.",
+      "izah": "Varlı adam ehtiyac çəkmir.",
+      "movzular": [
+        "Bərəkət",
+        "Var-dövlət"
+      ]
+    },
+    {
+      "id": 3609,
+      "metn": "Varlığa tələsən yoxsulluğa tez düşər.",
+      "izah": "Tez varlanmağa çalışan tez də kasıblaşar.",
+      "movzular": [
+        "Bərəkət",
+        "Var-dövlət"
+      ]
+    },
+    {
+      "id": 3610,
+      "metn": "Varlının xoruzu da yumurta qoyar, toyuğu da.",
+      "izah": "Varlının hər işi uğurla nəticələnir.",
+      "movzular": [
+        "Bərəkət",
+        "Var-dövlət"
+      ]
+    },
+    {
+      "id": 3611,
+      "metn": "Varlının iti harın olar.",
+      "izah": "Varlının xidmətçisi də təkəbbürlü olur.",
+      "movzular": [
+        "Bərəkət",
+        "Var-dövlət"
+      ]
+    },
+    {
+      "id": 3612,
+      "metn": "Varlının könlü oluncaya qədər kasıbın canı çıxar.",
+      "izah": "Varlı razılaşana qədər kasıbın canı çıxır.",
+      "movzular": [
+        "Bərəkət",
+        "Var-dövlət"
+      ]
+    },
+    {
+      "id": 3613,
+      "metn": "Varlının varı kasıbın çənəsini yorar.",
+      "izah": "Varlının var-dövləti kasıbın dilindən düşmür.",
+      "movzular": [
+        "Bərəkət",
+        "Var-dövlət"
+      ]
+    },
+    {
+      "id": 3614,
+      "metn": "Varsa hünərin, hara getsən var yerin.",
+      "izah": "Bacarığın varsa, hər yerdə yerin var.",
+      "movzular": [
+        "İgidlik"
+      ]
+    },
+    {
+      "id": 3615,
+      "metn": "Vay ondadır çarvadar bacadar ola.",
+      "izah": "Bəla odur ki, sadə adam hakimiyyətə gəlsin.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 3616,
+      "metn": "Ver yeyim, ört yatım, gözlə canım çıxmasın!",
+      "izah": "Mənə yalnız xidmət edin, amma heç bir məsuliyyət verməyin.",
+      "movzular": [
+        "İş"
+      ]
+    },
+    {
+      "id": 3617,
+      "metn": "Verdiyin bir yumurta, onu da yırta-yırta.",
+      "izah": "Xəsis adam verdiyini də minnətlə verir.",
+      "movzular": [
+        "Tamah"
+      ]
+    },
+    {
+      "id": 3618,
+      "metn": "Verən əl alan əldən üstün olar.",
+      "izah": "Vermək almaqdan daha şərəflidir.",
+      "movzular": [
+        "Əxlaq"
+      ]
+    },
+    {
+      "id": 3619,
+      "metn": "Verən əl dərd görməz.",
+      "izah": "Səxavətli adam bəla görmür.",
+      "movzular": [
+        "Dərd və səbr"
+      ]
+    },
+    {
+      "id": 3620,
+      "metn": "Verən əli hər kəs sevər.",
+      "izah": "Səxavətli adamı hamı sevir.",
+      "movzular": [
+        "Sevgi"
+      ]
+    },
+    {
+      "id": 3621,
+      "metn": "Verən əli kəsməzlər.",
+      "izah": "Səxavətli adama zərər vurmazlar.",
+      "movzular": [
+        "Əxlaq"
+      ]
+    },
+    {
+      "id": 3622,
+      "metn": "Verəndə imam olar, alanda şümür.",
+      "izah": "Verəndə səxavətli görünür, alanda isə xəsis olur.",
+      "movzular": [
+        "Tamah"
+      ]
+    },
+    {
+      "id": 3623,
+      "metn": "Verərsən pendir — elərəm kəndir, Verərsən aş — elərəm baş.",
+      "izah": "Mənə yaxşılıq etsən, mən də sənə yaxşılıq edərəm.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 3624,
+      "metn": "Verim vara baxmaz.",
+      "izah": "Səxavət var-dövlətdən asılı deyil.",
+      "movzular": [
+        "Var-dövlət"
+      ]
+    },
+    {
+      "id": 3625,
+      "metn": "Vəfalı dost yad olmaz, görməsə yüz il səni.",
+      "izah": "Sadiq dost uzun ayrılıqdan sonra da yad olmur.",
+      "movzular": [
+        "Dostluq"
+      ]
+    },
+    {
+      "id": 3626,
+      "metn": "Vəsmə bol olanda qaşa da çəkərlər, gözə də.",
+      "izah": "Bolluq olanda adam hər şeyi yersiz xərcləyir.",
+      "movzular": [
+        "Bərəkət"
+      ]
+    },
+    {
+      "id": 3627,
+      "metn": "Vətən viranə də olsa, yenə cənnətdi.",
+      "izah": "Vətən nə qədər dağılmış olsa da, insan üçün ən əziz yerdir.",
+      "movzular": [
+        "El"
+      ]
+    },
+    {
+      "id": 3628,
+      "metn": "Vətən yadına düşən qərib ağlamasın neyləsin?!",
+      "izah": "Vətən həsrəti çəkən qəribin dərdi böyükdür.",
+      "movzular": [
+        "El",
+        "Dərd və səbr"
+      ]
+    },
+    {
+      "id": 3629,
+      "metn": "Vətənə gəldim, imana gəldim.",
+      "izah": "Vətənə qayıdan adam dincəlir, rahatlıq tapır.",
+      "movzular": [
+        "El"
+      ]
+    },
+    {
+      "id": 3630,
+      "metn": "Vətənsiz olan kəfənsiz qalar.",
+      "izah": "Vətəni olmayan adam kimsəsiz ölür.",
+      "movzular": [
+        "El"
+      ]
+    },
+    {
+      "id": 3631,
+      "metn": "Vəziri qarğa olanın ağzı zibillikdə gərək.",
+      "izah": "Rəhbərin məsləhətçisi pisdirsə, işi də pis gedər.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 3632,
+      "metn": "Vur babam, dövran sənindir.",
+      "izah": "İndi güc səndədir, istədiyini et.",
+      "movzular": [
+        "Ailə"
+      ]
+    },
+    {
+      "id": 3633,
+      "metn": "Vur dedik, öldür demədik.",
+      "izah": "Cəza ver dedik, həddi aş demədik.",
+      "movzular": [
+        "Haqq və ədalət"
+      ]
+    },
+    {
+      "id": 3634,
+      "metn": "Vur deyənlə vuran yarıdır.",
+      "izah": "Pisliyə təhrik edən də onu edən qədər günahkardır.",
+      "movzular": [
+        "Dil və söz"
+      ]
+    },
+    {
+      "id": 3635,
+      "metn": "Vur ki beşik daldadı, Seyyid Əli xırmandadı.",
+      "izah": "Fürsət var, kimsə yoxdur, tələs.",
+      "movzular": [
+        "Bərəkət"
+      ]
+    },
+    {
+      "id": 3636,
+      "metn": "Vura bilməyən, daşın böyüyündən yapışar.",
+      "izah": "Bacarıqsız adam ən çətin işə girişir.",
+      "movzular": [
+        "İgidlik"
+      ]
+    },
+    {
+      "id": 3637,
+      "metn": "Vuran igid dayısına gəyəşməz.",
+      "izah": "Mərd adam qohumuna zərər vurmaz.",
+      "movzular": [
+        "İgidlik"
+      ]
+    },
+    {
+      "id": 3638,
+      "metn": "Vuran oğul ataya baxmaz.",
+      "izah": "Qəzəbli adam valideyni də tanımır.",
+      "movzular": [
+        "Ailə"
+      ]
+    },
+    {
+      "id": 3639,
+      "metn": "Vuran öküzə Allah buynuz verməz.",
+      "izah": "Pis niyyətli adamın gücü az olsa yaxşıdır.",
+      "movzular": [
+        "Haqq və ədalət"
+      ]
+    },
+    {
+      "id": 3640,
+      "metn": "Vurram ölər, kiş deyərəm — getməz.",
+      "izah": "Gücüm çatır, amma sözümə baxmırlar.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 3641,
+      "metn": "Vurum uşağım öldürüm, qonşuma ad qazanım!",
+      "izah": "Ad qazanmaq üçün öz doğmasına zərər verir.",
+      "movzular": [
+        "El"
+      ]
+    },
+    {
+      "id": 3642,
+      "metn": "Vuruşun kor vuruşuna oxşamır.",
+      "izah": "Sənin hərəkətin bacarıqsız adamın hərəkətinə oxşamır.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    }
+  ]
+}

@@ -165,7 +165,7 @@ Ana səhifədəki "Tarix" kartı artıq aktivdir və /tarix/ səhifəsinə apar�
   Diplomatiya (fırlanan qlobus), İdman (yellənən medal), Nəqliyyat (qatar).
 - Altda seçilmiş ayın bütün hadisələri. Hadisəsi olmayan gündə "Yaxın tarixlər" təklif olunur.
 - Hadisəsi olan hər gün üçün ayrıca səhifə var (SEO): /tarix/bu-gun/8-noyabr/ və s.
-- Məlumat: src/data/tarix-gun.js ([ay, gün, il, növ, başlıq, mətn]); ikonlar və məntiq: src/lib/tarix.js.
+- Məlumat: src/data/cms/tarix/*.json (hər hadisə ayrıca fayl: ay, gun, il, nov, basliq, metn); ikonlar və məntiq: src/lib/tarix.js.
 - İlk buraxılış: 95 hadisə, 82 gün. Yalnız tarixinə əmin olunan hadisələr daxil edilib, təqvim tədricən doldurulacaq.
 - Rəsmi mənbə ilə yoxlanmalı tarixlər: Həzi Aslanov (22.01.1910), Cəfər Cabbarlı (20.03.1899),
   Rəşid Behbudov (14.12.1915), Mehdi Hüseynzadə (22.12.1918), "Arşın mal alan" (25.10.1913),
@@ -184,6 +184,23 @@ animasiyalı təsvirlərlə. Digər adət-ənənələr sonra əlavə olunacaq.
 - /bayramlar/novruz/su-cersenbesi/, od-, yel-, torpaq-cersenbesi/: hər birinin böyük animasiyalı səhnəsi,
   izahı, adətləri (hər adətin öz animasiyalı təsviri), çərşənbələr arası keçid.
 - Mətnlər: src/data/novruz.js; təsvirlər: src/lib/novruz-art.js; hərəkətlər: src/components/NovruzStyles.astro.
+
+## İdarəetmə paneli (/admin/) — 23.10.2026, 1-ci mərhələ
+İstifadəçi soruşdu: back-end və admin panel üçün hansı dil? Tövsiyə: TypeScript (sayt da JS-dədir, Cloudflare D1/R2/Access).
+Mərhələ 1 (hazırdır): serversiz panel — Sveltia CMS 0.231.0 (npm paketi, build zamanı public/admin/-ə köçürülür, CDN yoxdur).
+Panel GitHub-dakı umud0s/sekkiz reposunda faylları dəyişir, hər yadda saxlama commit olur, Cloudflare saytı yenidən yığır.
+Giriş: GitHub fine-grained personal access token ("Sign In Using Access Token"), yalnız sekkiz reposu, Contents: Read and write.
+"Sign In with GitHub" düyməsi üçün OAuth serveri hələ qurulmayıb (sonra sveltia-cms-auth Worker ilə qurula bilər).
+İdarə olunanlar (hamısı src/data/cms/ altında, obyekt formatlı JSON):
+- tarix/*.json — Tarixdə bu gün (hər hadisə ayrıca fayl)
+- qehremanlar/*.json — 307 qəhrəman (hər biri ayrıca fayl)
+- atalar/<hərf>.json — 3891 atalar sözü, 29 hərf faylı; nömrəsiz yeni sözə prepare-data avtomatik nömrə verir
+- luget/yazilis.json, luget/korporativ.json
+- sayt/sosial.json — footer sosial keçidləri
+Köhnə fayllar silindi: src/data/tarix-gun.js, luget-yazilis.js, luget-korporativ.js, qehremanlar.json, atalar.json.
+Köçürmə yoxlanıldı: generasiya olunan atalar/qəhrəman məlumatı köhnəsi ilə bayt-bayt eynidir.
+Hələ panelə daxil deyil: Novruz və Xalça mətnləri, dövlət rəmzləri, xəritə, nağıllar (JS faylları).
+Mərhələ 2 (Fəxri xiyaban üçün): Cloudflare Workers + D1 + R2, TypeScript.
 
 ## Xalça toxuma sənəti (/bayramlar/xalca/) — 23.10.2026
 İstifadəçi 3 təklifdən (çay süfrəsi, toy adətləri, xalça) xalçanı seçdi. Bayramlar səhifəsində ayrıca kartdır.
@@ -220,8 +237,8 @@ Ana səhifədə yuxarıda menyu tərzində header olmalıdır (sonradan yeni bə
 Ana səhifədəki "Lüğət" kartı aktivdir. /luget/ səhifəsində ümumi axtarış var: yazılan söz həm yazılış, həm korporativ siyahıda yoxlanır.
 - Düzgün yazılış (/luget/duzgun-yazilis/): 95 söz, 7 qayda qrupu (qoşa hərflər, -iyyət, ayrı yazılış, bitişik/defis,
   söz sonunda q/k, rəqəmlə yazılış, qarışdırılan hərflər). Yoxlayıcı: səhv forma, düzgün forma, ə/ş və s. hərfsiz yazılış,
-  oxşar sözlər (Levenshtein). Məlumat: src/data/luget-yazilis.js; məntiq: src/lib/luget.js.
-- Korporativ dil (/luget/korporativ-dil/): 118 söz, 6 mövzu. Məlumat: src/data/luget-korporativ.js.
+  oxşar sözlər (Levenshtein). Məlumat: src/data/cms/luget/yazilis.json; məntiq: src/lib/luget.js.
+- Korporativ dil (/luget/korporativ-dil/): 118 söz, 6 mövzu. Məlumat: src/data/cms/luget/korporativ.json.
 - Sözün mənası: "Tezliklə". Lüğət botunun bazası gözlənilir (istifadəçidən fayl istənilib).
   Baza gələndə yazılış yoxlayıcısı da bütün sözlərə şamil ediləcək.
 

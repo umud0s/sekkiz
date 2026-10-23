@@ -1,8 +1,18 @@
-import GROUPS from '../data/luget-yazilis.js';
-import CORP, { CATS } from '../data/luget-korporativ.js';
+import YAZ from '../data/cms/luget/yazilis.json';
+import KORP from '../data/cms/luget/korporativ.json';
 import { norm, esc } from './search.js';
 
-export { GROUPS, CATS };
+// Məlumat admin paneldən idarə olunur (src/data/cms/luget/)
+export const GROUPS = YAZ.qruplar.map((g) => ({ id: g.id, title: g.basliq, rule: g.qayda, items: g.sozler.map((s) => [s.sehv, s.duzgun, s.qeyd || '']) }));
+export const CATS = [
+  ['yazisma', 'Görüş və yazışma'],
+  ['layihe', 'Layihə və tapşırıqlar'],
+  ['kadr', 'Kadr işləri'],
+  ['satis', 'Satış və marketinq'],
+  ['texno', 'Texnologiya'],
+  ['qisa', 'Qısaltmalar'],
+];
+const CORP = Object.fromEntries(CATS.map(([id]) => [id, KORP.sozler.filter((s) => s.movzu === id).map((s) => [s.soz, s.qarsiliq, s.bele_yox, s.bele])]));
 
 // Dəqiq müqayisə üçün: kiçik hərf, artıq boşluqlar silinir
 const strict = (s) => norm(s, false).trim().replace(/\s+/g, ' ');

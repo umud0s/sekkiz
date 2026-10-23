@@ -1,0 +1,439 @@
+{
+  "qruplar": [
+    {
+      "id": "qosa",
+      "basliq": "Qoşa hərflər",
+      "qayda": "Bir sıra alınma sözlərdə hərf qoşa yazılır və tələffüzdə də uzadılır. Bu sözlərdə hərfi tək yazmaq səhvdir.",
+      "sozler": [
+        {
+          "sehv": "müəyən",
+          "duzgun": "müəyyən"
+        },
+        {
+          "sehv": "təsüf",
+          "duzgun": "təəssüf"
+        },
+        {
+          "sehv": "təəsüf",
+          "duzgun": "təəssüf"
+        },
+        {
+          "sehv": "təsürat",
+          "duzgun": "təəssürat"
+        },
+        {
+          "sehv": "təcüb",
+          "duzgun": "təəccüb"
+        },
+        {
+          "sehv": "mütəxəsis",
+          "duzgun": "mütəxəssis"
+        },
+        {
+          "sehv": "müəsisə",
+          "duzgun": "müəssisə"
+        },
+        {
+          "sehv": "təşəkür",
+          "duzgun": "təşəkkür"
+        },
+        {
+          "sehv": "mükəməl",
+          "duzgun": "mükəmməl"
+        },
+        {
+          "sehv": "müvəqəti",
+          "duzgun": "müvəqqəti"
+        },
+        {
+          "sehv": "diqət",
+          "duzgun": "diqqət"
+        },
+        {
+          "sehv": "əlbətə",
+          "duzgun": "əlbəttə"
+        },
+        {
+          "sehv": "həta",
+          "duzgun": "hətta"
+        },
+        {
+          "sehv": "müdət",
+          "duzgun": "müddət"
+        },
+        {
+          "sehv": "məhəbət",
+          "duzgun": "məhəbbət"
+        },
+        {
+          "sehv": "mürəkəb",
+          "duzgun": "mürəkkəb"
+        },
+        {
+          "sehv": "qramatika",
+          "duzgun": "qrammatika"
+        },
+        {
+          "sehv": "camat",
+          "duzgun": "camaat"
+        },
+        {
+          "sehv": "inşat",
+          "duzgun": "inşaat"
+        },
+        {
+          "sehv": "mətbə",
+          "duzgun": "mətbəə"
+        },
+        {
+          "sehv": "təbi",
+          "duzgun": "təbii"
+        },
+        {
+          "sehv": "marif",
+          "duzgun": "maarif"
+        },
+        {
+          "sehv": "mənfət",
+          "duzgun": "mənfəət"
+        },
+        {
+          "sehv": "itifaq",
+          "duzgun": "ittifaq"
+        },
+        {
+          "sehv": "müəlif",
+          "duzgun": "müəllif"
+        }
+      ]
+    },
+    {
+      "id": "iyyet",
+      "basliq": "-iyyə, -iyyət, -iyyat",
+      "qayda": "Bu hissə ilə bitən sözlərdə y hərfi qoşa yazılır.",
+      "sozler": [
+        {
+          "sehv": "keyfiyət",
+          "duzgun": "keyfiyyət"
+        },
+        {
+          "sehv": "fəaliyət",
+          "duzgun": "fəaliyyət"
+        },
+        {
+          "sehv": "məsuliyət",
+          "duzgun": "məsuliyyət"
+        },
+        {
+          "sehv": "əhəmiyət",
+          "duzgun": "əhəmiyyət"
+        },
+        {
+          "sehv": "cəmiyət",
+          "duzgun": "cəmiyyət"
+        },
+        {
+          "sehv": "vəziyət",
+          "duzgun": "vəziyyət"
+        },
+        {
+          "sehv": "şəxsiyət",
+          "duzgun": "şəxsiyyət"
+        },
+        {
+          "sehv": "ünsiyət",
+          "duzgun": "ünsiyyət"
+        },
+        {
+          "sehv": "müvəffəqiyət",
+          "duzgun": "müvəffəqiyyət"
+        },
+        {
+          "sehv": "mədəniyət",
+          "duzgun": "mədəniyyət"
+        },
+        {
+          "sehv": "xüsusiyət",
+          "duzgun": "xüsusiyyət"
+        },
+        {
+          "sehv": "kəmiyət",
+          "duzgun": "kəmiyyət"
+        },
+        {
+          "sehv": "ədəbiyat",
+          "duzgun": "ədəbiyyat"
+        },
+        {
+          "sehv": "iqtisadiyat",
+          "duzgun": "iqtisadiyyat"
+        },
+        {
+          "sehv": "nəzəriyə",
+          "duzgun": "nəzəriyyə"
+        },
+        {
+          "sehv": "hədiyə",
+          "duzgun": "hədiyyə"
+        }
+      ]
+    },
+    {
+      "id": "ayri",
+      "basliq": "Ayrı yazılanlar",
+      "qayda": "Bu birləşmələr iki ayrı sözdür, aralarında boşluq qoyulur.",
+      "sozler": [
+        {
+          "sehv": "sağol",
+          "duzgun": "sağ ol"
+        },
+        {
+          "sehv": "sağolun",
+          "duzgun": "sağ olun"
+        },
+        {
+          "sehv": "xoşgəldiniz",
+          "duzgun": "xoş gəldiniz"
+        },
+        {
+          "sehv": "zəhmətolmasa",
+          "duzgun": "zəhmət olmasa"
+        },
+        {
+          "sehv": "hərşey",
+          "duzgun": "hər şey"
+        },
+        {
+          "sehv": "hərkəs",
+          "duzgun": "hər kəs"
+        },
+        {
+          "sehv": "hərgün",
+          "duzgun": "hər gün"
+        },
+        {
+          "sehv": "hərhansı",
+          "duzgun": "hər hansı"
+        },
+        {
+          "sehv": "heçnə",
+          "duzgun": "heç nə"
+        },
+        {
+          "sehv": "heçkim",
+          "duzgun": "heç kim"
+        },
+        {
+          "sehv": "heçvaxt",
+          "duzgun": "heç vaxt"
+        },
+        {
+          "sehv": "bugün",
+          "duzgun": "bu gün",
+          "qeyd": "\"Bu gün\" ayrı yazılır, ondan düzələn \"bugünkü\" isə bitişik."
+        },
+        {
+          "sehv": "biraz",
+          "duzgun": "bir az"
+        },
+        {
+          "sehv": "obiri",
+          "duzgun": "o biri"
+        },
+        {
+          "sehv": "nəüçün",
+          "duzgun": "nə üçün"
+        },
+        {
+          "sehv": "həmdə",
+          "duzgun": "həm də",
+          "qeyd": "Bağlayıcı \"da, də\" həmişə ayrı yazılır: həm də, mən də, o da."
+        },
+        {
+          "sehv": "eləcədə",
+          "duzgun": "eləcə də",
+          "qeyd": "Bağlayıcı \"da, də\" həmişə ayrı yazılır."
+        },
+        {
+          "sehv": "bilirəmki",
+          "duzgun": "bilirəm ki",
+          "qeyd": "Bağlayıcı \"ki\" ayrı yazılır: bilirəm ki, deyir ki."
+        }
+      ]
+    },
+    {
+      "id": "bitisik",
+      "basliq": "Bitişik və defislə yazılanlar",
+      "qayda": "Bəzi sözlərin hissələri bitişik, bəziləri isə defislə yazılır.",
+      "sozler": [
+        {
+          "sehv": "çünkü",
+          "duzgun": "çünki",
+          "qeyd": "\"Çünki, halbuki, nəinki, sanki\" sözlərində \"ki\" bitişik yazılır və dəyişmir."
+        },
+        {
+          "sehv": "halbiki",
+          "duzgun": "halbuki"
+        },
+        {
+          "sehv": "hansı sa",
+          "duzgun": "hansısa",
+          "qeyd": "\"-sa, -sə\" ədatı sözə bitişik yazılır: hansısa, kimsə, nəsə."
+        },
+        {
+          "sehv": "kim sə",
+          "duzgun": "kimsə"
+        },
+        {
+          "sehv": "nə sə",
+          "duzgun": "nəsə"
+        },
+        {
+          "sehv": "bir birinə",
+          "duzgun": "bir-birinə"
+        },
+        {
+          "sehv": "gün gündən",
+          "duzgun": "gün-gündən"
+        },
+        {
+          "sehv": "tərcümeyi hal",
+          "duzgun": "tərcümeyi-hal"
+        },
+        {
+          "sehv": "veb sayt",
+          "duzgun": "veb-sayt"
+        },
+        {
+          "sehv": "e poçt",
+          "duzgun": "e-poçt"
+        }
+      ]
+    },
+    {
+      "id": "son",
+      "basliq": "Söz sonunda q və k",
+      "qayda": "Danışıqda söz sonundakı q çox vaxt x kimi səslənir, amma yazıda q yazılır. Məsdər şəkilçisi də həmişə -maq, -mək şəklində yazılır.",
+      "sozler": [
+        {
+          "sehv": "uşax",
+          "duzgun": "uşaq"
+        },
+        {
+          "sehv": "yarpax",
+          "duzgun": "yarpaq"
+        },
+        {
+          "sehv": "ayax",
+          "duzgun": "ayaq"
+        },
+        {
+          "sehv": "qonax",
+          "duzgun": "qonaq"
+        },
+        {
+          "sehv": "oxumax",
+          "duzgun": "oxumaq"
+        },
+        {
+          "sehv": "yazmax",
+          "duzgun": "yazmaq"
+        },
+        {
+          "sehv": "getməx",
+          "duzgun": "getmək"
+        },
+        {
+          "sehv": "gəlməx",
+          "duzgun": "gəlmək"
+        }
+      ]
+    },
+    {
+      "id": "reqem",
+      "basliq": "Rəqəmlə yazılış",
+      "qayda": "Sıra sayı rəqəmlə yazılanda şəkilçi defislə qoşulur. Əsrlər Rum rəqəmi ilə yazılır.",
+      "sozler": [
+        {
+          "sehv": "1ci",
+          "duzgun": "1-ci"
+        },
+        {
+          "sehv": "3cü",
+          "duzgun": "3-cü"
+        },
+        {
+          "sehv": "5ci sinif",
+          "duzgun": "5-ci sinif"
+        },
+        {
+          "sehv": "2024 il",
+          "duzgun": "2024-cü il"
+        },
+        {
+          "sehv": "20-ci əsr",
+          "duzgun": "XX əsr"
+        }
+      ]
+    },
+    {
+      "id": "herf",
+      "basliq": "Tez-tez qarışdırılan hərflər",
+      "qayda": "Bu sözlər danışıqda və ya başqa dillərin təsiri ilə çox vaxt səhv yazılır.",
+      "sozler": [
+        {
+          "sehv": "kompyuter",
+          "duzgun": "kompüter"
+        },
+        {
+          "sehv": "məllim",
+          "duzgun": "müəllim"
+        },
+        {
+          "sehv": "dəyil",
+          "duzgun": "deyil"
+        },
+        {
+          "sehv": "şer",
+          "duzgun": "şeir"
+        },
+        {
+          "sehv": "örgənmək",
+          "duzgun": "öyrənmək"
+        },
+        {
+          "sehv": "xayiş",
+          "duzgun": "xahiş"
+        },
+        {
+          "sehv": "imtəhan",
+          "duzgun": "imtahan"
+        },
+        {
+          "sehv": "mühendis",
+          "duzgun": "mühəndis"
+        },
+        {
+          "sehv": "müxdəlif",
+          "duzgun": "müxtəlif"
+        },
+        {
+          "sehv": "isdifadə",
+          "duzgun": "istifadə"
+        },
+        {
+          "sehv": "nomrə",
+          "duzgun": "nömrə"
+        },
+        {
+          "sehv": "musahibə",
+          "duzgun": "müsahibə"
+        },
+        {
+          "sehv": "proqramm",
+          "duzgun": "proqram"
+        }
+      ]
+    }
+  ]
+}

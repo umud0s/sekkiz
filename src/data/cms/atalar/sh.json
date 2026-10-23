@@ -1,0 +1,356 @@
+{
+  "herf": "Ş",
+  "sozler": [
+    {
+      "id": 3373,
+      "metn": "Şad günün dostu çoxdu.",
+      "izah": "Xoş gündə dost çox olur.",
+      "movzular": [
+        "Dostluq"
+      ]
+    },
+    {
+      "id": 3374,
+      "metn": "Şadlığına şitlik eləmə.",
+      "izah": "Sevincində də ədəbi əldən vermə.",
+      "movzular": [
+        "Əxlaq"
+      ]
+    },
+    {
+      "id": 3375,
+      "metn": "Şah Abbasa yaradı, keçəl Abbasa yaramadı?!",
+      "izah": "Hamıya faydası var, amma sənə yox.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 3376,
+      "metn": "Şah bilər, şahsevən bilər.",
+      "izah": "Hakimiyyətin işini onun özü və tərəfdarları bilir.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 3378,
+      "metn": "Şah Xudabəndə, səninki səndə, mənimki məndə.",
+      "izah": "Hər kəsin öz payı var.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 3379,
+      "metn": "Şah-şah dediyim öz canım üçündür.",
+      "izah": "Başqasına tərif deməyim öz mənfəətim üçündür.",
+      "movzular": [
+        "Əxlaq"
+      ]
+    },
+    {
+      "id": 3380,
+      "metn": "Şahın da dəvələri ayaqyalın gəzər.",
+      "izah": "Varlının da ehtiyacı olur.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 3381,
+      "metn": "Şahın ürəyi Allahın əlindədi.",
+      "izah": "Hökmdarın qərarı Tanrının iradəsindən asılıdır.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 3382,
+      "metn": "Şahsənəm oğlan doğub!",
+      "izah": "Mənasız, əhəmiyyətsiz xəbərlə sevinməyə dəyməz.",
+      "movzular": [
+        "Ailə"
+      ]
+    },
+    {
+      "id": 3383,
+      "metn": "Şalğam şorbasında turp özünü yağ sanar.",
+      "izah": "Dəyərsiz adam da özünü dəyərli sayır.",
+      "movzular": [
+        "Əxlaq"
+      ]
+    },
+    {
+      "id": 3384,
+      "metn": "Şam ağacından ağıl olmaz, el oğlundan oğul olmaz.",
+      "izah": "Şam ağacından ağıl, yad uşağından doğma övlad olmaz.",
+      "movzular": [
+        "Ailə",
+        "Ağıl"
+      ]
+    },
+    {
+      "id": 3385,
+      "metn": "Şam bahadı — korun nə vecinə.",
+      "izah": "Ehtiyacı olmayan adam bahalıqdan narahat olmur.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 3386,
+      "metn": "Şey qurdlayar — duz səpərlər, duz qurdlayar — nə səpərlər?!",
+      "izah": "Qoruyucu korlananda daha heç nə xilas edə bilməz.",
+      "movzular": [
+        "Tərbiyə"
+      ]
+    },
+    {
+      "id": 3387,
+      "metn": "Şeytan başqa, cin başqa.",
+      "izah": "Pisliyin də növləri var.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 3388,
+      "metn": "Şeytan çox bildiyindəndi bir gözü kor olubdu.",
+      "izah": "Həddən artıq hiyləgərlik insana zərər verir.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 3389,
+      "metn": "Şeytan əzabda gərək.",
+      "izah": "Pis adam cəzasını almalıdır.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 3390,
+      "metn": "Şeytan getdi, meydan bizə qaldı.",
+      "izah": "Pis adam getdi, meydan bizə qaldı.",
+      "movzular": [
+        "İgidlik"
+      ]
+    },
+    {
+      "id": 3391,
+      "metn": "Şeytan karxanası boş qalmaz.",
+      "izah": "Pis iş görən adam həmişə tapılır.",
+      "movzular": [
+        "Əxlaq"
+      ]
+    },
+    {
+      "id": 3392,
+      "metn": "Şeytan olmasa qurd qoyunla gəzər.",
+      "izah": "Ara qarışdıran olmasa, düşmənlər də barışar.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 3393,
+      "metn": "Şeytanın dostluğu dar ağacına qədərdir.",
+      "izah": "Pis adamın dostluğu səni bəlaya düşənə qədərdir.",
+      "movzular": [
+        "Dostluq"
+      ]
+    },
+    {
+      "id": 3394,
+      "metn": "Şeytanla şərikli buğda əkən saman biçər.",
+      "izah": "Pis adamla ortaqlıq edən zərər görür.",
+      "movzular": [
+        "Ortaqlıq",
+        "İş"
+      ]
+    },
+    {
+      "id": 3395,
+      "metn": "Şəfa Haqdandır, həkim könül xoşluğu.",
+      "izah": "Şəfa Tanrıdandır, həkim isə ürəyə təsəlli verir.",
+      "movzular": [
+        "Haqq və ədalət",
+        "Sevgi"
+      ]
+    },
+    {
+      "id": 3396,
+      "metn": "Şəfa verən ağıdan da verə bilir.",
+      "izah": "Dərdi verən şəfanı da verə bilər.",
+      "movzular": [
+        "Dərd və səbr"
+      ]
+    },
+    {
+      "id": 3397,
+      "metn": "Şəhər burclu-qalalı gərək, igid başı bəlalı.",
+      "izah": "Şəhərin qalası, igidin isə çətinliyi olur.",
+      "movzular": [
+        "Dərd və səbr",
+        "İgidlik"
+      ]
+    },
+    {
+      "id": 3398,
+      "metn": "Şəhəri gördün gözü qıpıq, sən də ol gözü qıpıq.",
+      "izah": "Olduğun mühitə uyğun davran.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 3399,
+      "metn": "Şər deməsən, xeyir gəlməz.",
+      "izah": "Çətinlik olmasa, xeyirin qədri bilinməz.",
+      "movzular": [
+        "Əxlaq"
+      ]
+    },
+    {
+      "id": 3400,
+      "metn": "Şərik yaxşı olsaydı, Tanrı özü üçün tutardı.",
+      "izah": "Ortaqlıq çox vaxt problem yaradır.",
+      "movzular": [
+        "Ortaqlıq"
+      ]
+    },
+    {
+      "id": 3401,
+      "metn": "Şərikli qazan gec qaynar.",
+      "izah": "Ortaq işdə hamı başqasını gözləyir, iş gec görülür.",
+      "movzular": [
+        "Ortaqlıq"
+      ]
+    },
+    {
+      "id": 3402,
+      "metn": "Şərti şumda kəs, xırmanda yabalaşma.",
+      "izah": "Şərtləri işin əvvəlində razılaşdır ki, sonra mübahisə olmasın.",
+      "movzular": [
+        "Bərəkət"
+      ]
+    },
+    {
+      "id": 3403,
+      "metn": "Şıqqıldatmağa qozum var, cırıldatmağa bezim.",
+      "izah": "Danışmağa da imkanım var, iş görməyə də.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 3404,
+      "metn": "Şir gərək pəncə vura şir ilə.",
+      "izah": "Güclü adamla yalnız güclü rəqabət apara bilər.",
+      "movzular": [
+        "İgidlik"
+      ]
+    },
+    {
+      "id": 3405,
+      "metn": "Şir qocalanda özünə gülməyi gələr.",
+      "izah": "Güclü adam qocalanda özünə də gülünc görünür.",
+      "movzular": [
+        "İgidlik"
+      ]
+    },
+    {
+      "id": 3406,
+      "metn": "Şirin dil ilanı yuvasından çıxardar.",
+      "izah": "Xoş söz ən sərt adamı da yola gətirir.",
+      "movzular": [
+        "Ağıl",
+        "Dil və söz"
+      ]
+    },
+    {
+      "id": 3407,
+      "metn": "Şirin dil yüz evi yeyər, acı dil bir evi yeyə bilməz.",
+      "izah": "Şirin dil çox qapı açır, acı dil birini də aça bilmir.",
+      "movzular": [
+        "Ağıl",
+        "Ailə"
+      ]
+    },
+    {
+      "id": 3408,
+      "metn": "Şirin sözün şirin də cavabı olar.",
+      "izah": "Xoş sözə xoş cavab verilir.",
+      "movzular": [
+        "Ağıl",
+        "Dil və söz"
+      ]
+    },
+    {
+      "id": 3409,
+      "metn": "Şirin-şirin yeməyin acı-acı qusmağı da var.",
+      "izah": "Ləzzətin də əziyyəti var.",
+      "movzular": [
+        "Əxlaq"
+      ]
+    },
+    {
+      "id": 3410,
+      "metn": "Şirincə gəl, şirincə get.",
+      "izah": "Gəlişin də, gedişin də xoş olsun.",
+      "movzular": [
+        "Qonaqpərvərlik"
+      ]
+    },
+    {
+      "id": 3411,
+      "metn": "Şor yer sünbül gətirməz.",
+      "izah": "Pis mənbədən yaxşı nəticə çıxmaz.",
+      "movzular": [
+        "Ailə"
+      ]
+    },
+    {
+      "id": 3412,
+      "metn": "Şoranlıqda eşşək tapdın, erkək-dişiliyin axtarma.",
+      "izah": "Pis vəziyyətdə əlinə düşənə şükür et, seçim etmə.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 3413,
+      "metn": "Şor yeyən suya gələr.",
+      "izah": "Günah işləyən cavabını verir.",
+      "movzular": [
+        "Haqq və ədalət"
+      ]
+    },
+    {
+      "id": 3414,
+      "metn": "Şordu, şor deyirəm.",
+      "izah": "Həqiqəti olduğu kimi deyirəm.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 3415,
+      "metn": "Şöpərək gecə gəzər, gündüz gəzməz, elə bilər özü bilər, özgə bilməz.",
+      "izah": "Özünü gizlətdiyini sanan adam əslində açıqdadır.",
+      "movzular": [
+        "El"
+      ]
+    },
+    {
+      "id": 3416,
+      "metn": "Şux tərlan yerində cürə bağlanıb.",
+      "izah": "Layiqli adamın yerini layiq olmayan tutub.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    }
+  ]
+}

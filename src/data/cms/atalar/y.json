@@ -1,0 +1,1971 @@
+{
+  "herf": "Y",
+  "sozler": [
+    {
+      "id": 3643,
+      "metn": "Ya bu dəvəni güdməli, ya bu diyardan getməli.",
+      "izah": "Ya işin öhdəsindən gəl, ya da buranı tərk et.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 3644,
+      "metn": "Ya dağ ətəyində, ya bəy ətəyində.",
+      "izah": "Ya təbiətin, ya da güclü adamın himayəsində yaşa.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 3645,
+      "metn": "Ya dəvə ölər, ya dəvəçi, ya da üstündəki hacı.",
+      "izah": "Uzun müddət ərzində hər şey dəyişə bilər.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 3646,
+      "metn": "Ya qarnımda, ya könlümdə.",
+      "izah": "Ya maddi, ya da mənəvi ehtiyacım ödənsin.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 3647,
+      "metn": "Ya lələ şələni basar, ya şələ — lələni.",
+      "izah": "Ya çətinliyin öhdəsindən gələrsən, ya da o, sənə qalib gələr.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 3648,
+      "metn": "Ya unçu ölər, ya dəyirmançı.",
+      "izah": "Biri getməlidir, ikisi bir yerdə ola bilməz.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 3649,
+      "metn": "Ya zatdan, ya süddən.",
+      "izah": "İnsanın xasiyyəti ya nəslindən, ya da tərbiyəsindən gəlir.",
+      "movzular": [
+        "Ailə"
+      ]
+    },
+    {
+      "id": 3650,
+      "metn": "Yabılarda qotur yabı mərd olar, yorulanda yiyəsinə dərd olar.",
+      "izah": "Zəif adam həm özü əziyyət çəkir, həm də sahibinə dərd olur.",
+      "movzular": [
+        "Əxlaq",
+        "Dərd və səbr"
+      ]
+    },
+    {
+      "id": 3651,
+      "metn": "Yabıya tumar eləsən şıllaq atar.",
+      "izah": "Nankor adama yaxşılıq etsən, sənə pisliklə cavab verər.",
+      "movzular": [
+        "Əxlaq"
+      ]
+    },
+    {
+      "id": 3652,
+      "metn": "Yad gəlib aşna olunca aşna-yar əldən gedər.",
+      "izah": "Yad adamla dostluq edən köhnə dostunu itirir.",
+      "movzular": [
+        "Dostluq",
+        "Sevgi"
+      ]
+    },
+    {
+      "id": 3653,
+      "metn": "Yad itin quyruğu qısılı olar.",
+      "izah": "Qərib adam hər yerdə ehtiyatlı və çəkingən olur.",
+      "movzular": [
+        "El"
+      ]
+    },
+    {
+      "id": 3654,
+      "metn": "Yada arxa verən tək qalar.",
+      "izah": "Yada arxa çıxan adam doğmalarını itirib tək qalır.",
+      "movzular": [
+        "El"
+      ]
+    },
+    {
+      "id": 3655,
+      "metn": "Yaddan yoldaş olunca qardaş əlindən gedər.",
+      "izah": "Yadla yoldaşlıq edən qardaşını itirir.",
+      "movzular": [
+        "Ailə",
+        "Dostluq"
+      ]
+    },
+    {
+      "id": 3656,
+      "metn": "Yağ yağ üstə gedər, yarma yavan qalar.",
+      "izah": "Var-dövlət varlıya gedir, kasıb isə əliboş qalır.",
+      "movzular": [
+        "Var-dövlət"
+      ]
+    },
+    {
+      "id": 3657,
+      "metn": "Yağ yeyən it tükündən məlum elər.",
+      "izah": "Haqsız yerə qazanılan var özünü göstərir.",
+      "movzular": [
+        "Haqq və ədalət"
+      ]
+    },
+    {
+      "id": 3658,
+      "metn": "Yağlı əlin var sürt öz başına.",
+      "izah": "Əlindəki imkandan özün faydalan.",
+      "movzular": [
+        "Var-dövlət"
+      ]
+    },
+    {
+      "id": 3659,
+      "metn": "Yağıdan qalanı yağmur apardı.",
+      "izah": "Düşməndən qalanı da təbii fəlakət apardı.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 3660,
+      "metn": "Yağışdan çıxdıq, yağmura düşdük.",
+      "izah": "Bir bəladan qurtulub o birinə düşdük.",
+      "movzular": [
+        "Dərd və səbr"
+      ]
+    },
+    {
+      "id": 3661,
+      "metn": "Yaxşı at köhnə çulun altda da bilinər.",
+      "izah": "Dəyərli adam pis şəraitdə də özünü göstərir.",
+      "movzular": [
+        "Əxlaq"
+      ]
+    },
+    {
+      "id": 3662,
+      "metn": "Yaxşı at özünə qamçı vurdurmaz.",
+      "izah": "Ləyaqətli adam özünə qarşı sərtliyə yol vermir.",
+      "movzular": [
+        "Əxlaq"
+      ]
+    },
+    {
+      "id": 3663,
+      "metn": "Yaxşı at yemin artırar, pis at qamçısın.",
+      "izah": "Yaxşı işçi bəhrəsini, pis işçi isə cəzasını artırır.",
+      "movzular": [
+        "İş"
+      ]
+    },
+    {
+      "id": 3664,
+      "metn": "Yaxşı ata bir qamçı, yaman ata min qamçı.",
+      "izah": "Ağıllıya bir söz bəsdir, axmağa isə min dəfə desən də, kar etməz.",
+      "movzular": [
+        "Ailə"
+      ]
+    },
+    {
+      "id": 3665,
+      "metn": "Yaxşı bez arşınsız da satılar.",
+      "izah": "Keyfiyyətli mal reklam istəmir.",
+      "movzular": [
+        "İş"
+      ]
+    },
+    {
+      "id": 3666,
+      "metn": "Yaxşı biçinçi xərcin yerdən çıxardar.",
+      "izah": "Bacarıqlı işçi xərcini qazancından çıxarır.",
+      "movzular": [
+        "İş",
+        "Var-dövlət"
+      ]
+    },
+    {
+      "id": 3667,
+      "metn": "Yaxşı dost qardaşdan əzəldir.",
+      "izah": "Yaxşı dost qardaşdan da yaxındır.",
+      "movzular": [
+        "Ailə",
+        "Dostluq"
+      ]
+    },
+    {
+      "id": 3668,
+      "metn": "Yaxşı dost yaman gündə bilinər.",
+      "izah": "Əsl dost çətin gündə bilinir.",
+      "movzular": [
+        "Dostluq"
+      ]
+    },
+    {
+      "id": 3669,
+      "metn": "Yaxşı elə yaxşıdı, çalış yamanı yaxşı elə.",
+      "izah": "Yaxşı insan onsuz da yaxşıdır, pisi yaxşı etməyə çalış.",
+      "movzular": [
+        "İş",
+        "El"
+      ]
+    },
+    {
+      "id": 3670,
+      "metn": "Yaxşı getməyincə qədri bilinməz.",
+      "izah": "Yaxşı adam gedəndən sonra qədri bilinir.",
+      "movzular": [
+        "Əxlaq"
+      ]
+    },
+    {
+      "id": 3671,
+      "metn": "Yaxşı gündə düşmən gələr dost olar, igid odur yaman gündə dayana.",
+      "izah": "Xoş gündə düşmən də dost olur, igid isə çətin gündə dayanır.",
+      "movzular": [
+        "Dostluq",
+        "İgidlik"
+      ]
+    },
+    {
+      "id": 3672,
+      "metn": "Yaxşı gündə yad yaxşı, yaman gündə vay qohum!",
+      "izah": "Xoş gündə yad yaxşıdır, çətin gündə isə qohum lazımdır.",
+      "movzular": [
+        "Ailə"
+      ]
+    },
+    {
+      "id": 3673,
+      "metn": "Yaxşı günün yoldaşı, yaman günüm düşdü gəl!",
+      "izah": "Xoş günün dostu, çətin günümdə də yanımda ol.",
+      "movzular": [
+        "Dostluq"
+      ]
+    },
+    {
+      "id": 3674,
+      "metn": "Yaxşı igid dalı gözlər, yaxşı at qabağı.",
+      "izah": "Yaxşı igid arxasını, yaxşı at isə qabağını qoruyur.",
+      "movzular": [
+        "İgidlik"
+      ]
+    },
+    {
+      "id": 3675,
+      "metn": "Yaxşı igidin adını eşit, üzünü görmə.",
+      "izah": "Yaxşı igidin şöhrəti hər yerə yayılır.",
+      "movzular": [
+        "İgidlik"
+      ]
+    },
+    {
+      "id": 3676,
+      "metn": "Yaxşı niyyət — yarım dövlət.",
+      "izah": "Yaxşı niyyət uğurun yarısıdır.",
+      "movzular": [
+        "Bərəkət",
+        "Var-dövlət"
+      ]
+    },
+    {
+      "id": 3677,
+      "metn": "Yaxşı oğul — ata bağı, pis oğul ürək dağıdı.",
+      "izah": "Yaxşı övlad valideyninin sevincidir, pis övlad isə dərdi.",
+      "movzular": [
+        "Ailə"
+      ]
+    },
+    {
+      "id": 3678,
+      "metn": "Yaxşı olanda — xanımdan, pis olanda — qaravaşdan.",
+      "izah": "Uğuru özünə, uğursuzluğu isə başqasına yazır.",
+      "movzular": [
+        "Ailə"
+      ]
+    },
+    {
+      "id": 3679,
+      "metn": "Yaxşı ovçunun toruna ov öz ayağıyla gələr.",
+      "izah": "Bacarıqlı adamın işi öz-özünə düzəlir.",
+      "movzular": [
+        "İş"
+      ]
+    },
+    {
+      "id": 3680,
+      "metn": "Yaxşı övlad atasını vəzir elər, pis övlad rəzil.",
+      "izah": "Yaxşı övlad valideynini ucaldır, pis övlad isə rüsvay edir.",
+      "movzular": [
+        "Ailə"
+      ]
+    },
+    {
+      "id": 3681,
+      "metn": "Yaxşı saxla adını; bədnamçılıq el gəzər.",
+      "izah": "Yaxşı adını qoru, çünki pis şöhrət tez yayılır.",
+      "movzular": [
+        "El"
+      ]
+    },
+    {
+      "id": 3682,
+      "metn": "Yaxşı saxla aşığı; bədnamçıdı — el gəzər.",
+      "izah": "Sirrini qoru, çünki pis şöhrət tez yayılır.",
+      "movzular": [
+        "El"
+      ]
+    },
+    {
+      "id": 3683,
+      "metn": "Yaxşı, yaxşılığın deyilir, yaman, nəyin deyilir?",
+      "izah": "Yaxşının yaxşılığından danışırlar, pisdən isə danışmağa dəyməz.",
+      "movzular": [
+        "Əxlaq"
+      ]
+    },
+    {
+      "id": 3684,
+      "metn": "Yaxşıları yer tanıyar.",
+      "izah": "Yaxşı insanları hər yerdə tanıyırlar.",
+      "movzular": [
+        "Əxlaq"
+      ]
+    },
+    {
+      "id": 3685,
+      "metn": "Yaxşılığa yaxşılıq hər kişinin işidi, Yamanlığa yaxşılıq ər kişinin işidi.",
+      "izah": "Yaxşılığa yaxşılıqla cavab vermək asandır, pisliyə yaxşılıqla cavab vermək isə mərdlikdir.",
+      "movzular": [
+        "Əxlaq",
+        "Ailə"
+      ]
+    },
+    {
+      "id": 3686,
+      "metn": "Yaxşılığa yamanlıq — kor eşşəyə samanlıq!",
+      "izah": "Yaxşılığa pisliklə cavab vermək nankorluqdur.",
+      "movzular": [
+        "Əxlaq"
+      ]
+    },
+    {
+      "id": 3687,
+      "metn": "Yaxşılığın əcrin Allahdan istə.",
+      "izah": "Yaxşılığın əvəzini insandan yox, Tanrıdan gözlə.",
+      "movzular": [
+        "Əxlaq"
+      ]
+    },
+    {
+      "id": 3688,
+      "metn": "Yaxşılıq elə at dəryaya, balıq bilməz, Xalıq bilər.",
+      "izah": "Yaxşılığı görən olmasa da, Allah görür.",
+      "movzular": [
+        "Əxlaq",
+        "El"
+      ]
+    },
+    {
+      "id": 3689,
+      "metn": "Yaxşılıq baş ucaldar.",
+      "izah": "Yaxşılıq insanı ucaldır.",
+      "movzular": [
+        "Əxlaq"
+      ]
+    },
+    {
+      "id": 3690,
+      "metn": "Yaxşılıq bilməyən adam adam yerinə sayılmaz.",
+      "izah": "Yaxşılığın qədrini bilməyən adam hörmətə layiq deyil.",
+      "movzular": [
+        "Əxlaq"
+      ]
+    },
+    {
+      "id": 3691,
+      "metn": "Yaxşılıq yerdə qalmaz.",
+      "izah": "Edilən yaxşılıq heç vaxt itmir.",
+      "movzular": [
+        "Əxlaq"
+      ]
+    },
+    {
+      "id": 3692,
+      "metn": "Yaxşını yada vermə - hayıfdı, yamanı da vermə ayıfdı.",
+      "izah": "Yaxşı adamı yada vermək heyfdir, pisini vermək isə ayıbdır.",
+      "movzular": [
+        "Ailə"
+      ]
+    },
+    {
+      "id": 3693,
+      "metn": "Yaxşıya yanaş, yamandan uzaş.",
+      "izah": "Yaxşı adamla yoldaş ol, pisdən uzaq dur.",
+      "movzular": [
+        "Dostluq"
+      ]
+    },
+    {
+      "id": 3694,
+      "metn": "Yalan olmasa, doğru yeriməz.",
+      "izah": "Yalan olmasa, həqiqətin dəyəri bilinməz.",
+      "movzular": [
+        "Ağıl",
+        "Haqq və ədalət"
+      ]
+    },
+    {
+      "id": 3695,
+      "metn": "Yalan sözdə bağlanan işdə açılar.",
+      "izah": "Yalanla qurulan iş tez dağılır.",
+      "movzular": [
+        "Ağıl",
+        "İş"
+      ]
+    },
+    {
+      "id": 3696,
+      "metn": "Yalan tez ayaq tutar, amma yeriməz.",
+      "izah": "Yalan tez yayılır, amma uzağa gedə bilmir.",
+      "movzular": [
+        "Ağıl",
+        "Haqq və ədalət"
+      ]
+    },
+    {
+      "id": 3697,
+      "metn": "Yalan ki var, doğrunun quludur.",
+      "izah": "Yalan həqiqət qarşısında acizdir.",
+      "movzular": [
+        "Ağıl",
+        "Haqq və ədalət"
+      ]
+    },
+    {
+      "id": 3698,
+      "metn": "Yalançı kimdir? - Hər eşitdiyin danışan.",
+      "izah": "Hər eşitdiyini danışan adam yalançıdır.",
+      "movzular": [
+        "Ağıl",
+        "Dil və söz"
+      ]
+    },
+    {
+      "id": 3699,
+      "metn": "Yalançı olmasaydı doğru danışan bilinməzdi.",
+      "izah": "Yalançı olmasaydı, düz adamın qədri bilinməzdi.",
+      "movzular": [
+        "Ağıl",
+        "Haqq və ədalət"
+      ]
+    },
+    {
+      "id": 3700,
+      "metn": "Yalançı şahidi uzaqda istər.",
+      "izah": "Yalançı yoxlanıla bilməyən şahid göstərir.",
+      "movzular": [
+        "Ağıl",
+        "Haqq və ədalət"
+      ]
+    },
+    {
+      "id": 3701,
+      "metn": "Yalançı tamahkarı aldadar.",
+      "izah": "Yalançı tamahkarı asanlıqla aldadır.",
+      "movzular": [
+        "Ağıl",
+        "Haqq və ədalət"
+      ]
+    },
+    {
+      "id": 3702,
+      "metn": "Yalançılıq üz qızardar.",
+      "izah": "Yalan insanı rüsvay edir.",
+      "movzular": [
+        "Ağıl",
+        "Haqq və ədalət"
+      ]
+    },
+    {
+      "id": 3703,
+      "metn": "Yalançını mənzilinəcən qovarlar.",
+      "izah": "Yalançının sözünü yoxlayıb axıra qədər izləyirlər.",
+      "movzular": [
+        "Ağıl",
+        "Haqq və ədalət"
+      ]
+    },
+    {
+      "id": 3704,
+      "metn": "Yalançının evi od tutdu yandı, heç kim inanmadı.",
+      "izah": "Yalançıya həqiqəti deyəndə də inanmırlar.",
+      "movzular": [
+        "Ağıl",
+        "Haqq və ədalət"
+      ]
+    },
+    {
+      "id": 3705,
+      "metn": "Yalançının ipiynən quyuya düşən quyuda qalar.",
+      "izah": "Yalançıya etibar edən bəlaya düşür.",
+      "movzular": [
+        "Ağıl",
+        "Haqq və ədalət"
+      ]
+    },
+    {
+      "id": 3706,
+      "metn": "Yalançının işığı yarıyacan yanar.",
+      "izah": "Yalanın ömrü qısadır.",
+      "movzular": [
+        "Ağıl",
+        "Haqq və ədalət"
+      ]
+    },
+    {
+      "id": 3707,
+      "metn": "Yalançının yaddaşı olmaz.",
+      "izah": "Yalançı dediyini tez unudur.",
+      "movzular": [
+        "Ağıl",
+        "Haqq və ədalət"
+      ]
+    },
+    {
+      "id": 3708,
+      "metn": "Yalanın xoruzu yoxdur ki, banlasın.",
+      "izah": "Yalanı ifşa edən tapılır.",
+      "movzular": [
+        "Ağıl",
+        "Haqq və ədalət"
+      ]
+    },
+    {
+      "id": 3709,
+      "metn": "Yalanla dünyanı gəzmək olar, amma qayıtmaq olmaz.",
+      "izah": "Yalan müvəqqəti fayda verir, amma axırda adamı rüsvay edir.",
+      "movzular": [
+        "Ağıl",
+        "Haqq və ədalət"
+      ]
+    },
+    {
+      "id": 3710,
+      "metn": "Yalavac üçün yay da borandır.",
+      "izah": "Kasıb üçün hər fəsil çətindir.",
+      "movzular": [
+        "Var-dövlət"
+      ]
+    },
+    {
+      "id": 3711,
+      "metn": "Yalqız quş yuva salmaz.",
+      "izah": "Tək adam ailə qura bilməz.",
+      "movzular": [
+        "El"
+      ]
+    },
+    {
+      "id": 3712,
+      "metn": "Yalvaranın tarısı olmaz.",
+      "izah": "Yalvaran adamın heç kimə gücü çatmır.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 3713,
+      "metn": "Yaman atın yolu uzun olar.",
+      "izah": "Bacarıqsız işçinin işi uzanır.",
+      "movzular": [
+        "İş"
+      ]
+    },
+    {
+      "id": 3714,
+      "metn": "Yaman baş yiyəsinə donuz güddürər.",
+      "izah": "Ağılsızlıq insanı alçaldıcı vəziyyətə salır.",
+      "movzular": [
+        "Ağıl"
+      ]
+    },
+    {
+      "id": 3715,
+      "metn": "Yaman günə səbr edən yaxşı günə tez çatar.",
+      "izah": "Çətin gündə səbir edən tezliklə xoş günə çatar.",
+      "movzular": [
+        "Dərd və səbr"
+      ]
+    },
+    {
+      "id": 3716,
+      "metn": "Yaman günün ömrü az olur.",
+      "izah": "Pis günlər uzun sürmür.",
+      "movzular": [
+        "Dərd və səbr"
+      ]
+    },
+    {
+      "id": 3717,
+      "metn": "Yaman qonşu, kor oğul: qov yanından — qadadı.",
+      "izah": "Pis qonşu və pis övlad bəladır, onlardan uzaq dur.",
+      "movzular": [
+        "Ailə",
+        "El"
+      ]
+    },
+    {
+      "id": 3718,
+      "metn": "Yaman yerdə ot bitməz.",
+      "izah": "Pis adamın olduğu yerdə bərəkət olmur.",
+      "movzular": [
+        "Əxlaq"
+      ]
+    },
+    {
+      "id": 3719,
+      "metn": "Yaman yeyənin olsun, yaman deyənin olmasın.",
+      "izah": "Səndən yeyən çox olsun, sənə söz deyən olmasın.",
+      "movzular": [
+        "Dil və söz"
+      ]
+    },
+    {
+      "id": 3720,
+      "metn": "Yamanı yaman gündə.",
+      "izah": "Pis adam pis gündə lazım olur.",
+      "movzular": [
+        "Dostluq"
+      ]
+    },
+    {
+      "id": 3721,
+      "metn": "Yan mənə, yanım sənə, qurbandı canım sənə.",
+      "izah": "Mən səni sevirəm, sən də məni sev.",
+      "movzular": [
+        "Sevgi"
+      ]
+    },
+    {
+      "id": 3722,
+      "metn": "Yanan öz dərdinə yanar.",
+      "izah": "Hər kəs öz dərdinə yanır.",
+      "movzular": [
+        "Dərd və səbr"
+      ]
+    },
+    {
+      "id": 3723,
+      "metn": "Yanan yerdən tüstü çıxar.",
+      "izah": "Səbəb olmayınca nəticə də olmaz.",
+      "movzular": [
+        "Haqq və ədalət"
+      ]
+    },
+    {
+      "id": 3724,
+      "metn": "Yanana yanmazlar.",
+      "izah": "Öz dərdinə yananın dərdini başqası çəkmir.",
+      "movzular": [
+        "Dərd və səbr"
+      ]
+    },
+    {
+      "id": 3725,
+      "metn": "Yandırdığın yovşan, ağlatdığın — dovşan.",
+      "izah": "Zərər verdiyin şeyin özü də, sahibi də əziyyət çəkir.",
+      "movzular": [
+        "Dərd və səbr"
+      ]
+    },
+    {
+      "id": 3726,
+      "metn": "Yanıq mal, hara gedirsən? — Yandırmağa.",
+      "izah": "Pis mal sahibinə də zərər verir.",
+      "movzular": [
+        "Var-dövlət"
+      ]
+    },
+    {
+      "id": 3727,
+      "metn": "Yanmayanda yanmaz, ha yellə, ha ətəklə.",
+      "izah": "Həvəsi olmayan işə nə qədər cəhd etsən də, alınmaz.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 3728,
+      "metn": "Yanlış da bir naxışdır.",
+      "izah": "Səhv də öz növbəsində bir dəyər daşıyır.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 3729,
+      "metn": "Yanlış hesab Bağdaddan qayıdar.",
+      "izah": "Səhv hesab gec-tez üzə çıxır.",
+      "movzular": [
+        "Ağıl"
+      ]
+    },
+    {
+      "id": 3730,
+      "metn": "Yanşağı cəhənnəmə atdılar, dedi: - odunu yaşdır!",
+      "izah": "Çox danışan adam ən çətin vəziyyətdə də danışır.",
+      "movzular": [
+        "Dil və söz"
+      ]
+    },
+    {
+      "id": 3731,
+      "metn": "Yar bağı, söhbət bağı.",
+      "izah": "Sevgi həyatı gözəlləşdirir.",
+      "movzular": [
+        "Sevgi"
+      ]
+    },
+    {
+      "id": 3732,
+      "metn": "Yar getdi, yeri qaldı.",
+      "izah": "Sevgili getdi, xatirəsi qaldı.",
+      "movzular": [
+        "Sevgi"
+      ]
+    },
+    {
+      "id": 3733,
+      "metn": "Yardan danışıram, yar görməmişəm.",
+      "izah": "Sevgi haqqında danışıram, amma əsl sevgini görməmişəm.",
+      "movzular": [
+        "Sevgi",
+        "Dil və söz"
+      ]
+    },
+    {
+      "id": 3734,
+      "metn": "Yarı gör özün danış, ev yıxar ara sözü.",
+      "izah": "Sevgini özün tap, başqasının sözünə inanma, çünki dedi-qodu evi dağıdır.",
+      "movzular": [
+        "Ağıl",
+        "Dil və söz"
+      ]
+    },
+    {
+      "id": 3735,
+      "metn": "Yarından ayrılan yeddi il ağlar, yurdundan ayrılan ölüncə.",
+      "izah": "Sevgilidən ayrılığın dərdi keçir, vətəndən ayrılığın dərdi isə ömür boyu qalır.",
+      "movzular": [
+        "El",
+        "Dərd və səbr"
+      ]
+    },
+    {
+      "id": 3736,
+      "metn": "Yara var bağlarlar, yara var dağlarlar.",
+      "izah": "Bəzi dərdlərin çarəsi yumşaq, bəzilərinin isə sərt olur.",
+      "movzular": [
+        "Dərd və səbr"
+      ]
+    },
+    {
+      "id": 3737,
+      "metn": "Yaralının dərdini nə bilər yarasızlar.",
+      "izah": "Dərdi olmayan dərdlinin halını bilmir.",
+      "movzular": [
+        "Dərd və səbr"
+      ]
+    },
+    {
+      "id": 3738,
+      "metn": "Yarası avand olanın təbibi qabağına gələr.",
+      "izah": "Talelinin işi özü düzəlir.",
+      "movzular": [
+        "Dərd və səbr"
+      ]
+    },
+    {
+      "id": 3739,
+      "metn": "Yaraşığın yaraşığı — bəzəknən.",
+      "izah": "Bəzək insanı daha da gözəlləşdirir.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 3740,
+      "metn": "Yarımayan gəlinin salamı söyüş olar.",
+      "izah": "Bəyənilməyən adamın yaxşılığı da pis görünür.",
+      "movzular": [
+        "Ailə"
+      ]
+    },
+    {
+      "id": 3741,
+      "metn": "Yas yiyəsi ovunub, yasa gələn ovunmayıb.",
+      "izah": "Dərdi olan təsəlli tapdı, kənar adam isə hay-küyü davam etdirir.",
+      "movzular": [
+        "Adət-ənənə"
+      ]
+    },
+    {
+      "id": 3742,
+      "metn": "Yaş ağac tez əyilər.",
+      "izah": "Gənc yaşda tərbiyə daha asandır.",
+      "movzular": [
+        "Tərbiyə"
+      ]
+    },
+    {
+      "id": 3743,
+      "metn": "Yaş ağaca balta vuran əl enməz.",
+      "izah": "Gənc, inkişaf edən şeyə zərər vurmaq olmaz.",
+      "movzular": [
+        "Əxlaq"
+      ]
+    },
+    {
+      "id": 3744,
+      "metn": "Yaş odun satmayıbsan, niyə qorxursan?",
+      "izah": "Günahın yoxdursa, niyə narahatsan?",
+      "movzular": [
+        "İgidlik"
+      ]
+    },
+    {
+      "id": 3745,
+      "metn": "Yaşına-yaşına, çıxdın ocaq başına.",
+      "izah": "Yaşın keçdikcə hörmətin artdı.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 3746,
+      "metn": "Yatağan aslandan gəzəyən tülkü yaxşıdır.",
+      "izah": "Tənbəl güclüdən fəal zəif daha yaxşıdır.",
+      "movzular": [
+        "İgidlik"
+      ]
+    },
+    {
+      "id": 3747,
+      "metn": "Yatan aslan olursa fürsət hə oyağındı.",
+      "izah": "Güclü yatanda fürsət oyağın əlində olur.",
+      "movzular": [
+        "İgidlik"
+      ]
+    },
+    {
+      "id": 3748,
+      "metn": "Yatan ilanın quyruğunu basdama.",
+      "izah": "Sakit duran təhlükəni oyatma.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 3749,
+      "metn": "Yatan iti oyatma.",
+      "izah": "Sakit olan təhlükəni oyatma.",
+      "movzular": [
+        "Ağıl"
+      ]
+    },
+    {
+      "id": 3750,
+      "metn": "Yatan öküzün başına duran öküz batırar.",
+      "izah": "Tənbəl yoldaşa işləyən də bənzəyər.",
+      "movzular": [
+        "Dostluq"
+      ]
+    },
+    {
+      "id": 3751,
+      "metn": "Yatan ölməz, yetən ölər.",
+      "izah": "Ölüm xəstəlikdən yox, əcəl çatanda gəlir.",
+      "movzular": [
+        "Dərd və səbr"
+      ]
+    },
+    {
+      "id": 3752,
+      "metn": "Yatmağına baxanda gördüyü yuxuya min şükür.",
+      "izah": "Gördüyü iş az olsa da, iddiası böyükdür.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 3753,
+      "metn": "Yava it nə özü yeyər, nə başqasına yedirər.",
+      "izah": "Xəsis adam nə özü yararlanır, nə başqasına verir.",
+      "movzular": [
+        "Tamah"
+      ]
+    },
+    {
+      "id": 3754,
+      "metn": "Yava itin yava küçüyü olar.",
+      "izah": "Pis valideyndən pis övlad doğulur.",
+      "movzular": [
+        "Ailə"
+      ]
+    },
+    {
+      "id": 3755,
+      "metn": "Yay fağırın yorğan-döşəyidi.",
+      "izah": "Kasıb üçün yay rahat fəsildir.",
+      "movzular": [
+        "Var-dövlət"
+      ]
+    },
+    {
+      "id": 3756,
+      "metn": "Yayda başı bişənin qışda aşı bişər.",
+      "izah": "Yayda çalışan qışda ac qalmaz.",
+      "movzular": [
+        "Bərəkət"
+      ]
+    },
+    {
+      "id": 3757,
+      "metn": "Yayda yatanı ilan vursun, qışda işə gedəni borana düşsün.",
+      "izah": "Vaxtında işləməyən adam cəzasını çəkir.",
+      "movzular": [
+        "İş"
+      ]
+    },
+    {
+      "id": 3758,
+      "metn": "Yayı işlə, qışı ye.",
+      "izah": "Vaxtında zəhmət çək ki, çətin gündə korluq çəkməyəsən.",
+      "movzular": [
+        "İş"
+      ]
+    },
+    {
+      "id": 3759,
+      "metn": "Yayı kölgədə oturan qışı ocaq axtarar.",
+      "izah": "Vaxtında işləməyən adam sonra ehtiyac içində qalır.",
+      "movzular": [
+        "İş"
+      ]
+    },
+    {
+      "id": 3760,
+      "metn": "Yaylaq yolunun yoxuşu varsa, enişi də var.",
+      "izah": "Hər çətinliyin sonu rahatlıqdır.",
+      "movzular": [
+        "Dərd və səbr"
+      ]
+    },
+    {
+      "id": 3761,
+      "metn": "Yaz əkinçi — qış dilənçi.",
+      "izah": "Yazda işləməyən qışda dilənçi olur.",
+      "movzular": [
+        "İş",
+        "Var-dövlət"
+      ]
+    },
+    {
+      "id": 3762,
+      "metn": "Yaz qışından bəlli elər, qız qardaşından!",
+      "izah": "Hər şeyin necə olacağı əvvəlcədən bilinir.",
+      "movzular": [
+        "Ailə"
+      ]
+    },
+    {
+      "id": 3763,
+      "metn": "Yaz gününün yağışı, ər arvadın savaşı.",
+      "izah": "Ər-arvadın davası yaz yağışı kimi tez keçir.",
+      "movzular": [
+        "Ailə"
+      ]
+    },
+    {
+      "id": 3764,
+      "metn": "Yaza çıxartdıq dananı, bəyənməz oldu ananı.",
+      "izah": "Xeyir görən adam sonra onu böyüdəni bəyənmir.",
+      "movzular": [
+        "Ailə"
+      ]
+    },
+    {
+      "id": 3765,
+      "metn": "Yaza, qışa bir ağıl neyləsin.",
+      "izah": "Hər vəziyyətə eyni yanaşma uyğun deyil.",
+      "movzular": [
+        "Ağıl"
+      ]
+    },
+    {
+      "id": 3766,
+      "metn": "Yazın hərəkəti - payızın bərəkəti.",
+      "izah": "Yazda zəhmət çəkən payızda bəhrə görür.",
+      "movzular": [
+        "Bərəkət"
+      ]
+    },
+    {
+      "id": 3767,
+      "metn": "Yazan sən, pozan sən, kim deyər yalansan.",
+      "izah": "Hər şeyi sən edirsən, səni kim qınaya bilər?",
+      "movzular": [
+        "Ağıl",
+        "Haqq və ədalət"
+      ]
+    },
+    {
+      "id": 3768,
+      "metn": "Yazılan yazı başa gəlir.",
+      "izah": "Taleydə yazılan mütləq başa gəlir.",
+      "movzular": [
+        "Dərd və səbr"
+      ]
+    },
+    {
+      "id": 3769,
+      "metn": "Yazılana pozu yoxdur.",
+      "izah": "Taleydə yazılanı dəyişmək olmaz.",
+      "movzular": [
+        "Dərd və səbr"
+      ]
+    },
+    {
+      "id": 3770,
+      "metn": "Yazılandan qaçmaq olmaz.",
+      "izah": "Taleydən qaçmaq olmaz.",
+      "movzular": [
+        "Dərd və səbr"
+      ]
+    },
+    {
+      "id": 3771,
+      "metn": "Yekə baş yiyəsinə donquz güddürər.",
+      "izah": "Ağılsızlıq insanı alçaldıcı vəziyyətə salır.",
+      "movzular": [
+        "Ağıl"
+      ]
+    },
+    {
+      "id": 3772,
+      "metn": "Yel ilə gələn, sel ilə gedər.",
+      "izah": "Asan gələn şey asan da gedir.",
+      "movzular": [
+        "Var-dövlət"
+      ]
+    },
+    {
+      "id": 3773,
+      "metn": "Yel qayadan nə aparar?!",
+      "izah": "Möhkəm adama heç bir şey təsir etmir.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 3774,
+      "metn": "Yelinən gələn yelinən gedər.",
+      "izah": "Asan gələn şey asan da gedir.",
+      "movzular": [
+        "Var-dövlət"
+      ]
+    },
+    {
+      "id": 3775,
+      "metn": "Yelpənək puluna alınan eşşəyin ölümü sudan olar.",
+      "izah": "Ucuz başa gələn şeyin sonu da ucuz olur.",
+      "movzular": [
+        "Var-dövlət"
+      ]
+    },
+    {
+      "id": 3776,
+      "metn": "Yemə namərd çörəyini, axır başına vurar.",
+      "izah": "Namərdin çörəyini yemə, sonra minnət qoyar.",
+      "movzular": [
+        "Əxlaq"
+      ]
+    },
+    {
+      "id": 3777,
+      "metn": "Yeməkdənsə ümidli olmaq yaxşıdır.",
+      "izah": "Ümid insanı yaşadır.",
+      "movzular": [
+        "Dərd və səbr"
+      ]
+    },
+    {
+      "id": 3778,
+      "metn": "Yeməklə dost olan hər gün küsülü gəzər.",
+      "izah": "Mənfəət üçün qurulan dostluq tez pozulur.",
+      "movzular": [
+        "Dostluq"
+      ]
+    },
+    {
+      "id": 3779,
+      "metn": "Yeməknən doymayan yalamaqnan heç doymaz.",
+      "izah": "Böyük imkanla doymayan kiçik şeylə də doymaz.",
+      "movzular": [
+        "Tamah"
+      ]
+    },
+    {
+      "id": 3780,
+      "metn": "Yeməyin yalqız yeyən yükün yalqız qaldırar.",
+      "izah": "Var-dövlətini kimsə ilə bölməyən çətinliyi də tək çəkir.",
+      "movzular": [
+        "Ortaqlıq"
+      ]
+    },
+    {
+      "id": 3781,
+      "metn": "Yeməyən qurd barama sarımaz.",
+      "izah": "Qayğı görməyən işçi bəhrə vermir.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 3782,
+      "metn": "Yeyən bilməz, doğrayan bilər.",
+      "izah": "Zəhmətin qədrini onu çəkən bilir.",
+      "movzular": [
+        "İş"
+      ]
+    },
+    {
+      "id": 3783,
+      "metn": "Yeyər ağız, utanar üz.",
+      "izah": "Haqsız qazanc insanı utandırır.",
+      "movzular": [
+        "Əxlaq"
+      ]
+    },
+    {
+      "id": 3784,
+      "metn": "Yeyici üçün Allah yetirər.",
+      "izah": "Tanrı ruzini yetirir.",
+      "movzular": [
+        "Bərəkət"
+      ]
+    },
+    {
+      "id": 3785,
+      "metn": "Yeyilənim yeyilir, qonağım küsülü gedir!",
+      "izah": "Malım xərclənir, qonağım isə narazı gedir.",
+      "movzular": [
+        "Qonaqpərvərlik"
+      ]
+    },
+    {
+      "id": 3786,
+      "metn": "Yemiş vaxtı xırçının qulaqları kar olar.",
+      "izah": "Mənfəət zamanı tamahkar adam ehtiyacı olanın səsini eşitmir.",
+      "movzular": [
+        "Tamah"
+      ]
+    },
+    {
+      "id": 3787,
+      "metn": "Yengəmiz Yetər oldu, günümüz betər oldu.",
+      "izah": "Yeni gələn adamla vəziyyət daha da pisləşdi.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 3788,
+      "metn": "Yer bərk olanda öküz öküzdən görər.",
+      "izah": "Çətinlikdə insanlar bir-birindən nümunə götürür.",
+      "movzular": [
+        "Ortaqlıq"
+      ]
+    },
+    {
+      "id": 3789,
+      "metn": "Yer bəyin, yurd xanın, işlə ha, çıxsın canın.",
+      "izah": "Torpaq da, yurd da varlılarındır, kasıb isə əziyyət çəkir.",
+      "movzular": [
+        "El",
+        "İş"
+      ]
+    },
+    {
+      "id": 3790,
+      "metn": "Yer qatı, göy iraq.",
+      "izah": "Çətin vəziyyətdə kömək gözləniləcək yer yoxdur.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 3791,
+      "metn": "Yer var danışarlar, yer var udarlar.",
+      "izah": "Bəzi yerlərdə danışmaq, bəzilərində isə susmaq lazımdır.",
+      "movzular": [
+        "Dil və söz"
+      ]
+    },
+    {
+      "id": 3792,
+      "metn": "Yerə düşməklə gövhər qiymətdən düşməz.",
+      "izah": "Dəyərli şey düşməklə dəyərini itirmir.",
+      "movzular": [
+        "Əxlaq"
+      ]
+    },
+    {
+      "id": 3793,
+      "metn": "Yeri-yeri kürkü yırtıq, nəyindi məndən artıq? Atım atına barabar, tulam da səndən artıq.",
+      "izah": "Özünü başqasından üstün sanan adam əslində ondan heç də artıq deyil.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 3794,
+      "metn": "Yerin də qulağı var.",
+      "izah": "Gizli söz də eşidilir, ehtiyatlı ol.",
+      "movzular": [
+        "Dil və söz"
+      ]
+    },
+    {
+      "id": 3795,
+      "metn": "Yeriyən at yemin özü artırar.",
+      "izah": "Çalışan adam ruzisini artırır.",
+      "movzular": [
+        "İş"
+      ]
+    },
+    {
+      "id": 3796,
+      "metn": "Yersiz gəldi — yerli, qaç.",
+      "izah": "Yersiz gələn adam yerlini sıxışdırıb çıxarır.",
+      "movzular": [
+        "El"
+      ]
+    },
+    {
+      "id": 3797,
+      "metn": "Yersiz söz dostu düşman eləyər.",
+      "izah": "Yersiz söz dostu düşmən edir.",
+      "movzular": [
+        "Dostluq",
+        "Dil və söz"
+      ]
+    },
+    {
+      "id": 3798,
+      "metn": "Yetim deyib: mən gülərəm, Allah demiş: mən hardayam.",
+      "izah": "Kimsəsizin də arxası var.",
+      "movzular": [
+        "Ailə"
+      ]
+    },
+    {
+      "id": 3799,
+      "metn": "Yetim, kimə zərər verərsən? - Mənə çörək verənə!",
+      "izah": "Kasıb çox vaxt ona kömək edənə zərər verir.",
+      "movzular": [
+        "Ailə",
+        "Bərəkət"
+      ]
+    },
+    {
+      "id": 3800,
+      "metn": "Yetim qızsan, qıvrıl yat!",
+      "izah": "Kimsəsiz olan adam səsini çıxarmamalıdır.",
+      "movzular": [
+        "Ailə"
+      ]
+    },
+    {
+      "id": 3801,
+      "metn": "Yetim malı oddan yaman yandırar.",
+      "izah": "Yetimin haqqını yemək ən böyük günahdır.",
+      "movzular": [
+        "Ailə",
+        "Var-dövlət"
+      ]
+    },
+    {
+      "id": 3802,
+      "metn": "Yetim oğurluğa çıxar, ay ilk axşamdan doğar.",
+      "izah": "Bəxti gətirməyən adamın hər işi ters gedir.",
+      "movzular": [
+        "Ailə"
+      ]
+    },
+    {
+      "id": 3803,
+      "metn": "Yetim öləgən olar.",
+      "izah": "Kimsəsiz adamın ömrü qısa olur.",
+      "movzular": [
+        "Ailə"
+      ]
+    },
+    {
+      "id": 3804,
+      "metn": "Yetim yarımaz, yarısa da, qarımaz.",
+      "izah": "Kimsəsiz adamın xoşbəxtliyi uzun sürmür.",
+      "movzular": [
+        "Ailə"
+      ]
+    },
+    {
+      "id": 3805,
+      "metn": "Yetim yekələr, Əzrayılın pisliyi özünə qalar.",
+      "izah": "Kimsəsiz böyüyür, ölüm isə ona zərər verə bilmir.",
+      "movzular": [
+        "Ailə"
+      ]
+    },
+    {
+      "id": 3806,
+      "metn": "Yetimə ay da qaranlıqdı, gün də.",
+      "izah": "Kimsəsiz adam üçün hər gün qaranlıqdır.",
+      "movzular": [
+        "Ailə"
+      ]
+    },
+    {
+      "id": 3807,
+      "metn": "Yetimə çörək ver, borclu çıx.",
+      "izah": "Yetimə yaxşılıq et, borc olsa da.",
+      "movzular": [
+        "Bərəkət",
+        "Ailə"
+      ]
+    },
+    {
+      "id": 3808,
+      "metn": "Yetimə vay-vay deyən çox olar, çörək verən az.",
+      "izah": "Kimsəsizə təəssüflənən çox olur, kömək edən isə az.",
+      "movzular": [
+        "Ailə",
+        "Bərəkət"
+      ]
+    },
+    {
+      "id": 3809,
+      "metn": "Yetimi vurma, döymə, çörəyini əlindən al.",
+      "izah": "Kimsəsizi vurma, döymə, onun ruzisini də kəsmə.",
+      "movzular": [
+        "Ailə"
+      ]
+    },
+    {
+      "id": 3810,
+      "metn": "Yetimin ağzı aşa, başı daşa.",
+      "izah": "Kimsəsiz adam həm ehtiyac, həm də zərbə ilə üzləşir.",
+      "movzular": [
+        "Ailə"
+      ]
+    },
+    {
+      "id": 3811,
+      "metn": "Yetimin bağrı yağ bağlamaz.",
+      "izah": "Kimsəsizin ürəyi heç vaxt rahat olmur.",
+      "movzular": [
+        "Ailə"
+      ]
+    },
+    {
+      "id": 3812,
+      "metn": "Yetimin qaydasıdı, gec gülər, tez-tez ağlar.",
+      "izah": "Kimsəsizin taleyi belədir, az gülür, çox ağlayır.",
+      "movzular": [
+        "Ailə",
+        "Dərd və səbr"
+      ]
+    },
+    {
+      "id": 3813,
+      "metn": "Yeyin at özünə qamçı vurdurmaz.",
+      "izah": "Bacarıqlı adam cəzaya ehtiyac duymur.",
+      "movzular": [
+        "İş"
+      ]
+    },
+    {
+      "id": 3814,
+      "metn": "Yezidin Şama getməyi gerçək oldu.",
+      "izah": "Pis adamın pis niyyəti həyata keçdi.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 3815,
+      "metn": "Yığma dən üçün xırman açılmaz.",
+      "izah": "Az məhsul üçün böyük iş qurulmaz.",
+      "movzular": [
+        "Bərəkət"
+      ]
+    },
+    {
+      "id": 3816,
+      "metn": "Yıxılan yıxıldığı yerdən qalxar.",
+      "izah": "Yıxılan adam yıxıldığı yerdən qalxır.",
+      "movzular": [
+        "Dərd və səbr"
+      ]
+    },
+    {
+      "id": 3817,
+      "metn": "Yıxılana balta çalan çox olar.",
+      "izah": "Çətin vəziyyətə düşənə hamı hücum edir.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 3818,
+      "metn": "Yıxılanın dostu olmaz.",
+      "izah": "Yıxılan adamın dostu olmur.",
+      "movzular": [
+        "Dostluq"
+      ]
+    },
+    {
+      "id": 3819,
+      "metn": "Yıxılmasa dikəlməz.",
+      "izah": "Uğursuzluq olmadan uğur da olmur.",
+      "movzular": [
+        "Dərd və səbr"
+      ]
+    },
+    {
+      "id": 3820,
+      "metn": "Yırtıcı quşun ömrü az olar.",
+      "izah": "Zalım adamın ömrü qısa olur.",
+      "movzular": [
+        "Əxlaq"
+      ]
+    },
+    {
+      "id": 3821,
+      "metn": "Yiyəsinin yanında pişik də it basar.",
+      "izah": "Arxası olan zəif adam da güclüyə qalib gəlir.",
+      "movzular": [
+        "İgidlik"
+      ]
+    },
+    {
+      "id": 3822,
+      "metn": "Yox yerdən Əzrayıl da can almaz.",
+      "izah": "Heç nəyi olmayan adamdan heç nə almaq olmaz.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 3823,
+      "metn": "Yoxa qələm işləməz.",
+      "izah": "Olmayan şeyi yazmaq olmaz.",
+      "movzular": [
+        "İş"
+      ]
+    },
+    {
+      "id": 3824,
+      "metn": "Yoxdan Allah da bezardır.",
+      "izah": "Kasıblığı heç kim sevmir.",
+      "movzular": [
+        "Var-dövlət"
+      ]
+    },
+    {
+      "id": 3825,
+      "metn": "Yoxsul axça tapdı, yer tapmadı.",
+      "izah": "Kasıb pul tapdı, harada xərcləyəcəyini bilmədi.",
+      "movzular": [
+        "Var-dövlət"
+      ]
+    },
+    {
+      "id": 3826,
+      "metn": "Yoxsul yoxsul, oduna, suya da yoxsul?",
+      "izah": "Kasıb hər şeydə ehtiyac içindədir.",
+      "movzular": [
+        "Var-dövlət"
+      ]
+    },
+    {
+      "id": 3827,
+      "metn": "Yoxsulun ahı taxtdan endirər şahı.",
+      "izah": "Kasıbın ahı hökmdarı da yıxar.",
+      "movzular": [
+        "Var-dövlət"
+      ]
+    },
+    {
+      "id": 3828,
+      "metn": "Yoxsulluğa düşməyən varlığın qədrin bilməz.",
+      "izah": "Kasıblığı görməyən adam var-dövlətin qədrini bilmir.",
+      "movzular": [
+        "Bərəkət",
+        "Var-dövlət"
+      ]
+    },
+    {
+      "id": 3829,
+      "metn": "Yoxsulluğu yox olsun.",
+      "izah": "Kasıblıq yox olsun.",
+      "movzular": [
+        "Var-dövlət"
+      ]
+    },
+    {
+      "id": 3830,
+      "metn": "Yoxsulun üzü qaradır.",
+      "izah": "Kasıbın hörməti olmur.",
+      "movzular": [
+        "Var-dövlət"
+      ]
+    },
+    {
+      "id": 3831,
+      "metn": "Yol bilən karvana qatılmaz.",
+      "izah": "Yolu bilən adam başqasına qoşulmaz.",
+      "movzular": [
+        "Ağıl"
+      ]
+    },
+    {
+      "id": 3832,
+      "metn": "Yol oğrusu ol, yoldaş oğrusu olma.",
+      "izah": "Yad adama zərər versən də, yoldaşına xəyanət etmə.",
+      "movzular": [
+        "Dostluq",
+        "Haqq və ədalət"
+      ]
+    },
+    {
+      "id": 3833,
+      "metn": "Yol yeməyi yük olmur.",
+      "izah": "Ehtiyatlı olmaq yük deyil.",
+      "movzular": [
+        "Ağıl"
+      ]
+    },
+    {
+      "id": 3834,
+      "metn": "Yolçudan yolçuya pay olmaz.",
+      "izah": "Eyni vəziyyətdə olanlar bir-birinə kömək edə bilmir.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 3835,
+      "metn": "Yolçuluğa gedən çölməyin dalısında tutmaz.",
+      "izah": "Uzaq yola çıxan adam lazımsız şeyləri özü ilə aparmır.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 3836,
+      "metn": "Yolçunun torbasından tutmasan, ağacın əldən qoymaz.",
+      "izah": "Pis adama tədbir görməsən, səni rahat buraxmaz.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 3837,
+      "metn": "Yoldan çıxanı yol vurar.",
+      "izah": "Yolundan çıxan adam bəlaya düşür.",
+      "movzular": [
+        "Ağıl"
+      ]
+    },
+    {
+      "id": 3838,
+      "metn": "Yoldan çıxmaq eyib deyil, yola gəlməmək eyibdir.",
+      "izah": "Səhv etmək ayıb deyil, səhvi düzəltməmək ayıbdır.",
+      "movzular": [
+        "Əxlaq"
+      ]
+    },
+    {
+      "id": 3839,
+      "metn": "Yoldan çıxsan da, eldən çıxma.",
+      "izah": "Yoldan çıxsan da, camaatdan ayrılma.",
+      "movzular": [
+        "El"
+      ]
+    },
+    {
+      "id": 3840,
+      "metn": "Yoldan irəli yoldaş, eldən irəli qardaş.",
+      "izah": "Yoldan əvvəl yoldaş, eldən əvvəl qardaş seç.",
+      "movzular": [
+        "Ailə",
+        "Dostluq"
+      ]
+    },
+    {
+      "id": 3841,
+      "metn": "Yoldan qal, yoldaşdan qalma.",
+      "izah": "Yolunu itirsən də, yoldaşını itirmə.",
+      "movzular": [
+        "Dostluq"
+      ]
+    },
+    {
+      "id": 3842,
+      "metn": "Yoldaş yolda sınanar.",
+      "izah": "İnsan çətin vəziyyətdə sınanır.",
+      "movzular": [
+        "Dostluq"
+      ]
+    },
+    {
+      "id": 3843,
+      "metn": "Yoldaşıma ağac dəydi, elə bildim saman çuvalına dəyir.",
+      "izah": "Başqasının dərdini insan özününkü qədər hiss etmir.",
+      "movzular": [
+        "Dostluq",
+        "El"
+      ]
+    },
+    {
+      "id": 3844,
+      "metn": "Yoldaşının sözünə inan, özünkündə dayan.",
+      "izah": "Yoldaşının sözünə inan, amma öz fikrində də möhkəm dur.",
+      "movzular": [
+        "Dostluq",
+        "Dil və söz"
+      ]
+    },
+    {
+      "id": 3845,
+      "metn": "Yoldaşını bab elə, görən desin ha belə.",
+      "izah": "Yoldaşına yaxşı bax ki, başqaları da ona hörmət etsin.",
+      "movzular": [
+        "Dostluq",
+        "El"
+      ]
+    },
+    {
+      "id": 3846,
+      "metn": "Yoldaşını göstər mənə, sənin kim olduğunu deyim.",
+      "izah": "İnsanı dostlarından tanımaq olar.",
+      "movzular": [
+        "Dostluq"
+      ]
+    },
+    {
+      "id": 3847,
+      "metn": "Yolsuz gedən tez yorular.",
+      "izah": "Plansız gedən adam tez yorulur.",
+      "movzular": [
+        "Ağıl"
+      ]
+    },
+    {
+      "id": 3848,
+      "metn": "Yolsuzu yola tapşır.",
+      "izah": "Yolunu bilməyən adamı yolu bilənə tapşır.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 3849,
+      "metn": "Yolunan gedən yorulmaz.",
+      "izah": "Düzgün yolla gedən adam yorulmur.",
+      "movzular": [
+        "Haqq və ədalət"
+      ]
+    },
+    {
+      "id": 3850,
+      "metn": "Yönlü cücə yumurtasında cikkildər.",
+      "izah": "İstedadlı adamın bacarığı uşaq yaşından bilinir.",
+      "movzular": [
+        "Tərbiyə"
+      ]
+    },
+    {
+      "id": 3851,
+      "metn": "Yorğun eşşək hoşu Allahdan istər.",
+      "izah": "Yorğun adam başqasından kömək gözləyir.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 3852,
+      "metn": "Yoruldun sarvana, acıdın çobana.",
+      "izah": "Hər kəsin öz yorğunluğu var.",
+      "movzular": [
+        "İş"
+      ]
+    },
+    {
+      "id": 3853,
+      "metn": "Yuxarı baxıb fikir eləyincə, aşağı baxıb şükür elə.",
+      "izah": "Özündən yuxarıya baxıb səy göstər, aşağıya baxıb şükür et.",
+      "movzular": [
+        "El"
+      ]
+    },
+    {
+      "id": 3854,
+      "metn": "Yuxarı evə baxıb aşağı evi yıxma.",
+      "izah": "Başqasının varına həsəd aparıb öz ailəni dağıtma.",
+      "movzular": [
+        "Ailə"
+      ]
+    },
+    {
+      "id": 3855,
+      "metn": "Yuxarı qoymurlar, aşağıda mən oturmuram.",
+      "izah": "Mənə layiq olduğum yeri vermirlər, mən də aşağıya razı olmuram.",
+      "movzular": [
+        "Əxlaq"
+      ]
+    },
+    {
+      "id": 3856,
+      "metn": "Yuxarı tüpürürəm bığdı, aşağı tüpürürəm saqqaldı.",
+      "izah": "Hər iki tərəf də mənə doğmadır, seçim edə bilmirəm.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 3857,
+      "metn": "Yumru daş yosun tutmaz.",
+      "izah": "Daim hərəkətdə olan adama pislik yapışmır.",
+      "movzular": [
+        "İş"
+      ]
+    },
+    {
+      "id": 3858,
+      "metn": "Yumurtanın sarısından pay uman cəhənnəmlikdir.",
+      "izah": "Ən kiçik şeydən də pay uman tamahkardır.",
+      "movzular": [
+        "Tamah"
+      ]
+    },
+    {
+      "id": 3859,
+      "metn": "Yumurtlamadı, yumurtlamadı, falını da yedi?!",
+      "izah": "Heç bir fayda vermədi, üstəlik zərər də vurdu.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 3860,
+      "metn": "Yurd yiyəsiz qalanda donuz təpəyə çıxar.",
+      "izah": "Rəhbəri olmayan yerdə pis adamlar baş qaldırır.",
+      "movzular": [
+        "El"
+      ]
+    },
+    {
+      "id": 3861,
+      "metn": "Yusif bazarıdı; hər kəsin matahı varsa gətirsin.",
+      "izah": "Kimin dəyərli bir şeyi varsa, ortaya çıxarsın.",
+      "movzular": [
+        "Var-dövlət"
+      ]
+    },
+    {
+      "id": 3862,
+      "metn": "Yuvanı erkək quş tikər.",
+      "izah": "Ailə ocağını kişi qurur.",
+      "movzular": [
+        "Ailə"
+      ]
+    },
+    {
+      "id": 3863,
+      "metn": "Yük ağır olanda öküz öküzdən görər.",
+      "izah": "Çətinlikdə insanlar bir-birinə kömək edir.",
+      "movzular": [
+        "Ortaqlıq"
+      ]
+    },
+    {
+      "id": 3864,
+      "metn": "Yük əyməsə daş qəribliyə düşməz.",
+      "izah": "Məcburiyyət olmasa, insan qəribliyə getməz.",
+      "movzular": [
+        "El"
+      ]
+    },
+    {
+      "id": 3865,
+      "metn": "Yüknən gələn taynan gedər, taynan gələn — vaynan gedər.",
+      "izah": "Yükü ilə gələn tayı ilə gedər, tayı ilə gələn isə dərdlə gedər.",
+      "movzular": [
+        "Var-dövlət"
+      ]
+    },
+    {
+      "id": 3866,
+      "metn": "Yüksəkdən baxan alçağa tez enər.",
+      "izah": "Təkəbbürlü adam tez aşağı düşür.",
+      "movzular": [
+        "Əxlaq"
+      ]
+    },
+    {
+      "id": 3867,
+      "metn": "Yükün yığdı təpəyə, elə arxa çevirdi.",
+      "izah": "İşini bitirən kimi tanışlarını unutdu.",
+      "movzular": [
+        "El"
+      ]
+    },
+    {
+      "id": 3868,
+      "metn": "Yürüş var ki, duruşdan betərdir.",
+      "izah": "Bəzən hərəkət etmək dayanmaqdan da pis nəticə verir.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 3869,
+      "metn": "Yüyürən at arpasını artırar.",
+      "izah": "Çalışan adam ruzisini artırır.",
+      "movzular": [
+        "İş"
+      ]
+    },
+    {
+      "id": 3870,
+      "metn": "Yüz ağac sağrıya, sağrı bir yol ağrıya.",
+      "izah": "Kiçik zərbələr bir gün böyük ağrıya çevrilir.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 3871,
+      "metn": "Yüz bilici olsan, yenə bir bilməznən danış.",
+      "izah": "Nə qədər bilikli olsan da, bilməyənin sözünü də dinlə.",
+      "movzular": [
+        "Dil və söz"
+      ]
+    },
+    {
+      "id": 3872,
+      "metn": "Yüz birə qoşulmaz, bir yüzə qoşular.",
+      "izah": "Çoxluq bir nəfərə qoşulmaz, bir nəfər isə çoxluğa qoşulur.",
+      "movzular": [
+        "El"
+      ]
+    },
+    {
+      "id": 3873,
+      "metn": "Yüz dost azdır, bir düşmən çoxdur.",
+      "izah": "Dost nə qədər çox olsa, yenə azdır, düşmən bir nəfər olsa da, çoxdur.",
+      "movzular": [
+        "Dostluq"
+      ]
+    },
+    {
+      "id": 3874,
+      "metn": "Yüz gün yaraq, bir gün gərək.",
+      "izah": "Silahı uzun müddət saxla, bir gün mütləq lazım olacaq.",
+      "movzular": [
+        "Ağıl"
+      ]
+    },
+    {
+      "id": 3875,
+      "metn": "Yüz gün sel oyanı bir gün dərd oyar.",
+      "izah": "Dərd bir gündə selin yüz gündə vurduğu ziyanı vurur.",
+      "movzular": [
+        "Dərd və səbr"
+      ]
+    },
+    {
+      "id": 3876,
+      "metn": "Yüz iynə yığsan bir çuvalduz olmaz.",
+      "izah": "Çoxlu kiçik şey bir böyük şeyi əvəz etmir.",
+      "movzular": [
+        "Bərəkət"
+      ]
+    },
+    {
+      "id": 3877,
+      "metn": "Yüz qayğı bir borcu ödəməz.",
+      "izah": "Narahatlıqla borc ödənmir, iş görmək lazımdır.",
+      "movzular": [
+        "Bərəkət",
+        "Var-dövlət"
+      ]
+    },
+    {
+      "id": 3878,
+      "metn": "Yüz qoyuna da tırıho, bir qoyuna da tırıho.",
+      "izah": "Çoxuna da, azına da eyni zəhmət lazımdır.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 3879,
+      "metn": "Yüz mamaça yığıla, güc doğana düşər.",
+      "izah": "Kömək edən çox olsa da, əsas əziyyəti işi görən çəkir.",
+      "movzular": [
+        "Ailə"
+      ]
+    },
+    {
+      "id": 3880,
+      "metn": "Yüz namərdin çörəyin doğrasan, kasa dolmaz.",
+      "izah": "Namərdin köməyi heç vaxt ehtiyacı ödəmir.",
+      "movzular": [
+        "Əxlaq"
+      ]
+    },
+    {
+      "id": 3881,
+      "metn": "Yüz ölç, bir biç.",
+      "izah": "Bir işə başlamazdan qabaq onu dəfələrlə ölçüb-biç.",
+      "movzular": [
+        "İş"
+      ]
+    },
+    {
+      "id": 3882,
+      "metn": "Yüzbaşının şahidi çovuş olar.",
+      "izah": "Bir-birinin işindən fayda görənlər bir-birinə şahidlik edir.",
+      "movzular": [
+        "Haqq və ədalət"
+      ]
+    }
+  ]
+}

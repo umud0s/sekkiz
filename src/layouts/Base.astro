@@ -1,7 +1,10 @@
 ---
 import '../styles/global.css';
 import Icon from '../components/Icon.astro';
-import { SITE, SOCIAL, STAR_POINTS, NAV } from '../lib/site.js';
+import { SITE, STAR_POINTS, NAV } from '../lib/site.js';
+import SOSIAL from '../data/cms/sayt/sosial.json';
+// Sosial keçidlər admin paneldən idarə olunur; ünvanı boş olan ikon solğun göstərilir
+const SOCIAL = SOSIAL.sebekeler.map((s) => ({ name: s.ad, href: s.unvan || '', icon: s.ikon }));
 
 const { title, description = SITE.description, current = '', ogType = 'website' } = Astro.props;
 const fullTitle = title ? `${title} — ${SITE.name}` : `${SITE.name} — Azərbaycan dili, tarixi və milli irsi`;

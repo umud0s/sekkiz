@@ -1,0 +1,830 @@
+{
+  "sozler": [
+    {
+      "movzu": "yazisma",
+      "soz": "meeting",
+      "qarsiliq": "görüş, iclas",
+      "bele_yox": "Meeting set edildi.",
+      "bele": "Görüş təyin olundu."
+    },
+    {
+      "movzu": "yazisma",
+      "soz": "meet etmək",
+      "qarsiliq": "görüşmək",
+      "bele_yox": "Sabah meet edək.",
+      "bele": "Sabah görüşək."
+    },
+    {
+      "movzu": "yazisma",
+      "soz": "call",
+      "qarsiliq": "zəng, telefon danışığı",
+      "bele_yox": "Saat üçdə call-umuz var.",
+      "bele": "Saat üçdə danışığımız var."
+    },
+    {
+      "movzu": "yazisma",
+      "soz": "deadline",
+      "qarsiliq": "son müddət, son tarix",
+      "bele_yox": "Deadline cümə günüdür.",
+      "bele": "Son müddət cümə günüdür."
+    },
+    {
+      "movzu": "yazisma",
+      "soz": "agenda",
+      "qarsiliq": "gündəlik (iclasın gündəliyi)",
+      "bele_yox": "Meeting-in agenda-sını göndərin.",
+      "bele": "İclasın gündəliyini göndərin."
+    },
+    {
+      "movzu": "yazisma",
+      "soz": "feedback",
+      "qarsiliq": "rəy, əks-əlaqə",
+      "bele_yox": "Feedback verərsiniz?",
+      "bele": "Rəyinizi bildirərsiniz?"
+    },
+    {
+      "movzu": "yazisma",
+      "soz": "reply etmək",
+      "qarsiliq": "cavab vermək",
+      "bele_yox": "Mail-ə reply et.",
+      "bele": "Məktuba cavab ver."
+    },
+    {
+      "movzu": "yazisma",
+      "soz": "forward etmək",
+      "qarsiliq": "yönləndirmək, ötürmək",
+      "bele_yox": "Bunu mənə forward edin.",
+      "bele": "Bunu mənə yönləndirin."
+    },
+    {
+      "movzu": "yazisma",
+      "soz": "cc-yə qoymaq",
+      "qarsiliq": "surətini göndərmək",
+      "bele_yox": "Məni cc-yə qoyun.",
+      "bele": "Məktubun surətini mənə də göndərin."
+    },
+    {
+      "movzu": "yazisma",
+      "soz": "attach etmək",
+      "qarsiliq": "əlavə etmək, qoşmaq",
+      "bele_yox": "Faylı attach etdim.",
+      "bele": "Faylı məktuba əlavə etdim."
+    },
+    {
+      "movzu": "yazisma",
+      "soz": "mail atmaq",
+      "qarsiliq": "məktub göndərmək",
+      "bele_yox": "Sənə mail atdım.",
+      "bele": "Sənə məktub göndərdim."
+    },
+    {
+      "movzu": "yazisma",
+      "soz": "schedule etmək",
+      "qarsiliq": "vaxt təyin etmək, planlaşdırmaq",
+      "bele_yox": "Görüşü schedule edək.",
+      "bele": "Görüşün vaxtını təyin edək."
+    },
+    {
+      "movzu": "yazisma",
+      "soz": "reschedule etmək",
+      "qarsiliq": "başqa vaxta keçirmək",
+      "bele_yox": "Meeting reschedule olundu.",
+      "bele": "Görüş başqa vaxta keçirildi."
+    },
+    {
+      "movzu": "yazisma",
+      "soz": "cancel etmək",
+      "qarsiliq": "ləğv etmək",
+      "bele_yox": "Görüş cancel oldu.",
+      "bele": "Görüş ləğv edildi."
+    },
+    {
+      "movzu": "yazisma",
+      "soz": "confirm etmək",
+      "qarsiliq": "təsdiqləmək",
+      "bele_yox": "Confirm edin, zəhmət olmasa.",
+      "bele": "Zəhmət olmasa, təsdiqləyin."
+    },
+    {
+      "movzu": "yazisma",
+      "soz": "remind etmək",
+      "qarsiliq": "xatırlatmaq",
+      "bele_yox": "Mənə remind edərsən?",
+      "bele": "Mənə xatırladarsan?"
+    },
+    {
+      "movzu": "yazisma",
+      "soz": "follow-up",
+      "qarsiliq": "məsələnin izlənməsi, sonrakı addım",
+      "bele_yox": "Follow-up edəcəm.",
+      "bele": "Məsələni izləyib nəticəni sizə yazacağam."
+    },
+    {
+      "movzu": "yazisma",
+      "soz": "update",
+      "qarsiliq": "yenilik, son vəziyyət",
+      "bele_yox": "Layihə ilə bağlı update var?",
+      "bele": "Layihə ilə bağlı yenilik var?"
+    },
+    {
+      "movzu": "yazisma",
+      "soz": "noted",
+      "qarsiliq": "nəzərə alındı, qeyd edildi",
+      "bele_yox": "Noted, sağ olun.",
+      "bele": "Nəzərə alındı, sağ olun."
+    },
+    {
+      "movzu": "yazisma",
+      "soz": "available olmaq",
+      "qarsiliq": "boş olmaq, vaxtı olmaq",
+      "bele_yox": "Sabah available-san?",
+      "bele": "Sabah vaxtın var?"
+    },
+    {
+      "movzu": "yazisma",
+      "soz": "busy",
+      "qarsiliq": "məşğul",
+      "bele_yox": "Bu gün çox busy-yəm.",
+      "bele": "Bu gün çox məşğulam."
+    },
+    {
+      "movzu": "yazisma",
+      "soz": "check etmək",
+      "qarsiliq": "yoxlamaq",
+      "bele_yox": "Check edib sizə yazaram.",
+      "bele": "Yoxlayıb sizə yazaram."
+    },
+    {
+      "movzu": "yazisma",
+      "soz": "send etmək",
+      "qarsiliq": "göndərmək",
+      "bele_yox": "Sənədi send etdim.",
+      "bele": "Sənədi göndərdim."
+    },
+    {
+      "movzu": "yazisma",
+      "soz": "share etmək",
+      "qarsiliq": "paylaşmaq",
+      "bele_yox": "Ekranı share edin.",
+      "bele": "Ekranınızı paylaşın."
+    },
+    {
+      "movzu": "yazisma",
+      "soz": "brainstorm",
+      "qarsiliq": "fikir mübadiləsi",
+      "bele_yox": "Gəlin brainstorm edək.",
+      "bele": "Gəlin fikir mübadiləsi aparaq."
+    },
+    {
+      "movzu": "yazisma",
+      "soz": "prezentasiya, presentation",
+      "qarsiliq": "təqdimat",
+      "bele_yox": "Prezentasiyanı hazırladım.",
+      "bele": "Təqdimatı hazırladım."
+    },
+    {
+      "movzu": "yazisma",
+      "soz": "workshop",
+      "qarsiliq": "praktik məşğələ",
+      "bele_yox": "Cümə günü workshop keçirəcəyik.",
+      "bele": "Cümə günü praktik məşğələ keçirəcəyik."
+    },
+    {
+      "movzu": "yazisma",
+      "soz": "event",
+      "qarsiliq": "tədbir",
+      "bele_yox": "Event cümə axşamıdır.",
+      "bele": "Tədbir cümə axşamıdır."
+    },
+    {
+      "movzu": "yazisma",
+      "soz": "coffee break",
+      "qarsiliq": "fasilə, çay fasiləsi",
+      "bele_yox": "Coffee break-dən sonra davam edək.",
+      "bele": "Fasilədən sonra davam edək."
+    },
+    {
+      "movzu": "yazisma",
+      "soz": "minutes, MoM",
+      "qarsiliq": "iclasın protokolu",
+      "bele_yox": "MoM-u kim yazacaq?",
+      "bele": "İclasın protokolunu kim yazacaq?"
+    },
+    {
+      "movzu": "yazisma",
+      "soz": "online",
+      "qarsiliq": "onlayn",
+      "bele_yox": "Görüş online keçiriləcək.",
+      "bele": "Görüş onlayn keçiriləcək."
+    },
+    {
+      "movzu": "layihe",
+      "soz": "task",
+      "qarsiliq": "tapşırıq",
+      "bele_yox": "Sənə yeni task verdim.",
+      "bele": "Sənə yeni tapşırıq verdim."
+    },
+    {
+      "movzu": "layihe",
+      "soz": "proyekt, project",
+      "qarsiliq": "layihə",
+      "bele_yox": "Proyekt gecikir.",
+      "bele": "Layihə gecikir."
+    },
+    {
+      "movzu": "layihe",
+      "soz": "report",
+      "qarsiliq": "hesabat",
+      "bele_yox": "Report-u göndər.",
+      "bele": "Hesabatı göndər."
+    },
+    {
+      "movzu": "layihe",
+      "soz": "draft",
+      "qarsiliq": "qaralama, ilkin variant",
+      "bele_yox": "Draft-ı göndərirəm.",
+      "bele": "İlkin variantı göndərirəm."
+    },
+    {
+      "movzu": "layihe",
+      "soz": "final versiya",
+      "qarsiliq": "son variant",
+      "bele_yox": "Final versiya hazırdır.",
+      "bele": "Son variant hazırdır."
+    },
+    {
+      "movzu": "layihe",
+      "soz": "review etmək",
+      "qarsiliq": "nəzərdən keçirmək",
+      "bele_yox": "Sənədi review edin.",
+      "bele": "Sənədi nəzərdən keçirin."
+    },
+    {
+      "movzu": "layihe",
+      "soz": "approve etmək",
+      "qarsiliq": "təsdiq etmək",
+      "bele_yox": "Rəhbər approve etdi.",
+      "bele": "Rəhbər təsdiq etdi."
+    },
+    {
+      "movzu": "layihe",
+      "soz": "edit etmək",
+      "qarsiliq": "düzəliş etmək, redaktə etmək",
+      "bele_yox": "Mətni edit etdim.",
+      "bele": "Mətnə düzəliş etdim."
+    },
+    {
+      "movzu": "layihe",
+      "soz": "timeline",
+      "qarsiliq": "vaxt qrafiki",
+      "bele_yox": "Layihənin timeline-ı hazırdır.",
+      "bele": "Layihənin vaxt qrafiki hazırdır."
+    },
+    {
+      "movzu": "layihe",
+      "soz": "milestone",
+      "qarsiliq": "əsas mərhələ",
+      "bele_yox": "İlk milestone-a çatdıq.",
+      "bele": "İlk mərhələni başa vurduq."
+    },
+    {
+      "movzu": "layihe",
+      "soz": "scope",
+      "qarsiliq": "işin həcmi, əhatə dairəsi",
+      "bele_yox": "Scope dəyişdi.",
+      "bele": "İşin həcmi dəyişdi."
+    },
+    {
+      "movzu": "layihe",
+      "soz": "priority",
+      "qarsiliq": "birinci növbəli iş",
+      "bele_yox": "Bu, top priority-dir.",
+      "bele": "Bu, birinci növbədə görülməli işdir."
+    },
+    {
+      "movzu": "layihe",
+      "soz": "urgent",
+      "qarsiliq": "təcili",
+      "bele_yox": "Urgent məsələdir.",
+      "bele": "Təcili məsələdir."
+    },
+    {
+      "movzu": "layihe",
+      "soz": "pending",
+      "qarsiliq": "gözləmədə, baxılır",
+      "bele_yox": "Sorğu pending-dədir.",
+      "bele": "Sorğuya hələ baxılır."
+    },
+    {
+      "movzu": "layihe",
+      "soz": "in progress",
+      "qarsiliq": "icra olunur",
+      "bele_yox": "Task in progress-dədir.",
+      "bele": "Tapşırıq icra olunur."
+    },
+    {
+      "movzu": "layihe",
+      "soz": "done",
+      "qarsiliq": "hazırdır, icra olunub",
+      "bele_yox": "Hər şey done-dur.",
+      "bele": "Hər şey hazırdır."
+    },
+    {
+      "movzu": "layihe",
+      "soz": "delegate etmək",
+      "qarsiliq": "həvalə etmək",
+      "bele_yox": "Bu işi ona delegate et.",
+      "bele": "Bu işi ona həvalə et."
+    },
+    {
+      "movzu": "layihe",
+      "soz": "workflow",
+      "qarsiliq": "iş qaydası, iş prosesi",
+      "bele_yox": "Workflow-u dəyişdik.",
+      "bele": "İş qaydasını dəyişdik."
+    },
+    {
+      "movzu": "layihe",
+      "soz": "best practice",
+      "qarsiliq": "qabaqcıl təcrübə",
+      "bele_yox": "Best practice-lərə baxaq.",
+      "bele": "Qabaqcıl təcrübəyə baxaq."
+    },
+    {
+      "movzu": "layihe",
+      "soz": "insight",
+      "qarsiliq": "nəticə, müşahidə",
+      "bele_yox": "Araşdırmadan maraqlı insight-lar çıxdı.",
+      "bele": "Araşdırmadan maraqlı nəticələr çıxdı."
+    },
+    {
+      "movzu": "layihe",
+      "soz": "issue",
+      "qarsiliq": "problem, məsələ",
+      "bele_yox": "Kiçik bir issue var.",
+      "bele": "Kiçik bir problem var."
+    },
+    {
+      "movzu": "layihe",
+      "soz": "case",
+      "qarsiliq": "hal, vəziyyət",
+      "bele_yox": "Bu case-də nə edək?",
+      "bele": "Bu halda nə edək?"
+    },
+    {
+      "movzu": "layihe",
+      "soz": "target",
+      "qarsiliq": "hədəf",
+      "bele_yox": "Bu ayın target-i yerinə yetirildi.",
+      "bele": "Bu ayın hədəfinə çatdıq."
+    },
+    {
+      "movzu": "layihe",
+      "soz": "performance",
+      "qarsiliq": "iş göstəriciləri, səmərəlilik",
+      "bele_yox": "Komandanın performance-ı artıb.",
+      "bele": "Komandanın iş göstəriciləri yaxşılaşıb."
+    },
+    {
+      "movzu": "layihe",
+      "soz": "outsource etmək",
+      "qarsiliq": "kənar icraçıya vermək",
+      "bele_yox": "Dizaynı outsource edək.",
+      "bele": "Dizayn işini kənar icraçıya verək."
+    },
+    {
+      "movzu": "layihe",
+      "soz": "research",
+      "qarsiliq": "araşdırma",
+      "bele_yox": "Bazar research-ü apardıq.",
+      "bele": "Bazar araşdırması apardıq."
+    },
+    {
+      "movzu": "kadr",
+      "soz": "HR",
+      "qarsiliq": "kadrlar şöbəsi, insan resursları",
+      "bele_yox": "HR-a müraciət et.",
+      "bele": "Kadrlar şöbəsinə müraciət et."
+    },
+    {
+      "movzu": "kadr",
+      "soz": "onboarding",
+      "qarsiliq": "işə uyğunlaşma",
+      "bele_yox": "Yeni işçinin onboarding-i başladı.",
+      "bele": "Yeni işçinin işə uyğunlaşması başladı."
+    },
+    {
+      "movzu": "kadr",
+      "soz": "interview",
+      "qarsiliq": "müsahibə",
+      "bele_yox": "Sabah interview-um var.",
+      "bele": "Sabah müsahibəm var."
+    },
+    {
+      "movzu": "kadr",
+      "soz": "kandidat, candidate",
+      "qarsiliq": "namizəd",
+      "bele_yox": "Üç kandidat seçildi.",
+      "bele": "Üç namizəd seçildi."
+    },
+    {
+      "movzu": "kadr",
+      "soz": "CV",
+      "qarsiliq": "tərcümeyi-hal",
+      "bele_yox": "CV-nizi göndərin.",
+      "bele": "Tərcümeyi-halınızı göndərin."
+    },
+    {
+      "movzu": "kadr",
+      "soz": "skill",
+      "qarsiliq": "bacarıq",
+      "bele_yox": "Yeni skill-lər öyrənmək istəyirəm.",
+      "bele": "Yeni bacarıqlar qazanmaq istəyirəm."
+    },
+    {
+      "movzu": "kadr",
+      "soz": "soft skills",
+      "qarsiliq": "ünsiyyət və şəxsi bacarıqlar",
+      "bele_yox": "Soft skill-ləri güclüdür.",
+      "bele": "Ünsiyyət bacarıqları güclüdür."
+    },
+    {
+      "movzu": "kadr",
+      "soz": "team",
+      "qarsiliq": "komanda, kollektiv",
+      "bele_yox": "Bütün team iştirak edəcək.",
+      "bele": "Bütün komanda iştirak edəcək."
+    },
+    {
+      "movzu": "kadr",
+      "soz": "teamlead",
+      "qarsiliq": "komanda rəhbəri",
+      "bele_yox": "Teamlead-imizlə danış.",
+      "bele": "Komanda rəhbərimizlə danış."
+    },
+    {
+      "movzu": "kadr",
+      "soz": "day off",
+      "qarsiliq": "istirahət günü",
+      "bele_yox": "Cümə günü day off götürürəm.",
+      "bele": "Cümə günü istirahət edəcəyəm."
+    },
+    {
+      "movzu": "kadr",
+      "soz": "vacation",
+      "qarsiliq": "məzuniyyət",
+      "bele_yox": "Gələn həftə vacation-dayam.",
+      "bele": "Gələn həftə məzuniyyətdəyəm."
+    },
+    {
+      "movzu": "kadr",
+      "soz": "remote",
+      "qarsiliq": "məsafədən (iş)",
+      "bele_yox": "Bu həftə remote işləyirəm.",
+      "bele": "Bu həftə məsafədən işləyirəm."
+    },
+    {
+      "movzu": "kadr",
+      "soz": "overtime",
+      "qarsiliq": "iş vaxtından artıq iş",
+      "bele_yox": "Bu həftə overtime etdik.",
+      "bele": "Bu həftə iş vaxtından artıq işlədik."
+    },
+    {
+      "movzu": "kadr",
+      "soz": "promotion",
+      "qarsiliq": "vəzifədə irəli çəkilmə",
+      "bele_yox": "Promotion aldı.",
+      "bele": "Vəzifədə irəli çəkildi."
+    },
+    {
+      "movzu": "kadr",
+      "soz": "job description",
+      "qarsiliq": "vəzifə təlimatı",
+      "bele_yox": "Job description-a baxın.",
+      "bele": "Vəzifə təlimatına baxın."
+    },
+    {
+      "movzu": "kadr",
+      "soz": "dress code",
+      "qarsiliq": "geyim qaydası",
+      "bele_yox": "Dress code rəsmidir.",
+      "bele": "Geyim qaydası rəsmidir."
+    },
+    {
+      "movzu": "kadr",
+      "soz": "training",
+      "qarsiliq": "təlim",
+      "bele_yox": "Training-ə qeydiyyat başladı.",
+      "bele": "Təlimə qeydiyyat başladı."
+    },
+    {
+      "movzu": "satis",
+      "soz": "sales",
+      "qarsiliq": "satış",
+      "bele_yox": "Sales komandası",
+      "bele": "Satış komandası"
+    },
+    {
+      "movzu": "satis",
+      "soz": "klient, client",
+      "qarsiliq": "müştəri",
+      "bele_yox": "Klient zəng etdi.",
+      "bele": "Müştəri zəng etdi."
+    },
+    {
+      "movzu": "satis",
+      "soz": "lead",
+      "qarsiliq": "potensial müştəri",
+      "bele_yox": "Bu ay qırx lead gəldi.",
+      "bele": "Bu ay qırx potensial müştəri ilə əlaqə yarandı."
+    },
+    {
+      "movzu": "satis",
+      "soz": "deal",
+      "qarsiliq": "razılaşma, saziş",
+      "bele_yox": "Deal-i bağladıq.",
+      "bele": "Sazişi bağladıq."
+    },
+    {
+      "movzu": "satis",
+      "soz": "offer",
+      "qarsiliq": "təklif",
+      "bele_yox": "Offer göndərdik.",
+      "bele": "Təklif göndərdik."
+    },
+    {
+      "movzu": "satis",
+      "soz": "discount",
+      "qarsiliq": "endirim",
+      "bele_yox": "Discount edə bilərik.",
+      "bele": "Endirim edə bilərik."
+    },
+    {
+      "movzu": "satis",
+      "soz": "invoice",
+      "qarsiliq": "hesab-faktura",
+      "bele_yox": "Invoice-u göndərin.",
+      "bele": "Hesab-fakturanı göndərin."
+    },
+    {
+      "movzu": "satis",
+      "soz": "partnyor, partner",
+      "qarsiliq": "tərəfdaş",
+      "bele_yox": "Partnyorlarımızla görüşdük.",
+      "bele": "Tərəfdaşlarımızla görüşdük."
+    },
+    {
+      "movzu": "satis",
+      "soz": "stakeholder",
+      "qarsiliq": "maraqlı tərəf",
+      "bele_yox": "Stakeholder-lərlə görüş keçirildi.",
+      "bele": "Maraqlı tərəflərlə görüş keçirildi."
+    },
+    {
+      "movzu": "satis",
+      "soz": "target audience",
+      "qarsiliq": "hədəf kütlə, hədəf auditoriya",
+      "bele_yox": "Target audience-imiz gənclərdir.",
+      "bele": "Hədəf kütləmiz gənclərdir."
+    },
+    {
+      "movzu": "satis",
+      "soz": "marketing",
+      "qarsiliq": "marketinq",
+      "bele_yox": "Marketing şöbəsi",
+      "bele": "Marketinq şöbəsi"
+    },
+    {
+      "movzu": "satis",
+      "soz": "branding",
+      "qarsiliq": "brendinq, brend quruculuğu",
+      "bele_yox": "Branding üzərində işləyirik.",
+      "bele": "Brend quruculuğu üzərində işləyirik."
+    },
+    {
+      "movzu": "satis",
+      "soz": "content",
+      "qarsiliq": "məzmun",
+      "bele_yox": "Sosial şəbəkələr üçün content hazırlayırıq.",
+      "bele": "Sosial şəbəkələr üçün məzmun hazırlayırıq."
+    },
+    {
+      "movzu": "satis",
+      "soz": "post",
+      "qarsiliq": "paylaşım",
+      "bele_yox": "Yeni post atdıq.",
+      "bele": "Yeni paylaşım etdik."
+    },
+    {
+      "movzu": "satis",
+      "soz": "engagement",
+      "qarsiliq": "izləyici marağı",
+      "bele_yox": "Engagement aşağıdır.",
+      "bele": "İzləyicilərin marağı azdır."
+    },
+    {
+      "movzu": "satis",
+      "soz": "pitch",
+      "qarsiliq": "qısa təqdimat",
+      "bele_yox": "İnvestorlara pitch etdik.",
+      "bele": "Layihəni investorlara qısaca təqdim etdik."
+    },
+    {
+      "movzu": "satis",
+      "soz": "networking",
+      "qarsiliq": "işgüzar tanışlıq",
+      "bele_yox": "Networking üçün yaxşı fürsətdir.",
+      "bele": "İşgüzar tanışlıqlar üçün yaxşı fürsətdir."
+    },
+    {
+      "movzu": "satis",
+      "soz": "launch etmək",
+      "qarsiliq": "istifadəyə vermək, təqdim etmək",
+      "bele_yox": "Məhsulu launch etdik.",
+      "bele": "Məhsulu istifadəyə verdik."
+    },
+    {
+      "movzu": "texno",
+      "soz": "login olmaq",
+      "qarsiliq": "daxil olmaq",
+      "bele_yox": "Sistemə login ola bilmirəm.",
+      "bele": "Sistemə daxil ola bilmirəm."
+    },
+    {
+      "movzu": "texno",
+      "soz": "password",
+      "qarsiliq": "şifrə",
+      "bele_yox": "Password-u unutmuşam.",
+      "bele": "Şifrəni unutmuşam."
+    },
+    {
+      "movzu": "texno",
+      "soz": "account",
+      "qarsiliq": "hesab",
+      "bele_yox": "Yeni account açın.",
+      "bele": "Yeni hesab yaradın."
+    },
+    {
+      "movzu": "texno",
+      "soz": "bug",
+      "qarsiliq": "xəta",
+      "bele_yox": "Saytda bug var.",
+      "bele": "Saytda xəta var."
+    },
+    {
+      "movzu": "texno",
+      "soz": "fix etmək",
+      "qarsiliq": "düzəltmək",
+      "bele_yox": "Bug-ı fix etdik.",
+      "bele": "Xətanı düzəltdik."
+    },
+    {
+      "movzu": "texno",
+      "soz": "feature",
+      "qarsiliq": "funksiya, imkan",
+      "bele_yox": "Yeni feature əlavə etdik.",
+      "bele": "Yeni funksiya əlavə etdik."
+    },
+    {
+      "movzu": "texno",
+      "soz": "release",
+      "qarsiliq": "yeni versiya, buraxılış",
+      "bele_yox": "Release cümə günü çıxır.",
+      "bele": "Yeni versiya cümə günü çıxır."
+    },
+    {
+      "movzu": "texno",
+      "soz": "download etmək",
+      "qarsiliq": "endirmək, yükləmək",
+      "bele_yox": "Faylı download et.",
+      "bele": "Faylı endir."
+    },
+    {
+      "movzu": "texno",
+      "soz": "upload etmək",
+      "qarsiliq": "yükləmək",
+      "bele_yox": "Şəkli upload edin.",
+      "bele": "Şəkli sayta yükləyin."
+    },
+    {
+      "movzu": "texno",
+      "soz": "save etmək",
+      "qarsiliq": "yadda saxlamaq",
+      "bele_yox": "Faylı save et.",
+      "bele": "Faylı yadda saxla."
+    },
+    {
+      "movzu": "texno",
+      "soz": "delete etmək",
+      "qarsiliq": "silmək",
+      "bele_yox": "Mesajı delete etdim.",
+      "bele": "Mesajı sildim."
+    },
+    {
+      "movzu": "texno",
+      "soz": "print etmək",
+      "qarsiliq": "çap etmək",
+      "bele_yox": "Sənədi print et.",
+      "bele": "Sənədi çap et."
+    },
+    {
+      "movzu": "texno",
+      "soz": "setting",
+      "qarsiliq": "ayarlar, parametrlər",
+      "bele_yox": "Setting-lərdən dəyişin.",
+      "bele": "Ayarlardan dəyişin."
+    },
+    {
+      "movzu": "texno",
+      "soz": "support",
+      "qarsiliq": "dəstək xidməti",
+      "bele_yox": "Support-a yazın.",
+      "bele": "Dəstək xidmətinə yazın."
+    },
+    {
+      "movzu": "texno",
+      "soz": "link",
+      "qarsiliq": "keçid",
+      "bele_yox": "Linki atıram.",
+      "bele": "Keçidi göndərirəm."
+    },
+    {
+      "movzu": "texno",
+      "soz": "email",
+      "qarsiliq": "e-poçt",
+      "bele_yox": "Email ünvanınızı yazın.",
+      "bele": "E-poçt ünvanınızı yazın."
+    },
+    {
+      "movzu": "texno",
+      "soz": "website, veb sayt",
+      "qarsiliq": "veb-sayt, sayt",
+      "bele_yox": "Veb saytımız yeniləndi.",
+      "bele": "Saytımız yeniləndi."
+    },
+    {
+      "movzu": "texno",
+      "soz": "kompyuter",
+      "qarsiliq": "kompüter",
+      "bele_yox": "Kompyuter işləmir.",
+      "bele": "Kompüter işləmir."
+    },
+    {
+      "movzu": "qisa",
+      "soz": "ASAP",
+      "qarsiliq": "mümkün qədər tez",
+      "bele_yox": "ASAP göndərin.",
+      "bele": "Mümkün qədər tez göndərin."
+    },
+    {
+      "movzu": "qisa",
+      "soz": "FYI",
+      "qarsiliq": "məlumat üçün",
+      "bele_yox": "FYI, sabah ofis bağlıdır.",
+      "bele": "Məlumat üçün: sabah ofis bağlıdır."
+    },
+    {
+      "movzu": "qisa",
+      "soz": "EOD",
+      "qarsiliq": "iş gününün sonunadək",
+      "bele_yox": "EOD-a qədər göndər.",
+      "bele": "İş gününün sonunadək göndər."
+    },
+    {
+      "movzu": "qisa",
+      "soz": "TBD",
+      "qarsiliq": "sonra dəqiqləşəcək",
+      "bele_yox": "Tarix TBD.",
+      "bele": "Tarix sonra dəqiqləşəcək."
+    },
+    {
+      "movzu": "qisa",
+      "soz": "OK",
+      "qarsiliq": "yaxşı, razıyam",
+      "bele_yox": "OK, edərik.",
+      "bele": "Yaxşı, edərik."
+    },
+    {
+      "movzu": "qisa",
+      "soz": "Q&A",
+      "qarsiliq": "sual-cavab",
+      "bele_yox": "Sonda Q&A olacaq.",
+      "bele": "Sonda sual-cavab olacaq."
+    },
+    {
+      "movzu": "qisa",
+      "soz": "KPI",
+      "qarsiliq": "əsas fəaliyyət göstəriciləri",
+      "bele_yox": "KPI-larımızı yenilədik.",
+      "bele": "Əsas fəaliyyət göstəricilərimizi yenilədik."
+    },
+    {
+      "movzu": "qisa",
+      "soz": "CEO",
+      "qarsiliq": "baş icraçı direktor",
+      "bele_yox": "CEO ilə görüş var.",
+      "bele": "Baş icraçı direktorla görüş var."
+    }
+  ]
+}

@@ -1,0 +1,946 @@
+{
+  "herf": "G",
+  "sozler": [
+    {
+      "id": 1645,
+      "metn": "Gah nala döyür, gah mıxa.",
+      "izah": "Gah birinin, gah digərinin tərəfini saxlayır.",
+      "movzular": [
+        "Əxlaq"
+      ]
+    },
+    {
+      "id": 1647,
+      "metn": "Gec gələn qonaq öz kisəsindən yeyər.",
+      "izah": "Gecikən adam payından məhrum olur.",
+      "movzular": [
+        "Adət-ənənə",
+        "Var-dövlət"
+      ]
+    },
+    {
+      "id": 1648,
+      "metn": "Gec-gec gəldin, xoş gəldin, tez-tez gəldin, nöş gəldin.",
+      "izah": "Seyrək gələn qonaq əziz olur, tez-tez gələn isə bezdirir.",
+      "movzular": [
+        "Qonaqpərvərlik"
+      ]
+    },
+    {
+      "id": 1649,
+      "metn": "Gecə dırnaq kəsən, gündüz nağıl deyən, həlbət gora gələrsən!",
+      "izah": "Pis adətlərdən uzaq dur, yoxsa bəlaya düşərsən.",
+      "movzular": [
+        "Dil və söz"
+      ]
+    },
+    {
+      "id": 1650,
+      "metn": "Gedən bağdan gedər, bağbandan nə gedər.",
+      "izah": "Malından məhrum olan sahibdir, işçi isə heç nə itirmir.",
+      "movzular": [
+        "Var-dövlət"
+      ]
+    },
+    {
+      "id": 1651,
+      "metn": "Gedən qaroy, yol qara...",
+      "izah": "Gedən adamın arxasınca pis söz deyilir.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 1652,
+      "metn": "Gedər bağlar qorası, qalar üzlər qarası.",
+      "izah": "Bəhrə keçər, amma pis əməlin ləkəsi qalar.",
+      "movzular": [
+        "Əxlaq"
+      ]
+    },
+    {
+      "id": 1653,
+      "metn": "Gedər bu aclıq, gələr ucuzluq, amma səndə qaldı kömbə yanığı.",
+      "izah": "Çətin dövr keçəcək, amma o vaxtın xəcalətli xatirəsi səndə qalacaq.",
+      "movzular": [
+        "Bərəkət"
+      ]
+    },
+    {
+      "id": 1654,
+      "metn": "Gen qaz, dərin qaz, özün düşərsən.",
+      "izah": "Başqasına pislik edən özü o pisliyə düşür.",
+      "movzular": [
+        "Əxlaq"
+      ]
+    },
+    {
+      "id": 1655,
+      "metn": "Gendən baxana döyüş asan görünər.",
+      "izah": "Kənardan baxana hər iş asan görünür.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 1656,
+      "metn": "Get, çanağım, gəl çanağım, ortalıqda sın çanağım.",
+      "izah": "Bu iki tərəfin arasında mən zərər çəkdim.",
+      "movzular": [
+        "Haqq və ədalət"
+      ]
+    },
+    {
+      "id": 1657,
+      "metn": "Get özünə dost qazan, düşmən ocaq başındadı.",
+      "izah": "Dost qazanmağa çalış, düşmən onsuz da yaxındadır.",
+      "movzular": [
+        "Dostluq"
+      ]
+    },
+    {
+      "id": 1658,
+      "metn": "Getdim dərdli yanına, o, məndən narın ağladı.",
+      "izah": "Dərdimi danışmağa getdiyim adamın dərdi məndən də çox imiş.",
+      "movzular": [
+        "Dərd və səbr"
+      ]
+    },
+    {
+      "id": 1659,
+      "metn": "Getdim yarım yanına, qadam cicim canına.",
+      "izah": "Sevdiyimin yanına getdim, ondan da bəla gördüm.",
+      "movzular": [
+        "Sevgi"
+      ]
+    },
+    {
+      "id": 1660,
+      "metn": "Getmə gözümdən, gedərəm özümdən.",
+      "izah": "Səndən ayrılsam, özümü itirərəm.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 1661,
+      "metn": "Getməsin o yaman ki, yerinə yaxşı gəlməz.",
+      "izah": "Pis adam getməsin ki, yerinə daha pisi gəlməsin.",
+      "movzular": [
+        "Əxlaq"
+      ]
+    },
+    {
+      "id": 1662,
+      "metn": "Geyişməyən yerdən qan çıxarma.",
+      "izah": "Sakit olan yerdə qarışıqlıq yaratma.",
+      "movzular": [
+        "Dostluq"
+      ]
+    },
+    {
+      "id": 1663,
+      "metn": "Gədadan bəy olmaz.",
+      "izah": "Yoxsuldan ağa olmaz.",
+      "movzular": [
+        "Var-dövlət"
+      ]
+    },
+    {
+      "id": 1664,
+      "metn": "Gədaya borclu olma — ya toyda istər, ya bayramda.",
+      "izah": "Yoxsula borclu olma, ən çətin vaxtda istəyər.",
+      "movzular": [
+        "Bərəkət",
+        "Adət-ənənə"
+      ]
+    },
+    {
+      "id": 1665,
+      "metn": "Gəldi əcəl, verməz macal.",
+      "izah": "Əcəl gəldikdə insana vaxt vermir.",
+      "movzular": [
+        "Dərd və səbr"
+      ]
+    },
+    {
+      "id": 1666,
+      "metn": "Gələcəyin var, görəcəyin də var.",
+      "izah": "Yaşadıqca həm sevinc, həm də çətinlik görəcəksən.",
+      "movzular": [
+        "Dərd və səbr"
+      ]
+    },
+    {
+      "id": 1667,
+      "metn": "Gələn adam qismətinə gələr.",
+      "izah": "Hər kəs öz taleyinə yazılanı yaşayır.",
+      "movzular": [
+        "Bərəkət"
+      ]
+    },
+    {
+      "id": 1668,
+      "metn": "Gələn gedənin dədəsinə rəhmət oxudur.",
+      "izah": "Yeni gələn daha pis olanda köhnənin qədri bilinir.",
+      "movzular": [
+        "Ailə",
+        "Təhsil"
+      ]
+    },
+    {
+      "id": 1669,
+      "metn": "Gələndə yel gətiri, el gətiri, sel gətiri, gedəndə yel aparı, el aparı, sel aparı.",
+      "izah": "Asan gələn şey asan da gedir.",
+      "movzular": [
+        "El"
+      ]
+    },
+    {
+      "id": 1670,
+      "metn": "Gələnə yoldaş, gedənə qardaş.",
+      "izah": "Gələnə yoldaş ol, gedənə qardaş kimi yaxşılıq et.",
+      "movzular": [
+        "Ailə",
+        "Dostluq"
+      ]
+    },
+    {
+      "id": 1671,
+      "metn": "Gəlin ocağa çəkər (gələr).",
+      "izah": "Gəlin evə bağlanır, ailəni qoruyur.",
+      "movzular": [
+        "Ailə"
+      ]
+    },
+    {
+      "id": 1672,
+      "metn": "Gəlmisən ayran içməyə, gəlməmisən ara açmağa.",
+      "izah": "Buraya qonaq kimi gəlmisən, ara qarışdırmağa yox.",
+      "movzular": [
+        "Qonaqpərvərlik"
+      ]
+    },
+    {
+      "id": 1673,
+      "metn": "Gəlmişdi kabab iyinə, gördü eşşək dağlayırlar.",
+      "izah": "Mənfəət gözlədiyi yerdə bəla ilə qarşılaşdı.",
+      "movzular": [
+        "Dərd və səbr"
+      ]
+    },
+    {
+      "id": 1674,
+      "metn": "Gəlin atlandı, gör kimə düşdü.",
+      "izah": "Nəticəni gözləmək lazımdır.",
+      "movzular": [
+        "Ailə"
+      ]
+    },
+    {
+      "id": 1675,
+      "metn": "Gəlin bəzənənəcən toy sovuşdu.",
+      "izah": "Çox hazırlaşan adam fürsəti qaçırır.",
+      "movzular": [
+        "Ailə",
+        "Adət-ənənə"
+      ]
+    },
+    {
+      "id": 1676,
+      "metn": "Gəlin ocağa, bərəkət bucağa.",
+      "izah": "Ailəsini qoruyan gəlin evə bərəkət gətirir.",
+      "movzular": [
+        "Ailə",
+        "Bərəkət"
+      ]
+    },
+    {
+      "id": 1677,
+      "metn": "Gəlin oldun, dilini çək.",
+      "izah": "Gəlin olandan sonra danışığına diqqət et.",
+      "movzular": [
+        "Ailə",
+        "Dil və söz"
+      ]
+    },
+    {
+      "id": 1678,
+      "metn": "Gəlin oynaya bilmədi, dedi: otaq əyridi.",
+      "izah": "Bacarıqsız adam günahı başqa şeylərdə axtarır.",
+      "movzular": [
+        "Ailə"
+      ]
+    },
+    {
+      "id": 1679,
+      "metn": "Gəlini evdən qoruyarsan, oğru olar.",
+      "izah": "Həddən artıq nəzarət insanı pis yola sala bilər.",
+      "movzular": [
+        "Ailə",
+        "Haqq və ədalət"
+      ]
+    },
+    {
+      "id": 1680,
+      "metn": "Gəlini gərdəkdə, küçüyü dəməkdə.",
+      "izah": "Hər şeyi vaxtında və yerində görmək lazımdır.",
+      "movzular": [
+        "Ailə"
+      ]
+    },
+    {
+      "id": 1681,
+      "metn": "Gəmidə oturub gəmiçiylə dava eləmə.",
+      "izah": "Taleyin asılı olduğu adamla dava etmə.",
+      "movzular": [
+        "Dərd və səbr"
+      ]
+    },
+    {
+      "id": 1682,
+      "metn": "Gəmisini batıran çarığını axtarmaz.",
+      "izah": "Böyük itki verən kiçik şeyə əhəmiyyət vermir.",
+      "movzular": [
+        "Dərd və səbr"
+      ]
+    },
+    {
+      "id": 1683,
+      "metn": "Gənəşəkli don gen olar.",
+      "izah": "Məsləhətlə görülən iş uğurlu olur.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 1684,
+      "metn": "Gəzdi İranı, Turanı, cənnət gördü buranı.",
+      "izah": "Hər yeri gəzdi, doğma yurddan gözəl yer tapmadı.",
+      "movzular": [
+        "El"
+      ]
+    },
+    {
+      "id": 1685,
+      "metn": "Gəzən ayağa daş dəyər.",
+      "izah": "Çox gəzən adam çətinliklə üzləşir.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 1686,
+      "metn": "Gəzən şələ bağlamaz.",
+      "izah": "Bir yerdə durmayan adam var-dövlət toplaya bilmir.",
+      "movzular": [
+        "Var-dövlət"
+      ]
+    },
+    {
+      "id": 1687,
+      "metn": "Gəzəyən gəlinlə güləyən qızdan çarşı-bazardakı lotu yaxşıdır.",
+      "izah": "Ədəbsiz qadından açıq-aşkar pis adam daha yaxşıdır.",
+      "movzular": [
+        "Ailə",
+        "Var-dövlət"
+      ]
+    },
+    {
+      "id": 1688,
+      "metn": "Gizli düşmən ilan kimidi, sürünə-sürünə gələr.",
+      "izah": "Gizli düşmən xəbərsiz zərbə vurur.",
+      "movzular": [
+        "Dostluq"
+      ]
+    },
+    {
+      "id": 1689,
+      "metn": "Gizlin kələ gələn aşkar doğar.",
+      "izah": "Gizli görülən iş gec-tez üzə çıxır.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 1690,
+      "metn": "Gordan biz gəlirik, cəhənnəmdən sən xəbər verirsən.",
+      "izah": "Hər şeyi bilən kimi danışır, amma heç nə bilmir.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 1691,
+      "metn": "Gödək atıldı vurdu uzunun başına; uzun dedi: «əcəb yadıma saldın».",
+      "izah": "Zəif adam güclüyə zərbə vurub onu qəzəbləndirdi.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 1692,
+      "metn": "Gönü suya vermə, verdin heyfsilənmə.",
+      "izah": "Dəyərli şeyi ehtiyatsız ələ vermə, versən də peşman olma.",
+      "movzular": [
+        "Ağıl"
+      ]
+    },
+    {
+      "id": 1693,
+      "metn": "Gördü — hənək, görmədi — gerçək.",
+      "izah": "Görəndə zarafatdır, görməyəndə həqiqətdir.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 1694,
+      "metn": "Gördüyünü qoyub eşitdiyinə inanma.",
+      "izah": "Öz gözünlə gördüyünə inan, eşitdiyinə yox.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 1695,
+      "metn": "Görən gözə kül üfürmə.",
+      "izah": "Açıq-aşkar həqiqəti gizlətməyə çalışma.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 1696,
+      "metn": "Görən gözə yasaq olmaz.",
+      "izah": "Görən gözün qarşısını almaq olmaz.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 1697,
+      "metn": "Görənin gözün töküncə, götürənin əlin kəs.",
+      "izah": "Şahidi susdurmaq yerinə, cinayətkarı cəzalandır.",
+      "movzular": [
+        "Haqq və ədalət"
+      ]
+    },
+    {
+      "id": 1698,
+      "metn": "Görməmiş gördü, gülə-gülə öldü.",
+      "izah": "Heç nə görməyən adam kiçik bir şeyə də sevincdən özünü itirir.",
+      "movzular": [
+        "Əxlaq"
+      ]
+    },
+    {
+      "id": 1699,
+      "metn": "Görməmiş gördü gümüş, oldu qudurmuş.",
+      "izah": "Birdən varlanan kasıb təkəbbürlü olur.",
+      "movzular": [
+        "Var-dövlət"
+      ]
+    },
+    {
+      "id": 1700,
+      "metn": "Görməmişə at versən, çapıb-çapıb öldürər.",
+      "izah": "Təcrübəsiz adama böyük imkan versən, onu məhv edər.",
+      "movzular": [
+        "Ağıl"
+      ]
+    },
+    {
+      "id": 1701,
+      "metn": "Görməmişin bir oğlu oldu, çəkdi çükün çıxartdı.",
+      "izah": "Görməmiş adam əlindəki nemətin qədrini bilmir, onu korlayır.",
+      "movzular": [
+        "Ailə"
+      ]
+    },
+    {
+      "id": 1702,
+      "metn": "Görükən kənd bələdçi istəməz.",
+      "izah": "Açıq-aşkar olan şeyə izah lazım deyil.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 1703,
+      "metn": "Görülmüş işdən gül iyi gələr.",
+      "izah": "Başa çatmış iş insana sevinc gətirir.",
+      "movzular": [
+        "İş"
+      ]
+    },
+    {
+      "id": 1704,
+      "metn": "Göy ağlamayınca yer gülməz.",
+      "izah": "Əziyyət olmadan sevinc də olmur.",
+      "movzular": [
+        "Dərd və səbr"
+      ]
+    },
+    {
+      "id": 1705,
+      "metn": "Göydən nə yağdı ki, yer onu qəbul eləmədi?!",
+      "izah": "Taleyin gətirdiyini insan qəbul etməlidir.",
+      "movzular": [
+        "Dərd və səbr"
+      ]
+    },
+    {
+      "id": 1706,
+      "metn": "Göyçək sözün ardı tükənməz.",
+      "izah": "Gözəl sözün sonu yoxdur.",
+      "movzular": [
+        "Ağıl",
+        "Dil və söz"
+      ]
+    },
+    {
+      "id": 1707,
+      "metn": "Göz gördü, göyül sevdi, mənim nə günahım var?!",
+      "izah": "Sevgi iradədən asılı deyil.",
+      "movzular": [
+        "Əxlaq",
+        "Sevgi"
+      ]
+    },
+    {
+      "id": 1708,
+      "metn": "Göz gördüyündən qorxar.",
+      "izah": "İnsan gördüyü təhlükədən qorxur.",
+      "movzular": [
+        "İgidlik"
+      ]
+    },
+    {
+      "id": 1709,
+      "metn": "Göz görməsə könül sevməz.",
+      "izah": "Tanımadan sevmək olmaz.",
+      "movzular": [
+        "Sevgi"
+      ]
+    },
+    {
+      "id": 1710,
+      "metn": "Göz qənimini tanıyar.",
+      "izah": "İnsan düşmənini tez tanıyır.",
+      "movzular": [
+        "Dostluq"
+      ]
+    },
+    {
+      "id": 1711,
+      "metn": "Göz namərddir; qorxudar.",
+      "izah": "İnsan uzaqdan baxanda iş çətin görünür, amma başlayanda asan olur.",
+      "movzular": [
+        "Əxlaq",
+        "İgidlik"
+      ]
+    },
+    {
+      "id": 1712,
+      "metn": "Göz yaşı da borcdandı.",
+      "izah": "Göz yaşı da bir növ borcun ödənməsidir.",
+      "movzular": [
+        "Bərəkət",
+        "Var-dövlət"
+      ]
+    },
+    {
+      "id": 1713,
+      "metn": "Gözdə olmayan göyüldə də olmaz.",
+      "izah": "Görmədiyin şeyi sevə bilməzsən.",
+      "movzular": [
+        "Sevgi"
+      ]
+    },
+    {
+      "id": 1714,
+      "metn": "Gözdən uzaq olan könüldən də uzaq olar.",
+      "izah": "Uzaqlaşan adam unudulur.",
+      "movzular": [
+        "Sevgi"
+      ]
+    },
+    {
+      "id": 1715,
+      "metn": "Gözə gəlməyən gəlinin salamı savaşdır.",
+      "izah": "Bəyənilməyən adamın yaxşılığı da pis görünür.",
+      "movzular": [
+        "Ailə"
+      ]
+    },
+    {
+      "id": 1716,
+      "metn": "Gözlərin aydın olsun, pişiyimiz oğlan doğub!",
+      "izah": "Mənasız, əhəmiyyətsiz xəbərlə sevinməyə dəyməz.",
+      "movzular": [
+        "Ailə"
+      ]
+    },
+    {
+      "id": 1717,
+      "metn": "Gözü ancaq torpaq doyurar.",
+      "izah": "Tamahkarın gözü yalnız ölümlə doyur.",
+      "movzular": [
+        "Tamah"
+      ]
+    },
+    {
+      "id": 1718,
+      "metn": "Gözü tox olanın könlü də tox olar.",
+      "izah": "Gözü tox olanın ürəyi də rahatdır.",
+      "movzular": [
+        "Bərəkət"
+      ]
+    },
+    {
+      "id": 1719,
+      "metn": "Gözün alışmadığı işə girişmə.",
+      "izah": "Təcrübən olmayan işə başlama.",
+      "movzular": [
+        "İş"
+      ]
+    },
+    {
+      "id": 1720,
+      "metn": "Gözünün yaşına baxaq, ya əlinin daşına?!",
+      "izah": "Onun ağlamasına inanaq, yoxsa pis əməlinə baxaq?",
+      "movzular": [
+        "Dərd və səbr"
+      ]
+    },
+    {
+      "id": 1721,
+      "metn": "Gözəl ağa çox gözəl idi, vurdu çiçək də çıxartdı.",
+      "izah": "Hər şeyi düz idi, bir nöqsanı da üzə çıxdı.",
+      "movzular": [
+        "Sevgi"
+      ]
+    },
+    {
+      "id": 1722,
+      "metn": "Gözəl aşı tez bişər.",
+      "izah": "Yaxşı iş tez nəticə verir.",
+      "movzular": [
+        "Sevgi"
+      ]
+    },
+    {
+      "id": 1723,
+      "metn": "Gözəl bürünər, çirkin görünər.",
+      "izah": "Gözəl nə geyinsə yaraşır, çirkin isə hər şeydə üzə çıxır.",
+      "movzular": [
+        "Sevgi"
+      ]
+    },
+    {
+      "id": 1724,
+      "metn": "Gözəl göz üçün, ağıllı könül üçün.",
+      "izah": "Gözəllik gözü, ağıl isə qəlbi oxşayır.",
+      "movzular": [
+        "Ağıl",
+        "Sevgi"
+      ]
+    },
+    {
+      "id": 1725,
+      "metn": "Gözəl kamallı gərək.",
+      "izah": "Gözəllik ağılla birlikdə olmalıdır.",
+      "movzular": [
+        "Ağıl",
+        "Sevgi"
+      ]
+    },
+    {
+      "id": 1726,
+      "metn": "Gözəl nazlı gərək.",
+      "izah": "Gözələ naz yaraşır.",
+      "movzular": [
+        "Sevgi"
+      ]
+    },
+    {
+      "id": 1727,
+      "metn": "Gözəl — gözəl deyil, könül sevən gözəldi.",
+      "izah": "Sevilən adam həmişə gözəl görünür.",
+      "movzular": [
+        "Sevgi"
+      ]
+    },
+    {
+      "id": 1728,
+      "metn": "Gözəl sevməyə tövbə olmaz.",
+      "izah": "Gözəlliyə heyran olmaq təbiidir.",
+      "movzular": [
+        "Əxlaq",
+        "Sevgi"
+      ]
+    },
+    {
+      "id": 1729,
+      "metn": "Gözələ baxmaq göz qaydasıdır.",
+      "izah": "Gözəl şeyə baxmaq insanın təbiətindədir.",
+      "movzular": [
+        "Sevgi"
+      ]
+    },
+    {
+      "id": 1730,
+      "metn": "Gözələ göz dəyər, qəlbə söz.",
+      "izah": "Gözəlliyə göz dəyər, ürəyə isə acı söz təsir edər.",
+      "movzular": [
+        "Ağıl",
+        "Sevgi"
+      ]
+    },
+    {
+      "id": 1731,
+      "metn": "Gözəllərdə vəfa olmaz.",
+      "izah": "Gözəlliyinə güvənən adam çox vaxt sədaqətli olmur.",
+      "movzular": [
+        "Əxlaq",
+        "Sevgi"
+      ]
+    },
+    {
+      "id": 1732,
+      "metn": "Gözəllik qarın doyurmaz.",
+      "izah": "Yalnız gözəlliklə həyat keçmir.",
+      "movzular": [
+        "Sevgi"
+      ]
+    },
+    {
+      "id": 1733,
+      "metn": "Gözəllik ondur, doqquzu dondur.",
+      "izah": "Gözəlliyin çoxu geyimdədir.",
+      "movzular": [
+        "Sevgi"
+      ]
+    },
+    {
+      "id": 1734,
+      "metn": "Gözləmədiyim daş, yardı baş.",
+      "izah": "Gözləmədiyim yerdən bəla gəldi.",
+      "movzular": [
+        "Dərd və səbr"
+      ]
+    },
+    {
+      "id": 1735,
+      "metn": "Guşə daşı yerdə qalmaz.",
+      "izah": "Dəyərli adam heç vaxt kənarda qalmır.",
+      "movzular": [
+        "Əxlaq"
+      ]
+    },
+    {
+      "id": 1736,
+      "metn": "Güc birlikdədir.",
+      "izah": "Birləşən insanlar təkbaşına olandan güclü olurlar.",
+      "movzular": [
+        "Ortaqlıq",
+        "El"
+      ]
+    },
+    {
+      "id": 1737,
+      "metn": "Gücü çatana donuz güddürür.",
+      "izah": "Güclü olan zəifi ağır işlərə məcbur edir.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 1738,
+      "metn": "Gücünə bax, şələni bağla.",
+      "izah": "Gücünə uyğun iş gör.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 1739,
+      "metn": "Gül istəyən! Tikanı da istəmək gərək.",
+      "izah": "Gözəl şeyin əziyyətinə də hazır olmaq lazımdır.",
+      "movzular": [
+        "Sevgi"
+      ]
+    },
+    {
+      "id": 1740,
+      "metn": "Gül tikansız olmaz.",
+      "izah": "Hər gözəlliyin bir çətinliyi də var.",
+      "movzular": [
+        "Sevgi"
+      ]
+    },
+    {
+      "id": 1741,
+      "metn": "Gülün qədrin bülbül bilir.",
+      "izah": "Dəyərli şeyin qədrini onu sevən bilir.",
+      "movzular": [
+        "Sevgi"
+      ]
+    },
+    {
+      "id": 1742,
+      "metn": "Gülünə bax, qönçəsini dər.",
+      "izah": "Bir şeyin gələcəyini indiki halına baxıb təyin et.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 1743,
+      "metn": "Gülmə gülünc olana, özün gülünc olarsan.",
+      "izah": "Başqasına gülsən, sənə də gülərlər.",
+      "movzular": [
+        "Əxlaq"
+      ]
+    },
+    {
+      "id": 1744,
+      "metn": "Gülmə qonşuna, gələr başına.",
+      "izah": "Qonşunun başına gələnə gülmə, sənin də başına gələ bilər.",
+      "movzular": [
+        "El"
+      ]
+    },
+    {
+      "id": 1745,
+      "metn": "Gün çıxar, aləm görər.",
+      "izah": "Həqiqət üzə çıxanda hamı görəcək.",
+      "movzular": [
+        "Haqq və ədalət"
+      ]
+    },
+    {
+      "id": 1746,
+      "metn": "Gün doğuşundan bəllidir.",
+      "izah": "Bir işin necə olacağı başlanğıcından bilinir.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 1747,
+      "metn": "Gün keçər ömür gedər; dəli sevinər ki, bayram gəlir.",
+      "izah": "Ömür keçir, ağılsız isə buna sevinir.",
+      "movzular": [
+        "Adət-ənənə",
+        "Ağıl"
+      ]
+    },
+    {
+      "id": 1748,
+      "metn": "Gündə — gündə, bir gün səndə, bir gün məndə.",
+      "izah": "Bu gün sənin, sabah mənim günümdür.",
+      "movzular": [
+        "Dərd və səbr"
+      ]
+    },
+    {
+      "id": 1749,
+      "metn": "Gündüz getmədiyin yolu gecə getmə.",
+      "izah": "Bilmədiyin yolda risk etmə.",
+      "movzular": [
+        "Ağıl"
+      ]
+    },
+    {
+      "id": 1750,
+      "metn": "Günü xoş keçənə Tanrı da xoş baxar.",
+      "izah": "Xoşbəxt adama uğur da gəlir.",
+      "movzular": [
+        "Dərd və səbr"
+      ]
+    },
+    {
+      "id": 1751,
+      "metn": "Günah öləndə olar, öldürəndə yox.",
+      "izah": "Günahın cəzası zülm edənin üstündədir.",
+      "movzular": [
+        "Əxlaq",
+        "Haqq və ədalət"
+      ]
+    },
+    {
+      "id": 1752,
+      "metn": "Günbəz görür, elə bilir içində imamzada var.",
+      "izah": "Zahiri görünüşə baxıb daxilində dəyərli şey olduğunu düşünür.",
+      "movzular": [
+        "El"
+      ]
+    },
+    {
+      "id": 1753,
+      "metn": "Günü günüdən günü əsirgər.",
+      "izah": "Kündəşlər bir-birindən hər şeyi əsirgəyir.",
+      "movzular": [
+        "Ailə"
+      ]
+    },
+    {
+      "id": 1754,
+      "metn": "Günü gününün ölümün istər.",
+      "izah": "Kündəşlər bir-birinin pisliyini istəyir.",
+      "movzular": [
+        "Ailə"
+      ]
+    },
+    {
+      "id": 1755,
+      "metn": "Güvəc daşa toxunsa - vay güvəcin halına, Daş güvəcə toxunsa - vay güvəcin halına.",
+      "izah": "Zəif güclü ilə nə cür toqquşsa da, zərəri zəif çəkir.",
+      "movzular": [
+        "Bərəkət"
+      ]
+    },
+    {
+      "id": 1756,
+      "metn": "Güvəc görməyən qazan görəndə xorlar.",
+      "izah": "Az görmüş adam kiçik bir şeydən də təkəbbürlənir.",
+      "movzular": [
+        "Əxlaq"
+      ]
+    },
+    {
+      "id": 1757,
+      "metn": "Güvəcə verə-verə çıxır qazan bahası.",
+      "izah": "Kiçik xərclər yığılıb böyük məbləğ olur.",
+      "movzular": [
+        "Var-dövlət"
+      ]
+    },
+    {
+      "id": 1758,
+      "metn": "Güvəci ya sındır, ya dağdan yuvarlat.",
+      "izah": "Ya işi bitir, ya da tamam imtina et.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 1759,
+      "metn": "Güvəndiyim alçacıq dağlar, sizə də qar yağarmış?!",
+      "izah": "Ümid etdiyim adam da məni ruhdan saldı.",
+      "movzular": [
+        "Dostluq"
+      ]
+    },
+    {
+      "id": 1760,
+      "metn": "Güvənmə vara, düşərsən dara.",
+      "izah": "Var-dövlətə güvənən çətinliyə düşür.",
+      "movzular": [
+        "Var-dövlət"
+      ]
+    }
+  ]
+}

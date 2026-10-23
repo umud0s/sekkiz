@@ -1,0 +1,1312 @@
+{
+  "herf": "H",
+  "sozler": [
+    {
+      "id": 1761,
+      "metn": "Haca gedən gəldi, saca gedən gəlmədi.",
+      "izah": "Uzaq səfərə gedən qayıtdı, yaxında işə gedən isə gəlmədi.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 1762,
+      "metn": "Hacı saydığımızın xaçı qoltuğundan çıxdı.",
+      "izah": "Etibar etdiyimiz adamın əsl üzü sonradan üzə çıxdı.",
+      "movzular": [
+        "Əxlaq"
+      ]
+    },
+    {
+      "id": 1763,
+      "metn": "Hacılar Məkkəyə getdi — qapıları açıq qoyun, gəldilər — qapıları bağlayın.",
+      "izah": "Hər işin öz vaxtı və öz qaydası var.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 1764,
+      "metn": "Hacət dedik, höcət demədik.",
+      "izah": "Biz kömək istədik, mübahisə yox.",
+      "movzular": [
+        "Dostluq"
+      ]
+    },
+    {
+      "id": 1765,
+      "metn": "Haqdan keçmək olmaz.",
+      "izah": "Haqqı tapdalamaq olmaz.",
+      "movzular": [
+        "Əxlaq",
+        "Haqq və ədalət"
+      ]
+    },
+    {
+      "id": 1766,
+      "metn": "Haqq batil olmaz.",
+      "izah": "Haqq gec-tez öz yerini tapır.",
+      "movzular": [
+        "Əxlaq",
+        "Haqq və ədalət"
+      ]
+    },
+    {
+      "id": 1767,
+      "metn": "Haqq daşı ağır olar.",
+      "izah": "Haqq ağırdır, onun qarşısında durmaq çətindir.",
+      "movzular": [
+        "Əxlaq",
+        "Haqq və ədalət"
+      ]
+    },
+    {
+      "id": 1768,
+      "metn": "Haqq doğrunun yarıdır.",
+      "izah": "Ədalət həqiqətin yarısıdır.",
+      "movzular": [
+        "Əxlaq",
+        "Haqq və ədalət"
+      ]
+    },
+    {
+      "id": 1769,
+      "metn": "Haqq əli bekar qalmaz; gec kəsər, karlı kəsər.",
+      "izah": "İlahi ədalət gec də olsa, mütləq yerini tapır.",
+      "movzular": [
+        "Əxlaq",
+        "Haqq və ədalət"
+      ]
+    },
+    {
+      "id": 1770,
+      "metn": "Haqq gəlsin, nahaqq gəlməsin.",
+      "izah": "Ədalətli olan gəlsin, ədalətsiz gəlməsin.",
+      "movzular": [
+        "Əxlaq",
+        "Haqq və ədalət"
+      ]
+    },
+    {
+      "id": 1771,
+      "metn": "Haqq haqqı kəssə, Allah hər ikisini kəsər.",
+      "izah": "Haqlı iki tərəf bir-birinə zərər vursa, hər ikisi cəzalanar.",
+      "movzular": [
+        "Əxlaq",
+        "Haqq və ədalət"
+      ]
+    },
+    {
+      "id": 1772,
+      "metn": "Haqq iş gündən aydın olar.",
+      "izah": "Haqlı iş gün kimi aydındır.",
+      "movzular": [
+        "İş",
+        "Haqq və ədalət"
+      ]
+    },
+    {
+      "id": 1773,
+      "metn": "Haqq işin nahaqqından qorxuram.",
+      "izah": "Haqlı olduğum işdə ədalətsizlikdən qorxuram.",
+      "movzular": [
+        "Əxlaq",
+        "Haqq və ədalət"
+      ]
+    },
+    {
+      "id": 1774,
+      "metn": "Haqq nazilər, üzülməz.",
+      "izah": "Haqq zəifləsə də, yox olmur.",
+      "movzular": [
+        "Əxlaq",
+        "Haqq və ədalət"
+      ]
+    },
+    {
+      "id": 1775,
+      "metn": "Haqq söz acı olar.",
+      "izah": "Həqiqəti eşitmək çox vaxt xoşagəlməz olur.",
+      "movzular": [
+        "Ağıl",
+        "Dil və söz"
+      ]
+    },
+    {
+      "id": 1776,
+      "metn": "Haqq söz axar suları saxlar.",
+      "izah": "Düzgün söz ən böyük qarşıdurmanın da qarşısını alır.",
+      "movzular": [
+        "Ağıl",
+        "Haqq və ədalət"
+      ]
+    },
+    {
+      "id": 1777,
+      "metn": "Haqq söz danışanın papağı yırtıq olar.",
+      "izah": "Həqiqəti deyən adam çox vaxt ziyan görür.",
+      "movzular": [
+        "Ağıl",
+        "Dil və söz"
+      ]
+    },
+    {
+      "id": 1778,
+      "metn": "Haqq sözdən gül iyi gələr.",
+      "izah": "Düzgün söz insana xoş təsir bağışlayır.",
+      "movzular": [
+        "Ağıl",
+        "Haqq və ədalət"
+      ]
+    },
+    {
+      "id": 1779,
+      "metn": "Haqq sözlə axan sular durular.",
+      "izah": "Düzgün söz ən qarışıq işi də aydınlaşdırır.",
+      "movzular": [
+        "Ağıl",
+        "Haqq və ədalət"
+      ]
+    },
+    {
+      "id": 1780,
+      "metn": "Haqq yandıran çırağı söndürmək olmaz.",
+      "izah": "Haqqın yolunu heç kim bağlaya bilməz.",
+      "movzular": [
+        "Əxlaq",
+        "Haqq və ədalət"
+      ]
+    },
+    {
+      "id": 1781,
+      "metn": "Haqq yeyənin adın qoyarlar Haqverdi.",
+      "izah": "Başqasının haqqını yeyən adama haqlı kimi baxırlar.",
+      "movzular": [
+        "Əxlaq",
+        "Haqq və ədalət"
+      ]
+    },
+    {
+      "id": 1782,
+      "metn": "Haqq yıxılan mərd ölər.",
+      "izah": "Haqqı müdafiə edən mərd adam həlak olur.",
+      "movzular": [
+        "Əxlaq",
+        "Haqq və ədalət"
+      ]
+    },
+    {
+      "id": 1783,
+      "metn": "Haqq yiyəsinə yad olmaz.",
+      "izah": "Haqq öz sahibini tapır.",
+      "movzular": [
+        "Əxlaq",
+        "Haqq və ədalət"
+      ]
+    },
+    {
+      "id": 1784,
+      "metn": "Haqqı tanıyan xana baş əyməz.",
+      "izah": "Həqiqəti tanıyan adam zalım qarşısında baş əymir.",
+      "movzular": [
+        "Əxlaq",
+        "Haqq və ədalət"
+      ]
+    },
+    {
+      "id": 1785,
+      "metn": "Haqqın əli olsun, batilin yaxası.",
+      "izah": "Ədalət qalib gəlsin, ədalətsizlik məğlub olsun.",
+      "movzular": [
+        "Əxlaq",
+        "Haqq və ədalət"
+      ]
+    },
+    {
+      "id": 1786,
+      "metn": "Haqqın verdiyinə şükür eləmək nemət artırır.",
+      "izah": "Taleyin verdiyinə şükür etmək bərəkəti artırır.",
+      "movzular": [
+        "Əxlaq",
+        "Haqq və ədalət"
+      ]
+    },
+    {
+      "id": 1787,
+      "metn": "Haqlı var haqsız çıxar, haqsız var haqlı çıxar.",
+      "izah": "Bəzən haqlı haqsız, haqsız isə haqlı çıxır.",
+      "movzular": [
+        "Əxlaq",
+        "Haqq və ədalət"
+      ]
+    },
+    {
+      "id": 1788,
+      "metn": "Halın bilmədiyin atın dalına keçmə.",
+      "izah": "Tanımadığın adama arxalanma.",
+      "movzular": [
+        "Ağıl"
+      ]
+    },
+    {
+      "id": 1789,
+      "metn": "Halal incələr, ancaq üzülməz.",
+      "izah": "Halal qazanc azala bilər, amma tükənmir.",
+      "movzular": [
+        "Əxlaq",
+        "Haqq və ədalət"
+      ]
+    },
+    {
+      "id": 1790,
+      "metn": "Halal mal heç yerə getməz.",
+      "izah": "Halal qazanc heç vaxt itmir.",
+      "movzular": [
+        "Əxlaq",
+        "Haqq və ədalət"
+      ]
+    },
+    {
+      "id": 1791,
+      "metn": "Halalzada barışdırdı, haramzada qarışdırdı.",
+      "izah": "Yaxşı adam barışdırır, pis adam ara qarışdırır.",
+      "movzular": [
+        "Əxlaq",
+        "Haqq və ədalət"
+      ]
+    },
+    {
+      "id": 1792,
+      "metn": "Halva-halva deməklə ağız şirin olmaz, yağinən balı gərək olsun.",
+      "izah": "Söz deməklə iş görülmür, gərək imkanın da olsun.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 1793,
+      "metn": "Halvaçı qızı — daha şirin.",
+      "izah": "Övlad valideyninin sənətindən, imkanından daha çox yararlanır.",
+      "movzular": [
+        "Ailə"
+      ]
+    },
+    {
+      "id": 1794,
+      "metn": "Hamam suyuynan xətir-göyül görür.",
+      "izah": "Başqasının malı ilə səxavət göstərir.",
+      "movzular": [
+        "Var-dövlət",
+        "Sevgi"
+      ]
+    },
+    {
+      "id": 1795,
+      "metn": "Hamı bilir, dağda kəklik gözəldir.",
+      "izah": "Hamının bildiyi həqiqəti təkrarlamağa ehtiyac yoxdur.",
+      "movzular": [
+        "Sevgi"
+      ]
+    },
+    {
+      "id": 1796,
+      "metn": "Hamı deyir, mədrəbazın gözü çıxsın — bilmirəm mədrəbaz kimdi.",
+      "izah": "Hamı pis adamı qınayır, amma o adamın özünə aid olduğunu anlamır.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 1797,
+      "metn": "Hamını yarın dərdi öldürür, bunu da qarın dərdi.",
+      "izah": "Hər kəsin öz dərdi var, kiminin sevgi, kiminin çörək dərdi.",
+      "movzular": [
+        "Dərd və səbr",
+        "Sevgi"
+      ]
+    },
+    {
+      "id": 1798,
+      "metn": "Hamının ağlı bir olsa, keçiyə çoban tapılmaz.",
+      "izah": "İnsanlar fərqli düşünməsə, hər işə adam tapılmaz.",
+      "movzular": [
+        "Ağıl"
+      ]
+    },
+    {
+      "id": 1799,
+      "metn": "Hamıya adət oldu, bizə bidət?!",
+      "izah": "Başqalarına icazə verilən bizə qadağandır?",
+      "movzular": [
+        "Adət-ənənə"
+      ]
+    },
+    {
+      "id": 1800,
+      "metn": "Hancarı eləyim ki, gözüm oğru gözünə oxşamasın?",
+      "izah": "Şübhə altında olan adam özünü necə təmizə çıxarsın?",
+      "movzular": [
+        "Əxlaq",
+        "Haqq və ədalət"
+      ]
+    },
+    {
+      "id": 1801,
+      "metn": "Haralısan? — Hələ evlənməmişəm.",
+      "izah": "Sualı başa düşmədən cavab verir.",
+      "movzular": [
+        "Ailə"
+      ]
+    },
+    {
+      "id": 1802,
+      "metn": "Harda aşdır, orda başdır.",
+      "izah": "Haradan mənfəət gəlirsə, adam ora gedir.",
+      "movzular": [
+        "Tamah"
+      ]
+    },
+    {
+      "id": 1803,
+      "metn": "Harda gördün hamı kor, sən də ol kor.",
+      "izah": "Olduğun mühitə uyğun davran.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 1804,
+      "metn": "Hardan incəlsə ordan üzülər.",
+      "izah": "Problem ən zəif yerdən başlayır.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 1805,
+      "metn": "Haram gəldi halalı da apardı.",
+      "izah": "Haram qazanc halal qazancı da aparır.",
+      "movzular": [
+        "Əxlaq",
+        "Haqq və ədalət"
+      ]
+    },
+    {
+      "id": 1806,
+      "metn": "Haram gələn harama gedər.",
+      "izah": "Haram yolla gələn var-dövlət haram yolla da gedir.",
+      "movzular": [
+        "Əxlaq",
+        "Haqq və ədalət"
+      ]
+    },
+    {
+      "id": 1807,
+      "metn": "Haram mal bərəkət tutmaz.",
+      "izah": "Haram yolla qazanılan var-dövlət bərəkət gətirmir.",
+      "movzular": [
+        "Bərəkət",
+        "Var-dövlət"
+      ]
+    },
+    {
+      "id": 1808,
+      "metn": "Haram şirin (dadlı) olur.",
+      "izah": "Qadağan olunmuş şey həmişə cazibədar görünür.",
+      "movzular": [
+        "Əxlaq",
+        "Haqq və ədalət"
+      ]
+    },
+    {
+      "id": 1809,
+      "metn": "Harama ağzuvı bulaşdırdın, kəşkülüvü doldur götür.",
+      "izah": "Haram işə bir dəfə qarışdınsa, artıq geri dönüş yoxdur.",
+      "movzular": [
+        "Əxlaq",
+        "Haqq və ədalət"
+      ]
+    },
+    {
+      "id": 1810,
+      "metn": "Haramın binası olmaz.",
+      "izah": "Haram qazancın əsası olmur, uzun sürmür.",
+      "movzular": [
+        "Əxlaq",
+        "Haqq və ədalət"
+      ]
+    },
+    {
+      "id": 1811,
+      "metn": "Havar sənin evində, davar sənin evində, Daş vurursan toz qopur, nə var sənin evində?",
+      "izah": "Çox səs-küy salırsan, amma heç bir şeyin yoxdur.",
+      "movzular": [
+        "Ailə"
+      ]
+    },
+    {
+      "id": 1812,
+      "metn": "Hayqırmaq gücə baxar.",
+      "izah": "Səsini ucaltmaq da güc tələb edir.",
+      "movzular": [
+        "İgidlik"
+      ]
+    },
+    {
+      "id": 1813,
+      "metn": "Hayla gələn huyla gedər.",
+      "izah": "Asan qazanılan şey asan da itir.",
+      "movzular": [
+        "Var-dövlət"
+      ]
+    },
+    {
+      "id": 1814,
+      "metn": "Hazır yeməyə dağlar dayanmaz.",
+      "izah": "Hazır var-dövlət xərcləndikcə tükənir.",
+      "movzular": [
+        "Var-dövlət"
+      ]
+    },
+    {
+      "id": 1815,
+      "metn": "Heç bilmir harda bişib, deyir: mənə də bir çömçə!",
+      "izah": "İşdən xəbəri olmasa da, payını istəyir.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 1816,
+      "metn": "Heç igid kürəkdən yara götürməz.",
+      "izah": "İgid düşmənə arxa çevirmir, yarası həmişə qabaqdan olur.",
+      "movzular": [
+        "Dərd və səbr",
+        "İgidlik"
+      ]
+    },
+    {
+      "id": 1817,
+      "metn": "Heç igid yalqız olmasın.",
+      "izah": "Ən güclü adam da tək qalmasın.",
+      "movzular": [
+        "İgidlik"
+      ]
+    },
+    {
+      "id": 1818,
+      "metn": "Heç igidi yoxsul olmasın.",
+      "izah": "İgid adamın yoxsulluğu ona ağır gəlir.",
+      "movzular": [
+        "Var-dövlət",
+        "İgidlik"
+      ]
+    },
+    {
+      "id": 1819,
+      "metn": "Heç kəs öz ayranına turş deməz.",
+      "izah": "Heç kəs öz malını pisləmir.",
+      "movzular": [
+        "Əxlaq"
+      ]
+    },
+    {
+      "id": 1820,
+      "metn": "Heç kəs öz eybin bilməz.",
+      "izah": "İnsan öz nöqsanını görmür.",
+      "movzular": [
+        "Əxlaq"
+      ]
+    },
+    {
+      "id": 1821,
+      "metn": "Heç kəsin çırağı sabahacan yanmaz.",
+      "izah": "Heç kəsin uğuru əbədi deyil.",
+      "movzular": [
+        "Dərd və səbr"
+      ]
+    },
+    {
+      "id": 1822,
+      "metn": "Heç kəsin çörəyi heç kəsin qarnında qalmaz.",
+      "izah": "Edilən yaxşılığın əvəzi gec-tez qaytarılır.",
+      "movzular": [
+        "Əxlaq"
+      ]
+    },
+    {
+      "id": 1823,
+      "metn": "Heç kimin yarası göz qabağında olmasın.",
+      "izah": "Heç kimin dərdi aşkarda olmasın.",
+      "movzular": [
+        "Dərd və səbr"
+      ]
+    },
+    {
+      "id": 1824,
+      "metn": "Heç yatanın dalısınca oyaq olmasın.",
+      "izah": "Gecə yuxusuz qalan narahat adamın dərdi kimsəyə gəlməsin.",
+      "movzular": [
+        "Dərd və səbr"
+      ]
+    },
+    {
+      "id": 1825,
+      "metn": "Hesab var dinar ilə, bağış var xalvar ilə.",
+      "izah": "Haqq-hesab dəqiq aparılmalıdır, hədiyyə isə səxavətlə verilməlidir.",
+      "movzular": [
+        "Var-dövlət"
+      ]
+    },
+    {
+      "id": 1826,
+      "metn": "Heydər, Səfdərdi bizim pirimiz, hamınıza dovdu bizim birimiz.",
+      "izah": "Bizim güclü arxamız var, birimiz sizin hamınıza bəs edər.",
+      "movzular": [
+        "El"
+      ]
+    },
+    {
+      "id": 1827,
+      "metn": "Heyvanı budundan dağlarlar, insanı ürəyindən.",
+      "izah": "İnsana ən böyük yara ürəyinə vurulan yaradır.",
+      "movzular": [
+        "Dərd və səbr"
+      ]
+    },
+    {
+      "id": 1828,
+      "metn": "Həcdən gələn mən, Məkkədən xəbər verən sən?",
+      "izah": "Təcrübəsi olmayan təcrübəliyə ağıl öyrədir.",
+      "movzular": [
+        "Ağıl"
+      ]
+    },
+    {
+      "id": 1829,
+      "metn": "Hələ bala, ilansan, böyüsən şahmar olarsan.",
+      "izah": "Pis xasiyyətli uşaq böyüyəndə daha təhlükəli olur.",
+      "movzular": [
+        "Ailə"
+      ]
+    },
+    {
+      "id": 1830,
+      "metn": "Həllacın acığı ağ itdən gələr.",
+      "izah": "Kimin günahı varsa, zərər başqasına gəlir.",
+      "movzular": [
+        "Haqq və ədalət"
+      ]
+    },
+    {
+      "id": 1831,
+      "metn": "Həm dayımgilə gedirəm, həm daylağımı öyrədirəm.",
+      "izah": "Bir işlə məşğul olarkən başqa işə də fayda verirəm.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 1832,
+      "metn": "Həm ziyarət, həm ticarət.",
+      "izah": "Bir səfərlə iki iş görmək olar.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 1833,
+      "metn": "Həmi helədi, həmi kələdi, həmi kərtənkələdi.",
+      "izah": "Hamısı eyni dərəcədə pisdir.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 1834,
+      "metn": "Həmi ulaq, həmi sulaq.",
+      "izah": "Həm imkan var, həm də şərait.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 1835,
+      "metn": "Həmcinsin tanımayan ayağa düşər.",
+      "izah": "Öz tayını tanımayan adam hörmətdən düşür.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 1836,
+      "metn": "Həmən aşdı, həmən kasa.",
+      "izah": "Heç nə dəyişməyib, vəziyyət əvvəlki kimidir.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 1837,
+      "metn": "Həmin daş, həmin dibək.",
+      "izah": "Vəziyyət dəyişməyib, əvvəlki kimidir.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 1838,
+      "metn": "Həmişə gülən ağız ayrıq qalar.",
+      "izah": "Hər yerdə gülən adam ciddi qəbul edilmir.",
+      "movzular": [
+        "Əxlaq"
+      ]
+    },
+    {
+      "id": 1839,
+      "metn": "Həmişə sel kötük gətirməz.",
+      "izah": "Hər dəfə uğurlu fürsət gəlmir.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 1840,
+      "metn": "Həmişə şaban idi, bir gün də qoy ramazan olsun.",
+      "izah": "Həmişə çətinlik oldu, bir gün də rahatlıq olsun.",
+      "movzular": [
+        "Dərd və səbr"
+      ]
+    },
+    {
+      "id": 1841,
+      "metn": "Həmişə yol bostan kənarından düşməz.",
+      "izah": "Hər dəfə fürsət əlinə düşmür.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 1842,
+      "metn": "Hənək, hənək, axırı dəyənək.",
+      "izah": "Zarafatın sonu dava ilə qurtarır.",
+      "movzular": [
+        "Dostluq"
+      ]
+    },
+    {
+      "id": 1843,
+      "metn": "Hər adam özü üçün fikir elər.",
+      "izah": "Hər kəs öz mənfəətini düşünür.",
+      "movzular": [
+        "Tamah"
+      ]
+    },
+    {
+      "id": 1844,
+      "metn": "Hər ağac meyvəsi ilə tanınar.",
+      "izah": "İnsan əməlləri ilə tanınır.",
+      "movzular": [
+        "Əxlaq"
+      ]
+    },
+    {
+      "id": 1845,
+      "metn": "Hər ağıl bir olsa, keçiyə çoban tapılmaz.",
+      "izah": "İnsanlar fərqli düşünməsə, hər işə adam tapılmaz.",
+      "movzular": [
+        "Ağıl"
+      ]
+    },
+    {
+      "id": 1846,
+      "metn": "Hər ağlar gözlüyə aşiq deməzlər.",
+      "izah": "Ağlayan hər adam aşiq deyil.",
+      "movzular": [
+        "Dərd və səbr",
+        "Sevgi"
+      ]
+    },
+    {
+      "id": 1847,
+      "metn": "Hər aşığın bir dövranı olar.",
+      "izah": "Hər insanın öz dövrü, öz zamanı var.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 1848,
+      "metn": "Hər atılan daşın dalınca getməzlər.",
+      "izah": "Hər xırda hadisəyə əhəmiyyət verməzlər.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 1849,
+      "metn": "Hər daş baş yarmaz.",
+      "izah": "Hər təhdid real deyil.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 1850,
+      "metn": "Hər dərdin bir dərmanı var, tapanı gərək.",
+      "izah": "Hər dərdin çarəsi var, sadəcə onu tapmaq lazımdır.",
+      "movzular": [
+        "Dərd və səbr"
+      ]
+    },
+    {
+      "id": 1851,
+      "metn": "Hər enişin bir yoxuşu, hər yoxuşun bir enişi var.",
+      "izah": "Həyatda eniş də, yoxuş da olur.",
+      "movzular": [
+        "Əxlaq"
+      ]
+    },
+    {
+      "id": 1852,
+      "metn": "Hər gecənin bir gündüzü var.",
+      "izah": "Çətin vaxtın ardınca aydınlıq gəlir.",
+      "movzular": [
+        "Dərd və səbr"
+      ]
+    },
+    {
+      "id": 1853,
+      "metn": "Hər gəlhagəlin bir gethagedi var.",
+      "izah": "Asan gələn şey asan da gedir.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 1854,
+      "metn": "Hər gözəlin bir eybi olar.",
+      "izah": "Ən gözəl şeyin də bir nöqsanı olur.",
+      "movzular": [
+        "Sevgi"
+      ]
+    },
+    {
+      "id": 1855,
+      "metn": "Hər gün gələn hərgiz olı, bir gün gələn nərgiz olı.",
+      "izah": "Tez-tez gələn adi olur, seyrək gələn isə qiymətli.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 1856,
+      "metn": "Hər hikmətin başı imandı.",
+      "izah": "Hər müdrikliyin əsasında inanc durur.",
+      "movzular": [
+        "Əxlaq"
+      ]
+    },
+    {
+      "id": 1857,
+      "metn": "Hər hürənə daş atsan, daş üstə daş qalmaz.",
+      "izah": "Hər boş sözə cavab versən, vaxtın çatmaz.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 1858,
+      "metn": "Hər xoruz öz çöplüyündə eşələnər.",
+      "izah": "Hər kəs öz yerində güclüdür.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 1859,
+      "metn": "Hər iş öz ustadı əlində asandı.",
+      "izah": "İşin ustası üçün hər iş asandır.",
+      "movzular": [
+        "İş"
+      ]
+    },
+    {
+      "id": 1860,
+      "metn": "Hər kələk adam hər dölək iti aldadammaz.",
+      "izah": "Təcrübəli adamı aldatmaq çətindir.",
+      "movzular": [
+        "Ağıl"
+      ]
+    },
+    {
+      "id": 1861,
+      "metn": "Hər kənddən bir dəli, Kələxanıdan qabağuva gələni.",
+      "izah": "Hər yerdə bir ağılsız tapılar.",
+      "movzular": [
+        "Ağıl"
+      ]
+    },
+    {
+      "id": 1862,
+      "metn": "Hər kəs ocağın odun özünə sarı eşər.",
+      "izah": "Hər kəs öz mənfəətini düşünür.",
+      "movzular": [
+        "Tamah"
+      ]
+    },
+    {
+      "id": 1863,
+      "metn": "Hər kəs öz arşını ilə ölçər.",
+      "izah": "Hər kəs başqasını öz meyarı ilə ölçür.",
+      "movzular": [
+        "Əxlaq"
+      ]
+    },
+    {
+      "id": 1864,
+      "metn": "Hər kəs öz evinin nökəridi.",
+      "izah": "İnsan öz evində işləməyə borcludur.",
+      "movzular": [
+        "Ailə"
+      ]
+    },
+    {
+      "id": 1865,
+      "metn": "Hər kəs öz əkdiyin biçər.",
+      "izah": "Hər kəs öz əməlinin nəticəsini görür.",
+      "movzular": [
+        "İş"
+      ]
+    },
+    {
+      "id": 1866,
+      "metn": "Hər kəs öz ölüsünü oxşayar.",
+      "izah": "Hər kəs öz yaxınının dərdini çəkir.",
+      "movzular": [
+        "Dərd və səbr"
+      ]
+    },
+    {
+      "id": 1867,
+      "metn": "Hər kəsin bir dərdi var, dəyirmançının da su dərdi.",
+      "izah": "Hər kəsin öz dərdi var.",
+      "movzular": [
+        "Dərd və səbr"
+      ]
+    },
+    {
+      "id": 1868,
+      "metn": "Hər kəsin qarğası özünə bir qırğıdır.",
+      "izah": "Hər kəsin öz uşağı ona əzizdir.",
+      "movzular": [
+        "Ailə"
+      ]
+    },
+    {
+      "id": 1869,
+      "metn": "Hər kəsin ölüsü öz bacasına gələr.",
+      "izah": "Hər kəs öz dərdini öz ailəsində çəkir.",
+      "movzular": [
+        "Dərd və səbr"
+      ]
+    },
+    {
+      "id": 1870,
+      "metn": "Hər kəsin tüstüsü öz bacasından düz çıxar.",
+      "izah": "Hər kəs öz işini yaxşı bacarır.",
+      "movzular": [
+        "Haqq və ədalət"
+      ]
+    },
+    {
+      "id": 1871,
+      "metn": "Hər kimin bağı var, ürəyində dağı var.",
+      "izah": "Var-dövlətin sahibinin qayğısı da çox olur.",
+      "movzular": [
+        "Var-dövlət"
+      ]
+    },
+    {
+      "id": 1872,
+      "metn": "Hər kişi gücünə görə yük götürər.",
+      "izah": "Hər kəs gücü çatan qədər iş görür.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 1873,
+      "metn": "Hər kişinin arşınına görə bez verməzlər.",
+      "izah": "Hər kəsə istədiyi qədər vermirlər.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 1874,
+      "metn": "Hər qaranlığın bir aydınlığı var.",
+      "izah": "Hər çətinliyin sonunda bir xoş gün var.",
+      "movzular": [
+        "Dərd və səbr"
+      ]
+    },
+    {
+      "id": 1875,
+      "metn": "Hər quşa öz yuvası istidi.",
+      "izah": "Hər kəs üçün öz evi ən rahat yerdir.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 1876,
+      "metn": "Hər oxuyan Molla Pənah olmaz.",
+      "izah": "Hər oxuyan alim olmur.",
+      "movzular": [
+        "Təhsil"
+      ]
+    },
+    {
+      "id": 1877,
+      "metn": "Hər saatın bir hökmü var.",
+      "izah": "Hər vaxtın öz tələbi var.",
+      "movzular": [
+        "Haqq və ədalət"
+      ]
+    },
+    {
+      "id": 1878,
+      "metn": "Hər saqqaldan bir tük çəksən, kosaya da bir saqqal olar.",
+      "izah": "Hər kəsdən bir az kömək olsa, ehtiyacı olanın problemi həll olunar.",
+      "movzular": [
+        "Ortaqlıq"
+      ]
+    },
+    {
+      "id": 1879,
+      "metn": "Hər səbrin axırı var.",
+      "izah": "Hər səbrin bir həddi var.",
+      "movzular": [
+        "Dərd və səbr"
+      ]
+    },
+    {
+      "id": 1880,
+      "metn": "Hər sözün bir məqamı (yeri) var.",
+      "izah": "Hər sözün deyilməsinin öz vaxtı və yeri var.",
+      "movzular": [
+        "Ağıl",
+        "Dil və söz"
+      ]
+    },
+    {
+      "id": 1881,
+      "metn": "Hər su keçid verməz.",
+      "izah": "Hər çətinliyi keçmək mümkün deyil.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 1882,
+      "metn": "Hər sürüdən qurdun öz payı olar.",
+      "izah": "Hər işdə itki də olur.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 1883,
+      "metn": "Hər şey nazikliyindən sınar, insan yoğunluğundan.",
+      "izah": "Hər şey zəif yerindən qırılır, insanı isə təkəbbür yıxır.",
+      "movzular": [
+        "Əxlaq"
+      ]
+    },
+    {
+      "id": 1884,
+      "metn": "Hər şey öz əslinə çəkər.",
+      "izah": "Hər şey kökünə çəkir.",
+      "movzular": [
+        "Ailə"
+      ]
+    },
+    {
+      "id": 1885,
+      "metn": "Hər şey öz vaxtında bitər.",
+      "izah": "Hər işin vaxtı var.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 1886,
+      "metn": "Hər şey vaxta baxar, vaxt bir şeyə baxmaz.",
+      "izah": "Hər iş öz vaxtından asılıdır, vaxt isə heç nəyi gözləmir.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 1887,
+      "metn": "Hər şeyə nəzər dəyər, ağıldan başqa.",
+      "izah": "Hər şeyə göz dəyər, ağıl isə toxunulmaz qalır.",
+      "movzular": [
+        "Ağıl"
+      ]
+    },
+    {
+      "id": 1888,
+      "metn": "Hər şeyi vaxtında əksən, dürr bitər.",
+      "izah": "Vaxtında görülən iş böyük nəticə verir.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 1889,
+      "metn": "Hər şeyin erkəyi keçər, sözün — dişisi.",
+      "izah": "Bəzi işlər unudulur, amma kəskin söz unudulmur.",
+      "movzular": [
+        "Ağıl",
+        "Dil və söz"
+      ]
+    },
+    {
+      "id": 1890,
+      "metn": "Hər şeyin təzəsi, dostun köhnəsi.",
+      "izah": "Hər şeyin təzəsi, dostun isə köhnəsi yaxşıdır.",
+      "movzular": [
+        "Dostluq"
+      ]
+    },
+    {
+      "id": 1891,
+      "metn": "Hər uzanan ələ halva verməzlər.",
+      "izah": "Hər istəyənə hər şey verilməz.",
+      "movzular": [
+        "Əxlaq"
+      ]
+    },
+    {
+      "id": 1892,
+      "metn": "Hər yana yaxın, paşa qapısından uzaq.",
+      "izah": "Hər kəslə yaxın ol, amma hakimiyyətdən uzaq dur.",
+      "movzular": [
+        "Ağıl"
+      ]
+    },
+    {
+      "id": 1893,
+      "metn": "Hər yerin dovşanını o yerin tazısı tutar.",
+      "izah": "Hər yerin işini o yerin adamı yaxşı bilir.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 1894,
+      "metn": "Hər zalımın bir günü var.",
+      "izah": "Hər zalımın sonu gələcək.",
+      "movzular": [
+        "Əxlaq",
+        "Haqq və ədalət"
+      ]
+    },
+    {
+      "id": 1895,
+      "metn": "Hər ziyanlıq adama bir ağıl öyrədir.",
+      "izah": "Hər itki insana bir dərs verir.",
+      "movzular": [
+        "Ağıl"
+      ]
+    },
+    {
+      "id": 1896,
+      "metn": "Hərbədən qorxma; it qorxusundan hürür.",
+      "izah": "Hədə-qorxu gələn adamdan qorxma, o özü qorxur.",
+      "movzular": [
+        "İgidlik"
+      ]
+    },
+    {
+      "id": 1897,
+      "metn": "Hərəkət səndən, bərəkət Allahdan.",
+      "izah": "Sən çalış, bərəkət özü gələcək.",
+      "movzular": [
+        "Bərəkət"
+      ]
+    },
+    {
+      "id": 1898,
+      "metn": "Həsiri oğurlayıb məscidə salır.",
+      "izah": "Oğurladığı malla xeyriyyəçilik edir.",
+      "movzular": [
+        "Haqq və ədalət"
+      ]
+    },
+    {
+      "id": 1899,
+      "metn": "Həya imandandı.",
+      "izah": "Həya inancın bir hissəsidir.",
+      "movzular": [
+        "Tərbiyə",
+        "Əxlaq"
+      ]
+    },
+    {
+      "id": 1900,
+      "metn": "Həya üzdə bir qətrə sudu.",
+      "izah": "Həya insanın ən dəyərli sifətidir, onu qorumaq lazımdır.",
+      "movzular": [
+        "Tərbiyə",
+        "Əxlaq"
+      ]
+    },
+    {
+      "id": 1901,
+      "metn": "Həyalı qızarar, həyasız ağarar.",
+      "izah": "Həyalı adam utanar, həyasız isə utanmaz.",
+      "movzular": [
+        "Tərbiyə",
+        "Əxlaq"
+      ]
+    },
+    {
+      "id": 1902,
+      "metn": "Həyası olmayanın imanı da olmaz.",
+      "izah": "Həyası olmayanın inancı da olmur.",
+      "movzular": [
+        "Tərbiyə",
+        "Əxlaq"
+      ]
+    },
+    {
+      "id": 1903,
+      "metn": "Həyasız atlını atdan salar.",
+      "izah": "Həyasız adam ən hörmətli adamı da hörmətdən salar.",
+      "movzular": [
+        "Tərbiyə",
+        "Əxlaq"
+      ]
+    },
+    {
+      "id": 1904,
+      "metn": "Həyasıza salam ver, keç!",
+      "izah": "Həyasız adamla mübahisəyə girmə.",
+      "movzular": [
+        "Tərbiyə",
+        "Əxlaq"
+      ]
+    },
+    {
+      "id": 1905,
+      "metn": "Həyasızda insaf olmaz, insafsızda həya.",
+      "izah": "Həyasızda insaf, insafsızda isə həya olmur.",
+      "movzular": [
+        "Tərbiyə",
+        "Əxlaq"
+      ]
+    },
+    {
+      "id": 1906,
+      "metn": "Hikmətdən sual yoxdu.",
+      "izah": "İlahi hikmətin səbəbini soruşmazlar.",
+      "movzular": [
+        "Əxlaq"
+      ]
+    },
+    {
+      "id": 1907,
+      "metn": "Hirs gələndə göz qızarar, hirs gedəndə üz.",
+      "izah": "Hirs gələndə insanın gözü qızarır, gedəndə isə peşmanlıqdan üzü.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 1908,
+      "metn": "Hirs ilə qalxan ziyan ilə oturar.",
+      "izah": "Qəzəblə görülən işin sonu zərərlə bitir.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 1909,
+      "metn": "Hiylə ilə tikilən ev bahana ilə yıxılar.",
+      "izah": "Hiylə ilə qurulan iş kiçik bir səbəbdən dağılır.",
+      "movzular": [
+        "Əxlaq",
+        "Ailə"
+      ]
+    },
+    {
+      "id": 1910,
+      "metn": "Hiyləgər dil xəncərdən qorxuludur.",
+      "izah": "Hiyləgər söz silahdan da təhlükəlidir.",
+      "movzular": [
+        "Ağıl",
+        "Dil və söz"
+      ]
+    },
+    {
+      "id": 1911,
+      "metn": "Hiyləgərin gözü yaşıl olar.",
+      "izah": "Hiyləgər adam tamahkar olur.",
+      "movzular": [
+        "Əxlaq"
+      ]
+    },
+    {
+      "id": 1912,
+      "metn": "Hoha var dağa mindirər, hoha var dağdan endirər.",
+      "izah": "Söz insanı həm yüksəldə, həm də aşağı sala bilər.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 1913,
+      "metn": "Holavar görmüşdüm, beləsin görməmişdim.",
+      "izah": "Belə pis vəziyyəti heç görməmişdim.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 1914,
+      "metn": "Hökmün qılıncı kəskin olur.",
+      "izah": "Hakimiyyətin gücü çox böyükdür.",
+      "movzular": [
+        "Haqq və ədalət",
+        "İgidlik"
+      ]
+    },
+    {
+      "id": 1915,
+      "metn": "Hürə bilməz, itləri başa salar.",
+      "izah": "Özü bacarmadığını başqalarına etdirir.",
+      "movzular": [
+        "Əxlaq"
+      ]
+    },
+    {
+      "id": 1916,
+      "metn": "Hürmək itə qalar, karvan yolun gedər.",
+      "izah": "Boş sözlərə fikir vermə, öz işini davam etdir.",
+      "movzular": [
+        "Nəsihət"
+      ]
+    },
+    {
+      "id": 1917,
+      "metn": "Hürüşün bilməyən it önünə qurd gətirər.",
+      "izah": "Bacarıqsız adam öz hərəkəti ilə bəla gətirir.",
+      "movzular": [
+        "Dərd və səbr"
+      ]
+    }
+  ]
+}

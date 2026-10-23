@@ -1,4 +1,6 @@
-import EVENTS from '../data/tarix-gun.js';
+// Hadisələr admin paneldən idarə olunur: hər hadisə src/data/cms/tarix/ qovluğunda ayrıca JSON faylıdır
+const FILES = import.meta.glob('../data/cms/tarix/*.json', { eager: true, import: 'default' });
+const EVENTS = Object.values(FILES).map((e) => [+e.ay, +e.gun, +e.il, e.nov, e.basliq, e.metn]);
 import { esc } from './search.js';
 
 export const MONTHS = ['yanvar', 'fevral', 'mart', 'aprel', 'may', 'iyun', 'iyul', 'avqust', 'sentyabr', 'oktyabr', 'noyabr', 'dekabr'];
