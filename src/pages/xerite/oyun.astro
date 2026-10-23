@@ -30,7 +30,8 @@ const total = G.u.length;
       </div>
       <div class="xo-stat"><span class="xo-k">Tapılıb</span><b><span id="cnt">0</span> / {total}</b></div>
       <div class="xo-stat"><span class="xo-k">Vaxt</span><b id="clock">00:00</b></div>
-      <div class="xo-stat"><span class="xo-k">Rekord</span><b id="best">—</b></div>
+      <div class="xo-stat"><span class="xo-k">Ən çox tapılan</span><b id="maxf">—</b></div>
+      <div class="xo-stat"><span class="xo-k">Ən yaxşı vaxt</span><b id="best">—</b></div>
       <button type="button" class="xo-snd" id="snd" aria-pressed="true" aria-label="Səs">
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9h4l5-4v14l-5-4H4z" fill="currentColor" /><path class="w" d="M16.5 8.5a5 5 0 0 1 0 7M19 6a8.5 8.5 0 0 1 0 12" /><path class="x" d="M16 9l6 6M22 9l-6 6" /></svg>
       </button>
@@ -246,7 +247,7 @@ const total = G.u.length;
   // Hər ərazi üçün yaxın qonşular: səhv variantlar onların arasından seçilir
   const NEAR = U.map((u, i) => U.map((v, j) => [j, (u[3] - v[3]) ** 2 + (u[4] - v[4]) ** 2]).filter((x) => x[0] !== i).sort((a, b) => a[1] - b[1]).slice(0, 9).map((x) => x[0]));
 
-  let done, lives, t0, tick, playing, sel, hoverI = null, leaveT = 0, order, pieces, scene, revealed, fresh = false;
+  let done, lives, t0, tick, playing, sel, hoverI = null, leaveT = 0, order, pieces, scene, revealed, fresh = false, startMax = 0;
 
   // Hover: ərazi öz sərhədləri ilə kart kimi qalxır
   function liftOn(i) {
@@ -322,6 +323,8 @@ const total = G.u.length;
     });
     paths[i].setAttribute('aria-label', U[i][0]);
     $('cnt').textContent = done.size;
+    // Xəritə tamamlanmasa da, ən çox tapılan ərazi sayı rekord kimi saxlanır
+    if (done.size > (+store.get('sk-xo-max') || 0)) { store.set('sk-xo-max', String(done.size)); showMax(); }
     reveal();
     if (done.size === N) finish(true);
   }
@@ -420,10 +423,11 @@ const total = G.u.length;
   }
 
   // Oyunun gedişi
+  function showMax() { const m = +store.get('sk-xo-max') || 0; $('maxf').textContent = m ? `${m} / ${N}` : '—'; return m; }
   function showBest() { const b = +store.get('sk-xo-best'); $('best').textContent = b ? clock(b) : '—'; return b; }
   function overlay(html, win) { msg.innerHTML = html; over.hidden = false; over.classList.toggle('win', !!win); const b = msg.querySelector('button'); b && b.addEventListener('click', start); }
   function intro() {
-    const best = showBest();
+    const best = showBest(), mx = showMax();
     overlay(`<h2>Xəritəni tamamlayaq</h2>
       <ul class="xo-rules">
         <li><i style="background:#D3D9DF"></i>Boz ərazini seçin, dörd addan doğrusunu tapın.</li>
@@ -431,13 +435,14 @@ const total = G.u.length;
         <li><svg width="16" height="16" aria-hidden="true"><use href="#nar"/></svg>Beş narınız var. Hər səhv bir nar aparır.</li>
         <li><svg viewBox="0 0 24 24" fill="none" stroke="#0A6E99" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9.5"/><path d="M12 7v5l3 2"/></svg>Saat işləyir: xəritəni nə qədər tez tamamlasanız, bir o qədər yaxşıdır.</li>
       </ul>
-      ${best ? `<p>Sizin rekordunuz: <b>${clock(best)}</b></p>` : ''}
+      ${mx ? `<p>Ən çox tapdığınız: <b>${mx} ərazi</b>${best ? `, ən yaxşı vaxtınız: <b>${clock(best)}</b>` : ''}</p>` : ''}
       <button type="button" class="btn btn-p">Oyuna başla</button>`);
   }
   function start() {
     over.hidden = true;
     close();
     done = new Set(); lives = 5; playing = true;
+    startMax = +store.get('sk-xo-max') || 0;
     paths.forEach((p) => { p.classList.remove('ok', 'flash'); p.setAttribute('aria-label', 'Naməlum ərazi'); });
     Object.values(dots).forEach((d) => d.classList.remove('ok', 'flash'));
     document.querySelectorAll('.nar').forEach((n) => n.classList.remove('lost'));
@@ -473,7 +478,8 @@ const total = G.u.length;
     } else {
       sfx.lose();
       overlay(`<h2>Narlar tükəndi</h2>
-        <p>Bu dəfə ${done.size} ərazini düzgün tapdınız. Xəritəni yenidən başlayın, hər oyunda pazl da yenisi olacaq.</p>
+        <p>Bu dəfə ${done.size} ərazini düzgün tapdınız.</p>
+        ${done.size > 0 && done.size >= (+store.get('sk-xo-max') || 0) && done.size > startMax ? `<span class="rec">Yeni rekord: ${done.size} ərazi!</span>` : `<p>Rekordunuz: <b>${showMax()} ərazi</b>. Yenidən cəhd edin, hər oyunda pazl da yenisi olacaq.</p>`}
         <button type="button" class="btn btn-p">Yenidən başla</button>`);
     }
   }

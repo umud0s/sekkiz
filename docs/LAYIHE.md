@@ -142,6 +142,8 @@ Qaydalar:
 - Doğru cavab: yaşıl parıltı + təsdiq səsi, sonra ərazi bayraq rənginə boyanır. Zolaqlar mərkəz nöqtəsinin
   hündürlüyünə görə üç bərabər hissədir: şimal #00B5E2 (21), mərkəz #EF3340 (35), cənub #509E2F (18).
 - Səhv cavab bir nar aparır. 5 nar bitəndə oyun bitir.
+- Ən çox tapılan ərazi sayı (xəritə tamamlanmasa da) rekord kimi saxlanır: zolaqda "Ən çox tapılan N / 74", oyun bitəndə
+  "Yeni rekord" və ya "Rekordunuz" (localStorage sk-xo-max, 23.10.2026).
 - Saat oyuna başlayanda işə düşür. Ən yaxşı vaxt brauzerdə saxlanır (localStorage: sk-xo-best), "Rekord" kimi görünür.
 - 74 ərazi = 74 pazl parçası (10x8 tor, 6 cüt birləşdirilib, kəsiklər hər oyunda yenidən yaradılır).
   Şəkil hər oyunda dəyişir (8 şəkil növbə ilə, eyni şəkil ardıcıl gəlmir). Tamamlananda adı, yeri, qısa izahı çıxır.
