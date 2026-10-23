@@ -1,16 +1,16 @@
 ---
 import Base from '../../layouts/Base.astro';
 ---
-<Base title="Atalar sözləri quizi" description="Atalar sözünün gizlədilmiş əsas sözünü tap: qaydalar, xallar, fərdi statistika və reytinq.">
+<Base title="Atalar sözlərini nə qədər yaxşı bilirsən?" description="Sözü tap oyunu: atalar sözünün gizlədilmiş əsas sözünü tap: qaydalar, xallar, fərdi statistika və reytinq.">
   <div class="wrap section">
     <section class="stack">
-      <nav class="crumbs" aria-label="Yol"><a href="/">Ana səhifə</a> <span aria-hidden="true">/</span> <a href="/atalar-sozleri/">Atalar sözləri</a> <span aria-hidden="true">/</span> Quiz</nav>
-      <h1 class="page-title">Atalar sözləri quizi</h1>
-      <p class="lead">Atalar sözünün əsas sözü gizlədilib. Onu tap.</p>
+      <nav class="crumbs" aria-label="Yol"><a href="/">Ana səhifə</a> <span aria-hidden="true">/</span> <a href="/atalar-sozleri/">Atalar sözləri</a> <span aria-hidden="true">/</span> Sözü tap</nav>
+      <h1 class="page-title">Atalar sözlərini nə qədər yaxşı bilirsən?</h1>
+      <p class="lead">"Sözü tap" oyunu: atalar sözünün əsas sözü gizlədilib, onu tap.</p>
     </section>
 
     <div class="qz-tabs" role="tablist">
-      <button type="button" class="chip" data-tab="quiz" aria-pressed="true">Quiz</button>
+      <button type="button" class="chip" data-tab="quiz" aria-pressed="true">Sözü tap</button>
       <button type="button" class="chip" data-tab="stat" aria-pressed="false">Statistikam</button>
       <button type="button" class="chip" data-tab="reyt" aria-pressed="false">Reytinq</button>
     </div>
@@ -24,10 +24,10 @@ import Base from '../../layouts/Base.astro';
           <li>Səhv yazsan, sual dəyişmir: düzgün tapana qədər yenidən cəhd edə bilərsən.</li>
           <li>Bilmirsənsə, "Pas" düyməsini bas: düzgün cavab göstəriləcək və növbəti suala keçəcəksən.</li>
           <li>Xallar: ilk cəhddə tapsan <b>10</b>, sonrakı cəhdlərdə <b>5</b>, pas versən <b>0</b> xal.</li>
-          <li>İstədiyin vaxt "Quizi sonlandır" düyməsi ilə dayana və nəticəni görə bilərsən.</li>
+          <li>İstədiyin vaxt "Oyunu bitir" düyməsi ilə dayana və nəticəni görə bilərsən.</li>
         </ol>
         <p class="muted">Klaviaturanda ə, ş, ç kimi hərflər yoxdursa, narahat olma: "seher" yazsan da "səhər" kimi qəbul olunur.</p>
-        <button type="button" class="btn btn-p qz-big" id="start">Quizə başla</button>
+        <button type="button" class="btn btn-p qz-big" id="start">Oyuna başla</button>
       </div>
 
       <div class="card qz" id="play" hidden>
@@ -35,7 +35,7 @@ import Base from '../../layouts/Base.astro';
           <span class="qz-pill">Sual <b id="qn">1</b></span>
           <span class="qz-pill">Xal <b id="sc">0</b></span>
           <span class="qz-pill">Seriya <b id="st">0</b></span>
-          <button type="button" class="btn btn-s qz-end" id="end">Quizi sonlandır</button>
+          <button type="button" class="btn btn-s qz-end" id="end">Oyunu bitir</button>
         </div>
         <p class="qz-q" id="q"></p>
         <form class="qz-form" id="form" autocomplete="off">
@@ -48,9 +48,9 @@ import Base from '../../layouts/Base.astro';
       </div>
 
       <div class="card qz" id="done" hidden>
-        <h2>Quiz başa çatdı</h2>
+        <h2>Oyun başa çatdı</h2>
         <div class="qz-sum" id="sum"></div>
-        <button type="button" class="btn btn-p qz-big" id="again">Quizə yenidən başla</button>
+        <button type="button" class="btn btn-p qz-big" id="again">Yenidən oyna</button>
       </div>
     </section>
 
@@ -216,7 +216,7 @@ import Base from '../../layouts/Base.astro';
   function renderStats() {
     const s = stats(), tap = s.ilk + s.sonra, acc = s.sual ? Math.round((s.ilk / s.sual) * 100) : 0;
     $('stats').innerHTML = box(s.xal, 'ümumi xal') + box(s.oyun, 'oyun') + box(s.sual, 'cavablanan sual') + box(tap, 'tapılan söz') + box(s.ilk, 'ilk cəhddə tapılan') + box(s.pas, 'pas') + box(`${acc}%`, 'dəqiqlik (ilk cəhddə)') + box(s.enUzun, 'ən uzun seriya');
-    $('rt').innerHTML = s.sual ? `<tr class="me"><td>—</td><td>Sən (qonaq)</td><td>${s.xal}</td><td>${tap}</td><td>${acc}%</td></tr>` : '<tr><td colspan="5" class="muted">Hələ nəticən yoxdur. Quizi oyna, yerini burada gör.</td></tr>';
+    $('rt').innerHTML = s.sual ? `<tr class="me"><td>—</td><td>Sən (qonaq)</td><td>${s.xal}</td><td>${tap}</td><td>${acc}%</td></tr>` : '<tr><td colspan="5" class="muted">Hələ nəticən yoxdur. Oyunu oyna, yerini burada gör.</td></tr>';
   }
   $('reset').addEventListener('click', () => { if (confirm('Bütün statistika silinsin?')) { saveStats(blankStats()); renderStats(); } });
 

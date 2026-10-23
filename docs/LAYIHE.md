@@ -217,7 +217,8 @@ Mərhələ 2 (Fəxri xiyaban üçün): Cloudflare Workers + D1 + R2, TypeScript.
 - Mətnlər: src/data/xalca.js; təsvirlər: src/lib/xalca-art.js.
 - Gözləyən təkliflər: çay süfrəsi və qonaqpərvərlik, toy adətləri.
 
-## Atalar sözləri quizi (/atalar-sozleri/quiz/) — 23.10.2026
+## "Sözü tap" oyunu (/atalar-sozleri/sozu-tap/; köhnə /quiz/ ünvanı 301 ilə yönləndirilir)
+Başlıq: "Atalar sözlərini nə qədər yaxşı bilirsən?". "Quiz" sözü işlədilmir (istifadəçi istəyi): Oyuna başla / Oyunu bitir. — 23.10.2026
 Botdakı mexanika ilə: atalar sözünün əsas sözü gizlədilir (köməkçi sözlərdən başqa ən uzun söz, hərf sayı qədər xana).
 Doğru → təbrik, izah, növbəti sual; səhv → sual dəyişmir, yenidən cəhd; Pas → düzgün cavab elan olunur, növbəti sual.
 Qaydalar başlamazdan əvvəl göstərilir; "Quizə başla" və "Quizi sonlandır" (sonda sessiyanın nəticəsi).
