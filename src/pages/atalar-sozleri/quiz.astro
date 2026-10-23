@@ -1,0 +1,229 @@
+---
+import Base from '../../layouts/Base.astro';
+---
+<Base title="Atalar sözləri quizi" description="Atalar sözünün gizlədilmiş əsas sözünü tap: qaydalar, xallar, fərdi statistika və reytinq.">
+  <div class="wrap section">
+    <section class="stack">
+      <nav class="crumbs" aria-label="Yol"><a href="/">Ana səhifə</a> <span aria-hidden="true">/</span> <a href="/atalar-sozleri/">Atalar sözləri</a> <span aria-hidden="true">/</span> Quiz</nav>
+      <h1 class="page-title">Atalar sözləri quizi</h1>
+      <p class="lead">Atalar sözünün əsas sözü gizlədilib. Onu tap.</p>
+    </section>
+
+    <div class="qz-tabs" role="tablist">
+      <button type="button" class="chip" data-tab="quiz" aria-pressed="true">Quiz</button>
+      <button type="button" class="chip" data-tab="stat" aria-pressed="false">Statistikam</button>
+      <button type="button" class="chip" data-tab="reyt" aria-pressed="false">Reytinq</button>
+    </div>
+
+    <section id="t-quiz">
+      <div class="card qz" id="intro">
+        <h2>Qaydalar</h2>
+        <ol class="qz-rules">
+          <li>Ekranda atalar sözü görünəcək, onun əsas sözü gizlədilib. Xanaların sayı sözdəki hərflərin sayıdır.</li>
+          <li>Gizli sözü yaz və "Yoxla" düyməsini bas.</li>
+          <li>Səhv yazsan, sual dəyişmir: düzgün tapana qədər yenidən cəhd edə bilərsən.</li>
+          <li>Bilmirsənsə, "Pas" düyməsini bas: düzgün cavab göstəriləcək və növbəti suala keçəcəksən.</li>
+          <li>Xallar: ilk cəhddə tapsan <b>10</b>, sonrakı cəhdlərdə <b>5</b>, pas versən <b>0</b> xal.</li>
+          <li>İstədiyin vaxt "Quizi sonlandır" düyməsi ilə dayana və nəticəni görə bilərsən.</li>
+        </ol>
+        <p class="muted">Klaviaturanda ə, ş, ç kimi hərflər yoxdursa, narahat olma: "seher" yazsan da "səhər" kimi qəbul olunur.</p>
+        <button type="button" class="btn btn-p qz-big" id="start">Quizə başla</button>
+      </div>
+
+      <div class="card qz" id="play" hidden>
+        <div class="qz-top">
+          <span class="qz-pill">Sual <b id="qn">1</b></span>
+          <span class="qz-pill">Xal <b id="sc">0</b></span>
+          <span class="qz-pill">Seriya <b id="st">0</b></span>
+          <button type="button" class="btn btn-s qz-end" id="end">Quizi sonlandır</button>
+        </div>
+        <p class="qz-q" id="q"></p>
+        <form class="qz-form" id="form" autocomplete="off">
+          <label for="ans" class="sr-only">Gizli söz</label>
+          <input id="ans" type="text" autocapitalize="off" spellcheck="false" placeholder="Gizli sözü yaz" />
+          <button type="submit" class="btn btn-p">Yoxla</button>
+          <button type="button" class="btn btn-s" id="pas">Pas</button>
+        </form>
+        <div class="qz-fb" id="fb" aria-live="polite"></div>
+      </div>
+
+      <div class="card qz" id="done" hidden>
+        <h2>Quiz başa çatdı</h2>
+        <div class="qz-sum" id="sum"></div>
+        <button type="button" class="btn btn-p qz-big" id="again">Quizə yenidən başla</button>
+      </div>
+    </section>
+
+    <section id="t-stat" hidden>
+      <div class="qz-stats" id="stats"></div>
+      <p class="muted qz-note">Statistika hələlik bu brauzerdə saxlanılır. İstifadəçi adı bölməsi açılanda nəticələrin hesabına köçürüləcək.</p>
+      <button type="button" class="btn btn-s" id="reset">Statistikanı sıfırla</button>
+    </section>
+
+    <section id="t-reyt" hidden>
+      <div class="card qz">
+        <h2>Ümumi reytinq</h2>
+        <p class="muted">Reytinq bütün oyunçuların topladığı xallara görə qurulur. İstifadəçi adı bölməsi aktivləşəndə burada hamının nəticəsi görünəcək. Hələlik yalnız öz yerini görürsən.</p>
+        <table class="qz-tbl">
+          <thead><tr><th>Yer</th><th>Oyunçu</th><th>Xal</th><th>Tapılan</th><th>Dəqiqlik</th></tr></thead>
+          <tbody id="rt"></tbody>
+        </table>
+      </div>
+    </section>
+  </div>
+</Base>
+
+<style is:global>
+  .qz-tabs{display:flex;flex-wrap:wrap;gap:8px}
+  .qz{padding:28px 30px;display:flex;flex-direction:column;gap:16px}
+  .qz[hidden],#t-quiz[hidden],#t-stat[hidden],#t-reyt[hidden]{display:none}
+  .qz h2{margin:0;font-size:28px;font-weight:500}
+  .qz-rules{margin:0;padding-left:22px;display:flex;flex-direction:column;gap:8px;font-size:17px;line-height:1.5}
+  .qz .muted{margin:0;font-size:15px}
+  .qz-big{align-self:flex-start;min-height:54px;padding:0 30px;font-size:18px}
+  .qz-top{display:flex;flex-wrap:wrap;align-items:center;gap:8px}
+  .qz-pill{padding:8px 14px;border-radius:999px;background:#EEF5F9;font-size:15px}
+  .qz-pill b{font-size:17px;color:var(--accent)}
+  .qz-end{margin-left:auto;min-height:42px}
+  .qz-q{margin:6px 0;font-size:30px;line-height:1.45;font-weight:500}
+  .qz-gap{display:inline-flex;gap:3px;vertical-align:middle;margin:0 4px}
+  .qz-gap i{width:18px;height:30px;border-bottom:3px solid var(--accent);display:inline-block}
+  .qz-gap.ok{padding:0 8px;border-radius:10px;background:#E6F6EA;color:#2F7A1E;font-weight:600}
+  .qz-gap.pas{padding:0 8px;border-radius:10px;background:#FFF1CC;color:#7A5300;font-weight:600}
+  .qz-form{display:flex;flex-wrap:wrap;gap:10px}
+  .qz-form input{flex:1 1 220px;height:54px;padding:0 18px;border:1px solid #A9C2D3;border-radius:14px;font:inherit;font-size:19px}
+  .qz-form input.bad{border-color:#EF3340;animation:qz-shake .35s}
+  @keyframes qz-shake{25%{transform:translateX(-6px)}50%{transform:translateX(6px)}75%{transform:translateX(-3px)}}
+  .qz-fb{min-height:1.5em;display:flex;flex-direction:column;gap:10px}
+  .qz-fb .m{margin:0;font-size:18px;font-weight:600}
+  .qz-fb .btn{align-self:flex-start}
+  .qz-fb .m.ok{color:#2F7A1E}.qz-fb .m.bad{color:#B11D30}.qz-fb .m.pas{color:#7A5300}
+  .qz-fb .iz{margin:0;padding:14px 16px;border-radius:14px;background:#F5F8FA;font-size:16px;line-height:1.5}
+  .qz-sum,.qz-stats{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:12px}
+  .qz-box{padding:16px 18px;border-radius:16px;background:#F5F8FA;display:flex;flex-direction:column;gap:4px}
+  .qz-stats .qz-box{background:#FFFFFF;border:1px solid var(--line);box-shadow:var(--shadow)}
+  .qz-box b{font-size:28px;font-weight:600;color:var(--accent)}
+  .qz-box span{font-size:14px;color:var(--muted)}
+  .qz-note{margin:14px 0 10px;font-size:14px}
+  .qz-tbl{width:100%;border-collapse:collapse;font-size:16px}
+  .qz-tbl th{text-align:left;font-size:13px;font-weight:600;color:var(--muted);padding:8px 10px;border-bottom:1px solid var(--line)}
+  .qz-tbl td{padding:12px 10px;border-bottom:1px solid var(--line)}
+  .qz-tbl tr.me td{background:#EEF5F9;font-weight:600}
+  @media (max-width:640px){.qz{padding:20px}.qz-q{font-size:23px}.qz-end{margin-left:0}}
+</style>
+
+<script>
+  import { norm } from '../../lib/search.js';
+
+  const $ = (id) => document.getElementById(id);
+  const KEY = 'sk-quiz';
+  // Statistika istifadəçiyə görə saxlanır; istifadəçi adı gələnə qədər "qonaq"
+  const USER = 'qonaq';
+  const STOP = new Set(['və', 'ki', 'da', 'də', 'ilə', 'bir', 'bu', 'o', 'nə', 'var', 'yox', 'olar', 'olmaz', 'deyil', 'kimi', 'üçün', 'çox', 'az', 'hər', 'heç', 'öz', 'onu', 'ona', 'onun', 'mən', 'sən', 'biz', 'siz', 'əgər', 'amma', 'ya', 'həm', 'gərək', 'ancaq']);
+
+  let rows = [], cur = null, tries = 0, sess = null, busy = false;
+
+  const blankStats = () => ({ sual: 0, ilk: 0, sonra: 0, pas: 0, cehd: 0, xal: 0, seriya: 0, enUzun: 0, oyun: 0 });
+  function loadAll() { try { return JSON.parse(localStorage.getItem(KEY) || '{}'); } catch { return {}; } }
+  const stats = () => ({ ...blankStats(), ...(loadAll()[USER] || {}) });
+  function saveStats(s) { const all = loadAll(); all[USER] = s; try { localStorage.setItem(KEY, JSON.stringify(all)); } catch { /* yaddaş bağlıdır */ } }
+
+  // Əsas söz: köməkçi sözlərdən başqa ən uzun söz
+  function pickWord(t) {
+    const ws = [...t.matchAll(/\p{L}+/gu)].filter((m) => m[0].length >= 3 && !STOP.has(m[0].toLocaleLowerCase('az')));
+    if (!ws.length) return null;
+    return ws.reduce((a, b) => (b[0].length > a[0].length ? b : a));
+  }
+  function next() {
+    for (let k = 0; k < 50; k++) {
+      const r = rows[Math.floor(Math.random() * rows.length)];
+      if (r.t.split(/\s+/).length < 3) continue;
+      const w = pickWord(r.t);
+      if (w) { cur = { r, w: w[0], i: w.index }; break; }
+    }
+    tries = 0; busy = false;
+    sess.n++;
+    $('qn').textContent = sess.n;
+    showQ();
+    $('ans').value = ''; $('ans').classList.remove('bad'); $('ans').disabled = false;
+    $('fb').innerHTML = '';
+    $('ans').focus();
+  }
+  const esc = (s) => s.replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]);
+  function showQ(state) {
+    const { r, w, i } = cur;
+    const gap = state ? `<span class="qz-gap ${state}">${esc(w)}</span>` : `<span class="qz-gap" aria-label="${w.length} hərfli gizli söz">${'<i></i>'.repeat(w.length)}</span>`;
+    $('q').innerHTML = esc(r.t.slice(0, i)) + gap + esc(r.t.slice(i + w.length));
+  }
+  function update(fn) { const s = stats(); fn(s); saveStats(s); }
+  function finishQ(kind) {
+    busy = true;
+    $('ans').disabled = true;
+    const pts = kind === 'pas' ? 0 : tries === 1 ? 10 : 5;
+    sess.xal += pts;
+    if (kind === 'pas') { sess.pas++; sess.seriya = 0; } else { sess.tapilan++; if (tries === 1) sess.seriya++; else sess.seriya = 0; }
+    sess.enUzun = Math.max(sess.enUzun, sess.seriya);
+    update((s) => {
+      s.sual++; s.cehd += tries; s.xal += pts;
+      if (kind === 'pas') { s.pas++; s.seriya = 0; } else if (tries === 1) { s.ilk++; s.seriya++; } else { s.sonra++; s.seriya = 0; }
+      s.enUzun = Math.max(s.enUzun, s.seriya);
+    });
+    $('sc').textContent = sess.xal; $('st').textContent = sess.seriya;
+    showQ(kind === 'pas' ? 'pas' : 'ok');
+    const msg = kind === 'pas' ? `<p class="m pas">Düzgün cavab: "${esc(cur.w)}"</p>` : `<p class="m ok">${tries === 1 ? 'Əla! İlk cəhddə tapdın' : 'Təbriklər, tapdın!'} +${pts} xal</p>`;
+    $('fb').innerHTML = msg + (cur.r.m ? `<p class="iz">${esc(cur.r.m)}</p>` : '') + '<button type="button" class="btn btn-p" id="nx">Növbəti sual</button>';
+    $('nx').addEventListener('click', next);
+    $('nx').focus();
+  }
+
+  $('form').addEventListener('submit', (e) => {
+    e.preventDefault();
+    if (busy) return;
+    const v = $('ans').value.trim();
+    if (!v) return;
+    tries++;
+    if (norm(v) === norm(cur.w)) return finishQ('ok');
+    $('ans').classList.remove('bad'); void $('ans').offsetWidth; $('ans').classList.add('bad');
+    // Sıra sayı şəkilçisi: 1-ci, 3-cü, 6-cı, 9-cu
+    const sfx = (n) => { const d = n % 10, t = n % 100; if (t === 10 || t === 30) return 'cu'; if (t === 20 || t === 50 || t === 70 || t === 80) return 'ci'; if (t === 40 || t === 60 || t === 90) return 'cı'; return { 0: 'cu', 1: 'ci', 2: 'ci', 3: 'cü', 4: 'cü', 5: 'ci', 6: 'cı', 7: 'ci', 8: 'ci', 9: 'cu' }[d]; };
+    $('fb').innerHTML = `<p class="m bad">Səhvdir, yenidən cəhd et. (${tries}-${sfx(tries)} cəhd)</p>`;
+    $('ans').select();
+  });
+  $('pas').addEventListener('click', () => { if (!busy) { tries = Math.max(tries, 1); finishQ('pas'); } });
+
+  async function start() {
+    if (!rows.length) {
+      $('start').disabled = true;
+      rows = await fetch('/data/atalar.json').then((r) => r.json()).catch(() => []);
+      $('start').disabled = false;
+      if (!rows.length) return alert('Atalar sözlərini yükləmək alınmadı. İnterneti yoxlayıb yenidən cəhd edin.');
+    }
+    sess = { n: 0, xal: 0, tapilan: 0, pas: 0, seriya: 0, enUzun: 0 };
+    update((s) => { s.oyun++; });
+    $('intro').hidden = true; $('done').hidden = true; $('play').hidden = false;
+    $('sc').textContent = 0; $('st').textContent = 0;
+    next();
+  }
+  $('start').addEventListener('click', start);
+  $('again').addEventListener('click', start);
+  $('end').addEventListener('click', () => {
+    const answered = sess.tapilan + sess.pas;
+    $('play').hidden = true; $('done').hidden = false;
+    $('sum').innerHTML = box(sess.xal, 'xal') + box(answered, 'cavablanan sual') + box(sess.tapilan, 'tapılan söz') + box(sess.pas, 'pas') + box(sess.enUzun, 'ən uzun seriya');
+  });
+
+  const box = (b, t) => `<div class="qz-box"><b>${b}</b><span>${t}</span></div>`;
+  function renderStats() {
+    const s = stats(), tap = s.ilk + s.sonra, acc = s.sual ? Math.round((s.ilk / s.sual) * 100) : 0;
+    $('stats').innerHTML = box(s.xal, 'ümumi xal') + box(s.oyun, 'oyun') + box(s.sual, 'cavablanan sual') + box(tap, 'tapılan söz') + box(s.ilk, 'ilk cəhddə tapılan') + box(s.pas, 'pas') + box(`${acc}%`, 'dəqiqlik (ilk cəhddə)') + box(s.enUzun, 'ən uzun seriya');
+    $('rt').innerHTML = s.sual ? `<tr class="me"><td>—</td><td>Sən (qonaq)</td><td>${s.xal}</td><td>${tap}</td><td>${acc}%</td></tr>` : '<tr><td colspan="5" class="muted">Hələ nəticən yoxdur. Quizi oyna, yerini burada gör.</td></tr>';
+  }
+  $('reset').addEventListener('click', () => { if (confirm('Bütün statistika silinsin?')) { saveStats(blankStats()); renderStats(); } });
+
+  function tab(t) {
+    document.querySelectorAll('[data-tab]').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.tab === t)));
+    ['quiz', 'stat', 'reyt'].forEach((k) => { $('t-' + k).hidden = k !== t; });
+    if (t !== 'quiz') renderStats();
+  }
+  document.querySelectorAll('[data-tab]').forEach((b) => b.addEventListener('click', () => tab(b.dataset.tab)));
+</script>

@@ -217,6 +217,14 @@ Mərhələ 2 (Fəxri xiyaban üçün): Cloudflare Workers + D1 + R2, TypeScript.
 - Mətnlər: src/data/xalca.js; təsvirlər: src/lib/xalca-art.js.
 - Gözləyən təkliflər: çay süfrəsi və qonaqpərvərlik, toy adətləri.
 
+## Atalar sözləri quizi (/atalar-sozleri/quiz/) — 23.10.2026
+Botdakı mexanika ilə: atalar sözünün əsas sözü gizlədilir (köməkçi sözlərdən başqa ən uzun söz, hərf sayı qədər xana).
+Doğru → təbrik, izah, növbəti sual; səhv → sual dəyişmir, yenidən cəhd; Pas → düzgün cavab elan olunur, növbəti sual.
+Qaydalar başlamazdan əvvəl göstərilir; "Quizə başla" və "Quizi sonlandır" (sonda sessiyanın nəticəsi).
+Xallar: ilk cəhd 10, sonrakı cəhdlər 5, pas 0. ə/ş/ç-siz yazılış qəbul olunur.
+Statistikam (fərdi): xal, oyun, sual, tapılan, ilk cəhddə, pas, dəqiqlik, ən uzun seriya — localStorage "sk-quiz", istifadəçiyə görə
+(hələlik "qonaq"). Reytinq (ümumi): cədvəl hazırdır, istifadəçi adı + back-end (2-ci mərhələ) gələndə hamının nəticəsi göstəriləcək.
+
 ## Xalça yarat oyunu (/bayramlar/xalca/oyun/) — 23.10.2026
 Boş (xam yun) xalça ilə başlayır. Seçimlər: ara sahənin rəngi; haşiyə (romb-ulduz, su, buta, ulduz) + 2 rəng; göl (romb,
 pilləli romb, səkkizguşə, gül) + 2 rəng; mərkəz nişanı; ara sahə naxışları (sıx/seyrək); künclər (küncbənd, buta, qoçbuynuzu).
