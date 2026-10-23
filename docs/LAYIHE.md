@@ -248,6 +248,8 @@ Ana səhifədə yuxarıda menyu tərzində header olmalıdır (sonradan yeni bə
   "Səkkiz guşə, səkkiz bölmə" yazısı ağ düymə şəklində. Haqqında səhifəsində də eyni.
 - Footer da oval küncli panel. Mənbə qeydləri ağ çərçivəli bloklarda. 404 səhifəsi kartın içində.
 
+- Menyu (23.10.2026): "Xəritə oyunu" əvəzinə "Oyunlar" açılan siyahısı: Xəritəni tamamla, Xalça yarat, Sözü tap (src/lib/site.js -> GAMES).
+
 ## Struktur dəyişikliyi (22.10.2026)
 - "Milli qəhrəmanlar" ana səhifənin kartlarından çıxarıldı və Tarix bölməsinin içinə ikinci kart kimi köçürüldü.
   Ünvan dəyişmədi (/milli-qehremanlar/, 307 səhifə), yalnız yol göstəricisi: Ana səhifə / Tarix / Milli qəhrəmanlar.

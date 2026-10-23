@@ -16,11 +16,16 @@ export const SECTIONS = [
   { title: 'Nağıllar', href: '/nagillar/' },
   { title: 'Bayramlar və ənənələr', href: '/bayramlar/' },
 ];
+export const GAMES = [
+  { title: 'Xəritəni tamamla', href: '/xerite/oyun/' },
+  { title: 'Xalça yarat', href: '/bayramlar/xalca/oyun/' },
+  { title: 'Sözü tap: atalar sözləri', href: '/atalar-sozleri/sozu-tap/' },
+];
 export const NAV = [
   { title: 'Ana səhifə', href: '/' },
   { title: 'Bölmələr', items: SECTIONS },
   { title: 'Tarixdə bu gün', href: '/tarix/bu-gun/' },
-  { title: 'Xəritə oyunu', href: '/xerite/oyun/' },
+  { title: 'Oyunlar', items: GAMES },
   { title: 'Haqqında', href: '/haqqinda/' },
 ];
 
