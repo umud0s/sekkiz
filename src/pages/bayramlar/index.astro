@@ -2,6 +2,7 @@
 import Base from '../../layouts/Base.astro';
 import NovruzStyles from '../../components/NovruzStyles.astro';
 import { ICONS } from '../../lib/novruz-art.js';
+import { carpet } from '../../lib/xalca-art.js';
 ---
 <Base title="Bayramlar və ənənələr" description="Azərbaycan xalqının bayramları və adət-ənənələri: Novruz bayramı, dörd çərşənbə, xonça, Kosa və Keçəl.">
   <NovruzStyles />
@@ -20,6 +21,14 @@ import { ICONS } from '../../lib/novruz-art.js';
           <p>Dörd çərşənbə, tonqallar, səməni, xonça, Kosa və Keçəl. Yeni günün və təbiətin oyanışının bayramı.</p>
         </span>
       </a>
+      <a class="card by-card nv" href="/bayramlar/xalca/">
+        <span class="by-ic by-ic-x"><svg viewBox="0 0 120 150" aria-hidden="true" set:html={carpet(8, 8, 104, 134)} /></span>
+        <span class="by-b">
+          <span class="by-k" style="color:#A3262E">Ənənəvi sənət</span>
+          <h2>Xalça toxuma sənəti</h2>
+          <p>Hanada ilmə-ilmə toxunan xalça, naxışların dili və yeddi xalça məktəbi.</p>
+        </span>
+      </a>
       <div class="card by-card by-soon" aria-disabled="true">
         <span class="by-b">
           <span class="soon-badge">Tezliklə</span>
@@ -32,7 +41,8 @@ import { ICONS } from '../../lib/novruz-art.js';
 </Base>
 
 <style>
-  .by-grid{display:grid;grid-template-columns:minmax(0,2fr) minmax(0,1fr);gap:24px}
+  .by-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+  .by-ic-x{width:130px;background:#F6EADB}
   .by-card{display:flex;gap:24px;align-items:center;padding:26px;text-decoration:none;color:var(--ink);transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s}
   a.by-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-hi);color:var(--ink)}
   .by-ic{flex:none;width:170px;padding:10px;border-radius:20px;background:#EEF7E6}

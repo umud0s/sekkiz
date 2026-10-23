@@ -185,6 +185,17 @@ animasiyalı təsvirlərlə. Digər adət-ənənələr sonra əlavə olunacaq.
   izahı, adətləri (hər adətin öz animasiyalı təsviri), çərşənbələr arası keçid.
 - Mətnlər: src/data/novruz.js; təsvirlər: src/lib/novruz-art.js; hərəkətlər: src/components/NovruzStyles.astro.
 
+## Xalça toxuma sənəti (/bayramlar/xalca/) — 23.10.2026
+İstifadəçi 3 təklifdən (çay süfrəsi, toy adətləri, xalça) xalçanı seçdi. Bayramlar səhifəsində ayrıca kartdır.
+- Hana səhnəsi: xalça aşağıdan yuxarı 30 sətirlə toxunur (14 saniyəlik dövr), mokki (sap) sətir boyu gedir, kirkit vurur, yerdə ip yumaqları.
+- Naxışların dili: interaktiv xalça — göl, səkkizguşəli ulduz, buta, qoçbuynuzu, həyat ağacı, haşiyə; üzərinə gələndə seçilir, mənası yazılır.
+- Xalça məktəbləri: Lətif Kərimovun 7 məktəbi (Quba, Şirvan, Bakı, Gəncə, Qazax, Qarabağ, Təbriz) Azərbaycan xəritəsində;
+  Təbriz xəritə sərhədindən aşağıda olduğu üçün kənarda işarələnib. Hər məktəbin səciyyəsi.
+- Faktlar: UNESCO 2010; 7 məktəb; Xalça Muzeyi 1967, yeni bina 2014. Xovlu/xovsuz (palaz, kilim, cecim, zili, sumax, vərni, şəddə).
+  Təbii boyalar: boyaqotu (qırmızı), qoz qabığı (qəhvəyi), nar qabığı (sarı), indiqo (göy), sarı+göy (yaşıl).
+- Mətnlər: src/data/xalca.js; təsvirlər: src/lib/xalca-art.js.
+- Gözləyən təkliflər: çay süfrəsi və qonaqpərvərlik, toy adətləri.
+
 ## Görünüş: header menyu və kartlaşdırılmış yazılar (22.10.2026)
 İstifadəçi istəyi: fonun üzərində "çılpaq" qalan yazılar quru görünür; onlar düymə və ya küncləri oval düzbucaqlı içinə alınmalıdır.
 Ana səhifədə yuxarıda menyu tərzində header olmalıdır (sonradan yeni bəndlər əlavə olunacaq).

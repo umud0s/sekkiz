@@ -1,0 +1,163 @@
+---
+import Base from '../../../layouts/Base.astro';
+import NovruzStyles from '../../../components/NovruzStyles.astro';
+import G from '../../../data/xerite-oyun.json';
+import { loom, carpet, yarn } from '../../../lib/xalca-art.js';
+import { INTRO, FACTS, NAXIS, MEKTEB, XOVSUZ, BOYA } from '../../../data/xalca.js';
+---
+<Base title="Xalça toxuma sənəti" description="Azərbaycan xalçaçılıq sənəti: hanada toxunma, naxışların mənası (göl, buta, səkkizguşəli ulduz, qoçbuynuzu, həyat ağacı), yeddi xalça məktəbi xəritədə, xovlu və xovsuz xalçalar, təbii boyalar.">
+  <NovruzStyles />
+  <div class="wrap section nv">
+    <section class="stack">
+      <nav class="crumbs" aria-label="Yol"><a href="/">Ana səhifə</a> <span aria-hidden="true">/</span> <a href="/bayramlar/">Bayramlar və ənənələr</a> <span aria-hidden="true">/</span> Xalça toxuma sənəti</nav>
+      <h1 class="page-title">Xalça toxuma sənəti</h1>
+      <p class="lead">Nəsildən-nəslə ötürülən ailə sənəti: ilmə-ilmə toxunan xalça və onun naxışlarında yaşayan yaddaş.</p>
+    </section>
+
+    <div class="xl-top">
+      <div class="card nv-scene" set:html={loom()} />
+      <div class="card nv-text">{INTRO.map((p) => <p>{p}</p>)}</div>
+    </div>
+    <div class="nv-facts">{FACTS.map(([b, t]) => <div class="card nv-fact"><b>{b}</b><span>{t}</span></div>)}</div>
+
+    <section class="nv-block">
+      <h2 class="nv-h2">Naxışların dili</h2>
+      <div class="card ix-wrap">
+        <div class="ix-art">
+          <svg viewBox="0 0 340 460" class="ix-svg" role="group" aria-label="Xalça və naxışları" set:html={carpet(10, 10, 320, 440, true)} />
+        </div>
+        <div class="ix-info">
+          <span class="ix-kick">Naxışın üzərinə gəlin</span>
+          <h3 id="nx-t">{NAXIS[0][1]}</h3>
+          <p id="nx-d">{NAXIS[0][2]}</p>
+          <div class="chips" role="group" aria-label="Naxışlar">
+            {NAXIS.map(([k, t], i) => <button type="button" class="chip" data-n={k} aria-pressed={i === 0 ? 'true' : 'false'}>{t}</button>)}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="nv-block">
+      <h2 class="nv-h2">Xalça məktəbləri</h2>
+      <div class="card ix-wrap mk-wrap">
+        <div class="mk-art">
+          <svg viewBox="0 0 1074 814" class="mk-svg" role="group" aria-label="Xalça məktəbləri xəritədə">
+            <rect width="1074" height="814" fill="#F4F2EC" />
+            {G.nb.map((n) => <path d={n[1]} fill="#EFECE4" stroke="#D9D3C6" stroke-width="1.2" />)}
+            <path d={G.sea} fill="#CFE8F3" />
+            <g fill="#F7EBD8" stroke="#E2CFAE" stroke-width="1">{G.u.map((u) => <path d={u[2]} />)}</g>
+            <path d={G.outline} fill="none" stroke="#C9A877" stroke-width="3" stroke-linejoin="round" />
+            <path d="M284 790V814" stroke="#A3262E" stroke-width="3" stroke-dasharray="6 6" />
+            {MEKTEB.map(([k, t, x, y]) => (
+              <g class="mk" data-k={k} tabindex="0" role="button" aria-label={`${t} xalça məktəbi`}>
+                <circle class="mk-ring" cx={x} cy={y} r="18" />
+                <circle class="mk-dot" cx={x} cy={y} r="11" />
+                <rect class="mk-lab" x={x + 16} y={y - 34} width={t.length * 13 + 26} height="34" rx="17" />
+                <text x={x + 29} y={y - 11}>{t}</text>
+              </g>
+            ))}
+          </svg>
+        </div>
+        <div class="ix-info">
+          <span class="ix-kick">Məktəbi xəritədə seçin</span>
+          <h3 id="mk-t">{MEKTEB[0][1]}</h3>
+          <p id="mk-d">{MEKTEB[0][4]}</p>
+          <div class="chips" role="group" aria-label="Məktəblər">
+            {MEKTEB.map(([k, t], i) => <button type="button" class="chip" data-m={k} aria-pressed={i === 0 ? 'true' : 'false'}>{t}</button>)}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="nv-block">
+      <h2 class="nv-h2">Xovlu və xovsuz xalçalar</h2>
+      <div class="card nv-text">
+        <p>{XOVSUZ.text}</p>
+        <div class="xv-types"><span class="muted">Xovsuz xalça növləri:</span>{XOVSUZ.types.map((t) => <span class="xv-t">{t}</span>)}</div>
+      </div>
+    </section>
+
+    <section class="nv-block">
+      <h2 class="nv-h2">Təbii boyalar</h2>
+      <div class="card nv-text"><p>Köhnə ustalar sapı bitkilərdən və meyvə qabıqlarından alınan təbii boyalarla rəngləyirdilər.</p></div>
+      <ul class="by-list">
+        {BOYA.map(([c, t, d], i) => (
+          <li class="card by-i">
+            <svg viewBox="0 0 80 70" width="80" height="70" aria-hidden="true" set:html={yarn(40, 38, 26, c, -i * 0.3)} />
+            <b>{t}</b><span>{d}</span>
+          </li>
+        ))}
+      </ul>
+    </section>
+  </div>
+</Base>
+
+<style is:global>
+  .xl-cover{transform-origin:246px 60px;animation:xl-weave 14s steps(30,end) infinite}
+  @keyframes xl-weave{0%{transform:scaleY(1)}80%,100%{transform:scaleY(0)}}
+  .xl-front{animation:xl-front 14s steps(30,end) infinite}
+  @keyframes xl-front{0%{transform:translateY(300px);opacity:1}80%{transform:translateY(0);opacity:1}84%,100%{transform:translateY(0);opacity:0}}
+  .xl-shuttle{animation:xl-sh .373s ease-in-out infinite alternate}
+  @keyframes xl-sh{from{transform:translateX(0)}to{transform:translateX(240px)}}
+  .xl-beat{animation:xl-beat .373s ease-in-out infinite}
+  @keyframes xl-beat{0%,100%{transform:translateY(0)}50%{transform:translateY(9px)}}
+  .xl-bob{animation:nv-bob 1.6s ease-in-out infinite alternate}
+  .nx,.mk{cursor:pointer;outline:none;transition:opacity .35s,filter .35s}
+  .ix-svg.has .nx:not(.on){opacity:.3;filter:saturate(.4)}
+  .nx.on{filter:drop-shadow(0 0 6px rgba(255,236,170,.95))}
+  .mk-ring{fill:#A3262E;opacity:.25;transform-box:fill-box;transform-origin:center;animation:mk-pulse 2s ease-out infinite}
+  @keyframes mk-pulse{from{transform:scale(.6);opacity:.45}to{transform:scale(1.8);opacity:0}}
+  .mk-dot{fill:#A3262E;stroke:#FFFFFF;stroke-width:4;transition:fill .3s}
+  .mk-lab{fill:#FFFFFF;stroke:#E2CFAE;stroke-width:1.5;transition:fill .3s}
+  .mk text{font-family:'League Spartan','Noto Sans',sans-serif;font-size:21px;font-weight:600;fill:#5A1A20;pointer-events:none}
+  .mk.on .mk-dot{fill:#1F3A6B}
+  .mk.on .mk-lab{fill:#1F3A6B;stroke:#1F3A6B}
+  .mk.on text{fill:#FFFFFF}
+  .mk:focus-visible .mk-lab{stroke:var(--accent);stroke-width:3}
+</style>
+
+<style>
+  .xl-top{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:24px;align-items:stretch}
+  .xl-top .nv-text{justify-content:center}
+  .ix-wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:28px;align-items:center;padding:22px}
+  .ix-art{display:flex;justify-content:center;padding:16px;border-radius:18px;background:radial-gradient(circle at 50% 40%,#FFF8EC,#F1E4CF)}
+  .ix-svg{width:100%;max-width:340px;height:auto;filter:drop-shadow(0 14px 18px rgba(60,20,10,.25))}
+  .mk-wrap{grid-template-columns:minmax(0,1.5fr) minmax(0,1fr)}
+  .mk-art{border-radius:18px;overflow:hidden}
+  .mk-svg{display:block;width:100%;height:auto}
+  .ix-info{display:flex;flex-direction:column;gap:12px}
+  .ix-kick{font-size:14px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:#A3262E}
+  .ix-info h3{margin:0;font-size:30px;font-weight:500;animation:ix-in .35s ease}
+  .ix-info p{margin:0;font-size:18px;line-height:1.55;color:var(--ink-2);min-height:5.5em;animation:ix-in .35s ease}
+  @keyframes ix-in{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+  .xv-types{display:flex;flex-wrap:wrap;align-items:center;gap:8px}
+  .xv-t{padding:6px 14px;border-radius:999px;background:#F6EADB;color:#5A1A20;font-weight:500;font-size:15px}
+  .by-list{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px}
+  .by-i{display:flex;flex-direction:column;align-items:center;gap:4px;padding:16px 12px 18px;text-align:center}
+  .by-i b{font-size:18px;font-weight:600}
+  .by-i span{font-size:14px;line-height:1.4;color:var(--muted)}
+  @media (max-width:960px){.xl-top,.ix-wrap,.mk-wrap{grid-template-columns:minmax(0,1fr)}.ix-info p{min-height:0}.by-list{grid-template-columns:repeat(2,minmax(0,1fr))}}
+</style>
+
+<script>
+  import { NAXIS, MEKTEB } from '../../../data/xalca.js';
+  // Ümumi seçim məntiqi: üzərinə gələndə seçilir, başqasına keçənə qədər seçili qalır
+  function picker({ svg, items, sel, attr, tId, dId, text }) {
+    const t = document.getElementById(tId), d = document.getElementById(dId);
+    let auto = 0, i = 0, user = false;
+    const pick = (k) => {
+      const x = items.find((r) => r[0] === k); if (!x) return;
+      svg.classList.add('has');
+      svg.querySelectorAll(sel).forEach((g) => g.classList.toggle('on', g.dataset.k === k));
+      document.querySelectorAll(`[${attr}]`).forEach((b) => b.setAttribute('aria-pressed', String(b.getAttribute(attr) === k)));
+      if (t.textContent !== x[1]) { t.textContent = x[1]; d.textContent = text(x); [t, d].forEach((el) => { el.style.animation = 'none'; void el.offsetWidth; el.style.animation = ''; }); }
+    };
+    const stop = () => { user = true; clearInterval(auto); };
+    svg.querySelectorAll(sel).forEach((g) => ['pointerenter', 'click', 'focus'].forEach((ev) => g.addEventListener(ev, () => { stop(); pick(g.dataset.k); })));
+    document.querySelectorAll(`[${attr}]`).forEach((b) => b.addEventListener('click', () => { stop(); pick(b.getAttribute(attr)); }));
+    pick(items[0][0]);
+    if (!matchMedia('(prefers-reduced-motion: reduce)').matches) auto = setInterval(() => { if (user) return; i = (i + 1) % items.length; pick(items[i][0]); }, 3400);
+  }
+  picker({ svg: document.querySelector('.ix-svg'), items: NAXIS, sel: '.nx', attr: 'data-n', tId: 'nx-t', dId: 'nx-d', text: (x) => x[2] });
+  picker({ svg: document.querySelector('.mk-svg'), items: MEKTEB, sel: '.mk', attr: 'data-m', tId: 'mk-t', dId: 'mk-d', text: (x) => x[4] });
+</script>
