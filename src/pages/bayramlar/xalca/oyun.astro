@@ -1,0 +1,219 @@
+---
+import Base from '../../../layouts/Base.astro';
+import { render, blank, PAL, OPT } from '../../../lib/xalca-oyun.js';
+
+// Panelin bölmələri: hər birində naxış seçimi və rəng(lər)
+const SECT = [
+  { k: 'fon', t: 'Ara sahə', d: 'Xalçanın əsas rəngi', colors: [['fon', 'Rəng']] },
+  { k: 'hasiye', t: 'Haşiyə', opt: 'hasiye', key: 'nax', colors: [['hasiye.reng', 'Haşiyənin rəngi'], ['hasiye.nr', 'Naxışın rəngi']] },
+  { k: 'gol', t: 'Göl', d: 'Ortadakı iri naxış', opt: 'gol', key: 'forma', colors: [['gol.reng', 'Xarici rəng'], ['gol.ic', 'Daxili rəng']] },
+  { k: 'merkez', t: 'Mərkəz nişanı', opt: 'merkez', key: 'nax', colors: [['merkez.reng', 'Rəng']] },
+  { k: 'sahe', t: 'Ara sahənin naxışları', opt: 'sahe', key: 'nax', colors: [['sahe.reng', 'Rəng']], dense: true },
+  { k: 'kunc', t: 'Künclər', opt: 'kunc', key: 'nax', colors: [['kunc.reng', 'Rəng']] },
+];
+---
+<Base title="Xalça yarat" description="Öz Azərbaycan xalçanı yarat: rəngləri, haşiyəni, gölü və naxışları seç, xalçanı JPG şəklində yüklə və Mənim xalçalarım bölməsində saxla.">
+  <div class="wrap section">
+    <section class="stack">
+      <nav class="crumbs" aria-label="Yol"><a href="/">Ana səhifə</a> <span aria-hidden="true">/</span> <a href="/bayramlar/">Bayramlar və ənənələr</a> <span aria-hidden="true">/</span> <a href="/bayramlar/xalca/">Xalça toxuma sənəti</a> <span aria-hidden="true">/</span> Xalça yarat</nav>
+      <h1 class="page-title">Xalça yarat</h1>
+      <p class="lead">Hana hazırdır, yun da xamdır. Seçimlərlə xalçanın rənglərini, haşiyəsini, gölünü və naxışlarını özün seç. Bəyəndiyin xalçanı şəkil kimi yüklə, ya da "Mənim xalçalarım" bölməsində saxla.</p>
+    </section>
+
+    <div class="xo-tabs" role="tablist">
+      <button type="button" class="chip" role="tab" data-tab="yarat" aria-selected="true" aria-pressed="true">Xalça yarat</button>
+      <button type="button" class="chip" role="tab" data-tab="menim" aria-selected="false" aria-pressed="false">Mənim xalçalarım <span class="n" id="cnt">0</span></button>
+    </div>
+
+    <div id="tab-yarat" class="xy">
+      <div class="card xy-art">
+        <div id="art" class="xy-svg" set:html={render(blank(), { id: 'cv' })} />
+        <div class="xy-acts">
+          <button type="button" class="btn btn-s" id="rnd">Təsadüfi xalça</button>
+          <button type="button" class="btn btn-s" id="clr">Yenidən başla</button>
+        </div>
+      </div>
+      <aside class="card xy-panel">
+        {SECT.map((s, i) => (
+          <details class="xy-sec" open={i < 2}>
+            <summary><span>{s.t}</span>{s.d && <small>{s.d}</small>}</summary>
+            <div class="xy-body">
+              {s.opt && (
+                <div class="xy-opts" role="group" aria-label={s.t}>
+                  {OPT[s.opt].map(([v, l]) => <button type="button" class="xy-o" data-set={`${s.k}.${s.key}`} data-v={v}>{l}</button>)}
+                </div>
+              )}
+              {s.dense && <label class="xy-tg"><input type="checkbox" id="dense" /> Sıx naxış</label>}
+              {s.colors.map(([path, label]) => (
+                <div class="xy-col">
+                  <span>{label}</span>
+                  <div class="xy-sw" role="group" aria-label={label}>
+                    {PAL.map(([c, n]) => <button type="button" class="sw" data-set={path} data-v={c} style={`--c:${c}`} title={n} aria-label={n} />)}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </details>
+        ))}
+        <div class="xy-save">
+          <label for="nm" class="sr-only">Xalçanın adı</label>
+          <input id="nm" type="text" maxlength="40" placeholder="Xalçanın adı, məsələn: Nənəmin xalçası" />
+          <div class="xy-acts">
+            <button type="button" class="btn btn-p" id="save">Yadda saxla</button>
+            <button type="button" class="btn btn-s" id="dl">JPG yüklə</button>
+          </div>
+          <p class="xy-msg" id="msg" aria-live="polite"></p>
+        </div>
+      </aside>
+    </div>
+
+    <div id="tab-menim" hidden>
+      <div class="xg" id="gal"></div>
+      <div class="card xg-empty" id="empty">
+        <p>Hələ yadda saxlanmış xalçan yoxdur. "Xalça yarat" bölməsində ilk xalçanı toxu və "Yadda saxla" düyməsini bas.</p>
+      </div>
+      <p class="muted xg-note">Xalçalar bu brauzerdə saxlanılır. Başqa cihazda və ya brauzerin məlumatları təmizlənəndə görünməyə bilər, ona görə bəyəndiyin xalçanı JPG kimi də yüklə.</p>
+    </div>
+  </div>
+</Base>
+
+<style is:global>
+  .xo-tabs{display:flex;flex-wrap:wrap;gap:8px}
+  .xy[hidden]{display:none}
+  .xy{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:24px;align-items:start}
+  .xy-art{padding:20px;display:flex;flex-direction:column;align-items:center;gap:16px;position:sticky;top:16px;background:radial-gradient(circle at 50% 35%,#FFF9EF,#EFE3D0)}
+  .xy-svg{width:100%;max-width:440px}
+  .xy-svg svg{display:block;width:100%;height:auto;animation:xy-in .35s ease}
+  @keyframes xy-in{from{opacity:.6}to{opacity:1}}
+  .xy-acts{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
+  .xy-panel{padding:10px 18px 20px}
+  .xy-sec{border-bottom:1px solid var(--line)}
+  .xy-sec summary{display:flex;align-items:baseline;gap:10px;padding:16px 4px;cursor:pointer;list-style:none;font-size:19px;font-weight:600}
+  .xy-sec summary::-webkit-details-marker{display:none}
+  .xy-sec summary::after{content:'+';margin-left:auto;font-size:22px;color:var(--accent);font-weight:500}
+  .xy-sec[open] summary::after{content:'–'}
+  .xy-sec summary small{font-size:14px;font-weight:400;color:var(--muted)}
+  .xy-body{display:flex;flex-direction:column;gap:14px;padding:0 4px 18px}
+  .xy-opts{display:flex;flex-wrap:wrap;gap:6px}
+  .xy-o{min-height:40px;padding:0 14px;border-radius:999px;border:1px solid #D8C9B2;background:#FFFFFF;font:inherit;font-size:15px;color:var(--ink);cursor:pointer;transition:background .2s,border-color .2s,color .2s}
+  .xy-o:hover{border-color:#8E1520}
+  .xy-o[aria-pressed="true"]{background:#8E1520;border-color:#8E1520;color:#FFFFFF}
+  .xy-col{display:flex;flex-direction:column;gap:8px}
+  .xy-col > span{font-size:14px;font-weight:500;color:var(--muted)}
+  .xy-sw{display:grid;grid-template-columns:repeat(8,minmax(0,1fr));gap:6px}
+  .sw{aspect-ratio:1;border-radius:10px;border:2px solid rgba(0,0,0,.08);background:var(--c);cursor:pointer;box-shadow:inset 0 -4px 0 rgba(0,0,0,.15),inset 0 3px 0 rgba(255,255,255,.18);transition:transform .15s}
+  .sw:hover{transform:scale(1.08)}
+  .sw[aria-pressed="true"]{outline:3px solid var(--ink);outline-offset:2px}
+  .xy-tg{display:flex;align-items:center;gap:8px;font-size:15px}
+  .xy-save{display:flex;flex-direction:column;gap:12px;padding-top:18px}
+  .xy-save input{height:48px;padding:0 16px;border:1px solid #CDBFA9;border-radius:14px;font:inherit;font-size:16px;color:var(--ink)}
+  .xy-save .xy-acts{justify-content:flex-start}
+  .xy-msg{margin:0;min-height:1.4em;font-size:15px;color:#2F7A1E}
+  .xg{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:18px}
+  .xg-c{display:flex;flex-direction:column;gap:10px;padding:14px}
+  .xg-c .th{border-radius:12px;background:radial-gradient(circle at 50% 35%,#FFF9EF,#EFE3D0);padding:8px}
+  .xg-c .th svg{display:block;width:100%;height:auto}
+  .xg-c b{font-size:17px;font-weight:600}
+  .xg-c small{font-size:13px;color:var(--muted)}
+  .xg-b{display:flex;flex-wrap:wrap;gap:6px}
+  .xg-b button{min-height:36px;padding:0 12px;border-radius:999px;border:1px solid var(--line);background:#FFFFFF;font:inherit;font-size:14px;cursor:pointer}
+  .xg-b button:hover{border-color:var(--accent)}
+  .xg-b .del{color:#B11D30}
+  .xg-empty{padding:28px;margin-top:4px}
+  .xg-empty p{margin:0;font-size:17px}
+  .xg-note{margin:12px 0 0;font-size:14px}
+  @media (max-width:960px){.xy{grid-template-columns:minmax(0,1fr)}.xy-art{position:static}.xy-svg{max-width:360px}}
+  @media (max-width:420px){.xy-sw{grid-template-columns:repeat(8,minmax(0,1fr));gap:4px}.sw{border-radius:7px}}
+</style>
+
+<script>
+  import { render, blank, random } from '../../../lib/xalca-oyun.js';
+
+  const KEY = 'sk-xalcalar';
+  const $ = (id) => document.getElementById(id);
+  let cfg = blank(), editId = null;
+
+  const load = () => { try { return JSON.parse(localStorage.getItem(KEY) || '[]'); } catch { return []; } };
+  const store = (list) => { try { localStorage.setItem(KEY, JSON.stringify(list)); return true; } catch { return false; } };
+  const get = (path) => path.split('.').reduce((o, k) => o[k], cfg);
+  const set = (path, v) => { const ks = path.split('.'), last = ks.pop(); ks.reduce((o, k) => o[k], cfg)[last] = v; };
+  const say = (t, bad) => { const m = $('msg'); m.textContent = t; m.style.color = bad ? '#B11D30' : '#2F7A1E'; clearTimeout(say.t); say.t = setTimeout(() => { m.textContent = ''; }, 3500); };
+
+  function draw() {
+    $('art').innerHTML = render(cfg, { id: 'cv' });
+    document.querySelectorAll('[data-set]').forEach((b) => b.setAttribute('aria-pressed', String(get(b.dataset.set) === b.dataset.v)));
+    $('dense').checked = !!cfg.sahe.cox;
+  }
+
+  document.querySelectorAll('[data-set]').forEach((b) => b.addEventListener('click', () => {
+    const path = b.dataset.set;
+    set(path, b.dataset.v);
+    // Naxışı seçilib, amma haşiyənin rəngi fonla eynidirsə, fərqlənsin deyə rəngi dəyişirik
+    if (path === 'hasiye.nax' && cfg.hasiye.reng === cfg.fon) cfg.hasiye.reng = cfg.fon === '#1B2A5C' ? '#8E1520' : '#1B2A5C';
+    draw();
+  }));
+  $('dense').addEventListener('change', (e) => { cfg.sahe.cox = e.target.checked; draw(); });
+  $('rnd').addEventListener('click', () => { cfg = random(); draw(); });
+  $('clr').addEventListener('click', () => { cfg = blank(); editId = null; $('nm').value = ''; draw(); });
+
+  // JPG: SVG şəkil kimi kətana çəkilir, sonra JPG faylına çevrilir
+  async function toJpg(c, name) {
+    const svg = render(c, { id: 'dl' });
+    const url = URL.createObjectURL(new Blob([svg], { type: 'image/svg+xml' }));
+    const img = new Image();
+    await new Promise((ok, no) => { img.onload = ok; img.onerror = no; img.src = url; });
+    const k = 2, cv = document.createElement('canvas');
+    cv.width = 600 * k; cv.height = 860 * k;
+    const ctx = cv.getContext('2d');
+    ctx.fillStyle = '#F6EFE3'; ctx.fillRect(0, 0, cv.width, cv.height);
+    ctx.drawImage(img, 0, 0, cv.width, cv.height);
+    URL.revokeObjectURL(url);
+    const blob = await new Promise((ok) => cv.toBlob(ok, 'image/jpeg', 0.92));
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    // Fayl adı latın hərfləri ilə: "Nənəmin xalçası" -> xalca-nenemin-xalcasi.jpg
+    const TR = { ə: 'e', ö: 'o', ü: 'u', ç: 'c', ş: 's', ğ: 'g', ı: 'i', i̇: 'i' };
+    const base = [...(name || 'sekkizguse').replace(/İ/g, 'i').replace(/I/g, 'ı').toLowerCase()].map((ch) => TR[ch] ?? ch).join('').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+    a.download = `xalca-${base || 'sekkizguse'}.jpg`;
+    document.body.appendChild(a); a.click(); a.remove();
+    setTimeout(() => URL.revokeObjectURL(a.href), 2000);
+  }
+  $('dl').addEventListener('click', () => toJpg(cfg, $('nm').value.trim()).then(() => say('Şəkil yükləndi.')).catch(() => say('Şəkli yaratmaq alınmadı.', true)));
+
+  $('save').addEventListener('click', () => {
+    const list = load(), name = $('nm').value.trim() || `Xalça ${list.length + 1}`;
+    const item = { id: editId || Date.now().toString(36), ad: name, tarix: new Date().toISOString(), cfg: structuredClone(cfg) };
+    const i = list.findIndex((x) => x.id === item.id);
+    if (i >= 0) list[i] = item; else list.unshift(item);
+    if (!store(list)) return say('Bu brauzerdə yadda saxlamaq mümkün olmadı.', true);
+    editId = item.id; $('nm').value = name;
+    say(i >= 0 ? `"${name}" yeniləndi.` : `"${name}" Mənim xalçalarım bölməsinə əlavə edildi.`);
+    gallery();
+  });
+
+  function gallery() {
+    const list = load();
+    $('cnt').textContent = list.length;
+    $('empty').hidden = list.length > 0;
+    const esc = (s) => s.replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]);
+    $('gal').innerHTML = list.map((x, i) => `<div class="card xg-c" data-id="${x.id}"><div class="th">${render(x.cfg, { id: 'g' + i, shadow: false })}</div><b>${esc(x.ad)}</b><small>${new Date(x.tarix).toLocaleDateString('az')}</small><div class="xg-b"><button type="button" data-a="open">Aç</button><button type="button" data-a="dl">JPG</button><button type="button" class="del" data-a="del">Sil</button></div></div>`).join('');
+  }
+  $('gal').addEventListener('click', (e) => {
+    const b = e.target.closest('[data-a]'); if (!b) return;
+    const id = b.closest('[data-id]').dataset.id, list = load(), x = list.find((r) => r.id === id); if (!x) return;
+    if (b.dataset.a === 'open') { cfg = structuredClone(x.cfg); editId = x.id; $('nm').value = x.ad; draw(); tab('yarat'); window.scrollTo({ top: 0, behavior: 'smooth' }); }
+    if (b.dataset.a === 'dl') toJpg(x.cfg, x.ad);
+    if (b.dataset.a === 'del' && confirm(`"${x.ad}" silinsin?`)) { store(list.filter((r) => r.id !== id)); if (editId === id) editId = null; gallery(); }
+  });
+
+  function tab(t) {
+    document.querySelectorAll('[data-tab]').forEach((b) => { const on = b.dataset.tab === t; b.setAttribute('aria-selected', String(on)); b.setAttribute('aria-pressed', String(on)); });
+    $('tab-yarat').hidden = t !== 'yarat';
+    $('tab-menim').hidden = t !== 'menim';
+    if (t === 'menim') gallery();
+  }
+  document.querySelectorAll('[data-tab]').forEach((b) => b.addEventListener('click', () => tab(b.dataset.tab)));
+
+  draw();
+  gallery();
+</script>

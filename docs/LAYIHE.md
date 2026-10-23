@@ -217,6 +217,13 @@ Mərhələ 2 (Fəxri xiyaban üçün): Cloudflare Workers + D1 + R2, TypeScript.
 - Mətnlər: src/data/xalca.js; təsvirlər: src/lib/xalca-art.js.
 - Gözləyən təkliflər: çay süfrəsi və qonaqpərvərlik, toy adətləri.
 
+## Xalça yarat oyunu (/bayramlar/xalca/oyun/) — 23.10.2026
+Boş (xam yun) xalça ilə başlayır. Seçimlər: ara sahənin rəngi; haşiyə (romb-ulduz, su, buta, ulduz) + 2 rəng; göl (romb,
+pilləli romb, səkkizguşə, gül) + 2 rəng; mərkəz nişanı; ara sahə naxışları (sıx/seyrək); künclər (küncbənd, buta, qoçbuynuzu).
+16 rəngli təbii boya palitrası; yun toxuması (feTurbulence), ilmə şəbəkəsi, işıq-kölgə, saçaqlar. "Təsadüfi xalça", "Yenidən başla".
+JPG yükləmə (1200x1720, fayl adı latınca). "Mənim xalçalarım": localStorage (sk-xalcalar), aç/JPG/sil.
+Xalça səhifəsində "Xalça yarat" kartı var. Kod: src/lib/xalca-oyun.js, səhifə: src/pages/bayramlar/xalca/oyun.astro.
+
 ## Görünüş: header menyu və kartlaşdırılmış yazılar (22.10.2026)
 İstifadəçi istəyi: fonun üzərində "çılpaq" qalan yazılar quru görünür; onlar düymə və ya küncləri oval düzbucaqlı içinə alınmalıdır.
 Ana səhifədə yuxarıda menyu tərzində header olmalıdır (sonradan yeni bəndlər əlavə olunacaq).
