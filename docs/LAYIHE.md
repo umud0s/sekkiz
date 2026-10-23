@@ -145,8 +145,8 @@ Qaydalar:
 - Saat oyuna başlayanda işə düşür. Ən yaxşı vaxt brauzerdə saxlanır (localStorage: sk-xo-best), "Rekord" kimi görünür.
 - 74 ərazi = 74 pazl parçası (10x8 tor, 6 cüt birləşdirilib, kəsiklər hər oyunda yenidən yaradılır).
   Şəkil hər oyunda dəyişir (8 şəkil növbə ilə, eyni şəkil ardıcıl gəlmir). Tamamlananda adı, yeri, qısa izahı çıxır.
-- Kiçik şəhərlər (sahəsi çox kiçik olan 8 vahid: Naftalan, Xankəndi, Mingəçevir, Şirvan, Gəncə, Naxçıvan şəhəri,
-  Sumqayıt, Sədərək) xəritədə dairəvi nişanla seçilir.
+- Kiçik şəhərlər (Naftalan, Xankəndi, Mingəçevir, Şirvan, Gəncə, Naxçıvan şəhəri, Sumqayıt, Sədərək) 23.10.2026-dan dairə ilə yox,
+  öz sərhədləri ilə göstərilir; ətraflarında görünməz 16px toxunma zolağı var. Xəritə səhifənin bütün enini tutur, pazl altdadır.
 - Səslər fayl deyil, brauzerdə yaradılır (WebAudio); səsi söndürmək düyməsi var.
 Pazl şəkilləri (public/img/pazl/*.svg, öz çəkdiyimiz illüstrasiyalar): Qız qalası, Şəki Xan sarayı,
 Möminə xatın türbəsi, Göygöl, Şahdağ, Yanardağ, Qobustan, Xudafərin körpüləri. Sonradan real fotolar da qoyula bilər.

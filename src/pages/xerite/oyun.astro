@@ -49,10 +49,12 @@ const total = G.u.length;
           <text x="935" y="560" text-anchor="middle" class="xo-sea" transform="rotate(-70 935 560)">XƏZƏR DƏNİZİ</text>
           <path d={G.outline} fill="none" stroke="#B8C3CC" stroke-width="3" stroke-linejoin="round" />
           <g id="units">
-            {G.u.map((u, i) => <path d={u[2]} class="xu" data-i={i} data-b={u[5]} tabindex="0" role="button" aria-label="Naməlum ərazi" />)}
+            {G.u.map((u, i) => u[6] ? null : <path d={u[2]} class="xu" data-i={i} data-b={u[5]} tabindex="0" role="button" aria-label="Naməlum ərazi" />)}
           </g>
-          <g id="dots">
-            {G.u.map((u, i) => u[6] ? <circle cx={u[3]} cy={u[4]} r="8" class="xd" data-i={i} data-b={u[5]} /> : null)}
+          <!-- Kiçik şəhərlər: öz sərhədləri ilə, qonşu rayonun üstündə; toxunmaq asan olsun deyə ətrafında görünməz zolaq -->
+          <g id="small">
+            {G.u.map((u, i) => u[6] ? <path d={u[2]} class="xu xs" data-i={i} data-b={u[5]} tabindex="0" role="button" aria-label="Naməlum ərazi" /> : null)}
+            {G.u.map((u, i) => u[6] ? <path d={u[2]} class="xh" data-i={i} /> : null)}
           </g>
           <g id="lift" aria-hidden="true"></g>
           <text id="tip" class="xo-tip" aria-hidden="true"></text>
@@ -91,13 +93,16 @@ const total = G.u.length;
   .xo-snd[aria-pressed="false"] .x{display:inline}
   .xo-snd[aria-pressed="false"] .w{display:none}
 
-  .xo-row{display:grid;grid-template-columns:minmax(0,1.75fr) minmax(0,1fr);gap:24px;align-items:start}
+  .xo-row{display:grid;grid-template-columns:minmax(0,1fr);gap:24px;align-items:start}
   .xo-map{padding:14px;position:relative}
   .xo-map svg{display:block;width:100%;height:auto;border-radius:16px}
   #xo text{font-family:'League Spartan','Noto Sans',sans-serif;pointer-events:none}
   .xo-nb{font-size:17px;font-weight:500;fill:#8D97A1;letter-spacing:2px}
   .xo-sea{font-size:22px;font-weight:500;fill:#5E95B3;letter-spacing:3px}
 
+  .xs{stroke-width:.8}
+  .xh{fill:none;stroke:transparent;stroke-width:16;stroke-linejoin:round;pointer-events:stroke;cursor:pointer}
+  .xh.ok{cursor:default}
   .xu,.xd{fill:#D3D9DF;stroke:#FFFFFF;stroke-width:1.2;stroke-linejoin:round;cursor:pointer;transition:fill .5s ease}
   .xd{fill:#AEB8C2;stroke-width:2}
   .xu:focus{outline:none}
@@ -145,7 +150,9 @@ const total = G.u.length;
   .xo-rules svg{flex:none;width:16px !important;height:16px !important}
   .xo-rules .tri{background:linear-gradient(#00B5E2 0 33.3%,#EF3340 33.3% 66.6%,#509E2F 66.6%)}
 
-  .xo-side{padding:22px;display:flex;flex-direction:column;gap:14px;position:sticky;top:96px}
+  .xo-side{padding:22px;display:grid;grid-template-columns:minmax(0,420px) minmax(0,1fr);grid-template-rows:auto 1fr;column-gap:28px;row-gap:14px;align-items:start}
+  .xo-side .xo-ph{grid-column:1/-1}
+  .xo-side .xo-cap{align-self:center}
   .xo-ph{display:flex;align-items:baseline;justify-content:space-between}
   .xo-kick{font-size:14px;font-weight:500;letter-spacing:1px;text-transform:uppercase;color:var(--accent)}
   #pz{display:block;width:100%;height:auto;border-radius:12px;background:#EEF3F7}
@@ -164,7 +171,7 @@ const total = G.u.length;
 
   @media (max-width:960px){
     .xo-row{grid-template-columns:minmax(0,1fr)}
-    .xo-side{position:static}
+    .xo-side{grid-template-columns:minmax(0,1fr)}
   }
   @media (max-width:640px){
     .xo-bar{gap:10px 18px;padding:12px 14px}
@@ -199,9 +206,10 @@ const total = G.u.length;
   const U = G.u, N = U.length;
   const $ = (id) => document.getElementById(id);
   const svg = $('xo'), lift = $('lift'), tip = $('tip'), pop = $('pop'), opts = $('opts'), over = $('over'), msg = $('msg'), board = $('board');
-  const paths = [...document.querySelectorAll('.xu')];
+  const paths = [];
+  document.querySelectorAll('.xu').forEach((p) => { paths[+p.dataset.i] = p; });
   const dots = {};
-  document.querySelectorAll('.xd').forEach((d) => { dots[d.dataset.i] = d; });
+  document.querySelectorAll('.xh').forEach((d) => { dots[d.dataset.i] = d; });
 
   const store = {
     get(k) { try { return localStorage.getItem(k); } catch { return null; } },
@@ -245,15 +253,15 @@ const total = G.u.length;
     if (hoverI === i) return;
     liftOff(true);
     hoverI = i;
-    const u = U[i], el = document.createElementNS('http://www.w3.org/2000/svg', u[6] ? 'circle' : 'path');
-    if (u[6]) { el.setAttribute('cx', u[3]); el.setAttribute('cy', u[4]); el.setAttribute('r', 8); } else el.setAttribute('d', u[2]);
+    const u = U[i], el = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+    el.setAttribute('d', u[2]);
     el.setAttribute('class', 'xl' + (done.has(i) ? ' ok' : '') + (sel === i ? ' sel' : ''));
     el.dataset.b = u[5];
     el.style.transformOrigin = `${u[3]}px ${u[4]}px`;
-    el.style.setProperty('--s', u[6] ? 1.6 : 1.1);
+    el.style.setProperty('--s', u[6] ? 1.8 : 1.1);
     lift.appendChild(el);
     requestAnimationFrame(() => requestAnimationFrame(() => el.classList.add('up')));
-    if (done.has(i)) { tip.textContent = u[0]; tip.setAttribute('x', u[3]); tip.setAttribute('y', u[4] - (u[6] ? 18 : 16)); tip.classList.add('on'); }
+    if (done.has(i)) { tip.textContent = u[0]; tip.setAttribute('x', u[3]); tip.setAttribute('y', u[4] - 16); tip.classList.add('on'); }
   }
   function liftOff(now) {
     if (hoverI === null) return;
@@ -302,7 +310,7 @@ const total = G.u.length;
     }
   });
   $('pop-x').addEventListener('click', close);
-  svg.addEventListener('click', (e) => { if (!pop.hidden && !e.target.closest('.xu,.xd')) close(); });
+  svg.addEventListener('click', (e) => { if (!pop.hidden && !e.target.closest('.xu,.xh')) close(); });
   document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && !pop.hidden) close(); });
 
   function right(i) {
