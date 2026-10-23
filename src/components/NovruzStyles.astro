@@ -1,0 +1,112 @@
+<style is:global>
+  /* Novruz təsvirlərinin hərəkətləri */
+  .nv svg{display:block;width:100%;height:auto}
+  .nv-flick,.nv-flick2{transform-box:fill-box;transform-origin:50% 100%;animation:nv-flick .9s ease-in-out infinite alternate}
+  .nv-flick2{animation-duration:.7s;animation-direction:alternate-reverse}
+  @keyframes nv-flick{from{transform:scale(1,1) skewX(-3deg)}to{transform:scale(.9,1.1) skewX(3deg)}}
+  .nv-glow{animation:nv-glow 1s ease-in-out infinite alternate}
+  @keyframes nv-glow{from{opacity:.15}to{opacity:.4}}
+  .nv-spark{transform-box:fill-box;animation:nv-spark 1.6s ease-out infinite}
+  @keyframes nv-spark{0%{transform:translate(0,10px);opacity:0}20%{opacity:1}100%{transform:translate(8px,-56px);opacity:0}}
+  .nv-sway{transform-box:fill-box;transform-origin:50% 100%;animation:nv-sway 2.6s ease-in-out infinite alternate}
+  @keyframes nv-sway{from{transform:rotate(-3deg)}to{transform:rotate(3deg)}}
+  .nv-sway2{transform-box:fill-box;transform-origin:30% 100%;animation:nv-sway2 4s ease-in-out infinite alternate}
+  @keyframes nv-sway2{from{transform:rotate(-1.5deg)}to{transform:rotate(1.5deg)}}
+  .nv-sway3{transform-box:fill-box;transform-origin:30% 100%;animation:nv-sway2 3.2s ease-in-out infinite alternate}
+  .nv-ribbon{transform-box:fill-box;transform-origin:50% 0;animation:nv-sway 1.4s ease-in-out infinite alternate}
+  .nv-spin{transform-box:fill-box;transform-origin:center;animation:nv-spin 40s linear infinite}
+  @keyframes nv-spin{to{transform:rotate(360deg)}}
+  .nv-rise{animation:nv-rise 2.4s cubic-bezier(.2,.8,.2,1) both}
+  @keyframes nv-rise{from{transform:translateY(70px);opacity:0}to{transform:none;opacity:1}}
+  .nv-drift{animation:nv-drift 14s ease-in-out infinite alternate}
+  @keyframes nv-drift{from{transform:translateX(-30px)}to{transform:translateX(30px)}}
+  .nv-petal{transform-box:fill-box;transform-origin:center;animation:nv-petal 6s linear infinite}
+  @keyframes nv-petal{0%{transform:translate(0,0) rotate(0);opacity:0}10%{opacity:1}100%{transform:translate(-90px,120px) rotate(360deg);opacity:0}}
+  .nv-flow{animation:nv-flow 2s linear infinite}
+  @keyframes nv-flow{to{stroke-dashoffset:-64}}
+  .nv-pour{animation:nv-pour .7s linear infinite}
+  .nv-hop{animation:nv-pour 1.4s linear infinite}
+  @keyframes nv-pour{to{stroke-dashoffset:-32}}
+  .nv-ripple{transform-box:fill-box;transform-origin:center;animation:nv-ripple 2s ease-out infinite}
+  @keyframes nv-ripple{from{transform:scale(.4);opacity:.9}to{transform:scale(2.4);opacity:0}}
+  .nv-drop{animation:nv-drop 1s ease-out infinite}
+  @keyframes nv-drop{0%{transform:translate(0,0);opacity:1}50%{transform:translate(-5px,-12px)}100%{transform:translate(-9px,4px);opacity:0}}
+  .nv-drop2{animation:nv-drop2 1.6s ease-in infinite}
+  @keyframes nv-drop2{0%{transform:translateY(-8px);opacity:0}20%{opacity:1}100%{transform:translateY(26px);opacity:0}}
+  .nv-twinkle{animation:nv-tw 1.8s ease-in-out infinite alternate}
+  .nv-twinkle2{animation:nv-tw2 3s ease-in-out infinite alternate}
+  @keyframes nv-tw{from{opacity:.25}to{opacity:1}}
+  @keyframes nv-tw2{from{opacity:.55}to{opacity:1}}
+  .nv-wind{stroke-dasharray:180 420;animation:nv-wind 3.6s linear infinite}
+  @keyframes nv-wind{from{stroke-dashoffset:180}to{stroke-dashoffset:-420}}
+  .nv-wind2{stroke-dasharray:60 140;animation:nv-wind2 2.4s linear infinite}
+  @keyframes nv-wind2{from{stroke-dashoffset:60}to{stroke-dashoffset:-140}}
+  .nv-bloom{transform-box:fill-box;transform-origin:center;animation:nv-bloom 3.4s ease-in-out infinite}
+  @keyframes nv-bloom{0%{transform:scale(.2)}25%,80%{transform:scale(1)}100%{transform:scale(.2)}}
+  .nv-swing{transform-origin:268px 105px;animation:nv-swing 2.8s ease-in-out infinite alternate}
+  .nv-swing2{transform-origin:60px 8px;animation:nv-swing 2.4s ease-in-out infinite alternate}
+  @keyframes nv-swing{from{transform:rotate(-16deg)}to{transform:rotate(16deg)}}
+  .nv-fly{transform-box:fill-box;transform-origin:center;animation:nv-fly 7s linear infinite}
+  @keyframes nv-fly{0%{transform:translate(-320px,0) rotate(0);opacity:0}10%,90%{opacity:1}100%{transform:translate(560px,-60px) rotate(720deg);opacity:0}}
+  .nv-grow{transform-box:fill-box;transform-origin:50% 100%;animation:nv-grow 4s ease-out infinite}
+  @keyframes nv-grow{0%{transform:scale(1,0);opacity:1}40%,85%{transform:scale(1,1);opacity:1}100%{transform:scale(1,1);opacity:0}}
+  .nv-grow2{transform-box:fill-box;transform-origin:50% 100%;animation:nv-grow2 2.4s ease-in-out infinite alternate}
+  @keyframes nv-grow2{from{transform:scale(.94,.88)}to{transform:scale(1,1)}}
+  .nv-float{animation:nv-float 6s ease-in-out infinite alternate}
+  @keyframes nv-float{from{transform:translate(-70px,14px)}to{transform:translate(90px,-22px)}}
+  .nv-flap{transform-box:fill-box;transform-origin:center;animation:nv-flap .3s ease-in-out infinite alternate}
+  @keyframes nv-flap{from{transform:scaleX(1)}to{transform:scaleX(.35)}}
+  .nv-garland{transform-origin:400px 40px;animation:nv-gar 3s ease-in-out infinite alternate}
+  @keyframes nv-gar{from{transform:rotate(-.6deg)}to{transform:rotate(.6deg)}}
+  .nv-dance,.nv-dance2{transform-box:fill-box;transform-origin:50% 100%;animation:nv-dance 1.2s ease-in-out infinite alternate}
+  .nv-dance2{animation-duration:1s;animation-delay:-.5s}
+  @keyframes nv-dance{from{transform:translateY(0) rotate(-2deg)}to{transform:translateY(-7px) rotate(2deg)}}
+  .nv-jingle{transform-box:fill-box;transform-origin:50% 0;animation:nv-jingle .3s ease-in-out infinite alternate}
+  @keyframes nv-jingle{from{transform:rotate(-7deg)}to{transform:rotate(7deg)}}
+  .nv-shake{transform-box:fill-box;transform-origin:center;animation:nv-jingle .22s linear infinite alternate}
+  .nv-bubble-out{transform-box:fill-box;transform-origin:50% 100%;animation:nv-bout 7s ease-in-out infinite}
+  .nv-bubble-in{transform-box:fill-box;transform-origin:50% 100%;animation:nv-bin 7s ease-in-out infinite}
+  @keyframes nv-bout{0%,15%,100%{opacity:1;transform:scale(1)}45%,85%{opacity:.12;transform:scale(.7)}}
+  @keyframes nv-bin{0%,15%,100%{opacity:.12;transform:scale(.7)}45%,85%{opacity:1;transform:scale(1.06)}}
+  .nv-sweep{transform-origin:70px 6px;animation:nv-sweep .9s ease-in-out infinite alternate}
+  @keyframes nv-sweep{from{transform:rotate(-14deg)}to{transform:rotate(10deg)}}
+  .nv-dust{transform-box:fill-box;transform-origin:center;animation:nv-dust 1.8s ease-out infinite}
+  @keyframes nv-dust{from{transform:scale(.3);opacity:.85}to{transform:translate(14px,-14px) scale(1.7);opacity:0}}
+  .nv-candy{animation:nv-candy 2.1s ease-in infinite}
+  @keyframes nv-candy{0%{transform:translateY(-20px);opacity:0}20%{opacity:1}75%{transform:translateY(40px);opacity:1}100%{transform:translateY(44px);opacity:0}}
+  .nv-wave{animation:nv-wave 1.4s ease-in-out infinite}
+  @keyframes nv-wave{0%,100%{opacity:.15}50%{opacity:1}}
+  .nv-clash1{animation:nv-c1 1.6s ease-in-out infinite}
+  .nv-clash2{animation:nv-c2 1.6s ease-in-out infinite}
+  @keyframes nv-c1{0%,100%{transform:translateX(-8px)}45%,50%{transform:translateX(5px)}}
+  @keyframes nv-c2{0%,100%{transform:translateX(8px)}45%,50%{transform:translateX(-5px)}}
+  .nv-spark2{transform-box:fill-box;transform-origin:center;animation:nv-sp2 1.6s ease-in-out infinite}
+  @keyframes nv-sp2{0%,40%,70%,100%{opacity:0;transform:scale(.4)}50%{opacity:1;transform:scale(1.3)}}
+  .nv-steam{animation:nv-steam 2s ease-in-out infinite}
+  @keyframes nv-steam{0%{transform:translateY(8px);opacity:0}40%{opacity:.9}100%{transform:translateY(-8px);opacity:0}}
+  .nv-bob{animation:nv-bob 1.6s ease-in-out infinite alternate}
+  @keyframes nv-bob{from{transform:translateY(0)}to{transform:translateY(-4px)}}
+  .nv-merge1{animation:nv-m1 3s ease-in-out infinite}
+  .nv-merge2{animation:nv-m2 3s ease-in-out infinite}
+  @keyframes nv-m1{0%,100%{transform:translateX(-6px)}40%,65%{transform:translateX(12px)}}
+  @keyframes nv-m2{0%,100%{transform:translateX(6px)}40%,65%{transform:translateX(-12px)}}
+
+  /* Səhifə quruluşu */
+  .nv-scene{padding:12px}
+  .nv-scene svg{border-radius:16px}
+  .nv-h2{align-self:flex-start;margin:0;padding:10px 22px;border-radius:999px;background:#FFFFFF;border:1px solid var(--line);box-shadow:0 6px 16px -10px rgba(10,50,80,.4);font-size:24px;font-weight:500}
+  .nv-block{display:flex;flex-direction:column;gap:16px}
+  .nv-text{padding:26px 30px;display:flex;flex-direction:column;gap:12px}
+  .nv-text p{margin:0;font-size:18px;line-height:1.6;color:var(--ink-2)}
+  .nv-facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+  .nv-fact{display:flex;flex-direction:column;gap:6px;padding:20px 22px}
+  .nv-fact b{font-size:30px;font-weight:600;color:var(--accent);line-height:1.1}
+  .nv-fact span{font-size:16px;line-height:1.45;color:var(--ink-2)}
+  .nv-cust{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:16px}
+  .nv-c{display:flex;flex-direction:column;gap:10px;padding:18px 20px 22px}
+  .nv-ic{width:100%;max-width:150px;align-self:center;padding:8px;border-radius:18px;background:var(--bg,#F2F7FA)}
+  .nv-c h3{margin:0;font-size:20px;font-weight:500;line-height:1.25}
+  .nv-c p{margin:0;font-size:16px;line-height:1.5;color:var(--ink-2)}
+  @media (max-width:860px){.nv-facts{grid-template-columns:minmax(0,1fr)}.nv-text{padding:20px}}
+  @media (prefers-reduced-motion:reduce){.nv *{animation:none !important}}
+</style>

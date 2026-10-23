@@ -23,7 +23,7 @@ export const SECTIONS = [
   { title: 'Lüğət', href: '/luget/' },
   { title: 'Atalar sözləri', href: '/atalar-sozleri/' },
   { title: 'Nağıllar', href: '/nagillar/' },
-  { title: 'Bayramlar və ənənələr', href: '' },
+  { title: 'Bayramlar və ənənələr', href: '/bayramlar/' },
 ];
 export const NAV = [
   { title: 'Ana səhifə', href: '/' },

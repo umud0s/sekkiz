@@ -1,0 +1,122 @@
+---
+import Base from '../../../layouts/Base.astro';
+import NovruzStyles from '../../../components/NovruzStyles.astro';
+import { SCENES, ICONS, xonca } from '../../../lib/novruz-art.js';
+import { INTRO, FACTS, CERSENBE, XONCA, KOSA, BAYRAM_GUNU } from '../../../data/novruz.js';
+import { EL } from '../../../lib/novruz.js';
+---
+<Base title="Novruz bayramı" description="Novruz bayramı: dörd çərşənbə (Su, Od, Yel, Torpaq), Novruz xonçası və onun nemətlərinin mənası, Kosa və Keçəl, bayram adətləri. Animasiyalı təsvirlərlə.">
+  <NovruzStyles />
+  <div class="wrap section nv">
+    <section class="stack">
+      <nav class="crumbs" aria-label="Yol"><a href="/">Ana səhifə</a> <span aria-hidden="true">/</span> <a href="/bayramlar/">Bayramlar və ənənələr</a> <span aria-hidden="true">/</span> Novruz</nav>
+      <h1 class="page-title">Novruz bayramı</h1>
+      <p class="lead">Yazın gəlişi, yeni günün və təbiətin oyanışının bayramı.</p>
+    </section>
+
+    <div class="card nv-scene" set:html={SCENES.hero()} />
+    <div class="card nv-text">{INTRO.map((p) => <p>{p}</p>)}</div>
+    <div class="nv-facts">{FACTS.map(([b, t]) => <div class="card nv-fact"><b>{b}</b><span>{t}</span></div>)}</div>
+
+    <section class="nv-block">
+      <h2 class="nv-h2">Dörd çərşənbə</h2>
+      <ol class="cs-row">
+        {CERSENBE.map((c) => (
+          <li>
+            <a class="card cs-card" href={`/bayramlar/novruz/${c.slug}/`} style={`--c:${EL[c.k].c};--bg:${EL[c.k].bg}`}>
+              <span class="cs-ic" set:html={ICONS['el-' + c.k](c.title)} />
+              <span class="cs-n">{c.n}</span>
+              <h3>{c.title}</h3>
+              {c.alt && <span class="cs-alt">{c.alt}</span>}
+              <p>{c.short}</p>
+              <span class="cs-go">Ətraflı <span aria-hidden="true">→</span></span>
+            </a>
+          </li>
+        ))}
+      </ol>
+    </section>
+
+    <section class="nv-block">
+      <h2 class="nv-h2">Novruz xonçası</h2>
+      <div class="card xo-wrap">
+        <div class="xo-art" set:html={xonca()} />
+        <div class="xo-info">
+          <span class="xo-kick">Nemətin üzərinə gəlin</span>
+          <h3 id="xo-t">{XONCA[0][1]}</h3>
+          <p id="xo-d">{XONCA[0][2]}</p>
+          <div class="chips" role="group" aria-label="Xonçanın nemətləri">
+            {XONCA.map(([k, t], i) => <button type="button" class="chip" data-x={k} aria-pressed={i === 0 ? 'true' : 'false'}>{t}</button>)}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="nv-block">
+      <h2 class="nv-h2">Kosa və Keçəl</h2>
+      <div class="card nv-scene" set:html={SCENES.kosa()} />
+      <div class="card nv-text"><p>{KOSA}</p></div>
+    </section>
+
+    <section class="nv-block">
+      <h2 class="nv-h2">Bayram günü</h2>
+      <ul class="nv-cust">
+        {BAYRAM_GUNU.map(([k, t, d]) => <li class="card nv-c"><span class="nv-ic" style="--bg:#FFF4E2" set:html={ICONS[k](t)} /><h3>{t}</h3><p>{d}</p></li>)}
+      </ul>
+    </section>
+  </div>
+</Base>
+
+<style is:global>
+  .xi{cursor:pointer;outline:none;transform-box:fill-box;transform-origin:center;transition:opacity .35s,filter .35s,transform .35s cubic-bezier(.2,.8,.2,1)}
+  .xonca-svg.has .xi:not(.on){opacity:.4;filter:saturate(.6)}
+  .xi.on{transform:scale(1.07);filter:drop-shadow(0 8px 8px rgba(90,45,10,.35))}
+  .xi:focus-visible{filter:drop-shadow(0 0 4px #0A6E99)}
+</style>
+
+<style>
+  .cs-row{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;counter-reset:cs}
+  .cs-card{height:100%;display:flex;flex-direction:column;gap:8px;padding:20px 22px 22px;text-decoration:none;color:var(--ink);border-top:5px solid var(--c);transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s}
+  .cs-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-hi);color:var(--ink)}
+  .cs-ic{width:110px;padding:6px;border-radius:18px;background:var(--bg)}
+  .cs-n{font-size:13px;font-weight:600;letter-spacing:.8px;text-transform:uppercase;color:var(--c)}
+  .cs-card h3{margin:0;font-size:22px;font-weight:500}
+  .cs-alt{align-self:flex-start;padding:2px 10px;border-radius:999px;background:var(--bg);color:var(--c);font-size:13px;font-weight:600}
+  .cs-card p{margin:0;font-size:16px;line-height:1.45;color:var(--ink-2)}
+  .cs-go{margin-top:auto;font-size:15px;font-weight:600;color:var(--c)}
+  .xo-wrap{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:24px;align-items:center;padding:22px}
+  .xo-art{padding:8px;border-radius:18px;background:radial-gradient(circle at 50% 40%,#FFF8EC,#F3E6D2)}
+  .xo-info{display:flex;flex-direction:column;gap:12px}
+  .xo-kick{font-size:14px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--accent)}
+  .xo-info h3{margin:0;font-size:30px;font-weight:500;animation:xo-in .35s ease}
+  .xo-info p{margin:0;font-size:18px;line-height:1.55;color:var(--ink-2);min-height:5.5em;animation:xo-in .35s ease}
+  @keyframes xo-in{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+  @media (max-width:1060px){.cs-row{grid-template-columns:repeat(2,minmax(0,1fr))}}
+  @media (max-width:860px){.xo-wrap{grid-template-columns:minmax(0,1fr)}.xo-info p{min-height:0}}
+  @media (max-width:520px){.cs-row{grid-template-columns:minmax(0,1fr)}}
+</style>
+
+<script>
+  import { XONCA } from '../../../data/novruz.js';
+  const svg = document.querySelector('.xonca-svg'), t = document.getElementById('xo-t'), d = document.getElementById('xo-d');
+  let auto = 0, i = 0, user = false;
+  function pick(k) {
+    const x = XONCA.find((r) => r[0] === k); if (!x) return;
+    svg.classList.add('has');
+    svg.querySelectorAll('.xi').forEach((g) => g.classList.toggle('on', g.dataset.k === k));
+    document.querySelectorAll('[data-x]').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.x === k)));
+    if (t.textContent !== x[1]) { t.textContent = x[1]; d.textContent = x[2]; [t, d].forEach((el) => { el.style.animation = 'none'; void el.offsetWidth; el.style.animation = ''; }); }
+  }
+  const stop = () => { user = true; clearInterval(auto); };
+  // Seçim yalnız başqa nemətə keçəndə dəyişir, ona görə üzərində titrəmə olmur
+  svg.querySelectorAll('.xi').forEach((g) => {
+    g.addEventListener('pointerenter', () => { stop(); pick(g.dataset.k); });
+    g.addEventListener('click', () => { stop(); pick(g.dataset.k); });
+    g.addEventListener('focus', () => { stop(); pick(g.dataset.k); });
+  });
+  document.querySelectorAll('[data-x]').forEach((b) => b.addEventListener('click', () => { stop(); pick(b.dataset.x); }));
+  // İstifadəçi toxunana qədər nemətlər növbə ilə göstərilir
+  if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    pick(XONCA[0][0]);
+    auto = setInterval(() => { if (user) return; i = (i + 1) % XONCA.length; pick(XONCA[i][0]); }, 3200);
+  }
+</script>

@@ -1,0 +1,47 @@
+---
+import Base from '../../layouts/Base.astro';
+import NovruzStyles from '../../components/NovruzStyles.astro';
+import { ICONS } from '../../lib/novruz-art.js';
+---
+<Base title="Bayramlar və ənənələr" description="Azərbaycan xalqının bayramları və adət-ənənələri: Novruz bayramı, dörd çərşənbə, xonça, Kosa və Keçəl.">
+  <NovruzStyles />
+  <div class="wrap section">
+    <section class="stack">
+      <nav class="crumbs" aria-label="Yol"><a href="/">Ana səhifə</a> <span aria-hidden="true">/</span> Bayramlar və ənənələr</nav>
+      <h1 class="page-title">Bayramlar və ənənələr</h1>
+      <p class="lead">Xalqımızın bayramları və nəsildən-nəslə ötürülən adətləri, təsvirlər və hekayələrlə.</p>
+    </section>
+    <div class="by-grid">
+      <a class="card by-card nv" href="/bayramlar/novruz/">
+        <span class="by-ic" set:html={ICONS.semeni('Səməni')} />
+        <span class="by-b">
+          <span class="by-k">Yazın bayramı</span>
+          <h2>Novruz bayramı</h2>
+          <p>Dörd çərşənbə, tonqallar, səməni, xonça, Kosa və Keçəl. Yeni günün və təbiətin oyanışının bayramı.</p>
+        </span>
+      </a>
+      <div class="card by-card by-soon" aria-disabled="true">
+        <span class="by-b">
+          <span class="soon-badge">Tezliklə</span>
+          <h2>Digər bayram və adətlər</h2>
+          <p>Bölməyə yeni bayramlar və el adətləri mərhələlərlə əlavə olunacaq.</p>
+        </span>
+      </div>
+    </div>
+  </div>
+</Base>
+
+<style>
+  .by-grid{display:grid;grid-template-columns:minmax(0,2fr) minmax(0,1fr);gap:24px}
+  .by-card{display:flex;gap:24px;align-items:center;padding:26px;text-decoration:none;color:var(--ink);transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s}
+  a.by-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-hi);color:var(--ink)}
+  .by-ic{flex:none;width:170px;padding:10px;border-radius:20px;background:#EEF7E6}
+  .by-b{display:flex;flex-direction:column;gap:8px}
+  .by-k{font-size:14px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:#2F7A1E}
+  .by-b h2{margin:0;font-size:30px;font-weight:500}
+  .by-b p{margin:0;font-size:17px;line-height:1.5;color:var(--muted)}
+  .by-soon{opacity:.75;box-shadow:0 1px 2px rgba(10,50,80,.06),0 8px 20px -12px rgba(10,50,80,.18)}
+  .soon-badge{align-self:flex-start;padding:4px 12px;border-radius:999px;background:#FFF1CC;color:#7A5300;font-size:14px;font-weight:600}
+  @media (max-width:860px){.by-grid{grid-template-columns:minmax(0,1fr)}}
+  @media (max-width:520px){.by-card{flex-direction:column;align-items:flex-start}.by-ic{width:140px}}
+</style>

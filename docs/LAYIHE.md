@@ -172,6 +172,19 @@ Ana səhifədəki "Tarix" kartı artıq aktivdir və /tarix/ səhifəsinə apar�
   Kəlbəcərin işğalı (02.04.1993), Zəngilanın işğalı (29.10.1993), Suqovuşan (03.10.2020),
   Ana dili dövlət dili (27.06.1918), üçrəngli bayraq (05.02.1991), Vaşinqton görüşü (08.08.2025).
 
+## Bayramlar və ənənələr (/bayramlar/) — Novruzla başlanıb (23.10.2026)
+İstifadəçinin tapşırığı: əvvəlcə Novruz və dörd çərşənbə; simvollar (Kosa-Keçəl, xonça və s.) və hər çərşənbənin adətləri
+animasiyalı təsvirlərlə. Digər adət-ənənələr sonra əlavə olunacaq.
+- /bayramlar/: Novruz kartı + "Tezliklə" kartı. Ana səhifədə və menyuda bölmə aktivdir.
+- /bayramlar/novruz/: animasiyalı səhər səhnəsi (doğan günəş, səməni, şamlar, tonqal, çiçəkləyən ağac), giriş mətni,
+  3 fakt (UNESCO 2009, 21 mart Beynəlxalq Novruz Günü — BMT 2010, Azərbaycanda 5 gün), dörd çərşənbə kartı,
+  interaktiv xonça (səməni, şam, boyanmış yumurta, şəkərbura, paxlava, qoğal, quru meyvə; nemətin üzərinə gələndə
+  önə çıxır və mənası yazılır; istifadəçi toxunana qədər özü növbə ilə göstərir), Kosa və Keçəl səhnəsi
+  (rəqs edirlər; Kosanın qar dənəsi solur, Keçəlin günəşi böyüyür: qış gedir, yaz gəlir), Bayram günü adətləri.
+- /bayramlar/novruz/su-cersenbesi/, od-, yel-, torpaq-cersenbesi/: hər birinin böyük animasiyalı səhnəsi,
+  izahı, adətləri (hər adətin öz animasiyalı təsviri), çərşənbələr arası keçid.
+- Mətnlər: src/data/novruz.js; təsvirlər: src/lib/novruz-art.js; hərəkətlər: src/components/NovruzStyles.astro.
+
 ## Görünüş: header menyu və kartlaşdırılmış yazılar (22.10.2026)
 İstifadəçi istəyi: fonun üzərində "çılpaq" qalan yazılar quru görünür; onlar düymə və ya küncləri oval düzbucaqlı içinə alınmalıdır.
 Ana səhifədə yuxarıda menyu tərzində header olmalıdır (sonradan yeni bəndlər əlavə olunacaq).

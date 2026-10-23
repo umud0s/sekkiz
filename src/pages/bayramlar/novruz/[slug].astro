@@ -1,0 +1,67 @@
+---
+import Base from '../../../layouts/Base.astro';
+import NovruzStyles from '../../../components/NovruzStyles.astro';
+import { SCENES, ICONS } from '../../../lib/novruz-art.js';
+import { CERSENBE } from '../../../data/novruz.js';
+import { EL } from '../../../lib/novruz.js';
+
+export function getStaticPaths() {
+  return CERSENBE.map((c, i) => ({ params: { slug: c.slug }, props: { i } }));
+}
+const { i } = Astro.props;
+const c = CERSENBE[i], prev = CERSENBE[i - 1], next = CERSENBE[i + 1], el = EL[c.k];
+---
+<Base title={c.title} description={`${c.title}${c.alt ? ` (${c.alt})` : ''}: Novruzdan əvvəlki ${c.n.toLowerCase()}. ${c.lead}`}>
+  <NovruzStyles />
+  <div class="wrap section nv" style={`--c:${el.c};--bg:${el.bg}`}>
+    <section class="stack">
+      <nav class="crumbs" aria-label="Yol"><a href="/">Ana səhifə</a> <span aria-hidden="true">/</span> <a href="/bayramlar/">Bayramlar və ənənələr</a> <span aria-hidden="true">/</span> <a href="/bayramlar/novruz/">Novruz</a> <span aria-hidden="true">/</span> {c.title}</nav>
+      <span class="ce-n">{c.n}</span>
+      <h1 class="page-title">{c.title}</h1>
+      {c.alt && <p class="lead">{c.alt}</p>}
+    </section>
+
+    <div class="ce-steps" role="list" aria-label="Dörd çərşənbə">
+      {CERSENBE.map((x, j) => (
+        <a role="listitem" class={`ce-step${j === i ? ' on' : ''}`} href={`/bayramlar/novruz/${x.slug}/`} style={`--c:${EL[x.k].c};--bg:${EL[x.k].bg}`} aria-current={j === i ? 'page' : undefined}>
+          <span class="ce-dot" set:html={ICONS['el-' + x.k](x.title)} />{x.title}
+        </a>
+      ))}
+      <a role="listitem" class="ce-step" href="/bayramlar/novruz/" style="--c:#2F7A1E;--bg:#E5F4E3"><span class="ce-dot" set:html={ICONS.semeni('Novruz')} />Novruz</a>
+    </div>
+
+    <div class="card nv-scene" set:html={SCENES[c.k]()} />
+    <div class="card nv-text ce-lead"><p>{c.lead}</p></div>
+
+    <section class="nv-block">
+      <h2 class="nv-h2">Bu çərşənbənin adətləri</h2>
+      <ul class="nv-cust">
+        {c.customs.map(([k, t, d]) => <li class="card nv-c"><span class="nv-ic" set:html={ICONS[k](t)} /><h3>{t}</h3><p>{d}</p></li>)}
+      </ul>
+    </section>
+
+    <nav class="ce-pn" aria-label="Çərşənbələr">
+      {prev ? <a class="card" href={`/bayramlar/novruz/${prev.slug}/`}><span class="muted">← Əvvəlki</span>{prev.title}</a> : <a class="card" href="/bayramlar/novruz/"><span class="muted">← Geri</span>Novruz bayramı</a>}
+      {next ? <a class="card" href={`/bayramlar/novruz/${next.slug}/`} style="text-align:right"><span class="muted">Növbəti →</span>{next.title}</a> : <a class="card" href="/bayramlar/novruz/" style="text-align:right"><span class="muted">Növbəti →</span>Novruz bayramı</a>}
+    </nav>
+  </div>
+</Base>
+
+<style is:global>
+  .ce-dot *{animation:none !important}
+</style>
+
+<style>
+  .ce-n{align-self:flex-start;padding:4px 12px;border-radius:999px;background:var(--bg);color:var(--c);font-size:13px;font-weight:600;letter-spacing:.8px;text-transform:uppercase}
+  .ce-steps{display:flex;flex-wrap:wrap;gap:8px}
+  .ce-step{display:inline-flex;align-items:center;gap:8px;padding:6px 16px 6px 6px;border-radius:999px;background:#FFFFFF;border:1px solid var(--line);color:var(--ink);text-decoration:none;font-size:15px;font-weight:500;transition:background .2s,color .2s}
+  .ce-step:hover{border-color:var(--c);color:var(--ink)}
+  .ce-step.on{background:var(--c);border-color:var(--c);color:#FFFFFF}
+  .ce-dot{width:38px;height:32px;border-radius:999px;background:var(--bg);display:flex;align-items:center;justify-content:center;padding:2px}
+  .ce-lead{border-left:5px solid var(--c)}
+  .nv-ic{--bg:var(--bg)}
+  .ce-pn{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .ce-pn a{display:flex;flex-direction:column;gap:6px;padding:18px 22px;text-decoration:none;color:var(--ink);font-size:19px;font-weight:500;transition:transform .3s,box-shadow .3s}
+  .ce-pn a:hover{transform:translateY(-3px);box-shadow:var(--shadow-hi);color:var(--ink)}
+  .ce-pn .muted{font-size:14px;font-weight:500}
+</style>
