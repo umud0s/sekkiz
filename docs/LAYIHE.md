@@ -281,7 +281,7 @@ Açıq: Sovet İttifaqı Qəhrəmanları üçün mənbə.
 - Hosting: Cloudflare Pages (pulsuz), kod GitHub-da. Domen: istifadəçi alır (tövsiyə sekkizguse.az, NS dəyişmək imkanı şərt).
 - Əvvəl test ünvanı: *.pages.dev, sonra domen qoşulur.
 - Boş bölmələr (Tarix, Lüğət, Bayramlar): kartda "Tezliklə" nişanı, kliklənmir (A variantı).
-- Sosial: yalnız Telegram aktivdir -> https://t.me/atalarimizinsozu; digərləri hələ "#". E-poçt ikonu əlavə edildi (ünvan hələ yoxdur).
+- Sosial: Telegram -> https://t.me/atalarimizinsozu; WhatsApp -> https://wa.me/994559272779 (055 927 27 79, 23.10.2026); digərləri hələ "#". E-poçt ikonu əlavə edildi (ünvan hələ yoxdur).
 - Sitatlar olduğu kimi qalır. Himnin hazırkı səs yazısı qalır.
 - Tarixlər təsdiqləndi: Salatın Əsgərova ölüm 09.01.1991, Orxan Cabbarov doğum 16.10.1995. "dəqiqləşdirilir" qalmadı.
 - Sovet İttifaqı Qəhrəmanları: filtr və izah kartı gizlədildi, 2 nümunə silindi. Saytda 307 qəhrəman.

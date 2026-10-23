@@ -9,7 +9,7 @@ export const SOCIAL = [
   { name: 'TikTok', href: '', icon: 'tiktok' },
   { name: 'YouTube', href: '', icon: 'youtube' },
   { name: 'Telegram', href: 'https://t.me/atalarimizinsozu', icon: 'telegram' },
-  { name: 'WhatsApp', href: '', icon: 'whatsapp' },
+  { name: 'WhatsApp', href: 'https://wa.me/994559272779', icon: 'whatsapp' },
   { name: 'E-poçt', href: '', icon: 'mail' },
 ];
 
