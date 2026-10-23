@@ -6,6 +6,9 @@ backend:
   name: github
   repo: umud0s/sekkiz
   branch: main
+  # "Sign In with GitHub": giriş saytın öz Worker-i ilə (worker/index.js)
+  base_url: https://sekkizguse.osmanliumud.workers.dev
+  auth_endpoint: oauth/auth
   commit_messages:
     create: 'Admin: {{collection}} əlavə edildi ({{slug}})'
     update: 'Admin: {{collection}} yeniləndi ({{slug}})'

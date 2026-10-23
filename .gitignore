@@ -5,3 +5,5 @@ src/data/gen/
 public/data/
 public/admin/sveltia-cms.js
 public/admin/chunks/
+.wrangler/
+.dev.vars

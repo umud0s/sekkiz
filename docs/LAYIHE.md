@@ -190,7 +190,10 @@ animasiyalı təsvirlərlə. Digər adət-ənənələr sonra əlavə olunacaq.
 Mərhələ 1 (hazırdır): serversiz panel — Sveltia CMS 0.231.0 (npm paketi, build zamanı public/admin/-ə köçürülür, CDN yoxdur).
 Panel GitHub-dakı umud0s/sekkiz reposunda faylları dəyişir, hər yadda saxlama commit olur, Cloudflare saytı yenidən yığır.
 Giriş: GitHub fine-grained personal access token ("Sign In Using Access Token"), yalnız sekkiz reposu, Contents: Read and write.
-"Sign In with GitHub" düyməsi üçün OAuth serveri hələ qurulmayıb (sonra sveltia-cms-auth Worker ilə qurula bilər).
+"Sign In with GitHub" (23.10.2026): OAuth saytın öz Worker-indədir (worker/index.js, wrangler.jsonc: main + run_worker_first ["/oauth/*"]).
+  Ünvanlar: /oauth/auth (GitHub-a yönləndirir, state cookie), /oauth/callback (kodu açara dəyişir, nəticəni yalnız eyni origin-ə postMessage edir).
+  Lazım: GitHub OAuth App (callback: https://sekkizguse.osmanliumud.workers.dev/oauth/callback) və Cloudflare-də
+  Secret kimi GITHUB_CLIENT_ID, GITHUB_CLIENT_SECRET. Domen sekkizguse.az olanda: OAuth App ünvanları və config.yml base_url dəyişməlidir.
 İdarə olunanlar (hamısı src/data/cms/ altında, obyekt formatlı JSON):
 - tarix/*.json — Tarixdə bu gün (hər hadisə ayrıca fayl)
 - qehremanlar/*.json — 307 qəhrəman (hər biri ayrıca fayl)
