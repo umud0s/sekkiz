@@ -193,7 +193,8 @@ Giriş: GitHub fine-grained personal access token ("Sign In Using Access Token")
 "Sign In with GitHub" (23.10.2026): OAuth saytın öz Worker-indədir (worker/index.js, wrangler.jsonc: main + run_worker_first ["/oauth/*"]).
   Ünvanlar: /oauth/auth (GitHub-a yönləndirir, state cookie), /oauth/callback (kodu açara dəyişir, nəticəni yalnız eyni origin-ə postMessage edir).
   Lazım: GitHub OAuth App (callback: https://sekkizguse.osmanliumud.workers.dev/oauth/callback) və Cloudflare-də
-  Secret kimi GITHUB_CLIENT_ID, GITHUB_CLIENT_SECRET. Domen sekkizguse.az olanda: OAuth App ünvanları və config.yml base_url dəyişməlidir.
+  GITHUB_CLIENT_ID (Variable) və GITHUB_CLIENT_SECRET (Secret). 23.10.2026: istifadəçi qurdu, giriş işləyir.
+  Secret bir dəfə ekran şəklində göründüyü üçün GitHub-da yeniləndi. Açarlar heç vaxt wrangler.jsonc-ə yazılmamalıdır. Domen sekkizguse.az olanda: OAuth App ünvanları və config.yml base_url dəyişməlidir.
 İdarə olunanlar (hamısı src/data/cms/ altında, obyekt formatlı JSON):
 - tarix/*.json — Tarixdə bu gün (hər hadisə ayrıca fayl)
 - qehremanlar/*.json — 307 qəhrəman (hər biri ayrıca fayl)
