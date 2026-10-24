@@ -21,6 +21,8 @@ import { PILLELER, QORUNAN, SUALLAR } from '../../data/diyar.js';
           <h2>Qaydalar</h2>
           <ol>
             <li>Oyunda <b>12 sual</b> var. Hər sualın 4 variantı, yalnız biri düzgündür.</li>
+            <li>Suallar tədricən çətinləşir: ilk 5 sual <b>asan</b>, növbəti 5 sual <b>orta</b>, son 2 sual <b>çətindir</b>.</li>
+            <li>Vaxt məhduddur: asan suallara <b>20</b>, orta suallara <b>30</b>, çətin suallara <b>40 saniyə</b> verilir. Vaxt bitsə, cavab səhv sayılır.</li>
             <li>Mükafat pul deyil: hər pillədə Azərbaycanın xəzinəsindən bir hədiyyə qazanırsan. 12-ci pillədə səni <b>Qızıl Səkkizguşə</b> və "Böyük diyarşünas" adı gözləyir.</li>
             <li><b>4-cü</b> və <b>8-ci</b> pillələr qorunan pillələrdir. Səhv cavab versən oyun bitir, amma son keçdiyin qorunan pillənin hədiyyəsi səndə qalır.</li>
             <li>Cavabdan əmin deyilsənsə, <b>"Dayan və hədiyyəni götür"</b> düyməsi ilə qazandığını saxlayıb oyunu bitirə bilərsən.</li>
@@ -33,8 +35,10 @@ import { PILLELER, QORUNAN, SUALLAR } from '../../data/diyar.js';
         <div class="dy-panel" id="play" hidden>
           <div class="dy-top">
             <span class="dy-cat" id="cat"></span>
+            <span class="dy-lvl" id="lvl"></span>
             <span class="dy-num"><b id="qn">1</b> / 12</span>
           </div>
+          <div class="dy-timer" aria-live="off"><div class="dy-bar"><i id="bar"></i></div><span class="dy-sec"><b id="tm">20</b> san</span></div>
           <p class="dy-q" id="q"></p>
           <div class="dy-ans" id="ans"></div>
           <div class="dy-hint" id="hint" hidden></div>
@@ -77,6 +81,15 @@ import { PILLELER, QORUNAN, SUALLAR } from '../../data/diyar.js';
   .dy-go:hover{color:#2A1A00}
   .dy-top{display:flex;justify-content:space-between;align-items:center;gap:10px}
   .dy-cat{padding:6px 14px;border-radius:999px;background:rgba(255,255,255,.12);font-size:14px;font-weight:600;letter-spacing:.4px}
+  .dy-lvl{margin-right:auto;margin-left:8px;padding:6px 12px;border-radius:999px;font-size:13px;font-weight:600}
+  .dy-lvl.l1{background:#2E7D4A}.dy-lvl.l2{background:#B07A12}.dy-lvl.l3{background:#B0303A}
+  .dy-timer{display:flex;align-items:center;gap:12px}
+  .dy-bar{flex:1;height:10px;border-radius:999px;background:rgba(255,255,255,.12);overflow:hidden}
+  .dy-bar i{display:block;height:100%;width:100%;border-radius:999px;background:linear-gradient(90deg,#3DBA5A,#F6C451);transform-origin:left;transition:transform .25s linear,background .3s}
+  .dy-bar i.low{background:linear-gradient(90deg,#E0454F,#F6A623)}
+  .dy-sec{min-width:70px;text-align:right;font-size:15px;color:#AFC2D8}
+  .dy-sec b{font-size:22px;color:#FFFFFF;font-variant-numeric:tabular-nums}
+  .dy-sec.low b{color:#FF7A82}
   .dy-num{font-size:15px;color:#AFC2D8}.dy-num b{font-size:20px;color:#F6C451}
   .dy-q{margin:6px 0;padding:22px 26px;border-radius:22px;border:2px solid #4B78B8;background:linear-gradient(#183467,#0F2348);font-size:24px;line-height:1.4;font-weight:500;text-align:center}
   .dy-ans{display:grid;grid-template-columns:1fr 1fr;gap:12px}
@@ -139,7 +152,36 @@ import { PILLELER, QORUNAN, SUALLAR } from '../../data/diyar.js';
 
   // Çətinlik: əvvəl tanınmış abidə və şəxsiyyətlər, sonra qala və məscidlər, axırda kənd və su anbarları
   const W = { sexs: 1, abide: 1, mescid: 2, qala: 2, kend: 3, su: 3 };
-  let qs = [], k = 0, helpUsed = false, busy = false, cur = null;
+  let qs = [], k = 0, helpUsed = false, busy = false, cur = null, timer = 0, left = 0, limit = 0;
+  // Vaxt: ilk 5 sual 20, növbəti 5 sual 30, son 2 sual 40 saniyə
+  const LIMIT = (i) => (i < 5 ? 20 : i < 10 ? 30 : 40);
+  const LVL = (i) => (i < 5 ? ['l1', 'Asan'] : i < 10 ? ['l2', 'Orta'] : ['l3', 'Çətin']);
+  function tick() {
+    $('tm').textContent = Math.ceil(left);
+    $('bar').style.transform = `scaleX(${Math.max(0, left / limit)})`;
+    const low = left <= 5;
+    $('bar').classList.toggle('low', low); $('tm').parentElement.classList.toggle('low', low);
+  }
+  function startTimer() {
+    clearInterval(timer); limit = LIMIT(k); left = limit; tick();
+    const t0 = performance.now();
+    timer = setInterval(() => {
+      left = limit - (performance.now() - t0) / 1000;
+      if (left <= 0) { left = 0; tick(); clearInterval(timer); timeUp(); return; }
+      if (left <= 5 && Math.ceil(left) !== +$('tm').textContent) tone(880, 0, 0.08, 'sine', 0.05);
+      tick();
+    }, 200);
+  }
+  const stopTimer = () => clearInterval(timer);
+  function timeUp() {
+    if (busy) return;
+    busy = true;
+    const btns = [...$('ans').querySelectorAll('button')];
+    btns.forEach((x) => { x.disabled = true; });
+    btns.find((x) => x.dataset.v === cur.ans).classList.add('ok');
+    sBad();
+    setTimeout(() => end('time'), 1600);
+  }
 
   // Ses: brauzerin özündə yaradılır
   let ac = null;
@@ -158,7 +200,7 @@ import { PILLELER, QORUNAN, SUALLAR } from '../../data/diyar.js';
   function build() {
     const pool = shuffle(SUALLAR.slice());
     const pick = [], usedAns = new Set();
-    for (const w of [1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3]) {
+    for (const w of [1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 3, 3]) {
       const i = pool.findIndex((q) => W[q[0]] === w && !usedAns.has(q[2]) && !pick.includes(q));
       const j = i >= 0 ? i : pool.findIndex((q) => !pick.includes(q));
       pick.push(pool[j]); usedAns.add(pool[j][2]);
@@ -188,18 +230,22 @@ import { PILLELER, QORUNAN, SUALLAR } from '../../data/diyar.js';
     $('hint').hidden = true;
     $('help').disabled = helpUsed;
     $('stop').disabled = k === 0;
+    const [lc, lt] = LVL(k);
+    $('lvl').className = 'dy-lvl ' + lc; $('lvl').textContent = lt;
     ladder();
+    startTimer();
   }
   function prizeAt(level) { return level > 0 ? PILLELER[level - 1][0] : null; }
   function end(kind) {
     const st = load();
     // Qazanılan pillə: dayananda keçdiyi pillə, səhvdə son qorunan pillə
-    const level = kind === 'wrong' ? Math.max(0, ...QORUNAN.map((q) => q + 1).filter((q) => q <= k)) : k;
+    stopTimer();
+    const level = kind === 'wrong' || kind === 'time' ? Math.max(0, ...QORUNAN.map((q) => q + 1).filter((q) => q <= k)) : k;
     st.oyun++; st.enYuksek = Math.max(st.enYuksek, level);
     for (let i = 0; i < level; i++) if (!st.hediyye.includes(i)) st.hediyye.push(i);
     save(st); xezine();
     const p = prizeAt(level);
-    const head = kind === 'win' ? 'Təbriklər, böyük diyarşünas!' : kind === 'stop' ? 'Ağıllı qərar!' : 'Təəssüf, cavab səhv oldu.';
+    const head = kind === 'win' ? 'Təbriklər, böyük diyarşünas!' : kind === 'stop' ? 'Ağıllı qərar!' : kind === 'time' ? 'Vaxt bitdi.' : 'Təəssüf, cavab səhv oldu.';
     const txt = kind === 'win' ? 'Bütün 12 sualı doğru cavablandırdın. Azərbaycanı yaxşı tanıyırsan!' : kind === 'stop' ? `${k} suala doğru cavab verib dayandın.` : `Düzgün cavab: <b>${esc(cur.ans)}</b>. ${k} suala doğru cavab verdin.`;
     $('res').innerHTML = `<h2>${head}</h2><p>${txt}</p>` + (p ? `<span class="dy-prize"><span>Qazandığın hədiyyə</span><b>${esc(p)}</b></span>` : '<p>Bu dəfə hədiyyə qazanılmadı, növbəti oyunda mütləq alınacaq.</p>');
     $('play').hidden = true; $('done').hidden = false;
@@ -208,6 +254,7 @@ import { PILLELER, QORUNAN, SUALLAR } from '../../data/diyar.js';
   $('ans').addEventListener('click', (e) => {
     const b = e.target.closest('button'); if (!b || busy) return;
     busy = true;
+    stopTimer();
     const btns = [...$('ans').querySelectorAll('button')];
     btns.forEach((x) => { x.disabled = true; });
     b.classList.add('lock');

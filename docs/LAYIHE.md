@@ -220,7 +220,8 @@ Mərhələ 2 (Fəxri xiyaban üçün): Cloudflare Workers + D1 + R2, TypeScript.
 - Gözləyən təkliflər: çay süfrəsi və qonaqpərvərlik, toy adətləri.
 
 ## "Kim diyarşünas olmaq istəyir?" (/xerite/diyarsunas/) — 24.10.2026
-Milyonçu tərzi: 12 sual, 4 variant, çətinlik artır (şəxsiyyət/abidə → qala/məscid → kənd/su anbarı).
+Milyonçu tərzi: 12 sual, 4 variant. Çətinlik: 1-5 asan (şəxsiyyət, abidə), 6-10 orta (qala, məscid), 11-12 çətin (kənd, su anbarı).
+Vaxt: asan 20, orta 30, çətin 40 saniyə; vaxt bitsə səhv sayılır (son 5 saniyədə zolaq qırmızı, səs siqnalı).
 Mükafat pul deyil, 12 pilləli "xəzinə": Armudu stəkan, Kəlağayı, Lahıc mis qabı, Şəki halvası (qorunan), Quba alması, Tar,
 Qarabağ xalçası, Qarabağ atı (qorunan), Xarıbülbül, Qızıl buta, Diyarşünas medalı, Qızıl Səkkizguşə.
 Səhv → oyun bitir, son qorunan pillə qalır; "Dayan və hədiyyəni götür"; 1 kömək: iqtisadi rayon + ərazi haqqında fakt.
