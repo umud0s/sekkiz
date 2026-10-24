@@ -1,6 +1,6 @@
 // Brauzer tərəfi: hesab API-si, daxil olmuş istifadəçi və reytinq cədvəli.
 import { avatarSvg } from './simvollar.js';
-import { OYUNLAR, XERITE_ERAZI } from './hesab-sabit.js';
+import { OYUNLAR, XERITE_ERAZI, DIYAR_SUAL } from './hesab-sabit.js';
 
 export { avatarSvg };
 export const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]);
@@ -47,14 +47,14 @@ const saat = (ms) => { const s = Math.round(ms / 1000); return `${String(Math.fl
 // Nəticənin yazılışı hər oyun üçün
 export const NETICE = {
   xerite: (r) => (r.xal === XERITE_ERAZI && r.vaxt ? `${XERITE_ERAZI} ərazi · ${saat(r.vaxt)}` : `${r.xal} ərazi`),
-  diyar: (r) => (r.xal === 12 && r.vaxt ? `12 / 12 pillə · ${saat(r.vaxt)}` : `${r.xal} / 12 pillə`),
+  diyar: (r) => (r.xal === DIYAR_SUAL && r.vaxt ? `${r.xal} / ${DIYAR_SUAL} pillə · ${saat(r.vaxt)}` : `${r.xal} / ${DIYAR_SUAL} pillə`),
   sozu: (r) => `${r.xal} xal`,
 };
 // Reytinq cədvəlinin nəticə sütunları: [başlıq, dəyər]
 const SUTUN = {
   // Xəritədə hamısını tapanlar tamamlama vaxtına görə sıralanır, vaxt ayrıca sütunda göstərilir
   xerite: [['Tapılan', (r) => `${r.xal} / ${XERITE_ERAZI}`], ['Vaxt', (r) => (r.xal === XERITE_ERAZI && r.vaxt ? saat(r.vaxt) : '—')]],
-  diyar: [['Pillə', (r) => `${r.xal} / 12`], ['Vaxt', (r) => (r.xal === 12 && r.vaxt ? saat(r.vaxt) : '—')]],
+  diyar: [['Pillə', (r) => `${r.xal} / ${DIYAR_SUAL}`], ['Vaxt', (r) => (r.xal === DIYAR_SUAL && r.vaxt ? saat(r.vaxt) : '—')]],
   sozu: [['Xal', NETICE.sozu]],
 };
 

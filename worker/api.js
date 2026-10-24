@@ -1,7 +1,7 @@
 // Hesab sistemi: qeydiyyat, giriş, profil, oyun nəticələri və reytinq (/api/*).
 // Məlumatlar Cloudflare D1 bazasında saxlanılır (binding: DB). Cədvəllər ilk sorğuda avtomatik yaradılır.
 // Hamıya açıq olan yalnız ad, istifadəçi adı, profil şəkli və oyun nəticəsidir; status, məktəb, universitet gizlidir.
-import { STATUSLAR, AVATAR_IDLER, XERITE_ERAZI, AD_RE, USER_RE, SIFRE_MIN, SIFRE_MAX } from '../src/lib/hesab-sabit.js';
+import { STATUSLAR, AVATAR_IDLER, XERITE_ERAZI, DIYAR_SUAL, AD_RE, USER_RE, SIFRE_MIN, SIFRE_MAX } from '../src/lib/hesab-sabit.js';
 
 const SESS = 'sk_s';
 const SESS_GUN = 90;
@@ -157,10 +157,10 @@ const QAYDA = {
   diyar: {
     oxu(b) {
       const p = Math.trunc(+b.pille), vaxt = b.vaxt == null ? null : Math.round(+b.vaxt);
-      if (!(p >= 0 && p <= 12)) return null;
-      // 12 sualın vaxt limitlərinin cəmi 330 saniyədir; 12 sualı 12 saniyədən tez cavablamaq mümkün deyil
-      if (p === 12 && vaxt != null && !(vaxt >= 12000 && vaxt <= 335000)) return null;
-      return { xal: p, vaxt: p === 12 ? vaxt : null };
+      if (!(p >= 0 && p <= DIYAR_SUAL)) return null;
+      // 15 sualın vaxt limitlərinin cəmi 450 saniyədir; hər suala ən azı 1 saniyə lazımdır
+      if (p === DIYAR_SUAL && vaxt != null && !(vaxt >= DIYAR_SUAL * 1000 && vaxt <= 455000)) return null;
+      return { xal: p, vaxt: p === DIYAR_SUAL ? vaxt : null };
     },
     birlesdir: (k, y) => (!k || y.xal > k.xal || (y.xal === k.xal && y.vaxt != null && (k.vaxt == null || y.vaxt < k.vaxt)) ? y : null),
     sira: 'r.xal DESC, (r.vaxt IS NULL), r.vaxt ASC, r.updated ASC',

@@ -5,12 +5,12 @@ import { PILLELER, QORUNAN, SUALLAR } from '../../data/diyar.js';
 import KENDLER from '../../data/kendler.json';
 const KENDSAY = Object.values(KENDLER).flat().length;
 ---
-<Base title="Kim diyarşünas olmaq istəyir?" description="Azərbaycanın kəndləri, qalaları, abidələri, su anbarları, məscidləri və dahilərin doğulduğu yerlər haqqında 12 suallıq oyun. Pul yox, Azərbaycanın xəzinəsindən hədiyyələr.">
+<Base title="Kim diyarşünas olmaq istəyir?" description="Azərbaycanın kəndləri, qalaları, abidələri, su anbarları, məscidləri və dahilərin doğulduğu yerlər haqqında 15 suallıq oyun. Pul yox, Azərbaycanın xəzinəsindən hədiyyələr.">
   <div class="wrap section">
     <section class="stack">
       <nav class="crumbs" aria-label="Yol"><a href="/">Ana səhifə</a> <span aria-hidden="true">/</span> <a href="/xerite/">Xəritə</a> <span aria-hidden="true">/</span> Diyarşünas</nav>
       <h1 class="page-title">Kim diyarşünas olmaq istəyir?</h1>
-      <p class="lead">12 sual, hər sualda 4 variant. Kəndlər, qalalar, abidələr, su anbarları, qədim məscidlər və dahilərin doğulduğu yerlər. Hər doğru cavab səni xəzinəyə bir pillə yaxınlaşdırır.</p>
+      <p class="lead">15 sual, hər sualda 4 variant. Kəndlər, qalalar, abidələr, göllər, su anbarları, milli parklar, qoruqlar, qədim məscidlər və dahilərin doğulduğu yerlər. Hər doğru cavab səni xəzinəyə bir pillə yaxınlaşdırır.</p>
     </section>
 
     <div class="dy-tabs">
@@ -24,11 +24,11 @@ const KENDSAY = Object.values(KENDLER).flat().length;
         <div class="dy-panel" id="intro">
           <h2>Qaydalar</h2>
           <ol>
-            <li>Oyunda <b>12 sual</b> var. Hər sualın 4 variantı, yalnız biri düzgündür.</li>
-            <li>Suallar tədricən çətinləşir: ilk 5 sual <b>asan</b>, növbəti 5 sual <b>orta</b>, son 2 sual <b>çətindir</b>.</li>
+            <li>Oyunda <b>15 sual</b> var. Hər sualın 4 variantı, yalnız biri düzgündür.</li>
+            <li>Suallar tədricən çətinləşir: ilk 5 sual <b>asan</b>, növbəti 5 sual <b>orta</b>, son 5 sual <b>çətindir</b>.</li>
             <li>Vaxt məhduddur: asan suallara <b>20</b>, orta suallara <b>30</b>, çətin suallara <b>40 saniyə</b> verilir. Vaxt bitsə, cavab səhv sayılır.</li>
-            <li>Mükafat pul deyil: hər pillədə Azərbaycanın xəzinəsindən bir hədiyyə qazanırsan. 12-ci pillədə səni <b>Qızıl Səkkizguşə</b> və "Böyük diyarşünas" adı gözləyir.</li>
-            <li><b>4-cü</b> və <b>8-ci</b> pillələr qorunan pillələrdir. Səhv cavab versən oyun bitir, amma son keçdiyin qorunan pillənin hədiyyəsi səndə qalır.</li>
+            <li>Mükafat pul deyil: hər pillədə Azərbaycanın xəzinəsindən bir hədiyyə qazanırsan. 15-ci pillədə səni <b>Qızıl Səkkizguşə</b> və "Böyük diyarşünas" adı gözləyir.</li>
+            <li><b>5-ci</b> və <b>10-cu</b> pillələr qorunan pillələrdir. Səhv cavab versən oyun bitir, amma son keçdiyin qorunan pillənin hədiyyəsi səndə qalır.</li>
             <li>Cavabdan əmin deyilsənsə, <b>"Dayan və hədiyyəni götür"</b> düyməsi ilə qazandığını saxlayıb oyunu bitirə bilərsən.</li>
             <li>Bir dəfə <b>kömək</b> ala bilərsən: düzgün cavab olan ərazi haqqında ipucu veriləcək.</li>
           </ol>
@@ -40,7 +40,7 @@ const KENDSAY = Object.values(KENDLER).flat().length;
           <div class="dy-top">
             <span class="dy-cat" id="cat"></span>
             <span class="dy-lvl" id="lvl"></span>
-            <span class="dy-num"><b id="qn">1</b> / 12</span>
+            <span class="dy-num"><b id="qn">1</b> / 15</span>
           </div>
           <div class="dy-timer" aria-live="off"><div class="dy-bar"><i id="bar"></i></div><span class="dy-sec"><b id="tm">20</b> san</span></div>
           <p class="dy-q" id="q"></p>
@@ -70,7 +70,7 @@ const KENDSAY = Object.values(KENDLER).flat().length;
     </section>
     <section id="t-reyt" class="card dy-rt" hidden>
       <h2>Ümumi reytinq</h2>
-      <p class="muted">12 pillənin hamısını keçənlər ən yuxarıda durur və cavablara sərf etdikləri vaxta görə sıralanır: kim daha tez cavablandırıbsa, o öndədir. Qalanlar çatdıqları ən yüksək pilləyə görə düzülür.</p>
+      <p class="muted">15 pillənin hamısını keçənlər ən yuxarıda durur və cavablara sərf etdikləri vaxta görə sıralanır: kim daha tez cavablandırıbsa, o öndədir. Qalanlar çatdıqları ən yüksək pilləyə görə düzülür.</p>
       <Reytinq oyun="diyar" />
     </section>
     <p class="muted dy-src">Suallar bazası: {SUALLAR.length} seçilmiş sual və {KENDSAY} kənd, qəsəbə. Kənd və qəsəbələrin hansı rayonda olduğu Dövlət Statistika Komitəsinin "İnzibati ərazi bölgüsü təsnifatı" (2024) üzrə verilir.</p>
@@ -166,10 +166,9 @@ const KENDSAY = Object.values(KENDLER).flat().length;
   const load = () => { try { return JSON.parse(localStorage.getItem(KEY) || '{}').qonaq || { oyun: 0, enYuksek: 0, hediyye: [] }; } catch { return { oyun: 0, enYuksek: 0, hediyye: [] }; } };
   const save = (s) => { try { localStorage.setItem(KEY, JSON.stringify({ qonaq: s })); } catch { /* yaddaş bağlıdır */ } };
 
-  // Çətinlik: əvvəl tanınmış abidə və şəxsiyyətlər, sonra qala və məscidlər, axırda kənd və su anbarları
-  const W = { sexs: 1, abide: 1, mescid: 2, qala: 2, kend: 3, su: 3 };
+  const N = PILLELER.length; // 15 sual: 5 asan, 5 orta, 5 çətin
   let qs = [], k = 0, helpUsed = false, busy = false, cur = null, timer = 0, left = 0, limit = 0;
-  // Cavablara sərf olunan ümumi vaxt (cavabın açılma animasiyası daxil deyil): 12 pilləni keçənlər bununla sıralanır
+  // Cavablara sərf olunan ümumi vaxt (cavabın açılma animasiyası daxil deyil): 15 pilləni keçənlər bununla sıralanır
   let qStart = 0, spent = 0;
   // Vaxt: ilk 5 sual 20, növbəti 5 sual 30, son 2 sual 40 saniyə
   const LIMIT = (i) => (i < 5 ? 20 : i < 10 ? 30 : 40);
@@ -224,15 +223,33 @@ const KENDSAY = Object.values(KENDLER).flat().length;
     const q = ad.startsWith('q:');
     return ['kend', `${q ? ad.slice(2) : ad} ${q ? 'qəsəbəsi' : 'kəndi'} hansı rayonun ərazisindədir?`, r];
   }
+  // Son oyunlarda soruşulan suallar yadda saxlanır ki, yeni oyunda təkrarlanmasın
+  const SON = 'sk-diyar-son';
+  const sonlar = () => { try { return JSON.parse(localStorage.getItem(SON) || '[]'); } catch { return []; } };
   function build() {
-    const pool = shuffle(SUALLAR.slice());
-    const pick = [], usedAns = new Set();
-    for (const w of [1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 3, 3]) {
-      if (w === 3 && Math.random() < 0.5) { const g = kendSuali(usedAns); pick.push(g); usedAns.add(g[2]); continue; }
-      const i = pool.findIndex((q) => W[q[0]] === w && !usedAns.has(q[2]) && !pick.includes(q));
-      const j = i >= 0 ? i : pool.findIndex((q) => !pick.includes(q));
-      pick.push(pool[j]); usedAns.add(pool[j][2]);
+    const son = new Set(sonlar());
+    const pick = [], usedAns = new Set(), catN = {};
+    for (let i = 0; i < N; i++) {
+      const lv = i < 5 ? 1 : i < 10 ? 2 : 3;
+      // Çətin suallarda bəzən DSK siyahısından təsadüfi kənd soruşulur
+      if (lv === 3 && (catN.kend || 0) < 2 && Math.random() < 0.3) { const g = kendSuali(usedAns); pick.push(g); usedAns.add(g[2]); catN.kend = (catN.kend || 0) + 1; continue; }
+      const prev = pick.length ? pick[pick.length - 1][0] : '';
+      // Seçim qaydası: eyni səviyyə, cavab təkrarlanmır, bir kateqoriyadan ən çox 3 sual, ardıcıl eyni kateqoriya yox, yaxında soruşulmayıb
+      const sert = [
+        (q) => q[3] === lv && !son.has(q[1]) && (catN[q[0]] || 0) < 3 && q[0] !== prev,
+        (q) => q[3] === lv && !son.has(q[1]) && (catN[q[0]] || 0) < 3,
+        (q) => q[3] === lv && (catN[q[0]] || 0) < 3,
+        (q) => q[3] === lv,
+        () => true,
+      ];
+      let q = null;
+      for (const f of sert) {
+        const c = SUALLAR.filter((x) => f(x) && !usedAns.has(x[2]) && !pick.includes(x));
+        if (c.length) { q = c[Math.floor(Math.random() * c.length)]; break; }
+      }
+      pick.push(q); usedAns.add(q[2]); catN[q[0]] = (catN[q[0]] || 0) + 1;
     }
+    try { localStorage.setItem(SON, JSON.stringify([...pick.map((q) => q[1]), ...son].slice(0, 60))); } catch { /* yaddaş bağlıdır */ }
     return pick;
   }
   function options(ans) {
@@ -276,7 +293,7 @@ const KENDSAY = Object.values(KENDLER).flat().length;
     if (level > 0) gonder('diyar', kind === 'win' ? { pille: level, vaxt: Math.round(spent) } : { pille: level });
     const p = prizeAt(level);
     const head = kind === 'win' ? 'Təbriklər, böyük diyarşünas!' : kind === 'stop' ? 'Ağıllı qərar!' : kind === 'time' ? 'Vaxt bitdi.' : 'Təəssüf, cavab səhv oldu.';
-    const txt = kind === 'win' ? `Bütün 12 sualı ${sec(spent)} ərzində doğru cavablandırdın. Azərbaycanı yaxşı tanıyırsan!` : kind === 'stop' ? `${k} suala doğru cavab verib dayandın.` : `Düzgün cavab: <b>${esc(cur.ans)}</b>. ${k} suala doğru cavab verdin.`;
+    const txt = kind === 'win' ? `Bütün ${N} sualı ${sec(spent)} ərzində doğru cavablandırdın. Azərbaycanı yaxşı tanıyırsan!` : kind === 'stop' ? `${k} suala doğru cavab verib dayandın.` : `Düzgün cavab: <b>${esc(cur.ans)}</b>. ${k} suala doğru cavab verdin.`;
     $('res').innerHTML = `<h2>${head}</h2><p>${txt}</p>` + (p ? `<span class="dy-prize"><span>Qazandığın hədiyyə</span><b>${esc(p)}</b></span>` : '<p>Bu dəfə hədiyyə qazanılmadı, növbəti oyunda mütləq alınacaq.</p>')
       + (cached() ? '' : '<p class="dy-acc">Nəticən reytinqə düşsün deyə <a href="/hesab/qeydiyyat/">qeydiyyatdan keç</a> və ya <a href="/hesab/giris/?geri=/xerite/diyarsunas/">daxil ol</a>.</p>');
     $('play').hidden = true; $('done').hidden = false;
@@ -299,7 +316,7 @@ const KENDSAY = Object.values(KENDLER).flat().length;
       if (!ok) { b.classList.add('bad'); sBad(); setTimeout(() => end('wrong'), 1600); return; }
       sOk();
       k++;
-      setTimeout(() => { if (k === 12) end('win'); else show(); }, 1500);
+      setTimeout(() => { if (k === N) end('win'); else show(); }, 1500);
     }, 1200);
   });
   $('help').addEventListener('click', () => {
@@ -323,7 +340,7 @@ const KENDSAY = Object.values(KENDLER).flat().length;
     const st = load();
     $('xn').textContent = st.hediyye.length;
     $('xz').innerHTML = PILLELER.map(([t, d], i) => `<div class="xz-i${st.hediyye.includes(i) ? '' : ' off'}"><b>${esc(t)}</b><span>${i + 1}-ci pillə · ${esc(d)}</span></div>`).join('').replace(/(\d+)-ci pillə/g, (m, n) => `${n}-${({ 3: 'cü', 4: 'cü', 6: 'cı', 9: 'cu', 10: 'cu' })[n] || 'ci'} pillə`);
-    $('stat').innerHTML = `<span>Oyun: <b>${st.oyun}</b></span><span>Ən yüksək pillə: <b>${st.enYuksek} / 12</b></span><span>Toplanan hədiyyə: <b>${st.hediyye.length} / 12</b></span>`;
+    $('stat').innerHTML = `<span>Oyun: <b>${st.oyun}</b></span><span>Ən yüksək pillə: <b>${st.enYuksek} / ${N}</b></span><span>Toplanan hədiyyə: <b>${st.hediyye.length} / ${N}</b></span>`;
   }
   document.querySelectorAll('[data-tab]').forEach((b) => b.addEventListener('click', () => {
     document.querySelectorAll('[data-tab]').forEach((x) => x.setAttribute('aria-pressed', String(x === b)));

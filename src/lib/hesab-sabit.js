@@ -19,6 +19,7 @@ export const OYUNLAR = {
 };
 
 export const XERITE_ERAZI = 75;
+export const DIYAR_SUAL = 15; // Diyarşünas: 5 asan, 5 orta, 5 çətin
 
 // Ad: hərflə başlayır, hərf, boşluq, defis, apostrof; 2-30 simvol
 export const AD_RE = /^\p{L}[\p{L} '’-]{1,29}$/u;

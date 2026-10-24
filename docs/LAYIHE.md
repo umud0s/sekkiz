@@ -439,9 +439,20 @@ Səhifələr: /hesab/qeydiyyat/ (4 addım), /hesab/giris/ (?geri= ilə oyuna qay
 Reytinq (src/components/Reytinq.astro, ilk 50 + öz yerin):
 - Xəritəni tamamla: 75/75 tapanlar tamamlama vaxtına görə, qalanlar tapılan sayına görə (75 ərazi 60 saniyədən tez qəbul olunmur).
   Xəritə və Diyarşünas cədvəllərində nəticə iki sütundadır: Tapılan/Pillə və Vaxt (24.10.2026, istifadəçi tələbi).
-- Diyarşünas: ən yüksək pillə (0-12); 12/12 keçənlər cavablara sərf olunan ümumi vaxta görə (cavabın açılma animasiyası daxil deyil,
-  12-335 san qəbul olunur), qalanlar bərabərdə pilləyə daha tez çatana görə. "Reytinq" sekməsi açılanda cədvəl təzələnir.
+- Diyarşünas: ən yüksək pillə (0-15); 15/15 keçənlər cavablara sərf olunan ümumi vaxta görə (cavabın açılma animasiyası daxil deyil,
+  15-455 san qəbul olunur), qalanlar bərabərdə pilləyə daha tez çatana görə. "Reytinq" sekməsi açılanda cədvəl təzələnir.
 - Sözü tap: ümumi xal (hər doğru cavab 10/5 xal göndərilir, iki göndəriş arası ən az 1,5 san).
 - Xalça yarat: yaradıcı oyundur, xalı yoxdur, reytinqi yoxdur.
 Lokal test: wrangler 4.139.0 (scratchpad-də), `wrangler dev --local`, .dev.vars-da ADMIN_KEY (gitignore).
 Cloudflare-də əlavə ediləcək gizli açar: ADMIN_KEY (idarəetmə səhifəsi üçün).
+
+## Diyarşünas: 15 sual və sual bazasının genişlənməsi — 24.10.2026
+İstifadəçi tələbi: 15 sual (5 asan, 5 orta, 5 çətin), tanınmış kəndlər (Xınalıq, Lahıc...) asan və orta suallarda,
+göllər, milli parklar və qoruqlar əlavə olunsun, suallar az təkrarlansın.
+- Hər sualın çətinliyi diyar.js-də 4-cü elementdir (1/2/3). Baza: 117 sual (asan 28, orta 60, çətin 29) + DSK kəndləri.
+- Yeni kateqoriyalar: Göllər (gol), Milli parklar və qoruqlar (tebiet), Məşhur məkanlar (mekan: şəlalə, mağara, rəsədxana...).
+  Bir neçə rayona yayılan obyektlər (Hirkan, Altıağac, Şahdağ, Ağgöl, Zaqatala qoruğu, Turyançay, Mingəçevir su anbarı) qəsdən salınmayıb.
+- Seçim: hər səviyyədən 5; bir oyunda bir kateqoriyadan ən çox 3 sual, eyni kateqoriya ardıcıl gəlmir, cavab təkrarlanmır;
+  son 60 soruşulan sual localStorage "sk-diyar-son"-da saxlanır və yeni oyunda kənara qoyulur. Çətin səviyyədə 30% ehtimalla DSK kəndi.
+- Vaxt: asan 20, orta 30, çətin 40 san. Mükafat yolu 15 pillə (Göyçay narı, Saz, "Xəmsə" əlavə olundu); qorunan: 5-ci və 10-cu.
+- Server: pillə 0-15 (DIYAR_SUAL, hesab-sabit.js); 15/15 vaxtı 15-455 san qəbul olunur.
