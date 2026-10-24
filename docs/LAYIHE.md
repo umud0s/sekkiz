@@ -425,6 +425,8 @@ təqaüdçüdən əlavə heç nə soruşulmur), profil şəkli məcburi (Azərba
 hər oyunda yalnız ümumi reytinq (aylıq/həftəlik yoxdur). Giriş üsulu (istifadəçi seçdi): istifadəçi adı + şifrə, e-poçtsuz.
 Şifrə təyin olunandan sonra ayrıca "Şifrəni yazıb saxla!" ekranı çıxır; "Şifrəmi yazdım və etibarlı yerdə saxladım"
 qeyd olunmayınca "Profili yarat" düyməsi bağlıdır (istifadəçi tələbi).
+Status addımı: məktəb/universitet sahəsi yalnız uyğun status seçiləndə açılır; məzun, işləyən, təqaüdçü seçiləndə
+növbəti addıma avtomatik keçilir (istifadəçi tələbi). Diqqət: display qaydası olan elementlərdə [hidden] üçün ayrıca display:none lazımdır.
 Server: worker/api.js (/api/*), Cloudflare D1 (binding DB, ad "sekkizguse"; wrangler.jsonc-də ID yoxdur, ilk yayımda avtomatik yaradılır).
 Cədvəllər ilk sorğuda yaranır: users, sessions, rekord, limitler.
 Şifrə: PBKDF2-SHA256, 100 000 təkrar, 16 bayt duz. Sessiya: 90 gün, HttpOnly/Secure/SameSite=Lax kuki "sk_s", bazada SHA-256-sı.

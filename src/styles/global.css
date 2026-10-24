@@ -146,6 +146,8 @@ main{flex:1 0 auto}
 @media (max-width:520px){.rt-tbl{font-size:14px}.rt-tbl td,.rt-tbl th{padding:7px 6px}.rt-o{gap:7px}.rt-who .un{display:block;font-size:12.5px}.rt-who{min-width:0}}
 
 /* Hesab səhifələri: qeydiyyat, giriş, profil */
+/* display qaydaları hidden atributunu üstələməsin */
+.hs [hidden],.hs-f[hidden],.hs-me[hidden],.pf[hidden]{display:none}
 .hs{max-width:620px;padding:28px 30px 30px}
 .hs h2{margin:0 0 6px;font-size:26px;font-weight:600}
 .hs-f{display:flex;flex-direction:column;gap:6px;margin-top:16px}

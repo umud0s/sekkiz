@@ -162,8 +162,10 @@ const UNIVERSITETLER = [
     $('f-mekteb').hidden = v.status !== 'mekteb';
     $('f-uni').hidden = v.status !== 'universitet';
     const f = v.status === 'mekteb' ? $('mekteb') : v.status === 'universitet' ? $('uni') : null;
-    if (f) f.focus();
     err(2);
+    // Məktəbli və tələbədən əlavə sual soruşulur, qalanları dərhal növbəti addıma keçir
+    if (f) f.focus();
+    else setTimeout(() => $('s2').requestSubmit(), 250);
   }));
   $('s2').addEventListener('submit', (e) => {
     e.preventDefault();
