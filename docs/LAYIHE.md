@@ -475,3 +475,6 @@ göllər, milli parklar və qoruqlar əlavə olunsun, suallar az təkrarlansın.
   Söyüdlü, Vejnəli, Muradxanlı, Paraqaçay, Qaradağ qaz) və "Ölkəni tanı" (umumi: ərazi 86,6 min km², Kür, Bazardüzü, Mingəçevir,
   Sarısu, Ermənistanla sərhəd, Xəzər sahili 825 km). Cavabı rayon olmayan sualda 5-ci element 4 variant, 6-cı element ipucudur.
   Baza: 148 sual (asan 19, orta 61, çətin 68).
+- Reytinq sıfırlandı (24.10.2026, istifadəçi istəyi: "bütün oyunlarda reytinqi sıfırla"): worker/api.js KOCURMELER siyahısında
+  birdəfəlik "reytinq-sifir-2026-10-24" (DELETE FROM rekord); icra olunanlar "meta" cədvəlində qeyd olunur. Hesablar silinmir.
+  Sonrakı sıfırlamalar üçün /hesab/idare/ səhifəsində "Reytinqi sıfırla" (bir oyun və ya hamısı, ADMIN_KEY ilə).

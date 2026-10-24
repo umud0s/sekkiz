@@ -41,10 +41,18 @@ const SCHEMA = [
     until INTEGER NOT NULL
   )`,
 ];
+// Birdəfəlik dəyişikliklər: hər biri bazada qeyd olunur və yalnız bir dəfə icra edilir
+const KOCURMELER = [
+  ['reytinq-sifir-2026-10-24', 'DELETE FROM rekord'], // istifadəçi istəyi: bütün oyunlarda reytinq sıfırlandı
+];
 let hazir = false;
 async function schema(db) {
   if (hazir) return;
-  await db.batch(SCHEMA.map((s) => db.prepare(s)));
+  await db.batch(SCHEMA.map((s) => db.prepare(s)).concat(db.prepare('CREATE TABLE IF NOT EXISTS meta (k TEXT PRIMARY KEY, v TEXT)')));
+  for (const [ad, sql] of KOCURMELER) {
+    const r = await db.prepare('INSERT OR IGNORE INTO meta (k, v) VALUES (?, ?)').bind(ad, new Date().toISOString()).run();
+    if (r.meta.changes) await db.prepare(sql).run();
+  }
   hazir = true;
 }
 
@@ -292,13 +300,19 @@ export async function api(request, env) {
     }
   }
 
-  // İdarəetmə: şifrəni unudanlar üçün yeni şifrə, hesabın silinməsi. Açar Cloudflare-də ADMIN_KEY kimi saxlanılır.
-  if (post && (p === '/api/admin/sifre' || p === '/api/admin/sil')) {
+  // İdarəetmə: şifrəni unudanlar üçün yeni şifrə, hesabın silinməsi, reytinqin sıfırlanması. Açar Cloudflare-də ADMIN_KEY kimi saxlanılır.
+  if (post && (p === '/api/admin/sifre' || p === '/api/admin/sil' || p === '/api/admin/reytinq')) {
     if (!env.ADMIN_KEY) return xeta('İdarəetmə açarı qurulmayıb.', 503);
     if (!(await limit(db, 'adm:' + ip, 20, 15))) return xeta('Çox sayda cəhd.', 429);
     const key = request.headers.get('X-Admin-Key') || '';
     if (key.length !== env.ADMIN_KEY.length || (await sha(key)) !== (await sha(env.ADMIN_KEY))) return xeta('Açar səhvdir.', 403);
     const b = await request.json().catch(() => ({}));
+    if (p === '/api/admin/reytinq') {
+      // Bir oyunun və ya bütün oyunların reytinqi silinir, hesablar qalır
+      if (b.oyun !== 'hamisi' && !QAYDA[b.oyun]) return xeta('Belə oyun yoxdur.');
+      const r = b.oyun === 'hamisi' ? await db.prepare('DELETE FROM rekord').run() : await db.prepare('DELETE FROM rekord WHERE oyun = ?').bind(b.oyun).run();
+      return json({ ok: true, silinen: r.meta.changes });
+    }
     const u = await db.prepare('SELECT id FROM users WHERE username = ?').bind(String(b.username || '').trim().toLowerCase()).first();
     if (!u) return xeta('Belə istifadəçi yoxdur.', 404);
     if (p === '/api/admin/sifre') {

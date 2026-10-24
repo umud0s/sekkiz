@@ -18,6 +18,17 @@ import Base from '../../layouts/Base.astro';
         <button class="btn btn-p" type="submit">Yeni şifrə ver</button>
         <button class="btn btn-s" type="button" id="del">Hesabı sil</button>
       </div>
+      <div class="hs-f" style="margin-top:28px">
+        <label for="oyun">Reytinqi sıfırla</label>
+        <select class="hs-in" id="oyun">
+          <option value="hamisi">Bütün oyunlar</option>
+          <option value="xerite">Xəritəni tamamla</option>
+          <option value="diyar">Kim diyarşünas olmaq istəyir?</option>
+          <option value="sozu">Sözü tap</option>
+        </select>
+        <p class="hs-hint">Yalnız nəticələr silinir, istifadəçi hesabları qalır.</p>
+      </div>
+      <div class="hs-row"><button class="btn btn-s" type="button" id="reset">Reytinqi sıfırla</button></div>
     </form>
   </div>
 </Base>
@@ -35,6 +46,14 @@ import Base from '../../layouts/Base.astro';
   $('f').addEventListener('submit', async (e) => {
     e.preventDefault();
     if (await call('/api/admin/sifre', { username: un(), yeni: $('pw').value })) { $('ok').textContent = `#${un()} üçün yeni şifrə qoyuldu.`; $('ok').hidden = false; }
+  });
+  $('reset').addEventListener('click', async () => {
+    const ad = $('oyun').selectedOptions[0].textContent;
+    if (!confirm(`${ad}: reytinq sıfırlansın? Bu geri qaytarılmır.`)) return;
+    const r = await fetch('/api/admin/reytinq', { method: 'POST', headers: { 'Content-Type': 'application/json', 'X-Admin-Key': $('key').value }, body: JSON.stringify({ oyun: $('oyun').value }) }).catch(() => null);
+    const d = r ? await r.json().catch(() => ({})) : {};
+    if (!r || !r.ok) { $('e').textContent = d.xeta || 'Serverlə əlaqə alınmadı.'; $('e').hidden = false; $('ok').hidden = true; return; }
+    $('e').hidden = true; $('ok').textContent = `${ad}: reytinq sıfırlandı (${d.silinen} nəticə silindi).`; $('ok').hidden = false;
   });
   $('del').addEventListener('click', async () => {
     if (!un() || !confirm(`#${un()} hesabı və bütün nəticələri silinsin?`)) return;
