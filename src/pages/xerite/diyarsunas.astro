@@ -248,17 +248,19 @@ const KENDSAY = Object.values(KENDLER).flat().length;
   const SON = 'sk-diyar-son';
   const sonlar = () => { try { return JSON.parse(localStorage.getItem(SON) || '[]'); } catch { return []; } };
   function build() {
-    const son = new Set(sonlar());
+    const son = sonlar();
+    // Yaxında soruşulmayan sual ən yaxşısıdır, soruşulanlardan isə ən çoxdan soruşulanı
+    const kohne = (q) => { const i = son.indexOf(q[1]); return i < 0 ? 1e9 : i; };
     const pick = [], usedAns = new Set(), catN = {};
+    let dsk = 0;
     for (let i = 0; i < N; i++) {
       const lv = i < 5 ? 1 : i < 10 ? 2 : 3;
-      // Çətin suallarda bəzən DSK siyahısından təsadüfi kənd soruşulur
-      if (lv === 3 && (catN.kend || 0) < 2 && Math.random() < 0.3) { const g = kendSuali(usedAns); pick.push(g); usedAns.add(g[2]); catN.kend = (catN.kend || 0) + 1; continue; }
+      // Çətin suallarda DSK siyahısından təsadüfi kənd də soruşulur (oyunda ən çox 2)
+      if (lv === 3 && dsk < 2 && Math.random() < 0.4) { const g = kendSuali(usedAns); pick.push(g); usedAns.add(g[2]); dsk++; continue; }
       const prev = pick.length ? pick[pick.length - 1][0] : '';
-      // Seçim qaydası: eyni səviyyə, cavab təkrarlanmır, bir kateqoriyadan ən çox 3 sual, ardıcıl eyni kateqoriya yox, yaxında soruşulmayıb
+      // Seçim qaydası: eyni səviyyə, cavab təkrarlanmır, bir kateqoriyadan ən çox 3 sual, ardıcıl eyni kateqoriya yox
       const sert = [
-        (q) => q[3] === lv && !son.has(q[1]) && (catN[q[0]] || 0) < 3 && q[0] !== prev,
-        (q) => q[3] === lv && !son.has(q[1]) && (catN[q[0]] || 0) < 3,
+        (q) => q[3] === lv && (catN[q[0]] || 0) < 3 && q[0] !== prev,
         (q) => q[3] === lv && (catN[q[0]] || 0) < 3,
         (q) => q[3] === lv,
         () => true,
@@ -266,16 +268,20 @@ const KENDSAY = Object.values(KENDLER).flat().length;
       let q = null;
       for (const f of sert) {
         const c = SUALLAR.filter((x) => f(x) && !usedAns.has(x[2]) && !pick.includes(x));
-        if (c.length) { q = c[Math.floor(Math.random() * c.length)]; break; }
+        if (!c.length) continue;
+        const best = Math.max(...c.map(kohne)), top = c.filter((x) => kohne(x) === best);
+        q = top[Math.floor(Math.random() * top.length)];
+        break;
       }
       pick.push(q); usedAns.add(q[2]); catN[q[0]] = (catN[q[0]] || 0) + 1;
     }
-    try { localStorage.setItem(SON, JSON.stringify([...pick.map((q) => q[1]), ...son].slice(0, 60))); } catch { /* yaddaş bağlıdır */ }
+    try { localStorage.setItem(SON, JSON.stringify([...pick.map((q) => q[1]), ...son.filter((t) => !pick.some((q) => q[1] === t))].slice(0, 90))); } catch { /* yaddaş bağlıdır */ }
     return pick;
   }
-  function options(ans) {
+  // Səhv variantlar düzgün cavaba yaxın ərazilərdən: asanda 7 qonşudan, ortada 5, çətində ən yaxın 3
+  function options(ans, lv) {
     const a = unit(ans);
-    const near = UNITS.filter((u) => u.n !== ans).sort((p, q) => Math.hypot(p.x - a.x, p.y - a.y) - Math.hypot(q.x - a.x, q.y - a.y)).slice(0, 7);
+    const near = UNITS.filter((u) => u.n !== ans).sort((p, q) => Math.hypot(p.x - a.x, p.y - a.y) - Math.hypot(q.x - a.x, q.y - a.y)).slice(0, lv === 1 ? 7 : lv === 2 ? 5 : 3);
     return shuffle([ans, ...shuffle(near).slice(0, 3).map((u) => u.n)]);
   }
   function ladder() {
@@ -287,7 +293,7 @@ const KENDSAY = Object.values(KENDLER).flat().length;
   }
   function show() {
     const [cat, q, ans] = qs[k];
-    cur = { ans, opts: options(ans) };
+    cur = { ans, opts: options(ans, k < 5 ? 1 : k < 10 ? 2 : 3) };
     busy = false;
     $('cat').textContent = CATS[cat];
     $('qn').textContent = k + 1;

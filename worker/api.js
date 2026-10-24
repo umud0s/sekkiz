@@ -148,8 +148,9 @@ const QAYDA = {
     oxu(b) {
       const tapilan = Math.trunc(+b.tapilan), vaxt = b.vaxt == null ? null : Math.round(+b.vaxt);
       if (!(tapilan >= 0 && tapilan <= XERITE_ERAZI)) return null;
-      if (tapilan === XERITE_ERAZI && !(vaxt >= 60000 && vaxt < 36e5)) return null; // 75 ərazini 1 dəqiqədən tez tapmaq mümkün deyil
-      return { xal: tapilan, vaxt: tapilan === XERITE_ERAZI ? vaxt : null };
+      // Vaxt: oyunda keçirilən yekun müddət. Hər əraziyə ən azı 0,8 saniyə lazımdır (75 ərazi ≈ 1 dəqiqə)
+      if (vaxt != null && !(vaxt >= tapilan * 800 && vaxt < 36e5)) return null;
+      return { xal: tapilan, vaxt };
     },
     birlesdir: (k, y) => (!k || y.xal > k.xal || (y.xal === k.xal && y.vaxt != null && (k.vaxt == null || y.vaxt < k.vaxt)) ? y : null),
     sira: 'r.xal DESC, (r.vaxt IS NULL), r.vaxt ASC, r.updated ASC',

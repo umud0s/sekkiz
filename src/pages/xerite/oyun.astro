@@ -81,7 +81,7 @@ const total = G.u.length;
 
     <section class="card xo-rt">
       <h2>Ümumi reytinq</h2>
-      <p class="muted">Bütün 75 ərazini tapanlar ən yuxarıda durur və tamamlama vaxtına görə sıralanır: kim daha tez tamamlayıbsa, o öndədir. Xəritəni tamamlamayanlar tapdıqları ərazinin sayına görə düzülür.</p>
+      <p class="muted">Oyunçular tapdıqları ərazinin sayına görə sıralanır. Bərabər olanda oyunda daha az vaxt keçirən öndədir. Bütün 75 ərazini tapanlar ən yuxarıda, tamamlama vaxtına görə düzülür.</p>
       <Reytinq oyun="xerite" />
     </section>
   </div>
@@ -479,7 +479,7 @@ const total = G.u.length;
     clearInterval(tick);
     const ms = performance.now() - t0;
     $('clock').textContent = clock(ms);
-    if (done.size) gonder('xerite', { tapilan: done.size, vaxt: won ? Math.round(ms) : null });
+    if (done.size) gonder('xerite', { tapilan: done.size, vaxt: Math.round(ms) }); // yekun vaxt hər nəticədə göndərilir
     const acc = cached() ? '' : '<p class="xo-acc">Nəticən reytinqə düşsün deyə <a href="/hesab/qeydiyyat/">qeydiyyatdan keç</a> və ya <a href="/hesab/giris/?geri=/xerite/oyun/">daxil ol</a>.</p>';
     if (won) {
       sfx.win();

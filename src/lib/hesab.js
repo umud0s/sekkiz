@@ -46,14 +46,14 @@ export const adHtml = (u) => `<span class="nm">${esc(u.ad)}</span> <span class="
 const saat = (ms) => { const s = Math.round(ms / 1000); return `${String(Math.floor(s / 60)).padStart(2, '0')}:${String(s % 60).padStart(2, '0')}`; };
 // Nəticənin yazılışı hər oyun üçün
 export const NETICE = {
-  xerite: (r) => (r.xal === XERITE_ERAZI && r.vaxt ? `${XERITE_ERAZI} ərazi · ${saat(r.vaxt)}` : `${r.xal} ərazi`),
+  xerite: (r) => (r.vaxt ? `${r.xal} ərazi · ${saat(r.vaxt)}` : `${r.xal} ərazi`),
   diyar: (r) => (r.vaxt ? `${r.xal} düz cavab · ${saat(r.vaxt)}` : `${r.xal} düz cavab`),
   sozu: (r) => `${r.xal} xal`,
 };
 // Reytinq cədvəlinin nəticə sütunları: [başlıq, dəyər]
 const SUTUN = {
-  // Xəritədə hamısını tapanlar tamamlama vaxtına görə sıralanır, vaxt ayrıca sütunda göstərilir
-  xerite: [['Tapılan', (r) => `${r.xal} / ${XERITE_ERAZI}`], ['Vaxt', (r) => (r.xal === XERITE_ERAZI && r.vaxt ? saat(r.vaxt) : '—')]],
+  // Bərabər nəticədə oyunda daha az vaxt keçirən öndədir, vaxt ayrıca sütunda göstərilir
+  xerite: [['Tapılan', (r) => `${r.xal} / ${XERITE_ERAZI}`], ['Vaxt', (r) => (r.vaxt ? saat(r.vaxt) : '—')]],
   diyar: [['Düz cavab', (r) => `${r.xal} / ${DIYAR_SUAL}`], ['Vaxt', (r) => (r.vaxt ? saat(r.vaxt) : '—')]],
   sozu: [['Xal', NETICE.sozu]],
 };

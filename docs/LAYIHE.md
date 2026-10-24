@@ -463,3 +463,10 @@ göllər, milli parklar və qoruqlar əlavə olunsun, suallar az təkrarlansın.
 - Reytinq düz cavab sayına keçdi (24.10.2026, istifadəçi tələbi: "pilləni yox, ümumi düz cavab sayını göstər"):
   xal = bir oyunda verilən düz cavab sayı (səhvdən əvvəlki), vaxt = o saya çatma müddəti; cədvəldə "Düz cavab" və "Vaxt" sütunları.
   API {oyun:'diyar', duz, vaxt} göndərir (köhnə "pille" sahəsi də qəbul olunur). Əvvəlki nəticələrdə xal qorunan pillə idi.
+- Xəritə oyunu (24.10.2026, istifadəçi tələbi): yekun vaxt hər oyunda göndərilir (tapılan saydan asılı olmayaraq) və cədvəldə görünür;
+  sıra: tapılan say, sonra vaxt. Server: vaxt >= tapılan × 0,8 san.
+- Diyarşünas sualları (24.10.2026): cavabı adında açan suallar dəyişdirildi/silindi (Bərdə türbəsi → memarın adı ilə,
+  Şamaxı rəsədxanası → "Nəsirəddin Tusi adına", Göygöl → "Kəpəz dağının uçqunu ilə yaranan göl", Nizami/Məhsəti Gəncəvi və s.).
+  Çətinlik artırıldı (asan 15, orta 57, çətin 59 sual); səhv variantlar: asanda 7 qonşudan, ortada 5, çətində ən yaxın 3 ərazi.
+  Kəndlər 43 seçilmiş suala çatdı (xalça kəndləri, tanınmış insanların doğulduğu kəndlər, mineral su kəndləri, 2024-də qaytarılan Aşağı Əskipara);
+  çətin səviyyədə oyunda 2-yə qədər DSK kəndi (40% ehtimal). Son 90 sual yadda saxlanır, hamısı soruşulanda ən çoxdan soruşulan seçilir.
