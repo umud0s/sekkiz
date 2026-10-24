@@ -1,5 +1,6 @@
 ---
 import Base from '../../layouts/Base.astro';
+import Reytinq from '../../components/Reytinq.astro';
 ---
 <Base title="Atalar sözlərini nə qədər yaxşı bilirsən?" description="Sözü tap oyunu: atalar sözünün gizlədilmiş əsas sözünü tap: qaydalar, xallar, fərdi statistika və reytinq.">
   <div class="wrap section">
@@ -56,18 +57,15 @@ import Base from '../../layouts/Base.astro';
 
     <section id="t-stat" hidden>
       <div class="qz-stats" id="stats"></div>
-      <p class="muted qz-note">Statistika hələlik bu brauzerdə saxlanılır. İstifadəçi adı bölməsi açılanda nəticələrin hesabına köçürüləcək.</p>
+      <p class="muted qz-note">Bu statistika bu brauzerdə saxlanılır. Reytinqdəki xal isə hesabına yazılır.</p>
       <button type="button" class="btn btn-s" id="reset">Statistikanı sıfırla</button>
     </section>
 
     <section id="t-reyt" hidden>
       <div class="card qz">
         <h2>Ümumi reytinq</h2>
-        <p class="muted">Reytinq bütün oyunçuların topladığı xallara görə qurulur. İstifadəçi adı bölməsi aktivləşəndə burada hamının nəticəsi görünəcək. Hələlik yalnız öz yerini görürsən.</p>
-        <table class="qz-tbl">
-          <thead><tr><th>Yer</th><th>Oyunçu</th><th>Xal</th><th>Tapılan</th><th>Dəqiqlik</th></tr></thead>
-          <tbody id="rt"></tbody>
-        </table>
+        <p class="muted">Reytinq bütün oyunçuların topladığı ümumi xala görə qurulur. Hesabına daxil olduqdan sonra qazandığın hər xal cədvələ yazılır.</p>
+        <Reytinq oyun="sozu" />
       </div>
     </section>
   </div>
@@ -105,14 +103,11 @@ import Base from '../../layouts/Base.astro';
   .qz-box b{font-size:28px;font-weight:600;color:var(--accent)}
   .qz-box span{font-size:14px;color:var(--muted)}
   .qz-note{margin:14px 0 10px;font-size:14px}
-  .qz-tbl{width:100%;border-collapse:collapse;font-size:16px}
-  .qz-tbl th{text-align:left;font-size:13px;font-weight:600;color:var(--muted);padding:8px 10px;border-bottom:1px solid var(--line)}
-  .qz-tbl td{padding:12px 10px;border-bottom:1px solid var(--line)}
-  .qz-tbl tr.me td{background:#EEF5F9;font-weight:600}
   @media (max-width:640px){.qz{padding:20px}.qz-q{font-size:23px}.qz-end{margin-left:0}}
 </style>
 
 <script>
+  import { gonder } from '../../lib/hesab.js';
   import { norm } from '../../lib/search.js';
 
   const $ = (id) => document.getElementById(id);
@@ -161,6 +156,7 @@ import Base from '../../layouts/Base.astro';
     $('ans').disabled = true;
     const pts = kind === 'pas' ? 0 : tries === 1 ? 10 : 5;
     sess.xal += pts;
+    if (pts) gonder('sozu', { xal: pts });
     if (kind === 'pas') { sess.pas++; sess.seriya = 0; } else { sess.tapilan++; if (tries === 1) sess.seriya++; else sess.seriya = 0; }
     sess.enUzun = Math.max(sess.enUzun, sess.seriya);
     update((s) => {
@@ -216,7 +212,6 @@ import Base from '../../layouts/Base.astro';
   function renderStats() {
     const s = stats(), tap = s.ilk + s.sonra, acc = s.sual ? Math.round((s.ilk / s.sual) * 100) : 0;
     $('stats').innerHTML = box(s.xal, 'ümumi xal') + box(s.oyun, 'oyun') + box(s.sual, 'cavablanan sual') + box(tap, 'tapılan söz') + box(s.ilk, 'ilk cəhddə tapılan') + box(s.pas, 'pas') + box(`${acc}%`, 'dəqiqlik (ilk cəhddə)') + box(s.enUzun, 'ən uzun seriya');
-    $('rt').innerHTML = s.sual ? `<tr class="me"><td>—</td><td>Sən (qonaq)</td><td>${s.xal}</td><td>${tap}</td><td>${acc}%</td></tr>` : '<tr><td colspan="5" class="muted">Hələ nəticən yoxdur. Oyunu oyna, yerini burada gör.</td></tr>';
   }
   $('reset').addEventListener('click', () => { if (confirm('Bütün statistika silinsin?')) { saveStats(blankStats()); renderStats(); } });
 

@@ -1,0 +1,43 @@
+---
+import Base from '../../layouts/Base.astro';
+---
+<Base title="Hesabların idarəsi" description="Yalnız sayt rəhbərliyi üçün.">
+  <meta slot="head" name="robots" content="noindex, nofollow" />
+  <div class="wrap section">
+    <section class="stack">
+      <h1 class="page-title">Hesabların idarəsi</h1>
+      <p class="lead">Şifrəsini unudan istifadəçiyə yeni şifrə vermək və ya hesabı silmək üçün. İdarəetmə açarı Cloudflare-də ADMIN_KEY kimi saxlanılır.</p>
+    </section>
+    <form class="card hs" id="f" novalidate>
+      <div class="hs-f" style="margin-top:0"><label for="key">İdarəetmə açarı</label><input class="hs-in" id="key" type="password" autocomplete="off" /></div>
+      <div class="hs-f"><label for="un">İstifadəçi adı</label><div class="hs-pre"><span>#</span><input class="hs-in" id="un" autocapitalize="none" spellcheck="false" /></div></div>
+      <div class="hs-f"><label for="pw">Yeni şifrə</label><input class="hs-in" id="pw" autocomplete="off" /><p class="hs-hint">İstifadəçiyə bu şifrəni bildirin, profilindən özü dəyişə bilər.</p></div>
+      <p class="hs-err" id="e" hidden></p>
+      <p class="hs-note" id="ok" hidden></p>
+      <div class="hs-row">
+        <button class="btn btn-p" type="submit">Yeni şifrə ver</button>
+        <button class="btn btn-s" type="button" id="del">Hesabı sil</button>
+      </div>
+    </form>
+  </div>
+</Base>
+
+<script>
+  const $ = (id) => document.getElementById(id);
+  async function call(path, body) {
+    $('e').hidden = true; $('ok').hidden = true;
+    const r = await fetch(path, { method: 'POST', headers: { 'Content-Type': 'application/json', 'X-Admin-Key': $('key').value }, body: JSON.stringify(body) }).catch(() => null);
+    const d = r ? await r.json().catch(() => ({})) : { xeta: 'Serverlə əlaqə alınmadı.' };
+    if (!r || !r.ok) { $('e').textContent = d.xeta || 'Xəta'; $('e').hidden = false; return false; }
+    return true;
+  }
+  const un = () => $('un').value.trim().toLowerCase().replace(/^#/, '');
+  $('f').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    if (await call('/api/admin/sifre', { username: un(), yeni: $('pw').value })) { $('ok').textContent = `#${un()} üçün yeni şifrə qoyuldu.`; $('ok').hidden = false; }
+  });
+  $('del').addEventListener('click', async () => {
+    if (!un() || !confirm(`#${un()} hesabı və bütün nəticələri silinsin?`)) return;
+    if (await call('/api/admin/sil', { username: un() })) { $('ok').textContent = `#${un()} hesabı silindi.`; $('ok').hidden = false; }
+  });
+</script>

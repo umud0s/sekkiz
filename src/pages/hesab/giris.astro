@@ -1,0 +1,49 @@
+---
+import Base from '../../layouts/Base.astro';
+import SOSIAL from '../../data/cms/sayt/sosial.json';
+const WA = (SOSIAL.sebekeler.find((s) => s.ikon === 'whatsapp') || {}).unvan;
+---
+<Base title="Daxil ol" description="Səkkizguşə hesabına daxil ol.">
+  <div class="wrap section">
+    <section class="stack">
+      <nav class="crumbs" aria-label="Yol"><a href="/">Ana səhifə</a> <span aria-hidden="true">/</span> Daxil ol</nav>
+      <h1 class="page-title">Daxil ol</h1>
+      <p class="lead">İstifadəçi adını və şifrəni yaz. Oyunlardakı nəticələrin reytinqə düşəcək.</p>
+    </section>
+
+    <form class="card hs" id="f" novalidate>
+      <div class="hs-f" style="margin-top:0">
+        <label for="un">İstifadəçi adı</label>
+        <div class="hs-pre"><span>#</span><input class="hs-in" id="un" autocomplete="username" autocapitalize="none" spellcheck="false" maxlength="20" required /></div>
+      </div>
+      <div class="hs-f">
+        <label for="pw">Şifrə</label>
+        <div class="hs-pw"><input class="hs-in" id="pw" type="password" autocomplete="current-password" maxlength="64" required /><button type="button" class="hs-eye" id="eye">Göstər</button></div>
+      </div>
+      <p class="hs-err" id="e" hidden></p>
+      <div class="hs-row"><button class="btn btn-p" type="submit" id="go">Daxil ol</button></div>
+      <p class="hs-hint" style="margin-top:18px">Hesabın yoxdur? <a href="/hesab/qeydiyyat/">Qeydiyyatdan keç</a></p>
+      <p class="hs-hint" style="margin-top:6px">Şifrəni unutmusan? {WA ? <a href={WA} target="_blank" rel="noopener">WhatsApp ilə bizə yaz</a> : 'Bizə yaz'}, istifadəçi adını bildir, sənə yeni şifrə verək.</p>
+    </form>
+  </div>
+</Base>
+
+<script>
+  import { api, setCached } from '../../lib/hesab.js';
+  const $ = (id) => document.getElementById(id);
+  $('un').addEventListener('input', () => { $('un').value = $('un').value.toLowerCase().replace(/^#/, '').replace(/\s/g, ''); });
+  $('eye').addEventListener('click', () => { const s = $('pw').type === 'password'; $('pw').type = s ? 'text' : 'password'; $('eye').textContent = s ? 'Gizlət' : 'Göstər'; });
+  $('f').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const username = $('un').value.trim(), sifre = $('pw').value;
+    if (!username || !sifre) { $('e').textContent = 'İstifadəçi adını və şifrəni yaz.'; $('e').hidden = false; return; }
+    $('go').disabled = true; $('e').hidden = true;
+    try {
+      const d = await api('/api/giris', { username, sifre });
+      setCached(d.user);
+      // Oyundan gəlibsə, ora qaytarılır
+      const back = new URLSearchParams(location.search).get('geri');
+      location.href = back && back.startsWith('/') && !back.startsWith('//') ? back : '/hesab/';
+    } catch (x) { $('e').textContent = x.message; $('e').hidden = false; $('go').disabled = false; }
+  });
+</script>

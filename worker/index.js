@@ -1,6 +1,7 @@
-// Saytın Worker-i: səhifələri statik fayllardan verir, yalnız /oauth/* ünvanlarında
-// idarəetmə paneli üçün GitHub ilə girişi (OAuth) həyata keçirir.
-// Lazım olan gizli açarlar Cloudflare-də saxlanılır: GITHUB_CLIENT_ID, GITHUB_CLIENT_SECRET.
+// Saytın Worker-i: səhifələri statik fayllardan verir. /oauth/* ünvanlarında idarəetmə paneli üçün
+// GitHub ilə girişi (OAuth), /api/* ünvanlarında isə istifadəçi hesablarını (worker/api.js) idarə edir.
+// Lazım olan gizli açarlar Cloudflare-də saxlanılır: GITHUB_CLIENT_ID, GITHUB_CLIENT_SECRET, ADMIN_KEY.
+import { api } from './api.js';
 
 const COOKIE = 'sekkiz_oauth_state';
 
@@ -71,6 +72,7 @@ export default {
     const { pathname } = new URL(request.url);
     if (request.method === 'GET' && (pathname === '/oauth/auth' || pathname === '/oauth/authorize')) return authorize(request, env);
     if (request.method === 'GET' && pathname === '/oauth/callback') return callback(request, env);
+    if (pathname.startsWith('/api/')) return api(request, env).catch(() => new Response(JSON.stringify({ xeta: 'Serverdə xəta baş verdi. Bir az sonra yenidən cəhd edin.' }), { status: 500, headers: { 'Content-Type': 'application/json; charset=utf-8' } }));
     return env.ASSETS.fetch(request);
   },
 };

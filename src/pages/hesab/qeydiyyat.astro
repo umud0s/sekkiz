@@ -1,0 +1,215 @@
+---
+import Base from '../../layouts/Base.astro';
+import { STATUSLAR, AVATAR_IDLER, SIFRE_MIN } from '../../lib/hesab-sabit.js';
+import { SIMVOL, avatarSvg } from '../../lib/simvollar.js';
+
+// Universitet sahəsində təklif olunan adlar (siyahıda olmayanı da yazmaq olar)
+const UNIVERSITETLER = [
+  'Bakı Dövlət Universiteti', 'ADA Universiteti', 'Azərbaycan Dövlət Neft və Sənaye Universiteti', 'Azərbaycan Texniki Universiteti',
+  'Azərbaycan Dövlət İqtisad Universiteti (UNEC)', 'Azərbaycan Dövlət Pedaqoji Universiteti', 'Azərbaycan Tibb Universiteti',
+  'Azərbaycan Dillər Universiteti', 'Bakı Mühəndislik Universiteti', 'Bakı Ali Neft Məktəbi', 'Azərbaycan Memarlıq və İnşaat Universiteti',
+  'Bakı Slavyan Universiteti', 'Azərbaycan Dövlət Mədəniyyət və İncəsənət Universiteti', 'Bakı Musiqi Akademiyası',
+  'Azərbaycan Dövlət Rəssamlıq Akademiyası', 'Azərbaycan Dövlət Bədən Tərbiyəsi və İdman Akademiyası', 'Milli Aviasiya Akademiyası',
+  'Azərbaycan Dövlət Dəniz Akademiyası', 'Azərbaycan Turizm və Menecment Universiteti', 'Azərbaycan Kooperasiya Universiteti',
+  'Azərbaycan Universiteti', 'Xəzər Universiteti', 'Odlar Yurdu Universiteti', 'Bakı Biznes Universiteti', 'Gəncə Dövlət Universiteti',
+  'Azərbaycan Dövlət Aqrar Universiteti', 'Azərbaycan Texnologiya Universiteti', 'Naxçıvan Dövlət Universiteti', 'Sumqayıt Dövlət Universiteti',
+  'Lənkəran Dövlət Universiteti', 'Mingəçevir Dövlət Universiteti', 'Qarabağ Universiteti',
+];
+---
+<Base title="Qeydiyyat" description="Səkkizguşədə hesab yarat: oyunlardakı nəticələrin ümumi reytinqə düşsün.">
+  <div class="wrap section">
+    <section class="stack">
+      <nav class="crumbs" aria-label="Yol"><a href="/">Ana səhifə</a> <span aria-hidden="true">/</span> Qeydiyyat</nav>
+      <h1 class="page-title">Qeydiyyat</h1>
+      <p class="lead">Hesab yarat, oyunlardakı nəticələrin ümumi reytinqə düşsün. Bir neçə dəqiqə çəkir.</p>
+    </section>
+
+    <div class="card hs">
+      <ol class="hs-steps" id="steps">
+        <li class="on">Hesab</li><li>Status</li><li>Profil şəkli</li><li>Təsdiq</li>
+      </ol>
+
+      <form id="s1" novalidate>
+        <h2>Hesab məlumatları</h2>
+        <div class="hs-f">
+          <label for="ad">Adın</label>
+          <input class="hs-in" id="ad" autocomplete="given-name" maxlength="30" required />
+        </div>
+        <div class="hs-f">
+          <label for="un">İstifadəçi adı</label>
+          <div class="hs-pre"><span>#</span><input class="hs-in" id="un" autocomplete="username" autocapitalize="none" spellcheck="false" maxlength="20" required /></div>
+          <p class="hs-hint" id="un-h">Kiçik latın hərfləri, rəqəm, "_" və ".". Məsələn: aysel_2010</p>
+        </div>
+        <div class="hs-f">
+          <label for="pw">Şifrə</label>
+          <div class="hs-pw"><input class="hs-in" id="pw" type="password" autocomplete="new-password" minlength={SIFRE_MIN} maxlength="64" required /><button type="button" class="hs-eye" data-eye="pw">Göstər</button></div>
+          <p class="hs-hint">Ən azı {SIFRE_MIN} simvol.</p>
+        </div>
+        <div class="hs-f">
+          <label for="pw2">Şifrəni təkrar yaz</label>
+          <div class="hs-pw"><input class="hs-in" id="pw2" type="password" autocomplete="new-password" maxlength="64" required /><button type="button" class="hs-eye" data-eye="pw2">Göstər</button></div>
+        </div>
+        <p class="hs-note">Saytda hamıya yalnız adın və istifadəçi adın görünür. Digər məlumatlar heç kimə göstərilmir.</p>
+        <p class="hs-err" id="e1" hidden></p>
+        <div class="hs-row"><button class="btn btn-p" type="submit">Davam et</button></div>
+      </form>
+
+      <form id="s2" novalidate hidden>
+        <h2>Statusun</h2>
+        <div class="hs-opts" role="radiogroup" aria-label="Status">
+          {Object.entries(STATUSLAR).map(([k, v]) => <button type="button" class="hs-opt" role="radio" aria-checked="false" data-st={k}>{v}</button>)}
+        </div>
+        <div class="hs-f" id="f-mekteb" hidden>
+          <label for="mekteb">Hazırda oxuduğun məktəb</label>
+          <input class="hs-in" id="mekteb" maxlength="120" placeholder="Məsələn: Gəncə şəhəri, 5 nömrəli tam orta məktəb" />
+        </div>
+        <div class="hs-f" id="f-uni" hidden>
+          <label for="uni">Hazırda təhsil aldığın universitet</label>
+          <input class="hs-in" id="uni" maxlength="120" list="uni-l" placeholder="Yazmağa başla, siyahıdan seç" />
+          <datalist id="uni-l">{UNIVERSITETLER.map((u) => <option value={u} />)}</datalist>
+        </div>
+        <p class="hs-err" id="e2" hidden></p>
+        <div class="hs-row"><button class="btn btn-s" type="button" data-back="1">Geri</button><button class="btn btn-p" type="submit">Davam et</button></div>
+      </form>
+
+      <form id="s3" novalidate hidden>
+        <h2>Profil şəklini seç</h2>
+        <p class="hs-hint">Azərbaycanın simvollarından birini seç. Reytinqdə adının yanında bu şəkil görünəcək.</p>
+        <div class="hs-av" role="radiogroup" aria-label="Profil şəkli">
+          {AVATAR_IDLER.map((id) => <button type="button" role="radio" aria-checked="false" data-av={id}><Fragment set:html={avatarSvg(id, 56)} />{SIMVOL[id][0]}</button>)}
+        </div>
+        <div class="hs-me" id="pv" hidden></div>
+        <p class="hs-err" id="e3" hidden></p>
+        <div class="hs-row"><button class="btn btn-s" type="button" data-back="2">Geri</button><button class="btn btn-p" type="submit">Davam et</button></div>
+      </form>
+
+      <form id="s4" novalidate hidden>
+        <div class="hs-warn" role="alert">
+          <h3>Şifrəni yazıb saxla!</h3>
+          <p>Qeydiyyat üçün e-poçt və ya telefon nömrəsi istəmirik. Ona görə şifrəni unutsan, hesabına özün daxil ola bilməyəcəksən.</p>
+          <p>İndi istifadəçi adını və şifrəni dəftərə və ya etibarlı bir yerə yaz.</p>
+          <div class="hs-cred">
+            <span>İstifadəçi adı</span><b id="c-un"></b>
+            <span>Şifrə</span><b id="c-pw"></b>
+          </div>
+          <button type="button" class="hs-eye" id="c-eye" style="position:static;transform:none">Şifrəni göstər</button>
+        </div>
+        <label class="hs-chk"><input type="checkbox" id="ok" /> Şifrəmi yazdım və etibarlı yerdə saxladım</label>
+        <p class="hs-err" id="e4" hidden></p>
+        <div class="hs-row"><button class="btn btn-s" type="button" data-back="3">Geri</button><button class="btn btn-p" type="submit" id="create" disabled>Profili yarat</button></div>
+      </form>
+
+      <p class="hs-hint" style="margin-top:20px">Hesabın var? <a href="/hesab/giris/">Daxil ol</a></p>
+    </div>
+  </div>
+</Base>
+
+<script>
+  import { api, setCached, avatarSvg, adHtml } from '../../lib/hesab.js';
+  import { AD_RE, USER_RE, SIFRE_MIN } from '../../lib/hesab-sabit.js';
+
+  const $ = (id) => document.getElementById(id);
+  const v = { ad: '', username: '', sifre: '', status: '', mekteb: '', universitet: '', avatar: '' };
+  const err = (n, m) => { $('e' + n).textContent = m || ''; $('e' + n).hidden = !m; };
+
+  function step(n) {
+    [1, 2, 3, 4].forEach((k) => { $('s' + k).hidden = k !== n; });
+    document.querySelectorAll('#steps li').forEach((li, i) => { li.className = i + 1 === n ? 'on' : i + 1 < n ? 'ok' : ''; });
+    const f = $('s' + n).querySelector('input:not([type=checkbox]), [aria-checked]');
+    window.scrollTo({ top: $('steps').getBoundingClientRect().top + scrollY - 120, behavior: 'smooth' });
+    if (f && n === 1) f.focus();
+  }
+  document.querySelectorAll('[data-back]').forEach((b) => b.addEventListener('click', () => step(+b.dataset.back)));
+  document.querySelectorAll('[data-eye]').forEach((b) => b.addEventListener('click', () => {
+    const i = $(b.dataset.eye), show = i.type === 'password';
+    i.type = show ? 'text' : 'password'; b.textContent = show ? 'Gizlət' : 'Göstər';
+  }));
+
+  // İstifadəçi adı: yazdıqca yoxlanır, boşdursa yaşıl
+  let t = 0, yoxlanan = '', bos = false;
+  $('un').addEventListener('input', () => {
+    const el = $('un'); el.value = el.value.toLowerCase().replace(/\s/g, '');
+    const u = el.value, h = $('un-h');
+    clearTimeout(t); bos = false;
+    if (!u) { h.className = 'hs-hint'; h.textContent = 'Kiçik latın hərfləri, rəqəm, "_" və ".". Məsələn: aysel_2010'; return; }
+    if (!USER_RE.test(u)) { h.className = 'hs-hint bad'; h.textContent = 'Kiçik latın hərfi ilə başla, 3-20 simvol: hərf, rəqəm, "_" və ".".'; return; }
+    h.className = 'hs-hint'; h.textContent = 'Yoxlanılır...';
+    t = setTimeout(async () => {
+      try {
+        const d = await api('/api/ad-yoxla?u=' + encodeURIComponent(u));
+        if (el.value !== u) return;
+        yoxlanan = u; bos = d.bos;
+        h.className = 'hs-hint ' + (d.bos ? 'ok' : 'bad'); h.textContent = d.bos ? `#${u} boşdur, götürə bilərsən.` : d.xeta;
+      } catch (e) { h.className = 'hs-hint bad'; h.textContent = e.message; }
+    }, 350);
+  });
+
+  $('s1').addEventListener('submit', (e) => {
+    e.preventDefault();
+    const ad = $('ad').value.replace(/\s+/g, ' ').trim(), u = $('un').value, p1 = $('pw').value, p2 = $('pw2').value;
+    if (!AD_RE.test(ad)) return err(1, 'Adını yaz: 2-30 hərf (yalnız hərf, boşluq və defis).');
+    if (!USER_RE.test(u)) return err(1, 'İstifadəçi adını düzgün yaz.');
+    if (yoxlanan === u && !bos) return err(1, 'Bu istifadəçi adı tutulub, başqasını seç.');
+    if (p1.length < SIFRE_MIN) return err(1, `Şifrə ən azı ${SIFRE_MIN} simvol olmalıdır.`);
+    if (p1 !== p2) return err(1, 'Şifrələr eyni deyil.');
+    err(1); Object.assign(v, { ad, username: u, sifre: p1 });
+    step(2);
+  });
+
+  document.querySelectorAll('[data-st]').forEach((b) => b.addEventListener('click', () => {
+    v.status = b.dataset.st;
+    document.querySelectorAll('[data-st]').forEach((x) => x.setAttribute('aria-checked', String(x === b)));
+    $('f-mekteb').hidden = v.status !== 'mekteb';
+    $('f-uni').hidden = v.status !== 'universitet';
+    const f = v.status === 'mekteb' ? $('mekteb') : v.status === 'universitet' ? $('uni') : null;
+    if (f) f.focus();
+    err(2);
+  }));
+  $('s2').addEventListener('submit', (e) => {
+    e.preventDefault();
+    if (!v.status) return err(2, 'Statusunu seç.');
+    v.mekteb = v.status === 'mekteb' ? $('mekteb').value.trim() : '';
+    v.universitet = v.status === 'universitet' ? $('uni').value.trim() : '';
+    if (v.status === 'mekteb' && v.mekteb.length < 2) return err(2, 'Oxuduğun məktəbi yaz.');
+    if (v.status === 'universitet' && v.universitet.length < 2) return err(2, 'Təhsil aldığın universiteti yaz.');
+    err(2); step(3);
+  });
+
+  document.querySelectorAll('[data-av]').forEach((b) => b.addEventListener('click', () => {
+    v.avatar = b.dataset.av;
+    document.querySelectorAll('[data-av]').forEach((x) => x.setAttribute('aria-checked', String(x === b)));
+    $('pv').hidden = false;
+    $('pv').innerHTML = avatarSvg(v.avatar, 52) + `<div><div class="hs-hint">Başqaları səni belə görəcək:</div>${adHtml(v)}</div>`;
+    err(3);
+  }));
+  $('s3').addEventListener('submit', (e) => {
+    e.preventDefault();
+    if (!v.avatar) return err(3, 'Profil şəkli seçmək vacibdir.');
+    err(3);
+    $('c-un').textContent = '#' + v.username;
+    $('c-pw').textContent = '•'.repeat(v.sifre.length); $('c-eye').textContent = 'Şifrəni göstər';
+    $('ok').checked = false; $('create').disabled = true;
+    step(4);
+  });
+
+  // Təsdiq: şifrəni yazdığını təsdiq etməyincə profil yaradılmır
+  $('c-eye').addEventListener('click', () => {
+    const show = $('c-pw').textContent.startsWith('•');
+    $('c-pw').textContent = show ? v.sifre : '•'.repeat(v.sifre.length);
+    $('c-eye').textContent = show ? 'Şifrəni gizlət' : 'Şifrəni göstər';
+  });
+  $('ok').addEventListener('change', () => { $('create').disabled = !$('ok').checked; });
+  $('s4').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    if (!$('ok').checked) return;
+    $('create').disabled = true; err(4);
+    try {
+      const d = await api('/api/qeydiyyat', v);
+      setCached(d.user);
+      location.href = '/hesab/?yeni=1';
+    } catch (x) {
+      err(4, x.message); $('create').disabled = false;
+      if (x.status === 409) { step(1); err(1, x.message); }
+    }
+  });
+</script>

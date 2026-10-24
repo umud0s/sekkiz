@@ -1,0 +1,14 @@
+---
+// Oyunun ümumi reytinq cədvəli: ad, istifadəçi adı, profil şəkli və nəticə
+const { oyun } = Astro.props;
+---
+<div class="rt" data-oyun={oyun} aria-live="polite"></div>
+
+<script>
+  import { reytinq } from '../lib/hesab.js';
+  const all = () => document.querySelectorAll('.rt[data-oyun]');
+  all().forEach((el) => reytinq(el, el.dataset.oyun));
+  // Yeni nəticə göndəriləndə və ya istifadəçi dəyişəndə cədvəl yenilənir
+  addEventListener('sk-reytinq', (e) => all().forEach((el) => { if (el.dataset.oyun === e.detail) reytinq(el, el.dataset.oyun); }));
+  addEventListener('sk-men', () => all().forEach((el) => reytinq(el, el.dataset.oyun)));
+</script>

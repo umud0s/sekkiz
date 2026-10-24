@@ -1,0 +1,125 @@
+---
+import Base from '../../layouts/Base.astro';
+import { AVATAR_IDLER, SIFRE_MIN } from '../../lib/hesab-sabit.js';
+import { SIMVOL, avatarSvg } from '../../lib/simvollar.js';
+---
+<Base title="Profilim" description="Səkkizguşə hesabın: profil şəkli, oyun nəticələri və şifrə.">
+  <meta slot="head" name="robots" content="noindex" />
+  <div class="wrap section">
+    <section class="stack">
+      <nav class="crumbs" aria-label="Yol"><a href="/">Ana səhifə</a> <span aria-hidden="true">/</span> Profilim</nav>
+      <h1 class="page-title">Profilim</h1>
+    </section>
+
+    <p class="muted" id="wait">Yüklənir...</p>
+    <div class="pf" id="pf" hidden>
+      <div class="card hs pf-top">
+        <p class="hs-note pf-new" id="new" hidden>Xoş gəldin! Profilin yaradıldı. İndi oyunlara keç, nəticələrin reytinqə düşəcək.</p>
+        <div class="pf-me">
+          <span id="av"></span>
+          <div>
+            <div class="pf-name" id="nm"></div>
+            <div class="hs-hint" id="st"></div>
+          </div>
+        </div>
+        <p class="hs-hint pf-priv">Hamıya yalnız adın, istifadəçi adın və profil şəklin görünür. Status və təhsil məlumatını yalnız sən görürsən.</p>
+      </div>
+
+      <div class="card hs">
+        <h2>Nəticələrim</h2>
+        <ul class="pf-res" id="res"></ul>
+      </div>
+
+      <div class="card hs">
+        <h2>Profil şəklini dəyiş</h2>
+        <div class="hs-av" role="radiogroup" aria-label="Profil şəkli">
+          {AVATAR_IDLER.map((id) => <button type="button" role="radio" aria-checked="false" data-av={id}><Fragment set:html={avatarSvg(id, 52)} />{SIMVOL[id][0]}</button>)}
+        </div>
+        <p class="hs-hint" id="av-m" aria-live="polite"></p>
+      </div>
+
+      <form class="card hs" id="pwf" novalidate>
+        <h2>Şifrəni dəyiş</h2>
+        <div class="hs-f"><label for="p0">Köhnə şifrə</label><input class="hs-in" id="p0" type="password" autocomplete="current-password" maxlength="64" /></div>
+        <div class="hs-f"><label for="p1">Yeni şifrə</label><input class="hs-in" id="p1" type="password" autocomplete="new-password" maxlength="64" /><p class="hs-hint">Ən azı {SIFRE_MIN} simvol. Yeni şifrəni də yazıb saxlamağı unutma.</p></div>
+        <div class="hs-f"><label for="p2">Yeni şifrəni təkrar yaz</label><input class="hs-in" id="p2" type="password" autocomplete="new-password" maxlength="64" /></div>
+        <p class="hs-err" id="pw-e" hidden></p>
+        <p class="hs-note" id="pw-ok" hidden>Şifrə dəyişdirildi.</p>
+        <div class="hs-row"><button class="btn btn-p" type="submit">Şifrəni dəyiş</button></div>
+      </form>
+
+      <div class="hs-row"><button class="btn btn-s" type="button" id="out">Hesabdan çıx</button></div>
+    </div>
+  </div>
+</Base>
+
+<style>
+  .pf{display:flex;flex-direction:column;gap:20px;max-width:620px}
+  .pf .hs{max-width:none}
+  .pf-me{display:flex;align-items:center;gap:18px}
+  .pf-name{font-size:26px;line-height:1.2}
+  .pf-priv{margin-top:16px}
+  .pf-new{margin:0 0 16px}
+</style>
+<style is:global>
+  .pf-name .nm{font-weight:600}
+  .pf-res{list-style:none;margin:10px 0 0;padding:0;display:flex;flex-direction:column;gap:8px}
+  .pf-res li{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;padding:12px 16px;border-radius:14px;background:#F5F9FB}
+  .pf-res a{font-weight:600;text-decoration:none}
+  .pf-res b{color:var(--accent-dark)}
+</style>
+
+<script>
+  import { api, men, setCached, avatarSvg, adHtml, esc, NETICE, OYUNLAR } from '../../lib/hesab.js';
+  import { STATUSLAR, SIFRE_MIN } from '../../lib/hesab-sabit.js';
+  const $ = (id) => document.getElementById(id);
+
+  function draw(u, rekord) {
+    $('av').innerHTML = avatarSvg(u.avatar, 84);
+    $('nm').innerHTML = adHtml(u);
+    $('st').textContent = [STATUSLAR[u.status], u.mekteb, u.universitet].filter(Boolean).join(' · ');
+    document.querySelectorAll('[data-av]').forEach((b) => b.setAttribute('aria-checked', String(b.dataset.av === u.avatar)));
+    if (rekord) {
+      $('res').innerHTML = Object.entries(OYUNLAR).map(([k, o]) => {
+        const r = rekord.find((x) => x.oyun === k && x.xal > 0);
+        return `<li><a href="${o.href}">${esc(o.ad)}</a>${r ? `<b>${esc(NETICE[k](r))}</b>` : '<span class="muted">Hələ nəticə yoxdur</span>'}</li>`;
+      }).join('');
+    }
+  }
+
+  let user = null;
+  men(true).then((d) => {
+    if (!d.user) { location.replace('/hesab/giris/'); return; }
+    user = d.user;
+    $('wait').hidden = true; $('pf').hidden = false;
+    $('new').hidden = !new URLSearchParams(location.search).has('yeni');
+    draw(user, d.rekord || []);
+  });
+
+  document.querySelectorAll('[data-av]').forEach((b) => b.addEventListener('click', async () => {
+    if (!user || b.dataset.av === user.avatar) return;
+    $('av-m').textContent = 'Saxlanılır...';
+    try {
+      const d = await api('/api/profil', { avatar: b.dataset.av });
+      user = d.user; setCached(user); draw(user);
+      $('av-m').textContent = 'Profil şəkli dəyişdirildi.';
+    } catch (e) { $('av-m').textContent = e.message; }
+  }));
+
+  $('pwf').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const fail = (m) => { $('pw-e').textContent = m; $('pw-e').hidden = false; $('pw-ok').hidden = true; };
+    if ($('p1').value.length < SIFRE_MIN) return fail(`Yeni şifrə ən azı ${SIFRE_MIN} simvol olmalıdır.`);
+    if ($('p1').value !== $('p2').value) return fail('Yeni şifrələr eyni deyil.');
+    try {
+      await api('/api/sifre', { kohne: $('p0').value, yeni: $('p1').value });
+      $('pw-e').hidden = true; $('pw-ok').hidden = false; $('pwf').reset();
+    } catch (x) { fail(x.message); }
+  });
+
+  $('out').addEventListener('click', async () => {
+    await api('/api/cixis', {}).catch(() => {});
+    setCached(null);
+    location.href = '/';
+  });
+</script>

@@ -418,3 +418,26 @@ Türkiyə bayrağına bənzədiyi üçün Azərbaycan bayrağının kiçik təsv
 Hər brauzer sessiyasında yalnız bir dəfə (sessionStorage "sk-intro"); <head>-dəki inline skript html-ə "sk-intro" sinfi verir,
 JS işləməsə ekran göstərilmir. 8 simvol yanandan və səhifə yüklənəndən sonra çəkilir (~3 san), maksimum 8 san;
 toxunuş/klik/düymə ilə keçmək olar; prefers-reduced-motion-da fırlanma yoxdur (~1,9 san). Skript düşsə belə 9 san-da CSS özü gizlədir.
+
+## Qeydiyyat və reytinq sistemi — 24.10.2026
+İstifadəçi tələbi: qeydiyyat (ad, istifadəçi adı, status; məktəbli → məktəb, universitet tələbəsi → universitet; məzun, işləyən,
+təqaüdçüdən əlavə heç nə soruşulmur), profil şəkli məcburi (Azərbaycan simvolları), hamıya yalnız "Ad #istifadəçiadı" görünür,
+hər oyunda yalnız ümumi reytinq (aylıq/həftəlik yoxdur). Giriş üsulu (istifadəçi seçdi): istifadəçi adı + şifrə, e-poçtsuz.
+Şifrə təyin olunandan sonra ayrıca "Şifrəni yazıb saxla!" ekranı çıxır; "Şifrəmi yazdım və etibarlı yerdə saxladım"
+qeyd olunmayınca "Profili yarat" düyməsi bağlıdır (istifadəçi tələbi).
+Server: worker/api.js (/api/*), Cloudflare D1 (binding DB, ad "sekkizguse"; wrangler.jsonc-də ID yoxdur, ilk yayımda avtomatik yaradılır).
+Cədvəllər ilk sorğuda yaranır: users, sessions, rekord, limitler.
+Şifrə: PBKDF2-SHA256, 100 000 təkrar, 16 bayt duz. Sessiya: 90 gün, HttpOnly/Secure/SameSite=Lax kuki "sk_s", bazada SHA-256-sı.
+Qorunma: POST-da Origin yoxlanır və JSON tələb olunur; giriş limiti (istifadəçi adına 15 dəq-də 10, IP-yə 40), qeydiyyat IP-yə gündə 20.
+Açıq API yalnız ad, istifadəçi adı, profil şəkli və nəticəni verir; status/məktəb/universitet yalnız sahibinə (/api/men).
+Ortaq qaydalar: src/lib/hesab-sabit.js (statuslar, 12 avatar, oyunlar, ad/istifadəçi adı qaydaları); simvollar: src/lib/simvollar.js
+(giriş ekranı da buradan götürür); brauzer köməkçisi: src/lib/hesab.js (localStorage "sk-men" yalnız ad/istifadəçi adı/şəkil saxlayır).
+Səhifələr: /hesab/qeydiyyat/ (4 addım), /hesab/giris/ (?geri= ilə oyuna qayıdır), /hesab/ (profil: nəticələr, şəkil, şifrə, çıxış),
+/hesab/idare/ (noindex: ADMIN_KEY ilə şifrəni unudan istifadəçiyə yeni şifrə, hesabı silmək). Menyunun sağında "Daxil ol" / şəkil + ad.
+Reytinq (src/components/Reytinq.astro, ilk 50 + öz yerin):
+- Xəritəni tamamla: ən çox tapılan ərazi, bərabərdə tamamlama vaxtı (75 ərazi 60 saniyədən tez qəbul olunmur).
+- Diyarşünas: ən yüksək pillə (0-12), bərabərdə ona daha tez çatan; "Reytinq" sekməsi.
+- Sözü tap: ümumi xal (hər doğru cavab 10/5 xal göndərilir, iki göndəriş arası ən az 1,5 san).
+- Xalça yarat: yaradıcı oyundur, xalı yoxdur, reytinqi yoxdur.
+Lokal test: wrangler 4.139.0 (scratchpad-də), `wrangler dev --local`, .dev.vars-da ADMIN_KEY (gitignore).
+Cloudflare-də əlavə ediləcək gizli açar: ADMIN_KEY (idarəetmə səhifəsi üçün).

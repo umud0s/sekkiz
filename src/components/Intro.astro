@@ -2,19 +2,11 @@
 // Giriş ekranı: sayta ilk daxil olanda (hər sessiyada bir dəfə) göstərilir.
 // Ulduz addım-addım fırlanır, yuxarı uca gələn guşədəki simvol yanır və yanılı qalır.
 import { STAR_POINTS } from '../lib/site.js';
+import { SIMVOL } from '../lib/simvollar.js';
 
 const R = 138;
-// Hər simvol yuxarı baxan vəziyyətdə, (0,0) ətrafında ±17 ölçüsündə çəkilib
-const SYMS = [
-  ['Alov', '<path class="f" style="--c:#EF3340" d="M0-17C6-10 13-4 11 5 9.5 12 5 16 0 16S-9.5 12-11 5C-12.5-1-8-6-5-10-4.5-5-2-3-1-2 0-7-1-12 0-17Z"/><path class="f" style="--c:#F2B53A" d="M0 2C4 6 6 9 5 12 4 14.6 2 16 0 16S-4 14.6-5 12C-6 9-3 6 0 2Z"/>'],
-  ['Buta', '<path class="f" style="--c:#B5213A" d="M3 16C-6 17-12 10-11 2-10-6-3-11 3-14 5-15 7-17 7-17 8-13 12-7 12 1 12 9 9 15 3 16Z"/><path class="f" style="--c:#F2C14E" d="M2 11C-3 11-6 7-5 3-4-1 0-4 4-6 5-2 7 2 6 6 6 9 4 11 2 11Z"/><circle class="f" style="--c:#B5213A" cx="1" cy="5" r="1.8"/>'],
-  ['Səməni', '<g fill="none" stroke-width="2.4" stroke-linecap="round"><path class="s" style="--c:#509E2F" d="M-8 8C-9 0-8-8-6-14M-3 8C-4-1-3-9-1-16M2 8C2-2 3-10 5-16M7 8C8 0 9-6 11-12"/><path class="s" style="--c:#EF3340" stroke-width="3" d="M-10 5H11"/></g><ellipse class="f" style="--c:#C8843C" cx="0" cy="11" rx="13" ry="4.5"/>'],
-  ['Nar', '<circle class="f" style="--c:#C8102E" cx="0" cy="3" r="12.5"/><path class="f" style="--c:#8E1520" d="M-4.5-8L-3.5-14-1-10.5 0-15 1-10.5 3.5-14 4.5-8Z"/><ellipse cx="-4.5" cy="-1" rx="2.6" ry="4" fill="#FFFFFF" opacity=".35"/>'],
-  ['Xarıbülbül', '<path class="s" style="--c:#4E7A3A" d="M-2 17C-2 6 0-4 6-10" fill="none" stroke-width="2"/><path class="f" style="--c:#4E7A3A" d="M-2 9C-9 7-12 2-12-3-6-2-3 3-2 9Z"/><g class="f" style="--c:#5A2A67"><path d="M6-10C1-8-1-2 1 4 4 1 5-4 6-10Z"/><path d="M6-10C4-4 5 2 9 6 10 1 9-5 6-10Z"/><path d="M6-10C10-6 13-2 14 3 14-2 11-8 6-10Z"/></g>'],
-  ['Sünbül', '<path class="s" style="--c:#B98510" d="M0 17V-12" fill="none" stroke-width="1.8"/><g class="f" style="--c:#E0A526"><ellipse cx="0" cy="-14" rx="2.4" ry="4"/><ellipse cx="-3.4" cy="-8" rx="2.4" ry="4.2" transform="rotate(-28 -3.4 -8)"/><ellipse cx="3.4" cy="-8" rx="2.4" ry="4.2" transform="rotate(28 3.4 -8)"/><ellipse cx="-3.4" cy="-1" rx="2.4" ry="4.2" transform="rotate(-28 -3.4 -1)"/><ellipse cx="3.4" cy="-1" rx="2.4" ry="4.2" transform="rotate(28 3.4 -1)"/><ellipse cx="-3.4" cy="6" rx="2.4" ry="4.2" transform="rotate(-28 -3.4 6)"/><ellipse cx="3.4" cy="6" rx="2.4" ry="4.2" transform="rotate(28 3.4 6)"/></g>'],
-  ['Bayraq', `<rect class="f" style="--c:#00B5E2" x="-16" y="-11" width="32" height="7.4" rx="1.5"/><rect class="f" style="--c:#EF3340" x="-16" y="-3.7" width="32" height="7.4"/><rect class="f" style="--c:#509E2F" x="-16" y="3.6" width="32" height="7.4" rx="1.5"/><circle cx="-1.2" r="2.9" fill="#FFFFFF"/><circle class="f" style="--c:#EF3340" cx="-0.3" r="2.4"/><polygon points="${STAR_POINTS}" transform="translate(2.6 0) scale(.017)" fill="#FFFFFF"/>`],
-  ['Xalça', '<path class="f" style="--c:#8E1520" d="M0-16L14 0 0 16-14 0Z"/><path class="f" style="--c:#F2C14E" d="M0-10.5L9 0 0 10.5-9 0Z"/><path class="f" style="--c:#1B2A5C" d="M0-5L4.5 0 0 5-4.5 0Z"/>'],
-];
+// Giriş ekranında yanan səkkiz simvol, saat əqrəbi istiqamətində
+const SYMS = ['alov', 'buta', 'semeni', 'nar', 'xaribulbul', 'sunbul', 'bayraq', 'xalca'].map((k) => SIMVOL[k]);
 ---
 <div class="sk-in" id="sk-in" aria-hidden="true">
   <div class="sk-in-box">

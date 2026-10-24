@@ -1,11 +1,13 @@
 // Cloudflare Workers ayarları: sayt statik fayllardan ibarətdir (dist qovluğu).
-// Worker kodu (worker/index.js) yalnız /oauth/* ünvanlarında işləyir: idarəetmə paneli üçün GitHub girişi.
+// Worker kodu (worker/index.js) yalnız /oauth/* (idarəetmə panelinə GitHub girişi) və /api/* (istifadəçi hesabları) ünvanlarında işləyir.
 {
   "name": "sekkizguse",
   "main": "worker/index.js",
   "compatibility_date": "2025-09-01",
   // Panelin açarlarını (GITHUB_CLIENT_ID, GITHUB_CLIENT_SECRET) yeni yayımda silmə
   "keep_vars": true,
+  // İstifadəçi hesabları və reytinq bazası. ID yazılmayıb: ilk yayımda Cloudflare bazanı özü yaradır.
+  "d1_databases": [{ "binding": "DB", "database_name": "sekkizguse" }],
   "assets": {
     "directory": "./dist",
     "binding": "ASSETS",
@@ -13,6 +15,6 @@
     "not_found_handling": "404-page",
     "html_handling": "auto-trailing-slash",
     // Qalan bütün ünvanlar Worker-ə dəymədən birbaşa statik fayldan verilir
-    "run_worker_first": ["/oauth/*"]
+    "run_worker_first": ["/oauth/*", "/api/*"]
   }
 }

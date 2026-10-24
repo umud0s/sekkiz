@@ -5,5 +5,6 @@ export default defineConfig({
   site: 'https://sekkizguse.az',
   trailingSlash: 'always',
   build: { format: 'directory' },
-  integrations: [sitemap()],
+  // Profil və idarəetmə səhifələri axtarışa düşmür
+  integrations: [sitemap({ filter: (u) => !/\/hesab\/(idare\/)?$/.test(u) })],
 });

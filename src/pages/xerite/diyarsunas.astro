@@ -1,5 +1,6 @@
 ---
 import Base from '../../layouts/Base.astro';
+import Reytinq from '../../components/Reytinq.astro';
 import { PILLELER, QORUNAN, SUALLAR } from '../../data/diyar.js';
 import KENDLER from '../../data/kendler.json';
 const KENDSAY = Object.values(KENDLER).flat().length;
@@ -15,6 +16,7 @@ const KENDSAY = Object.values(KENDLER).flat().length;
     <div class="dy-tabs">
       <button type="button" class="chip" data-tab="oyun" aria-pressed="true">Oyun</button>
       <button type="button" class="chip" data-tab="xezine" aria-pressed="false">Xəzinəm <span class="n" id="xn">0</span></button>
+      <button type="button" class="chip" data-tab="reyt" aria-pressed="false">Reytinq</button>
     </div>
 
     <div class="dy" id="t-oyun">
@@ -64,7 +66,12 @@ const KENDSAY = Object.values(KENDLER).flat().length;
     <section id="t-xezine" hidden>
       <div class="xz" id="xz"></div>
       <div class="dy-stat" id="stat"></div>
-      <p class="muted xz-note">Xəzinə bu brauzerdə saxlanılır. İstifadəçi adı bölməsi açılanda hesabına köçürüləcək.</p>
+      <p class="muted xz-note">Xəzinə bu brauzerdə saxlanılır. Reytinqdə isə hesabının ən yüksək pilləsi görünür.</p>
+    </section>
+    <section id="t-reyt" class="card dy-rt" hidden>
+      <h2>Ümumi reytinq</h2>
+      <p class="muted">Oyunçular çatdıqları ən yüksək pilləyə görə sıralanır. Bərabər pillədə ona daha tez çatan öndədir.</p>
+      <Reytinq oyun="diyar" />
     </section>
     <p class="muted dy-src">Suallar bazası: {SUALLAR.length} seçilmiş sual və {KENDSAY} kənd, qəsəbə. Kənd və qəsəbələrin hansı rayonda olduğu Dövlət Statistika Komitəsinin "İnzibati ərazi bölgüsü təsnifatı" (2024) üzrə verilir.</p>
   </div>
@@ -73,7 +80,10 @@ const KENDSAY = Object.values(KENDLER).flat().length;
 <style is:global>
   .dy-tabs{display:flex;gap:8px;flex-wrap:wrap}
   .dy{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:24px;align-items:start}
-  .dy[hidden],#t-xezine[hidden],.dy-panel[hidden]{display:none}
+  .dy[hidden],#t-xezine[hidden],#t-reyt[hidden],.dy-panel[hidden]{display:none}
+  .dy-rt{padding:24px 26px}
+  .dy-rt h2{margin:0 0 4px}
+  .dy-rt > p{margin:0 0 12px}
   .dy-stage{border-radius:26px;padding:28px;background:radial-gradient(circle at 50% 0%,#1F4C8C 0%,#10224A 60%,#0A1530 100%);color:#FFFFFF;box-shadow:var(--shadow-hi);min-height:460px}
   .dy-panel{display:flex;flex-direction:column;gap:18px}
   .dy-panel h2{margin:0;font-size:28px;font-weight:500}
@@ -113,6 +123,8 @@ const KENDSAY = Object.values(KENDLER).flat().length;
   .dy-res{display:flex;flex-direction:column;gap:10px;align-items:flex-start}
   .dy-res h2{margin:0;font-size:30px}
   .dy-res p{margin:0;font-size:18px;line-height:1.5;color:#E6EEF7}
+  .dy-acc{margin:14px 0 0;font-size:15px}
+  .dy-acc a{color:#F6C451;font-weight:600}
   .dy-prize{display:inline-flex;flex-direction:column;gap:2px;padding:16px 22px;border-radius:18px;background:linear-gradient(#F6C451,#D99A1E);color:#2A1A00}
   .dy-prize b{font-size:26px}
   .dy-ladder{list-style:none;margin:0;padding:12px;border-radius:22px;background:#0F2348;display:flex;flex-direction:column;gap:3px;box-shadow:var(--shadow)}
@@ -139,6 +151,7 @@ const KENDSAY = Object.values(KENDLER).flat().length;
 
 <script>
   import { SUALLAR, CATS, IPUCU, PILLELER, QORUNAN } from '../../data/diyar.js';
+  import { gonder, cached } from '../../lib/hesab.js';
   import D from '../../data/xerite-data.json';
   import KENDLER from '../../data/kendler.json';
 
@@ -256,10 +269,12 @@ const KENDSAY = Object.values(KENDLER).flat().length;
     st.oyun++; st.enYuksek = Math.max(st.enYuksek, level);
     for (let i = 0; i < level; i++) if (!st.hediyye.includes(i)) st.hediyye.push(i);
     save(st); xezine();
+    if (level > 0) gonder('diyar', { pille: level });
     const p = prizeAt(level);
     const head = kind === 'win' ? 'Təbriklər, böyük diyarşünas!' : kind === 'stop' ? 'Ağıllı qərar!' : kind === 'time' ? 'Vaxt bitdi.' : 'Təəssüf, cavab səhv oldu.';
     const txt = kind === 'win' ? 'Bütün 12 sualı doğru cavablandırdın. Azərbaycanı yaxşı tanıyırsan!' : kind === 'stop' ? `${k} suala doğru cavab verib dayandın.` : `Düzgün cavab: <b>${esc(cur.ans)}</b>. ${k} suala doğru cavab verdin.`;
-    $('res').innerHTML = `<h2>${head}</h2><p>${txt}</p>` + (p ? `<span class="dy-prize"><span>Qazandığın hədiyyə</span><b>${esc(p)}</b></span>` : '<p>Bu dəfə hədiyyə qazanılmadı, növbəti oyunda mütləq alınacaq.</p>');
+    $('res').innerHTML = `<h2>${head}</h2><p>${txt}</p>` + (p ? `<span class="dy-prize"><span>Qazandığın hədiyyə</span><b>${esc(p)}</b></span>` : '<p>Bu dəfə hədiyyə qazanılmadı, növbəti oyunda mütləq alınacaq.</p>')
+      + (cached() ? '' : '<p class="dy-acc">Nəticən reytinqə düşsün deyə <a href="/hesab/qeydiyyat/">qeydiyyatdan keç</a> və ya <a href="/hesab/giris/?geri=/xerite/diyarsunas/">daxil ol</a>.</p>');
     $('play').hidden = true; $('done').hidden = false;
     cur = null; ladder();
   }
@@ -309,6 +324,7 @@ const KENDSAY = Object.values(KENDLER).flat().length;
     document.querySelectorAll('[data-tab]').forEach((x) => x.setAttribute('aria-pressed', String(x === b)));
     $('t-oyun').hidden = b.dataset.tab !== 'oyun';
     $('t-xezine').hidden = b.dataset.tab !== 'xezine';
+    $('t-reyt').hidden = b.dataset.tab !== 'reyt';
   }));
   xezine();
 </script>

@@ -65,6 +65,7 @@ const on = (n) => n.items ? n.items.includes(best) : n === best;
           <a class={`nav-link${on(n) ? ' on' : ''}`} href={n.href} aria-current={on(n) ? 'page' : undefined}>{n.title}</a>
         ))}
       </nav>
+      <a class="acc" id="acc" href="/hesab/giris/"><span class="acc-t">Daxil ol</span></a>
     </div>
   </header>
   <main id="main">
@@ -81,6 +82,18 @@ const on = (n) => n.items ? n.items.includes(best) : n === best;
    </div>
   </footer>
   <script>
+    import { cached, men, avatarSvg, esc } from '../lib/hesab.js';
+    // Menyuda hesab: daxil olan istifadəçinin şəkli və adı, olmayana "Daxil ol"
+    const acc = document.getElementById('acc');
+    const showAcc = (u) => {
+      acc.href = u ? '/hesab/' : '/hesab/giris/';
+      acc.classList.toggle('in', !!u);
+      acc.innerHTML = u ? `${avatarSvg(u.avatar, 34)}<span class="acc-t">${esc(u.ad)}</span>` : '<span class="acc-t">Daxil ol</span>';
+      acc.setAttribute('aria-label', u ? `Profil: ${u.ad} #${u.username}` : 'Daxil ol');
+    };
+    showAcc(cached());
+    addEventListener('sk-men', (e) => showAcc(e.detail));
+    if (cached()) men(); // sessiya bitibsə, menyu yenilənir
     const btn = document.getElementById('menu-btn'), menu = document.getElementById('menu');
     btn.addEventListener('click', () => { const o = menu.classList.toggle('open'); btn.setAttribute('aria-expanded', String(o)); });
     // Açıq açılan menyu kənara toxunanda bağlanır

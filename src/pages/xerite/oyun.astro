@@ -1,5 +1,6 @@
 ---
 import Base from '../../layouts/Base.astro';
+import Reytinq from '../../components/Reytinq.astro';
 import G from '../../data/xerite-oyun.json';
 
 const NB_LABELS = [['RUSİYA', 470, 40], ['GÜRCÜSTAN', 150, 70], ['ERMƏNİSTAN', 95, 420], ['İRAN', 470, 760], ['TÜRKİYƏ', 14, 470]];
@@ -77,10 +78,20 @@ const total = G.u.length;
         <div class="xo-cap" id="cap" aria-live="polite"><p class="muted">Hər doğru cavab şəkildən bir parça açır. Nə olduğunu xəritəni tamamlayanda biləcəksiniz.</p></div>
       </aside>
     </div>
+
+    <section class="card xo-rt">
+      <h2>Ümumi reytinq</h2>
+      <p class="muted">Ən çox ərazi tapan öndədir. Xəritəni tamamlayanlar arasında daha tez tamamlayan yuxarıda durur.</p>
+      <Reytinq oyun="xerite" />
+    </section>
   </div>
 </Base>
 
 <style is:global>
+  .xo-acc{margin:0 0 12px;font-size:14.5px}
+  .xo-rt{padding:24px 26px;margin-top:24px}
+  .xo-rt h2{margin:0 0 4px}
+  .xo-rt > p{margin:0 0 12px}
   .xo-bar{display:flex;align-items:center;flex-wrap:wrap;gap:12px 28px;padding:14px 22px;position:sticky;top:8px;z-index:6}
   .xo-lives{display:flex;gap:4px;margin-right:auto}
   .nar{display:block;transition:transform .4s cubic-bezier(.2,.8,.2,1),opacity .4s,filter .4s}
@@ -198,6 +209,7 @@ const total = G.u.length;
 
 <script>
   import G from '../../data/xerite-oyun.json';
+  import { gonder, cached } from '../../lib/hesab.js';
 
   const SCENES = [
     { id: 'qiz-qalasi', t: 'Qız qalası', p: 'Bakı, İçərişəhər', d: 'Xəzərin sahilində ucalan bu qala Bakının rəmzidir. 2000-ci ildə İçərişəhər və Şirvanşahlar sarayı ilə birlikdə UNESCO-nun Ümumdünya irsi siyahısına daxil edilib.' },
@@ -467,6 +479,8 @@ const total = G.u.length;
     clearInterval(tick);
     const ms = performance.now() - t0;
     $('clock').textContent = clock(ms);
+    if (done.size) gonder('xerite', { tapilan: done.size, vaxt: won ? Math.round(ms) : null });
+    const acc = cached() ? '' : '<p class="xo-acc">Nəticən reytinqə düşsün deyə <a href="/hesab/qeydiyyat/">qeydiyyatdan keç</a> və ya <a href="/hesab/giris/?geri=/xerite/oyun/">daxil ol</a>.</p>';
     if (won) {
       sfx.win();
       const prev = +store.get('sk-xo-best'), rec = !prev || ms < prev;
@@ -480,13 +494,13 @@ const total = G.u.length;
         <span class="big">${clock(ms)}</span>
         <p>Bütün ${N} ərazini ${spoken(ms)} ərzində tapdınız.</p>
         ${rec ? (prev ? '<span class="rec">Yeni rekord!</span>' : '<span class="rec">İlk rekordunuz qeydə alındı</span>') : `<p>Rekordunuz: <b>${clock(prev)}</b>. Bir az da cəld olsanız, onu yeniləyə bilərsiniz.</p>`}
-        <button type="button" class="btn btn-p">Yenə oyna</button>`, true), 900);
+        ${acc}<button type="button" class="btn btn-p">Yenə oyna</button>`, true), 900);
     } else {
       sfx.lose();
       overlay(`<h2>Narlar tükəndi</h2>
         <p>Bu dəfə ${done.size} ərazini düzgün tapdınız.</p>
         ${done.size > 0 && done.size >= (+store.get('sk-xo-max') || 0) && done.size > startMax ? `<span class="rec">Yeni rekord: ${done.size} ərazi!</span>` : `<p>Rekordunuz: <b>${showMax()} ərazi</b>. Yenidən cəhd edin, hər oyunda pazl da yenisi olacaq.</p>`}
-        <button type="button" class="btn btn-p">Yenidən başla</button>`);
+        ${acc}<button type="button" class="btn btn-p">Yenidən başla</button>`);
     }
   }
 
