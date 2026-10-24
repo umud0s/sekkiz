@@ -1,6 +1,7 @@
 ---
 import '../styles/global.css';
 import Icon from '../components/Icon.astro';
+import Intro from '../components/Intro.astro';
 import { SITE, STAR_POINTS, NAV } from '../lib/site.js';
 import SOSIAL from '../data/cms/sayt/sosial.json';
 // Sosial keçidlər admin paneldən idarə olunur; ünvanı boş olan ikon solğun göstərilir
@@ -37,8 +38,10 @@ const on = (n) => n.items ? n.items.includes(best) : n === best;
   <meta property="og:image" content={ogImage} />
   <meta name="twitter:card" content="summary_large_image" />
   <slot name="head" />
+  <script is:inline>try{if(!sessionStorage.getItem('sk-intro'))document.documentElement.classList.add('sk-intro')}catch(e){}</script>
 </head>
 <body>
+  <Intro />
   <header class="wrap head-wrap">
     <div class="site-head">
       <a class="logo" href="/" aria-label="Səkkizguşə, ana səhifə">

@@ -1,0 +1,105 @@
+---
+// Giriş ekranı: sayta ilk daxil olanda (hər sessiyada bir dəfə) göstərilir.
+// Ulduz addım-addım fırlanır, yuxarı uca gələn guşədəki simvol yanır və yanılı qalır.
+import { STAR_POINTS } from '../lib/site.js';
+
+const R = 138;
+// Hər simvol yuxarı baxan vəziyyətdə, (0,0) ətrafında ±17 ölçüsündə çəkilib
+const SYMS = [
+  ['Alov', '<path class="f" style="--c:#EF3340" d="M0-17C6-10 13-4 11 5 9.5 12 5 16 0 16S-9.5 12-11 5C-12.5-1-8-6-5-10-4.5-5-2-3-1-2 0-7-1-12 0-17Z"/><path class="f" style="--c:#F2B53A" d="M0 2C4 6 6 9 5 12 4 14.6 2 16 0 16S-4 14.6-5 12C-6 9-3 6 0 2Z"/>'],
+  ['Buta', '<path class="f" style="--c:#B5213A" d="M3 16C-6 17-12 10-11 2-10-6-3-11 3-14 5-15 7-17 7-17 8-13 12-7 12 1 12 9 9 15 3 16Z"/><path class="f" style="--c:#F2C14E" d="M2 11C-3 11-6 7-5 3-4-1 0-4 4-6 5-2 7 2 6 6 6 9 4 11 2 11Z"/><circle class="f" style="--c:#B5213A" cx="1" cy="5" r="1.8"/>'],
+  ['Səməni', '<g fill="none" stroke-width="2.4" stroke-linecap="round"><path class="s" style="--c:#509E2F" d="M-8 8C-9 0-8-8-6-14M-3 8C-4-1-3-9-1-16M2 8C2-2 3-10 5-16M7 8C8 0 9-6 11-12"/><path class="s" style="--c:#EF3340" stroke-width="3" d="M-10 5H11"/></g><ellipse class="f" style="--c:#C8843C" cx="0" cy="11" rx="13" ry="4.5"/>'],
+  ['Nar', '<circle class="f" style="--c:#C8102E" cx="0" cy="3" r="12.5"/><path class="f" style="--c:#8E1520" d="M-4.5-8L-3.5-14-1-10.5 0-15 1-10.5 3.5-14 4.5-8Z"/><ellipse cx="-4.5" cy="-1" rx="2.6" ry="4" fill="#FFFFFF" opacity=".35"/>'],
+  ['Xarıbülbül', '<path class="s" style="--c:#4E7A3A" d="M-2 17C-2 6 0-4 6-10" fill="none" stroke-width="2"/><path class="f" style="--c:#4E7A3A" d="M-2 9C-9 7-12 2-12-3-6-2-3 3-2 9Z"/><g class="f" style="--c:#5A2A67"><path d="M6-10C1-8-1-2 1 4 4 1 5-4 6-10Z"/><path d="M6-10C4-4 5 2 9 6 10 1 9-5 6-10Z"/><path d="M6-10C10-6 13-2 14 3 14-2 11-8 6-10Z"/></g>'],
+  ['Sünbül', '<path class="s" style="--c:#B98510" d="M0 17V-12" fill="none" stroke-width="1.8"/><g class="f" style="--c:#E0A526"><ellipse cx="0" cy="-14" rx="2.4" ry="4"/><ellipse cx="-3.4" cy="-8" rx="2.4" ry="4.2" transform="rotate(-28 -3.4 -8)"/><ellipse cx="3.4" cy="-8" rx="2.4" ry="4.2" transform="rotate(28 3.4 -8)"/><ellipse cx="-3.4" cy="-1" rx="2.4" ry="4.2" transform="rotate(-28 -3.4 -1)"/><ellipse cx="3.4" cy="-1" rx="2.4" ry="4.2" transform="rotate(28 3.4 -1)"/><ellipse cx="-3.4" cy="6" rx="2.4" ry="4.2" transform="rotate(-28 -3.4 6)"/><ellipse cx="3.4" cy="6" rx="2.4" ry="4.2" transform="rotate(28 3.4 6)"/></g>'],
+  ['Bayraq', `<rect class="f" style="--c:#00B5E2" x="-16" y="-11" width="32" height="7.4" rx="1.5"/><rect class="f" style="--c:#EF3340" x="-16" y="-3.7" width="32" height="7.4"/><rect class="f" style="--c:#509E2F" x="-16" y="3.6" width="32" height="7.4" rx="1.5"/><circle cx="-1.2" r="2.9" fill="#FFFFFF"/><circle class="f" style="--c:#EF3340" cx="-0.3" r="2.4"/><polygon points="${STAR_POINTS}" transform="translate(2.6 0) scale(.017)" fill="#FFFFFF"/>`],
+  ['Xalça', '<path class="f" style="--c:#8E1520" d="M0-16L14 0 0 16-14 0Z"/><path class="f" style="--c:#F2C14E" d="M0-10.5L9 0 0 10.5-9 0Z"/><path class="f" style="--c:#1B2A5C" d="M0-5L4.5 0 0 5-4.5 0Z"/>'],
+];
+---
+<div class="sk-in" id="sk-in" aria-hidden="true">
+  <div class="sk-in-box">
+    <svg class="sk-in-svg" viewBox="-178 -178 356 356">
+      <defs>
+        <radialGradient id="sk-in-glow"><stop offset="0" stop-color="#F2C14E" stop-opacity=".75" /><stop offset="1" stop-color="#F2C14E" stop-opacity="0" /></radialGradient>
+      </defs>
+      <circle class="sk-in-halo" cx="0" cy={-R} r="38" fill="url(#sk-in-glow)" />
+      <g class="sk-in-rot" id="sk-in-rot">
+        <circle r="170" fill="none" />
+        <polygon points={STAR_POINTS} fill="#0A6E99" stroke="#064A69" stroke-width="5" stroke-linejoin="round" />
+        <polygon points={STAR_POINTS} transform="scale(.62)" fill="none" stroke="#FFFFFF" stroke-opacity=".55" stroke-width="4" stroke-linejoin="round" />
+        <polygon points={STAR_POINTS} transform="scale(.16)" fill="#F2C14E" />
+        {SYMS.map(([, svg], k) => (
+          <g transform={`rotate(${k * 45}) translate(0 ${-R})`}>
+            <g transform="scale(1.4)"><g class="sk-in-sym" set:html={svg} /></g>
+          </g>
+        ))}
+      </g>
+    </svg>
+    <p class="sk-in-name" id="sk-in-name">&nbsp;</p>
+    <p class="sk-in-brand">Səkkizguşə</p>
+  </div>
+</div>
+
+<style is:global>
+  .sk-in{display:none}
+  html.sk-intro .sk-in{position:fixed;inset:0;z-index:1000;display:flex;align-items:center;justify-content:center;
+    background:radial-gradient(circle at 50% 42%,#F4F9FC 0,#D6E6F1 62%);cursor:pointer;
+    transition:opacity .45s ease,visibility .45s;animation:sk-in-safe .01s 9s forwards}
+  .sk-in.out{opacity:0;visibility:hidden}
+  .sk-in-box{display:flex;flex-direction:column;align-items:center;transition:transform .45s ease}
+  .sk-in.out .sk-in-box{transform:scale(1.06)}
+  .sk-in-svg{width:min(74vw,340px);height:auto;overflow:visible}
+  .sk-in-rot{transform-box:fill-box;transform-origin:center;transition:transform .34s cubic-bezier(.5,-.25,.3,1.4)}
+  .sk-in-sym .f{fill:#B4C6D3;transition:fill .35s ease}
+  .sk-in-sym .s{stroke:#B4C6D3;transition:stroke .35s ease}
+  .sk-in-sym.on .f{fill:var(--c)}
+  .sk-in-sym.on .s{stroke:var(--c)}
+  .sk-in-sym{transform-box:fill-box;transform-origin:center}
+  .sk-in-sym.pop{animation:sk-in-pop .5s ease}
+  .sk-in-halo{opacity:0;transform-box:fill-box;transform-origin:center}
+  .sk-in-halo.pulse{animation:sk-in-halo .55s ease}
+  .sk-in-name{margin:10px 0 0;min-height:1.4em;font-size:1rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+  .sk-in-brand{margin:2px 0 0;font-size:clamp(1.6rem,5vw,2.2rem);font-weight:600;color:var(--accent-dark)}
+  @keyframes sk-in-pop{0%{transform:scale(1)}45%{transform:scale(1.45)}100%{transform:scale(1)}}
+  @keyframes sk-in-halo{0%{opacity:0;transform:scale(.6)}40%{opacity:1}100%{opacity:0;transform:scale(1.5)}}
+  /* Skript işləməsə, ekran özü çəkilir */
+  @keyframes sk-in-safe{to{opacity:0;visibility:hidden}}
+  @media (prefers-reduced-motion:reduce){.sk-in-rot,.sk-in-box{transition:none}.sk-in-sym.pop,.sk-in-halo.pulse{animation:none}}
+</style>
+
+<script>
+  const el = document.getElementById('sk-in');
+  if (el && document.documentElement.classList.contains('sk-intro')) {
+    try { sessionStorage.setItem('sk-intro', '1'); } catch { /* yaddaş bağlıdır */ }
+    const NAMES = ['Alov', 'Buta', 'Səməni', 'Nar', 'Xarıbülbül', 'Sünbül', 'Bayraq', 'Xalça'];
+    const rot = document.getElementById('sk-in-rot'), name = document.getElementById('sk-in-name');
+    const syms = [...el.querySelectorAll('.sk-in-sym')], halo = el.querySelector('.sk-in-halo');
+    const calm = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const STEP = calm ? 110 : 260;
+    let timers = [], gone = false;
+    const later = (fn, ms) => timers.push(setTimeout(fn, ms));
+    function light(k) {
+      syms[k].classList.add('on', 'pop');
+      name.textContent = NAMES[k];
+      halo.classList.remove('pulse'); void halo.getBBox(); halo.classList.add('pulse');
+    }
+    function exit() {
+      if (gone) return; gone = true;
+      timers.forEach(clearTimeout);
+      el.classList.add('out');
+      setTimeout(() => { el.remove(); document.documentElement.classList.remove('sk-intro'); }, 480);
+    }
+    // Hər addımda ulduz 45° dönür, növbəti guşə yuxarı gəlir və onun simvolu yanır
+    later(() => light(0), 180);
+    for (let k = 1; k < 8; k++) {
+      later(() => { if (!calm) rot.style.transform = `rotate(${-k * 45}deg)`; }, 180 + k * STEP);
+      later(() => light(k), 180 + k * STEP + (calm ? 0 : 170));
+    }
+    const all = 180 + 8 * STEP + 150;
+    const ready = new Promise((ok) => (document.readyState === 'complete' ? ok() : addEventListener('load', ok, { once: true })));
+    Promise.all([ready, new Promise((ok) => later(ok, all))]).then(() => later(exit, 120));
+    later(exit, 8000);
+    el.addEventListener('click', exit);
+    addEventListener('keydown', exit, { once: true });
+  }
+</script>

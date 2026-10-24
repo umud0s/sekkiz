@@ -409,3 +409,12 @@ Hər ikisi president.az-da sözbəsöz yoxlanmalıdır (ikinci sitatın orijinal
 - Layihənin adı və domen (variantlar təklif olundu)
 - Botların məlumat bazası hansı formatdadır
 - Botların Telegram ünvanları, sosial media hesabları
+
+## Giriş ekranı (src/components/Intro.astro) — 24.10.2026
+İstifadəçi istəyi: sayta daxil olanda yüklənmə zamanı səkkizguşəli ulduz fırlanır, hər dönüşdə yuxarı ucda bir simvol yanır.
+Ulduz hər addımda 45° dönür (260 ms), yuxarı gələn guşənin simvolu rənglənir və yanılı qalır (proqres kimi), altda adı yazılır.
+Simvollar ardıcıllıqla: Alov, Buta, Səməni, Nar, Xarıbülbül, Sünbül, Bayraq, Xalça. ("Hilal" əvvəl qırmızı dairədə ağ aypara idi,
+Türkiyə bayrağına bənzədiyi üçün Azərbaycan bayrağının kiçik təsviri ilə əvəz olundu.)
+Hər brauzer sessiyasında yalnız bir dəfə (sessionStorage "sk-intro"); <head>-dəki inline skript html-ə "sk-intro" sinfi verir,
+JS işləməsə ekran göstərilmir. 8 simvol yanandan və səhifə yüklənəndən sonra çəkilir (~3 san), maksimum 8 san;
+toxunuş/klik/düymə ilə keçmək olar; prefers-reduced-motion-da fırlanma yoxdur (~1,9 san). Skript düşsə belə 9 san-da CSS özü gizlədir.
