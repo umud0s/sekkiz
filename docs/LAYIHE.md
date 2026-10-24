@@ -484,3 +484,20 @@ göllər, milli parklar və qoruqlar əlavə olunsun, suallar az təkrarlansın.
   "Yerli məhsullar və sənətkarlıq" (mehsul, 11 sual; xalça məktəbləri və UNESCO illəri "Ölkəni tanı" formatında).
   Bu üç bölmədə İpucu rayonun faktını göstərmir (SADE), çünki fakt cavabı açır (məs. Şabran: "keçmiş adı Dəvəçidir").
   Baza: 195 sual (asan 30, orta 78, çətin 87).
+
+## Ad senzurası və moderasiya — 24.10.2026
+İstifadəçi tələbi: saytdan məktəblilər də istifadə edir, ad və istifadəçi adında təhqir olmasın. Üç qat:
+1) worker/senzura.js (yalnız serverdə, siyahı brauzerə getmir). Normallaşdırma: ə/ş/ç/ğ/ı/ö/ü → latın, kiril → latın,
+   sh/ch/gh/kh → s/c/g/x, leet (0→o, 1→i, 3→e, 4→a, 5→s, @→a, $→s), ayırıcılar silinir, təkrar hərflər birləşir.
+   KOK (istənilən yerdə), SOZ (yalnız ayrıca söz), "!" (qoşa hərf mühüm: yarraq ≠ yaraq), QORUNAN (admin, prezident,
+   ilhamaliyev və s.; qısalar yalnız söz əvvəlində: badminton ≠ admin). Ad yalnız Azərbaycan/latın hərfləri ilə (AD_RE),
+   kiril və oxşar görünən hərflərlə aldatmaq olmur.
+   Test: node scripts/senzura-test.mjs (12 314 normal söz: DSK məntəqələri, qəhrəmanların adları, atalar sözləri, adlar → 0 səhv;
+   52 gizlədilmiş təhqir → hamısı tutulur; DSK tam siyahısı 3793 ad → 0 səhv). Yeni söz əlavə edəndə testi işlədin.
+2) Qeydiyyat 1-ci addımında ad və istifadəçi adı serverdə yoxlanır (/api/ad-yoxla?u=&ad=), profil və ad dəyişmədə də.
+3) Şikayət: reytinqdə "Şikayət et" (yalnız daxil olanlar, özünə yox, gündə 20). 3 fərqli şikayətdə users.gizli=1 →
+   reytinqdə "Adı yoxlanılır". /hesab/idare/ "Şikayətlər və uyğunsuz adlar": Təmizdir / Ad dəyişsin / Bağla / Aç.
+   "Ad dəyişsin" (users.ad_deyis=1): istifadəçi /hesab/ad/ səhifəsinə yönləndirilir, yeni ad və istifadəçi adı seçir (/api/ad-deyis).
+   Bağlanan hesab (users.bagli=1) daxil ola bilmir, reytinqdə görünmür.
+Köçürmələr (KOCURMELER): users sütunları gizli/ad_deyis/bagli, "sikayet" cədvəli; "senzura-yoxla-2026-10-24" mövcud bütün
+adları bir dəfə filtrdən keçirir və uyğunsuzları ad_deyis=1 edir. Köçürmə əvvəl icra olunur, sonra meta-ya yazılır.

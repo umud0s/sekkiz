@@ -49,7 +49,7 @@ const UNIVERSITETLER = [
           <label for="pw2">Şifrəni təkrar yaz</label>
           <div class="hs-pw"><input class="hs-in" id="pw2" type="password" autocomplete="new-password" maxlength="64" required /><button type="button" class="hs-eye" data-eye="pw2">Göstər</button></div>
         </div>
-        <p class="hs-note">Saytda hamıya yalnız adın və istifadəçi adın görünür. Digər məlumatlar heç kimə göstərilmir.</p>
+        <p class="hs-note">Saytda hamıya yalnız adın və istifadəçi adın görünür. Digər məlumatlar heç kimə göstərilmir. Saytdan uşaqlar da istifadə edir: təhqiramiz, kobud və ya başqasını ələ salan adlar qəbul olunmur.</p>
         <p class="hs-err" id="e1" hidden></p>
         <div class="hs-row"><button class="btn btn-p" type="submit">Davam et</button></div>
       </form>
@@ -144,14 +144,19 @@ const UNIVERSITETLER = [
     }, 350);
   });
 
-  $('s1').addEventListener('submit', (e) => {
+  $('s1').addEventListener('submit', async (e) => {
     e.preventDefault();
     const ad = $('ad').value.replace(/\s+/g, ' ').trim(), u = $('un').value, p1 = $('pw').value, p2 = $('pw2').value;
-    if (!AD_RE.test(ad)) return err(1, 'Adını yaz: 2-30 hərf (yalnız hərf, boşluq və defis).');
+    if (!AD_RE.test(ad)) return err(1, 'Adını yaz: 2-30 hərf (yalnız Azərbaycan və latın hərfləri, boşluq və defis).');
     if (!USER_RE.test(u)) return err(1, 'İstifadəçi adını düzgün yaz.');
-    if (yoxlanan === u && !bos) return err(1, 'Bu istifadəçi adı tutulub, başqasını seç.');
     if (p1.length < SIFRE_MIN) return err(1, `Şifrə ən azı ${SIFRE_MIN} simvol olmalıdır.`);
     if (p1 !== p2) return err(1, 'Şifrələr eyni deyil.');
+    // Ad və istifadəçi adı serverdə də yoxlanır (tutulub-tutulmadığı və qaydalara uyğunluğu)
+    try {
+      const d = await api(`/api/ad-yoxla?u=${encodeURIComponent(u)}&ad=${encodeURIComponent(ad)}`);
+      if (d.adXeta) return err(1, d.adXeta);
+      if (!d.bos) return err(1, d.xeta || 'Bu istifadəçi adı tutulub, başqasını seç.');
+    } catch (x) { return err(1, x.message); }
     err(1); Object.assign(v, { ad, username: u, sifre: p1 });
     step(2);
   });

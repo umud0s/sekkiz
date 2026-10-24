@@ -6,5 +6,5 @@ export default defineConfig({
   trailingSlash: 'always',
   build: { format: 'directory' },
   // Profil və idarəetmə səhifələri axtarışa düşmür
-  integrations: [sitemap({ filter: (u) => !/\/hesab\/(idare\/)?$/.test(u) })],
+  integrations: [sitemap({ filter: (u) => !/\/hesab\/((idare|ad)\/)?$/.test(u) })],
 });

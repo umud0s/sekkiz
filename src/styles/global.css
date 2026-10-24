@@ -142,6 +142,12 @@ main{flex:1 0 auto}
 .md{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;color:#FFFFFF;font-size:14px}
 .md.m1{background:#D4A017}.md.m2{background:#8C9AA3}.md.m3{background:#B46A3A}
 .rt-msg,.rt-say{margin:10px 0 0}
+.rt-gz{color:var(--muted);font-style:italic;font-weight:500}
+.rt-sk{margin-left:8px;padding:2px 8px;border:1px solid transparent;border-radius:999px;background:none;color:#9AA8B5;font:inherit;font-size:12px;cursor:pointer;opacity:0;transition:opacity .2s,color .2s,border-color .2s}
+.rt-tbl tr:hover .rt-sk,.rt-sk:focus-visible{opacity:1}
+.rt-sk:hover{color:#B0303A;border-color:#E9B8BC}
+.rt-sk:disabled{opacity:1;cursor:default;color:var(--muted)}
+@media (hover:none){.rt-sk{opacity:.8}}
 .rt-cta{margin:12px 0 0;padding:10px 14px;border-radius:12px;background:#FFF6E3;color:var(--ink-2)}
 @media (max-width:520px){.rt-tbl{font-size:14px}.rt-tbl td,.rt-tbl th{padding:7px 6px}.rt-o{gap:7px}.rt-who .un{display:block;font-size:12.5px}.rt-who{min-width:0}}
 

@@ -43,7 +43,7 @@ const WA = (SOSIAL.sebekeler.find((s) => s.ikon === 'whatsapp') || {}).unvan;
       setCached(d.user);
       // Oyundan gəlibsə, ora qaytarılır
       const back = new URLSearchParams(location.search).get('geri');
-      location.href = back && back.startsWith('/') && !back.startsWith('//') ? back : '/hesab/';
+      location.href = d.user.adDeyis ? '/hesab/ad/' : back && back.startsWith('/') && !back.startsWith('//') ? back : '/hesab/';
     } catch (x) { $('e').textContent = x.message; $('e').hidden = false; $('go').disabled = false; }
   });
 </script>

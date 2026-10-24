@@ -2,6 +2,7 @@
 // Məlumatlar Cloudflare D1 bazasında saxlanılır (binding: DB). Cədvəllər ilk sorğuda avtomatik yaradılır.
 // Hamıya açıq olan yalnız ad, istifadəçi adı, profil şəkli və oyun nəticəsidir; status, məktəb, universitet gizlidir.
 import { STATUSLAR, AVATAR_IDLER, XERITE_ERAZI, DIYAR_SUAL, AD_RE, USER_RE, SIFRE_MIN, SIFRE_MAX } from '../src/lib/hesab-sabit.js';
+import { senzura } from './senzura.js';
 
 const SESS = 'sk_s';
 const SESS_GUN = 90;
@@ -35,6 +36,13 @@ const SCHEMA = [
     PRIMARY KEY (user_id, oyun)
   )`,
   'CREATE INDEX IF NOT EXISTS rekord_oyun ON rekord(oyun, xal)',
+  // Ad haqqında şikayətlər: bir istifadəçi eyni adama bir dəfə şikayət edə bilər
+  `CREATE TABLE IF NOT EXISTS sikayet (
+    hedef INTEGER NOT NULL,
+    sikayetci INTEGER NOT NULL,
+    created INTEGER NOT NULL,
+    PRIMARY KEY (hedef, sikayetci)
+  )`,
   `CREATE TABLE IF NOT EXISTS limitler (
     k TEXT PRIMARY KEY,
     n INTEGER NOT NULL,
@@ -42,16 +50,29 @@ const SCHEMA = [
   )`,
 ];
 // Birdəfəlik dəyişikliklər: hər biri bazada qeyd olunur və yalnız bir dəfə icra edilir
+// gizli: reytinqdə "Adı yoxlanılır" görünür; ad_deyis: növbəti girişdə yeni ad seçməlidir; bagli: hesab bağlanıb
 const KOCURMELER = [
   ['reytinq-sifir-2026-10-24', 'DELETE FROM rekord'], // istifadəçi istəyi: bütün oyunlarda reytinq sıfırlandı
+  ['users-gizli', 'ALTER TABLE users ADD COLUMN gizli INTEGER NOT NULL DEFAULT 0'],
+  ['users-ad-deyis', 'ALTER TABLE users ADD COLUMN ad_deyis INTEGER NOT NULL DEFAULT 0'],
+  ['users-bagli', 'ALTER TABLE users ADD COLUMN bagli INTEGER NOT NULL DEFAULT 0'],
+  // Filtr qoşulmazdan əvvəl yaradılmış hesabların adları bir dəfə yoxlanır
+  ['senzura-yoxla-2026-10-24', async (db) => {
+    const { results } = await db.prepare('SELECT id, ad, username FROM users').all();
+    const pis = results.filter((u) => senzura(u.ad) || senzura(u.username));
+    if (pis.length) await db.batch(pis.map((u) => db.prepare('UPDATE users SET ad_deyis = 1, gizli = 1 WHERE id = ?').bind(u.id)));
+  }],
 ];
 let hazir = false;
 async function schema(db) {
   if (hazir) return;
   await db.batch(SCHEMA.map((s) => db.prepare(s)).concat(db.prepare('CREATE TABLE IF NOT EXISTS meta (k TEXT PRIMARY KEY, v TEXT)')));
   for (const [ad, sql] of KOCURMELER) {
-    const r = await db.prepare('INSERT OR IGNORE INTO meta (k, v) VALUES (?, ?)').bind(ad, new Date().toISOString()).run();
-    if (r.meta.changes) await db.prepare(sql).run();
+    if (await db.prepare('SELECT 1 FROM meta WHERE k = ?').bind(ad).first()) continue;
+    try { await (typeof sql === 'function' ? sql(db) : db.prepare(sql).run()); } catch (e) {
+      if (!/duplicate column/i.test(String(e && e.message))) throw e; // sütun artıq varsa, köçürmə edilmiş sayılır
+    }
+    await db.prepare('INSERT OR IGNORE INTO meta (k, v) VALUES (?, ?)').bind(ad, new Date().toISOString()).run();
   }
   hazir = true;
 }
@@ -103,7 +124,7 @@ function tokenOf(request) {
 async function kimdir(request, db) {
   const t = tokenOf(request);
   if (!t) return null;
-  const row = await db.prepare('SELECT u.* FROM sessions s JOIN users u ON u.id = s.user_id WHERE s.token = ? AND s.expires > ?').bind(await sha(t), Date.now()).first();
+  const row = await db.prepare('SELECT u.* FROM sessions s JOIN users u ON u.id = s.user_id WHERE s.token = ? AND s.expires > ? AND u.bagli = 0').bind(await sha(t), Date.now()).first();
   return row || null;
 }
 
@@ -123,7 +144,9 @@ function profilYoxla(b, tam) {
   const out = {};
   if (tam || b.ad !== undefined) {
     out.ad = temiz(b.ad);
-    if (!AD_RE.test(out.ad)) return 'Ad 2-30 hərfdən ibarət olmalıdır (yalnız hərf, boşluq və defis).';
+    if (!AD_RE.test(out.ad)) return 'Ad 2-30 hərfdən ibarət olmalıdır (yalnız Azərbaycan və latın hərfləri, boşluq və defis).';
+    const x = senzura(out.ad);
+    if (x) return x;
   }
   if (tam || b.status !== undefined) {
     out.status = String(b.status || '');
@@ -143,11 +166,11 @@ function userYoxla(u) {
   if (!USER_RE.test(u)) return 'İstifadəçi adı 3-20 simvol olmalı, kiçik latın hərfi ilə başlamalı, yalnız hərf, rəqəm, "_" və "." saxlamalıdır.';
   if (/\.\.|\.$/.test(u)) return 'İstifadəçi adında nöqtə ardıcıl və ya sonda ola bilməz.';
   if (QORUNAN_ADLAR.has(u)) return 'Bu istifadəçi adı tutulub.';
-  return null;
+  return senzura(u);
 }
 const sifreYoxlama = (s) => (typeof s !== 'string' || s.length < SIFRE_MIN || s.length > SIFRE_MAX ? `Şifrə ${SIFRE_MIN}-${SIFRE_MAX} simvol olmalıdır.` : null);
 
-const ozel = (u) => ({ ad: u.ad, username: u.username, avatar: u.avatar, status: u.status, mekteb: u.mekteb, universitet: u.universitet });
+const ozel = (u) => ({ ad: u.ad, username: u.username, avatar: u.avatar, status: u.status, mekteb: u.mekteb, universitet: u.universitet, adDeyis: !!u.ad_deyis });
 
 // ---- Oyun nəticələri ----
 // Hər oyun üçün: gələn nəticəni yoxlayır və köhnə rekordla birləşdirir
@@ -204,11 +227,14 @@ async function reytinq(url, db, user) {
   const q = QAYDA[oyun];
   if (!q) return xeta('Belə oyun yoxdur.');
   const { results } = await db.prepare(`SELECT * FROM (
-      SELECT r.user_id, r.xal, r.vaxt, u.ad, u.username, u.avatar, ROW_NUMBER() OVER (ORDER BY ${q.sira}) AS yer
-      FROM rekord r JOIN users u ON u.id = r.user_id WHERE r.oyun = ? AND r.xal > 0
+      SELECT r.user_id, r.xal, r.vaxt, u.ad, u.username, u.avatar, u.gizli, u.ad_deyis, ROW_NUMBER() OVER (ORDER BY ${q.sira}) AS yer
+      FROM rekord r JOIN users u ON u.id = r.user_id WHERE r.oyun = ? AND r.xal > 0 AND u.bagli = 0
     ) WHERE yer <= 50 OR user_id = ? ORDER BY yer`).bind(oyun, user ? user.id : -1).all();
-  const say = await db.prepare('SELECT COUNT(*) AS n FROM rekord WHERE oyun = ? AND xal > 0').bind(oyun).first();
-  const pub = (r) => ({ yer: r.yer, ad: r.ad, username: r.username, avatar: r.avatar, xal: r.xal, vaxt: r.vaxt });
+  const say = await db.prepare('SELECT COUNT(*) AS n FROM rekord r JOIN users u ON u.id = r.user_id WHERE r.oyun = ? AND r.xal > 0 AND u.bagli = 0').bind(oyun).first();
+  // Şikayət olunan və ya yoxlanılan ad reytinqdə göstərilmir
+  const pub = (r) => (r.gizli || r.ad_deyis
+    ? { yer: r.yer, ad: 'Adı yoxlanılır', username: '', avatar: 'sekkizguse', xal: r.xal, vaxt: r.vaxt, gizli: true }
+    : { yer: r.yer, ad: r.ad, username: r.username, avatar: r.avatar, xal: r.xal, vaxt: r.vaxt });
   const men = user ? results.find((r) => r.user_id === user.id) : null;
   return json({ cedvel: results.filter((r) => r.yer <= 50).map(pub), men: men ? pub(men) : null, cem: say ? say.n : 0 });
 }
@@ -237,11 +263,13 @@ export async function api(request, env) {
   }
 
   if (p === '/api/ad-yoxla' && request.method === 'GET') {
+    // ad verilibsə, o da filtrdən keçirilir
+    const adX = url.searchParams.has('ad') ? (() => { const r = profilYoxla({ ad: url.searchParams.get('ad') }, false); return typeof r === 'string' ? r : null; })() : null;
     const u = String(url.searchParams.get('u') || '').toLowerCase();
     const x = userYoxla(u);
-    if (x) return json({ bos: false, xeta: x });
+    if (x) return json({ bos: false, xeta: x, adXeta: adX });
     const row = await db.prepare('SELECT 1 FROM users WHERE username = ?').bind(u).first();
-    return json({ bos: !row, xeta: row ? 'Bu istifadəçi adı artıq tutulub.' : null });
+    return json({ bos: !row, xeta: row ? 'Bu istifadəçi adı artıq tutulub.' : null, adXeta: adX });
   }
 
   if (p === '/api/qeydiyyat' && post) {
@@ -265,6 +293,7 @@ export async function api(request, env) {
     if (!(await limit(db, 'ip:' + ip, 40, 15)) || !(await limit(db, 'u:' + username, 10, 15))) return xeta('Çox sayda uğursuz cəhd oldu. 15 dəqiqə sonra yenidən yoxlayın.', 429);
     const u = username && await db.prepare('SELECT * FROM users WHERE username = ?').bind(username).first();
     if (!u || !(await sifreYoxla(String(b.sifre || ''), u.sifre))) return xeta('İstifadəçi adı və ya şifrə səhvdir.', 401);
+    if (u.bagli) return xeta('Bu hesab qaydaların pozulmasına görə bağlanıb. Səhv olduğunu düşünürsənsə, bizə yaz.', 403);
     await db.prepare('DELETE FROM limitler WHERE k = ?').bind('u:' + username).run();
     return json({ user: ozel(u) }, 200, { 'Set-Cookie': await sessiyaAc(db, u.id) });
   }
@@ -278,11 +307,37 @@ export async function api(request, env) {
   if (p === '/api/reytinq' && request.method === 'GET') return reytinq(url, db, await kimdir(request, db));
 
   // Aşağıdakılar üçün giriş lazımdır
-  if (post && ['/api/profil', '/api/sifre', '/api/netice'].includes(p)) {
+  if (post && ['/api/profil', '/api/sifre', '/api/netice', '/api/sikayet', '/api/ad-deyis'].includes(p)) {
     const u = await kimdir(request, db);
     if (!u) return xeta('Əvvəlcə daxil olun.', 401);
     if (p === '/api/netice') return netice(request, db, u);
     const b = await request.json().catch(() => ({}));
+    if (p === '/api/sikayet') {
+      // Uyğunsuz ad haqqında şikayət: 3 fərqli istifadəçi şikayət etsə, ad yoxlanılana qədər reytinqdə gizlənir
+      const h = await db.prepare('SELECT id FROM users WHERE username = ?').bind(String(b.username || '').toLowerCase()).first();
+      if (!h) return xeta('Belə istifadəçi yoxdur.', 404);
+      if (h.id === u.id) return xeta('Özünə şikayət edə bilməzsən.');
+      if (!(await limit(db, 'sik:' + u.id, 20, 60 * 24))) return xeta('Bu gün üçün şikayət limiti dolub.', 429);
+      await db.prepare('INSERT OR IGNORE INTO sikayet (hedef, sikayetci, created) VALUES (?, ?, ?)').bind(h.id, u.id, Date.now()).run();
+      const n = await db.prepare('SELECT COUNT(*) AS n FROM sikayet WHERE hedef = ?').bind(h.id).first();
+      if (n.n >= 3) await db.prepare('UPDATE users SET gizli = 1 WHERE id = ?').bind(h.id).run();
+      return json({ ok: true });
+    }
+    if (p === '/api/ad-deyis') {
+      // Adı qaydalara uyğun olmayan istifadəçi yeni ad və istifadəçi adı seçir
+      if (!u.ad_deyis) return xeta('Adını profil səhifəsindən dəyişə bilərsən.');
+      const username = String(b.username || '').trim().toLowerCase();
+      const x = userYoxla(username);
+      if (x) return xeta(x);
+      const pr = profilYoxla({ ad: b.ad }, false);
+      if (typeof pr === 'string') return xeta(pr);
+      if (username !== u.username && await db.prepare('SELECT 1 FROM users WHERE username = ?').bind(username).first()) return xeta('Bu istifadəçi adı artıq tutulub.', 409);
+      await db.batch([
+        db.prepare('UPDATE users SET ad = ?, username = ?, ad_deyis = 0, gizli = 0 WHERE id = ?').bind(pr.ad, username, u.id),
+        db.prepare('DELETE FROM sikayet WHERE hedef = ?').bind(u.id),
+      ]);
+      return json({ user: ozel({ ...u, ad: pr.ad, username, ad_deyis: 0 }) });
+    }
     if (p === '/api/profil') {
       const pr = profilYoxla(b, false);
       if (typeof pr === 'string') return xeta(pr);
@@ -301,7 +356,7 @@ export async function api(request, env) {
   }
 
   // İdarəetmə: şifrəni unudanlar üçün yeni şifrə, hesabın silinməsi, reytinqin sıfırlanması. Açar Cloudflare-də ADMIN_KEY kimi saxlanılır.
-  if (post && (p === '/api/admin/sifre' || p === '/api/admin/sil' || p === '/api/admin/reytinq')) {
+  if (post && p.startsWith('/api/admin/')) {
     if (!env.ADMIN_KEY) return xeta('İdarəetmə açarı qurulmayıb.', 503);
     if (!(await limit(db, 'adm:' + ip, 20, 15))) return xeta('Çox sayda cəhd.', 429);
     const key = request.headers.get('X-Admin-Key') || '';
@@ -313,8 +368,28 @@ export async function api(request, env) {
       const r = b.oyun === 'hamisi' ? await db.prepare('DELETE FROM rekord').run() : await db.prepare('DELETE FROM rekord WHERE oyun = ?').bind(b.oyun).run();
       return json({ ok: true, silinen: r.meta.changes });
     }
+    if (p === '/api/admin/sikayetler') {
+      // Şikayət olunan, yoxlanılan, bağlanan və filtrdən keçməyən hesablar
+      const { results } = await db.prepare(`SELECT u.username, u.ad, u.gizli, u.ad_deyis, u.bagli, COUNT(s.sikayetci) AS say
+        FROM users u LEFT JOIN sikayet s ON s.hedef = u.id GROUP BY u.id
+        HAVING say > 0 OR u.gizli OR u.ad_deyis OR u.bagli ORDER BY say DESC, u.username`).all();
+      const hamisi = (await db.prepare('SELECT username, ad, gizli, ad_deyis, bagli FROM users').all()).results;
+      const filtr = hamisi.filter((x) => (senzura(x.ad) || senzura(x.username)) && !results.some((r) => r.username === x.username)).map((x) => ({ ...x, say: 0 }));
+      return json({ siyahi: results.concat(filtr).map((x) => ({ ...x, filtr: !!(senzura(x.ad) || senzura(x.username)) })) });
+    }
     const u = await db.prepare('SELECT id FROM users WHERE username = ?').bind(String(b.username || '').trim().toLowerCase()).first();
     if (!u) return xeta('Belə istifadəçi yoxdur.', 404);
+    if (p === '/api/admin/moderasiya') {
+      const EMR = {
+        temiz: ['UPDATE users SET gizli = 0, ad_deyis = 0 WHERE id = ?', 'DELETE FROM sikayet WHERE hedef = ?'],
+        'ad-deyis': ['UPDATE users SET gizli = 1, ad_deyis = 1 WHERE id = ?'],
+        bagla: ['UPDATE users SET bagli = 1 WHERE id = ?', 'DELETE FROM sessions WHERE user_id = ?'],
+        ac: ['UPDATE users SET bagli = 0 WHERE id = ?'],
+      }[b.emr];
+      if (!EMR) return xeta('Belə əmr yoxdur.');
+      await db.batch(EMR.map((sql) => db.prepare(sql).bind(u.id)));
+      return json({ ok: true });
+    }
     if (p === '/api/admin/sifre') {
       const x = sifreYoxlama(b.yeni);
       if (x) return xeta(x);
@@ -322,9 +397,10 @@ export async function api(request, env) {
         db.prepare('UPDATE users SET sifre = ? WHERE id = ?').bind(await sifreHash(b.yeni), u.id),
         db.prepare('DELETE FROM sessions WHERE user_id = ?').bind(u.id),
       ]);
-    } else {
-      await db.batch(['sessions', 'rekord'].map((t) => db.prepare(`DELETE FROM ${t} WHERE user_id = ?`).bind(u.id)).concat(db.prepare('DELETE FROM users WHERE id = ?').bind(u.id)));
-    }
+    } else if (p === '/api/admin/sil') {
+      await db.batch(['sessions', 'rekord'].map((t) => db.prepare(`DELETE FROM ${t} WHERE user_id = ?`).bind(u.id))
+        .concat(db.prepare('DELETE FROM sikayet WHERE hedef = ? OR sikayetci = ?').bind(u.id, u.id), db.prepare('DELETE FROM users WHERE id = ?').bind(u.id)));
+    } else return xeta('Tapılmadı.', 404);
     return json({ ok: true });
   }
 

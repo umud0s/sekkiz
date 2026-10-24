@@ -6,7 +6,7 @@ import Base from '../../layouts/Base.astro';
   <div class="wrap section">
     <section class="stack">
       <h1 class="page-title">Hesabların idarəsi</h1>
-      <p class="lead">Şifrəsini unudan istifadəçiyə yeni şifrə vermək və ya hesabı silmək üçün. İdarəetmə açarı Cloudflare-də ADMIN_KEY kimi saxlanılır.</p>
+      <p class="lead">Şifrəsini unudan istifadəçiyə yeni şifrə vermək, hesabı silmək, reytinqi sıfırlamaq və uyğunsuz adlara baxmaq üçün. İdarəetmə açarı Cloudflare-də ADMIN_KEY kimi saxlanılır.</p>
     </section>
     <form class="card hs" id="f" novalidate>
       <div class="hs-f" style="margin-top:0"><label for="key">İdarəetmə açarı</label><input class="hs-in" id="key" type="password" autocomplete="off" /></div>
@@ -30,8 +30,21 @@ import Base from '../../layouts/Base.astro';
       </div>
       <div class="hs-row"><button class="btn btn-s" type="button" id="reset">Reytinqi sıfırla</button></div>
     </form>
+    <section class="card hs idr-sk">
+      <h2>Şikayətlər və uyğunsuz adlar</h2>
+      <p class="hs-hint">3 fərqli istifadəçi şikayət edəndə ad reytinqdə avtomatik gizlənir. "Ad dəyişsin" seçilən istifadəçi növbəti girişdə yeni ad seçməli olur.</p>
+      <div class="hs-row"><button class="btn btn-p" type="button" id="sk-load">Siyahını göstər</button></div>
+      <div id="sk-list" aria-live="polite"></div>
+    </section>
   </div>
 </Base>
+
+<style is:global>
+  .idr-sk{margin-top:20px;max-width:none}
+  .idr-sk h2{margin:0 0 6px}
+  .idr-a{display:flex;flex-wrap:wrap;gap:6px}
+  .idr-a .btn{min-height:34px;padding:0 12px;font-size:14px}
+</style>
 
 <script>
   const $ = (id) => document.getElementById(id);
@@ -54,6 +67,34 @@ import Base from '../../layouts/Base.astro';
     const d = r ? await r.json().catch(() => ({})) : {};
     if (!r || !r.ok) { $('e').textContent = d.xeta || 'Serverlə əlaqə alınmadı.'; $('e').hidden = false; $('ok').hidden = true; return; }
     $('e').hidden = true; $('ok').textContent = `${ad}: reytinq sıfırlandı (${d.silinen} nəticə silindi).`; $('ok').hidden = false;
+  });
+  // Şikayətlər: siyahı və moderasiya əmrləri
+  const esc = (s) => String(s ?? '').replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]);
+  async function admin(path, body) {
+    const r = await fetch(path, { method: 'POST', headers: { 'Content-Type': 'application/json', 'X-Admin-Key': $('key').value }, body: JSON.stringify(body) }).catch(() => null);
+    const d = r ? await r.json().catch(() => ({})) : {};
+    if (!r || !r.ok) throw new Error(d.xeta || 'Serverlə əlaqə alınmadı.');
+    return d;
+  }
+  async function skList() {
+    const box = $('sk-list');
+    box.innerHTML = '<p class="hs-hint">Yüklənir...</p>';
+    try {
+      const { siyahi } = await admin('/api/admin/sikayetler', {});
+      if (!siyahi.length) { box.innerHTML = '<p class="hs-note">Şikayət yoxdur.</p>'; return; }
+      const veziyyet = (x) => [x.bagli && 'bağlanıb', x.ad_deyis && 'ad dəyişməlidir', x.gizli && !x.ad_deyis && 'gizlədilib', x.filtr && 'filtrdən keçmir'].filter(Boolean).join(', ') || 'aktiv';
+      box.innerHTML = `<table class="rt-tbl idr-t"><thead><tr><th>İstifadəçi</th><th>Şikayət</th><th>Vəziyyət</th><th></th></tr></thead><tbody>${siyahi.map((x) => `<tr>
+        <td><b>${esc(x.ad)}</b> <span class="un">#${esc(x.username)}</span></td><td>${x.say}</td><td>${veziyyet(x)}</td>
+        <td class="idr-a"><button type="button" class="btn btn-s" data-emr="temiz" data-u="${esc(x.username)}">Təmizdir</button>
+        <button type="button" class="btn btn-s" data-emr="ad-deyis" data-u="${esc(x.username)}">Ad dəyişsin</button>
+        <button type="button" class="btn btn-s" data-emr="${x.bagli ? 'ac' : 'bagla'}" data-u="${esc(x.username)}">${x.bagli ? 'Aç' : 'Bağla'}</button></td></tr>`).join('')}</tbody></table>`;
+    } catch (e) { box.innerHTML = `<p class="hs-err">${esc(e.message)}</p>`; }
+  }
+  $('sk-load').addEventListener('click', skList);
+  $('sk-list').addEventListener('click', async (e) => {
+    const b = e.target.closest('[data-emr]'); if (!b) return;
+    if (b.dataset.emr === 'bagla' && !confirm(`#${b.dataset.u} hesabı bağlansın?`)) return;
+    try { await admin('/api/admin/moderasiya', { username: b.dataset.u, emr: b.dataset.emr }); skList(); } catch (x) { alert(x.message); }
   });
   $('del').addEventListener('click', async () => {
     if (!un() || !confirm(`#${un()} hesabı və bütün nəticələri silinsin?`)) return;

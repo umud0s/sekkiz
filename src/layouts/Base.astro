@@ -93,7 +93,8 @@ const on = (n) => n.items ? n.items.includes(best) : n === best;
     };
     showAcc(cached());
     addEventListener('sk-men', (e) => showAcc(e.detail));
-    if (cached()) men(); // sessiya bitibsə, menyu yenilənir
+    // Sessiya bitibsə, menyu yenilənir; adı qaydalara uyğun olmayan istifadəçi yeni ad seçməyə yönləndirilir
+    if (cached()) men().then((d) => { if (d.user && d.user.adDeyis && !location.pathname.startsWith('/hesab/ad/')) location.replace('/hesab/ad/'); });
     const btn = document.getElementById('menu-btn'), menu = document.getElementById('menu');
     btn.addEventListener('click', () => { const o = menu.classList.toggle('open'); btn.setAttribute('aria-expanded', String(o)); });
     // Açıq açılan menyu kənara toxunanda bağlanır

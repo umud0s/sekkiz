@@ -67,7 +67,10 @@ export async function reytinq(el, oyun) {
     return;
   }
   const u = cached();
-  const row = (r, me) => `<tr${me ? ' class="me"' : ''}><td class="rt-yer">${r.yer <= 3 ? `<span class="md m${r.yer}">${r.yer}</span>` : r.yer}</td><td><span class="rt-o">${avatarSvg(r.avatar, 34)}<span class="rt-who">${adHtml(r)}</span></span></td>${SUTUN[oyun].map(([, f]) => `<td class="rt-n">${esc(f(r))}</td>`).join('')}</tr>`;
+  // Şikayət olunan ad gizlədilir; daxil olan istifadəçi başqasının adına şikayət edə bilər
+  const who = (r, me) => (r.gizli ? '<span class="nm rt-gz">Adı yoxlanılır</span>'
+    : adHtml(r) + (u && !me ? `<button type="button" class="rt-sk" data-sk="${esc(r.username)}" title="Uyğunsuz ad haqqında şikayət et" aria-label="#${esc(r.username)} adı haqqında şikayət et">Şikayət et</button>` : ''));
+  const row = (r, me) => `<tr${me ? ' class="me"' : ''}><td class="rt-yer">${r.yer <= 3 ? `<span class="md m${r.yer}">${r.yer}</span>` : r.yer}</td><td><span class="rt-o">${avatarSvg(r.avatar, 34)}<span class="rt-who">${who(r, me)}</span></span></td>${SUTUN[oyun].map(([, f]) => `<td class="rt-n">${esc(f(r))}</td>`).join('')}</tr>`;
   const mine = (r) => u && r.username === u.username;
   let body = d.cedvel.map((r) => row(r, mine(r))).join('');
   if (d.men && d.men.yer > d.cedvel.length) body += `<tr class="gap"><td colspan="${2 + SUTUN[oyun].length}">…</td></tr>${row(d.men, true)}`;
@@ -78,6 +81,13 @@ export async function reytinq(el, oyun) {
   el.innerHTML = (d.cedvel.length
     ? `<table class="rt-tbl"><thead><tr><th>Yer</th><th>Oyunçu</th>${SUTUN[oyun].map(([h]) => `<th class="rt-h">${h}</th>`).join('')}</tr></thead><tbody>${body}</tbody></table>`
     : '<p class="muted rt-msg">Cədvəl hələ boşdur. İlk yeri sən tut!</p>') + say + cagir;
+  el.onclick = async (e) => {
+    const b = e.target.closest('.rt-sk');
+    if (!b || b.disabled) return;
+    if (!confirm(`#${b.dataset.sk} adı təhqiramiz və ya uyğunsuzdur? Şikayət göndərilsin?`)) return;
+    b.disabled = true;
+    try { await api('/api/sikayet', { username: b.dataset.sk }); b.textContent = 'Şikayət göndərildi'; } catch (x) { b.textContent = x.message; }
+  };
 }
 
 export { OYUNLAR };

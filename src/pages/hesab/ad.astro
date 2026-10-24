@@ -1,0 +1,46 @@
+---
+import Base from '../../layouts/Base.astro';
+---
+<Base title="Yeni ad seç" description="Adını və istifadəçi adını yenilə.">
+  <meta slot="head" name="robots" content="noindex" />
+  <div class="wrap section">
+    <section class="stack">
+      <h1 class="page-title">Yeni ad seç</h1>
+      <p class="lead">Adın və ya istifadəçi adın saytın qaydalarına uyğun gəlmir. Davam etmək üçün yenisini seç. Nəticələrin və xalların qorunub saxlanılır.</p>
+    </section>
+    <form class="card hs" id="f" novalidate>
+      <div class="hs-f" style="margin-top:0">
+        <label for="ad">Adın</label>
+        <input class="hs-in" id="ad" autocomplete="given-name" maxlength="30" />
+      </div>
+      <div class="hs-f">
+        <label for="un">İstifadəçi adı</label>
+        <div class="hs-pre"><span>#</span><input class="hs-in" id="un" autocapitalize="none" spellcheck="false" maxlength="20" /></div>
+        <p class="hs-hint">Kiçik latın hərfləri, rəqəm, "_" və ".". İstəsən, köhnə istifadəçi adını saxlaya bilərsən, əgər o uyğundursa.</p>
+      </div>
+      <p class="hs-note">Saytdan uşaqlar da istifadə edir. Təhqiramiz, kobud və ya başqasını ələ salan adlar qəbul olunmur.</p>
+      <p class="hs-err" id="e" hidden></p>
+      <div class="hs-row"><button class="btn btn-p" type="submit" id="go">Yadda saxla</button></div>
+    </form>
+  </div>
+</Base>
+
+<script>
+  import { api, men, setCached } from '../../lib/hesab.js';
+  const $ = (id) => document.getElementById(id);
+  men(true).then((d) => {
+    if (!d.user) { location.replace('/hesab/giris/'); return; }
+    if (!d.user.adDeyis) { location.replace('/hesab/'); return; }
+    $('ad').value = d.user.ad; $('un').value = d.user.username;
+  });
+  $('un').addEventListener('input', () => { $('un').value = $('un').value.toLowerCase().replace(/\s/g, ''); });
+  $('f').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    $('go').disabled = true; $('e').hidden = true;
+    try {
+      const d = await api('/api/ad-deyis', { ad: $('ad').value, username: $('un').value });
+      setCached(d.user);
+      location.href = '/hesab/';
+    } catch (x) { $('e').textContent = x.message; $('e').hidden = false; $('go').disabled = false; }
+  });
+</script>
