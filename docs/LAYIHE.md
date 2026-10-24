@@ -130,8 +130,14 @@ DSK cədvəli 1.15 alındı (ərazi + əhali 01.01.2026 + sıxlıq) və hər vah
 Ölkə: 86,6 min km², 10 262,4 min nəfər (01.01.2026). İnzibati bölgü (DSK): 67 rayon, 8 şəhər.
 Cədvələ uyğun olaraq Şəki, Yevlax, Lənkəran şəhərləri ayrıca vahid deyil, öz rayonları ilə birləşdirildi.
 Naxçıvanın iqtisadi rayon adı: "Naxçıvan".
-AÇIQ MƏSƏLƏ: Ağdərə rayonu (1 660 km², 12,2 min nəfər) cədvəldə var, xəritə məlumatlarında yoxdur.
-Onun ərazisi xəritədə Tərtər və Kəlbəcərin içindədir (sahə müqayisəsi bunu təsdiqləyir). Rəsmi sərhəd lazımdır.
+Ağdərə rayonu (5 dekabr 2023-cü il qanunu ilə bərpa olunub; 1 660 km², 12,2 min nəfər; Qarabağ iqtisadi rayonu) 24.10.2026-da
+xəritəyə əlavə olundu (istifadəçi istəyi). Açıq mənbələrdə rəsmi sərhəd poliqonu tapılmadı (geoBoundaries, Natural Earth-də yoxdur),
+ona görə sərhəd təxmini qurulub: open-admin-data/azerbaijan-administrative-divisions (CC-BY-4.0) yaşayış məntəqələrinin
+koordinatları + çəkili Voronoi; Tərtər və Kəlbəcərdən DSK sahəsinə qədər artıq hissə Ağdərəyə verildi.
+Nəticə: Ağdərə 1658, Tərtər 410, Kəlbəcər 1966 km² (DSK: 1660 / 410 / 1970). Skript: scripts/agdere-serhed.py.
+Proyeksiya: x = 167,9067·lon − 7489,219; y = −219,8646·lat + 9235,072 (ekvidistant, 1 px² ≈ 0,2564 km²).
+Ağdərə bütün massivlərdə 75-ci vahiddir (indeks 74, sona əlavə olunub ki, köhnə indekslər dəyişməsin). Kartında "təxminidir" qeydi var.
+Rəsmi sərhəd (kadastr) alınarsa, yalnız Ağdərə, Tərtər və Kəlbəcər yolları dəyişdirilməlidir.
 Yoxlanmalı: çayların uzunluqları, göllərin sahələri, Kömürgöy (2492 m) və Qapıcıq (3906 m) hündürlükləri,
 silsilələrin sərhədləri sxematikdir.
 
@@ -140,12 +146,12 @@ silsilələrin sərhədləri sxematikdir.
 Qaydalar:
 - Boz əraziyə toxunulur, 4 ad çıxır (doğru + yaxın 9 qonşudan təsadüfi 3). Hover-də ərazi öz sərhədi ilə kart kimi qalxır.
 - Doğru cavab: yaşıl parıltı + təsdiq səsi, sonra ərazi bayraq rənginə boyanır. Zolaqlar mərkəz nöqtəsinin
-  hündürlüyünə görə üç bərabər hissədir: şimal #00B5E2 (21), mərkəz #EF3340 (35), cənub #509E2F (18).
+  hündürlüyünə görə üç bərabər hissədir: şimal #00B5E2 (21), mərkəz #EF3340 (36, Ağdərə daxil), cənub #509E2F (18).
 - Səhv cavab bir nar aparır. 5 nar bitəndə oyun bitir.
-- Ən çox tapılan ərazi sayı (xəritə tamamlanmasa da) rekord kimi saxlanır: zolaqda "Ən çox tapılan N / 74", oyun bitəndə
+- Ən çox tapılan ərazi sayı (xəritə tamamlanmasa da) rekord kimi saxlanır: zolaqda "Ən çox tapılan N / 75", oyun bitəndə
   "Yeni rekord" və ya "Rekordunuz" (localStorage sk-xo-max, 23.10.2026).
 - Saat oyuna başlayanda işə düşür. Ən yaxşı vaxt brauzerdə saxlanır (localStorage: sk-xo-best), "Rekord" kimi görünür.
-- 74 ərazi = 74 pazl parçası (10x8 tor, 6 cüt birləşdirilib, kəsiklər hər oyunda yenidən yaradılır).
+- 75 ərazi = 75 pazl parçası (10x8 tor, 5 cüt birləşdirilib, kəsiklər hər oyunda yenidən yaradılır). Ağdərə 24.10.2026-dan.
   Şəkil hər oyunda dəyişir (8 şəkil növbə ilə, eyni şəkil ardıcıl gəlmir). Tamamlananda adı, yeri, qısa izahı çıxır.
 - Kiçik şəhərlər (Naftalan, Xankəndi, Mingəçevir, Şirvan, Gəncə, Naxçıvan şəhəri, Sumqayıt, Sədərək) 23.10.2026-dan dairə ilə yox,
   öz sərhədləri ilə göstərilir; ətraflarında görünməz 16px toxunma zolağı var. Xəritə səhifənin bütün enini tutur, pazl altdadır.
@@ -226,12 +232,12 @@ Mükafat pul deyil, 12 pilləli "xəzinə": Armudu stəkan, Kəlağayı, Lahıc 
 Qarabağ xalçası, Qarabağ atı (qorunan), Xarıbülbül, Qızıl buta, Diyarşünas medalı, Qızıl Səkkizguşə.
 Səhv → oyun bitir, son qorunan pillə qalır; "Dayan və hədiyyəni götür"; 1 kömək: iqtisadi rayon + ərazi haqqında fakt.
 Cavab seçiləndə 1,2 san narıncı "gərginlik", sonra doğru yaşıl/səhv qırmızı. "Xəzinəm": qazanılan hədiyyələr (localStorage sk-diyar).
-Suallar: src/data/diyar.js — 69 sual, 6 kateqoriya; səhv variantlar cavaba ən yaxın 7 ərazidən təsadüfi seçilir.
-Sərsəng su anbarı qəsdən salınmayıb: o, bərpa olunmuş Ağdərə rayonundadır, xəritə məlumatında Ağdərə yoxdur.
+Suallar: src/data/diyar.js — 70 sual, 6 kateqoriya; səhv variantlar cavaba ən yaxın 7 ərazidən təsadüfi seçilir.
+Ağdərə xəritəyə əlavə olunandan sonra: Sərsəng su anbarı → Ağdərə sualı əlavə edildi; Gəncəsər monastırı (Vəngli kəndi, DSK-da Ağdərə) Kəlbəcərdən Ağdərəyə düzəldildi.
 Kəndlərin mənbəyi: DSK "İnzibati ərazi bölgüsü təsnifatı" (01.05.2024), repo kökündə Inzibati-1.05.2024.pdf (istifadəçi yüklədi).
 Kod quruluşu: 8 rəqəm, ilk 3-ü rayon, sonuncu növ (4 şəhər, 6 qəsəbə, 8 kənd, 5 ərazi dairəsi).
-scripts/dsk-kendler.py (pdftotext -layout ilə) → src/data/kendler.json: adı ölkədə təkrarlanmayan 3184 kənd/qəsəbə, 66 rayon;
-Bakı (istifadəçi istəyi: Bakının rayonlarına ehtiyac yoxdur), Ağdərə (xəritədə yoxdur) və şəhər vahidləri çıxarılıb; "q:" = qəsəbə.
+scripts/dsk-kendler.py (pdftotext -layout ilə) → src/data/kendler.json: adı ölkədə təkrarlanmayan 3228 kənd/qəsəbə, 67 rayon (Ağdərə daxil);
+Bakı (istifadəçi istəyi: Bakının rayonlarına ehtiyac yoxdur) və şəhər vahidləri çıxarılıb; "q:" = qəsəbə.
 11-ci və 12-ci sual hər biri 50% ehtimalla bu siyahıdan gəlir: "X kəndi/qəsəbəsi hansı rayonun ərazisindədir?".
 IPUCU-da faktı olmayan rayon üçün kömək: iqtisadi rayon + rayon adının ilk hərfi.
 Mənbə ilə düzəlişlər (24.10.2026): Malıbəyli → Xocalı (əvvəl Şuşa idi); Qonaqkənd və Nic qəsəbədir; "Seyfəli" → Yuxarı Seyfəli

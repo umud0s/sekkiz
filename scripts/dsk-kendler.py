@@ -52,7 +52,7 @@ print('rayonlar:',len(set(e['rayon'] for e in ents)))
 # json.dump yerinə aşağıda oyun üçün yığcam siyahı yazılır
 
 # Oyun üçün: adı bütün ölkədə yalnız bir dəfə rast gəlinən kənd və qəsəbələr.
-# Bakı, Ağdərə (xəritədə ayrıca vahid deyil) və şəhər vahidlərinin ərazisi çıxarılır.
+# Bakı və şəhər vahidlərinin ərazisi çıxarılır.
 xr=json.load(open(sys.argv[2],encoding='utf-8'))
 U={u[0]:u[1] for u in xr['U']}
 say=collections.Counter(e['ad'] for e in ents)
