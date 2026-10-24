@@ -18,6 +18,7 @@ export const SECTIONS = [
 ];
 export const GAMES = [
   { title: 'Xəritəni tamamla', href: '/xerite/oyun/' },
+  { title: 'Kim diyarşünas olmaq istəyir?', href: '/xerite/diyarsunas/' },
   { title: 'Xalça yarat', href: '/bayramlar/xalca/oyun/' },
   { title: 'Sözü tap: atalar sözləri', href: '/atalar-sozleri/sozu-tap/' },
 ];

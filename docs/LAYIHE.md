@@ -219,6 +219,16 @@ Mərhələ 2 (Fəxri xiyaban üçün): Cloudflare Workers + D1 + R2, TypeScript.
 - Mətnlər: src/data/xalca.js; təsvirlər: src/lib/xalca-art.js.
 - Gözləyən təkliflər: çay süfrəsi və qonaqpərvərlik, toy adətləri.
 
+## "Kim diyarşünas olmaq istəyir?" (/xerite/diyarsunas/) — 24.10.2026
+Milyonçu tərzi: 12 sual, 4 variant, çətinlik artır (şəxsiyyət/abidə → qala/məscid → kənd/su anbarı).
+Mükafat pul deyil, 12 pilləli "xəzinə": Armudu stəkan, Kəlağayı, Lahıc mis qabı, Şəki halvası (qorunan), Quba alması, Tar,
+Qarabağ xalçası, Qarabağ atı (qorunan), Xarıbülbül, Qızıl buta, Diyarşünas medalı, Qızıl Səkkizguşə.
+Səhv → oyun bitir, son qorunan pillə qalır; "Dayan və hədiyyəni götür"; 1 kömək: iqtisadi rayon + ərazi haqqında fakt.
+Cavab seçiləndə 1,2 san narıncı "gərginlik", sonra doğru yaşıl/səhv qırmızı. "Xəzinəm": qazanılan hədiyyələr (localStorage sk-diyar).
+Suallar: src/data/diyar.js — 69 sual, 6 kateqoriya; səhv variantlar cavaba ən yaxın 7 ərazidən təsadüfi seçilir.
+Sərsəng su anbarı qəsdən salınmayıb: o, bərpa olunmuş Ağdərə rayonundadır, xəritə məlumatında Ağdərə yoxdur.
+Kəndlər üçün rəsmi mənbə gözlənilir (DSK-nın inzibati-ərazi bölgüsü təsnifatı və ya siyahıyaalmanın yaşayış məntəqələri cədvəli).
+
 ## "Sözü tap" oyunu (/atalar-sozleri/sozu-tap/; köhnə /quiz/ ünvanı 301 ilə yönləndirilir)
 Başlıq: "Atalar sözlərini nə qədər yaxşı bilirsən?". "Quiz" sözü işlədilmir (istifadəçi istəyi): Oyuna başla / Oyunu bitir. — 23.10.2026
 Botdakı mexanika ilə: atalar sözünün əsas sözü gizlədilir (köməkçi sözlərdən başqa ən uzun söz, hərf sayı qədər xana).

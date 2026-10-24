@@ -1,0 +1,255 @@
+---
+import Base from '../../layouts/Base.astro';
+import { PILLELER, QORUNAN, SUALLAR } from '../../data/diyar.js';
+---
+<Base title="Kim diyarşünas olmaq istəyir?" description="Azərbaycanın kəndləri, qalaları, abidələri, su anbarları, məscidləri və dahilərin doğulduğu yerlər haqqında 12 suallıq oyun. Pul yox, Azərbaycanın xəzinəsindən hədiyyələr.">
+  <div class="wrap section">
+    <section class="stack">
+      <nav class="crumbs" aria-label="Yol"><a href="/">Ana səhifə</a> <span aria-hidden="true">/</span> <a href="/xerite/">Xəritə</a> <span aria-hidden="true">/</span> Diyarşünas</nav>
+      <h1 class="page-title">Kim diyarşünas olmaq istəyir?</h1>
+      <p class="lead">12 sual, hər sualda 4 variant. Kəndlər, qalalar, abidələr, su anbarları, qədim məscidlər və dahilərin doğulduğu yerlər. Hər doğru cavab səni xəzinəyə bir pillə yaxınlaşdırır.</p>
+    </section>
+
+    <div class="dy-tabs">
+      <button type="button" class="chip" data-tab="oyun" aria-pressed="true">Oyun</button>
+      <button type="button" class="chip" data-tab="xezine" aria-pressed="false">Xəzinəm <span class="n" id="xn">0</span></button>
+    </div>
+
+    <div class="dy" id="t-oyun">
+      <div class="dy-stage">
+        <div class="dy-panel" id="intro">
+          <h2>Qaydalar</h2>
+          <ol>
+            <li>Oyunda <b>12 sual</b> var. Hər sualın 4 variantı, yalnız biri düzgündür.</li>
+            <li>Mükafat pul deyil: hər pillədə Azərbaycanın xəzinəsindən bir hədiyyə qazanırsan. 12-ci pillədə səni <b>Qızıl Səkkizguşə</b> və "Böyük diyarşünas" adı gözləyir.</li>
+            <li><b>4-cü</b> və <b>8-ci</b> pillələr qorunan pillələrdir. Səhv cavab versən oyun bitir, amma son keçdiyin qorunan pillənin hədiyyəsi səndə qalır.</li>
+            <li>Cavabdan əmin deyilsənsə, <b>"Dayan və hədiyyəni götür"</b> düyməsi ilə qazandığını saxlayıb oyunu bitirə bilərsən.</li>
+            <li>Bir dəfə <b>kömək</b> ala bilərsən: düzgün cavab olan ərazi haqqında ipucu veriləcək.</li>
+          </ol>
+          <p class="muted">Qazandığın hədiyyələr "Xəzinəm" bölməsində toplanır.</p>
+          <button type="button" class="btn dy-go" id="start">Oyuna başla</button>
+        </div>
+
+        <div class="dy-panel" id="play" hidden>
+          <div class="dy-top">
+            <span class="dy-cat" id="cat"></span>
+            <span class="dy-num"><b id="qn">1</b> / 12</span>
+          </div>
+          <p class="dy-q" id="q"></p>
+          <div class="dy-ans" id="ans"></div>
+          <div class="dy-hint" id="hint" hidden></div>
+          <div class="dy-acts">
+            <button type="button" class="btn dy-help" id="help">Köməkdən istifadə et</button>
+            <button type="button" class="btn dy-stop" id="stop">Dayan və hədiyyəni götür</button>
+          </div>
+        </div>
+
+        <div class="dy-panel" id="done" hidden>
+          <div class="dy-res" id="res"></div>
+          <button type="button" class="btn dy-go" id="again">Yenidən oyna</button>
+        </div>
+      </div>
+
+      <ol class="dy-ladder" id="ladder" aria-label="Mükafat pillələri">
+        {PILLELER.map(([t, d], i) => <li data-i={i} class={QORUNAN.includes(i) ? 'safe' : undefined}><span class="no">{i + 1}</span><span class="t">{t}<small>{d}</small></span></li>).reverse()}
+      </ol>
+    </div>
+
+    <section id="t-xezine" hidden>
+      <div class="xz" id="xz"></div>
+      <div class="dy-stat" id="stat"></div>
+      <p class="muted xz-note">Xəzinə bu brauzerdə saxlanılır. İstifadəçi adı bölməsi açılanda hesabına köçürüləcək.</p>
+    </section>
+    <p class="muted dy-src">Suallar bazası: {SUALLAR.length} sual. Bütün faktlar rəsmi mənbələrlə tutuşdurularaq tədricən genişləndirilir.</p>
+  </div>
+</Base>
+
+<style is:global>
+  .dy-tabs{display:flex;gap:8px;flex-wrap:wrap}
+  .dy{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:24px;align-items:start}
+  .dy[hidden],#t-xezine[hidden],.dy-panel[hidden]{display:none}
+  .dy-stage{border-radius:26px;padding:28px;background:radial-gradient(circle at 50% 0%,#1F4C8C 0%,#10224A 60%,#0A1530 100%);color:#FFFFFF;box-shadow:var(--shadow-hi);min-height:460px}
+  .dy-panel{display:flex;flex-direction:column;gap:18px}
+  .dy-panel h2{margin:0;font-size:28px;font-weight:500}
+  .dy-panel ol{margin:0;padding-left:22px;display:flex;flex-direction:column;gap:10px;font-size:17px;line-height:1.5;color:#E6EEF7}
+  .dy-panel .muted{color:#AFC2D8;margin:0}
+  .dy-go{align-self:flex-start;min-height:54px;padding:0 30px;font-size:18px;background:linear-gradient(#F6C451,#D99A1E);color:#2A1A00;box-shadow:0 8px 20px -8px rgba(246,196,81,.8)}
+  .dy-go:hover{color:#2A1A00}
+  .dy-top{display:flex;justify-content:space-between;align-items:center;gap:10px}
+  .dy-cat{padding:6px 14px;border-radius:999px;background:rgba(255,255,255,.12);font-size:14px;font-weight:600;letter-spacing:.4px}
+  .dy-num{font-size:15px;color:#AFC2D8}.dy-num b{font-size:20px;color:#F6C451}
+  .dy-q{margin:6px 0;padding:22px 26px;border-radius:22px;border:2px solid #4B78B8;background:linear-gradient(#183467,#0F2348);font-size:24px;line-height:1.4;font-weight:500;text-align:center}
+  .dy-ans{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .dy-ans button{display:flex;align-items:center;gap:12px;min-height:60px;padding:10px 20px;border-radius:999px;border:2px solid #4B78B8;background:linear-gradient(#183467,#0F2348);color:#FFFFFF;font:inherit;font-size:19px;font-weight:500;text-align:left;cursor:pointer;transition:background .2s,border-color .2s,transform .15s}
+  .dy-ans button:hover:not(:disabled){border-color:#F6C451;transform:translateY(-1px)}
+  .dy-ans button b{color:#F6C451;font-weight:600}
+  .dy-ans button.lock{background:linear-gradient(#F6A623,#C77A0C);border-color:#F6C451;color:#1E1200}
+  .dy-ans button.lock b{color:#1E1200}
+  .dy-ans button.ok{background:linear-gradient(#3DBA5A,#22843A);border-color:#9BE5A8;animation:dy-blink .45s 3}
+  .dy-ans button.bad{background:linear-gradient(#E0454F,#A9232C);border-color:#F3A0A5}
+  .dy-ans button:disabled{cursor:default}
+  @keyframes dy-blink{50%{filter:brightness(1.35)}}
+  .dy-hint{padding:16px 18px;border-radius:16px;background:rgba(246,196,81,.14);border:1px solid rgba(246,196,81,.5);font-size:17px;line-height:1.5;color:#FFF3D1}
+  .dy-hint[hidden]{display:none}
+  .dy-acts{display:flex;flex-wrap:wrap;gap:10px}
+  .dy-help,.dy-stop{min-height:46px;background:rgba(255,255,255,.1);color:#FFFFFF;border:1px solid rgba(255,255,255,.3)}
+  .dy-help:hover,.dy-stop:hover{color:#FFFFFF;background:rgba(255,255,255,.18)}
+  .dy-help[disabled]{opacity:.35}
+  .dy-res{display:flex;flex-direction:column;gap:10px;align-items:flex-start}
+  .dy-res h2{margin:0;font-size:30px}
+  .dy-res p{margin:0;font-size:18px;line-height:1.5;color:#E6EEF7}
+  .dy-prize{display:inline-flex;flex-direction:column;gap:2px;padding:16px 22px;border-radius:18px;background:linear-gradient(#F6C451,#D99A1E);color:#2A1A00}
+  .dy-prize b{font-size:26px}
+  .dy-ladder{list-style:none;margin:0;padding:12px;border-radius:22px;background:#0F2348;display:flex;flex-direction:column;gap:3px;box-shadow:var(--shadow)}
+  .dy-ladder li{display:flex;align-items:center;gap:12px;padding:7px 12px;border-radius:12px;color:#C9D7E8;font-size:15px;transition:background .3s,color .3s}
+  .dy-ladder .no{width:24px;text-align:right;font-weight:600;color:#7F9BBF}
+  .dy-ladder .t{display:flex;flex-direction:column;line-height:1.2}
+  .dy-ladder small{font-size:12px;opacity:.7}
+  .dy-ladder li.safe{color:#FFFFFF;font-weight:600}
+  .dy-ladder li.safe .no{color:#F6C451}
+  .dy-ladder li.won{color:#9BE5A8}
+  .dy-ladder li.cur{background:linear-gradient(90deg,#F6A623,#C77A0C);color:#1E1200}
+  .dy-ladder li.cur .no{color:#1E1200}
+  .xz{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:12px}
+  .xz-i{padding:16px;border-radius:18px;background:#FFFFFF;border:1px solid var(--line);box-shadow:var(--shadow);display:flex;flex-direction:column;gap:4px}
+  .xz-i b{font-size:17px}.xz-i span{font-size:13px;color:var(--muted)}
+  .xz-i.off{opacity:.35;box-shadow:none}
+  .xz-i.off b::after{content:' 🔒';font-size:13px}
+  .dy-stat{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+  .dy-stat span{padding:10px 16px;border-radius:999px;background:#FFFFFF;border:1px solid var(--line);font-size:15px}
+  .xz-note,.dy-src{margin:12px 0 0;font-size:14px}
+  @media (max-width:960px){.dy{grid-template-columns:minmax(0,1fr)}.dy-ladder{order:-1;flex-direction:row;flex-wrap:wrap}.dy-ladder li{flex:1 1 auto;padding:6px 10px}.dy-ladder small{display:none}}
+  @media (max-width:640px){.dy-stage{padding:18px;border-radius:20px}.dy-ans{grid-template-columns:1fr}.dy-q{font-size:20px;padding:16px}}
+</style>
+
+<script>
+  import { SUALLAR, CATS, IPUCU, PILLELER, QORUNAN } from '../../data/diyar.js';
+  import D from '../../data/xerite-data.json';
+
+  const $ = (id) => document.getElementById(id);
+  const KEY = 'sk-diyar';
+  const UNITS = D.U.map((u) => ({ n: u[0], r: u[2], x: u[3], y: u[4] }));
+  const unit = (n) => UNITS.find((u) => u.n === n);
+  const shuffle = (a) => { for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; };
+  const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]);
+
+  // Yadda saxlanan nəticələr (istifadəçi adı gələnə qədər "qonaq")
+  const load = () => { try { return JSON.parse(localStorage.getItem(KEY) || '{}').qonaq || { oyun: 0, enYuksek: 0, hediyye: [] }; } catch { return { oyun: 0, enYuksek: 0, hediyye: [] }; } };
+  const save = (s) => { try { localStorage.setItem(KEY, JSON.stringify({ qonaq: s })); } catch { /* yaddaş bağlıdır */ } };
+
+  // Çətinlik: əvvəl tanınmış abidə və şəxsiyyətlər, sonra qala və məscidlər, axırda kənd və su anbarları
+  const W = { sexs: 1, abide: 1, mescid: 2, qala: 2, kend: 3, su: 3 };
+  let qs = [], k = 0, helpUsed = false, busy = false, cur = null;
+
+  // Ses: brauzerin özündə yaradılır
+  let ac = null;
+  function tone(fr, at, dur, type = 'triangle', vol = 0.12) {
+    try {
+      ac = ac || new (window.AudioContext || window.webkitAudioContext)();
+      const t = ac.currentTime + at, o = ac.createOscillator(), g = ac.createGain();
+      o.type = type; o.frequency.value = fr;
+      g.gain.setValueAtTime(0.0001, t); g.gain.exponentialRampToValueAtTime(vol, t + 0.02); g.gain.exponentialRampToValueAtTime(0.0001, t + dur);
+      o.connect(g).connect(ac.destination); o.start(t); o.stop(t + dur + 0.05);
+    } catch { /* səs dəstəklənmir */ }
+  }
+  const sOk = () => [523, 659, 784].forEach((f, i) => tone(f, i * 0.1, 0.35));
+  const sBad = () => [300, 220].forEach((f, i) => tone(f, i * 0.2, 0.4, 'sawtooth', 0.06));
+
+  function build() {
+    const pool = shuffle(SUALLAR.slice());
+    const pick = [], usedAns = new Set();
+    for (const w of [1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3]) {
+      const i = pool.findIndex((q) => W[q[0]] === w && !usedAns.has(q[2]) && !pick.includes(q));
+      const j = i >= 0 ? i : pool.findIndex((q) => !pick.includes(q));
+      pick.push(pool[j]); usedAns.add(pool[j][2]);
+    }
+    return pick;
+  }
+  function options(ans) {
+    const a = unit(ans);
+    const near = UNITS.filter((u) => u.n !== ans).sort((p, q) => Math.hypot(p.x - a.x, p.y - a.y) - Math.hypot(q.x - a.x, q.y - a.y)).slice(0, 7);
+    return shuffle([ans, ...shuffle(near).slice(0, 3).map((u) => u.n)]);
+  }
+  function ladder() {
+    document.querySelectorAll('#ladder li').forEach((li) => {
+      const i = +li.dataset.i;
+      li.classList.toggle('won', i < k);
+      li.classList.toggle('cur', i === k && !!cur);
+    });
+  }
+  function show() {
+    const [cat, q, ans] = qs[k];
+    cur = { ans, opts: options(ans) };
+    busy = false;
+    $('cat').textContent = CATS[cat];
+    $('qn').textContent = k + 1;
+    $('q').textContent = q;
+    $('ans').innerHTML = cur.opts.map((o, i) => `<button type="button" data-v="${esc(o)}"><b>${'ABCD'[i]}:</b> ${esc(o)}</button>`).join('');
+    $('hint').hidden = true;
+    $('help').disabled = helpUsed;
+    $('stop').disabled = k === 0;
+    ladder();
+  }
+  function prizeAt(level) { return level > 0 ? PILLELER[level - 1][0] : null; }
+  function end(kind) {
+    const st = load();
+    // Qazanılan pillə: dayananda keçdiyi pillə, səhvdə son qorunan pillə
+    const level = kind === 'wrong' ? Math.max(0, ...QORUNAN.map((q) => q + 1).filter((q) => q <= k)) : k;
+    st.oyun++; st.enYuksek = Math.max(st.enYuksek, level);
+    for (let i = 0; i < level; i++) if (!st.hediyye.includes(i)) st.hediyye.push(i);
+    save(st); xezine();
+    const p = prizeAt(level);
+    const head = kind === 'win' ? 'Təbriklər, böyük diyarşünas!' : kind === 'stop' ? 'Ağıllı qərar!' : 'Təəssüf, cavab səhv oldu.';
+    const txt = kind === 'win' ? 'Bütün 12 sualı doğru cavablandırdın. Azərbaycanı yaxşı tanıyırsan!' : kind === 'stop' ? `${k} suala doğru cavab verib dayandın.` : `Düzgün cavab: <b>${esc(cur.ans)}</b>. ${k} suala doğru cavab verdin.`;
+    $('res').innerHTML = `<h2>${head}</h2><p>${txt}</p>` + (p ? `<span class="dy-prize"><span>Qazandığın hədiyyə</span><b>${esc(p)}</b></span>` : '<p>Bu dəfə hədiyyə qazanılmadı, növbəti oyunda mütləq alınacaq.</p>');
+    $('play').hidden = true; $('done').hidden = false;
+    cur = null; ladder();
+  }
+  $('ans').addEventListener('click', (e) => {
+    const b = e.target.closest('button'); if (!b || busy) return;
+    busy = true;
+    const btns = [...$('ans').querySelectorAll('button')];
+    btns.forEach((x) => { x.disabled = true; });
+    b.classList.add('lock');
+    tone(440, 0, 0.25, 'sine', 0.06);
+    // Qısa gərginlik anı, sonra cavab açılır
+    setTimeout(() => {
+      const ok = b.dataset.v === cur.ans;
+      b.classList.remove('lock');
+      btns.find((x) => x.dataset.v === cur.ans).classList.add('ok');
+      if (!ok) { b.classList.add('bad'); sBad(); setTimeout(() => end('wrong'), 1600); return; }
+      sOk();
+      k++;
+      setTimeout(() => { if (k === 12) end('win'); else show(); }, 1500);
+    }, 1200);
+  });
+  $('help').addEventListener('click', () => {
+    if (helpUsed || busy) return;
+    helpUsed = true; $('help').disabled = true;
+    const u = unit(cur.ans);
+    $('hint').innerHTML = `<b>İpucu:</b> Bu ərazi ${esc(u.r)} iqtisadi rayonunda yerləşir. ${esc(IPUCU[cur.ans] || '')}`;
+    $('hint').hidden = false;
+  });
+  $('stop').addEventListener('click', () => { if (!busy && k > 0) end('stop'); });
+  function start() {
+    qs = build(); k = 0; helpUsed = false;
+    $('intro').hidden = true; $('done').hidden = true; $('play').hidden = false;
+    show();
+    if (ac && ac.state === 'suspended') ac.resume();
+  }
+  $('start').addEventListener('click', start);
+  $('again').addEventListener('click', start);
+
+  function xezine() {
+    const st = load();
+    $('xn').textContent = st.hediyye.length;
+    $('xz').innerHTML = PILLELER.map(([t, d], i) => `<div class="xz-i${st.hediyye.includes(i) ? '' : ' off'}"><b>${esc(t)}</b><span>${i + 1}-ci pillə · ${esc(d)}</span></div>`).join('').replace(/(\d+)-ci pillə/g, (m, n) => `${n}-${({ 3: 'cü', 4: 'cü', 6: 'cı', 9: 'cu', 10: 'cu' })[n] || 'ci'} pillə`);
+    $('stat').innerHTML = `<span>Oyun: <b>${st.oyun}</b></span><span>Ən yüksək pillə: <b>${st.enYuksek} / 12</b></span><span>Toplanan hədiyyə: <b>${st.hediyye.length} / 12</b></span>`;
+  }
+  document.querySelectorAll('[data-tab]').forEach((b) => b.addEventListener('click', () => {
+    document.querySelectorAll('[data-tab]').forEach((x) => x.setAttribute('aria-pressed', String(x === b)));
+    $('t-oyun').hidden = b.dataset.tab !== 'oyun';
+    $('t-xezine').hidden = b.dataset.tab !== 'xezine';
+  }));
+  xezine();
+</script>
