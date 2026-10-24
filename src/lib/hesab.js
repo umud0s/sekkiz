@@ -47,14 +47,14 @@ const saat = (ms) => { const s = Math.round(ms / 1000); return `${String(Math.fl
 // Nəticənin yazılışı hər oyun üçün
 export const NETICE = {
   xerite: (r) => (r.xal === XERITE_ERAZI && r.vaxt ? `${XERITE_ERAZI} ərazi · ${saat(r.vaxt)}` : `${r.xal} ərazi`),
-  diyar: (r) => (r.xal === DIYAR_SUAL && r.vaxt ? `${r.xal} / ${DIYAR_SUAL} pillə · ${saat(r.vaxt)}` : `${r.xal} / ${DIYAR_SUAL} pillə`),
+  diyar: (r) => (r.vaxt ? `${r.xal} / ${DIYAR_SUAL} pillə · ${saat(r.vaxt)}` : `${r.xal} / ${DIYAR_SUAL} pillə`),
   sozu: (r) => `${r.xal} xal`,
 };
 // Reytinq cədvəlinin nəticə sütunları: [başlıq, dəyər]
 const SUTUN = {
   // Xəritədə hamısını tapanlar tamamlama vaxtına görə sıralanır, vaxt ayrıca sütunda göstərilir
   xerite: [['Tapılan', (r) => `${r.xal} / ${XERITE_ERAZI}`], ['Vaxt', (r) => (r.xal === XERITE_ERAZI && r.vaxt ? saat(r.vaxt) : '—')]],
-  diyar: [['Pillə', (r) => `${r.xal} / ${DIYAR_SUAL}`], ['Vaxt', (r) => (r.xal === DIYAR_SUAL && r.vaxt ? saat(r.vaxt) : '—')]],
+  diyar: [['Pillə', (r) => `${r.xal} / ${DIYAR_SUAL}`], ['Vaxt', (r) => (r.vaxt ? saat(r.vaxt) : '—')]],
   sozu: [['Xal', NETICE.sozu]],
 };
 

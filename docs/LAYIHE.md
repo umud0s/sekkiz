@@ -456,3 +456,7 @@ göllər, milli parklar və qoruqlar əlavə olunsun, suallar az təkrarlansın.
   son 60 soruşulan sual localStorage "sk-diyar-son"-da saxlanır və yeni oyunda kənara qoyulur. Çətin səviyyədə 30% ehtimalla DSK kəndi.
 - Vaxt: asan 20, orta 30, çətin 40 san. Mükafat yolu 15 pillə (Göyçay narı, Saz, "Xəmsə" əlavə olundu); qorunan: 5-ci və 10-cu.
 - Server: pillə 0-15 (DIYAR_SUAL, hesab-sabit.js); 15/15 vaxtı 15-455 san qəbul olunur.
+- Kömək haqları (24.10.2026, istifadəçi tələbi): "İpucu" (iqtisadi rayon + fakt) və "50:50" (iki səhv cavab silinir), hər biri oyunda bir dəfə.
+  Sualın üstündə "Kömək haqların" panelində qızılı düymələr; istifadə olunmayan parlayır, istifadə olunanın üstündən qırmızı xətt keçir.
+- Reytinqdə hər kəsin vaxtı yazılır (istifadəçi tələbi): vaxt = çatılan pilləyə qədər suallara sərf olunan müddət (catdi[pillə]);
+  sıra: pillə, sonra vaxt. Bu dəyişiklikdən əvvəlki nəticələrdə vaxt yoxdur ("—"), oyunçu yenidən oynayanda doldurulur.

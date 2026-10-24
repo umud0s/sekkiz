@@ -30,7 +30,7 @@ const KENDSAY = Object.values(KENDLER).flat().length;
             <li>Mükafat pul deyil: hər pillədə Azərbaycanın xəzinəsindən bir hədiyyə qazanırsan. 15-ci pillədə səni <b>Qızıl Səkkizguşə</b> və "Böyük diyarşünas" adı gözləyir.</li>
             <li><b>5-ci</b> və <b>10-cu</b> pillələr qorunan pillələrdir. Səhv cavab versən oyun bitir, amma son keçdiyin qorunan pillənin hədiyyəsi səndə qalır.</li>
             <li>Cavabdan əmin deyilsənsə, <b>"Dayan və hədiyyəni götür"</b> düyməsi ilə qazandığını saxlayıb oyunu bitirə bilərsən.</li>
-            <li>Bir dəfə <b>kömək</b> ala bilərsən: düzgün cavab olan ərazi haqqında ipucu veriləcək.</li>
+            <li>İki <b>kömək haqqın</b> var, hər birindən bir dəfə istifadə edə bilərsən: <b>İpucu</b> düzgün cavab olan ərazi haqqında məlumat verir, <b>50:50</b> isə iki səhv cavabı silir.</li>
           </ol>
           <p class="muted">Qazandığın hədiyyələr "Xəzinəm" bölməsində toplanır.</p>
           <button type="button" class="btn dy-go" id="start">Oyuna başla</button>
@@ -42,12 +42,21 @@ const KENDSAY = Object.values(KENDLER).flat().length;
             <span class="dy-lvl" id="lvl"></span>
             <span class="dy-num"><b id="qn">1</b> / 15</span>
           </div>
+          <div class="dy-life" role="group" aria-label="Kömək haqların">
+            <span class="dy-life-t">Kömək haqların</span>
+            <button type="button" class="dy-ll" id="help" aria-label="İpucu: ərazi haqqında məlumat">
+              <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-3.6 10.8c.7.6 1.1 1.3 1.1 2.2h5c0-.9.4-1.6 1.1-2.2A6 6 0 0 0 12 3Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span>İpucu</span>
+            </button>
+            <button type="button" class="dy-ll" id="half" aria-label="50:50: iki səhv cavabı sil">
+              <b>50:50</b>
+            </button>
+          </div>
           <div class="dy-timer" aria-live="off"><div class="dy-bar"><i id="bar"></i></div><span class="dy-sec"><b id="tm">20</b> san</span></div>
           <p class="dy-q" id="q"></p>
           <div class="dy-ans" id="ans"></div>
           <div class="dy-hint" id="hint" hidden></div>
           <div class="dy-acts">
-            <button type="button" class="btn dy-help" id="help">Köməkdən istifadə et</button>
             <button type="button" class="btn dy-stop" id="stop">Dayan və hədiyyəni götür</button>
           </div>
         </div>
@@ -70,7 +79,7 @@ const KENDSAY = Object.values(KENDLER).flat().length;
     </section>
     <section id="t-reyt" class="card dy-rt" hidden>
       <h2>Ümumi reytinq</h2>
-      <p class="muted">15 pillənin hamısını keçənlər ən yuxarıda durur və cavablara sərf etdikləri vaxta görə sıralanır: kim daha tez cavablandırıbsa, o öndədir. Qalanlar çatdıqları ən yüksək pilləyə görə düzülür.</p>
+      <p class="muted">Oyunçular çatdıqları ən yüksək pilləyə görə sıralanır. Eyni pillədə olanlar arasında o pilləyə daha tez çatan öndədir. Vaxt yalnız suallara fikirləşmə müddətidir.</p>
       <Reytinq oyun="diyar" />
     </section>
     <p class="muted dy-src">Suallar bazası: {SUALLAR.length} seçilmiş sual və {KENDSAY} kənd, qəsəbə. Kənd və qəsəbələrin hansı rayonda olduğu Dövlət Statistika Komitəsinin "İnzibati ərazi bölgüsü təsnifatı" (2024) üzrə verilir.</p>
@@ -117,9 +126,20 @@ const KENDSAY = Object.values(KENDLER).flat().length;
   .dy-hint{padding:16px 18px;border-radius:16px;background:rgba(246,196,81,.14);border:1px solid rgba(246,196,81,.5);font-size:17px;line-height:1.5;color:#FFF3D1}
   .dy-hint[hidden]{display:none}
   .dy-acts{display:flex;flex-wrap:wrap;gap:10px}
-  .dy-help,.dy-stop{min-height:46px;background:rgba(255,255,255,.1);color:#FFFFFF;border:1px solid rgba(255,255,255,.3)}
-  .dy-help:hover,.dy-stop:hover{color:#FFFFFF;background:rgba(255,255,255,.18)}
-  .dy-help[disabled]{opacity:.35}
+  .dy-stop{min-height:46px;background:rgba(255,255,255,.1);color:#FFFFFF;border:1px solid rgba(255,255,255,.3)}
+  .dy-stop:hover{color:#FFFFFF;background:rgba(255,255,255,.18)}
+  /* Kömək haqları: istifadə olunmayan parlayır, istifadə olunanın üstündən xətt çəkilir */
+  .dy-life{display:flex;align-items:center;flex-wrap:wrap;gap:10px;padding:10px 14px;border-radius:18px;background:rgba(246,196,81,.08);border:1px solid rgba(246,196,81,.28)}
+  .dy-life-t{margin-right:auto;font-size:14px;font-weight:600;letter-spacing:.4px;color:#F6C451}
+  .dy-ll{position:relative;display:inline-flex;align-items:center;gap:8px;min-height:46px;min-width:96px;justify-content:center;padding:0 18px;border-radius:999px;border:2px solid #F6C451;background:linear-gradient(#24477F,#162E5C);color:#FFFFFF;font:inherit;font-size:16px;font-weight:600;cursor:pointer;animation:dy-glow 2.2s ease-in-out infinite;transition:transform .15s}
+  .dy-ll b{font-size:17px;letter-spacing:.5px}
+  .dy-ll svg{color:#F6C451}
+  .dy-ll:hover:not(:disabled){transform:translateY(-2px)}
+  .dy-ll:disabled{cursor:default;animation:none;opacity:.45;border-color:rgba(255,255,255,.35)}
+  .dy-ll.used::after{content:'';position:absolute;left:10px;right:10px;top:50%;height:3px;border-radius:3px;background:#E0454F;transform:rotate(-14deg)}
+  @keyframes dy-glow{0%,100%{box-shadow:0 0 0 0 rgba(246,196,81,0)}50%{box-shadow:0 0 16px 2px rgba(246,196,81,.55)}}
+  .dy-ans button.gone{opacity:.16;pointer-events:none}
+  @media (max-width:560px){.dy-life-t{flex-basis:100%}.dy-ll{flex:1}}
   .dy-res{display:flex;flex-direction:column;gap:10px;align-items:flex-start}
   .dy-res h2{margin:0;font-size:30px}
   .dy-res p{margin:0;font-size:18px;line-height:1.5;color:#E6EEF7}
@@ -167,9 +187,9 @@ const KENDSAY = Object.values(KENDLER).flat().length;
   const save = (s) => { try { localStorage.setItem(KEY, JSON.stringify({ qonaq: s })); } catch { /* yaddaş bağlıdır */ } };
 
   const N = PILLELER.length; // 15 sual: 5 asan, 5 orta, 5 çətin
-  let qs = [], k = 0, helpUsed = false, busy = false, cur = null, timer = 0, left = 0, limit = 0;
-  // Cavablara sərf olunan ümumi vaxt (cavabın açılma animasiyası daxil deyil): 15 pilləni keçənlər bununla sıralanır
-  let qStart = 0, spent = 0;
+  let qs = [], k = 0, helpUsed = false, halfUsed = false, busy = false, cur = null, timer = 0, left = 0, limit = 0;
+  // Cavablara sərf olunan vaxt (cavabın açılma animasiyası daxil deyil): eyni pillədəkilər bununla sıralanır
+  let qStart = 0, spent = 0, catdi = [0]; // catdi[n]: n-ci pilləyə çatana qədər sərf olunan vaxt
   // Vaxt: ilk 5 sual 20, növbəti 5 sual 30, son 2 sual 40 saniyə
   const LIMIT = (i) => (i < 5 ? 20 : i < 10 ? 30 : 40);
   const LVL = (i) => (i < 5 ? ['l1', 'Asan'] : i < 10 ? ['l2', 'Orta'] : ['l3', 'Çətin']);
@@ -196,6 +216,7 @@ const KENDSAY = Object.values(KENDLER).flat().length;
     busy = true;
     const btns = [...$('ans').querySelectorAll('button')];
     btns.forEach((x) => { x.disabled = true; });
+    $('help').disabled = true; $('half').disabled = true;
     btns.find((x) => x.dataset.v === cur.ans).classList.add('ok');
     sBad();
     setTimeout(() => end('time'), 1600);
@@ -273,7 +294,8 @@ const KENDSAY = Object.values(KENDLER).flat().length;
     $('q').textContent = q;
     $('ans').innerHTML = cur.opts.map((o, i) => `<button type="button" data-v="${esc(o)}"><b>${'ABCD'[i]}:</b> ${esc(o)}</button>`).join('');
     $('hint').hidden = true;
-    $('help').disabled = helpUsed;
+    $('help').disabled = helpUsed || busy; $('help').classList.toggle('used', helpUsed);
+    $('half').disabled = halfUsed || busy; $('half').classList.toggle('used', halfUsed);
     $('stop').disabled = k === 0;
     const [lc, lt] = LVL(k);
     $('lvl').className = 'dy-lvl ' + lc; $('lvl').textContent = lt;
@@ -290,7 +312,7 @@ const KENDSAY = Object.values(KENDLER).flat().length;
     st.oyun++; st.enYuksek = Math.max(st.enYuksek, level);
     for (let i = 0; i < level; i++) if (!st.hediyye.includes(i)) st.hediyye.push(i);
     save(st); xezine();
-    if (level > 0) gonder('diyar', kind === 'win' ? { pille: level, vaxt: Math.round(spent) } : { pille: level });
+    if (level > 0) gonder('diyar', { pille: level, vaxt: Math.round(catdi[level]) });
     const p = prizeAt(level);
     const head = kind === 'win' ? 'Təbriklər, böyük diyarşünas!' : kind === 'stop' ? 'Ağıllı qərar!' : kind === 'time' ? 'Vaxt bitdi.' : 'Təəssüf, cavab səhv oldu.';
     const txt = kind === 'win' ? `Bütün ${N} sualı ${sec(spent)} ərzində doğru cavablandırdın. Azərbaycanı yaxşı tanıyırsan!` : kind === 'stop' ? `${k} suala doğru cavab verib dayandın.` : `Düzgün cavab: <b>${esc(cur.ans)}</b>. ${k} suala doğru cavab verdin.`;
@@ -306,6 +328,7 @@ const KENDSAY = Object.values(KENDLER).flat().length;
     spent += performance.now() - qStart;
     const btns = [...$('ans').querySelectorAll('button')];
     btns.forEach((x) => { x.disabled = true; });
+    $('help').disabled = true; $('half').disabled = true;
     b.classList.add('lock');
     tone(440, 0, 0.25, 'sine', 0.06);
     // Qısa gərginlik anı, sonra cavab açılır
@@ -316,19 +339,28 @@ const KENDSAY = Object.values(KENDLER).flat().length;
       if (!ok) { b.classList.add('bad'); sBad(); setTimeout(() => end('wrong'), 1600); return; }
       sOk();
       k++;
+      catdi[k] = spent;
       setTimeout(() => { if (k === N) end('win'); else show(); }, 1500);
     }, 1200);
   });
   $('help').addEventListener('click', () => {
     if (helpUsed || busy) return;
-    helpUsed = true; $('help').disabled = true;
+    helpUsed = true; $('help').disabled = true; $('help').classList.add('used');
     const u = unit(cur.ans);
     $('hint').innerHTML = `<b>İpucu:</b> Bu ərazi ${esc(u.r)} iqtisadi rayonunda yerləşir. ${esc(IPUCU[cur.ans] || `Rayonun adı "${cur.ans[0]}" hərfi ilə başlayır.`)}`;
     $('hint').hidden = false;
   });
+  // 50:50: iki səhv cavab silinir
+  $('half').addEventListener('click', () => {
+    if (halfUsed || busy) return;
+    halfUsed = true; $('half').disabled = true; $('half').classList.add('used');
+    const wrong = shuffle([...$('ans').querySelectorAll('button')].filter((x) => x.dataset.v !== cur.ans)).slice(0, 2);
+    wrong.forEach((x) => { x.classList.add('gone'); x.disabled = true; x.setAttribute('aria-hidden', 'true'); x.innerHTML = x.querySelector('b').outerHTML; });
+    tone(660, 0, 0.15, 'sine', 0.06); tone(990, 0.12, 0.2, 'sine', 0.06);
+  });
   $('stop').addEventListener('click', () => { if (!busy && k > 0) end('stop'); });
   function start() {
-    qs = build(); k = 0; helpUsed = false; spent = 0;
+    qs = build(); k = 0; helpUsed = false; halfUsed = false; spent = 0; catdi = [0];
     $('intro').hidden = true; $('done').hidden = true; $('play').hidden = false;
     show();
     if (ac && ac.state === 'suspended') ac.resume();

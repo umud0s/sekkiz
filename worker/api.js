@@ -158,9 +158,9 @@ const QAYDA = {
     oxu(b) {
       const p = Math.trunc(+b.pille), vaxt = b.vaxt == null ? null : Math.round(+b.vaxt);
       if (!(p >= 0 && p <= DIYAR_SUAL)) return null;
-      // 15 sualın vaxt limitlərinin cəmi 450 saniyədir; hər suala ən azı 1 saniyə lazımdır
-      if (p === DIYAR_SUAL && vaxt != null && !(vaxt >= DIYAR_SUAL * 1000 && vaxt <= 455000)) return null;
-      return { xal: p, vaxt: p === DIYAR_SUAL ? vaxt : null };
+      // Vaxt: həmin pilləyə çatana qədər sərf olunan müddət. 15 sualın limitlərinin cəmi 450 saniyədir; hər suala ən azı 1 saniyə lazımdır
+      if (vaxt != null && !(vaxt >= p * 1000 && vaxt <= 455000)) return null;
+      return { xal: p, vaxt };
     },
     birlesdir: (k, y) => (!k || y.xal > k.xal || (y.xal === k.xal && y.vaxt != null && (k.vaxt == null || y.vaxt < k.vaxt)) ? y : null),
     sira: 'r.xal DESC, (r.vaxt IS NULL), r.vaxt ASC, r.updated ASC',
