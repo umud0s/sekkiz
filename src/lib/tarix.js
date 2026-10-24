@@ -39,7 +39,7 @@ export function fromSlug(s) {
   return mo && d >= 1 && d <= DAYS_IN[mo - 1] ? [mo, d] : null;
 }
 
-const icon = (t, cls = '') => `<span class="ti ${cls}" style="--c:${TYPES[t].c};--bg:${TYPES[t].bg}" aria-hidden="true"><svg viewBox="0 0 48 48" fill="currentColor">${TYPES[t].svg}</svg></span>`;
+export const icon = (t, cls = '') => `<span class="ti ${cls}" style="--c:${TYPES[t].c};--bg:${TYPES[t].bg}" aria-hidden="true"><svg viewBox="0 0 48 48" fill="currentColor">${TYPES[t].svg}</svg></span>`;
 
 // Seçilmiş günün xronologiyası
 export function dayHTML(m, d) {

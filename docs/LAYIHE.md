@@ -503,3 +503,17 @@ göllər, milli parklar və qoruqlar əlavə olunsun, suallar az təkrarlansın.
    Bağlanan hesab (users.bagli=1) daxil ola bilmir, reytinqdə görünmür.
 Köçürmələr (KOCURMELER): users sütunları gizli/ad_deyis/bagli, "sikayet" cədvəli; "senzura-yoxla-2026-10-24" mövcud bütün
 adları bir dəfə filtrdən keçirir və uyğunsuzları ad_deyis=1 edir. Köçürmə əvvəl icra olunur, sonra meta-ya yazılır.
+
+## Ana səhifə "Tarixdə bu gün", 404, təhsil seçimi — 24.10.2026
+- Ana səhifədə prezident sitatının altında daimi "Tarixdə bu gün" bloku (istifadəçi tələbi). Tarix Bakı vaxtı ilə (Asia/Baku)
+  brauzerdə hesablanır; həmin gün qeyd yoxdursa, "Yaxın tarixdə" ən yaxın gələn günün hadisələri göstərilir.
+  Xronologiya və hərəkətli ikon stilləri src/styles/tarix-ikon.css-ə çıxarıldı (Tarix bölməsi və ana səhifə ortaq işlədir).
+- İstifadəçi tələbi: Milli Qəhrəmanlar "Tarixdə bu gün"ə əlavə olunmur.
+  Boş günlər dolduruldu: 95 → 230 qeyd, 82 → 202 gün (yalnız dəqiq tarixi bilinən dövlət hadisələri, şəxsiyyətlərin doğum/vəfat
+  günləri, mədəniyyət, idman, anım). 164 gün hələ boşdur. Tam doldurmaq üçün mənbə: Milli Kitabxananın "Əlamətdar və tarixi günlər"
+  təqvimi və ya oxşar rəsmi təqvim. Qeydlər idarəetmə panelindən (CMS → tarix) də əlavə oluna bilər.
+- 404 səhifəsi animasiyalı: "4 [ulduz-kompas] 4", xəritədə Bakıdan "?" işarəsinə qədər nöqtəli iz, "Bu səhifə xəritədə tapılmadı".
+- Qeydiyyatda məktəb və universitet seçimli oldu (istifadəçi tələbi): əvvəlcə şəhər/rayon, sonra siyahı (Intl.Collator('az', numeric)).
+  src/data/tehsil.js: ERAZILER (74 ərazi + Bakının 12 rayonu), UNIVERSITETLER (12 şəhər, 47 ali məktəb), "Xarici ölkədə", "Siyahıda yoxdur".
+  Məktəblər: src/data/mektebler.json ({ "Ərazi": ["Məktəb", ...] }) hələ boşdur. Rəsmi siyahı (Elm və Təhsil Nazirliyi) yoxdur:
+  edu.gov.az mühitin şəbəkə siyasəti ilə bağlıdır. Fayl dolanda seçim avtomatik açılır; boş rayonda ad əl ilə yazılır.

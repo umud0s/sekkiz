@@ -1,13 +1,67 @@
 ---
 import Base from '../layouts/Base.astro';
+import { STAR_POINTS } from '../lib/site.js';
+import G from '../data/xerite-oyun.json';
+// Bakıdan çıxan iz xəritədə dolaşır və "?" işarəsində bitir
+const IZ = 'M872,349 C820,300 760,330 700,300 S600,240 540,280 S450,360 400,330 S330,300 300,360';
 ---
 <Base title="Səhifə tapılmadı">
-  <div class="wrap section" style="align-items:center;text-align:center;padding-top:8px">
-   <div class="card" style="display:flex;flex-direction:column;align-items:center;gap:16px;padding:40px 32px;max-width:640px;width:100%">
-    <p style="margin:0;font-size:88px;font-weight:600;color:var(--accent);line-height:1">404</p>
-    <h1 class="page-title" style="font-size:36px">Bu səhifə tapılmadı</h1>
-    <p class="lead">Ünvan səhv yazılıb və ya səhifə köçürülüb. Ana səhifədən axtardığınızı tapa bilərsiniz.</p>
-    <a class="btn btn-p" href="/">Ana səhifəyə qayıt</a>
-   </div>
+  <div class="wrap section e4">
+    <div class="card e4-card">
+      <div class="e4-num" aria-hidden="true">
+        <span>4</span>
+        <svg class="e4-star" viewBox="-112 -112 224 224">
+          <g class="e4-needle">
+            <polygon points={STAR_POINTS} fill="#0A6E99" stroke="#064A69" stroke-width="6" stroke-linejoin="round" />
+            <polygon points={STAR_POINTS} transform="scale(.6)" fill="none" stroke="#FFFFFF" stroke-opacity=".55" stroke-width="5" />
+            <path d="M0-84L12 0 0 10-12 0Z" fill="#EF3340" />
+            <path d="M0 84L12 0 0-10-12 0Z" fill="#FFFFFF" />
+            <circle r="9" fill="#F2C14E" />
+          </g>
+        </svg>
+        <span>4</span>
+      </div>
+
+      <svg class="e4-map" viewBox="0 0 1074 814" aria-hidden="true">
+        <path d={G.outline} fill="#EEF5F9" stroke="#B9CCDA" stroke-width="3" stroke-linejoin="round" />
+        <path class="e4-trail" d={IZ} fill="none" stroke="#0A6E99" stroke-width="7" stroke-linecap="round" stroke-dasharray="2 18" />
+        <circle cx="872" cy="349" r="11" fill="#C8102E" stroke="#FFFFFF" stroke-width="4" />
+        <g class="e4-pin">
+          <path d="M300,360 c-28,-30 -40,-50 -40,-70 a40,40 0 0 1 80,0 c0,20 -12,40 -40,70z" fill="#F2C14E" stroke="#B5862B" stroke-width="4" />
+          <text x="300" y="306" text-anchor="middle" font-size="46" font-weight="700" fill="#5A3E00">?</text>
+        </g>
+      </svg>
+
+      <h1 class="page-title e4-title">Bu səhifə xəritədə tapılmadı</h1>
+      <p class="lead e4-lead">Ünvan səhv yazılıb, səhifə köçürülüb və ya hələ hazır deyil. Səkkizguşə yolu axtardı, amma bu ünvana çata bilmədi.</p>
+      <div class="e4-go">
+        <a class="btn btn-p" href="/">Ana səhifəyə qayıt</a>
+        <a class="btn btn-s" href="/xerite/">Xəritəyə bax</a>
+        <a class="btn btn-s" href="/tarix/">Tarixdə bu gün</a>
+      </div>
+    </div>
   </div>
 </Base>
+
+<style>
+  .e4{align-items:center;text-align:center;padding-top:8px}
+  .e4-card{display:flex;flex-direction:column;align-items:center;gap:14px;padding:36px 32px 40px;max-width:720px;width:100%}
+  .e4-num{display:flex;align-items:center;justify-content:center;gap:6px;font-size:120px;font-weight:600;line-height:1;color:var(--accent)}
+  .e4-num span{animation:e4-hop 2.4s ease-in-out infinite}
+  .e4-num span:last-child{animation-delay:.3s}
+  .e4-star{width:118px;height:118px;filter:drop-shadow(0 8px 14px rgba(10,70,105,.25))}
+  /* Ulduz kompas kimi yol axtarır: dönür, tərəddüd edir, yenə dönür */
+  .e4-needle{transform-box:fill-box;transform-origin:center;animation:e4-search 5.5s cubic-bezier(.45,0,.2,1) infinite}
+  .e4-map{width:min(100%,460px);height:auto;margin-top:4px}
+  .e4-trail{stroke-dashoffset:0;animation:e4-walk 1.6s linear infinite}
+  .e4-pin{transform-box:fill-box;transform-origin:50% 100%;animation:e4-bob 1.4s ease-in-out infinite}
+  .e4-title{font-size:38px}
+  .e4-lead{max-width:560px}
+  .e4-go{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:6px}
+  @keyframes e4-search{0%{transform:rotate(0)}22%{transform:rotate(200deg)}30%{transform:rotate(170deg)}38%{transform:rotate(185deg)}62%{transform:rotate(400deg)}70%{transform:rotate(370deg)}78%{transform:rotate(380deg)}100%{transform:rotate(360deg)}}
+  @keyframes e4-walk{to{stroke-dashoffset:-40}}
+  @keyframes e4-bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
+  @keyframes e4-hop{0%,70%,100%{transform:translateY(0)}80%{transform:translateY(-10px)}}
+  @media (max-width:560px){.e4-card{padding:28px 18px 32px}.e4-num{font-size:84px}.e4-star{width:84px;height:84px}.e4-title{font-size:28px}}
+  @media (prefers-reduced-motion:reduce){.e4-needle,.e4-trail,.e4-pin,.e4-num span{animation:none}}
+</style>

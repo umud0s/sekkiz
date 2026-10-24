@@ -168,6 +168,8 @@ main{flex:1 0 auto}
 .hs-pw{position:relative}
 .hs-pw .hs-in{padding-right:92px}
 .hs-eye{position:absolute;right:6px;top:50%;transform:translateY(-50%);min-height:36px;padding:0 12px;border-radius:9px;border:0;background:#EEF5F9;color:var(--accent);font:inherit;font-size:14px;font-weight:600;cursor:pointer}
+.hs-sub{margin-top:12px}
+select.hs-in{appearance:auto;cursor:pointer}
 .hs-hint{margin:0;font-size:14px;color:var(--muted)}
 .hs-hint.ok{color:#2E7D32}.hs-hint.bad{color:#C8102E}
 .hs-err{margin:16px 0 0;padding:10px 14px;border-radius:12px;background:#FDECEC;color:#9B1C1C;font-weight:500}

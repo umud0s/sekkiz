@@ -42,6 +42,19 @@ const facets = tips.flatMap((t, k) => [
     </figure>
   </section>
 
+  <section class="wrap hbg" aria-labelledby="hbg-h">
+    <div class="card hbg-card">
+      <div class="hbg-top">
+        <div class="hbg-tt">
+          <span class="hbg-kick">Tarixdə bu gün</span>
+          <h2 id="hbg-h">&nbsp;</h2>
+        </div>
+        <a class="chip hbg-all" id="hbg-all" href="/tarix/">Təqvimə keç <span aria-hidden="true">→</span></a>
+      </div>
+      <div id="hbg-list" aria-live="polite"><noscript><p><a href="/tarix/">"Tarixdə bu gün" təqviminə keçin.</a></p></noscript></div>
+    </div>
+  </section>
+
   <section class="wrap" aria-label="Bölmələr" style="padding-bottom:72px">
     <h1 class="sr-only">Səkkizguşə: Azərbaycan dili, tarixi və milli irsi</h1>
     <div class="home-grid">
@@ -80,7 +93,37 @@ const facets = tips.flatMap((t, k) => [
   </section>
 </Base>
 
+<script>
+  import '../styles/tarix-ikon.css';
+  import { BY_DAY, EVENT_DAYS, key, dateTitle, slug, TYPES, icon } from '../lib/tarix.js';
+  import { esc } from '../lib/search.js';
+  // Bu gün Bakı vaxtı ilə: saytı xaricdən açan da Azərbaycanın bugünkü tarixini görür
+  const p = Object.fromEntries(new Intl.DateTimeFormat('en-GB', { timeZone: 'Asia/Baku', month: 'numeric', day: 'numeric' }).formatToParts(new Date()).map((x) => [x.type, +x.value]));
+  const m = p.month, d = p.day;
+  // Bu gün üçün qeyd yoxdursa, ən yaxın gələn tarixin hadisələri göstərilir
+  let [am, ad] = [m, d];
+  if (!BY_DAY[key(m, d)]) [am, ad] = EVENT_DAYS.find(([a, b]) => a > m || (a === m && b > d)) || EVENT_DAYS[0];
+  const ev = BY_DAY[key(am, ad)] || [];
+  const list = (e) => `<ol class="tl hbg-tl">${e.map((x) => `<li class="tl-i">${icon(x.t)}<div class="tl-b"><div class="tl-h"><span class="tl-y">${x.y}</span><span class="tl-t" style="color:${TYPES[x.t].c}">${esc(TYPES[x.t].label)}</span></div><h3>${esc(x.title)}</h3><p>${esc(x.text)}</p></div></li>`).join('')}</ol>`;
+  document.getElementById('hbg-h').textContent = dateTitle(m, d);
+  document.getElementById('hbg-all').href = `/tarix/bu-gun/${slug(am, ad)}/`;
+  document.getElementById('hbg-list').innerHTML = am === m && ad === d
+    ? list(ev)
+    : `<p class="hbg-near">Yaxın tarixdə, <b>${esc(dateTitle(am, ad))}</b>:</p>${list(ev)}`;
+</script>
+
 <style>
+  .hbg{padding-bottom:32px}
+  .hbg-card{padding:26px 30px}
+  .hbg-top{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:20px}
+  .hbg-tt{display:flex;flex-direction:column;gap:2px}
+  .hbg-kick{font-size:14px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--accent)}
+  .hbg-top h2{margin:0;font-size:34px;font-weight:500;line-height:1.1}
+  .hbg-all{font-weight:600}
+  :global(.hbg-near){margin:0 0 14px;color:var(--muted)}
+  :global(.hbg-tl .tl-b h3){font-size:20px}
+  :global(.hbg-tl .tl-b p){font-size:16px}
+  @media (max-width:640px){.hbg-card{padding:20px 18px}.hbg-top h2{font-size:28px}}
   .hero{display:flex;justify-content:center;padding-top:12px;padding-bottom:40px}
   .hero figure{position:relative;overflow:hidden;margin:0;width:100%;max-width:none;padding:40px 48px 36px;border-radius:28px;background:linear-gradient(135deg,#FFFFFF 0%,#EEF6FA 100%);border:1px solid var(--line);box-shadow:var(--shadow);display:flex;flex-direction:column;align-items:center;gap:18px;text-align:center}
   .hero figure::before{content:'';position:absolute;inset:0 0 auto 0;height:6px;background:linear-gradient(90deg,#509E2F 0 33.3%,#EF3340 33.3% 66.6%,#00B5E2 66.6%)}

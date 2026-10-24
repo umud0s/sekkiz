@@ -3,18 +3,7 @@ import Base from '../../layouts/Base.astro';
 import { STATUSLAR, AVATAR_IDLER, SIFRE_MIN } from '../../lib/hesab-sabit.js';
 import { SIMVOL, avatarSvg } from '../../lib/simvollar.js';
 
-// Universitet sahəsində təklif olunan adlar (siyahıda olmayanı da yazmaq olar)
-const UNIVERSITETLER = [
-  'Bakı Dövlət Universiteti', 'ADA Universiteti', 'Azərbaycan Dövlət Neft və Sənaye Universiteti', 'Azərbaycan Texniki Universiteti',
-  'Azərbaycan Dövlət İqtisad Universiteti (UNEC)', 'Azərbaycan Dövlət Pedaqoji Universiteti', 'Azərbaycan Tibb Universiteti',
-  'Azərbaycan Dillər Universiteti', 'Bakı Mühəndislik Universiteti', 'Bakı Ali Neft Məktəbi', 'Azərbaycan Memarlıq və İnşaat Universiteti',
-  'Bakı Slavyan Universiteti', 'Azərbaycan Dövlət Mədəniyyət və İncəsənət Universiteti', 'Bakı Musiqi Akademiyası',
-  'Azərbaycan Dövlət Rəssamlıq Akademiyası', 'Azərbaycan Dövlət Bədən Tərbiyəsi və İdman Akademiyası', 'Milli Aviasiya Akademiyası',
-  'Azərbaycan Dövlət Dəniz Akademiyası', 'Azərbaycan Turizm və Menecment Universiteti', 'Azərbaycan Kooperasiya Universiteti',
-  'Azərbaycan Universiteti', 'Xəzər Universiteti', 'Odlar Yurdu Universiteti', 'Bakı Biznes Universiteti', 'Gəncə Dövlət Universiteti',
-  'Azərbaycan Dövlət Aqrar Universiteti', 'Azərbaycan Texnologiya Universiteti', 'Naxçıvan Dövlət Universiteti', 'Sumqayıt Dövlət Universiteti',
-  'Lənkəran Dövlət Universiteti', 'Mingəçevir Dövlət Universiteti', 'Qarabağ Universiteti',
-];
+import { ERAZILER, UNI_SEHERLER, XARICDE } from '../../data/tehsil.js';
 ---
 <Base title="Qeydiyyat" description="Səkkizguşədə hesab yarat: oyunlardakı nəticələrin ümumi reytinqə düşsün.">
   <div class="wrap section">
@@ -60,13 +49,29 @@ const UNIVERSITETLER = [
           {Object.entries(STATUSLAR).map(([k, v]) => <button type="button" class="hs-opt" role="radio" aria-checked="false" data-st={k}>{v}</button>)}
         </div>
         <div class="hs-f" id="f-mekteb" hidden>
-          <label for="mekteb">Hazırda oxuduğun məktəb</label>
-          <input class="hs-in" id="mekteb" maxlength="120" placeholder="Məsələn: Gəncə şəhəri, 5 nömrəli tam orta məktəb" />
+          <label for="m-yer">Məktəbin yerləşdiyi şəhər və ya rayon</label>
+          <select class="hs-in" id="m-yer"><option value="">Seç</option>{ERAZILER.map((e) => <option value={e}>{e}</option>)}</select>
+          <div class="hs-f hs-sub" id="m-sec" hidden>
+            <label for="m-ad">Məktəbin</label>
+            <select class="hs-in" id="m-ad"></select>
+          </div>
+          <div class="hs-f hs-sub" id="m-el" hidden>
+            <label for="mekteb">Məktəbin adı</label>
+            <input class="hs-in" id="mekteb" maxlength="100" placeholder="Məsələn: 5 nömrəli tam orta məktəb" />
+            <p class="hs-hint" id="m-el-h"></p>
+          </div>
         </div>
         <div class="hs-f" id="f-uni" hidden>
-          <label for="uni">Hazırda təhsil aldığın universitet</label>
-          <input class="hs-in" id="uni" maxlength="120" list="uni-l" placeholder="Yazmağa başla, siyahıdan seç" />
-          <datalist id="uni-l">{UNIVERSITETLER.map((u) => <option value={u} />)}</datalist>
+          <label for="u-yer">Universitetin yerləşdiyi şəhər</label>
+          <select class="hs-in" id="u-yer"><option value="">Seç</option>{UNI_SEHERLER.map((e) => <option value={e}>{e}</option>)}<option value={XARICDE}>{XARICDE}</option></select>
+          <div class="hs-f hs-sub" id="u-sec" hidden>
+            <label for="u-ad">Universitetin</label>
+            <select class="hs-in" id="u-ad"></select>
+          </div>
+          <div class="hs-f hs-sub" id="u-el" hidden>
+            <label for="uni">Universitetin adı</label>
+            <input class="hs-in" id="uni" maxlength="100" />
+          </div>
         </div>
         <p class="hs-err" id="e2" hidden></p>
         <div class="hs-row"><button class="btn btn-s" type="button" data-back="1">Geri</button><button class="btn btn-p" type="submit">Davam et</button></div>
@@ -106,6 +111,7 @@ const UNIVERSITETLER = [
 
 <script>
   import { api, setCached, avatarSvg, adHtml } from '../../lib/hesab.js';
+  import { mektebleri, UNIVERSITETLER, XARICDE } from '../../data/tehsil.js';
   import { AD_RE, USER_RE, SIFRE_MIN } from '../../lib/hesab-sabit.js';
 
   const $ = (id) => document.getElementById(id);
@@ -166,19 +172,56 @@ const UNIVERSITETLER = [
     document.querySelectorAll('[data-st]').forEach((x) => x.setAttribute('aria-checked', String(x === b)));
     $('f-mekteb').hidden = v.status !== 'mekteb';
     $('f-uni').hidden = v.status !== 'universitet';
-    const f = v.status === 'mekteb' ? $('mekteb') : v.status === 'universitet' ? $('uni') : null;
+    const f = v.status === 'mekteb' ? $('m-yer') : v.status === 'universitet' ? $('u-yer') : null;
     err(2);
     // Məktəbli və tələbədən əlavə sual soruşulur, qalanları dərhal növbəti addıma keçir
     if (f) f.focus();
     else setTimeout(() => $('s2').requestSubmit(), 250);
   }));
+  // Əvvəlcə şəhər seçilir, sonra onun siyahısı açılır (əlifba və rəqəm sırası ilə).
+  // Siyahı yoxdursa və ya "Siyahıda yoxdur" seçilsə, ad əl ilə yazılır.
+  const YOX = '__yox';
+  const doldur = (sel, list) => {
+    sel.innerHTML = '<option value="">Seç</option>' + list.map((x) => `<option>${x.replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c])}</option>`).join('') + `<option value="${YOX}">Siyahıda yoxdur</option>`;
+  };
+  $('m-yer').addEventListener('change', () => {
+    const list = mektebleri($('m-yer').value);
+    $('m-sec').hidden = !$('m-yer').value || !list.length;
+    $('m-el').hidden = !$('m-yer').value || !!list.length;
+    $('m-el-h').textContent = list.length ? '' : 'Bu ərazinin məktəb siyahısı hələ əlavə olunmayıb. Məktəbin adını özün yaz.';
+    if (list.length) { doldur($('m-ad'), list); $('m-ad').focus(); } else if ($('m-yer').value) $('mekteb').focus();
+    err(2);
+  });
+  $('m-ad').addEventListener('change', () => { $('m-el').hidden = $('m-ad').value !== YOX; $('m-el-h').textContent = ''; if ($('m-ad').value === YOX) $('mekteb').focus(); });
+  $('u-yer').addEventListener('change', () => {
+    const y = $('u-yer').value, list = UNIVERSITETLER[y] || [];
+    $('u-sec').hidden = !list.length;
+    $('u-el').hidden = y !== XARICDE;
+    if (list.length) { doldur($('u-ad'), list); $('u-ad').focus(); } else if (y === XARICDE) $('uni').focus();
+    err(2);
+  });
+  $('u-ad').addEventListener('change', () => { $('u-el').hidden = $('u-ad').value !== YOX; if ($('u-ad').value === YOX) $('uni').focus(); });
+  function mektebDeyeri() {
+    const yer = $('m-yer').value;
+    if (!yer) return '';
+    const ad = !$('m-sec').hidden && $('m-ad').value !== YOX ? $('m-ad').value : $('mekteb').value.trim();
+    return ad ? `${yer}, ${ad}` : '';
+  }
+  function uniDeyeri() {
+    const yer = $('u-yer').value;
+    if (!yer) return '';
+    if (yer === XARICDE) { const ad = $('uni').value.trim(); return ad ? `${ad} (xaricdə)` : ''; }
+    return $('u-ad').value === YOX ? $('uni').value.trim() : $('u-ad').value;
+  }
   $('s2').addEventListener('submit', (e) => {
     e.preventDefault();
     if (!v.status) return err(2, 'Statusunu seç.');
-    v.mekteb = v.status === 'mekteb' ? $('mekteb').value.trim() : '';
-    v.universitet = v.status === 'universitet' ? $('uni').value.trim() : '';
-    if (v.status === 'mekteb' && v.mekteb.length < 2) return err(2, 'Oxuduğun məktəbi yaz.');
-    if (v.status === 'universitet' && v.universitet.length < 2) return err(2, 'Təhsil aldığın universiteti yaz.');
+    v.mekteb = v.status === 'mekteb' ? mektebDeyeri() : '';
+    v.universitet = v.status === 'universitet' ? uniDeyeri() : '';
+    if (v.status === 'mekteb' && !$('m-yer').value) return err(2, 'Məktəbin yerləşdiyi şəhəri və ya rayonu seç.');
+    if (v.status === 'mekteb' && v.mekteb.length < 4) return err(2, 'Oxuduğun məktəbi seç və ya adını yaz.');
+    if (v.status === 'universitet' && !$('u-yer').value) return err(2, 'Universitetin yerləşdiyi şəhəri seç.');
+    if (v.status === 'universitet' && v.universitet.length < 2) return err(2, 'Təhsil aldığın universiteti seç və ya adını yaz.');
     err(2); step(3);
   });
 
