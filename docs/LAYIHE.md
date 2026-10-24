@@ -460,3 +460,6 @@ göllər, milli parklar və qoruqlar əlavə olunsun, suallar az təkrarlansın.
   Sualın üstündə "Kömək haqların" panelində qızılı düymələr; istifadə olunmayan parlayır, istifadə olunanın üstündən qırmızı xətt keçir.
 - Reytinqdə hər kəsin vaxtı yazılır (istifadəçi tələbi): vaxt = çatılan pilləyə qədər suallara sərf olunan müddət (catdi[pillə]);
   sıra: pillə, sonra vaxt. Bu dəyişiklikdən əvvəlki nəticələrdə vaxt yoxdur ("—"), oyunçu yenidən oynayanda doldurulur.
+- Reytinq düz cavab sayına keçdi (24.10.2026, istifadəçi tələbi: "pilləni yox, ümumi düz cavab sayını göstər"):
+  xal = bir oyunda verilən düz cavab sayı (səhvdən əvvəlki), vaxt = o saya çatma müddəti; cədvəldə "Düz cavab" və "Vaxt" sütunları.
+  API {oyun:'diyar', duz, vaxt} göndərir (köhnə "pille" sahəsi də qəbul olunur). Əvvəlki nəticələrdə xal qorunan pillə idi.

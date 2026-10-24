@@ -79,7 +79,7 @@ const KENDSAY = Object.values(KENDLER).flat().length;
     </section>
     <section id="t-reyt" class="card dy-rt" hidden>
       <h2>Ümumi reytinq</h2>
-      <p class="muted">Oyunçular çatdıqları ən yüksək pilləyə görə sıralanır. Eyni pillədə olanlar arasında o pilləyə daha tez çatan öndədir. Vaxt yalnız suallara fikirləşmə müddətidir.</p>
+      <p class="muted">Oyunçular bir oyunda verdikləri ən çox düz cavab sayına görə sıralanır. Bərabər olanda o sayda düz cavaba daha tez çatan öndədir. Vaxt yalnız suallara fikirləşmə müddətidir.</p>
       <Reytinq oyun="diyar" />
     </section>
     <p class="muted dy-src">Suallar bazası: {SUALLAR.length} seçilmiş sual və {KENDSAY} kənd, qəsəbə. Kənd və qəsəbələrin hansı rayonda olduğu Dövlət Statistika Komitəsinin "İnzibati ərazi bölgüsü təsnifatı" (2024) üzrə verilir.</p>
@@ -189,7 +189,7 @@ const KENDSAY = Object.values(KENDLER).flat().length;
   const N = PILLELER.length; // 15 sual: 5 asan, 5 orta, 5 çətin
   let qs = [], k = 0, helpUsed = false, halfUsed = false, busy = false, cur = null, timer = 0, left = 0, limit = 0;
   // Cavablara sərf olunan vaxt (cavabın açılma animasiyası daxil deyil): eyni pillədəkilər bununla sıralanır
-  let qStart = 0, spent = 0, catdi = [0]; // catdi[n]: n-ci pilləyə çatana qədər sərf olunan vaxt
+  let qStart = 0, spent = 0, catdi = [0]; // catdi[n]: n düz cavaba çatana qədər sərf olunan vaxt
   // Vaxt: ilk 5 sual 20, növbəti 5 sual 30, son 2 sual 40 saniyə
   const LIMIT = (i) => (i < 5 ? 20 : i < 10 ? 30 : 40);
   const LVL = (i) => (i < 5 ? ['l1', 'Asan'] : i < 10 ? ['l2', 'Orta'] : ['l3', 'Çətin']);
@@ -312,7 +312,8 @@ const KENDSAY = Object.values(KENDLER).flat().length;
     st.oyun++; st.enYuksek = Math.max(st.enYuksek, level);
     for (let i = 0; i < level; i++) if (!st.hediyye.includes(i)) st.hediyye.push(i);
     save(st); xezine();
-    if (level > 0) gonder('diyar', { pille: level, vaxt: Math.round(catdi[level]) });
+    // Reytinqə düz cavabların sayı və ona çatma vaxtı gedir (qorunan pillə yox)
+    if (k > 0) gonder('diyar', { duz: k, vaxt: Math.round(catdi[k]) });
     const p = prizeAt(level);
     const head = kind === 'win' ? 'Təbriklər, böyük diyarşünas!' : kind === 'stop' ? 'Ağıllı qərar!' : kind === 'time' ? 'Vaxt bitdi.' : 'Təəssüf, cavab səhv oldu.';
     const txt = kind === 'win' ? `Bütün ${N} sualı ${sec(spent)} ərzində doğru cavablandırdın. Azərbaycanı yaxşı tanıyırsan!` : kind === 'stop' ? `${k} suala doğru cavab verib dayandın.` : `Düzgün cavab: <b>${esc(cur.ans)}</b>. ${k} suala doğru cavab verdin.`;

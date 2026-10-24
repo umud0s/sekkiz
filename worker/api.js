@@ -156,9 +156,10 @@ const QAYDA = {
   },
   diyar: {
     oxu(b) {
-      const p = Math.trunc(+b.pille), vaxt = b.vaxt == null ? null : Math.round(+b.vaxt);
+      // xal: oyunda verilən düz cavabların sayı (köhnə "pille" sahəsi də qəbul olunur)
+      const p = Math.trunc(+(b.duz ?? b.pille)), vaxt = b.vaxt == null ? null : Math.round(+b.vaxt);
       if (!(p >= 0 && p <= DIYAR_SUAL)) return null;
-      // Vaxt: həmin pilləyə çatana qədər sərf olunan müddət. 15 sualın limitlərinin cəmi 450 saniyədir; hər suala ən azı 1 saniyə lazımdır
+      // Vaxt: bu sayda düz cavaba çatana qədər sərf olunan müddət. 15 sualın limitlərinin cəmi 450 saniyədir; hər suala ən azı 1 saniyə lazımdır
       if (vaxt != null && !(vaxt >= p * 1000 && vaxt <= 455000)) return null;
       return { xal: p, vaxt };
     },
