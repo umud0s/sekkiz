@@ -437,8 +437,10 @@ Ortaq qaydalar: src/lib/hesab-sabit.js (statuslar, 12 avatar, oyunlar, ad/istifa
 Səhifələr: /hesab/qeydiyyat/ (4 addım), /hesab/giris/ (?geri= ilə oyuna qayıdır), /hesab/ (profil: nəticələr, şəkil, şifrə, çıxış),
 /hesab/idare/ (noindex: ADMIN_KEY ilə şifrəni unudan istifadəçiyə yeni şifrə, hesabı silmək). Menyunun sağında "Daxil ol" / şəkil + ad.
 Reytinq (src/components/Reytinq.astro, ilk 50 + öz yerin):
-- Xəritəni tamamla: ən çox tapılan ərazi, bərabərdə tamamlama vaxtı (75 ərazi 60 saniyədən tez qəbul olunmur).
-- Diyarşünas: ən yüksək pillə (0-12), bərabərdə ona daha tez çatan; "Reytinq" sekməsi.
+- Xəritəni tamamla: 75/75 tapanlar tamamlama vaxtına görə, qalanlar tapılan sayına görə (75 ərazi 60 saniyədən tez qəbul olunmur).
+  Xəritə və Diyarşünas cədvəllərində nəticə iki sütundadır: Tapılan/Pillə və Vaxt (24.10.2026, istifadəçi tələbi).
+- Diyarşünas: ən yüksək pillə (0-12); 12/12 keçənlər cavablara sərf olunan ümumi vaxta görə (cavabın açılma animasiyası daxil deyil,
+  12-335 san qəbul olunur), qalanlar bərabərdə pilləyə daha tez çatana görə. "Reytinq" sekməsi açılanda cədvəl təzələnir.
 - Sözü tap: ümumi xal (hər doğru cavab 10/5 xal göndərilir, iki göndəriş arası ən az 1,5 san).
 - Xalça yarat: yaradıcı oyundur, xalı yoxdur, reytinqi yoxdur.
 Lokal test: wrangler 4.139.0 (scratchpad-də), `wrangler dev --local`, .dev.vars-da ADMIN_KEY (gitignore).

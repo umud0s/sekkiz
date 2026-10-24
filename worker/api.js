@@ -155,9 +155,15 @@ const QAYDA = {
     sira: 'r.xal DESC, (r.vaxt IS NULL), r.vaxt ASC, r.updated ASC',
   },
   diyar: {
-    oxu(b) { const p = Math.trunc(+b.pille); return p >= 0 && p <= 12 ? { xal: p, vaxt: null } : null; },
-    birlesdir: (k, y) => (!k || y.xal > k.xal ? y : null),
-    sira: 'r.xal DESC, r.updated ASC',
+    oxu(b) {
+      const p = Math.trunc(+b.pille), vaxt = b.vaxt == null ? null : Math.round(+b.vaxt);
+      if (!(p >= 0 && p <= 12)) return null;
+      // 12 sualın vaxt limitlərinin cəmi 330 saniyədir; 12 sualı 12 saniyədən tez cavablamaq mümkün deyil
+      if (p === 12 && vaxt != null && !(vaxt >= 12000 && vaxt <= 335000)) return null;
+      return { xal: p, vaxt: p === 12 ? vaxt : null };
+    },
+    birlesdir: (k, y) => (!k || y.xal > k.xal || (y.xal === k.xal && y.vaxt != null && (k.vaxt == null || y.vaxt < k.vaxt)) ? y : null),
+    sira: 'r.xal DESC, (r.vaxt IS NULL), r.vaxt ASC, r.updated ASC',
   },
   sozu: {
     oxu(b) { const x = Math.trunc(+b.xal); return x === 5 || x === 10 ? { xal: x, vaxt: null } : null; },

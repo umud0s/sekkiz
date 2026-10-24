@@ -70,7 +70,7 @@ const KENDSAY = Object.values(KENDLER).flat().length;
     </section>
     <section id="t-reyt" class="card dy-rt" hidden>
       <h2>Ümumi reytinq</h2>
-      <p class="muted">Oyunçular çatdıqları ən yüksək pilləyə görə sıralanır. Bərabər pillədə ona daha tez çatan öndədir.</p>
+      <p class="muted">12 pillənin hamısını keçənlər ən yuxarıda durur və cavablara sərf etdikləri vaxta görə sıralanır: kim daha tez cavablandırıbsa, o öndədir. Qalanlar çatdıqları ən yüksək pilləyə görə düzülür.</p>
       <Reytinq oyun="diyar" />
     </section>
     <p class="muted dy-src">Suallar bazası: {SUALLAR.length} seçilmiş sual və {KENDSAY} kənd, qəsəbə. Kənd və qəsəbələrin hansı rayonda olduğu Dövlət Statistika Komitəsinin "İnzibati ərazi bölgüsü təsnifatı" (2024) üzrə verilir.</p>
@@ -169,6 +169,8 @@ const KENDSAY = Object.values(KENDLER).flat().length;
   // Çətinlik: əvvəl tanınmış abidə və şəxsiyyətlər, sonra qala və məscidlər, axırda kənd və su anbarları
   const W = { sexs: 1, abide: 1, mescid: 2, qala: 2, kend: 3, su: 3 };
   let qs = [], k = 0, helpUsed = false, busy = false, cur = null, timer = 0, left = 0, limit = 0;
+  // Cavablara sərf olunan ümumi vaxt (cavabın açılma animasiyası daxil deyil): 12 pilləni keçənlər bununla sıralanır
+  let qStart = 0, spent = 0;
   // Vaxt: ilk 5 sual 20, növbəti 5 sual 30, son 2 sual 40 saniyə
   const LIMIT = (i) => (i < 5 ? 20 : i < 10 ? 30 : 40);
   const LVL = (i) => (i < 5 ? ['l1', 'Asan'] : i < 10 ? ['l2', 'Orta'] : ['l3', 'Çətin']);
@@ -181,6 +183,7 @@ const KENDSAY = Object.values(KENDLER).flat().length;
   function startTimer() {
     clearInterval(timer); limit = LIMIT(k); left = limit; tick();
     const t0 = performance.now();
+    qStart = t0;
     timer = setInterval(() => {
       left = limit - (performance.now() - t0) / 1000;
       if (left <= 0) { left = 0; tick(); clearInterval(timer); timeUp(); return; }
@@ -260,6 +263,7 @@ const KENDSAY = Object.values(KENDLER).flat().length;
     ladder();
     startTimer();
   }
+  const sec = (ms) => { const s = Math.round(ms / 1000), m = Math.floor(s / 60); return m ? `${m} dəqiqə ${s % 60} saniyə` : `${s} saniyə`; };
   function prizeAt(level) { return level > 0 ? PILLELER[level - 1][0] : null; }
   function end(kind) {
     const st = load();
@@ -269,10 +273,10 @@ const KENDSAY = Object.values(KENDLER).flat().length;
     st.oyun++; st.enYuksek = Math.max(st.enYuksek, level);
     for (let i = 0; i < level; i++) if (!st.hediyye.includes(i)) st.hediyye.push(i);
     save(st); xezine();
-    if (level > 0) gonder('diyar', { pille: level });
+    if (level > 0) gonder('diyar', kind === 'win' ? { pille: level, vaxt: Math.round(spent) } : { pille: level });
     const p = prizeAt(level);
     const head = kind === 'win' ? 'Təbriklər, böyük diyarşünas!' : kind === 'stop' ? 'Ağıllı qərar!' : kind === 'time' ? 'Vaxt bitdi.' : 'Təəssüf, cavab səhv oldu.';
-    const txt = kind === 'win' ? 'Bütün 12 sualı doğru cavablandırdın. Azərbaycanı yaxşı tanıyırsan!' : kind === 'stop' ? `${k} suala doğru cavab verib dayandın.` : `Düzgün cavab: <b>${esc(cur.ans)}</b>. ${k} suala doğru cavab verdin.`;
+    const txt = kind === 'win' ? `Bütün 12 sualı ${sec(spent)} ərzində doğru cavablandırdın. Azərbaycanı yaxşı tanıyırsan!` : kind === 'stop' ? `${k} suala doğru cavab verib dayandın.` : `Düzgün cavab: <b>${esc(cur.ans)}</b>. ${k} suala doğru cavab verdin.`;
     $('res').innerHTML = `<h2>${head}</h2><p>${txt}</p>` + (p ? `<span class="dy-prize"><span>Qazandığın hədiyyə</span><b>${esc(p)}</b></span>` : '<p>Bu dəfə hədiyyə qazanılmadı, növbəti oyunda mütləq alınacaq.</p>')
       + (cached() ? '' : '<p class="dy-acc">Nəticən reytinqə düşsün deyə <a href="/hesab/qeydiyyat/">qeydiyyatdan keç</a> və ya <a href="/hesab/giris/?geri=/xerite/diyarsunas/">daxil ol</a>.</p>');
     $('play').hidden = true; $('done').hidden = false;
@@ -282,6 +286,7 @@ const KENDSAY = Object.values(KENDLER).flat().length;
     const b = e.target.closest('button'); if (!b || busy) return;
     busy = true;
     stopTimer();
+    spent += performance.now() - qStart;
     const btns = [...$('ans').querySelectorAll('button')];
     btns.forEach((x) => { x.disabled = true; });
     b.classList.add('lock');
@@ -306,7 +311,7 @@ const KENDSAY = Object.values(KENDLER).flat().length;
   });
   $('stop').addEventListener('click', () => { if (!busy && k > 0) end('stop'); });
   function start() {
-    qs = build(); k = 0; helpUsed = false;
+    qs = build(); k = 0; helpUsed = false; spent = 0;
     $('intro').hidden = true; $('done').hidden = true; $('play').hidden = false;
     show();
     if (ac && ac.state === 'suspended') ac.resume();
@@ -325,6 +330,7 @@ const KENDSAY = Object.values(KENDLER).flat().length;
     $('t-oyun').hidden = b.dataset.tab !== 'oyun';
     $('t-xezine').hidden = b.dataset.tab !== 'xezine';
     $('t-reyt').hidden = b.dataset.tab !== 'reyt';
+    if (b.dataset.tab === 'reyt') dispatchEvent(new CustomEvent('sk-reytinq', { detail: 'diyar' })); // cədvəl təzələnir
   }));
   xezine();
 </script>

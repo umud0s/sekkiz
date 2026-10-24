@@ -135,7 +135,7 @@ main{flex:1 0 auto}
 .rt-tbl tr.gap td{text-align:center;color:var(--muted);padding:2px}
 .rt-yer{width:52px;font-weight:600;color:var(--muted-2)}
 .rt-n{white-space:nowrap;text-align:right;font-weight:600;color:var(--accent-dark)}
-.rt-tbl th:last-child{text-align:right}
+.rt-tbl th.rt-h{text-align:right}
 .rt-o{display:flex;align-items:center;gap:10px;min-width:0}
 .rt-o .nm{font-weight:600;color:var(--ink)}
 .un{color:var(--muted);font-weight:500}
