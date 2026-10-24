@@ -81,11 +81,19 @@ const SYMS = ['alov', 'buta', 'semeni', 'nar', 'xaribulbul', 'sunbul', 'bayraq',
       el.classList.add('out');
       setTimeout(() => { el.remove(); document.documentElement.classList.remove('sk-intro'); }, 480);
     }
+    // Sonda qalan simvol hər dəfə fərqlidir: başlanğıc guşə təsadüfi seçilir, əvvəlki girişdəki son simvol təkrarlanmır
+    let son = -1;
+    try { son = +(localStorage.getItem('sk-intro-son') ?? -1); } catch { /* yaddaş bağlıdır */ }
+    const secim = [0, 1, 2, 3, 4, 5, 6, 7].filter((i) => i !== son);
+    const sonuncu = secim[Math.floor(Math.random() * secim.length)], bas = (sonuncu + 1) % 8;
+    try { localStorage.setItem('sk-intro-son', String(sonuncu)); } catch { /* yaddaş bağlıdır */ }
+    // Başlanğıc guşəni yuxarı gətir (keçidsiz)
+    rot.style.transition = 'none'; rot.style.transform = `rotate(${-bas * 45}deg)`; void rot.getBBox(); rot.style.transition = '';
     // Hər addımda ulduz 45° dönür, növbəti guşə yuxarı gəlir və onun simvolu yanır
-    later(() => light(0), 180);
+    later(() => light(bas), 180);
     for (let k = 1; k < 8; k++) {
-      later(() => { if (!calm) rot.style.transform = `rotate(${-k * 45}deg)`; }, 180 + k * STEP);
-      later(() => light(k), 180 + k * STEP + (calm ? 0 : 170));
+      later(() => { if (!calm) rot.style.transform = `rotate(${-(bas + k) * 45}deg)`; }, 180 + k * STEP);
+      later(() => light((bas + k) % 8), 180 + k * STEP + (calm ? 0 : 170));
     }
     const all = 180 + 8 * STEP + 150;
     const ready = new Promise((ok) => (document.readyState === 'complete' ? ok() : addEventListener('load', ok, { once: true })));

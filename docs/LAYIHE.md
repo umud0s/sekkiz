@@ -415,6 +415,8 @@ Hər ikisi president.az-da sözbəsöz yoxlanmalıdır (ikinci sitatın orijinal
 Ulduz hər addımda 45° dönür (260 ms), yuxarı gələn guşənin simvolu rənglənir və yanılı qalır (proqres kimi), altda adı yazılır.
 Simvollar ardıcıllıqla: Alov, Buta, Səməni, Nar, Xarıbülbül, Sünbül, Bayraq, Xalça. ("Hilal" əvvəl qırmızı dairədə ağ aypara idi,
 Türkiyə bayrağına bənzədiyi üçün Azərbaycan bayrağının kiçik təsviri ilə əvəz olundu.)
+Sonda qalan simvol hər dəfə fərqlidir (istifadəçi tələbi): başlanğıc guşə təsadüfi seçilir, əvvəlki girişin son simvolu
+(localStorage "sk-intro-son") təkrarlanmır.
 Hər brauzer sessiyasında yalnız bir dəfə (sessionStorage "sk-intro"); <head>-dəki inline skript html-ə "sk-intro" sinfi verir,
 JS işləməsə ekran göstərilmir. 8 simvol yanandan və səhifə yüklənəndən sonra çəkilir (~3 san), maksimum 8 san;
 toxunuş/klik/düymə ilə keçmək olar; prefers-reduced-motion-da fırlanma yoxdur (~1,9 san). Skript düşsə belə 9 san-da CSS özü gizlədir.
