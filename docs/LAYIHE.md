@@ -228,7 +228,14 @@ Səhv → oyun bitir, son qorunan pillə qalır; "Dayan və hədiyyəni götür"
 Cavab seçiləndə 1,2 san narıncı "gərginlik", sonra doğru yaşıl/səhv qırmızı. "Xəzinəm": qazanılan hədiyyələr (localStorage sk-diyar).
 Suallar: src/data/diyar.js — 69 sual, 6 kateqoriya; səhv variantlar cavaba ən yaxın 7 ərazidən təsadüfi seçilir.
 Sərsəng su anbarı qəsdən salınmayıb: o, bərpa olunmuş Ağdərə rayonundadır, xəritə məlumatında Ağdərə yoxdur.
-Kəndlər üçün rəsmi mənbə gözlənilir (DSK-nın inzibati-ərazi bölgüsü təsnifatı və ya siyahıyaalmanın yaşayış məntəqələri cədvəli).
+Kəndlərin mənbəyi: DSK "İnzibati ərazi bölgüsü təsnifatı" (01.05.2024), repo kökündə Inzibati-1.05.2024.pdf (istifadəçi yüklədi).
+Kod quruluşu: 8 rəqəm, ilk 3-ü rayon, sonuncu növ (4 şəhər, 6 qəsəbə, 8 kənd, 5 ərazi dairəsi).
+scripts/dsk-kendler.py (pdftotext -layout ilə) → src/data/kendler.json: adı ölkədə təkrarlanmayan 3184 kənd/qəsəbə, 66 rayon;
+Bakı (istifadəçi istəyi: Bakının rayonlarına ehtiyac yoxdur), Ağdərə (xəritədə yoxdur) və şəhər vahidləri çıxarılıb; "q:" = qəsəbə.
+11-ci və 12-ci sual hər biri 50% ehtimalla bu siyahıdan gəlir: "X kəndi/qəsəbəsi hansı rayonun ərazisindədir?".
+IPUCU-da faktı olmayan rayon üçün kömək: iqtisadi rayon + rayon adının ilk hərfi.
+Mənbə ilə düzəlişlər (24.10.2026): Malıbəyli → Xocalı (əvvəl Şuşa idi); Qonaqkənd və Nic qəsəbədir; "Seyfəli" → Yuxarı Seyfəli
+(Şəmkirdə Aşağı və Yuxarı Seyfəli var); Lahıc qəsəbəsi İsmayıllıda (Zaqatalada eyniadlı kənd var), Zəyəm qəsəbəsi Şəmkirdə.
 
 ## "Sözü tap" oyunu (/atalar-sozleri/sozu-tap/; köhnə /quiz/ ünvanı 301 ilə yönləndirilir)
 Başlıq: "Atalar sözlərini nə qədər yaxşı bilirsən?". "Quiz" sözü işlədilmir (istifadəçi istəyi): Oyuna başla / Oyunu bitir. — 23.10.2026

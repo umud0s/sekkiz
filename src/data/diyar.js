@@ -2,6 +2,8 @@
 // Hər sual: [kateqoriya, sual, düzgün cavab (rayon və ya şəhər adı, xəritədəki kimi)].
 // Səhv variantlar düzgün cavaba yaxın ərazilərdən avtomatik seçilir.
 // QAYDA: buraya yalnız mənbə ilə dəqiqliyi yoxlanmış fakt yazılır.
+// Kənd və qəsəbələr DSK-nın "İnzibati ərazi bölgüsü təsnifatı" (2024) ilə tutuşdurulub.
+// Çətin suallar üçün əlavə kəndlər kendler.json-dadır (scripts/dsk-kendler.py).
 
 export const CATS = {
   abide: 'Tarixi abidələr',
@@ -42,7 +44,7 @@ export const SUALLAR = [
   // Kəndlər və qəsəbələr
   ['kend', 'Misgərliyi ilə məşhur Lahıc qəsəbəsi hansı rayondadır?', 'İsmayıllı'],
   ['kend', 'Xınalıq kəndi hansı rayondadır?', 'Quba'],
-  ['kend', 'Qonaqkənd kəndi hansı rayonun ərazisindədir?', 'Quba'],
+  ['kend', 'Qonaqkənd qəsəbəsi hansı rayonun ərazisindədir?', 'Quba'],
   ['kend', 'Qrız kəndi hansı rayondadır?', 'Quba'],
   ['kend', 'Cek kəndi hansı rayondadır?', 'Quba'],
   ['kend', 'Buduq kəndi hansı rayondadır?', 'Quba'],
@@ -51,11 +53,11 @@ export const SUALLAR = [
   ['kend', 'Ləkit kəndi hansı rayondadır?', 'Qax'],
   ['kend', 'Basqal qəsəbəsi hansı rayondadır?', 'İsmayıllı'],
   ['kend', 'İvanovka kəndi hansı rayondadır?', 'İsmayıllı'],
-  ['kend', 'Nic kəndi hansı rayondadır?', 'Qəbələ'],
-  ['kend', 'Malıbəyli kəndi hansı rayondadır?', 'Şuşa'],
+  ['kend', 'Udilərin yaşadığı Nic qəsəbəsi hansı rayondadır?', 'Qəbələ'],
+  ['kend', 'Malıbəyli kəndi hansı rayondadır?', 'Xocalı'],
   ['kend', 'İlk "ağıllı kənd" layihəsi həyata keçirilən Ağalı kəndi hansı rayondadır?', 'Zəngilan'],
   ['kend', 'Novxanı kəndi hansı rayondadır?', 'Abşeron'],
-  ['kend', 'Seyfəli kəndi hansı rayondadır?', 'Şəmkir'],
+  ['kend', 'Yuxarı Seyfəli kəndi hansı rayondadır?', 'Şəmkir'],
   ['kend', 'Yuxarı Salahlı kəndi hansı rayondadır?', 'Qazax'],
   ['kend', 'Şahtaxtı kəndi hansı rayondadır?', 'Kəngərli'],
   ['kend', 'Zəyəm qəsəbəsi hansı rayondadır?', 'Şəmkir'],

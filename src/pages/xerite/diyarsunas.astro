@@ -1,6 +1,8 @@
 ---
 import Base from '../../layouts/Base.astro';
 import { PILLELER, QORUNAN, SUALLAR } from '../../data/diyar.js';
+import KENDLER from '../../data/kendler.json';
+const KENDSAY = Object.values(KENDLER).flat().length;
 ---
 <Base title="Kim diyarşünas olmaq istəyir?" description="Azərbaycanın kəndləri, qalaları, abidələri, su anbarları, məscidləri və dahilərin doğulduğu yerlər haqqında 12 suallıq oyun. Pul yox, Azərbaycanın xəzinəsindən hədiyyələr.">
   <div class="wrap section">
@@ -64,7 +66,7 @@ import { PILLELER, QORUNAN, SUALLAR } from '../../data/diyar.js';
       <div class="dy-stat" id="stat"></div>
       <p class="muted xz-note">Xəzinə bu brauzerdə saxlanılır. İstifadəçi adı bölməsi açılanda hesabına köçürüləcək.</p>
     </section>
-    <p class="muted dy-src">Suallar bazası: {SUALLAR.length} sual. Bütün faktlar rəsmi mənbələrlə tutuşdurularaq tədricən genişləndirilir.</p>
+    <p class="muted dy-src">Suallar bazası: {SUALLAR.length} seçilmiş sual və {KENDSAY} kənd, qəsəbə. Kənd və qəsəbələrin hansı rayonda olduğu Dövlət Statistika Komitəsinin "İnzibati ərazi bölgüsü təsnifatı" (2024) üzrə verilir.</p>
   </div>
 </Base>
 
@@ -138,6 +140,7 @@ import { PILLELER, QORUNAN, SUALLAR } from '../../data/diyar.js';
 <script>
   import { SUALLAR, CATS, IPUCU, PILLELER, QORUNAN } from '../../data/diyar.js';
   import D from '../../data/xerite-data.json';
+  import KENDLER from '../../data/kendler.json';
 
   const $ = (id) => document.getElementById(id);
   const KEY = 'sk-diyar';
@@ -197,10 +200,19 @@ import { PILLELER, QORUNAN, SUALLAR } from '../../data/diyar.js';
   const sOk = () => [523, 659, 784].forEach((f, i) => tone(f, i * 0.1, 0.35));
   const sBad = () => [300, 220].forEach((f, i) => tone(f, i * 0.2, 0.4, 'sawtooth', 0.06));
 
+  // DSK siyahısından təsadüfi kənd və ya qəsəbə (adı ölkədə təkdir, Bakı daxil deyil)
+  const RAYONLAR = Object.keys(KENDLER);
+  function kendSuali(usedAns) {
+    const r = shuffle(RAYONLAR.filter((x) => !usedAns.has(x)))[0];
+    const ad = KENDLER[r][Math.floor(Math.random() * KENDLER[r].length)];
+    const q = ad.startsWith('q:');
+    return ['kend', `${q ? ad.slice(2) : ad} ${q ? 'qəsəbəsi' : 'kəndi'} hansı rayonun ərazisindədir?`, r];
+  }
   function build() {
     const pool = shuffle(SUALLAR.slice());
     const pick = [], usedAns = new Set();
     for (const w of [1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 3, 3]) {
+      if (w === 3 && Math.random() < 0.5) { const g = kendSuali(usedAns); pick.push(g); usedAns.add(g[2]); continue; }
       const i = pool.findIndex((q) => W[q[0]] === w && !usedAns.has(q[2]) && !pick.includes(q));
       const j = i >= 0 ? i : pool.findIndex((q) => !pick.includes(q));
       pick.push(pool[j]); usedAns.add(pool[j][2]);
@@ -274,7 +286,7 @@ import { PILLELER, QORUNAN, SUALLAR } from '../../data/diyar.js';
     if (helpUsed || busy) return;
     helpUsed = true; $('help').disabled = true;
     const u = unit(cur.ans);
-    $('hint').innerHTML = `<b>İpucu:</b> Bu ərazi ${esc(u.r)} iqtisadi rayonunda yerləşir. ${esc(IPUCU[cur.ans] || '')}`;
+    $('hint').innerHTML = `<b>İpucu:</b> Bu ərazi ${esc(u.r)} iqtisadi rayonunda yerləşir. ${esc(IPUCU[cur.ans] || `Rayonun adı "${cur.ans[0]}" hərfi ilə başlayır.`)}`;
     $('hint').hidden = false;
   });
   $('stop').addEventListener('click', () => { if (!busy && k > 0) end('stop'); });
