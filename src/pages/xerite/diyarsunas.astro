@@ -10,7 +10,7 @@ const KENDSAY = Object.values(KENDLER).flat().length;
     <section class="stack">
       <nav class="crumbs" aria-label="Yol"><a href="/">Ana səhifə</a> <span aria-hidden="true">/</span> <a href="/xerite/">Xəritə</a> <span aria-hidden="true">/</span> Diyarşünas</nav>
       <h1 class="page-title">Kim diyarşünas olmaq istəyir?</h1>
-      <p class="lead">15 sual, hər sualda 4 variant. Kəndlər, qalalar, abidələr, göllər, su anbarları, milli parklar, qoruqlar, təbii sərvətlər, qədim məscidlər və dahilərin doğulduğu yerlər. Hər doğru cavab səni xəzinəyə bir pillə yaxınlaşdırır.</p>
+      <p class="lead">15 sual, hər sualda 4 variant. Kəndlər, qalalar, abidələr, göllər, milli parklar, təbii sərvətlər, köhnə adlar, tarixi hadisələr, yerli məhsullar, qədim məscidlər və dahilərin doğulduğu yerlər. Hər doğru cavab səni xəzinəyə bir pillə yaxınlaşdırır.</p>
     </section>
 
     <div class="dy-tabs">
@@ -294,7 +294,7 @@ const KENDSAY = Object.values(KENDLER).flat().length;
   function show() {
     // Rayon olmayan cavablarda variantlar və ipucu sualın özündədir
     const [cat, q, ans, , vars, ipucu] = qs[k];
-    cur = { ans, ipucu, opts: vars ? shuffle(vars.slice()) : options(ans, k < 5 ? 1 : k < 10 ? 2 : 3) };
+    cur = { ans, cat, ipucu, opts: vars ? shuffle(vars.slice()) : options(ans, k < 5 ? 1 : k < 10 ? 2 : 3) };
     busy = false;
     $('cat').textContent = CATS[cat];
     $('qn').textContent = k + 1;
@@ -351,11 +351,13 @@ const KENDSAY = Object.values(KENDLER).flat().length;
       setTimeout(() => { if (k === N) end('win'); else show(); }, 1500);
     }, 1200);
   });
+  // Bu kateqoriyalarda ərazinin faktı cavabı açır (məs. Şabran: "keçmiş adı Dəvəçidir", Xocalı: soyqırımı), ipucuda yalnız iqtisadi rayon və ilk hərf verilir
+  const SADE = new Set(['kohne', 'mehsul', 'hadise']);
   $('help').addEventListener('click', () => {
     if (helpUsed || busy) return;
     helpUsed = true; $('help').disabled = true; $('help').classList.add('used');
     const u = unit(cur.ans);
-    $('hint').innerHTML = cur.ipucu ? `<b>İpucu:</b> ${esc(cur.ipucu)}` : `<b>İpucu:</b> Bu ərazi ${esc(u.r)} iqtisadi rayonunda yerləşir. ${esc(IPUCU[cur.ans] || `Rayonun adı "${cur.ans[0]}" hərfi ilə başlayır.`)}`;
+    $('hint').innerHTML = cur.ipucu ? `<b>İpucu:</b> ${esc(cur.ipucu)}` : `<b>İpucu:</b> Bu ərazi ${esc(u.r)} iqtisadi rayonunda yerləşir. ${esc((!SADE.has(cur.cat) && IPUCU[cur.ans]) || `Rayonun adı "${cur.ans[0]}" hərfi ilə başlayır.`)}`;
     $('hint').hidden = false;
   });
   // 50:50: iki səhv cavab silinir

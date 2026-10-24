@@ -478,3 +478,9 @@ göllər, milli parklar və qoruqlar əlavə olunsun, suallar az təkrarlansın.
 - Reytinq sıfırlandı (24.10.2026, istifadəçi istəyi: "bütün oyunlarda reytinqi sıfırla"): worker/api.js KOCURMELER siyahısında
   birdəfəlik "reytinq-sifir-2026-10-24" (DELETE FROM rekord); icra olunanlar "meta" cədvəlində qeyd olunur. Hesablar silinmir.
   Sonrakı sıfırlamalar üçün /hesab/idare/ səhifəsində "Reytinqi sıfırla" (bir oyun və ya hamısı, ADMIN_KEY ilə).
+- Yeni bölmələr (24.10.2026, istifadəçi seçimi): "Köhnə adlar" (kohne, 22 sual: Nuxa, Kirovabad, Yelizavetpol, Xanlar, Dəvəçi,
+  Vartaşen, Qutqaşen, Əli Bayramlı, Stepanakert, Qaryagin, Mir-Bəşir, Kasum-İsmayılov, Jdanov, Puşkin, Petropavlovka,
+  Astraxanbazar, Abdallar, Mərəzə, Əsgəran, Mardakert, Yelenendorf, Annenfeld), "Tarixi hadisələr" (hadise, 14 sual) və
+  "Yerli məhsullar və sənətkarlıq" (mehsul, 11 sual; xalça məktəbləri və UNESCO illəri "Ölkəni tanı" formatında).
+  Bu üç bölmədə İpucu rayonun faktını göstərmir (SADE), çünki fakt cavabı açır (məs. Şabran: "keçmiş adı Dəvəçidir").
+  Baza: 195 sual (asan 30, orta 78, çətin 87).
