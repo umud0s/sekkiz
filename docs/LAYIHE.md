@@ -470,3 +470,8 @@ göllər, milli parklar və qoruqlar əlavə olunsun, suallar az təkrarlansın.
   Çətinlik artırıldı (asan 15, orta 57, çətin 59 sual); səhv variantlar: asanda 7 qonşudan, ortada 5, çətində ən yaxın 3 ərazi.
   Kəndlər 43 seçilmiş suala çatdı (xalça kəndləri, tanınmış insanların doğulduğu kəndlər, mineral su kəndləri, 2024-də qaytarılan Aşağı Əskipara);
   çətin səviyyədə oyunda 2-yə qədər DSK kəndi (40% ehtimal). Son 90 sual yadda saxlanır, hamısı soruşulanda ən çoxdan soruşulan seçilir.
+- Yeni kateqoriyalar (24.10.2026, istifadəçi tələbi: ərazi sahəsi, ən böyük göl, ən uzun çay, təbii yataqlar):
+  "Təbii sərvətlər" (yatag, rayon sualı: Daşkəsən dəmir filizi, Gədəbəy qızılı, Bibiheybət 1846, Zəylik, Çovdar, Filizçay,
+  Söyüdlü, Vejnəli, Muradxanlı, Paraqaçay, Qaradağ qaz) və "Ölkəni tanı" (umumi: ərazi 86,6 min km², Kür, Bazardüzü, Mingəçevir,
+  Sarısu, Ermənistanla sərhəd, Xəzər sahili 825 km). Cavabı rayon olmayan sualda 5-ci element 4 variant, 6-cı element ipucudur.
+  Baza: 148 sual (asan 19, orta 61, çətin 68).

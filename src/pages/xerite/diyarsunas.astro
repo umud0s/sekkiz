@@ -10,7 +10,7 @@ const KENDSAY = Object.values(KENDLER).flat().length;
     <section class="stack">
       <nav class="crumbs" aria-label="Yol"><a href="/">Ana səhifə</a> <span aria-hidden="true">/</span> <a href="/xerite/">Xəritə</a> <span aria-hidden="true">/</span> Diyarşünas</nav>
       <h1 class="page-title">Kim diyarşünas olmaq istəyir?</h1>
-      <p class="lead">15 sual, hər sualda 4 variant. Kəndlər, qalalar, abidələr, göllər, su anbarları, milli parklar, qoruqlar, qədim məscidlər və dahilərin doğulduğu yerlər. Hər doğru cavab səni xəzinəyə bir pillə yaxınlaşdırır.</p>
+      <p class="lead">15 sual, hər sualda 4 variant. Kəndlər, qalalar, abidələr, göllər, su anbarları, milli parklar, qoruqlar, təbii sərvətlər, qədim məscidlər və dahilərin doğulduğu yerlər. Hər doğru cavab səni xəzinəyə bir pillə yaxınlaşdırır.</p>
     </section>
 
     <div class="dy-tabs">
@@ -30,7 +30,7 @@ const KENDSAY = Object.values(KENDLER).flat().length;
             <li>Mükafat pul deyil: hər pillədə Azərbaycanın xəzinəsindən bir hədiyyə qazanırsan. 15-ci pillədə səni <b>Qızıl Səkkizguşə</b> və "Böyük diyarşünas" adı gözləyir.</li>
             <li><b>5-ci</b> və <b>10-cu</b> pillələr qorunan pillələrdir. Səhv cavab versən oyun bitir, amma son keçdiyin qorunan pillənin hədiyyəsi səndə qalır.</li>
             <li>Cavabdan əmin deyilsənsə, <b>"Dayan və hədiyyəni götür"</b> düyməsi ilə qazandığını saxlayıb oyunu bitirə bilərsən.</li>
-            <li>İki <b>kömək haqqın</b> var, hər birindən bir dəfə istifadə edə bilərsən: <b>İpucu</b> düzgün cavab olan ərazi haqqında məlumat verir, <b>50:50</b> isə iki səhv cavabı silir.</li>
+            <li>İki <b>kömək haqqın</b> var, hər birindən bir dəfə istifadə edə bilərsən: <b>İpucu</b> düzgün cavab haqqında məlumat verir, <b>50:50</b> isə iki səhv cavabı silir.</li>
           </ol>
           <p class="muted">Qazandığın hədiyyələr "Xəzinəm" bölməsində toplanır.</p>
           <button type="button" class="btn dy-go" id="start">Oyuna başla</button>
@@ -292,8 +292,9 @@ const KENDSAY = Object.values(KENDLER).flat().length;
     });
   }
   function show() {
-    const [cat, q, ans] = qs[k];
-    cur = { ans, opts: options(ans, k < 5 ? 1 : k < 10 ? 2 : 3) };
+    // Rayon olmayan cavablarda variantlar və ipucu sualın özündədir
+    const [cat, q, ans, , vars, ipucu] = qs[k];
+    cur = { ans, ipucu, opts: vars ? shuffle(vars.slice()) : options(ans, k < 5 ? 1 : k < 10 ? 2 : 3) };
     busy = false;
     $('cat').textContent = CATS[cat];
     $('qn').textContent = k + 1;
@@ -354,7 +355,7 @@ const KENDSAY = Object.values(KENDLER).flat().length;
     if (helpUsed || busy) return;
     helpUsed = true; $('help').disabled = true; $('help').classList.add('used');
     const u = unit(cur.ans);
-    $('hint').innerHTML = `<b>İpucu:</b> Bu ərazi ${esc(u.r)} iqtisadi rayonunda yerləşir. ${esc(IPUCU[cur.ans] || `Rayonun adı "${cur.ans[0]}" hərfi ilə başlayır.`)}`;
+    $('hint').innerHTML = cur.ipucu ? `<b>İpucu:</b> ${esc(cur.ipucu)}` : `<b>İpucu:</b> Bu ərazi ${esc(u.r)} iqtisadi rayonunda yerləşir. ${esc(IPUCU[cur.ans] || `Rayonun adı "${cur.ans[0]}" hərfi ilə başlayır.`)}`;
     $('hint').hidden = false;
   });
   // 50:50: iki səhv cavab silinir

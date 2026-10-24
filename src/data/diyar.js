@@ -1,5 +1,6 @@
 // "Kim diyarşünas olmaq istəyir?" oyununun sualları.
 // Hər sual: [kateqoriya, sual, düzgün cavab (rayon və ya şəhər adı, xəritədəki kimi), çətinlik 1-3].
+// Cavabı rayon olmayan suallarda daha iki sahə var: [..., 4 variant, ipucu].
 // Səhv variantlar düzgün cavaba yaxın ərazilərdən avtomatik seçilir.
 // QAYDA: buraya yalnız mənbə ilə dəqiqliyi yoxlanmış fakt yazılır.
 // Kənd və qəsəbələr DSK-nın "İnzibati ərazi bölgüsü təsnifatı" (2024) ilə tutuşdurulub.
@@ -13,6 +14,8 @@ export const CATS = {
   gol: 'Göllər',
   tebiet: 'Milli parklar və qoruqlar',
   mekan: 'Məşhur məkanlar',
+  yatag: 'Təbii sərvətlər',
+  umumi: 'Ölkəni tanı',
   mescid: 'Qədim məscidlər',
   sexs: 'Dahi şəxsiyyətlər',
 };
@@ -129,6 +132,26 @@ export const SUALLAR = [
   ['mekan', 'Uzunömürlülər muzeyi hansı rayondadır?', 'Lerik', 2],
   ['mekan', 'Yerin altından çıxan qazın sönmədən yandığı Yanardağ hansı rayondadır?', 'Abşeron', 2],
   ['mekan', 'Qədim insan düşərgəsi olan Azıx mağarası hansı rayondadır?', 'Xocavənd', 3],
+  // Təbii sərvətlər: yataqlar
+  ['yatag', 'Qafqazın ən böyük dəmir filizi yatağı hansı rayondadır?', 'Daşkəsən', 2],
+  ['yatag', 'Müstəqillik illərində Azərbaycanda ilk qızıl hasilatı 2009-cu ildə hansı rayondakı yataqda başlayıb?', 'Gədəbəy', 2],
+  ['yatag', 'Dünyada ilk dəfə mexaniki üsulla neft quyusu 1846-cı ildə Bibiheybətdə qazılıb. Bu ərazi hansı şəhərdədir?', 'Bakı', 2],
+  ['yatag', 'Zəylik alunit yatağı hansı rayondadır?', 'Daşkəsən', 3],
+  ['yatag', 'Çovdar qızıl yatağı hansı rayondadır?', 'Daşkəsən', 3],
+  ['yatag', 'Filizçay polimetal yatağı hansı rayondadır?', 'Balakən', 3],
+  ['yatag', 'Söyüdlü qızıl yatağı hansı rayondadır?', 'Kəlbəcər', 3],
+  ['yatag', 'Vejnəli qızıl yatağı hansı rayondadır?', 'Zəngilan', 3],
+  ['yatag', 'Muradxanlı neft yatağı hansı rayondadır?', 'İmişli', 3],
+  ['yatag', 'Paraqaçay molibden yatağı hansı rayondadır?', 'Ordubad', 3],
+  ['yatag', 'Qaradağ qaz yatağı harada yerləşir?', 'Bakı', 3],
+  // Ölkəni tanı: cavab rayon deyil, variantlar sualın özündədir
+  ['umumi', 'Azərbaycanın ərazisi nə qədərdir?', '86,6 min km²', 1, ['86,6 min km²', '89,1 min km²', '82,4 min km²', '78,9 min km²'], 'Ölkənin ərazisi 85 min km²-dən çoxdur.'],
+  ['umumi', 'Azərbaycanın ən uzun çayı hansıdır?', 'Kür', 1, ['Kür', 'Araz', 'Samur', 'Tərtər'], 'Bu çay Türkiyədən başlayır, Gürcüstandan keçir və birbaşa Xəzər dənizinə tökülür.'],
+  ['umumi', 'Azərbaycanın ən hündür zirvəsi hansıdır?', 'Bazardüzü', 1, ['Bazardüzü', 'Şahdağ', 'Tufandağ', 'Babadağ'], 'Bu zirvə Rusiya ilə sərhəddədir.'],
+  ['umumi', 'Azərbaycanın ən böyük su anbarı hansıdır?', 'Mingəçevir', 1, ['Mingəçevir', 'Şəmkir', 'Sərsəng', 'Ceyranbatan'], 'Kür çayı üzərində, 1953-cü ildə yaradılıb.'],
+  ['umumi', 'Azərbaycanın ən böyük gölü hansıdır?', 'Sarısu', 2, ['Sarısu', 'Göygöl', 'Ağgöl', 'Hacıqabul gölü'], 'Bu göl Kür-Araz ovalığındadır, sahəsi 65 km²-dən çoxdur.'],
+  ['umumi', 'Azərbaycanın quru sərhədinin ən uzun hissəsi hansı ölkə ilədir?', 'Ermənistan', 2, ['Ermənistan', 'İran', 'Gürcüstan', 'Rusiya'], 'Bu sərhədin uzunluğu 1000 km-dən çoxdur.'],
+  ['umumi', 'Azərbaycanın Xəzər dənizi sahilinin uzunluğu nə qədərdir?', '825 km', 3, ['825 km', '955 km', '713 km', '640 km'], 'Sahilin uzunluğu 800 km-dən çoxdur.'],
   // Qədim məscidlər (Bakı xaric)
   ['mescid', 'VIII əsrdə tikilmiş, Qafqazın ən qədim məscidlərindən sayılan Cümə məscidi hansı şəhərdədir?', 'Şamaxı', 2],
   ['mescid', 'Yuxarı və Aşağı Gövhər ağa məscidləri hansı şəhərdədir?', 'Şuşa', 2],
